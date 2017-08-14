@@ -65,3 +65,38 @@ h1.home-page-text.text-center {
   padding:40px;
   background-color: #fff;
 }
+
+.collaborate-button {
+    padding: 15px;
+    color: #131313;
+    width: 200px;
+    height: auto;
+    letter-spacing: 2px;
+    background-color: #fff;
+    border-radius:2px;
+    border: 1px solid #131313;
+    transition: all 500ms ease;
+}
+.collaborate-button:hover{
+    background-color: #131313;
+    color: #fff;
+    text-decoration: none;
+    transition: all 500ms ease;
+}
+.spec-button {
+    padding: 15px;
+    color: #fff;
+    width: 200px;
+    height: auto;
+    letter-spacing: 2px;
+    background-color: transparent;
+    border-radius:2px;
+    border: 1px solid #fff;
+    transition: all 200ms ease;
+}
+.spec-button:hover{
+    background-color: #fff;
+    color: #131313;
+    text-decoration: none;
+    transition: all 500ms ease;
+}

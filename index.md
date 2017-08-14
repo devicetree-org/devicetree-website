@@ -17,5 +17,6 @@ The devicetree.org technical steering commitee is the group responsible for deve
 
 Please visit the following links at the top right to learn more and the links below to participate.
 
-[Collaborate](http://www.devicetree.org/collaborate/)
+<a href="/collaborate/" class="collaborate-button center-block">Collaborate</a>
+
 </div>
