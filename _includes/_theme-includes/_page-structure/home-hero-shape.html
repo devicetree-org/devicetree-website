@@ -1,0 +1,25 @@
+<div id="homepage-jumbotron"
+{% if site.data.company.homepage_image %}
+    style="background: #000 url({{site.data.company.homepage_image}}) no-repeat center center fixed;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-position-y: 80px;"
+    class="jumbotron text-center homepage-jumbotron homepage-image-jumbotron"
+{% else %}
+    class="jumbotron text-center homepage-jumbotron"
+{% endif %} >
+  <div class="container">
+      <div class="col-md-12">
+        <img src="/assets/images/devicetree-icon-white.png" id="devicetree-vertical-image" class="img-responsive center-block animated fadeIn" alt="Device Tree Logo">
+      </div>
+      <div class="col-md-12">
+        <h1 class="home-page-text text-center">The Deveicetree Specification</h1>
+        <h4 class="home-page-text text-center">A devicetree is a data structure for describing hardware</h4>
+        <br />
+      <a href="/specification/"><button class="btn btn-primary specification-button center-block" >Specification</button></a>
+      </div>
+  </div>
+  {% include _theme-includes/_page-structure/shape-divider.html %}
+</div>

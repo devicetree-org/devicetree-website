@@ -1,0 +1,92 @@
+$brand-primary: #00b1df;
+$navbar-inverse-bg: #131313;
+$footer-bg-color: #131313;
+$sub-footer-color: #fbfbfb;
+
+/*  -------- Shape Divider ------- */
+#mk-shape-divider-4 .shape__container {
+  margin-bottom: 0px;
+  }
+
+#mk-shape-divider-4 .shape__container .shape {
+  overflow:hidden; height:130;
+  }
+
+#mk-shape-divider-4 .shape__container .shape svg {
+  position:relative; top:0.4px;
+}
+
+/* ---------------------- Home Page Op-tee image ---------------------- */
+#devicetree-vertical-image {
+  width: auto;
+  height: 277px;
+}
+
+
+h1.home-page-text.text-center {
+    color: #FFF;
+    font-size:46px;
+    font-weight:700;
+}
+
+/* Projects Icons */
+
+.project-icon {
+    color: #0084ab;
+}
+.project-title {
+    color: #0084ab;
+}
+.project-more-info {
+    color: #0084ab;
+    font-size: 12px;
+}
+
+/* ------------ Projects Icons -------------- */
+.project-icon{
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+}
+#projects a:hover{
+    text-decoration: none !important;
+}
+
+#banner-area-homepage{
+    padding-top:60px;
+}
+
+.coloured-bp{
+    color: #def7ff;
+    font-size:12px;
+}
+
+/* ------------- Supporting Members Section --------------- */
+.member-image{
+  width: 50%;
+  text-align: center;
+}
+.members {
+  padding:40px;
+  background-color: #fff;
+}
+
+.specification-button{
+    background-color: white;
+    border: 2px solid #000;
+    border-radius: 0px;
+    font-weight: normal;
+    color: #000;
+    transition: all 1s ease;
+    padding: 6px;
+}
+.specification-button:hover{
+    background-color: $brand-primary;
+    color: white;
+    transition: all 1s ease;
+}
+.specification-button:active, .specification-button:focus{
+    background-color: $brand-primary;
+    color: white;
+    transition: all 1s ease;
+}
