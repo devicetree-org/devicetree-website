@@ -29,21 +29,3 @@ pages:
         title: License Agreement
         url: /agreement/
     urls: [/documentation/, /agreement/]
-  -
-    list:
-      -
-        title: FAQ
-        url: /faq/
-      -
-        title: Github Usage
-        url: /usage/
-    urls: [/faq/, /usage/]
-  -
-    list:
-      -
-        title: FAQ
-        url: /faq/
-      -
-        title: Github Usage
-        url: /usage/
-    urls: [/faq/, /usage/]

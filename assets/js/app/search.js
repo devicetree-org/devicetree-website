@@ -36,4 +36,4 @@ function getAllUrlParams(url) {
     }
 
 var searchQuery = getAllUrlParams().q;
-$('#searchIframe').attr('src', "https://search.linaro.org/search/?fields.label=OpTee&q=" + searchQuery);
+$('#searchIframe').attr('src', "https://search.linaro.org/search/?fields.label=DeviceTree&q=" + searchQuery);

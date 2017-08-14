@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 
 gem "jekyll", "3.5.1"
-gem 'linaro-jekyll-theme', '~> 0.7.0'
+gem 'linaro-jekyll-theme', '~> 0.7.2'
 
 group :jekyll_plugins do
    gem "jekyll-feed", "~> 0.6"

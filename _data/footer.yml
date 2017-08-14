@@ -4,7 +4,7 @@ columns:
       url: /specification/
       items:
         - text: Specifications
-          url : https://github.com/devicetree-org
+          url : /specifications/
         - text: Collaborate
           url : https://github.com/devicetree-org
     - title: Other Linaro Projects
@@ -16,6 +16,8 @@ columns:
           url : https://linaro.cloud/
         - text: View all
           url : https://www.linaro.org/work/
+    - title:
+      url: 
 companylinks:
     - name: Legal
       url: /legal/

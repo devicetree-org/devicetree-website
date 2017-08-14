@@ -1,0 +1,91 @@
+---
+specific_css: /assets/css/blog-pages.css
+layout: default-no-sub-nav
+---
+<div class="container-fluid">
+
+<div class="row">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9">
+                <article class="post-content">
+                    {{ content }}
+                </article>
+                <hr />
+                {% if page.tags %}
+                <h3>Tags</h3>
+                      {% assign tags = page.tags %}
+                      {% if page.tags %}
+                          {% for tag in tags %}
+                              <a class="btn btn-blog btn-xs post_tag" href="/blog/tag#{{tag | slugify }}">{{tag}}</a>
+                          {% endfor %}
+                      {% else %}
+                         <p>
+                             No tags found.
+                         </p>
+                      {% endif %}
+                {% endif %}
+
+                <section id="comments-section">
+                    {% if page.comments %}
+                        <h3>Comments</h3>
+                        {% include _theme-includes/_third-party/disqus.html %}
+                        <br />
+                    {% endif %}
+                </section>
+            </div>
+            <div class="col-md-3">
+
+                <div class="panel panel-default" class="blog-panel">
+                  <div class="panel-heading">
+                    <h3 class="panel-title">Recent Posts</h3>
+                    <i class="glyphicon glyphicon-calendar pull-right" style="margin-top:-15px;"></i>
+                  </div>
+                  <div class="panel-body">
+                      {% for recent_post in site.posts limit: 3 %}
+                          <div class="featured_blog_post">
+                              <div class="row">
+                                  <div class="col-md-9 col-sm-9 col-xs-9 no-padding">
+                                     <a href="{{recent_post.url}}">{{recent_post.title | truncate: 40}}</a>
+                                     <br /><small><em>{{recent_post.date | date: "%A, %B %-d, %Y" }}</em></small>
+                                 </div>
+                                 <div class="col-md-3 col-sm-3 col-xs-3 no-padding">
+                                    <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                                    {% if recent_post.image %}
+                                    data-src="/assets/{{recent_post.image}}"
+                                    {% else %}
+                                    data-src="/assets/images/placeholder.png"
+                                    {% endif %}
+                                     alt="{{recent_post.title}}" class="img-responsive lazyload"/>
+                                 </div>
+                              </div>
+                          </div>
+                      {% endfor %}
+                      <div class="panel-view-more text-right"><a href="/blog/">View Blogs</a></div>
+                  </div>
+                </div>
+
+                <div class="panel panel-default">
+                      <div class="panel-heading">
+                        <h3 class="panel-title">Follow Us</h3>
+                        <i class="glyphicon glyphicon-thumbs-up pull-right" style="margin-top:-15px;"></i>
+                      </div>
+                      <div class="panel-body">
+                          <a href="http://facebook.com/{{site.facebook_username}}" class="blog-icons"><i class="icon-facebook"></i></a>
+                          <a href="https://github.com/{{site.github_username}}" class="blog-icons"><i class="icon-github-circled"></i></a>
+                          <a href="https://plus.google.com/{{site.google_plus_username}}/posts" class="blog-icons"><i class="icon-gplus"></i></a>
+                          <a href="https://www.linkedin.com/company/{{site.linkedin_username}}" class="blog-icons"><i class="icon-linkedin"></i></a>
+                          <a href="https://twitter.com/{{site.twitter_username}}" class="blog-icons"><i class="icon-twitter"></i></a>
+                          <a href="https://www.youtube.com/{{site.youtube_username}}" class="blog-icons"><i class="icon-youtube"></i></a>
+                      </div>
+                  </div>
+
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+</div>

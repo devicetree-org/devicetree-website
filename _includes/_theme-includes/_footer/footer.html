@@ -22,8 +22,8 @@
                 {% endfor %}
 
                 {% if site.data.footer.image %}
-                <div class="col-xs-6 col-md-2">
-                  <a href="/"><img src="{{site.data.footer.image}}" class="footer-logo pull-right" alt="{{site.data.company.name}}"></img></a>
+                <div class="col-xs-12 col-md-6">
+                  <a href="/"><img src="{{site.data.footer.image}}" class="footer-logo center-block" alt="{{site.data.company.name}}"></img></a>
                 </div>
                 {% endif %}
             </div>
@@ -31,31 +31,35 @@
 <div class="row footer-strip">
     <div class="container">
         <div class="col-md-6 company-footer-bottom">
-            <a href="{{site.data.linaro.url}}"><img src="{{site.data.linaro.footer-logo}}" width="40px" height="100%" alt="Linaro Icon"/></a>
-            <a style="color:white;">Portions of this content &copy; 2017 <a href="{{site.data.linaro.url}}">{{site.data.linaro.name}}</a>
-            {% for companypage in site.data.footer.companylinks %}
-                <span class="coloured-bp">&bull;</span> <a href="{{companypage.url}}">{{companypage.name}}</a>
-            {% endfor %}
+            <div class="container">
+                <a href="{{site.data.linaro.url}}"><img src="{{site.data.linaro.footer-logo}}" width="40px" height="100%" alt="Linaro Icon"/></a>
+                <a style="color:white;">Portions of this content &copy; 2017 <a href="{{site.data.linaro.url}}">{{site.data.linaro.name}}</a>
+                {% for companypage in site.data.footer.companylinks %}
+                    <span class="coloured-bp">&bull;</span> <a href="{{companypage.url}}">{{companypage.name}}</a>
+                {% endfor %}
+            </div>
         </div>
         <div class="col-md-6 social-footer-bottom">
-            {% if site.data.company.facebook_username %}
-                <a href="http://facebook.com/{{site.data.company.facebook_username}}" class="btn btn-social-icon"><i class="icon-facebook"></i></a>
-            {% endif %}
-            {% if site.data.company.facebook_username %}
-                <a href="https://github.com/{{site.data.company.github_username}}" class="btn btn-social-icon"><i class="icon-github-circled"></i></a>
-            {% endif %}
-            {% if site.data.company.facebook_username %}
-                <a href="https://plus.google.com/{{site.data.company.google_plus_username}}/posts" class="btn btn-social-icon"><i class="icon-gplus"></i></a>
-            {% endif %}
-            {% if site.data.company.facebook_username %}
-                <a href="https://www.linkedin.com/company/{{site.data.company.linkedin_username}}" class="btn btn-social-icon"><i class="icon-linkedin"></i></a>
-            {% endif %}
-            {% if site.data.company.facebook_username %}
-                <a href="https://twitter.com/{{site.data.company.twitter_username}}" class="btn btn-social-icon"><i class="icon-twitter"></i></a>
-            {% endif %}
-            {% if site.data.company.facebook_username %}
-                <a href="https://www.youtube.com/{{site.data.company.youtube_username}}" class="btn btn-social-icon"><i class="icon-youtube"></i></a>
-            {% endif %}
+            <div class="container">
+                {% if site.data.company.facebook_username %}
+                    <a href="http://facebook.com/{{site.data.company.facebook_username}}" class="btn btn-social-icon"><i class="icon-facebook"></i></a>
+                {% endif %}
+                {% if site.data.company.github_username %}
+                    <a href="https://github.com/{{site.data.company.github_username}}" class="btn btn-social-icon"><i class="icon-github-circled"></i></a>
+                {% endif %}
+                {% if site.data.company.google_plus_username %}
+                    <a href="https://plus.google.com/{{site.data.company.google_plus_username}}/posts" class="btn btn-social-icon"><i class="icon-gplus"></i></a>
+                {% endif %}
+                {% if site.data.company.linkedin_username %}
+                    <a href="https://www.linkedin.com/company/{{site.data.company.linkedin_username}}" class="btn btn-social-icon"><i class="icon-linkedin"></i></a>
+                {% endif %}
+                {% if site.data.company.twitter_username %}
+                    <a href="https://twitter.com/{{site.data.company.twitter_username}}" class="btn btn-social-icon"><i class="icon-twitter"></i></a>
+                {% endif %}
+                {% if site.data.company.youtube_username %}
+                    <a href="https://www.youtube.com/{{site.data.company.youtube_username}}" class="btn btn-social-icon"><i class="icon-youtube"></i></a>
+                {% endif %}
+            </div>
         </div>
         <div style="clear:both;"></div>
     </div>
