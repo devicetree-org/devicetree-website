@@ -1,0 +1,24 @@
+<div id="homepage-jumbotron"
+{% if site.data.company.homepage_image %}
+    style="background: #000 url({{site.data.company.homepage_image}}) no-repeat center center fixed;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-position-y: 80px;"
+    class="jumbotron text-center homepage-jumbotron homepage-image-jumbotron"
+{% else %}
+    class="jumbotron text-center homepage-jumbotron"
+{% endif %} >
+  <div class="container">
+      <div class="col-md-12">
+        <img src="/assets/images/OP-TEE-Logo_white-vertical-OPTEE.svg" id="optee-vertical-image" class="img-responsive center-block animated fadeIn" alt="Responsive image">
+      </div>
+      <div class="col-md-12">
+        <h1 class="home-page-text text-center">Open Portable Trusted Execution Environment</h1>
+        <h3 class="home-page-text text-center">Isolation ● Small footprint ● Portability</h3>
+        <br />
+      <a href="/contact/"><button class="btn btn-primary center-block" >Get Involved</button></a>
+      </div>
+  </div>
+</div>

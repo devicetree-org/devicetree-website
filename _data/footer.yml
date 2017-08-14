@@ -1,0 +1,25 @@
+image: /assets/images/device-tree-vertical-logo.png
+columns:
+    - title: Device Tree Speciciation
+      url: /specification/
+      items:
+        - text: Specifications
+          url : https://github.com/devicetree-org
+        - text: Collaborate
+          url : https://github.com/devicetree-org
+    - title: Other Linaro Projects
+      url: https://www.linaro.org/work/
+      items:
+        - text: 96Boards
+          url : https://96boards.org/
+        - text: Developer Cloud
+          url : https://linaro.cloud/
+        - text: View all
+          url : https://www.linaro.org/work/
+companylinks:
+    - name: Legal
+      url: /legal/
+    - name: Contact
+      url: /contact/
+    - name: Press
+      url: /press/
