@@ -3,7 +3,7 @@ GEM
   specs:
     addressable (2.5.1)
       public_suffix (~> 2.0, >= 2.0.2)
-    autoprefixer-rails (7.1.2.4)
+    autoprefixer-rails (7.1.2.6)
       execjs
     bootstrap-sass (3.3.7)
       autoprefixer-rails (>= 5.2.1)
@@ -60,7 +60,7 @@ GEM
     jekyll-watch (1.5.0)
       listen (~> 3.0, < 3.1)
     kramdown (1.14.0)
-    linaro-jekyll-theme (0.7.6)
+    linaro-jekyll-theme (0.10.4)
       autoprefixer-rails
       bootstrap-sass
       jekyll (~> 3.4)
@@ -101,7 +101,7 @@ PLATFORMS
 DEPENDENCIES
   jekyll (= 3.5.1)
   jekyll-feed (~> 0.6)
-  linaro-jekyll-theme (~> 0.7.6)
+  linaro-jekyll-theme (~> 0.10.3)
   tzinfo-data
 
 BUNDLED WITH
