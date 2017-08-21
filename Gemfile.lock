@@ -60,7 +60,7 @@ GEM
     jekyll-watch (1.5.0)
       listen (~> 3.0, < 3.1)
     kramdown (1.14.0)
-    linaro-jekyll-theme (0.10.4)
+    linaro-jekyll-theme (0.10.7)
       autoprefixer-rails
       bootstrap-sass
       jekyll (~> 3.4)
@@ -101,7 +101,7 @@ PLATFORMS
 DEPENDENCIES
   jekyll (= 3.5.1)
   jekyll-feed (~> 0.6)
-  linaro-jekyll-theme (~> 0.10.3)
+  linaro-jekyll-theme (~> 0.10.6)
   tzinfo-data
 
 BUNDLED WITH
