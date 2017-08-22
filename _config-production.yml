@@ -1,12 +1,14 @@
 title: DeviceTree
 email: kyle.kirkby@linaro.org
-description: > # this means to ignore newlines until "baseurl:"
+
+description: |-
     Devicetree.org is a community effort by many companies and individuals to facilitate the future evolution of the Devicetree Standard.
     The devicetree is a data structure for describing hardware. Rather than hard coding every detail of a device into an operating system,
     many aspects of the hardware can be described in a data structure that is passed to the operating system at boot time.
+
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://www.devicetree.org"
-      github_username:  devicetree
+github_username:  devicetree
 # Build settings
 markdown: kramdown
 theme: linaro-jekyll-theme
