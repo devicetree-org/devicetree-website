@@ -8,8 +8,11 @@
 # Whitelist the desired files
 !.gitignore
 !_config.yml
+!_config-staging.yml
+!_config-production.yml
 !Gemfile
 !Gemfile.lock
+!robots.txt
 #
 # Now whitelist the desired folder
 !_includes/
