@@ -14,3 +14,16 @@ theme: linaro-jekyll-theme
 plugins:
   - jekyll-feed
 include: [_content,]
+
+paginate_path: /blog/:num/ # Pagination Path for Blogs
+
+pagination:
+    enabled: true
+    per_page: 5
+    trail:
+        before: 2
+        after: 2
+    sort_reverse: true
+    sort_field: 'date'
+
+permalink: /blog/:title/ # Permalink for blog titles

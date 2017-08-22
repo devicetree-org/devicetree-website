@@ -3,6 +3,10 @@ $navbar-inverse-bg: #131313;
 $footer-bg-color: #131313;
 $sub-footer-color: #fbfbfb;
 
+
+$home-page-title-text: #fff;
+$home-page-main-title-color: #fff;
+
 /*  -------- Shape Divider ------- */
 #mk-shape-divider-4 .shape__container {
   margin-bottom: 0px;
@@ -56,11 +60,6 @@ h1.home-page-text.text-center {
     padding-top:60px;
 }
 
-.coloured-bp{
-    color: #def7ff;
-    font-size:12px;
-}
-
 /* ------------- Supporting Members Section --------------- */
 .member-image{
   width: 50%;
@@ -71,22 +70,37 @@ h1.home-page-text.text-center {
   background-color: #fff;
 }
 
-.specification-button{
-    background-color: white;
-    border: 2px solid #000;
-    border-radius: 0px;
-    font-weight: normal;
-    color: #000;
-    transition: all 1s ease;
-    padding: 6px;
+.collaborate-button {
+    padding: 15px;
+    color: #131313;
+    width: 200px;
+    height: auto;
+    letter-spacing: 2px;
+    background-color: #fff;
+    border-radius:2px;
+    border: 1px solid #131313;
+    transition: all 500ms ease;
 }
-.specification-button:hover{
-    background-color: $brand-primary;
-    color: white;
-    transition: all 1s ease;
+.collaborate-button:hover{
+    background-color: #131313;
+    color: #fff;
+    text-decoration: none;
+    transition: all 500ms ease;
 }
-.specification-button:active, .specification-button:focus{
-    background-color: $brand-primary;
-    color: white;
-    transition: all 1s ease;
+.spec-button {
+    padding: 15px;
+    color: #fff;
+    width: 200px;
+    height: auto;
+    letter-spacing: 2px;
+    background-color: transparent;
+    border-radius:2px;
+    border: 1px solid #fff;
+    transition: all 200ms ease;
+}
+.spec-button:hover{
+    background-color: #fff;
+    color: #131313;
+    text-decoration: none;
+    transition: all 500ms ease;
 }

@@ -1,0 +1,41 @@
+---
+layout: default-no-sub-nav
+specific_css: /assets/css/blog-pages.css
+---
+<div class="row blog-row">
+    <div class="col-md-9">
+        {{content}}
+    </div>
+    <div class="col-md-3">
+              <div class="panel panel-default blog-panel">
+                <div class="panel-heading">
+                  <h3 class="panel-title">Recent Blogs</h3>
+                </div>
+                <div class="panel-body">
+                    {% for blog in site.posts limit: 5 %}
+                        <div class="featured_blog_post">
+                            <div class="row">
+                                <div class="col-md-3 col-sm-3 col-xs-3 no-padding">
+                                   <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                                   {% if blog.image %}
+                                   data-src="/assets/{{blog.image}}"
+                                   {% else %}
+                                   data-src="/assets/images/blog/placeholder.png"
+                                   {% endif %}
+                                  alt="{{blog.title}}" class="img-responsive lazyload"/>
+                                </div>
+                                <div class="col-md-9 col-sm-9 col-xs-9 ">
+                                   <a href="{{blog.url}}">{{blog.title | truncate: 40}}</a>
+                                   <br /><small><em>{{blog.date | date: "%A, %B %-d, %Y" }}</em></small>
+                               </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+              </div>
+
+    </div>
+</div>
+<div class="row">
+{% include _theme-includes/_blog/pagination.html %}
+</div>
