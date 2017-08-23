@@ -12,7 +12,7 @@ pagination:
                 <img class="img-responsive blog-img lazyload"
                 src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
                 {% if post.image %}
-                data-src="/assets/{{post.image}}"
+                data-src="/assets{{post.image}}"
                 {% else %}
                 data-src="{% if site.data.company.placeholder %}{{site.data.company.placeholder}}{% else %}/assets/images/placeholder.png{% endif %}"
                 {% endif %}
