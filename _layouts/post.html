@@ -52,7 +52,7 @@ layout: default-no-sub-nav
                                  <div class="col-md-3 col-sm-3 col-xs-3 no-padding">
                                     <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
                                     {% if recent_post.image %}
-                                    data-src="/assets/{{recent_post.image}}"
+                                    data-src="/assets{{recent_post.image}}"
                                     {% else %}
                                     data-src="{% if site.data.company.placeholder %}{{site.data.company.placeholder}}{% else %}/assets/images/placeholder.png{% endif %}"
                                     {% endif %}
