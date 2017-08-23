@@ -54,7 +54,7 @@ layout: default-no-sub-nav
                                     {% if recent_post.image %}
                                     data-src="/assets/{{recent_post.image}}"
                                     {% else %}
-                                    data-src="/assets/images/placeholder.png"
+                                    data-src="{% if site.data.company.placeholder %}{{site.data.company.placeholder}}{% else %}/assets/images/placeholder.png{% endif %}"
                                     {% endif %}
                                      alt="{{recent_post.title}}" class="img-responsive lazyload"/>
                                  </div>
@@ -64,23 +64,6 @@ layout: default-no-sub-nav
                       <div class="panel-view-more text-right"><a href="/blog/">View Blogs</a></div>
                   </div>
                 </div>
-
-                <div class="panel panel-default">
-                      <div class="panel-heading">
-                        <h3 class="panel-title">Follow Us</h3>
-                        <i class="glyphicon glyphicon-thumbs-up pull-right" style="margin-top:-15px;"></i>
-                      </div>
-                      <div class="panel-body">
-                          <a href="http://facebook.com/{{site.facebook_username}}" class="blog-icons"><i class="icon-facebook"></i></a>
-                          <a href="https://github.com/{{site.github_username}}" class="blog-icons"><i class="icon-github-circled"></i></a>
-                          <a href="https://plus.google.com/{{site.google_plus_username}}/posts" class="blog-icons"><i class="icon-gplus"></i></a>
-                          <a href="https://www.linkedin.com/company/{{site.linkedin_username}}" class="blog-icons"><i class="icon-linkedin"></i></a>
-                          <a href="https://twitter.com/{{site.twitter_username}}" class="blog-icons"><i class="icon-twitter"></i></a>
-                          <a href="https://www.youtube.com/{{site.youtube_username}}" class="blog-icons"><i class="icon-youtube"></i></a>
-                      </div>
-                  </div>
-
-
             </div>
 
         </div>

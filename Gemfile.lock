@@ -60,7 +60,7 @@ GEM
     jekyll-watch (1.5.0)
       listen (~> 3.0, < 3.1)
     kramdown (1.14.0)
-    linaro-jekyll-theme (0.10.7)
+    linaro-jekyll-theme (0.10.13)
       autoprefixer-rails
       bootstrap-sass
       jekyll (~> 3.4)
