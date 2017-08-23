@@ -14,7 +14,7 @@ pagination:
                 {% if post.image %}
                 data-src="/assets/{{post.image}}"
                 {% else %}
-                data-src="/assets/images/placeholder.png"
+                data-src="{% if site.data.company.placeholder %}{{site.data.company.placeholder}}{% else %}/assets/images/placeholder.png{% endif %}"
                 {% endif %}
                  alt="{{post.title}}" />
             </a>
