@@ -1,7 +1,10 @@
-favicon: /assets/images/favion.png
+favicon: favicon.png
 search-label: DeviceTree
 name: DeviceTree
 slogan: The DeviceTree Specification
+
+newsletter:
+    enabled: true
 
 mailchimp:
     enabled: true
@@ -20,3 +23,16 @@ disqus:
 
 homepage_image: /assets/images/background-image.jpg
 breadcrumb-image: /assets/images/background-image.jpg
+
+
+members:
+    excludes: [/contact/]
+
+home:
+    title: The Devicetree Specification
+    sub-title: A devicetree is a data structure for describing hardware
+    hero-image: /assets/images/devicetree-icon-white.png
+    buttons:
+        - text: Specification
+          url : /specifications/
+          class: spec-button center-block
