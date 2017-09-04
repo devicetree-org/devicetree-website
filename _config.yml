@@ -21,7 +21,24 @@ jekyll_tidy: # Compress the html and beautify it.
     compress_html: true
     exclude: ["assets/**/*.js", robots.txt] #Add the js file to exclude to stop jekyll tidy errors.
 
+
+# Jekyll Assets Setup
+assets:
+  compress:
+        js: true
+  autoprefixer:
+      browsers: ["last 2 versions","> 5%","IE 9"]
+  sources:
+    - _assets/js
+    - _assets/images
+    - _assets/images/posts
+
 paginate_path: /blog/:num/ # Pagination Path for Blogs
+
+# Sass Directory
+sass:
+    style: compressed
+    sass_dir: _assets/css
 
 pagination:
     enabled: true
@@ -33,3 +50,5 @@ pagination:
     sort_field: 'date'
 
 permalink: /blog/:title/ # Permalink for blog titles
+
+using_assets: true
