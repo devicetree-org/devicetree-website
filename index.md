@@ -1,5 +1,7 @@
 ---
 layout: home-shape
+js-vendor: home
+css-pack: home
 ---
 <div class="text-center" markdown="1">
 

@@ -1,7 +1,7 @@
 search: true
 brand:
     text: DeviceTree
-    image: /assets/images/device-tree-logo.png
+    image: device-tree-logo.png
     url: /
 pages:
     - title: Home

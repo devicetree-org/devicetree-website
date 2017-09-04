@@ -1,4 +1,4 @@
-image: /assets/images/device-tree-vertical-logo.png
+image: device-tree-vertical-logo.png
 columns:
     - title: Device Tree Speciciation
       url: /specification/
@@ -17,7 +17,11 @@ columns:
         - text: View all
           url : https://www.linaro.org/work/
     - title:
-      url: 
+      url:
+    - title:
+      url:
+    - title:
+      url:
 companylinks:
     - name: Legal
       url: /legal/
