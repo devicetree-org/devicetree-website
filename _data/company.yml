@@ -12,7 +12,7 @@ mailchimp:
 
 #Google analytics
 google:
-    analytics: UA-16756069-21
+    tag_manager: GTM-P8JRM63
 
 # Jekyll social media site settings. Github, LinkedIn, Google+, Facebook and Youtube
 github_username: devicetree-org
@@ -23,7 +23,6 @@ disqus:
 
 homepage_image: /assets/images/background-image.jpg
 breadcrumb-image: /assets/images/background-image.jpg
-
 
 members:
     excludes: [/contact/]
