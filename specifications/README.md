@@ -5,7 +5,8 @@ permalink: /specifications/
 ---
 ## **The Devicetree Specification**
 
-<a href="/downloads/devicetree-specification-v0.1-20160524.pdf" target="_blank"><strong>Device Tree Specification Release 0.1</strong></a>
+<a href="/downloads/devicetree-specification-v0.1-20160524.pdf" target="_blank"><strong>Device Tree Specification Release 0.1</strong></a><br>
+
 This is the first formal baseline release of the device tree specification. This document is a first iteration of ePAPR 1.1 and picks up where it left off in 2012.
 
 The next release, v1.0 is planned for the end of August, 2016, which will be up to date with current core DT bindings used by the Linux kernel.
