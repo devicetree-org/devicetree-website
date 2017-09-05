@@ -56,3 +56,11 @@ pagination:
 permalink: /blog/:title/ # Permalink for blog titles
 
 using_assets: true
+
+
+#Jekyll Defaults Setup
+defaults:
+  - scope:
+      path: ""
+    values:
+      image: /assets/images/social-media-image.png

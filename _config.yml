@@ -33,6 +33,13 @@ assets:
     - _assets/images
     - _assets/images/posts
 
+#Jekyll Defaults Setup
+defaults:
+  - scope:
+      path: ""
+    values:
+      image: /assets/images/social-media-image.png
+
 paginate_path: /blog/:num/ # Pagination Path for Blogs
 
 # Sass Directory
