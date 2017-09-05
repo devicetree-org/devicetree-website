@@ -12,4 +12,4 @@ The next release, v1.0 is planned for the end of August, 2016, which will be up 
 
 If you would like to get involved please fetch the document source from [GitHub](https://github.com/devicetree-org/devicetree-specification-released) and join the [mailing list](http://vger.kernel.org/vger-lists.html#devicetree-spec). Comments and patches are welcome at any time!
 
-A second major release is planned for December 2016 to cover new features. The timeline for planned future releases are shown [here](http://www.devicetree.org/releases/) and you can always find the latest release, as well as all older releases, in our GitHub repository: [Devicetree Specification release repository](https://github.com/devicetree-org/devicetree-specification-released)
+A second major release is planned for December 2016 to cover new features. The timeline for planned future releases are shown [here](/releases/) and you can always find the latest release, as well as all older releases, in our GitHub repository: [Devicetree Specification release repository](https://github.com/devicetree-org/devicetree-specification-released)
