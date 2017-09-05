@@ -22,7 +22,7 @@ disqus:
     shortname: devicetree
 
 homepage_image: /assets/images/background-image.jpg
-breadcrumb-image: /assets/images/background-image.jpg
+breadcrumb-image: /assets/images/breadcrumb-image.jpg
 
 members:
     excludes: [/contact/]
