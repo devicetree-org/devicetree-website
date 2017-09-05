@@ -1,15 +1,5 @@
-<div id="homepage-jumbotron"
-{% if site.data.company.homepage_image %}
-    style="background: #000 url({{site.data.company.homepage_image}}) no-repeat center center fixed;
-    background-size: cover;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-position-y: 80px;"
-    class="jumbotron text-center homepage-jumbotron homepage-image-jumbotron"
-{% else %}
-    class="jumbotron text-center homepage-jumbotron"
-{% endif %} >
+<div id="homepage-jumbotron">
+  <div id="jumbotron-image"></div>
   <div class="container">
       <div class="col-md-12">
         <img src="/assets/images/devicetree-icon-white.png" id="devicetree-vertical-image" class="img-responsive center-block animated fadeIn" alt="Device Tree Logo">
@@ -21,5 +11,5 @@
         <a href="/specifications/" class="spec-button center-block" >Specification</a>
       </div>
   </div>
-  {% include _theme-includes/_page-structure/shape-divider.html %}
+    {% include _theme-includes/_page-structure/shape-divider.html %}
 </div>
