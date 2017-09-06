@@ -2,10 +2,11 @@
 layout: home-shape
 js-vendor: home
 css-pack: home
+keywords: OpenFirmware, OpenPOWER Abstraction Layer (OPAL), Power Architecture Platform Requirements (PAPR), Flattened Device Tree (FDT), Devicetree, Specification, data, structure
 ---
 <div class="text-center" markdown="1">
 
-## Welcome to devicetree.org
+# Welcome to devicetree.org
 
 If you are looking for the devicetree specification you’ve come to the right place!
 

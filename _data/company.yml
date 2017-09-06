@@ -27,6 +27,8 @@ breadcrumb-image: /assets/images/breadcrumb-image.jpg
 members:
     excludes: [/contact/]
 
+placeholder: device-tree-logo-dark.svg
+
 home:
     title: The Devicetree Specification
     sub-title: A devicetree is a data structure for describing hardware

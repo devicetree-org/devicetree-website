@@ -1,7 +1,8 @@
 ---
 layout: default
-title: Specificiations
+title: Specifications
 permalink: /specifications/
+keywords: Devicetree, Specification, release, v1.0
 ---
 ## **The Devicetree Specification**
 
