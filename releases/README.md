@@ -4,10 +4,7 @@ title: Releases
 permalink: /releases/
 js-vendor: extended
 css-pack: lightbox
-keywords:
-  - Releases
-  - Device Tree
-  - RoadMap
+keywords: Releases, Device Tree, RoadMap
 ---
 ## Releases planned for 2016
 

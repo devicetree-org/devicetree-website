@@ -2,13 +2,7 @@
 layout: default
 title: Governance
 permalink: /governance/
-keywords:
-  - Mission
-  - Device tree
-  - Devicetree
-  - Governance
-  - Contribution
-  - Membership
+keywords: Mission, Device tree, Devicetree, Governance, Contribution, Membership
 ---
 ## Mission of devicetree.org
 
