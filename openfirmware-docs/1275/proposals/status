@@ -1,0 +1,1159 @@
+210: Subject: Item #210: Core Errata: better branch descriptions
+210: Closed: Item was accepted with changes for publication in the errata.
+211: Subject: Item #211: Core Errata: Initial errata list
+211: Closed: Item was accepted with changes for publication in the errata.
+212: Subject: Item #212: Core Errata: "xxJoin"
+212: Closed: supersceded by Proposal #213 and withdrawn by author.
+213: Subject: Item #213: Core Errata: "xxSplit and xxJoin"
+213: Closed: Withdrawn (see 227)
+214: Subject: Item #214: Core Errata: Clarify token substitution of rl@ & rl!
+214: Closed: Resubmitted as new proposal 216.
+215: Subject: Item #215: Core Errata: Extensible Client Services Package
+215: Closed: Accepted with changes as a recommended practice
+215:	SCOPE:	Any OF implementation that has both a client and
+215:		a device interface.
+215:
+215: Assign 0x129 to PUSH-PACKAGE, 0x12A to POP-PACKAGE
+216: Subject: Item #216: Core Errata: Register-Access words, correction ...
+216: Closed: accepted as submitted. To be included in the errata doc.
+217: Subject: Item #217: ISA binding: *first draft*
+217: Closed: Will carry ISA binding as an agenda item.
+218: Subject: Item #218: x86 binding: *first draft*
+218: Closed: Will carry x86 binding as a draft.
+219: Subject: Item #219: [ Not a proposal - administrative use ]
+219: Closed: this item number was used administratively.
+220: Subject: Item #220: [ Not a proposal - administrative use ]
+220: Closed: this item number was used administratively.
+221: Subject: Item #221: PPC Binding: Eliminate "cpu-version"
+221: Closed: Withdrawn by Author
+222: Subject: Item #222: PPC Binding: Split binding into processor and ...
+222: Closed: Accepted with amendments. Vote 8-0-0. New Doc:"PREP Binding..."
+223: Subject: Item #223: Create "Device Extensions to IEEE 1275" document 
+223: Closed: Accepted, Create "common devices" binding.
+224: Subject: Item #224: PPC Binding: multiple instances of identical devices 
+224: Closed: Withdrawn by author. Doc is already fixed
+225: Subject: Item #225: Core Errata: Alias expansion bug
+225: Closed: Accepted as submitted for core errata.
+226: Subject: Item #226: P1275.6: "Split" and "Join" words
+226: Closed: Accepted with changes (64 bit extensions supplement)
+226:	Change text to "active" voice ("Combine ...")
+226:	CHange split words "will" to "shall"
+227: Subject: Item #227: Core Errata: "Split" and "Join" words
+227: Closed: Accepted with changes for core errata
+227:	Change Doc and Version to Core Errata
+227:	Change join words to "active" voice ("Combine" ...)
+227:	Change split words "will" to "shall".
+228: Subject: Item #228: PPC Binding: Boot Order Change
+228: Closed: Withdrawn by author
+229: Subject: Item #229: PPC/PReP: Halt-Hibernate 
+229: Closed: Unanimously rejected.
+230: Subject: Item #230: PPC/PReP: Halt-Suspend 
+230: Closed: accepted with amendments 6-0-4
+231: Subject: Item #231: PPC/PReP: Halt-Dump 
+231: Closed: Unanimously rejected.
+232: Subject: Item #232: PPC/PReP: Halt-MCLogout 
+232: Closed: Unanimously rejected.
+233: Subject: Item #233: Core Errata: PAR (IEEE P1275.7) 
+233: Closed: Accepted. David is directed to submit the PAR
+234: Subject: Item #234: Core Errata: Clarify set-symbol-lookup client intfc.
+234: Closed: Accepted for inclusion in core errata.
+235: Subject: Item #235: PPC Binding: proposal - SCSI device names
+235: Closed: Withdrawn by author
+236: Subject: Item #236: PCI Binding: Change "reg" prop names
+236: Closed: Withdrawn by author's representative.
+237: Subject: Item #237: Open Firmware core - Multi-color text
+237: Closed: Accepted as ammended as a recommended practice.
+237:	Some color items moved into #238.
+237:	Scope: Recommended practice.
+238: Subject: Item #238: Open Firmware - Graphics Extension
+238: Closed: Accepted as ammended, contingent upon a future proposal as
+238:	     a recommended practice. Include set-colors/get-colors.
+238:	     Future proposal to describe graphics device geometry.
+238:		Scope: Recommended Practice
+239: Subject: Item #239: PPC Binding: Locating Standard Devices
+239: Closed: Accepted with amendments. 8-1-1. Amend: All should be aliases.
+240: Subject: Item #240: Procedural: Procedure for Binding Meetings
+240: Closed: Accepted. Doc to be put on playground
+241: Subject: Item #241: PCI Binding: Legacy devices
+241: Closed: Accepted as ammended for inclusion in the PCI binding.
+241:	Include Class Code 0x03.0000 as a VGA device.
+241:	Ammended Document/Version to PCI Binding/1.4.
+241:	AI: Ron to run this by Lillian.
+242: Subject: Item #242: PCI Binding: assigned-addresses clarification
+242: Closed: Accepted with changes (PCI Binding V1.4)
+243: Subject: Item #243: PPC binding: reboot command section?
+243: Closed: Accepted as amended.  Remove lines 37-39 of p.20.
+244: Subject: Item #244: PPC binding: reboot command section?
+244: Closed: Withdrawn. dup of 243.
+245: Subject: Item #245: core document - extended std font ...
+245: Closed: Accepted as a strongly recommended practice
+245:	SCOPE:	- FB Support pkg implementations
+245:		- Any driver that uses DEFAULT-FONT or SET-FONT
+245:		  except as the phrase "default-font set-font"
+246: Subject: Item #246: PPC Binding: std default font
+246: Closed: Withdrawn by Author.
+246: Possibly set ISO Latin 1 as default then change when PE client is
+246: recognized.
+246: Ron and John K. to look at.
+247: Subject: Item #247: 1275 Core Document: "name" props for SCSI devices 
+247: Closed; Supersceded by Item 251
+248: Subject: Item #248: Extension to Core - size method 
+248: Closed: Accepted; Strongly recommended practice
+248:	SCOPE:	Core and drivers as indicated in the proposal
+249: Subject: Item #249: PCI binding: "clock-frequency" bus node property 
+249: Closed: Accepted as written
+250: Subject: Item #250: Procedural: rules for email ballot (Comment NOW!) 
+250: Pending: Tabled: activate when needed.
+251: Subject: Item #251: PCI Binding: Generic names; Recomended Practice) 
+251: Closed: Accepted as recommended practice
+251:	SCOPE: PCI bindings and future bindings.
+252: Subject: Item #252: PPC Binding: editorial correction name of "root" node 
+252: Closed: Accepted unanimously as written.
+253: Subject: Item #253: PPC Binding: memory usage clarification... 
+253: Closed: Accepted unanimously as ammended
+253: Amend: 
+253:     Change first paragraph to:
+253:     "Memory that cannot be allocated for general purpose use, for
+253:     example physical memory on powerpc systems used for interrupt
+253:     vectors, shall not appear in the "available" property of the 
+253:     memory node.  Client Programs that need to use such memory for
+253:     its architected purpose must not claim that area prior to use".
+253:     Delete second paragraph.
+254: Subject: Item #254: PPC Binding: memory granularity
+254: Closed: Accepted unanimously as ammended.
+254: Amended as follows: 
+254: Page 3, lines 28-31 - Remove 4 line note from PPC Binding Draft Document.
+254: Insert a new Section 1.5; real mode rules.
+254: Move old Section 1.5 to 1.6; Strike open firmware in title.
+254: Place sentence in both sections(1.5 & 1.6):
+254: "Claim methods shall not allocate more pages than are 
+254: necessary to satisfy the request". 
+255: Subject: Item #255: PPC Binding: Virtual mode rules should be revised 
+255: Accepted: Ammended as follows (June 7' 95):
+255:  When a client executes set-callback, Open Firmware shall attempt to
+255:  invoke the "translate" callback. If the translate callback  is
+255:  implemented, Open Firmware shall cease use of address translation
+255:  hardware, instead using the client callbacks for changes to address
+255:  translation.
+255: 
+255:  The exit service must continue to work after a set-callback that takes
+255:  over address translation. This implies that Open Firmware takes
+255:  responsibililty for address translation hardware upon exit and must
+255:  maintain internal information about translations that it requests of
+255:  the client.
+255: 
+255:  On page 6 of the PowerPC binding, strike line 29. On lines 34 and 35,
+255:  replace ": <bullet> shall" with "that take control of the management of
+255:  address translation hardware and expect to be able to subsequently
+255:  invoke Open Firmware client services must [provide callbacks ...]"
+255:  
+255:  On page 9 of the PowerPC binding, change line 29 to read:
+255: 
+255:  The following standard property shall exist within the package to which
+255:  the "mmu" property of the /chosen package refers:
+256: Subject: Item #256: PPC Binding: disk-label package arguments are unclear
+256: Accepted: Unanimously. Mitch to finish up algorithm.
+257: Subject: Item #257: PPC Binding: BOOTP extensions not specified 
+257: Closed: Accepted unanimously as amended.
+257: Amended as follows:
+257: Add to Section 4.2; The obp-tftp package shall
+257: not require the server to support any vendor extensions.
+258: Subject: Item #258: PPC Binding: timebase-frequency on 601 is unclear 
+258: Closed: Accepted unanimously as amended.
+258: Add a note to section 5.2. The 601 PowerPC does not have a 
+258: timebase frequency; i.e., the value reported in timebase-frequency 
+258: property shall be 1 billion which represents the logical rate of 
+258: the real time clock. 
+259: Subject: Item #259: PPC Binding: client program formats ... too broadly 
+259: Closed: Amended and accepted unanimously.
+259: Amendments:
+259: A new section detailing the ELF header format is added.
+260: Subject: Item #260: PPC Binding: load address could be clearer 
+260: Closed: Accepted unanimously as amended.
+260: Amended as follows:
+260: Add to section 8.2 "Load Address" the following words: 
+260: "load-base is a virtual address in virtual mode.      
+260:  load-base is a real address in real mode."
+260: Modify sentence: At least 4MB of memory shall be available for loading 
+260: at that address.
+261: Subject: Item #261: PPC Binding: translate client callback return values
+261: Closed:  Accepted as written
+262: Subject: Item #262: PPC Binding: devices 
+262: Accepted: at June 7,'95 meeting amended as follows
+262:  1, 2, and 4 are now in Device Support Extensions; 3 is now in the 
+262:  PReP binding.
+262:
+262:  1. For PC-101 keyboards, the abort sequence (see install-abort in the
+262:  IEEE 1275 glossary) shall be Ctrl-Brk.
+262:
+262:  2. The least significant bit corresponds to the primary (usually the
+262:  left-most) button of the device.
+262:
+262:  3.Mitch will take care of the first two subitems in his generic devices
+262:  document. For the third subitem, substitute the text below.
+262:  A device node representing the super I/O chip itself need not
+262:  exist.
+262:  Change language on p. 8 of PReP binding to "...devices attached
+262:  to the super I/O chip may be direct children of the bus node
+262:  representing the bus to which the super I/O chip is attached.
+262:  4. Already taken care of (com@...).
+263: Subject: Item #263: PPC Binding: typo in binding 
+263: Closed: Accepted as written
+264: Subject: Item #264: PCI Binding: relocatable I/O below 64 KB 
+264: Closed: Accepted 9-0-2 as written
+265: Subject: Item #265: PPC Binding: "regs" property for cpu nodes
+265: Withdrawn: At June 7 '95 
+265: Need a more complete proposal Brian Horn to replace 265   with a 
+265: detailed 265 proposal.
+265: Proposed amendments:
+265:         Needed SMP Properties. 
+265:         Create regs property such as idle, start, resume
+266: Subject: Item #266: RP (Core, PCI): Revisit Generic Names #251 
+266: Closed: Rejected 1-7-3, reaffirming prev. passed proposal #251
+267: Subject: Item #267: PowerPC binding: "hostid" property 
+267: Accepted: June 7'95, Amended as follows:
+267:  "system-id"
+267:
+267:  Standard property, encoded as with encode-string, that contains
+267:  the identification of the computer system. This string shall be
+267:  unique across all systems and all manufacturers. If the system-id
+267:  begins with "0", it shall be of the form "0nnnnnnmmmmmm" where nnnnnn
+267:  is a sequence of 6 uppercase hexadecimal digits representing a 24-bit
+267:  Organizationally Unique Identifier (OUI) assigned by the IEEE
+267:  Registration Authority Committee, and mmmmmm is a sequence of 6
+267:  uppercase hexadecimal digits representing a 24-bit binary number
+267:  assigned by the manufacturer to assure uniqueness.
+267: 
+267:  Note: For systems with built-in ethernet or other IEEE 802-style
+267:  interfaces, the 6-byte MAC address assigned to that interface meets the
+267:  requirements and should be used as the system-id.
+268: Subject: Item #268: Core recommended practice: "version" property 
+268: Closed; Passed as ammended.
+268: Create a recomended practice for additional properties;
+268: "Additional Properties", adding the "version" property,
+268: defined here, as the first property included in this RP.
+268: SCOPE: All Packages As Needed.
+268: Other changes, see text.
+269: Subject: Item #269: Core recommended practice: test-method client intfc
+269: Closed; Withdrawn (Superseded by #270)
+270: Subject: Item #270: Recomended Practice (Core) test-method Ver. 2 
+270: Closed: Accepted; Passed with minor editorial changes.
+271: Subject: Item #271: Open Firmware binding proposal for SMP
+271: Closed; Remanded to the author (Luan Nguyen) for amendment.
+272: Subject: Item #272: Interposition (Recommended Practice)
+272: Closed; Accepted; Passed 7-0-1 as amended.
+272: Client interface name changed to instance-to-interposed-path
+273: Subject: Item #273: Editorial changes to PCI binding
+273: Closed: Accepted; Passed 7-0-1 as ammended.
+273: (Editor's discretion)
+274: Subject: Item #274: PCI "reg" property clarification
+274: Closed; Accepted; Passed as amended.
+274:		First coda deleted.
+274:		Second and third coda changed to "Notes"
+274:		Second coda: "In general" changed to "Typically".
+274:		Added: Page 16:44-45 Strike 'listed in any child's
+274:		       "reg" property.'
+275: Subject: Item #275: PowerPC processor binding, 64-bit properties
+275: Closed: Withdrawn by author
+276: Subject: Item #276: PowerPC binding V1.3, Open Firmware's use of BATs 
+276: Closed: Accepted as ammended.
+276: Ammend new bullet:
+276:      A client program shall not directly manipulate any
+276:      address translation hardware before it either a) ceases to
+276:      invoke OF client services or b) issues a set-callback to
+276:      install the "translate" callback.
+276:
+276:    Note:
+276:     The intended sequence is that a client program will first issue a
+276:    set-callbak and then take control of address translation hardware.
+276:    Address translation hardware includes BAT registers, page table,
+276:     Segment Registers, MSR and the Interrupt vectors relating to
+276:     translation faults.
+277: Subject: Item #277: PowerPC processor binding, 64-bit properties V2
+277: Closed: Ammended and Accepted unanimously.
+277: Ammended as follows:
+277: This property, if present, indicates that the PowerPC microprocessor
+277: defined by this CPU node is a 64-bit implementation of the PowerPC
+277: Architecture.  The absence of this property indicates that the
+277: micropresssor defined by this CPU node is a 32 bit implementation
+277: of the PowerPC Architecture.
+278: Subject: Item #278: PowerPC processor binding, 603 style properties 
+278: Closed: Accepted as written.
+279: Subject: Item #279: ARC console escape sequences 
+279: Closed; Accepted with changes and merged into the device supplement.
+280: Subject: Item #280: Device Support Extensions V0.2, req. for SCSI Devices
+280: Closed: Accepted (7-0-0)
+281: Subject: Item #281: PReP binding 0.02 halt-address clarification 
+281: Closed: Accepted unanimously as written.
+282: Subject: Item #282: PowerPC default mapping mode 
+282: Closed: Accepted unanimously as written.
+283: Subject: Item #283: Core Errata: Alias expansion buglette 
+283: Closed: Accepted (7-0-0)
+284: Subject: Item #284: PR*P binding: disk label algorithm 
+284: Closed: Accepted unanimously as written.
+285: Subject: Item #285: Core errata: Another minor error in appendix E 
+285: Closed: Accepted (7-0-0)
+286: Subject: Item #286: PCI Supp: Order of reg tuples for non-FCode devices 
+286: Closed: Remanded to binding committee
+286: Binding Committee: Accepted unanimously.
+287: Subject: Item #287: PCI Supp: Supply examples to clarify address handling
+287: Closed: Remanded to Binding Committee
+287: Binding Committee: Passed unanimously
+288: Subject: Item #288: Device Supp: new property for wide SCSI 
+288: Passed as ammended
+288: Amendments: 
+288:   New Property "differential".  The presence of this property
+288:   indicates that the device represented by this node supports
+288:   differential signaling.
+288:
+288: Insert the following note:
+288:   "In order to support Wide SCSI the example in Appendix E, section
+288:   6.3 of [1] would be ammended as follows."
+289: Subject: Item #289: Device Ext: add support for multi-initiator SCSI 
+289: Closed: Accepted as ammended (change to errata doc)
+289: Replace the entire section containing line 52 of page 19 with:
+289: : open-hardware  ( -- flag )
+289:    map
+289:    7 to my-id		\ NEW ***
+289:    \ should perform a quick "sanity check" selftest here,
+289:    \ returning true iff the test succeeds.
+289:    true
+289: ;
+289: The change is that the initialization of my-id is done in "open-hardware"
+290: Subject: Item #290: PCI Binding: requirements for PCI-PCI bridges 
+290: Closed: Remanded to binding committee
+290: Binding Committee: Passed/Accepted
+291: Subject: Item #291: PPC default mode for map not defined 
+291: Passed/Accepted as ammended 8-1-1
+291:	If the default mode is -1, a suitable default
+291:	is chosen:
+291:		if i/o: W=1, I=1, G=1, PP=10
+291:		if mem: G=1, PP=10
+291:
+291:	Strike the second paragraph.
+291:
+291:	The third paragraph is noted for a future revision
+291:	of the errata. (Current errata is closed.)
+292: Subject: Item #292: PCI bus-master-capable property 
+292: Closed: Withdrawn by author (See #293)
+293: Subject: Item #293: PCI bus master capable property (revised) 
+293: Accepted: 11-0-0
+294: Subject: Item #294: Dev Ext: Create CS423x Device Support Extension 
+294: Passed/Accepted as ammended 7-0-2
+294:
+294:	Make the following changes:
+294:
+294:	XCTL -> xctl
+294:	DMA -> dma
+294:	underscores -> spaces
+294:	Change english text in property values to verb first
+294:	form (i.e. "enable interrupt")
+295: Subject: Item #295: Dev Ext: Consistent Properties for Sound Devices 
+295: Closed: Rejected
+295:        The committee decided to document a device's capabilities,
+295:        and not document the current setting of the device.
+295:        Since the proposal documents 'current settings' rather
+295:        than capabilities, this was tabled as we anxiously await
+295:        a revised proposal from the submitter.
+296: Subject: Item #296: Dev Ext: "sound" should specify a single data format 
+296: Passed/Accepted as ammended 9-0-0
+296:
+296:   The editor is directed to use proper normative language.
+296:   ... passed to _write_ or returned from _read_
+296:   Change "signed" to "unsigned".
+296:   Delete the stanza deleting the properties.
+296:   Delete the stanza deleting the 'read' method.
+296:   ... for subsequent reads and/or writes.
+296:   ... in the definition of "read" and "write" ...
+297: Subject: Item #297: Device Support Extensions NVRAM "#bytes" property 
+297: Passed/Accepted as ammended
+297:        Add 'size' method with wording to be specified by the editor.
+297:        (Some manu. specific areas may be excluded from 'size', the
+297:        area is not available.)
+298: Subject: Item #298: DS1385 binding 
+298: Closed: Accepted as amended.
+298: change DS,1385 to ds1385-nvram.
+298: Make note about different structure for "reg" property in existing
+298: implemenation.
+299: Subject: Item #299: PC keyboard device binding 
+299: Closed: Accepted. Jordan to draft PC Keyboard Binding.
+300: Subject: Item #300: Device Ext: max-scsi-targets property
+300: Closed: Withdrawn by author
+301: Subject: Item #301: 8042 device binding 
+301: Closed: Accepted as amended
+301: Amendments:
+301:   Delete section titled "Additional Requirements"
+301:   8042 device binding to be created.
+302: Subject: Item #302: PReP floppy and ide device types are inappropriate 
+302: Closed: Accepted as amended.
+302: Amendments:
+302:   Change floppy to fdc node name and device type.
+302:   Clarification: Alias floppy refers to primary floppy drive
+303: Subject: Item #303: PCI Bus Binding: Create reserved word in the PCI node
+303: Passed as ammenended 9-0-1
+303:	Add an FCode driver example note to the PCI binding
+303:	(to be supplied by Mitch).
+304: Subject: Item #304: Device binding drafts for a variety of PC devices 
+304: Closed: Withdrawn by author (See #305)
+305: Subject: Item #305: Device binding drafts for a variety ... (v1.1) 
+305: Closed: Accepted as amended:
+305: Proposal separated into three sections:
+305: 305A - Template for device bindings.  Accepted
+305: 305B - Serial Device Binding proposal.  Accepted
+305:        Need to add generic parameters in device extension document 
+305:        for the open method for serial port.  Make into draft binding 
+305:        document.
+305: 305C - Closed. Remainder of text to be resubmitted as separate 
+305:        proposals.
+306: Subject: Item #306: PowerPC processor binding update
+306: Closed: Accepted as amended.
+306: This proposal creates PowerPC Binding Version 1.9 Draft
+307: Subject: Item #307: PPC -- Real Base, Load Base comments 
+307: Closed: Withdrawn
+308: Subject: Item #308: PCI Binding: firware should set cache line size 
+308: Closed/Accepted with ammendments (10-0-0)
+308: Add wording to read back the cache-line-size register,
+308: if the value is zero, don't create the property.
+309: Subject: Item #309: OFWG Minutes 01/16/95 
+309: Closed administratively (minutes have been posted)
+310: Subject: Item #310: PCI Binding: secondary latency timer 
+310: Accepted as ammended: 8-0-0
+310:   Leave it up to the implementation (and describe in a footnote)
+310:   referring to section 3.5 in 2.1 PCI Spec, as to the trade-offs
+310:   in programming the primary latency timer. (See also section
+310:   5.5.18 in the PCI Bridge Spec 1.0)
+311: Subject: Item #311: PCI: Item#303: Ammendment 
+311: Closed/Accepted: editor's discretion on wording update (10-0-0)
+312: Subject: Item #312: PPC: Add load-base to .note section 
+312: Closed: Accepted
+312: This proposal refers to material which was removed from the
+312: PPC processor binding, to be put in the platform bindings.
+312: Moved to freeze PReP, add to CHRP only. For PReP; voted to reject 8-0-0.
+312: Add to CHRP binding.
+313.0 Closed:rejected
+313.1 The PowerPC Architecture will clarify that only 3 pages will be
+313.2 reserved for implementation specific area.
+313: Subject: Item #313: PPC: #trap-pages property 
+314: Subject: Item #314: PCI: get-inherited-property bug in Apple OF
+314: Closed/Accepted as written, 10-0-0
+315: Subject: Item #315: PPC: binding update from CHRP
+315: Closed/Withdrawn by author; Superceded by #317
+316: Subject: Item #316: PPC: Binding committee meeting minutes 1/17/96 
+316: Closed/Withdrawn (See #325)
+317: Subject: Item #317: PPC: Processor binding update from CHRP 
+317:0 Closed: Accepted with amendments
+317:1 Amendments:
+317:2   Page 10, line 3: Replace entire paragraph:
+317:3     "If the client program has specific requirements for physical
+317:4      memory or address space usage, it may establish requirements
+317:5      for OF's physical and/or virtual address space usage by means
+317:6      of its program header.  When OF loads the client program, it
+317:7      inspects the program header, and if its current usage of
+317:8      physical memory or virtual address space conflicts with that
+317:9      specified in the program header, OF shall set the real-base,
+317:0     real-size, virt-base, and virt-size to the configuration
+317:1     variables as specified in the header and restart itself.
+317:2     real-base, virt-base, real-size and virt-size may be specified
+317:3     as -1, in which case the firmware is permitted to choose
+317:4     appropriate values for the variables specified as -1."
+317:5  Page 10, line 7: Replace paragraph beginning at line 7:
+317:6    "If the values of the real-size and/or virt-size config vars do
+317:7     not provide sufficient memory and/or virtual address space for
+317:8     the firmware's own use, then the firmware shall not attempt to
+317:9     load a client program and the condition should be reported to
+317:0     the user.  The possibility of not being able to comply with
+317:1     limitiations on firmware's size should be tested as the
+317:2     firmware is coming up in order to handle the possibility that
+317:3     a user established an unworkable limitation on the size."
+317:4
+317:5    Add "Clients can minimize this exposure by setting the size to
+317:6     -1 and allowing Open Firmware to choose the size."
+317:7  Page 11, lines 24-27: Client programs are not required to assume
+317:8     responsibility for physical memory management. Put at beginning
+317:9     of paragraph. State in both pos and neg context.
+317:0  Page 18: split Table 1 into sections: real-mode and virt-mode;
+317:1     change "preserved by client interface" to "client interface shall
+317:2     preserve"; add definition for preserved - same value when returing;
+317:3     indicate that the msr, segment registers & sprg registers shall
+317:4     not be modified by the client interface in virtual mode; indicate
+317:5     that the msr, segment registers & sprg registers shall be preserved
+317:6     by the client interface in real mode; remove '%' signs in this
+317:7     section.
+317:8  Page 19, Table 2: Change "Others" to "Other user mode registers".
+317:9  Page 19, lines 8-15: replace the 3rd and 4th sentences with the def.
+317:0     of load-base.  Add the proposed sentence to the end of the paragraph.
+317:1  Page 20, line 40: After the first sentence add:
+317:2     "The I cache shall be consistent with the D cache for all
+317:3     memory areas occupied by the client program."
+317:4  Page 20, after line 43: Add:
+317:5      "All processors in a SMP system shall have the same
+317:6      consistent view of all memory areas (for data references).
+317:7      No more than one processor shall have a modified copy of
+317:8      the same data area in its cache when the client program
+317:9      is called.
+317:0        Note: If firmware makes cachable M=0 data references from
+317:1          different processors on a SMP system, it may have to
+317:2          perform additional cache management to meet this
+317:3          requirement."
+317:4  Page 22, line 30: Segment Register's sentence, don't add.
+317:5  Page 22, lines 52-54: Move lines to behind line 12.
+317:6
+317:7 Moved to make changes as amended above and update binding to
+317:8 Revision 1.10 DRAFT.
+318: Subject: Item #318: Administrivia: OFWG Agenda for March Meeting 
+318: Closed/Withdrawn (See #319)
+319: Subject: Item #319: Administrivia: New OFWG Agenda for March Meeting 
+319: Closed/Administratively (agenda posted)
+320: Subject: Item #320: ISA Binding: Define new physical address format ...
+320: Closed; Withdrawn by author
+321: Subject: Item #321: new recommended practice:  Interrupt Mapping 
+321: Closed: See #355
+322: Subject: Item #322: recommended practice: Forth source & FCode image ...
+322: Closed: Withdrawn by author
+322: line-ending definition and wording needs work
+323: Subject: Item #323: change to *output* definition 
+323: Closed; (323.a Accepted; 323.b Withdrawn)
+323: Proposal split into two parts:
+323: 	a) Update PCI Binding 4.2.1 for non-relocatable PCI devices:
+323:	   Additional requirement on the close method of child devices: 
+323:		close(    )
+323:
+323:		Disable fixed-address response by closing Memory space and I/O 
+323: 		space and BusMaster enable bits in the command register.  
+323: 		Use similar wording on p17, line 12.  
+323: 
+323:   323.a is closed and has been incorporated into PCI 1.7d
+323:
+323: 	b) Create recommended practice for output devices (e.g. VGA) 
+323:	Ron and Mitch to work this offline
+323:
+323:	323.b is withdrawn (Jordan to propose wording in a future proposal)
+324: Subject: Item #324: New Draft Recommended Practice: 'Generic Names' 
+324: Closed; See #336
+324:
+324: names assigned to PCI Class codes; added to 
+324: list on p.4 as appropriate.  Add "authorization" clause. 
+324: Editor to generate 1.1 "unapproved draft." 
+325: Subject: Item #325: Amended PowerPC Committee meeting minutes 1/17/96 
+325: Closed: Accepted with amendment
+325: Amendment: Add Bob Coffin to attendee's list
+326: Subject: Item #326: PCI Binding: Clarify address space allocation ...
+326: Closed; Accepted as ammended 9-0-1
+326: The proposal is replaced with the following:
+326:
+326:   Replace p17, line 38, sentence beginning with "For each base ..."
+326:   with the following:
+326: 
+326:     For each child node, create an "assigned-addresses" property
+326:     with an entry for each base address register (or register pair)
+326:     for which an address was assigned.
+327: Subject: Item #327: PCI Binding: "latency-timer" property
+327: Accepted as ammended: 8-0-0
+327: Leave it up to the implementation (and describe in a footnote)
+327: referring to section 3.5 in 2.1 PCI Spec, as to the trade-offs
+327: in programming the primary latency timer.
+328: Subject: Item #328: SCSI-3 Binding: Create binding document 
+328: Closed: Withdrawn (See #333)
+329: Subject: Item #329: OFWG Minutes 03/06/96 
+329: Closed, Minutes Approved
+330: Subject: Item #330: PPC: L2 cache property proposal
+330: Closed; Remanded to Subcommittee
+330: Subcommittee Status: Closed/Rejected
+330: rejected for lack of rationale (AI S9)
+331: Subject: Item #331: Generic name for the keyboard/mouse controller 
+331: Closed; Withdrawn by author
+332: Subject: Item #332: OFWG Minutes 03/06/96 (second day) 
+332: Closed; Remanded
+332: Subcommittee: Minutes approved
+333: Subject: Item #333: SCSI-3 Binding: Create binding document 
+333: Closed; Withdrawn (See #352)
+334: Subject: Item #334: Device Support Extensions: Draft Version 0.6 
+334: Closed: Withdrawn
+335: Subject: Item #335: ISA/EISA/ISA-PnP Draft version 0.2 
+335: Closed: New Draft has been posted
+336: Subject: Item #336: Generic Names Rec. Practice, Draft 1.1 
+336: Closed; Supersceded by GDN 1.2
+336:  Jordan is preparing a proposal to move PCI specific stuff
+336:  to the PCI binding. (Table #1), Change Section 6 to informative.
+336:  Change 'processor' to 'cpu'.
+337: Subject: Item #337: Dev Sup Ext 0.6: "mouse" get-event clarification 
+337: Closed; Accepted as ammended 9-0-0
+337: Ammended as follows:
+337: Change i.e. "'x' values increase when moving to the 'right'
+337: and 'y' values increase whem moving 'down'.
+338: Subject: Item #338: Dev Sup Ext: scancode methods 
+338: Closed, Accepted as ammended 10-0-1
+338: Ammended as follows:
+338: Replace the text of the proposal with the following:
+338:  Delete all references to get-scancode, scancode->char,
+338:  set-language.
+339: Subject: Item #339: Administrivia: OFWG Agenda for April/May Meeting 
+339: Closed; Agenda approved
+340: Subject: Item #340: PCI Binding: add "latency-timer" property 
+340: Closed; Withdrawn (See #327)
+341: Subject: Item #341: Device Support Extensions: Clarify Scope 
+341: Closed; Withdrawn (See #342)
+342: Subject: Item #342: Device Support Extensions: Clarify Scope 
+342: Closed; Remanded: Subcommittee: Accepted as ammended
+342: Ammendment:
+342: Convert DSE to Recommended Practice Document with a 'purpose' section.
+342: Change SCSI to SCSI-2 in the document.
+343: Subject: Item #343: What does "compatible" mean? 
+343: Closed; Accepted as ammended 8-0-0
+343: Ammendments:
+343:  The last sentence of 3.1 and the term "[ their ] defined semantics
+343:  needs clarification. Section 5 needs to be rewritten.
+343:  The ammended text should be folded into a rewritten and
+343:  and renamed "Generic Names" recommended practice document.
+343:  Jordan and Bob are directed to create such a document and submit
+343:  it for committee approval.
+344: Subject: Item #344: PC keyboard/mouse controller binding 
+344: Closed; Remanded
+344: Subcommittee Status: Closed/Withdrawn, Author has AI to rev document
+344: 
+344: Ammendments:
+344:	- Change textual representation (7.2.1) from "main" to "0" and
+344:	  from "aux" to "1".
+344:   - call out all of the methods and properties (incl reg)
+344:   - "slot-names" should be consistent with the PCI binding (bit mask)
+345: Subject: Item #345: CS4231 Device Binding 
+345: Closed; Remanded (Subcommittee Status: Accepted with ammendments,
+345:   The editor is directed to produce a new version with the ammendments.)
+345:
+345: Ammendments:
+345:
+345: - xctl0/1 typos -- control line 0, bit #
+345: - Confirm devices that 423x applies to
+346: Subject: Item #346: Dallas Semiconductor 1385 Device Binding 
+346: Closed; Remanded (Accepted by subcommittee)
+346: Editor is directed to produce an accepted std version of this document.
+347: Subject: Item #347: PC Keyboard Device Binding 
+347: Closed; Remanded (Subcommittee: Withdrawn)
+347: The editor is directed to produce a new version including the following
+347: ammendments to the document:
+347:
+347: - Contents of 7.2.1 go away
+347: - Tag the layout as optional (if the firmware knows)
+347: - Section 9 use "shall" as appropriate
+347: - Section 9.3 -- delete or reword since the implication is that
+347:   Open Firmware must figure out what to do with respect to the
+347:   indicator state when enter is pressed.
+348: Subject: Item #348: PC Serial Port Device Binding 
+348: Closed; Remanded (Accepted with ammendments)
+348: Ammendments:
+348: - Add reference to pnpPNP,501
+348: - Clock frequency should be in hertz
+348:
+348: - Pick up methods from CHRP serial device binding (or move to DSE)
+348: The editor is directed to produce an approved version 1.0 with these
+348: ammendments with an AI to suggest 'name' convention to recognize
+348: SuperIO chips.
+349: Subject: Item #349: PCI Bindings: clarify use of probe-pci 
+349: Closed; Rejected
+349: The PCI binding was separately ammended to do some of this.
+350: Subject: Item #350: DSE:  "sound" properties ...
+350: Closed; accepted as amended and incorporated in the DSE
+350: Ammendments:
+350: - Delete sentence in 6.2 starting "The following prop..."
+350: - In 6.2 except for device_type, delete "Standard" in front
+350:   of "property name"
+350: - Clarify what the interpertation is for "#x-channels" (each integer
+350:   specifies the possible number of channels supported in a specific mode
+350:   of the device. E.g, a 1 indicates monophonic, 2 indicates stereophonic)
+350: - "sample-frame-size" needs clarification (bits or bytes)
+351: Subject: Item #351: OBP-TFTP Recomended Practice Draft 0.5 
+351: Closed; Withdrawn
+351: Suggested Changes published in #356 (minutes of Apr 30 - May 1 meeting)
+351: Author to resubmit a new draft with changes discussed at the meeting.
+352: Subject: Item #352: SCSI-3 Binding: Create initial binding 
+352: Closed; Withdrawn
+352: The sense of the committee is that SBP can be handled with
+352: a proposal to ammend the existing SCSI-2 'binding', and that
+352: FC, FC-AL and 1394 should be handled as cases in their native
+352: buses with bindings for those buses. The author is encouraged
+352: to resubmit a proposal for SCSI-2 mods to support the extended
+352: addressing capabilities of SBP.
+353: Subject: Item #353: PCI Binding ROM Image format 
+353: Closed; Accepted as ammended 11-0-0
+353: Ammended as follows:
+353:  Replace the proposal with the following text:
+353:    Strike line 9. Line 10: Change 38h to 1Ah
+354: Subject: Item #354: PPC/PReP: Halt-address is dead; long live RTAS 
+354: Closed; Remanded to the binding committee
+354: Binding Committee Status: Accepted 9-0-0
+354: Jordan to make updates and publish a revised binding.
+355: Subject: Item #355: Interrupt Mapping RP, Unapproved Draft 0.6 
+355: Closed; Rejected
+355: New proposal to be submitted by the author.
+355: Some questions w.r.t. "interrupts" versus "masking".
+356: Subject: Item #356: Administrivia: OFWG Minutes for April/May Meeting 
+356: Closed; Minutes Approved
+357: Subject: Item #357: CHRP: Proposal for CHRP binding Availability 
+357: Closed Administratively
+358: Subject: Item #358: Generic Names RP: Don't reserve names 
+358: Closed; Accepted
+359: Subject: Item #359: Proposal for CHRP Device Bindings  
+359: Closed Administratively
+359: See minutes for changes suggested to 8042 and Serial device bindings
+360: Subject: Item #360: CHRP: Genericize PIC controller name
+360: Closed; Withdrawn by author. (included in latest revision)
+361: Subject: Item #361: CHRP PIC dev: add "reserved-interrupts" property 
+361: Closed; Withdrawn by author, updated binding to be submitted
+362: Subject: Item #362: ISA: ISA-PnP Unit Address Format 
+362: Closed; Remanded (Accepted by subcommittee with ammendments)
+362: - Reject change of address format, instead delete 10:39 - 11:14.
+362:   Create a 'pnp-id' property, value 2 endoded as with encode-string
+362:   as shown on 11:27-41 (line 32 should be ascii and the VVV should
+362:   be "upper case ASCII" instead of 5-bit.
+362: - Propose 9:25, 9:28 , lower case m before all "n"s, line 25 "i" in
+362:   brackets (add text to explain why optional). "i" is assumed if string
+362:   does not begin with i,t,v or m. (Greg to work with Bob for wording).
+362: - Change "isa" to "pnp" for the "name" property.  Add usual wording for
+362:   name and compatible properties.  Jordan and Bob to deal with wording.
+362:   (name to use master pnp)
+362: - Change "Sun MicroSystems" to "Sun Microsystems Inc." on page 3
+363: Subject: Item #363: PPC: PPC Update PowerPC processor binding V 1.10 
+363: Closed; Remanded (Accepted)
+364: Subject: Item #364: TFTP Boot Extensions RP: Draft 0.6 posted 
+364: Closed; Withdrawn
+364: The author is directed to submit a new version with several changes
+364: as noted in the minutes of the June 26, 1996 OFWG meeting
+365: Subject: Item #365: Intr. Map RP: Draft 0.8 posted 
+365: Closed; Withdrawn
+365: The author is directed to submit a new version of the proposal
+365: with the changes discussed at the June 26, 1996 OFWG meeting.
+366: Subject: Item #366: PCI: Draft 1.75 posted 
+366: Closed; Accepted with ammendments
+366: Accepted with several ammendments documented in the June 26, 1996
+366: meeting minutes.
+366:
+366: The editor is directed to create an approved version of the PCI
+366: with the ammendments documented in the minutes.
+367: Subject: Item #367: PCI Binding 1.75 ranges property update 
+367: Closed; Accepted with ammendment:
+367:
+367: P15:10 add the following sentence:
+367:   "If no addresses are mapped through the bridge, the 'ranges'
+367:   property shall be absent".
+368: Subject: Item #368: Administrivia: OFWG Agenda for June Meeting 
+368: Closed; Agenda Approved
+369: Subject: Item #369: PCI Binding: available property for bus nodes 
+369: Closed; Accepted 11-0-0
+370: Subject: Item #370: 64-bit Extensions: FCode32 Compatibility 
+370: Closed; Accepted with ammendments:
+370: Section 6 needs a normative statement to make the section
+370: a requirement.
+370: Add 'mask' to the list (quadlet pointer)
+371: Subject: Item #371: Admin: OFWG Minutes for June Meeting 
+371: Closed; Withdrawn -- Ammended and resubmitted as #372 and #373
+372: Subject: Item #372: Admin: OFWG Minutes for June Meeting (revised)
+372: Closed; Withdrawn -- Ammended and resubmitted as #373
+373: Subject: Item #373: Admin: OFWG Minutes for June Meeting (revised) 
+373: Closed; Withdrawn -- Ammended and resubmitted as #374
+374: Subject: Item #374: Admin: OFWG Minutes for June Meeting (revised) 
+374: Closed; Minutes Approved.
+375: Subject: Item #375: SPI Binding: Draft 1 
+375: Approved as ammended, moved to have author produce draft document.
+375: add in Section 3.1.1, "name" should be "scsi" if using generic names.
+376: Subject: Item #376: CHRP system binding: chosen nvram 
+376: Closed; Approved as ammended:
+376: Ammendments:
+376:  Add to the note in DSE that the size returned by the SIZE
+376:  method will be the platform defined nvram size. OF/OS
+376:  should only address nvram from 0 up to this size-1.
+377: Subject: Item #377: CHRP system binding: internal (dummy) nodes 
+377: Closed; Approved as ammended:
+377: - change to "internal" to "reserved"
+377: - add device_type of reserved
+378: Subject: Item #378: TFTP Booting Extensions RP Property Values 
+378: Closed; Accepted as ammended:
+378: - delete "15pin" wherever it occurs
+378: - update fddi connectors
+379: Subject: Item #379: TFTP Booting Extensions RP Open Argument Values 
+379: Closed; Approved as ammended:
+379: - change target document to DSE (add Network section)
+379: - move section 5 from TFTP to DSE
+380: Subject: Item #380: PCI: Include pci class code string in 'compatible' 
+380: Closed; Accepted as ammended 11-0-0
+380: - form of name shall be "pciclass,NNNNNN"
+380: - NNNNNN shall be lower case hex including leading zeroes
+380: - delete the last sentence of the paragraph
+381: Subject: Item #381: PC keyboard/mouse controller binding 
+381: Closed; Approved (Editor is directed to produce 1.0 approved vers.)
+382: Subject: Item #382: PC keyboard device binding v0.3 
+382: Closed; Accepted with ammendments:
+382: - fix [3] "???" [ Correct reference 3 ]
+382: - fix "??" at XT keyboard in section 4 [ Correct reference to [3] ]
+382: - add references for ANSI/ISO
+382: - mention "Windows 95" keyboard in section 5
+382: - section 6 -- "none" for now
+382: - end of 7.2.1 delete "or empty"
+382: - 7.2.2 keyboard indicators should match
+382: - copy abort sequence from DSE to this doc.
+382: - specify open arguments
+382: - Move list of layouts in 7.1.2 to an appendix/registry.
+383: Subject: Item #383: clarifications on MEMORY-TEST-SUITE and MASK
+383: Closed; Withdrawn by author (Author to submit a clarification)
+383: Comments:
+383:	memory-test-suite may not work for PCI memory on a big endian
+383:   platform.  Need statements somewhere about situations in which
+383:   memory-test-suite is likely not to work and guidance for making
+383:   an endian independent memory-test-suite.
+383: AI for WMB/DMK to take a to look at 64-bit MASK
+384: Subject: Item #384: PC Serial Port Device Binding 
+384: Closed; Accepted with ammendments (10-0-1)
+384: - move 7.2 contents to DSE
+384: - strike bracketed note at 9.1
+384: - 9.1 last para -- change "devices which are" to "devices that are"
+384: - change "pnp500's" to "may" instead of "should"
+385: Subject: Item #385: OFWG Meeting (08/13-14/96) Proposed Agenda 
+385: Closed; Withdrawn (Duplicate of #386)
+386: Subject: Item #386: Administrivia: Agenda for August meeting 
+386: Closed; Agenda Approved
+387: Subject: Item #387: Administrative: OFWG Minutes for August Meeting 
+387: Closed/Accepted
+388: Subject: Item #388: Request email balloting of Item #250 
+388: Closed; Withdrawn by author
+389: Subject: Item #389: Core: Stack diagram error in endcase and b(endcase) 
+389: Closed; Accepted
+390: Subject: Item #390: PPC: reserved area size increase 
+390: Closed, Accepted as ammended
+390: Remove the memory reservation and add a note
+390: that there used to be a memory reservation.
+391: Subject: Item #391: DSE: Clarify Arguments to network Devices 
+391: Closed; Accepted as ammended:
+391: Page 13; After line 49 add
+391: 	The following arguments shown above must come first.
+391: 	The commas are only present if there is a following parameter.
+392: Subject: Item #392: Administrative: Agenda for October OFWG Meeting 
+392: Closed; Accepted with right of revision.
+393: Subject: Item #393: Administrative: OFWG Minutes for October Meeting 
+393: Closed; Accepted
+394: Subject: Item #394: ISA bus: Typo in binding "interrupts" 
+394: Closed; Withdrawn
+394: The typo was corrected in earlier version of the document.
+395: Subject: Item #395: PCI bus: Typo in binding - ss coding for ...
+395: Closed; Accepted
+396: Subject: Item #396: Improve max-transfer example. 
+396: Closed; Accepted
+396: Link this item to the errata section of the web site.
+397: Subject: Item #397: DSE: 'auto' string in network device properties
+397: Closed; Accepted as ammended
+397: accepted as ammended; change wording for the "chosen-network-type"
+397: property to reflect what result value for 'speed' and 'duplex mode'
+397: was selected or negotiated for the adapter ('auto' string would not
+397: be in the result value of "chosen-network-type" property).  Tech-
+397: nical editor to provide wording to include in new Device Support
+397: Extension-RP Version.
+398: Subject: Item #398: OBP-TFTP: additional 'ping' parameters  
+398: Closed; Accepted as ammended
+398: put brackets around 'client-ip' for ping
+398: command definition and include [bootp] in the device arguments
+398: definition.  Technical editor to include in new version of
+398: TFTP Booting Extension-RP.
+399: Subject: Item #399: PCI Bus: map-in/out clarification. 
+399: Closed; Rejected
+399: rejected; covered in definition of 'map-in', PCI binding (author
+399: agreed that item was already covered in PCI binding)
+400: Subject: Item #400: PCI Bus v2.0: Typo in 4.1.2.1 
+400: Closed; Accepted
+401: Subject: Item #401: Agenda for OFWG Salt Lake City Meeting - January 
+401: Closed; Accepted
+402: Subject: Item #402: Interrupt Mapping 0.9 
+402: Closed; Accepted as ammended
+402: accepted as ammended; Technical editor to update code that allows
+402: "#address-cells" to have a value of zero to indicate not to use
+402: unit-address for a case where a device can directly point to an
+402: interrupt controller via the "interrupt-parent" property and to
+402: also update an example.
+403: Subject: Item #403: Re: Item #402: Interrupt Mapping 0.9 
+403: Closed; Withdrawn by author (wasn't intended as a proposal)
+404: Subject: Item #404: SCSI Annex retry improvements 
+404: Closed; Accepted
+405: Subject: Item #405: pci v2.0: Add 'vendor-id' to 'compatible' 
+405: Closed; Accepted
+406: Subject: Item #406: Minutes for OFWG January 1997 Meeting 
+406: Closed; Accepted with ammendments
+406: A. Correction of the spelling of Tracy Hallock's name
+406: B. Notation that Mitch Bradley suffered a case of frost bite.
+406: C. Notation that the April 15th Austin, TX meeting was
+406:    subsequently cancelled.
+407: Subject: Item #407: VME Bus: VME Bus binding d9 
+407: Closed; Approved with a contigency
+407: Approved contingent upon the author modifying the "boilerplate" from
+407: IEEE Standard to Open Firmware Recommended Practice.
+408: Subject: Item #408: Proposed Bus Binding for IEEE 1394/firewire 
+408: Closed; Withdrawn
+408: The working group made numerous suggestions to the author.  The
+408: proposal was subsequently withdrawn and the author will re-submit a
+408: formal Binding draft document incorporating the working group's feed
+408: back
+409: Subject: Item #409: Set-Resolution method for graphics drivers
+409: Closed; Rejected
+409: The sense of the working group was that this proposal was insufficient
+409: to address the problems in all but the most degenerate cases.
+409: Mitch Bradley proposed the addition of a property to reflect all display
+409: modes supported by the adapter along with those supported by the
+409: rendering firmware plus methods for reporting the current mode and
+409: switching modes.
+410: Subject: Item #410: Proposal for "dma-ranges" property
+410: Closed; Accepted with the following clarification
+410: A. This practice defines a standard property which, if it exists,
+410:    defines a fixed translation between the DMA space and system
+410:    address space.
+410: B. The degenerate case of the "dam-ranges" property in the root
+410:    node reflects a fixed translation performed by the platform's
+410:    core logic.
+410: C. While the "dma-ranges" property is, in general, optional,
+410:    it may become a required component of certain bindings.
+411: Subject: Item #411: Mac HFS support for CHRP
+411: Closed; Withdrawn
+411: The working group made numerous suggestions to the author.  The author
+411: subsequently withdrew the proposal and will work electronically with
+411: members of the CHRP sub group (specifically Richard Arndt and Bruce
+411: Rosenkrantz) to re-submit the proposal
+412: Subject: Item #412: RE: Item #411: Mac HFS support for CHRP
+412: Closed administratively (not a proposal)
+413: Subject: Item #413: Agenda: July 15/16, 1997 Meeting @ Firmworks
+413: Closed; Accepted with right of revision.
+414: Subject: Item #414: PCI-IDE device binding (overview)
+414: Closed; Withdrawn
+414: See minutes 15-Jul-1997 (Proposal #422) for details of
+414: OFWG suggestions and recomendations.  The working group
+414: authorized the author to produce a formal draft binding
+414: based upon this proposal as augmented by the discussion.
+415: Subject: Item #415: Re: Item #414: PCI-IDE device binding (overview)
+415: Closed; Not a proposal
+416: Subject: Item #416: administrative test -- ignore
+416: Closed administratively, not a proposal
+417: Subject: Item #417: administrative test
+417: Closed administratively, not a proposal
+418: Subject: Item #418: sorry, still testing 
+418: Closed administratively, not a proposal
+419: Subject: Item #419: CHRP: Backslash in Bootinfo Entities ...
+419: Closed; Approved without objection
+420: Subject: Item #420: PCI: Correction to dma-map-in stack diagram 
+420: Closed; Approved without objection
+421: Subject: Item #421: Re: Item #411: Mac HFS support for CHRP  
+421: Closed administratively; Not a proposal
+422: Subject: Item #422: Minutes 15 Jul 97 OFWG 
+422: Closed; Accepted (typos noted)
+423: Subject: Item #423: OBP-TFTP RP: /chosen/bootreply-packet ...
+423: Closed; Supersceded by #424 and withdrawn by author
+424: Subject: Item #424: OBP-TFTP RP: /chosen/bootreply-packet ... 
+424: Closed; Accepted
+425: Subject: Item #425: Core Errata:  fix show-lun method 
+425: Closed; Accepted
+426: Subject: Item #426: Revised Bus Binding for IEEE 1394/firewire 
+426: Closed; See #428
+427: Subject: Item #427: USB Bus Binding, Draft 0.1 
+427: Closed;
+427: Several Changes recommended. See minutes in #429
+428: Subject: Item #428: Revised Bus Binding for IEEE 1394/firewire 
+428: Closed
+428: Several Changes Recommended; See minutes #429
+429: Subject: Item #429: Minutes 11 Nov 97 OFWG
+429: Closed; Accepted
+429: Reassign second AI #41 to #42 David Kahn
+430: Subject: Item #430: PCI Binding: Expand PCI compatible/name ...
+430: Closed; Accepted with Ammendments
+430: Strike lines 113 - 118 of the proposal (changes to para. "name")
+430: Add the word "Note:" to line 153 of the proposal to indicate that
+430: the paragraph ("Entry (3) is supplied ...") is informative.
+431: Subject: Item #431: CoderLink web site open ! 
+431: Closed; Not a proposal
+432: Subject: Item #432: USB Binding Draft 0.2 
+432: Approved.
+433: Subject: Item #433: ARM Processor Binding, draft 0.3 
+433: Closed; Accepted as ammended
+433: Page 12:26-42 typo call-static-method instead of call-method
+433: Strike sections 7.1.3 and 7.2 and 7.2.1 (page 18:29-39)
+433: Strike 'up', 'tos', 'rp' and 'ip' (page 18:4-14)
+434: Subject: Item #434: Digital Network Appliance Platform Binding 0.2d 
+434: Closed; Approved as ammended
+434: Page 2 Section 3 Line 12; Change "Appliance" to "Architecture"
+434: Page 3:40-46 Delete 0x20's
+434: Page 4 Note on line 3 Typos
+434: Page 6:35 ISA RTC change to Open Prom
+435: Subject: Item #435: Revised Bus Binding for IEEE 1394/firewire 
+435: Closed; Accepted as ammended
+435: Add a 'wait' method for checking for operation completion and
+435: handling non-dma devices.
+435: Add normative statement for required Control Child nodes
+435: Line 412: strike "will"
+435: Globally change "1394" to "IEEE 1394".
+436: Subject: Item #436: FC/AL SCSI FCP proposed binding 
+436: Closed; Remanded to author to make official version
+436: Remove "diagnose" method (lines 303-311)
+436: Change "lid-to-wwn" to "loopid-to-wwn" ...
+436: (error-code | wwn.lo wwn.hi 0) optional
+437: Subject: Item #437: Minutes 17 March 1998 OFWG Meeting
+437: Closed; Approved
+438: Subject: Item #438:  Wednesday 
+438: Closed Administratively; Not a proposal
+439: Subject: Item #439: ARM Processor Binding: Correction to claim-phys ...
+439: Closed; Accepted
+440: Subject: Item #440: clarify SET-CALLBACK unset value 
+440: Closed; Accepted .. Post to "additional core errata"
+441: Subject: Item #441:  ++Bull*sEye-*Targeting*Software* 
+441: Closed Administratively; Not a proposal
+442: Subject: Item #442: testing moved proposal daemon 
+442: Closed; Not a proposal
+443: Subject: Item #443: OFWG Agenda 01 Sept 1998
+443: Closed; Accepted
+444: Subject: Item #444: <spam .. deleted>
+444: Closed; Not a proposal
+445: Subject: Item #445: <spam .. deleted>
+445: Closed; Not a proposal
+446: Subject: Item #446: <spam .. deleted>
+446: Closed; Not a proposal
+447: Subject: Item #447: Minutes -- 1 Sep 1998 OFWG Meeting 
+447: Closed; Accepted as submitted
+448: Subject: Item #448: The definition of ABORT" function is unclear 
+448: Closed; Accepted as ammended
+448: Change the text of the proposal to:
+448:
+448:   The following statement reflects the intention of the committee:
+448: 
+448:   The version of ABORT" defined by the ANS Forth EXCEPTION wordset
+448:   applies.
+449: Subject: Item #449: The definition of ABORT function is unclear 
+449: Closed; Accepted as ammended
+449: Replace the proposal with the following text:
+449: 
+449:   The committee notes that the one-line description of ABORT
+449:   is misleading, however, the long version is correct.
+450: Subject: Item #450: (Not a proposal .. text and subject deleted)
+450: Closed: Not a proposal
+451: Subject: Item #451: (Advertisement .. text and subject deleted)
+451: Closed: Not a proposal
+452: Subject: Item #452: (Advertisement .. text and subject deleted)
+452: Closed: Not a proposal
+453: Subject: Item #453: (Advertisement .. text and subject deleted)
+453: Closed: Not a proposal
+454: Subject: Item #454: (Advertisement .. text and subject deleted)
+454: Closed: Not a proposal
+455: Subject: Item #455: (Advertisement .. text and subject deleted)
+455: Closed: Not a proposal
+456: Subject: Item #456: (Advertisement .. text and subject deleted)
+456: Closed: Not a proposal
+457: Subject: Item #457: USB Binding: support for recursive probing 
+457: Closed; Rejected
+458: Subject: Item #458: 64-bit Extension Wordset is incomplete 
+458: Closed; Withdrawn
+459: Subject: Item #459: PCI Binding:  More that 256 buses 
+459: Closed; Withdrawn by author
+460: Subject: Item #460: Agenda OFWG meeting 9 March 99 
+460: Closed; Accepted as agenda item
+461: Subject: Item #461: Minutes OFWG meeting 9 March 99 
+461: Closed; Withdrawn ... Replaced by #462
+462: Subject: Item #462: Minutes OFWG meeting 9 March 99
+462: New: not yet discussed
+463: Subject: Item #463: [ Not a proposal; Subject Deleted ]
+463: Closed: Not a proposal
+464: Subject: Item #464: [ Not a proposal; Subject Deleted ]
+464: Closed: Not a proposal
+465: Subject: Item #465: [ Not a proposal; Subject Deleted ]
+465: Closed; Not a proposal
+466: Subject: Item #466: [ Not a proposal; Subject Deleted ]
+466: Closed; Not a proposal
+467: Subject: Item #467: (Not a proposal)
+467: Closed: Not a proposal
+468: Subject: Item #468: (Not a proposal)
+468: Closed: Not a proposal
+469: Subject: Item #469: (Not a proposal)
+469: Closed: Not a proposal.
+470: Subject: Item #470: (Not a proposal)
+470: Closed: Not a proposal
+471: Subject: Item #471: (Not a proposal)
+471: Closed: Not a proposal
+472: Subject: Item #472: (Not a proposal)
+472: Closed: Not a proposal
+473: Subject: Item #473: (Not a proposal)
+473: Closed: Not a proposal
+474: Subject: Item #474: USB Binding: Revise the Name Tables 
+474: New: not yet discussed
+475: Subject: Item #475: (Not a proposal)
+475: Closed: Not a proposal
+476: Subject: Item #476: (Not a proposal)
+476: Closed: Not a proposal
+477: Subject: Item #477: (Not a proposal)
+477: Closet; Not a proposal
+478: Subject: Item #478: (Not a proposal)
+478: Closed; Not a proposal
+479: Subject: Item #479: (Not a proposal)
+479: Closed: Junk mail
+480: Subject: Item #480: (Not a proposal)
+480: Closed: Junk mail
+481: Subject: Item #481: (Not a proposal)
+481: Closed: Junk
+482: Subject: Item #482: (Not a proposal)
+482: Closed: Junk
+483: Subject: Item #483: (Not a proposal)
+483: Closed: Junk
+484: Subject: Item #484: (Not a proposal)
+484: Closed: Junk
+485: Subject: Item #485: (Not a proposal)
+485: Closed: Junk
+486: Subject: Item #486: (Not a proposal)
+486: Closed: Junk
+487: Subject: Item #487: (Not a proposal)
+487: Closed: Junk
+488: Subject: Item #488: (Not a proposal)
+488: Closed: Junk
+489: Subject: Item #489: (Not a proposal)
+489: Closed: Junk
+490: Subject: Item #490: (Not a proposal)
+490: Closed: Junk
+491: Subject: Item #491: (Not a proposal)
+491: Closed: Junk
+492: Subject: Item #492: (Not a proposal)
+492: Closed: Junk
+493: Subject: Item #493: (Not a proposal)
+493: Closed: Junk
+494: Subject: Item #494: (Not a proposal)
+494: Closed: Junk
+495: Subject: Item #495: (Not a proposal)
+495: Closed: Junk
+496: Subject: Item #496: (Not a proposal)
+496: Closed: Junk
+497: Subject: Item #497: (Not a proposal)
+497: Closed: Junk
+498: Subject: Item #498: (Not a proposal)
+498: Closed: Junk
+499: Subject: Item #499: (Not a proposal)
+499: Closed: Junk
+500: Subject: Item #500: (Not a proposal)
+500: Closed: Junk
+501: Subject: Item #501: (Not a proposal)
+501: Closed: Junk
+502: Subject: Item #502: (Not a proposal)
+502: Closed: Junk
+503: Subject: Item #503: (Not a proposal)
+503: Closed: Junk
+504: Subject: Item #504: (Not a proposal)
+504: Closed: Junk
+505: Subject: Item #505: <Not a Proposal>
+505: Closed: Not a proposal
+506: Subject: Item #506: <Not a Proposal>
+506: Closed: Not a proposal
+507: Subject: Item #507: <Not a Proposal>
+507: Closed: Not a proposal
+508: Subject: Item #508: <Not a Proposal>
+508: Closed: Not a proposal
+509: Subject: Item #509: <Not a Proposal>
+509: Closed: Not a proposal
+510: Subject: Item #510: <Not a Proposal>
+510: Closed: Not a proposal
+511: Subject: Item #511: <Not a Proposal>
+511: Closed: Not a proposal
+512: Subject: Item #512: <Not a Proposal>
+512: Closed: Not a Proposal
+513: Subject: Item #513: <Not a Proposal>
+513: Closed: Not a proposal
+514: Subject: Item #514: <Not a Proposal>
+514: Closed: Not a proposal
+515: Subject: Item #515: <Not a Proposal>
+515: Closed: Not a proposal
+516: Subject: Item #516: PCI-Express Binding to OF 
+516: New: not yet discussed

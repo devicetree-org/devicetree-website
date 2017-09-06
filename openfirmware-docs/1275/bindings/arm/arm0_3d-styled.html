@@ -1,0 +1,4339 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+<LINK REL="STYLESHEET" HREF="arm-proc.css">
+<TITLE>ARM Processor Binding</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<CENTER>
+<P CLASS="TitleCenter">
+<A NAME="pgfId=509745">
+ </A>
+ </P>
+<P CLASS="TitleCenter">
+<A NAME="pgfId=509746">
+ </A>
+</P>
+<P CLASS="TitleCenter">
+<A NAME="pgfId=509747">
+ </A>
+ARM Processor Binding to:</P>
+<P CLASS="TitleCenter">
+<A NAME="pgfId=509750">
+ </A>
+IEEE 1275-1994</P>
+<P CLASS="TitleCenter">
+<A NAME="pgfId=509751">
+ </A>
+Standard for Boot</P>
+<P CLASS="TitleCenter">
+<A NAME="pgfId=509752">
+ </A>
+(Initialization, Configuration)</P>
+<P CLASS="TitleCenter">
+<A NAME="pgfId=509753">
+ </A>
+Firmware</P>
+<P CLASS="TitleCenter">
+<A NAME="pgfId=509758">
+ </A>
+Revision: 0.3 DRAFT</P>
+<P CLASS="TitleCenter">
+<A NAME="pgfId=509762">
+ </A>
+Date: November 5, 1997</P>
+<P CLASS="Body">
+<A NAME="pgfId=509743">
+ </A>
+</P>
+</CENTER>
+<hr>
+<DIV>
+<H1 CLASS="Title">
+<A NAME="pgfId=511127">
+ </A>
+Purpose of this ARM Processor Binding</H1>
+<P CLASS="Body">
+<A NAME="pgfId=511549">
+ </A>
+This document specifies the application of Open Firmware to an ARM Processor, including requirements and practices to support unique firmware specific to an ARM Processor. The core requirements and practices specified by Open Firmware must be augmented by processor-specific requirements to form a complete specification for the firmware implementation for a ARM Processor. This document establishes such additional requirements pertaining to the processor and the support required by Open Firmware.</P>
+</DIV>
+<DIV>
+<H1 CLASS="Title">
+<A NAME="pgfId=511534">
+ </A>
+Task Group Members</H1>
+<P CLASS="Body">
+<A NAME="pgfId=511559">
+ </A>
+The ARM Processor Binding team members were the following:</P>
+<P CLASS="Body">
+<A NAME="pgfId=512877">
+ </A>
+Mitch Bradley, FirmWorks</P>
+<P CLASS="Body">
+<A NAME="pgfId=512879">
+ </A>
+Greg Hill (editor), FirmWorks</P>
+</DIV>
+<DIV>
+<H1 CLASS="Title">
+<A NAME="pgfId=511131">
+ </A>
+Trademarks</H1>
+<P CLASS="Body">
+<A NAME="pgfId=516957">
+ </A>
+The following terms, denoted by a registration symbol (&#174;) or trademark symbol() on the first occurrence in this publication, are registered trademarks or trademarks of the companies as shown in the list below: </P>
+<TABLE BORDER="1">
+<TR>
+<TH ROWSPAN="1" COLSPAN="2">
+<P CLASS="CellHeading">
+<A NAME="pgfId=517412">
+ </A>
+Trademark</P>
+</TH>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=517416">
+ </A>
+Company</P>
+</TH>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="2">
+<P CLASS="CellBody">
+<A NAME="pgfId=517418">
+ </A>
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=517422">
+ </A>
+</P>
+</TD>
+</TR>
+</TABLE>
+</DIV>
+<DIV>
+<H1 CLASS="Title">
+<A NAME="pgfId=517383">
+ </A>
+Revision History</H1>
+<TABLE BORDER="1">
+<TR>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=517702">
+ </A>
+Revision</P>
+</TH>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=517704">
+ </A>
+Date</P>
+</TH>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=517706">
+ </A>
+Changes</P>
+</TH>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=517708">
+ </A>
+0.1</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=517710">
+ </A>
+July 1, 1997</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=517712">
+ </A>
+Initial, unapproved release.</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=997124">
+ </A>
+0.2</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=997126">
+ </A>
+August 19, 1997</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=997128">
+ </A>
+Added the virtual address region 0x0000.0000 - 0x0000.1000 to the virtual space consumed by Open Firmware at the handoff to a client program.</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=997141">
+ </A>
+0.3</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=997143">
+ </A>
+November 5, 1997</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=997145">
+ </A>
+Clarified Open Firmware's unmapping and releasing of the unused portion of the client program load space after program preparation for execution has been completed.</P>
+</TD>
+</TR>
+</TABLE>
+<DIV>
+<H6 CLASS="Bodyrev">
+<A NAME="pgfId=517406">
+ </A>
+</H6>
+</DIV>
+</DIV>
+<DIV>
+<H1 CLASS="Title">
+<A NAME="pgfId=1264">
+ </A>
+Table of Contents</H1>
+<P CLASS="Body">
+<A NAME="pgfId=1854">
+ </A>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=1855">
+ </A>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=1856">
+ </A>
+</P>
+<P CLASS="1HeadingTOC">
+<A NAME="pgfId=12175">
+ </A>
+<A HREF="#pgfId=330140" CLASS="Index">
+1.  Overview	 1</A>
+</P>
+<P CLASS="1HeadingTOC">
+<A NAME="pgfId=12177">
+ </A>
+<A HREF="#pgfId=326808" CLASS="Index">
+2. References and Terms	 1</A>
+</P>
+<P CLASS="2HeadingTOC">
+<A NAME="pgfId=12179">
+ </A>
+<A HREF="#pgfId=326809" CLASS="Index">
+2.1 References	1</A>
+</P>
+<P CLASS="2HeadingTOC">
+<A NAME="pgfId=12181">
+ </A>
+<A HREF="#pgfId=336845" CLASS="Index">
+2.2 Terms	1</A>
+</P>
+<P CLASS="1HeadingTOC">
+<A NAME="pgfId=12183">
+ </A>
+<A HREF="#pgfId=329076" CLASS="Index">
+3. Data Formats and Representations	 1</A>
+</P>
+<P CLASS="1HeadingTOC">
+<A NAME="pgfId=12185">
+ </A>
+<A HREF="#pgfId=332764" CLASS="Index">
+4. Memory Management	 2</A>
+</P>
+<P CLASS="2HeadingTOC">
+<A NAME="pgfId=12187">
+ </A>
+<A HREF="#pgfId=337101" CLASS="Index">
+4.1 Open Firmware's Use of Memory	2</A>
+</P>
+<P CLASS="3HeadingTOC">
+<A NAME="pgfId=12189">
+ </A>
+<A HREF="#pgfId=329013" CLASS="Index">
+4.1.1 Virtual-Mode	2</A>
+</P>
+<P CLASS="3HeadingTOC">
+<A NAME="pgfId=12191">
+ </A>
+<A HREF="#pgfId=329032" CLASS="Index">
+4.1.2 Client Interface	2</A>
+</P>
+<P CLASS="4HeadingTOC">
+<A NAME="pgfId=12193">
+ </A>
+<A HREF="#pgfId=341241" CLASS="Index">
+4.1.2.1 Open Firmware Rules 	2</A>
+</P>
+<P CLASS="4HeadingTOC">
+<A NAME="pgfId=12195">
+ </A>
+<A HREF="#pgfId=329127" CLASS="Index">
+4.1.2.2 Client Program Rules 	2</A>
+</P>
+<P CLASS="1HeadingTOC">
+<A NAME="pgfId=12197">
+ </A>
+<A HREF="#pgfId=328951" CLASS="Index">
+5. Device Tree	 2</A>
+</P>
+<P CLASS="2HeadingTOC">
+<A NAME="pgfId=12199">
+ </A>
+<A HREF="#pgfId=337618" CLASS="Index">
+5.1 </A>
+<EM CLASS="OFTerm">
+<A HREF="#pgfId=337618" CLASS="Index">
+&quot;/cpus&quot;</A>
+</EM>
+<A HREF="#pgfId=337618" CLASS="Index">
+ node	3</A>
+</P>
+<P CLASS="3HeadingTOC">
+<A NAME="pgfId=12201">
+ </A>
+<A HREF="#pgfId=332908" CLASS="Index">
+5.1.1  Physical Address Formats and Representations	3</A>
+</P>
+<P CLASS="4HeadingTOC">
+<A NAME="pgfId=12203">
+ </A>
+<A HREF="#pgfId=332909" CLASS="Index">
+5.1.1.1 Numerical Representation 	3</A>
+</P>
+<P CLASS="4HeadingTOC">
+<A NAME="pgfId=12205">
+ </A>
+<A HREF="#pgfId=332667" CLASS="Index">
+5.1.1.2 Text Representation 	3</A>
+</P>
+<P CLASS="4HeadingTOC">
+<A NAME="pgfId=12207">
+ </A>
+<A HREF="#pgfId=332671" CLASS="Index">
+5.1.1.3 Unit Address Representation 	3</A>
+</P>
+<P CLASS="3HeadingTOC">
+<A NAME="pgfId=12286">
+ </A>
+<A HREF="#pgfId=337711" CLASS="Index">
+5.1.2 </A>
+<EM CLASS="OFTerm">
+<A HREF="#pgfId=337711" CLASS="Index">
+&quot;/cpus&quot;</A>
+</EM>
+<A HREF="#pgfId=337711" CLASS="Index">
+ node Properties	3</A>
+</P>
+<P CLASS="2HeadingTOC">
+<A NAME="pgfId=12302">
+ </A>
+<A HREF="#pgfId=337721" CLASS="Index">
+5.2 </A>
+<EM CLASS="OFTerm">
+<A HREF="#pgfId=337721" CLASS="Index">
+&quot;/cpus/cpu&quot;</A>
+</EM>
+<A HREF="#pgfId=337721" CLASS="Index">
+ Node	3</A>
+</P>
+<P CLASS="3HeadingTOC">
+<A NAME="pgfId=12306">
+ </A>
+<A HREF="#pgfId=329489" CLASS="Index">
+5.2.1 </A>
+<EM CLASS="OFTerm">
+<A HREF="#pgfId=329489" CLASS="Index">
+&quot;/cpus/cpu&quot;</A>
+</EM>
+<A HREF="#pgfId=329489" CLASS="Index">
+ Node Properties	4</A>
+</P>
+<P CLASS="4HeadingTOC">
+<A NAME="pgfId=12308">
+ </A>
+<A HREF="#pgfId=328927" CLASS="Index">
+5.2.1.1 TLB Properties 	4</A>
+</P>
+<P CLASS="4HeadingTOC">
+<A NAME="pgfId=12217">
+ </A>
+<A HREF="#pgfId=326940" CLASS="Index">
+5.2.1.2 Internal (L1) Cache Properties 	5</A>
+</P>
+<P CLASS="3HeadingTOC">
+<A NAME="pgfId=12219">
+ </A>
+<A HREF="#pgfId=338073" CLASS="Index">
+5.2.2 </A>
+<EM CLASS="OFTerm">
+<A HREF="#pgfId=338073" CLASS="Index">
+&quot;/cpus/cpu&quot;</A>
+</EM>
+<A HREF="#pgfId=338073" CLASS="Index">
+ Node Methods	5</A>
+</P>
+<P CLASS="2HeadingTOC">
+<A NAME="pgfId=12221">
+ </A>
+<A HREF="#pgfId=338097" CLASS="Index">
+5.3 </A>
+<EM CLASS="OFTerm">
+<A HREF="#pgfId=338097" CLASS="Index">
+&quot;/chosen&quot;</A>
+</EM>
+<A HREF="#pgfId=338097" CLASS="Index">
+ Node	6</A>
+</P>
+<P CLASS="2HeadingTOC">
+<A NAME="pgfId=12223">
+ </A>
+<A HREF="#pgfId=338078" CLASS="Index">
+5.4 Memory Management Unit	6</A>
+</P>
+<P CLASS="3HeadingTOC">
+<A NAME="pgfId=12225">
+ </A>
+<A HREF="#pgfId=338080" CLASS="Index">
+5.4.1 Memory Management Unit Properties	6</A>
+</P>
+<P CLASS="3HeadingTOC">
+<A NAME="pgfId=12227">
+ </A>
+<A HREF="#pgfId=338573" CLASS="Index">
+5.4.2 Memory Management Unit Methods	6</A>
+</P>
+<P CLASS="2HeadingTOC">
+<A NAME="pgfId=12229">
+ </A>
+<A HREF="#pgfId=328174" CLASS="Index">
+5.5 Ancillary (L2, L3 ....) Cache Node Properties	6</A>
+</P>
+<P CLASS="1HeadingTOC">
+<A NAME="pgfId=12231">
+ </A>
+<A HREF="#pgfId=326986" CLASS="Index">
+6. Client Interface Requirements	 7</A>
+</P>
+<P CLASS="2HeadingTOC">
+<A NAME="pgfId=12233">
+ </A>
+<A HREF="#pgfId=341010" CLASS="Index">
+6.1 Client Program Loading	7</A>
+</P>
+<P CLASS="3HeadingTOC">
+<A NAME="pgfId=12235">
+ </A>
+<A HREF="#pgfId=341003" CLASS="Index">
+6.1.1 Load Address	7</A>
+</P>
+<P CLASS="3HeadingTOC">
+<A NAME="pgfId=12237">
+ </A>
+<A HREF="#pgfId=341016" CLASS="Index">
+6.1.2 Client Program Header	8</A>
+</P>
+<P CLASS="2HeadingTOC">
+<A NAME="pgfId=12239">
+ </A>
+<A HREF="#pgfId=341087" CLASS="Index">
+6.2 Initial Program State	9</A>
+</P>
+<P CLASS="3HeadingTOC">
+<A NAME="pgfId=12241">
+ </A>
+<A HREF="#pgfId=341089" CLASS="Index">
+6.2.1 Initial Register Values	9</A>
+</P>
+<P CLASS="3HeadingTOC">
+<A NAME="pgfId=12243">
+ </A>
+<A HREF="#pgfId=341170" CLASS="Index">
+6.2.2 Initial Stack	9</A>
+</P>
+<P CLASS="3HeadingTOC">
+<A NAME="pgfId=12245">
+ </A>
+<A HREF="#pgfId=326988" CLASS="Index">
+6.2.3 Client Interface Calling Convention	9</A>
+</P>
+<P CLASS="3HeadingTOC">
+<A NAME="pgfId=12247">
+ </A>
+<A HREF="#pgfId=341227" CLASS="Index">
+6.2.4 Client Program Arguments	10</A>
+</P>
+<P CLASS="3HeadingTOC">
+<A NAME="pgfId=12249">
+ </A>
+<A HREF="#pgfId=341399" CLASS="Index">
+6.2.5 Trap table	10</A>
+</P>
+<P CLASS="3HeadingTOC">
+<A NAME="pgfId=12251">
+ </A>
+<A HREF="#pgfId=341444" CLASS="Index">
+6.2.6 Virtual address space and memory allocation	11</A>
+</P>
+<P CLASS="3HeadingTOC">
+<A NAME="pgfId=12253">
+ </A>
+<A HREF="#pgfId=327048" CLASS="Index">
+6.2.7 Memory Cache(s)	11</A>
+</P>
+<P CLASS="3HeadingTOC">
+<A NAME="pgfId=12255">
+ </A>
+<A HREF="#pgfId=342521" CLASS="Index">
+6.2.8 Interrupt Sharing	11</A>
+</P>
+<P CLASS="2HeadingTOC">
+<A NAME="pgfId=12257">
+ </A>
+<A HREF="#pgfId=343603" CLASS="Index">
+6.3 Additional Client Interface Services	12</A>
+</P>
+<P CLASS="2HeadingTOC">
+<A NAME="pgfId=12259">
+ </A>
+<A HREF="#pgfId=342183" CLASS="Index">
+6.4 Client Callbacks	12</A>
+</P>
+<P CLASS="3HeadingTOC">
+<A NAME="pgfId=12261">
+ </A>
+<A HREF="#pgfId=327057" CLASS="Index">
+6.4.1 Virtual Address Translation Assist Callbacks	13</A>
+</P>
+<P CLASS="3HeadingTOC">
+<A NAME="pgfId=12263">
+ </A>
+<A HREF="#pgfId=338580" CLASS="Index">
+6.4.2 Claim and Release Callbacks	14</A>
+</P>
+<P CLASS="3HeadingTOC">
+<A NAME="pgfId=12265">
+ </A>
+<A HREF="#pgfId=341556" CLASS="Index">
+6.4.3 Interrupt Callback	16</A>
+</P>
+<P CLASS="1HeadingTOC">
+<A NAME="pgfId=12267">
+ </A>
+<A HREF="#pgfId=327072" CLASS="Index">
+7. User Interface Requirements	 17</A>
+</P>
+<P CLASS="2HeadingTOC">
+<A NAME="pgfId=12269">
+ </A>
+<A HREF="#pgfId=327074" CLASS="Index">
+7.1 Machine Register Access	17</A>
+</P>
+<P CLASS="3HeadingTOC">
+<A NAME="pgfId=12271">
+ </A>
+<A HREF="#pgfId=327076" CLASS="Index">
+7.1.1 Integer Registers	17</A>
+</P>
+<P CLASS="3HeadingTOC">
+<A NAME="pgfId=12273">
+ </A>
+<A HREF="#pgfId=327094" CLASS="Index">
+7.1.2 Floating-Point Registers	18</A>
+</P>
+<P CLASS="3HeadingTOC">
+<A NAME="pgfId=12275">
+ </A>
+<A HREF="#pgfId=340979" CLASS="Index">
+7.1.3 SCC Registers	18</A>
+</P>
+<P CLASS="2HeadingTOC">
+<A NAME="pgfId=12277">
+ </A>
+<A HREF="#pgfId=340988" CLASS="Index">
+7.2 ROM Upgrade Method	18</A>
+</P>
+<P CLASS="3HeadingTOC">
+<A NAME="pgfId=12279">
+ </A>
+<A HREF="#pgfId=342624" CLASS="Index">
+7.2.1 </A>
+<EM CLASS="OFTerm">
+<A HREF="#pgfId=342624" CLASS="Index">
+net-flash ( -- )</A>
+</EM>
+<A HREF="#pgfId=342624" CLASS="Index">
+	18</A>
+</P>
+<P CLASS="2HeadingTOC">
+<A NAME="pgfId=12281">
+ </A>
+<A HREF="#pgfId=342626" CLASS="Index">
+7.3 Configuration Variables	18</A>
+</P>
+<DIV>
+<H2 CLASS="1Heading">
+<A NAME="pgfId=330140">
+ </A>
+1. Overview</H2>
+<P CLASS="Body">
+<A NAME="pgfId=326745">
+ </A>
+This document specifies the application of IEEE Std 1275-1994 Standard for Boot (Initialization, Configuration) Firmware, Core Practices and Requirements to computer systems that use the Advance RISC Machine (ARM) Instruction Set Architecture, including instruction-set-specific requirements and practices for debugging, client program interface and data formats. An implementation of Open Firmware for ARM shall implement the core requirements as defined in <A HREF="#69242" CLASS="XRef">
+[1]</A>
+ and the ARM-specific extensions described in this binding.</P>
+</DIV>
+<DIV>
+<H2 CLASS="1Heading">
+<A NAME="pgfId=326808">
+ </A>
+<A NAME="29452">
+ </A>
+2. References and Terms</H2>
+</DIV>
+<DIV>
+<H2 CLASS="2Heading">
+<A NAME="pgfId=326809">
+ </A>
+<A NAME="26829">
+ </A>
+2.1 References</H2>
+<P CLASS="Body">
+<A NAME="pgfId=326810">
+ </A>
+This standard <EM CLASS="Emphasis">
+shall</EM>
+ be used in conjunction with the following publications. When the following standards are superseded by an approved revision, the revision shall apply.</P>
+<OL>
+<LI CLASS="Reference">
+<A NAME="pgfId=326811">
+ </A>
+<A NAME="69242">
+ </A>
+IEEE Std 1275-1994 Standard for Boot (Initialization, Configuration) Firmware, Core Practices and Requirements.</LI>
+<LI CLASS="Reference">
+<A NAME="pgfId=336844">
+ </A>
+<EM CLASS="Emphasis">
+The ARM Architecture, 1/e</EM>
+<A NAME="35715">
+ </A>
+, Dave Jagger, Prentice Hall, March, 1997, (ISBN 0-13-736299-4).</LI>
+<LI CLASS="Reference">
+<A NAME="pgfId=343549">
+ </A>
+<A NAME="34750">
+ </A>
+a.out file format as defined in the file <EM CLASS="OFTerm">
+include/sys/exec_aout.h</EM>
+ of the NetBSD distribution. http://www.netbsd.org.</LI>
+</OL>
+</DIV>
+<DIV>
+<H2 CLASS="2Heading">
+<A NAME="pgfId=336845">
+ </A>
+2.2 Terms</H2>
+<P CLASS="Body">
+<A NAME="pgfId=332355">
+ </A>
+This standard uses technical terms as they are defined in the documents cited in <A HREF="#26829" CLASS="XRef">
+Section 2.1</A>
+, plus the following terms:</P>
+<P CLASS="Body">
+<A NAME="pgfId=326824">
+ </A>
+core specification: Synonym for IEEE Std 1275-1994 Standard for Boot (Initialization, Configuration) Firmware, Core Practices and Requirements (i.e. the standard that specifies the system-independent and bus-independent requirements for Open Firmware).</P>
+<P CLASS="Body">
+<A NAME="pgfId=326828">
+ </A>
+Open Firmware: The firmware architecture defined by IEEE Std 1275-1994 and its applicable supplements or, when used as an adjective, a software component compliant with such an architecture.</P>
+<P CLASS="Body">
+<A NAME="pgfId=332757">
+ </A>
+virtual address: The address that a program uses to access a memory location or memory-mapped device register. Depending on the presence or absence of memory mapping hardware in the system, and whether or not that mapping hardware is enabled, a virtual address may or may not be the same as the physical address that appears on an external bus. Unless otherwise noted, all addresses mentioned in this document are virtual addresses.</P>
+</DIV>
+<DIV>
+<H2 CLASS="1Heading">
+<A NAME="pgfId=329076">
+ </A>
+3. Data Formats and Representations</H2>
+<P CLASS="Body">
+<A NAME="pgfId=326835">
+ </A>
+The cell size shall be 32 bits. Number ranges for n, u, and other cell-sized items are consistent with 32-bit, two's-complement number representation.</P>
+<P CLASS="Body">
+<A NAME="pgfId=326836">
+ </A>
+The required alignment for items accessed with a-addr addresses shall be four-byte aligned (i.e. a multiple of 4).</P>
+<P CLASS="Body">
+<A NAME="pgfId=326837">
+ </A>
+Each operation involving a qaddr address shall be performed with a single 32-bit access to the addressed location; similarly, each waddr access shall be performed with a single 16-bit access. This implies four-byte alignment for qaddrs and two-byte alignment for waddrs.</P>
+</DIV>
+<DIV>
+<H2 CLASS="1Heading">
+<A NAME="pgfId=332764">
+ </A>
+4. Memory Management</H2>
+</DIV>
+<DIV>
+<H2 CLASS="2Heading">
+<A NAME="pgfId=337101">
+ </A>
+4.1 Open Firmware's Use of Memory</H2>
+<P CLASS="Body">
+<A NAME="pgfId=337103">
+ </A>
+Open Firmware <EM CLASS="Emphasis">
+shall</EM>
+ use the memory resources within the virtual space beginning at 0xF700.000 whose size is 0x0100.0000.</P>
+<DIV>
+<H3 CLASS="3Heading">
+<A NAME="pgfId=329013">
+ </A>
+4.1.1 Virtual-Mode</H3>
+<P CLASS="FirstBody">
+<A NAME="pgfId=329014">
+ </A>
+Open Firmware shall operate with the memory management unit enabled so that Open Firmware and its client share a single virtual address space. This binding provides interfaces to allow Open Firmware and its client to ensure that this single virtual address model can be maintained.</P>
+</DIV>
+<DIV>
+<H3 CLASS="3Heading">
+<A NAME="pgfId=329032">
+ </A>
+<A NAME="96317">
+ </A>
+4.1.2 Client Interface</H3>
+<P CLASS="Body">
+<A NAME="pgfId=329033">
+ </A>
+Client interface services are invoked essentially as &quot;subroutine&quot; calls to Open Firmware. Hence, the client interface executes in the environment of its client, including any translations that the OS has established (i.e. addresses passed in to the client interface are assumed to be valid virtual addresses within the scope of the OS).</P>
+<UL>
+<LI CLASS="Note">
+<A NAME="pgfId=329034">
+ </A>
+If a client program takes control of memory management and address translation and wishes to continue using client interface services, the client program must establish a callback handler as described in <A HREF="#27525" CLASS="XRef">
+"Client Callbacks"</A>
+.</LI>
+</UL>
+<P CLASS="Body">
+<A NAME="pgfId=329035">
+ </A>
+In addition to using existing translations, the Client Interface might require the establishment of new translations (e.g. due to <EM CLASS="word">
+map-in</EM>
+ calls during <EM CLASS="word">
+open</EM>
+ time), or the removal of old translations (e.g. during <EM CLASS="word">
+map-out</EM>
+ calls during <EM CLASS="word">
+close</EM>
+ time). Since this requires altering the client's translation resources (e.g. page tables), Open Firmware cannot know how to perform these updates.</P>
+</DIV>
+<DIV>
+<H3 CLASS="4Heading">
+<A NAME="pgfId=341241">
+ </A>
+4.1.2.1 Open Firmware Rules</H3>
+<P CLASS="Body">
+<A NAME="pgfId=342320">
+ </A>
+The following rules let clients (i.e. target operating systems) know where Open Firmware lives in the address space.</P>
+<UL>
+<LI CLASS="Bullet">
+<A NAME="pgfId=329123">
+ </A>
+Open Firmware shall maintain the value of the <EM CLASS="OFTerm">
+&quot;translations&quot;</EM>
+ property of <EM CLASS="OFTerm">
+/mmu</EM>
+ (see <A HREF="#34579" CLASS="XRef">
+See Section 5.4.1</A>
+)</LI>
+<LI CLASS="Bullet">
+<A NAME="pgfId=329124">
+ </A>
+Open Firmware's <EM CLASS="word">
+claim</EM>
+ methods shall not allocate more pages than are necessary to satisfy the request.</LI>
+<LI CLASS="Bullet">
+<A NAME="pgfId=329125">
+ </A>
+When a client executes <EM CLASS="word">
+set-callback</EM>
+, Open Firmware shall attempt to invoke the <EM CLASS="OFTerm">
+translate</EM>
+ callback. If the <EM CLASS="OFTerm">
+translate</EM>
+ callback is implemented, Open Firmware shall cease use of address translation hardware, instead using the client callbacks for changes to address translation. </LI>
+</UL>
+</DIV>
+<DIV>
+<H3 CLASS="4Heading">
+<A NAME="pgfId=329127">
+ </A>
+4.1.2.2 Client Program Rules</H3>
+<UL>
+<LI CLASS="Bullet">
+<A NAME="pgfId=329128">
+ </A>
+Client programs that take control of the management of address translation hardware and expect to be able to subsequently invoke Open Firmware client services must provide callbacks to assist Open Firmware in address translation (see <A HREF="#11616" CLASS="XRef">
+See Section 6.4.1</A>
+).</LI>
+<LI CLASS="Bullet">
+<A NAME="pgfId=329132">
+ </A>
+A client program <EM CLASS="Emphasis">
+shall</EM>
+ not directly manipulate any address translation hardware before it either:</LI>
+</UL>
+<DIV>
+<H6 CLASS="Bullet2a1">
+<A NAME="pgfId=342785">
+ </A>
+Ceases to invoke OF client services, or</H6>
+</DIV>
+<DIV>
+<H6 CLASS="Bullet2a">
+<A NAME="pgfId=342792">
+ </A>
+Issues a <EM CLASS="word">
+set-callback</EM>
+ to install the <EM CLASS="OFTerm">
+translate</EM>
+ callback.</H6>
+<UL>
+<LI CLASS="Note">
+<A NAME="pgfId=329133">
+ </A>
+The intended sequence is that a client program will first issue a <EM CLASS="word">
+set-callback</EM>
+ and then take control of address translation hardware.</LI>
+</UL>
+</DIV>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="1Heading">
+<A NAME="pgfId=328951">
+ </A>
+5. Device Tree</H2>
+<P CLASS="Body">
+<A NAME="pgfId=326922">
+ </A>
+This section describes the processor-related nodes of the device tree of an ARM Open Firmware implementation.</P>
+</DIV>
+<DIV>
+<H2 CLASS="2Heading">
+<A NAME="pgfId=337618">
+ </A>
+5.1
+<EM CLASS="OFTerm">
+&quot;/cpus&quot;</EM>
+ Node</H2>
+<P CLASS="FirstBody">
+<A NAME="pgfId=337624">
+ </A>
+There <EM CLASS="Emphasis">
+shall</EM>
+ be a node named <EM CLASS="OFTerm">
+&quot;cpus&quot;</EM>
+ which is a direct child of the root node.</P>
+<P CLASS="Body">
+<A NAME="pgfId=337631">
+ </A>
+The purpose of this node is to contain other <EM CLASS="OFTerm">
+&quot;cpu&quot;</EM>
+ nodes and to define an address space by which individual <EM CLASS="OFTerm">
+&quot;cpu&quot;</EM>
+ nodes can be distinguished from one another. This anticipates the possibility of multi-processor ARM systems in the future.</P>
+<DIV>
+<H3 CLASS="3Heading">
+<A NAME="pgfId=332908">
+ </A>
+<A NAME="18332">
+ </A>
+5.1.1 Physical Address Formats and Representations</H3>
+</DIV>
+<DIV>
+<H3 CLASS="4Heading">
+<A NAME="pgfId=332909">
+ </A>
+5.1.1.1 Numerical Representation</H3>
+<P CLASS="Body">
+<A NAME="pgfId=337659">
+ </A>
+The numerical representation of a child's address <EM CLASS="Emphasis">
+shall</EM>
+ be a single binary integer in the range 0 ... N-1, where N is the maximum number of CPUs supported by the system architecture.</P>
+</DIV>
+<DIV>
+<H3 CLASS="4Heading">
+<A NAME="pgfId=332667">
+ </A>
+5.1.1.2 Text Representation</H3>
+<P CLASS="Body">
+<A NAME="pgfId=332668">
+ </A>
+The text representation of a child's address <EM CLASS="Emphasis">
+shall</EM>
+ be the ASCII hexadecimal number corresponding to the numerical representation of the address. </P>
+<P CLASS="Body">
+<A NAME="pgfId=337703">
+ </A>
+Conversion of the hexadecimal number from text representation to numeric representation <EM CLASS="Emphasis">
+shall</EM>
+ be case insensitive, and leading zeros <EM CLASS="Emphasis">
+shall</EM>
+ be permitted but not required.</P>
+<P CLASS="Body">
+<A NAME="pgfId=342330">
+ </A>
+Conversion from numeric representation to text representation <EM CLASS="Emphasis">
+shall</EM>
+ use the lower case forms of the hexadecimal digits in the range <EM CLASS="OFTerm">
+a...f</EM>
+, suppressing leading zeros.</P>
+</DIV>
+<DIV>
+<H3 CLASS="4Heading">
+<A NAME="pgfId=332671">
+ </A>
+5.1.1.3 Unit Address Representation</H3>
+<P CLASS="Body">
+<A NAME="pgfId=337710">
+ </A>
+A processor's &quot;unit-address&quot; (i.e. the first component of its <EM CLASS="OFTerm">
+&quot;reg&quot;</EM>
+ value) is the interprocessor interrupt destination identifier used by the platform. For a uni-processor platform, the &quot;unit-address&quot; <EM CLASS="Emphasis">
+shall</EM>
+ be zero. </P>
+</DIV>
+<DIV>
+<H3 CLASS="3Heading">
+<A NAME="pgfId=337711">
+ </A>
+5.1.2
+<EM CLASS="OFTerm">
+&quot;/cpus&quot;</EM>
+ Node Properties</H3>
+<P CLASS="FirstBody">
+<A NAME="pgfId=337712">
+ </A>
+The following properties <EM CLASS="Emphasis">
+shall</EM>
+ be created within the <EM CLASS="OFTerm">
+&quot;cpus&quot;</EM>
+ node.</P>
+<DIV>
+<H4 CLASS="word-hdr">
+<A NAME="pgfId=337714">
+ </A>
+&quot;name&quot;</H4>
+<P CLASS="word-def">
+<A NAME="pgfId=337715">
+ </A>
+Standard prop-name to define the name of the node.</P>
+<DIV>
+<H6 CLASS="word-def-sub">
+<A NAME="pgfId=337860">
+ </A>
+prop-encoded-array: Text string, encoded as with <EM CLASS="word">
+encode-string</EM>
+.</H6>
+<P CLASS="word-def">
+<A NAME="pgfId=337858">
+ </A>
+The value of this property <EM CLASS="Emphasis">
+shall</EM>
+ be <EM CLASS="OFTerm">
+&quot;cpus&quot;</EM>
+.</P>
+</DIV>
+</DIV>
+<DIV>
+<H4 CLASS="word-hdr">
+<A NAME="pgfId=332622">
+ </A>
+&quot;#address-cells&quot;</H4>
+<P CLASS="word-def">
+<A NAME="pgfId=332623">
+ </A>
+Standard prop-name to define the number of cells required to represent the physical addresses for the <EM CLASS="OFTerm">
+&quot;cpu&quot;</EM>
+ nodes (i.e. the children of the <EM CLASS="OFTerm">
+&quot;cpus&quot;</EM>
+ node).</P>
+<DIV>
+<H6 CLASS="word-def-sub">
+<A NAME="pgfId=332918">
+ </A>
+prop-encoded-array: Integer constant 1, encoded as with <EM CLASS="word">
+encode-int</EM>
+.</H6>
+<P CLASS="word-def">
+<A NAME="pgfId=332919">
+ </A>
+The value of <EM CLASS="string">
+&quot;#address-cells&quot;</EM>
+ for the <EM CLASS="OFTerm">
+&quot;cpus&quot;</EM>
+ node shall be <EM CLASS="string">
+1</EM>
+.</P>
+</DIV>
+</DIV>
+<DIV>
+<H4 CLASS="word-hdr">
+<A NAME="pgfId=332920">
+ </A>
+&quot;#size-cells&quot;</H4>
+<P CLASS="word-def">
+<A NAME="pgfId=329481">
+ </A>
+Standard prop-name to define the number of cells necessary to represent the length of a physical address range.</P>
+<DIV>
+<H6 CLASS="word-def-sub">
+<A NAME="pgfId=329484">
+ </A>
+prop-encoded-array: Integer constant 0, encoded as with <EM CLASS="word">
+encode-int</EM>
+.</H6>
+<P CLASS="word-def">
+<A NAME="pgfId=329488">
+ </A>
+The value of <EM CLASS="string">
+&quot;#size-cells&quot;</EM>
+ for the <EM CLASS="OFTerm">
+&quot;cpus&quot;</EM>
+ node is 0 because the processors that are represented by the <EM CLASS="OFTerm">
+&quot;cpu&quot;</EM>
+ nodes do not consume any physical address space.</P>
+</DIV>
+</DIV>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="2Heading">
+<A NAME="pgfId=337721">
+ </A>
+5.2
+<EM CLASS="OFTerm">
+&quot;/cpus/cpu&quot;</EM>
+ Node</H2>
+<P CLASS="FirstBody">
+<A NAME="pgfId=337722">
+ </A>
+Each CPU in the system <EM CLASS="Emphasis">
+shall</EM>
+ have a node describing it as follows.</P>
+<DIV>
+<H3 CLASS="3Heading">
+<A NAME="pgfId=329489">
+ </A>
+5.2.1
+<EM CLASS="OFTerm">
+&quot;/cpus/cpu&quot;</EM>
+<A NAME="89868">
+ </A>
+ node properties</H3>
+<DIV>
+<H4 CLASS="word-hdr">
+<A NAME="pgfId=328152">
+ </A>
+&quot;name&quot;</H4>
+<P CLASS="word-def">
+<A NAME="pgfId=337864">
+ </A>
+Standard prop-name to define the name of the node.</P>
+<DIV>
+<H6 CLASS="word-def-sub">
+<A NAME="pgfId=337865">
+ </A>
+prop-encoded-array: Text string, encoded as with <EM CLASS="word">
+encode-string</EM>
+.</H6>
+<P CLASS="word-def">
+<A NAME="pgfId=328153">
+ </A>
+The value of this property <EM CLASS="Emphasis">
+shall</EM>
+ be <EM CLASS="OFTerm">
+&quot;cpu&quot;</EM>
+.</P>
+</DIV>
+</DIV>
+<DIV>
+<H4 CLASS="word-hdr">
+<A NAME="pgfId=326932">
+ </A>
+&quot;device_type&quot; </H4>
+<P CLASS="word-def">
+<A NAME="pgfId=337869">
+ </A>
+Standard prop-name to specify the implemented interface.</P>
+<DIV>
+<H6 CLASS="word-def-sub">
+<A NAME="pgfId=337870">
+ </A>
+prop-encoded-array: Text string, encoded as with <EM CLASS="word">
+encode-string</EM>
+.</H6>
+<P CLASS="word-def">
+<A NAME="pgfId=326933">
+ </A>
+The value of this property <EM CLASS="Emphasis">
+shall</EM>
+ be <EM CLASS="OFTerm">
+&quot;cpu&quot;</EM>
+.</P>
+</DIV>
+</DIV>
+<DIV>
+<H4 CLASS="word-hdr">
+<A NAME="pgfId=337728">
+ </A>
+&quot;reg&quot; </H4>
+<P CLASS="word-def">
+<A NAME="pgfId=337753">
+ </A>
+Standard prop-name to specify the node's addressable resources.</P>
+<P CLASS="word-def">
+<A NAME="pgfId=337854">
+ </A>
+prop-encoded-array: an integer encoded as with encode-int. </P>
+<P CLASS="word-def">
+<A NAME="pgfId=337852">
+ </A>
+The value of this property shall be a one-cell integer representing the interrupt dispatch number that is used to direct inter-processor interrupts to this CPU.</P>
+<DIV>
+<H6 CLASS="word-def-sub">
+<A NAME="pgfId=337729">
+ </A>
+For a uniprocessor system, the value <EM CLASS="Emphasis">
+shall</EM>
+ be 0.</H6>
+</DIV>
+</DIV>
+<DIV>
+<H4 CLASS="word-hdr">
+<A NAME="pgfId=337583">
+ </A>
+&quot;model&quot;</H4>
+<P CLASS="word-def">
+<A NAME="pgfId=337582">
+ </A>
+Standard prop-name to define a cpu node's model.</P>
+<DIV>
+<H6 CLASS="word-def-sub">
+<A NAME="pgfId=337882">
+ </A>
+prop-encoded-array: Text string, encoded as with <EM CLASS="word">
+encode-string</EM>
+.</H6>
+<P CLASS="word-def">
+<A NAME="pgfId=337847">
+ </A>
+The value of this property <EM CLASS="Emphasis">
+shall</EM>
+ be a string consisting of the CPU type and revision (e.g. <EM CLASS="OFTerm">
+&quot;Strongarm SA-110-3&quot;</EM>
+).</P>
+</DIV>
+</DIV>
+<DIV>
+<H4 CLASS="word-hdr">
+<A NAME="pgfId=326936">
+ </A>
+&quot;clock-frequency&quot;</H4>
+<P CLASS="word-def">
+<A NAME="pgfId=326937">
+ </A>
+Standard property specifying the internal processor speed of this node.</P>
+<P CLASS="word-def">
+<A NAME="pgfId=337890">
+ </A>
+prop-encoded-array: an integer encoded as with encode-int. </P>
+<P CLASS="word-def">
+<A NAME="pgfId=337891">
+ </A>
+The value of this property shall be an integer specifying the CPU internal clock frequency in Hertz (e.g. 235,500,000).</P>
+</DIV>
+<DIV>
+<H4 CLASS="word-hdr">
+<A NAME="pgfId=332953">
+ </A>
+&quot;bus-frequency&quot;</H4>
+<P CLASS="word-def">
+<A NAME="pgfId=337903">
+ </A>
+Standard property specifying the speed of this processor's bus.</P>
+<P CLASS="word-def">
+<A NAME="pgfId=337904">
+ </A>
+prop-encoded-array: an integer encoded as with encode-int. </P>
+<P CLASS="word-def">
+<A NAME="pgfId=337905">
+ </A>
+The value of this property shall be an integer specifying the speed in Hertz of this processor's bus (e.g. 66,666,666).</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="4Heading">
+<A NAME="pgfId=328927">
+ </A>
+5.2.1.1
+TLB Properties</H3>
+<P CLASS="FirstBody">
+<A NAME="pgfId=328928">
+ </A>
+Since the ARM architecture defines the MMU as being part of the processor, the properties defined by Section 3.6.5 of <A HREF="#69242" CLASS="XRef">
+[1]</A>
+ and the following MMU-related properties <EM CLASS="Emphasis">
+shall</EM>
+ be presented under <EM CLASS="OFTerm">
+&quot;cpu&quot;</EM>
+ nodes.</P>
+<DIV>
+<H4 CLASS="word-hdr">
+<A NAME="pgfId=327316">
+ </A>
+&quot;tlb-size&quot;</H4>
+<P CLASS="word-def">
+<A NAME="pgfId=327255">
+ </A>
+Standard property, encoded as with <EM CLASS="word">
+encode-int</EM>
+, that represents the total number of TLB entries in decimal (e.g. 32).</P>
+</DIV>
+<DIV>
+<H4 CLASS="word-hdr">
+<A NAME="pgfId=327256">
+ </A>
+&quot;tlb-sets&quot;</H4>
+<P CLASS="word-def">
+<A NAME="pgfId=327257">
+ </A>
+Standard property, encoded as with <EM CLASS="word">
+encode-int</EM>
+, that represents the number of TLB sets.</P>
+<UL>
+<LI CLASS="Note">
+<A NAME="pgfId=337923">
+ </A>
+The number of sets is related to, but not the same as, the number of &quot;ways of associativity&quot;. Specifically:</LI>
+</UL>
+<P CLASS="Note-Body">
+<A NAME="pgfId=337933">
+ </A>
+	tlb-sets * number-of-ways = tlb-size </P>
+<P CLASS="Note-Body">
+<A NAME="pgfId=337926">
+ </A>
+For a fully-associative TLB, tlb-sets = 1.</P>
+<P CLASS="Note-Body">
+<A NAME="pgfId=342793">
+ </A>
+For a direct-mapped TLB, 	tlb-sets = tlb-size.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="4Heading">
+<A NAME="pgfId=326940">
+ </A>
+5.2.1.2
+Internal (L1) Cache Properties</H3>
+<P CLASS="Body">
+<A NAME="pgfId=326941">
+ </A>
+The ARM architecture defines a Harvard-style cache architecture. All of the ARM cache instructions act upon a cache &quot;block&quot; (also referred to as a cache &quot;line&quot;). The internal (also referred to as &quot;L1&quot;) caches of ARM processors are represented in the Open Firmware device tree by the following properties contained under <EM CLASS="OFTerm">
+&quot;cpu&quot;</EM>
+ nodes.</P>
+<DIV>
+<H4 CLASS="word-hdr">
+<A NAME="pgfId=326942">
+ </A>
+&quot;write-buffer-size&quot;</H4>
+<P CLASS="word-def">
+<A NAME="pgfId=337954">
+ </A>
+Standard property, encoded as with <EM CLASS="word">
+encode-int</EM>
+, that represents the maximum number of bytes in the write buffer (e.g. 16).</P>
+<P CLASS="word-def">
+<A NAME="pgfId=337955">
+ </A>
+If there is no write buffer, the value <EM CLASS="Emphasis">
+shall</EM>
+ be 0.</P>
+</DIV>
+<DIV>
+<H4 CLASS="word-hdr">
+<A NAME="pgfId=326950">
+ </A>
+&quot;d-cache-size&quot;</H4>
+<P CLASS="word-def">
+<A NAME="pgfId=326951">
+ </A>
+Standard property, encoded as with <EM CLASS="word">
+encode-int</EM>
+, that represents the size of the internal data cache in bytes (e.g. 16384).</P>
+</DIV>
+<DIV>
+<H4 CLASS="word-hdr">
+<A NAME="pgfId=337973">
+ </A>
+&quot;d-cache-block-size&quot;</H4>
+<P CLASS="word-def">
+<A NAME="pgfId=337974">
+ </A>
+Standard property, encoded as with <EM CLASS="word">
+encode-int</EM>
+, that represents the size of a data cache block size, in bytes (e.g. 32).</P>
+</DIV>
+<DIV>
+<H4 CLASS="word-hdr">
+<A NAME="pgfId=326952">
+ </A>
+&quot;d-cache-sets&quot;</H4>
+<P CLASS="word-def">
+<A NAME="pgfId=326953">
+ </A>
+Standard property, encoded as with <EM CLASS="word">
+encode-int</EM>
+, that represents the number of data cache sets.</P>
+<UL>
+<LI CLASS="Note">
+<A NAME="pgfId=337993">
+ </A>
+The number of sets is related to, but not the same as, the number of &quot;ways of associativity&quot;. Specifically:</LI>
+</UL>
+<P CLASS="Note-Body">
+<A NAME="pgfId=337997">
+ </A>
+	d-cache-sets * number-of-ways * d-cache-block-size = d-cache-size </P>
+<P CLASS="Note-Body">
+<A NAME="pgfId=338010">
+ </A>
+For a fully-associative data cache, d-cache-sets = 1.</P>
+<P CLASS="Note-Body">
+<A NAME="pgfId=342796">
+ </A>
+For a direct-mapped data cache, 	d-cache-sets = d-cache-size / d-cache-block-size</P>
+</DIV>
+<DIV>
+<H4 CLASS="word-hdr">
+<A NAME="pgfId=337959">
+ </A>
+&quot;i-cache-size&quot;</H4>
+<P CLASS="word-def">
+<A NAME="pgfId=337960">
+ </A>
+Standard property, encoded as with <EM CLASS="word">
+encode-int</EM>
+, that represents the size of the instruction cache in bytes (e.g. 16384).</P>
+</DIV>
+<DIV>
+<H4 CLASS="word-hdr">
+<A NAME="pgfId=338033">
+ </A>
+&quot;i-cache-block-size&quot;</H4>
+<P CLASS="word-def">
+<A NAME="pgfId=338034">
+ </A>
+Standard property, encoded as with <EM CLASS="word">
+encode-int</EM>
+, that represents the size of an instruction cache block in bytes (e.g. 32).</P>
+</DIV>
+<DIV>
+<H4 CLASS="word-hdr">
+<A NAME="pgfId=337961">
+ </A>
+&quot;i-cache-sets&quot;</H4>
+<P CLASS="word-def">
+<A NAME="pgfId=337962">
+ </A>
+Standard property, encoded as with <EM CLASS="word">
+encode-int</EM>
+, that represents number of instruction cache sets.</P>
+<UL>
+<LI CLASS="Note">
+<A NAME="pgfId=338063">
+ </A>
+The number of sets is related to, but not the same as, the number of &quot;ways of associativity&quot;. Specifically:</LI>
+</UL>
+<P CLASS="Note-Body">
+<A NAME="pgfId=338064">
+ </A>
+	i-cache-sets * number-of-ways * i-cache-block-size = i-cache-size </P>
+<P CLASS="Note-Body">
+<A NAME="pgfId=338065">
+ </A>
+For a fully-associative instruction cache, i-cache-sets = 1.</P>
+<P CLASS="Note-Body">
+<A NAME="pgfId=342799">
+ </A>
+For a direct-mapped data cache, 	i-cache-sets = i-cache-size / i-cache-block-size</P>
+<P CLASS="Body">
+<A NAME="pgfId=338084">
+ </A>
+TBD: Do we need to report which kinds of flush and clean instructions are supported?</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="3Heading">
+<A NAME="pgfId=338073">
+ </A>
+5.2.2
+<EM CLASS="OFTerm">
+&quot;/cpus/cpu&quot;</EM>
+ Node Methods</H3>
+<DIV>
+<H4 CLASS="word-hdr">
+<A NAME="pgfId=338074">
+ </A>
+open</H4>
+<P CLASS="word-def">
+<A NAME="pgfId=338095">
+ </A>
+Standard method that prepares this device for subsequent use.</P>
+</DIV>
+<DIV>
+<H4 CLASS="word-hdr">
+<A NAME="pgfId=338094">
+ </A>
+close</H4>
+<P CLASS="word-def">
+<A NAME="pgfId=338096">
+ </A>
+Standard method that restores a previously-opened device to its &quot;not in use&quot; state.</P>
+</DIV>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="2Heading">
+<A NAME="pgfId=338097">
+ </A>
+5.3
+<EM CLASS="OFTerm">
+&quot;/chosen&quot;</EM>
+ Node</H2>
+<P CLASS="FirstBody">
+<A NAME="pgfId=338098">
+ </A>
+In addition to the standard properties defined for this node by <A HREF="#69242" CLASS="XRef">
+[1]</A>
+, this binding defines the following property.</P>
+<DIV>
+<H4 CLASS="word-hdr">
+<A NAME="pgfId=338102">
+ </A>
+&quot;cpu&quot;</H4>
+<P CLASS="word-def">
+<A NAME="pgfId=338111">
+ </A>
+Standard property, encoded as with <EM CLASS="word">
+encode-int</EM>
+, that represents the ihandle of an instance of the <EM CLASS="OFTerm">
+&quot;cpu&quot;</EM>
+ node corresponding to the CPU on which the firmware is executing.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="2Heading">
+<A NAME="pgfId=338078">
+ </A>
+5.4
+Memory Management Unit</H2>
+<DIV>
+<H3 CLASS="3Heading">
+<A NAME="pgfId=338080">
+ </A>
+<A NAME="34579">
+ </A>
+5.4.1
+Memory Management Unit Properties</H3>
+<P CLASS="FirstBody">
+<A NAME="pgfId=338081">
+ </A>
+To aid a client in &quot;taking over&quot; the translation mechanism while still enabling interaction with Open Firmware (via the client interface), the client needs to know the granularity of the virtual address space and what translations have been established by Open Firmware. In addition to the standard properties listed in Section 3.6.5 of <A HREF="#69242" CLASS="XRef">
+[1]</A>
+, the following standard properties <EM CLASS="Emphasis">
+shall</EM>
+ exist within the package to which the <EM CLASS="OFTerm">
+&quot;mmu&quot;</EM>
+ property of the <EM CLASS="OFTerm">
+/chosen</EM>
+ package refers.</P>
+<DIV>
+<H4 CLASS="word-hdr">
+<A NAME="pgfId=338260">
+ </A>
+&quot;page-size&quot;</H4>
+<P CLASS="word-def">
+<A NAME="pgfId=338261">
+ </A>
+Standard property, encoded as with <EM CLASS="word">
+encode-int</EM>
+, that specifies the number of bytes in the smallest mappable region of virtual address space.</P>
+<P CLASS="word-def">
+<A NAME="pgfId=338264">
+ </A>
+The value of this property shall be 4096 (decimal).</P>
+</DIV>
+<DIV>
+<H4 CLASS="word-hdr">
+<A NAME="pgfId=328180">
+ </A>
+&quot;translations&quot;</H4>
+<P CLASS="word-def">
+<A NAME="pgfId=328181">
+ </A>
+This property, consisting of sets of translations, defines the currently active translations that have been established by Open Firmware (e.g. using <EM CLASS="word">
+map</EM>
+). Each set has the following format:</P>
+<P CLASS="word-def">
+<A NAME="pgfId=328182">
+ </A>
+	<EM CLASS="string">
+( virt size phys mode )</EM>
+</P>
+<P CLASS="word-def">
+<A NAME="pgfId=328183">
+ </A>
+Each value is encoded as with <EM CLASS="word">
+encode-int</EM>
+.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="3Heading">
+<A NAME="pgfId=338573">
+ </A>
+5.4.2
+Memory Management Unit Methods</H3>
+<P CLASS="FirstBody">
+<A NAME="pgfId=338575">
+ </A>
+There are no additional methods required beyond those specified in Section 3.6.5 of <A HREF="#69242" CLASS="XRef">
+[1]</A>
+.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="2Heading">
+<A NAME="pgfId=328174">
+ </A>
+5.5
+Ancillary (L2, L3 ....) Cache Node Properties</H2>
+<P CLASS="Body">
+<A NAME="pgfId=326960">
+ </A>
+Some systems might include secondary (L2) or tertiary (L3), etc. cache(s). They can be implemented as either Harvard-style or unified. Unlike the L1 properties, that are contained within the <EM CLASS="OFTerm">
+&quot;cpu&quot;</EM>
+ nodes, the properties of ancillary caches are contained within other device tree nodes.</P>
+<P CLASS="Body">
+<A NAME="pgfId=343006">
+ </A>
+The following properties define the characteristics of such ancillary caches. These properties shall be contained as a child node of one of the CPU nodes; this is to allow path-name access to the node. All <EM CLASS="OFTerm">
+&quot;cpu&quot;</EM>
+ nodes that share the same ancillary cache (including the cpu node under which the ancillary cache node is contained) shall contain an <EM CLASS="OFTerm">
+&quot;l2-cache&quot;</EM>
+ property whose value is the <EM CLASS="Emphasis">
+phandle</EM>
+ of that ancillary cache node.</P>
+<UL>
+<LI CLASS="Note">
+<A NAME="pgfId=343007">
+ </A>
+The <EM CLASS="OFTerm">
+&quot;l2-cache&quot;</EM>
+ property <EM CLASS="Emphasis">
+shall</EM>
+ be used in one level of the cache hierarchy to represent the next level. The device node for a subsequent level <EM CLASS="Emphasis">
+shall</EM>
+ appear as a child of one of the caches in the hierarchy to allow path-name traversal.</LI>
+</UL>
+<DIV>
+<H4 CLASS="word-hdr">
+<A NAME="pgfId=326963">
+ </A>
+&quot;device_type&quot;</H4>
+<P CLASS="word-def">
+<A NAME="pgfId=326964">
+ </A>
+Open Firmware Standard property; the device_type of ancillary cache nodes shall be <EM CLASS="OFTerm">
+&quot;cache&quot;</EM>
+.</P>
+</DIV>
+<DIV>
+<H4 CLASS="word-hdr">
+<A NAME="pgfId=326965">
+ </A>
+&quot;cache-unified&quot;</H4>
+<P CLASS="word-def">
+<A NAME="pgfId=326966">
+ </A>
+This property, if present, indicates that the cache at this node has a unified organization. Absence of this property indicates that the caches at this node are implemented as separate instruction and data caches.</P>
+</DIV>
+<DIV>
+<H4 CLASS="word-hdr">
+<A NAME="pgfId=326967">
+ </A>
+&quot;i-cache-size&quot;</H4>
+<P CLASS="word-def">
+<A NAME="pgfId=326968">
+ </A>
+Standard property, encoded as with <EM CLASS="word">
+encode-int</EM>
+, that represents the total size (in bytes) of the instruction cache at this node.</P>
+</DIV>
+<DIV>
+<H4 CLASS="word-hdr">
+<A NAME="pgfId=326969">
+ </A>
+&quot;i-cache-sets&quot;</H4>
+<P CLASS="word-def">
+<A NAME="pgfId=326970">
+ </A>
+Standard property, encoded as with <EM CLASS="word">
+encode-int</EM>
+, that represents number of associativity sets of the instruction cache at this node. A value of 1 signifies that the instruction cache is fully associative.</P>
+</DIV>
+<DIV>
+<H4 CLASS="word-hdr">
+<A NAME="pgfId=326971">
+ </A>
+&quot;d-cache-size&quot;</H4>
+<P CLASS="word-def">
+<A NAME="pgfId=326972">
+ </A>
+Standard property, encoded as with <EM CLASS="word">
+encode-int</EM>
+, that represents the total size (in bytes) of the data cache at this node.</P>
+</DIV>
+<DIV>
+<H4 CLASS="word-hdr">
+<A NAME="pgfId=326973">
+ </A>
+&quot;d-cache-sets&quot;</H4>
+<P CLASS="word-def">
+<A NAME="pgfId=326974">
+ </A>
+Standard property, encoded as with <EM CLASS="word">
+encode-int</EM>
+, that represents number of associativity sets of the instruction cache at this node. A value of 1 signifies that the instruction cache is fully associative.</P>
+</DIV>
+<DIV>
+<H4 CLASS="word-hdr">
+<A NAME="pgfId=326975">
+ </A>
+&quot;l2-cache&quot;</H4>
+<P CLASS="word-def">
+<A NAME="pgfId=326976">
+ </A>
+Standard property, encoded as with <EM CLASS="word">
+encode-int</EM>
+, that represents the next level of cache in the memory hierarchy.</P>
+<P CLASS="word-def">
+<A NAME="pgfId=326977">
+ </A>
+Absence of this property indicates that no further levels of cache are present. If present, its value is the phandle of the device node that represents the cache at the next level.</P>
+</DIV>
+<DIV>
+<H4 CLASS="word-hdr">
+<A NAME="pgfId=334888">
+ </A>
+&quot;i-cache-line-size&quot;</H4>
+<P CLASS="word-def">
+<A NAME="pgfId=334889">
+ </A>
+Standard property, encoded as with encode-int, that represents the internal instruction cache's line size, in bytes, if different than its block size.</P>
+</DIV>
+<DIV>
+<H4 CLASS="word-hdr">
+<A NAME="pgfId=334890">
+ </A>
+&quot;d-cache-line-size&quot;</H4>
+<P CLASS="word-def">
+<A NAME="pgfId=334891">
+ </A>
+Standard property, encoded as with encode-int, that represents the internal data cache's line size, in bytes, if different than its block size.</P>
+<UL>
+<LI CLASS="Note">
+<A NAME="pgfId=334892">
+ </A>
+If this is a unified cache, the corresponding i- and d- sizes must be equal.</LI>
+</UL>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="1Heading">
+<A NAME="pgfId=326986">
+ </A>
+6.
+Client Interface Requirements</H2>
+<P CLASS="Body">
+<A NAME="pgfId=326987">
+ </A>
+An ARM Open Firmware implementation shall implement a client interface (as defined in Chapter 6 of <A HREF="#69242" CLASS="XRef">
+[1]</A>
+) according to the specifications contained within this section.</P>
+</DIV>
+<DIV>
+<H2 CLASS="2Heading">
+<A NAME="pgfId=341010">
+ </A>
+<A NAME="29255">
+ </A>
+6.1
+Client Program Loading</H2>
+<DIV>
+<H3 CLASS="3Heading">
+<A NAME="pgfId=341003">
+ </A>
+6.1.1
+Load Address</H3>
+<P CLASS="Body">
+<A NAME="pgfId=341004">
+ </A>
+The default load address is 0xF0000000, the value of <EM CLASS="word">
+load-base</EM>
+. Client programs are assumed to be designed to be loaded at 0xF0000000.</P>
+<P CLASS="Body">
+<A NAME="pgfId=342901">
+ </A>
+Prior to the first execution of <EM CLASS="word">
+load</EM>
+, the firmware <EM CLASS="Emphasis">
+shall</EM>
+ allocate and map at least 6 MB of physical memory at this address, unless the hardware configuration of the system makes this impossible. In that case, the firmware <EM CLASS="Emphasis">
+shall</EM>
+ map as much memory as practical.</P>
+<UL>
+<LI CLASS="Note">
+<A NAME="pgfId=343756">
+ </A>
+As described in <A HREF="#27149" CLASS="XRef">
+Section 6.1.2</A>
+, for most load formats, once a loaded program has been prepared for execution, any memory in the load area that is not actually consumed by the loaded image is then unmapped and released to the available list.</LI>
+</UL>
+</DIV>
+<DIV>
+<H3 CLASS="3Heading">
+<A NAME="pgfId=341016">
+ </A>
+<A NAME="27149">
+ </A>
+6.1.2
+Client Program Header</H3>
+<P CLASS="Body">
+<A NAME="pgfId=341019">
+ </A>
+An Open Firmware implementation <EM CLASS="Emphasis">
+shall</EM>
+ recognize the sequence of eight quadlets described below as a valid client program header (as used by the <EM CLASS="word">
+load</EM>
+ User Interface command in the core specification) if the <EM CLASS="OFTerm">
+a_midmag</EM>
+ quadlet contains the specified values. The offsets given below are from the beginning of the loaded image. </P>
+<TABLE>
+<TR>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeadCtr">
+<A NAME="pgfId=343471">
+ </A>
+Offset</P>
+</TH>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=343473">
+ </A>
+Name</P>
+</TH>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=343475">
+ </A>
+Endianess</P>
+</TH>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=343477">
+ </A>
+Contents</P>
+</TH>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="Normal">
+<A NAME="pgfId=341034">
+ </A>
+0</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="Normal">
+<A NAME="pgfId=341036">
+ </A>
+<EM CLASS="OFTerm">
+a_midmag</EM>
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="Normal">
+<A NAME="pgfId=342842">
+ </A>
+Big</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="Normal">
+<A NAME="pgfId=341038">
+ </A>
+0x008F010B</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="Normal">
+<A NAME="pgfId=341040">
+ </A>
+4</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="Normal">
+<A NAME="pgfId=341042">
+ </A>
+<EM CLASS="OFTerm">
+a_text</EM>
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="Normal">
+<A NAME="pgfId=342844">
+ </A>
+Little</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="Normal">
+<A NAME="pgfId=342391">
+ </A>
+The length in bytes of the header plus the text segment in both the file and the execution image.</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="Normal">
+<A NAME="pgfId=341046">
+ </A>
+8</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="Normal">
+<A NAME="pgfId=341048">
+ </A>
+<EM CLASS="OFTerm">
+a_data</EM>
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="Normal">
+<A NAME="pgfId=342846">
+ </A>
+Little</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="Normal">
+<A NAME="pgfId=342398">
+ </A>
+The length in bytes of the data segment in both the file and the execution image</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="Normal">
+<A NAME="pgfId=341052">
+ </A>
+12</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="Normal">
+<A NAME="pgfId=341054">
+ </A>
+<EM CLASS="OFTerm">
+a_bss</EM>
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="Normal">
+<A NAME="pgfId=342848">
+ </A>
+Little</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="Normal">
+<A NAME="pgfId=342405">
+ </A>
+The length in bytes of the bss segment in the execution image. The bss segment is not stored in the file, because its initial contents are always zero.</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="Normal">
+<A NAME="pgfId=341058">
+ </A>
+16</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="Normal">
+<A NAME="pgfId=341060">
+ </A>
+<EM CLASS="OFTerm">
+a_sym</EM>
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="Normal">
+<A NAME="pgfId=342850">
+ </A>
+Little</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="Normal">
+<A NAME="pgfId=342882">
+ </A>
+The length in bytes of the symbols &quot;section&quot; of the file. (The symbol table in the execution image consists of two &quot;sections&quot;, one for the symbols and a second for the strings.<A HREF="#39128" CLASS="XRef"><sup>1</sup></A>
+)<EM CLASS="OFTerm">
+</EM>
+</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="Normal">
+<A NAME="pgfId=341064">
+ </A>
+20</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="Normal">
+<A NAME="pgfId=341066">
+ </A>
+<EM CLASS="OFTerm">
+a_entry</EM>
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="Normal">
+<A NAME="pgfId=342852">
+ </A>
+Little</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="Normal">
+<A NAME="pgfId=342439">
+ </A>
+The virtual address at which program execution is to begin.</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="Normal">
+<A NAME="pgfId=341070">
+ </A>
+24</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="Normal">
+<A NAME="pgfId=341072">
+ </A>
+<EM CLASS="OFTerm">
+a_trsize</EM>
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="Normal">
+<A NAME="pgfId=342854">
+ </A>
+Little</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="Normal">
+<A NAME="pgfId=341074">
+ </A>
+The size of the text relocation table. Used only for object files. Contains 0 for executable files.</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="Normal">
+<A NAME="pgfId=341076">
+ </A>
+28</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="Normal">
+<A NAME="pgfId=341078">
+ </A>
+<EM CLASS="OFTerm">
+a_drsize</EM>
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="Normal">
+<A NAME="pgfId=342856">
+ </A>
+Little</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="Normal">
+<A NAME="pgfId=341080">
+ </A>
+The size of the data relocation table. Used only for object files. Contains 0 for executable files.</P>
+</TD>
+</TR>
+</TABLE>
+<P CLASS="Body">
+<A NAME="pgfId=341081">
+ </A>
+The program image immediately follows the header. After recognizing this header, load <EM CLASS="Emphasis">
+shall</EM>
+:</P>
+<UL>
+<LI CLASS="Bullet">
+<A NAME="pgfId=341328">
+ </A>
+Synchronize the instruction and data caches from <EM CLASS="word">
+load-base</EM>
+ to <EM CLASS="word">
+load-base</EM>
+ + <EM CLASS="OFTerm">
+a_text</EM>
+ + <EM CLASS="OFTerm">
+a_data</EM>
+ + 0x20,</LI>
+<LI CLASS="Bullet">
+<A NAME="pgfId=341320">
+ </A>
+Move the symbol &quot;section&quot; and string &quot;section&quot; of the symbol table from <EM CLASS="word">
+load-base</EM>
+ + <EM CLASS="OFTerm">
+a_text</EM>
+ + <EM CLASS="OFTerm">
+a_data</EM>
+ + 0x20 to <EM CLASS="word">
+load-base</EM>
+ + <EM CLASS="OFTerm">
+a_text</EM>
+ + <EM CLASS="OFTerm">
+a_data</EM>
+ + <EM CLASS="OFTerm">
+a_bss</EM>
+ + 0x20. </LI>
+<LI CLASS="Bullet">
+<A NAME="pgfId=341355">
+ </A>
+Zero <EM CLASS="OFTerm">
+a_bss</EM>
+ bytes of memory beginning at <EM CLASS="word">
+load-base</EM>
+ + <EM CLASS="OFTerm">
+a_text</EM>
+ + <EM CLASS="OFTerm">
+a_data</EM>
+ + 0x20,</LI>
+<LI CLASS="Bullet">
+<A NAME="pgfId=341356">
+ </A>
+Release and unmap the physical memory from <EM CLASS="word">
+load-base</EM>
+ + <EM CLASS="OFTerm">
+a_text</EM>
+ + <EM CLASS="OFTerm">
+a_data</EM>
+ + <EM CLASS="OFTerm">
+a_bss</EM>
+ + <EM CLASS="OFTerm">
+a_sym</EM>
+ + <EM CLASS="OFTerm">
+string_size<A HREF="#pgfId=341367" CLASS="footnote"><sup>1</sup></A>
+</EM>
+ + 0x20 (i.e. from the end of the prepared client program memory image) to the end of the load area. (The goal of this step is to have the <EM CLASS="OFTerm">
+&quot;available&quot;</EM>
+ properties in the <EM CLASS="OFTerm">
+/memory</EM>
+ and <EM CLASS="OFTerm">
+/mmu</EM>
+ nodes accurately reflect the memory actually consumed by the client program prepared image.)</LI>
+<LI CLASS="Bullet">
+<A NAME="pgfId=342898">
+ </A>
+Set the <EM CLASS="word">
+pc</EM>
+ in the <EM CLASS="Emphasis">
+saved-program-state</EM>
+ to <EM CLASS="OFTerm">
+a_entry</EM>
+.</LI>
+<LI CLASS="Bullet">
+<A NAME="pgfId=342899">
+ </A>
+Set the remaining elements of the <EM CLASS="Emphasis">
+saved-program-state</EM>
+ to their initial values.</LI>
+<LI CLASS="Note">
+<A NAME="pgfId=342900">
+ </A>
+The above header is that used by NetBSD <A HREF="#34750" CLASS="XRef">
+[3]</A>
+.</LI>
+</UL>
+<P CLASS="Body">
+<A NAME="pgfId=343484">
+ </A>
+If the <EM CLASS="OFTerm">
+a_midmag</EM>
+ quadlet does not contain the specified value, the behavior of the Open Firmware <EM CLASS="word">
+load</EM>
+ command with respect to client program recognition is as follows:</P>
+<UL>
+<LI CLASS="Bullet">
+<A NAME="pgfId=343498">
+ </A>
+If the file is in Forth source format [i.e. the file begins with the characters &quot;\ &quot; (0x5C, 0x20)], the file <EM CLASS="Emphasis">
+shall</EM>
+ be interpreted as with &quot;<EM CLASS="word">
+load-base file-size @ evaluate</EM>
+&quot;, or</LI>
+<LI CLASS="Bullet">
+<A NAME="pgfId=343502">
+ </A>
+If the file is FCode [i.e. the file begins with the start1 FCode token (0xF1)], the file <EM CLASS="Emphasis">
+shall</EM>
+ be evaluated as with &quot;<EM CLASS="word">
+load-base 1 byte-load</EM>
+&quot;, or</LI>
+<LI CLASS="Bullet">
+<A NAME="pgfId=343495">
+ </A>
+If the file contains another format that an implementation chooses to support, the file should be processed in an appropriate implementation-dependent manner, or </LI>
+<LI CLASS="Bullet">
+<A NAME="pgfId=343496">
+ </A>
+If the file format is still not recognized, the image <EM CLASS="Emphasis">
+shall</EM>
+ be treated as a raw binary image whose entry point is <EM CLASS="word">
+load-base</EM>
+.</LI>
+</UL>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="2Heading">
+<A NAME="pgfId=341087">
+ </A>
+6.2
+Initial Program State</H2>
+<P CLASS="Body">
+<A NAME="pgfId=341088">
+ </A>
+This section defines the &quot;initial program state&quot;, the execution environment that exists when the first machine instruction of a client program begins execution. Many aspects of the &quot;initial program state&quot; are established by <EM CLASS="word">
+init-program</EM>
+, which sets the saved-program-state so that subsequent execution of <EM CLASS="word">
+go</EM>
+ will begin execution of the client program with the specified environment.</P>
+<DIV>
+<H3 CLASS="3Heading">
+<A NAME="pgfId=341089">
+ </A>
+<A NAME="40120">
+ </A>
+6.2.1
+Initial Register Values</H3>
+<P CLASS="Body">
+<A NAME="pgfId=341168">
+ </A>
+Upon entry to the client program, the following registers <EM CLASS="Emphasis">
+shall</EM>
+ contain the following values:</P>
+<TABLE>
+<TR>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=341092">
+ </A>
+Register(s)</P>
+</TH>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=341094">
+ </A>
+         Value</P>
+</TH>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<H6 CLASS="CmdCell">
+<A NAME="pgfId=341096">
+ </A>
+pc</H6>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=341098">
+ </A>
+Entry point of loaded program.</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<H6 CLASS="CmdCell">
+<A NAME="pgfId=341100">
+ </A>
+psr</H6>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=341102">
+ </A>
+Condition code values unspecified</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<H6 CLASS="CmdCell">
+<A NAME="pgfId=341112">
+ </A>
+</H6>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=341114">
+ </A>
+I = 0 = interrupts enabled</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<H6 CLASS="CmdCell">
+<A NAME="pgfId=341116">
+ </A>
+</H6>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=341118">
+ </A>
+F = enabled (if and only if the firmware is using fast interrupts)</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<H6 CLASS="CmdCell">
+<A NAME="pgfId=341120">
+ </A>
+</H6>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=341122">
+ </A>
+T = 0, if present</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<H6 CLASS="CmdCell">
+<A NAME="pgfId=341124">
+ </A>
+</H6>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=341126">
+ </A>
+M0 - M4 = SVC32 mode = 0x13</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<H6 CLASS="CmdCell">
+<A NAME="pgfId=341128">
+ </A>
+sp</H6>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=341133">
+ </A>
+See <A HREF="#27292" CLASS="XRef">
+See Section 6.2.2</A>
+</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<H6 CLASS="CmdCell">
+<A NAME="pgfId=341135">
+ </A>
+r0</H6>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=341140">
+ </A>
+See <A HREF="#19091" CLASS="XRef">
+See Section 6.2.3</A>
+</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<H6 CLASS="CmdCell">
+<A NAME="pgfId=341142">
+ </A>
+r1,r2</H6>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=341147">
+ </A>
+See <A HREF="#13831" CLASS="XRef">
+See Section 6.2.4</A>
+</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<H6 CLASS="CmdCell">
+<A NAME="pgfId=341149">
+ </A>
+r2</H6>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=341151">
+ </A>
+0</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<H6 CLASS="CmdCell">
+<A NAME="pgfId=341153">
+ </A>
+r3</H6>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=341155">
+ </A>
+Reserved for platform binding</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<H6 CLASS="CmdCell">
+<A NAME="pgfId=341157">
+ </A>
+r4</H6>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=341159">
+ </A>
+Reserved for platform binding</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=341161">
+ </A>
+Other user mode registers</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=341163">
+ </A>
+0</P>
+</TD>
+</TR>
+</TABLE>
+</DIV>
+<DIV>
+<H3 CLASS="3Heading">
+<A NAME="pgfId=341170">
+ </A>
+<A NAME="27292">
+ </A>
+6.2.2
+Initial Stack</H3>
+<P CLASS="Body">
+<A NAME="pgfId=341171">
+ </A>
+Client programs shall be invoked with a valid stack pointer (<EM CLASS="word">
+sp</EM>
+) with at least 4K bytes of memory available for stack growth. The stack pointer shall be 4-byte aligned.</P>
+</DIV>
+<DIV>
+<H3 CLASS="3Heading">
+<A NAME="pgfId=326988">
+ </A>
+<A NAME="19091">
+ </A>
+6.2.3
+Client Interface Calling Convention</H3>
+<P CLASS="Body">
+<A NAME="pgfId=334330">
+ </A>
+To invoke a client interface service, a client program:</P>
+<UL>
+<LI CLASS="Bullet">
+<A NAME="pgfId=341237">
+ </A>
+Constructs a client interface argument array as specified in <A HREF="#69242" CLASS="XRef">
+[1]</A>
+,</LI>
+<LI CLASS="Bullet">
+<A NAME="pgfId=341242">
+ </A>
+Places the array's address in <EM CLASS="word">
+r0</EM>
+, and</LI>
+<LI CLASS="Bullet">
+<A NAME="pgfId=341243">
+ </A>
+Transfers control to the client interface handler, with the return address in <EM CLASS="word">
+r14</EM>
+.</LI>
+</UL>
+<P CLASS="cBullet">
+<A NAME="pgfId=341244">
+ </A>
+A typical way of accomplishing this is:</P>
+<P CLASS="cBullet">
+<A NAME="pgfId=342809">
+ </A>
+<EM CLASS="OFTerm">
+\ First set r1 to Client Interface Handler entry point address, then:</EM>
+</P>
+<P CLASS="cBullet">
+<A NAME="pgfId=342810">
+ </A>
+<EM CLASS="OFTerm">
+mov   r14, pc  \ Establish return address pointer</EM>
+</P>
+<P CLASS="cBullet">
+<A NAME="pgfId=342811">
+ </A>
+<EM CLASS="OFTerm">
+mov   pc,  r1  \ Load pc with CIF Handler entry point</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=334470">
+ </A>
+The client interface handler <EM CLASS="Emphasis">
+shall</EM>
+ use various CPU registers as described in the following table. The term &quot;preserved&quot; below means that the register <EM CLASS="Emphasis">
+shall</EM>
+ have the same value when returning as it did when the client interface service was invoked. </P>
+<TABLE BORDER="1">
+<TR>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=341188">
+ </A>
+Register(s)</P>
+</TH>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=341190">
+ </A>
+      Value</P>
+</TH>
+</TR>
+<TR>
+<TD ROWSPAN="2" COLSPAN="1">
+<H6 CLASS="CmdCell">
+<A NAME="pgfId=341192">
+ </A>
+r0</H6>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=341194">
+ </A>
+Argument array address on client interface entry.</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=341198">
+ </A>
+Result value (<EM CLASS="word">
+true</EM>
+ or <EM CLASS="word">
+false</EM>
+) on client interface return.</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<H6 CLASS="CmdCell">
+<A NAME="pgfId=341200">
+ </A>
+r1-r3</H6>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=341202">
+ </A>
+Scratch registers; potentially destroyed.</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<H6 CLASS="CmdCell">
+<A NAME="pgfId=341204">
+ </A>
+r4-r12</H6>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=341206">
+ </A>
+Preserved.</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<H6 CLASS="CmdCell">
+<A NAME="pgfId=341208">
+ </A>
+r13</H6>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=341210">
+ </A>
+Stack pointer; preserved. Need not point to a valid stack upon entry. Consequently, a client program need not create a valid stack prior to calling the client interface handler.</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<H6 CLASS="CmdCell">
+<A NAME="pgfId=341212">
+ </A>
+r14</H6>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=341214">
+ </A>
+Contains return address and is potentially destroyed.</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<H6 CLASS="CmdCell">
+<A NAME="pgfId=341216">
+ </A>
+psr</H6>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=341218">
+ </A>
+Condition codes potentially destroyed; other fields preserved.</P>
+</TD>
+</TR>
+</TABLE>
+</DIV>
+<DIV>
+<H3 CLASS="3Heading">
+<A NAME="pgfId=341227">
+ </A>
+<A NAME="13831">
+ </A>
+6.2.4
+Client Program Arguments</H3>
+<P CLASS="Body">
+<A NAME="pgfId=341228">
+ </A>
+The calling program may pass to the client an array of bytes of arbitrary content; if this array is present, its address and length shall be passed in registers <EM CLASS="word">
+r1</EM>
+ and <EM CLASS="word">
+r2</EM>
+, respectively. For programs booted directly by Open Firmware, the length of this array is zero. Secondary boot programs may use this argument array to pass information to the programs that they boot.</P>
+<UL>
+<LI CLASS="Note">
+<A NAME="pgfId=341229">
+ </A>
+The Open Firmware standard makes no provision for specifying such an array or its contents. Therefore, in the absence of implementation-dependent extensions, a client program executed directly from an Open Firmware implementation will not be passed such an array. However, intermediate boot programs that simulate or propagate the Open Firmware client interface to the programs that they load can provide such an array for their clients.</LI>
+<LI CLASS="Note">
+<A NAME="pgfId=341230">
+ </A>
+<EM CLASS="OFTerm">
+boot</EM>
+ command line arguments, typically consisting of the name of a file to be loaded by a secondary boot program followed by flags selecting various secondary boot and operating system options, are provided to client programs via the <EM CLASS="OFTerm">
+&quot;bootargs&quot;</EM>
+ and <EM CLASS="OFTerm">
+&quot;bootpath&quot;</EM>
+ properties of the <EM CLASS="OFTerm">
+&quot;/chosen&quot;</EM>
+ node.</LI>
+</UL>
+</DIV>
+<DIV>
+<H3 CLASS="3Heading">
+<A NAME="pgfId=341399">
+ </A>
+6.2.5
+Trap table</H3>
+<P CLASS="Body">
+<A NAME="pgfId=343320">
+ </A>
+In this section, <EM CLASS="Emphasis">
+save-state-and-interact</EM>
+ means to save the CPU state to the extent possible, display (if possible) a message indicating that a trap occurred, and return control to the Open Firmware user interface if it is present.</P>
+<P CLASS="Body">
+<A NAME="pgfId=343459">
+ </A>
+A client program that installs its own trap table entries but wishes to continue using Open Firmware debugging services should preserve the Open Firmware trap table entries for any traps that the client program does not explicitly need to handle.</P>
+<P CLASS="Body">
+<A NAME="pgfId=343321">
+ </A>
+Open Firmware <EM CLASS="Emphasis">
+shall</EM>
+ use the following format for its trap table.</P>
+<TABLE>
+<TR>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeadCtr">
+<A NAME="pgfId=343329">
+ </A>
+</P>
+</TH>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeadCtr">
+<A NAME="pgfId=343348">
+ </A>
+Trap Table</P>
+</TH>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<H6 CLASS="CellBodyRight">
+<A NAME="pgfId=343333">
+ </A>
+0</H6>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<H6 CLASS="CmdCell">
+<A NAME="pgfId=343335">
+ </A>
+ldr pc, [pc, #56]</H6>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<H6 CLASS="CellBodyRight">
+<A NAME="pgfId=343337">
+ </A>
+4</H6>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<H6 CLASS="CmdCell">
+<A NAME="pgfId=343352">
+ </A>
+ldr pc, [pc, #56]</H6>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<H6 CLASS="CellBodyRight">
+<A NAME="pgfId=343341">
+ </A>
+8</H6>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=343343">
+ </A>
+</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<H6 CLASS="CellBodyRight">
+<A NAME="pgfId=343356">
+ </A>
+12</H6>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=343358">
+ </A>
+</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<H6 CLASS="CellBodyRight">
+<A NAME="pgfId=343368">
+ </A>
+...</H6>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=343370">
+ </A>
+</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<H6 CLASS="CellBodyRight">
+<A NAME="pgfId=343372">
+ </A>
+64</H6>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=343374">
+ </A>
+&amp; handler for Exception 0</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<H6 CLASS="CellBodyRight">
+<A NAME="pgfId=343376">
+ </A>
+68</H6>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=343378">
+ </A>
+&amp; handler for Exception 1</P>
+</TD>
+</TR>
+</TABLE>
+<UL>
+<LI CLASS="Note">
+<A NAME="pgfId=343322">
+ </A>
+The specification of a definite trap table format makes it easy for client programs to determine the addresses of the firmware's individual trap handlers. This is useful for client programs that wish to share the responsibility for handling traps with Open Firmware.</LI>
+</UL>
+<P CLASS="Body">
+<A NAME="pgfId=343175">
+ </A>
+Typical Open Firmware trap responses are as follows: </P>
+<TABLE BORDER="1">
+<TR>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=343394">
+ </A>
+Trap Type</P>
+</TH>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=343396">
+ </A>
+Response</P>
+</TH>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=343398">
+ </A>
+Reset (in ROM)</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=343400">
+ </A>
+Restart Open Firmware.</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=343402">
+ </A>
+External timer interrupt</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=343404">
+ </A>
+Implement <EM CLASS="word">
+alarm</EM>
+, <EM CLASS="word">
+get-msecs</EM>
+ and perhaps <EM CLASS="word">
+ms</EM>
+.</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=343421">
+ </A>
+Other external interrupts</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=343423">
+ </A>
+<EM CLASS="Emphasis">
+save-state-and-interact</EM>
+ (Typically Open Firmware runs with these other interrupts disabled.)</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=343428">
+ </A>
+Undefined instruction</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=343430">
+ </A>
+Breakpoints.</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=343435">
+ </A>
+Fast interrupt</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=343437">
+ </A>
+<EM CLASS="Emphasis">
+save-state-and-interact</EM>
+ (but may perform other functions needed for a specific hardware design).</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=343445">
+ </A>
+Data access exception</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=343447">
+ </A>
+<EM CLASS="Emphasis">
+save-state-and-interact</EM>
+</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=343451">
+ </A>
+Address exception</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=343453">
+ </A>
+<EM CLASS="Emphasis">
+save-state-and-interact</EM>
+</P>
+</TD>
+</TR>
+</TABLE>
+</DIV>
+<DIV>
+<H3 CLASS="3Heading">
+<A NAME="pgfId=341444">
+ </A>
+6.2.6
+Virtual address space and memory allocation</H3>
+<P CLASS="Body">
+<A NAME="pgfId=341445">
+ </A>
+When a client program begins execution, an Open Firmware implementation's use of any virtual address space outside of the ranges 0x0000.0000-0x0000.1000 and 0xF700.0000-0xF7FF.FFFF <EM CLASS="Emphasis">
+shall</EM>
+ have ceased, except for the virtual address space and associated memory where the client program is loaded (see <A HREF="#27149" CLASS="XRef">
+Section 6.1.2</A>
+). Subsequently, the Open Firmware implementation <EM CLASS="Emphasis">
+shall</EM>
+ not allocate virtual address space outside those ranges, except as explicitly requested by a client program.</P>
+<UL>
+<LI CLASS="Note">
+<A NAME="pgfId=341448">
+ </A>
+By inspecting the value of the <EM CLASS="OFTerm">
+&quot;available&quot;</EM>
+ and <EM CLASS="OFTerm">
+&quot;existing&quot;</EM>
+ properties in an MMU package, if such a package exists, a client program can determine precisely which ranges of virtual address space the firmware is using. For maximum portability, a client program ought not depend on the availability of any particular &quot;hardcoded&quot; virtual address.</LI>
+</UL>
+</DIV>
+<DIV>
+<H3 CLASS="3Heading">
+<A NAME="pgfId=327048">
+ </A>
+6.2.7
+Memory Cache(s)</H3>
+<P CLASS="Body">
+<A NAME="pgfId=342518">
+ </A>
+The caches of the processor shall be enabled when the client program is invoked. (As specified by <A HREF="#27149" CLASS="XRef">
+Section 6.1.2</A>
+, the I-cache must be consistent with the D-cache for all memory areas occupied by the client program.)</P>
+</DIV>
+<DIV>
+<H3 CLASS="3Heading">
+<A NAME="pgfId=342521">
+ </A>
+<A NAME="27751">
+ </A>
+6.2.8
+Interrupt Sharing</H3>
+<P CLASS="Body">
+<A NAME="pgfId=327053">
+ </A>
+This section describes techniques for handling interrupts when client programs are making active use of Open Firmware client services and device drivers.</P>
+<P CLASS="Body">
+<A NAME="pgfId=343149">
+ </A>
+Typically, Open Firmware implementations attempt to minimize their use of interrupts, for simplicity and robustness. On many systems, the only Open Firmware feature that demands the use of interrupts is <EM CLASS="word">
+alarm</EM>
+. On some systems, the implementation of <EM CLASS="word">
+get-msecs</EM>
+ and sometimes <EM CLASS="word">
+ms</EM>
+ also depend upon interrupts. (For the Digital Network Architecture, interrupts are required for all three of those functions, although <EM CLASS="word">
+ms</EM>
+ can be implemented reasonably well without interrupts, at least for short durations.)</P>
+<P CLASS="Body">
+<A NAME="pgfId=343153">
+ </A>
+The only interrupt that is needed for these functions is a periodic timer tick. Relatively few high-level firmware functions depend upon those low-level interrupt-dependent functions. Typically, <EM CLASS="word">
+alarm</EM>
+ is used to poll the console input device (usually a keyboard or a serial port) periodically to check for a &quot;break&quot; sequence indicating the user's desire to interrupt the current firmware activity. If the firmware is not receiving a periodic timer tick interrupt, alarm handlers will not be called. The typical result is that the user will be unable to interrupt arbitrary firmware activity from the console input device, but the firmware will be otherwise functional.</P>
+<P CLASS="Body">
+<A NAME="pgfId=343154">
+ </A>
+The most common uses for <EM CLASS="word">
+get-msecs</EM>
+ are network protocol time-outs and device driver time-outs to prevent indefinite &quot;hangs&quot; when waiting for a device to respond. In many cases, when the network is responsive and devices are working correctly, a <EM CLASS="word">
+get-msecs</EM>
+ failure (usually caused by the firmware not receiving a periodic timer tick interrupt such that <EM CLASS="word">
+get-msecs</EM>
+ always returns the same value) may not have any noticeable effect on overall firmware operation.</P>
+<P CLASS="Body">
+<A NAME="pgfId=343155">
+ </A>
+Nevertheless, even though most device drivers make scarce use of <EM CLASS="word">
+alarm</EM>
+ and <EM CLASS="word">
+get-msecs</EM>
+, it cannot be guaranteed that a particular driver will not require them for a critical function. Therefore, it is prudent for client programs that use Open Firmware services, particularly those that involve I/O, to preserve the delivery of timer tick interrupts to the firmware.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="2Heading">
+<A NAME="pgfId=343603">
+ </A>
+6.3
+Additional Client Interface Services</H2>
+<P CLASS="FirstBody">
+<A NAME="pgfId=343604">
+ </A>
+In addition to the list of client interface methods defined in Section 6.3.2 of <A HREF="#69242" CLASS="XRef">
+[1]</A>
+, the <EM CLASS="OFTerm">
+/openprom/client-services</EM>
+ node <EM CLASS="Emphasis">
+shall</EM>
+ contain the following methods.</P>
+<DIV>
+<H5 CLASS="client-hdr">
+<A NAME="pgfId=343623">
+ </A>
+restart</H5>
+<P CLASS="client-arg">
+<A NAME="pgfId=343624">
+ </A>
+IN: [string] command</P>
+<P CLASS="client-arg">
+<A NAME="pgfId=343625">
+ </A>
+OUT: &lt;doesn't return&gt;</P>
+<P CLASS="client-def">
+<A NAME="pgfId=343626">
+ </A>
+Resets the system (as with the command <EM CLASS="word">
+reset-all</EM>
+) in such a way that the firmware, during its subsequent startup sequence, will execute <EM CLASS="Emphasis">
+command</EM>
+ instead of performing the automatic default boot process. <EM CLASS="Emphasis">
+command</EM>
+ is a string containing a sequence of user interface commands.</P>
+<P CLASS="client-def">
+<A NAME="pgfId=343631">
+ </A>
+The permissible length of <EM CLASS="Emphasis">
+command</EM>
+ may depend upon the availability of system resources such as free space in the NVRAM that the firmware uses for storing configuration variables.  In the absense of the exhaustion of such resources for other uses, the firmware shall be able to accept <EM CLASS="Emphasis">
+command</EM>
+ strings of at least 80 characters.</P>
+</DIV>
+<DIV>
+<H5 CLASS="client-hdr">
+<A NAME="pgfId=343636">
+ </A>
+call-static-method</H5>
+<P CLASS="client-arg">
+<A NAME="pgfId=343683">
+ </A>
+IN: [string] method, phandle, stack-arg1, ..., stack-argP</P>
+<P CLASS="client-arg">
+<A NAME="pgfId=343684">
+ </A>
+OUT: catch-result, stack-result1, ..., stack-resultQ</P>
+<P CLASS="client-def">
+<A NAME="pgfId=343685">
+ </A>
+<EM CLASS="ServiceName">
+call-method</EM>
+ invokes the static device method named <EM CLASS="Emphasis">
+method</EM>
+ in the package identified by <EM CLASS="Emphasis">
+phandle</EM>
+. The <EM CLASS="Emphasis">
+N_args</EM>
+-2 arguments associated with <EM CLASS="Emphasis">
+method</EM>
+, <EM CLASS="Emphasis">
+stack-arg1, ..., stack-argP</EM>
+, are pushed onto the Forth data stack, with <EM CLASS="Emphasis">
+stack-arg1</EM>
+ on top of the stack, and <EM CLASS="Emphasis">
+method</EM>
+ is executed as with the User Interface method <EM CLASS="ForthWord">
+$call-method</EM>
+, guarded by <EM CLASS="ForthWord">
+catch</EM>
+.</P>
+<P CLASS="client-def">
+<A NAME="pgfId=343688">
+ </A>
+The result returned by <EM CLASS="ForthWord">
+catch</EM>
+ is returned in <EM CLASS="Emphasis">
+catch-result</EM>
+. If <EM CLASS="Emphasis">
+catch-result</EM>
+ is non-zero (meaning that an error occurred during the execution of <EM CLASS="Emphasis">
+method</EM>
+), the depth of the Forth data stack is restored to its depth prior to the execution of <EM CLASS="ServiceName">
+call-method</EM>
+. The values of the elements of the returned values portion of the argument array are undefined.</P>
+<P CLASS="client-def">
+<A NAME="pgfId=343690">
+ </A>
+If <EM CLASS="Emphasis">
+catch-result</EM>
+ is zero, <EM CLASS="ServiceName">
+call-method</EM>
+ pops up to <EM CLASS="Emphasis">
+K_returns</EM>
+-1 items from the Forth data stack into the returned values portion of the argument array, with <EM CLASS="Emphasis">
+stack_result1</EM>
+ corresponding to the top of the stack.</P>
+<P CLASS="client-def">
+<A NAME="pgfId=343691">
+ </A>
+<EM CLASS="Emphasis">
+N_args</EM>
+ and <EM CLASS="Emphasis">
+K_returns</EM>
+ are stored in the argument array, and may be different for different calls to <EM CLASS="ServiceName">
+call-method</EM>
+. If the number of items <EM CLASS="Emphasis">
+J</EM>
+ left on the Forth data stack as a result of the execution of <EM CLASS="Emphasis">
+method</EM>
+ is less than <EM CLASS="Emphasis">
+K_returns</EM>
+-1, only <EM CLASS="Emphasis">
+stack_result1</EM>
+ ... <EM CLASS="Emphasis">
+stack_resultJ</EM>
+ are modified; other elements of the returned values portion of the argument array are unaffected. If <EM CLASS="Emphasis">
+J</EM>
+ is greater than <EM CLASS="Emphasis">
+K_returns</EM>
+-1, (<EM CLASS="Emphasis">
+J - Q</EM>
+) additional items are popped from the Forth data stack after setting <EM CLASS="Emphasis">
+stack_result1</EM>
+ ... <EM CLASS="Emphasis">
+stack_resultQ</EM>
+, so that, in all cases, the execution of <EM CLASS="ServiceName">
+call-method</EM>
+ results in no net change to the depth of the Forth data stack.</P>
+<P CLASS="client-def">
+<A NAME="pgfId=343692">
+ </A>
+A compliant Open Firmware implementation must allow at least six <EM CLASS="Emphasis">
+stack_arg</EM>
+ and six <EM CLASS="Emphasis">
+stack_result</EM>
+ items.</P>
+<P CLASS="client-def">
+<A NAME="pgfId=343640">
+ </A>
+The behavior of <EM CLASS="OFTerm">
+call-static-method</EM>
+ is undefined if <EM CLASS="Emphasis">
+method</EM>
+ is not a static method.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="2Heading">
+<A NAME="pgfId=342183">
+ </A>
+<A NAME="27525">
+ </A>
+6.4
+Client Callbacks</H2>
+<P CLASS="Body">
+<A NAME="pgfId=342531">
+ </A>
+If a client program takes control of timer interrupts or memory management, but needs to continue using Open Firmware client services thereafter, the client program must register a callback routine that supplies services that the firmware can use to perform the functions that the client program has subsumed.</P>
+<P CLASS="Body">
+<A NAME="pgfId=342250">
+ </A>
+The following subsections define those callback services.</P>
+<P CLASS="Body">
+<A NAME="pgfId=342252">
+ </A>
+The callback mechanism must operate in accordance with the specifications for <EM CLASS="OFTerm">
+callback</EM>
+, <EM CLASS="OFTerm">
+$callback</EM>
+, and <EM CLASS="OFTerm">
+set-callback</EM>
+ in [1]. In particular, the callback mechanism operates in a fashion very similar to the client interface handler, except in the other direction (the firmware calls the client, instead of the client calling the firmware). The client program first invokes the <EM CLASS="OFTerm">
+set-callback</EM>
+ client service to inform the firmware of the address of the callback handler routine. Subsequently, the firmware constructs an &quot;argument array&quot; and calls the callback handler routine, passing the address of the argument array as an argument (in <EM CLASS="word">
+r0</EM>
+ for the ARM processor).</P>
+<P CLASS="Body">
+<A NAME="pgfId=342207">
+ </A>
+Several of the callback services defined below refer to the system-dependent MMU page size. For the ARM processor, that page size is 4096 bytes. Under some circumstances, the ARM MMU can deal with finer granularity than one page; specifically, it can apply a different protection to each of the four 1K sub-pages of a page. The MMU-related callback services defined below do not support sub-page granularity; all operations are performed in units of one page.</P>
+<DIV>
+<H3 CLASS="3Heading">
+<A NAME="pgfId=327057">
+ </A>
+<A NAME="11616">
+ </A>
+6.4.1
+Virtual Address Translation Assist Callbacks</H3>
+<DIV>
+<H5 CLASS="client-hdr">
+<A NAME="pgfId=327059">
+ </A>
+map</H5>
+<P CLASS="client-arg">
+<A NAME="pgfId=327060">
+ </A>
+IN: [address] phys, [address] virt, size, mode</P>
+<P CLASS="client-arg">
+<A NAME="pgfId=327061">
+ </A>
+OUT: throw-code, error</P>
+<P CLASS="client-def">
+<A NAME="pgfId=338282">
+ </A>
+This callback service creates an address translation associating the region of virtual address space of size <EM CLASS="Emphasis">
+size</EM>
+ beginning at the virtual address <EM CLASS="Emphasis">
+virt</EM>
+ with the region of physical address of the same size beginning at the physical address <EM CLASS="Emphasis">
+phys</EM>
+.</P>
+<P CLASS="client-def">
+<A NAME="pgfId=338316">
+ </A>
+<EM CLASS="Emphasis">
+mode</EM>
+ specifies the values for the &quot;AP&quot; fields and the &quot;C&quot; and &quot;B&quot; bits of a page table entry. A page table entry is encoded as follows:</P>
+<P CLASS="client-def">
+<A NAME="pgfId=338338">
+ </A>
+0000.0000.0000.0000.0000.AP0d.ddd0.CB00</P>
+<P CLASS="client-def">
+<A NAME="pgfId=338339">
+ </A>
+where:</P>
+<TABLE>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=338351">
+ </A>
+AP</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=338353">
+ </A>
+Encodes the access permissions</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=338355">
+ </A>
+dddd</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=338357">
+ </A>
+Is the domain number</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=338359">
+ </A>
+C</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=338361">
+ </A>
+Is the cacheable bit</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=338411">
+ </A>
+B</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=338413">
+ </A>
+Is the bufferable bit</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=338415">
+ </A>
+0</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=338417">
+ </A>
+Is a bit whose value is 0</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=338449">
+ </A>
+. </P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=338451">
+ </A>
+Is punctuation used to delimit groups of 4 bits</P>
+</TD>
+</TR>
+</TABLE>
+<P CLASS="client-def">
+<A NAME="pgfId=338293">
+ </A>
+The fields and bits shown above are in accordance with the ARM Memory Management Unit Architecture definition in <A HREF="#35715" CLASS="XRef">
+[2]</A>
+.</P>
+<P CLASS="client-def">
+<A NAME="pgfId=338296">
+ </A>
+The indicated access permissions apply to the entire range specified by the arguments to <EM CLASS="word">
+map</EM>
+, which implies that the implementation of <EM CLASS="word">
+map</EM>
+ must propagate the AP bits into each of the AP[0-3] sub-page access permission fields of any second-level descriptors that are used to accomplish the translation.</P>
+<P CLASS="client-def">
+<A NAME="pgfId=338493">
+ </A>
+The firmware must specify domain 0 for any <EM CLASS="Emphasis">
+mode</EM>
+ arguments that it generates internally, and must preserve the domain field unchanged for any <EM CLASS="Emphasis">
+mode</EM>
+ value that it receives as the return value from an invocation of the <EM CLASS="word">
+translate</EM>
+ callback and subsequently passes as an argument to the <EM CLASS="word">
+map</EM>
+ callback.</P>
+<P CLASS="client-def">
+<A NAME="pgfId=338556">
+ </A>
+The implementation of <EM CLASS="word">
+map</EM>
+ may use any combination of first-level and second-level descriptors to accomplish its function, subject to the restriction that it must faithfully establish the requested translation without changing any other extant translations that are outside the requested range.</P>
+<P CLASS="client-def">
+<A NAME="pgfId=338135">
+ </A>
+The <EM CLASS="Emphasis">
+virt</EM>
+, <EM CLASS="Emphasis">
+phys</EM>
+, and <EM CLASS="Emphasis">
+size</EM>
+ arguments that the caller passes to this service must be multiples of the system-dependent MMU page size.</P>
+<P CLASS="client-def">
+<A NAME="pgfId=338140">
+ </A>
+The return value <EM CLASS="Emphasis">
+error</EM>
+ <EM CLASS="Emphasis">
+shall</EM>
+ be zero if the operation succeeded, or a system-specific non-zero error code otherwise.</P>
+</DIV>
+<DIV>
+<H5 CLASS="client-hdr">
+<A NAME="pgfId=327063">
+ </A>
+unmap</H5>
+<P CLASS="client-arg">
+<A NAME="pgfId=327064">
+ </A>
+IN: [address] virt, size</P>
+<P CLASS="client-arg">
+<A NAME="pgfId=327065">
+ </A>
+OUT: throw-code</P>
+<P CLASS="client-def">
+<A NAME="pgfId=338179">
+ </A>
+This callback service removes any address translation currently associated with the region of virtual address space of size <EM CLASS="Emphasis">
+size</EM>
+ beginning at the virtual address <EM CLASS="Emphasis">
+virt</EM>
+. Typically, this involves setting the address translation for that virtual region to a system-specific &quot;invalid&quot; or &quot;not mapped&quot; state.</P>
+<P CLASS="client-def">
+<A NAME="pgfId=338184">
+ </A>
+The <EM CLASS="Emphasis">
+virt</EM>
+ and <EM CLASS="Emphasis">
+size</EM>
+ arguments that the caller passes to this service must be multiples of the system-dependent MMU page size.</P>
+</DIV>
+<DIV>
+<H5 CLASS="client-hdr">
+<A NAME="pgfId=327067">
+ </A>
+translate</H5>
+<P CLASS="client-arg">
+<A NAME="pgfId=327068">
+ </A>
+IN: [address] virt</P>
+<P CLASS="client-arg">
+<A NAME="pgfId=327069">
+ </A>
+OUT: throw-code, error, [address] phys, mode</P>
+<P CLASS="client-def">
+<A NAME="pgfId=338259">
+ </A>
+This callback service returns information about the address translation currently associated with the virtual address <EM CLASS="Emphasis">
+virt</EM>
+. If there is currently no valid translation for that virtual address, the <EM CLASS="Emphasis">
+error</EM>
+ return value <EM CLASS="Emphasis">
+shall</EM>
+ be a system-specific non-zero error code and the number of return values (as indicated by the N_returns cell of the argument array) <EM CLASS="Emphasis">
+shall</EM>
+ be two. Otherwise, <EM CLASS="Emphasis">
+error</EM>
+ <EM CLASS="Emphasis">
+shall</EM>
+ be zero, the number of return values <EM CLASS="Emphasis">
+shall</EM>
+ be four, <EM CLASS="Emphasis">
+phys</EM>
+ <EM CLASS="Emphasis">
+shall</EM>
+ be the physical address to which <EM CLASS="Emphasis">
+virt</EM>
+ is translated, and <EM CLASS="Emphasis">
+mode</EM>
+ <EM CLASS="Emphasis">
+shall</EM>
+ specify the values for the &quot;AP&quot; fields and the &quot;C&quot; and &quot;B&quot; bits of a page table entry as described above under <EM CLASS="word">
+map</EM>
+.</P>
+<P CLASS="client-def">
+<A NAME="pgfId=338516">
+ </A>
+The value returned in the <EM CLASS="Emphasis">
+mode</EM>
+ result <EM CLASS="Emphasis">
+shall</EM>
+ reflect the domain signified by the first-level descriptor and the access permissions signified by either the section descriptor (if the virtual address is mapped by a section descriptor) or the first sub-page (AP0) (if the virtual address is mapped by a second-level descriptor).</P>
+<P CLASS="client-def">
+<A NAME="pgfId=338522">
+ </A>
+The firmware must specify domain 0 for any <EM CLASS="Emphasis">
+mode</EM>
+ arguments that it generates internally, and must preserve the domain field unchanged for any <EM CLASS="Emphasis">
+mode</EM>
+ value that it receives as the return value from an invocation of the <EM CLASS="word">
+translate</EM>
+ callback and subsequently passes as an argument to the <EM CLASS="word">
+map</EM>
+ callback.</P>
+<P CLASS="client-def">
+<A NAME="pgfId=338221">
+ </A>
+The <EM CLASS="Emphasis">
+virt</EM>
+ argument that the caller passes to this service must be a multiple of the system-dependent MMU page size.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="3Heading">
+<A NAME="pgfId=338580">
+ </A>
+6.4.2
+Claim and Release Callbacks</H3>
+<DIV>
+<H5 CLASS="client-hdr">
+<A NAME="pgfId=338583">
+ </A>
+claim-phys</H5>
+<P CLASS="client-arg">
+<A NAME="pgfId=338584">
+ </A>
+IN: [address] min_addr, [address] max_addr, size, align</P>
+<P CLASS="client-arg">
+<A NAME="pgfId=338585">
+ </A>
+OUT: throw-code, error, [address] phys_addr</P>
+<P CLASS="client-def">
+<A NAME="pgfId=338586">
+ </A>
+This callback service allocates consecutive pages of physical RAM subject to the following constraints:</P>
+<P CLASS="Bullet2">
+<A NAME="pgfId=338588">
+ </A>
+The beginning address of the first page <EM CLASS="Emphasis">
+shall</EM>
+ be (using unsigned comparison) greater than or equal to <EM CLASS="Emphasis">
+min_addr</EM>
+ and less than or equal to <EM CLASS="Emphasis">
+max_addr</EM>
+.</P>
+<P CLASS="Bullet2">
+<A NAME="pgfId=338591">
+ </A>
+The beginning address of the first page <EM CLASS="Emphasis">
+shall</EM>
+ be a multiple of the value of <EM CLASS="Emphasis">
+align</EM>
+. The value of <EM CLASS="Emphasis">
+align</EM>
+ passed to this callback must be a multiple of the system-dependent MMU page size.</P>
+<P CLASS="Bullet2">
+<A NAME="pgfId=338595">
+ </A>
+The size of the region <EM CLASS="Emphasis">
+shall</EM>
+ be <EM CLASS="Emphasis">
+size</EM>
+ bytes. The value of <EM CLASS="Emphasis">
+size</EM>
+ passed to this callback must be a multiple of the system-dependent MMU page size.</P>
+<P CLASS="Bullet2">
+<A NAME="pgfId=338599">
+ </A>
+The pages <EM CLASS="Emphasis">
+shall</EM>
+ be at consecutive addresses.</P>
+<P CLASS="Bullet2">
+<A NAME="pgfId=338600">
+ </A>
+The region <EM CLASS="Emphasis">
+shall</EM>
+ not span the boundary between the maximum unsigned number and zero.</P>
+<P CLASS="client-def">
+<A NAME="pgfId=338602">
+ </A>
+If the allocation fails, the <EM CLASS="Emphasis">
+error</EM>
+ return value <EM CLASS="Emphasis">
+shall</EM>
+ be a system-dependent non-zero error code and the number of return values (as indicated by the N_returns cell of the argument array) <EM CLASS="Emphasis">
+shall</EM>
+ be two. Otherwise, <EM CLASS="Emphasis">
+error</EM>
+ <EM CLASS="Emphasis">
+shall</EM>
+ be zero, the number of return values <EM CLASS="Emphasis">
+shall</EM>
+ be three, and <EM CLASS="Emphasis">
+phys_addr</EM>
+ <EM CLASS="Emphasis">
+shall</EM>
+ be the physical address of the beginning of the first allocated page.</P>
+<P CLASS="client-def">
+<A NAME="pgfId=338608">
+ </A>
+There are three general possibilities for the <EM CLASS="Emphasis">
+min_addr</EM>
+ and <EM CLASS="Emphasis">
+max_addr</EM>
+ arguments:</P>
+<P CLASS="Bullet2">
+<A NAME="pgfId=338610">
+ </A>
+<EM CLASS="Emphasis">
+min_addr</EM>
+ = 0, <EM CLASS="Emphasis">
+max_addr</EM>
+ = &lt;maximum unsigned integer&gt;</P>
+<P CLASS="cBullet2">
+<A NAME="pgfId=338611">
+ </A>
+In this case, the firmware places no constraints on the address range of the return value; it is willing to accept any physical memory that meets the alignment constraints. (This is the usual case.)</P>
+<P CLASS="Bullet2">
+<A NAME="pgfId=338615">
+ </A>
+<EM CLASS="Emphasis">
+min_addr</EM>
+ = <EM CLASS="Emphasis">
+max_addr</EM>
+</P>
+<P CLASS="cBullet2">
+<A NAME="pgfId=338617">
+ </A>
+In this case, the firmware is requesting the allocation of a specific range of physical memory. This case is rarely used; typically, when the firmware needs to use a specific page or pages of RAM, it claims that RAM prior to the time that the client program takes control of memory allocation. This callback is used to implement the firmware <EM CLASS="OFTerm">
+&quot;/memory&quot;</EM>
+ node <EM CLASS="word">
+claim</EM>
+ method, and it is possible that a user or program might attempt to claim a specific physical page, so this case is defined. It is of course possible that it may not be possible to satisfy such a request, in which case the callback would return an error code.</P>
+<P CLASS="cBullet2">
+<A NAME="pgfId=338629">
+ </A>
+If <EM CLASS="Emphasis">
+min_addr</EM>
+=<EM CLASS="Emphasis">
+max_addr</EM>
+, they must be multiples of <EM CLASS="Emphasis">
+align</EM>
+, otherwise it would not be possible to simultaneously satisfy both the alignment and range constraints.</P>
+<P CLASS="Bullet2">
+<A NAME="pgfId=339463">
+ </A>
+&lt;otherwise&gt;</P>
+<P CLASS="cBullet2">
+<A NAME="pgfId=338633">
+ </A>
+If <EM CLASS="Emphasis">
+min_addr</EM>
+ and <EM CLASS="Emphasis">
+max_addr</EM>
+ differ, but <EM CLASS="Emphasis">
+min_addr</EM>
+ is not zero or <EM CLASS="Emphasis">
+max_addr</EM>
+ is not the maximum unsigned integer, then the firmware is requesting the allocation of physical memory somewhere within a particular address range. The most common use of this case is for DMA-based I/O devices that cannot access arbitrary addresses. For example, in systems with bus-mastering ISA devices, there is often no way for those devices to supply DMA addresses outside the range 0 to 16 MBytes. Typically, the firmware uses this form of constrained physical allocation only for such cases.</P>
+<P CLASS="cBullet2">
+<A NAME="pgfId=338643">
+ </A>
+Since the definition of this callback service specifies that the constraint applies only to the beginning address of the first page of allocated memory, if the entire allocated range must fall within a certain region, the firmware must be careful to supply a value for <EM CLASS="Emphasis">
+max_addr</EM>
+ such that the value of <EM CLASS="Emphasis">
+max_addr</EM>
+ + <EM CLASS="Emphasis">
+size</EM>
+ does not extend beyond the end of the desired region.</P>
+</DIV>
+<DIV>
+<H5 CLASS="client-hdr">
+<A NAME="pgfId=338650">
+ </A>
+release-phys</H5>
+<P CLASS="client-arg">
+<A NAME="pgfId=338651">
+ </A>
+IN: [address] phys_addr, size</P>
+<P CLASS="client-arg">
+<A NAME="pgfId=338652">
+ </A>
+OUT: throw-code</P>
+<P CLASS="client-def">
+<A NAME="pgfId=338653">
+ </A>
+Free consecutive pages of physical RAM, making it available for later use. The size of the region to be freed is given by <EM CLASS="Emphasis">
+size</EM>
+. The <EM CLASS="Emphasis">
+phys_addr</EM>
+ and <EM CLASS="Emphasis">
+size</EM>
+ arguments passed to this callback must be multiples of the system-dependent MMU page size. The physical RAM within the region to be freed must either have been previously allocated by <EM CLASS="OFTerm">
+claim-phys</EM>
+ or have already been &quot;owned&quot; by the firmware at the time that the client program took control of physical memory allocation.</P>
+</DIV>
+<DIV>
+<H5 CLASS="client-hdr">
+<A NAME="pgfId=338661">
+ </A>
+claim-virt</H5>
+<P CLASS="client-arg">
+<A NAME="pgfId=338662">
+ </A>
+IN: [address] min_addr, [address] max_addr, size, align</P>
+<P CLASS="client-arg">
+<A NAME="pgfId=338663">
+ </A>
+OUT: throw-code, error, [address] virt_addr</P>
+<P CLASS="client-def">
+<A NAME="pgfId=338664">
+ </A>
+This callback service allocates consecutive page frames of virtual address space subject to the following constraints:</P>
+<P CLASS="Bullet2">
+<A NAME="pgfId=338666">
+ </A>
+The beginning address of the first page frame <EM CLASS="Emphasis">
+shall</EM>
+ be (using unsigned comparison) greater than or equal to <EM CLASS="Emphasis">
+min_addr</EM>
+ and less than or equal to <EM CLASS="Emphasis">
+max_addr</EM>
+.</P>
+<P CLASS="Bullet2">
+<A NAME="pgfId=338669">
+ </A>
+The beginning address of the first page frame <EM CLASS="Emphasis">
+shall</EM>
+ be a multiple of the value of <EM CLASS="Emphasis">
+align</EM>
+. The value of <EM CLASS="Emphasis">
+align</EM>
+ passed to this callback must be a multiple of the system-dependent MMU page size.</P>
+<P CLASS="Bullet2">
+<A NAME="pgfId=338673">
+ </A>
+The size of the region <EM CLASS="Emphasis">
+shall</EM>
+ be <EM CLASS="Emphasis">
+size</EM>
+ bytes. The value of <EM CLASS="Emphasis">
+size</EM>
+ passed to this callback must be a multiple of the system-dependent MMU page size.</P>
+<P CLASS="Bullet2">
+<A NAME="pgfId=338677">
+ </A>
+The pages frames <EM CLASS="Emphasis">
+shall</EM>
+ be at consecutive addresses.</P>
+<P CLASS="Bullet2">
+<A NAME="pgfId=338678">
+ </A>
+The region <EM CLASS="Emphasis">
+shall</EM>
+ not span the boundary between the maximum unsigned number and zero.</P>
+<P CLASS="client-def">
+<A NAME="pgfId=338680">
+ </A>
+If the allocation fails, the <EM CLASS="Emphasis">
+error</EM>
+ return value <EM CLASS="Emphasis">
+shall</EM>
+ be a system-dependent non-zero error code and the number of return values (as indicated by the N_returns cell of the argument array) <EM CLASS="Emphasis">
+shall</EM>
+ be two. Otherwise, <EM CLASS="Emphasis">
+error</EM>
+ <EM CLASS="Emphasis">
+shall</EM>
+ be zero, the number of return values <EM CLASS="Emphasis">
+shall</EM>
+ be three, and <EM CLASS="Emphasis">
+virt_addr</EM>
+ <EM CLASS="Emphasis">
+shall</EM>
+ be the virtual address of the beginning of the first allocated page frame.</P>
+<P CLASS="client-def">
+<A NAME="pgfId=338686">
+ </A>
+There are three general possibilities for the <EM CLASS="Emphasis">
+min_addr</EM>
+ and <EM CLASS="Emphasis">
+max_addr</EM>
+ arguments:</P>
+<P CLASS="Bullet2">
+<A NAME="pgfId=338688">
+ </A>
+<EM CLASS="Emphasis">
+min_addr</EM>
+ = 0, <EM CLASS="Emphasis">
+max_addr</EM>
+ = &lt;maximum unsigned integer&gt;</P>
+<P CLASS="cBullet2">
+<A NAME="pgfId=338689">
+ </A>
+In this case, the firmware places no constraints on the address range of the return value; it is willing to accept any physical address that meets the alignment constraints. (This is the usual case.)</P>
+<P CLASS="Bullet2">
+<A NAME="pgfId=338693">
+ </A>
+<EM CLASS="Emphasis">
+min_addr</EM>
+ = <EM CLASS="Emphasis">
+max_addr</EM>
+</P>
+<P CLASS="cBullet2">
+<A NAME="pgfId=338695">
+ </A>
+In this case, the firmware is requesting the allocation of a specific virtual address. This case is rarely used; typically, when the firmware needs to use to a specific virtual address, it claims that virtual address prior to the time that the client program takes control of address allocation. This callback is used to implement the firmware <EM CLASS="OFTerm">
+&quot;/mmu&quot;</EM>
+ node <EM CLASS="word">
+claim</EM>
+ method, and it is possible that a user or program might attempt to claim a specific virtual address, so this case is defined. It is of course possible that it may not be possible to satisfy such a request, in which case the callback would return an error code.</P>
+<P CLASS="cBullet2">
+<A NAME="pgfId=338706">
+ </A>
+If <EM CLASS="Emphasis">
+min_addr</EM>
+=<EM CLASS="Emphasis">
+max_addr</EM>
+, they must be multiples of <EM CLASS="Emphasis">
+align</EM>
+, otherwise it would not be possible to simultaneously satisfy both the alignment and range constraints.</P>
+<P CLASS="Bullet2">
+<A NAME="pgfId=338709">
+ </A>
+&lt;otherwise&gt;</P>
+<P CLASS="cBullet2">
+<A NAME="pgfId=338710">
+ </A>
+If <EM CLASS="Emphasis">
+min_addr</EM>
+ and <EM CLASS="Emphasis">
+max_addr</EM>
+ differ, but <EM CLASS="Emphasis">
+min_addr</EM>
+ is not zero or <EM CLASS="Emphasis">
+max_addr</EM>
+ is not the maximum unsigned integer, then the firmware is requesting the allocation of virtual address space somewhere within a particular address range. The most common use of this case is for DMA-based I/O devices that cannot access arbitrary addresses when used on a system with virtually-addressed DMA. For example, some DMA devices drive some number of high-order address lines to fixed values, so on a virtual-DMA system, the DMA addresses for those devices must be taken from a specific region. Typically, the firmware uses this form of constrained physical allocation only for such cases.</P>
+<P CLASS="cBullet2">
+<A NAME="pgfId=338722">
+ </A>
+Since the definition of this callback service specifies that the constraint applies only to the beginning address of the first page of allocated memory, if the entire allocated range must fall within a certain region, the firmware must be careful to supply a value for <EM CLASS="Emphasis">
+max_addr</EM>
+ such that the value of <EM CLASS="Emphasis">
+max_addr</EM>
+ + <EM CLASS="Emphasis">
+size</EM>
+ does not extend beyond the end of the desired region.</P>
+</DIV>
+<DIV>
+<H5 CLASS="client-hdr">
+<A NAME="pgfId=338729">
+ </A>
+release-virt</H5>
+<P CLASS="client-arg">
+<A NAME="pgfId=338730">
+ </A>
+IN: [address] virt_addr, size</P>
+<P CLASS="client-arg">
+<A NAME="pgfId=338731">
+ </A>
+OUT: throw-code</P>
+<P CLASS="client-def">
+<A NAME="pgfId=338732">
+ </A>
+Free consecutive page frames of virtual address space, making it available for later use. The size of the region to be freed is given by <EM CLASS="Emphasis">
+size</EM>
+. The values <EM CLASS="Emphasis">
+virt_addr</EM>
+ and <EM CLASS="Emphasis">
+size</EM>
+ passed to this callback must be multiples of the system-dependent MMU page size.</P>
+<P CLASS="client-def">
+<A NAME="pgfId=338736">
+ </A>
+The virtual address space within the region to be freed must either have been previously allocated by <EM CLASS="OFTerm">
+claim-virt</EM>
+ or have already been &quot;owned&quot; by the firmware at the time that the client program took control of virtual address space allocation.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="3Heading">
+<A NAME="pgfId=341556">
+ </A>
+6.4.3
+Interrupt Callback</H3>
+<DIV>
+<H5 CLASS="client-hdr">
+<A NAME="pgfId=341558">
+ </A>
+tick</H5>
+<P CLASS="client-arg">
+<A NAME="pgfId=341559">
+ </A>
+IN: [address] intsave</P>
+<P CLASS="client-arg">
+<A NAME="pgfId=341560">
+ </A>
+OUT: throw-code</P>
+<P CLASS="client-def">
+<A NAME="pgfId=342819">
+ </A>
+This callback service notifies the client program each time that the firmware handles a timer tick interrupt, giving the client program a chance to schedule or perform periodic operations based upon that tick.</P>
+<P CLASS="client-def">
+<A NAME="pgfId=342820">
+ </A>
+If the client program has registered a callback handler, the firmware <EM CLASS="Emphasis">
+shall</EM>
+ attempt to invoke the <EM CLASS="OFTerm">
+tick</EM>
+ callback as part of the process of handling a timer tick interrupt. (Open Firmware typically uses timer tick interrupts to implement the <EM CLASS="OFTerm">
+alarm</EM>
+ and <EM CLASS="OFTerm">
+get-msecs</EM>
+ features). If the client program does not implement the <EM CLASS="OFTerm">
+tick</EM>
+ callback, the <EM CLASS="Emphasis">
+throw-code</EM>
+ result will be non-zero (according to the usual semantics of client callbacks), in which case the firmware <EM CLASS="Emphasis">
+shall</EM>
+ proceed with the rest of its timer tick handling process as though the callback had not been attempted.</P>
+<P CLASS="client-def">
+<A NAME="pgfId=341575">
+ </A>
+The firmware <EM CLASS="Emphasis">
+shall</EM>
+ invoke the <EM CLASS="OFTerm">
+tick</EM>
+ callback in IRQ mode with interrupts disabled.</P>
+<P CLASS="client-def">
+<A NAME="pgfId=341577">
+ </A>
+<EM CLASS="Emphasis">
+intsave</EM>
+ is the address of a 260-byte array of memory that is used to pass to and from the client program the values of certain processor registers as they existed just prior to the occurrence of the tick interrupt. The firmware <EM CLASS="Emphasis">
+shall</EM>
+ set the contents of the array as follows, prior to invoking the <EM CLASS="OFTerm">
+tick</EM>
+ callback. Each array entry is a 32-bit little-endian integer representing the saved value of an ARM CPU register. </P>
+<TABLE BORDER="1">
+<TR>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeadCtr">
+<A NAME="pgfId=341987">
+ </A>
+Offset (decimal)</P>
+</TH>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=341947">
+ </A>
+Contents</P>
+</TH>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<H6 CLASS="CellBodyCtr">
+<A NAME="pgfId=341949">
+ </A>
+0</H6>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=341951">
+ </A>
+PSR</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<H6 CLASS="CellBodyCtr">
+<A NAME="pgfId=341953">
+ </A>
+4</H6>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=341955">
+ </A>
+r0</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<H6 CLASS="CellBodyCtr">
+<A NAME="pgfId=341957">
+ </A>
+8</H6>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=341959">
+ </A>
+r1</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<H6 CLASS="CellBodyCtr">
+<A NAME="pgfId=341961">
+ </A>
+12</H6>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=341963">
+ </A>
+r2</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<H6 CLASS="CellBodyCtr">
+<A NAME="pgfId=341965">
+ </A>
+16</H6>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=341967">
+ </A>
+r3</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<H6 CLASS="CellBodyCtr">
+<A NAME="pgfId=342168">
+ </A>
+...</H6>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=342170">
+ </A>
+...</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<H6 CLASS="CellBodyCtr">
+<A NAME="pgfId=341969">
+ </A>
+56</H6>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=341971">
+ </A>
+r13 (SP)</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<H6 CLASS="CellBodyCtr">
+<A NAME="pgfId=341973">
+ </A>
+60</H6>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=341975">
+ </A>
+r14 (LR)</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<H6 CLASS="CellBodyCtr">
+<A NAME="pgfId=341977">
+ </A>
+64</H6>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=341979">
+ </A>
+r15 (PC)</P>
+</TD>
+</TR>
+</TABLE>
+<P CLASS="client-def">
+<A NAME="pgfId=341595">
+ </A>
+For &quot;banked&quot; registers (registers for which the ARM processor has multiple copies for different modes), the saved register values <EM CLASS="Emphasis">
+shall</EM>
+ be for the register set corresponding to the mode indicated in the saved PSR value.</P>
+<P CLASS="client-def">
+<A NAME="pgfId=341599">
+ </A>
+After the <EM CLASS="OFTerm">
+tick</EM>
+ callback returns, the firmware <EM CLASS="Emphasis">
+shall</EM>
+ proceed with the rest of its timer tick handling process, and upon completion <EM CLASS="Emphasis">
+shall</EM>
+ restore the state of the CPU registers to the values contained in the <EM CLASS="Emphasis">
+intsave</EM>
+ array. The client program's <EM CLASS="OFTerm">
+tick</EM>
+ callback handler may alter the contents of <EM CLASS="Emphasis">
+intsave</EM>
+ in order to cause the firmware to restore the register state to a state that differs from the state that existed when the timer tick occurred.</P>
+<P CLASS="client-def">
+<A NAME="pgfId=341606">
+ </A>
+The client program's <EM CLASS="OFTerm">
+tick</EM>
+ callback handler must not enable interrupts during its execution, but may, by modifying the PSR value in the <EM CLASS="Emphasis">
+intsave</EM>
+ array, cause a delayed change in the interrupt enabled/disabled state that will take effect upon completion of the firmware's timer tick handler.</P>
+<P CLASS="client-def">
+<A NAME="pgfId=341611">
+ </A>
+The client program's <EM CLASS="OFTerm">
+tick</EM>
+ callback handler must not invoke any Open Firmware client services during its execution. If Open Firmware client services need to be invoked as a result of timer ticks, the appropriate way to do so is for the client program to use the <EM CLASS="OFTerm">
+tick</EM>
+ callback handler to schedule those activities for execution after the firmware's tick handler completes (typically by modifying the <EM CLASS="Emphasis">
+intsave</EM>
+ array).</P>
+</DIV>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="1Heading">
+<A NAME="pgfId=327072">
+ </A>
+7.
+User Interface Requirements</H2>
+<P CLASS="Body">
+<A NAME="pgfId=327073">
+ </A>
+An implementation of Open Firmware for ARM shall conform to the core requirements as specified in <A HREF="#69242" CLASS="XRef">
+[1]</A>
+ and the following ARM-specific extensions.</P>
+</DIV>
+<DIV>
+<H2 CLASS="2Heading">
+<A NAME="pgfId=327074">
+ </A>
+7.1
+Machine Register Access</H2>
+<P CLASS="Body">
+<A NAME="pgfId=327075">
+ </A>
+The following user interface commands represent ARM registers within the saved program state. Executing the command returns the saved value of the corresponding register. The saved value may be set by preceding the command with to; the actual registers are restored to the saved values when go is executed.</P>
+<P CLASS="Body">
+<A NAME="pgfId=334625">
+ </A>
+The following command displays the ARM CPU's saved program state.</P>
+<P CLASS="Body">
+<A NAME="pgfId=334626">
+ </A>
+<EM CLASS="word">
+.registers</EM>
+</P>
+<P CLASS="word-def">
+<A NAME="pgfId=343574">
+ </A>
+Display <EM CLASS="word">
+r0</EM>
+ through <EM CLASS="word">
+r15</EM>
+ and <EM CLASS="word">
+psr</EM>
+.</P>
+<DIV>
+<H3 CLASS="3Heading">
+<A NAME="pgfId=327076">
+ </A>
+7.1.1
+Integer Registers</H3>
+<DIV>
+<H4 CLASS="word-hdr">
+<A NAME="pgfId=327077">
+ </A>
+<EM CLASS="word">
+psr</EM>
+</H4>
+<P CLASS="word-def">
+<A NAME="pgfId=327078">
+ </A>
+Access saved copy of Program Status Register.</P>
+</DIV>
+<DIV>
+<H4 CLASS="word-hdr">
+<A NAME="pgfId=327088">
+ </A>
+<EM CLASS="word">
+r0</EM>
+ through <EM CLASS="word">
+r15</EM>
+</H4>
+<P CLASS="word-def">
+<A NAME="pgfId=327089">
+ </A>
+Access saved copies of integer registers.</P>
+</DIV>
+<DIV>
+<H4 CLASS="word-hdr">
+<A NAME="pgfId=343594">
+ </A>
+<EM CLASS="word">
+up</EM>
+</H4>
+<P CLASS="word-def">
+<A NAME="pgfId=343595">
+ </A>
+Synonym for <EM CLASS="word">
+r9</EM>
+.</P>
+</DIV>
+<DIV>
+<H4 CLASS="word-hdr">
+<A NAME="pgfId=343582">
+ </A>
+<EM CLASS="word">
+tos</EM>
+</H4>
+<P CLASS="word-def">
+<A NAME="pgfId=343583">
+ </A>
+Synonym for <EM CLASS="word">
+r10</EM>
+.</P>
+</DIV>
+<DIV>
+<H4 CLASS="word-hdr">
+<A NAME="pgfId=343591">
+ </A>
+<EM CLASS="word">
+rp</EM>
+</H4>
+<P CLASS="word-def">
+<A NAME="pgfId=343592">
+ </A>
+Synonym for <EM CLASS="word">
+r11</EM>
+.</P>
+</DIV>
+<DIV>
+<H4 CLASS="word-hdr">
+<A NAME="pgfId=342574">
+ </A>
+<EM CLASS="word">
+ip</EM>
+</H4>
+<P CLASS="word-def">
+<A NAME="pgfId=342575">
+ </A>
+Synonym for <EM CLASS="word">
+r12</EM>
+.</P>
+</DIV>
+<DIV>
+<H4 CLASS="word-hdr">
+<A NAME="pgfId=342576">
+ </A>
+<EM CLASS="word">
+sp</EM>
+</H4>
+<P CLASS="word-def">
+<A NAME="pgfId=342577">
+ </A>
+Synonym for <EM CLASS="word">
+r13</EM>
+.</P>
+</DIV>
+<DIV>
+<H4 CLASS="word-hdr">
+<A NAME="pgfId=342578">
+ </A>
+<EM CLASS="word">
+lr</EM>
+</H4>
+<P CLASS="word-def">
+<A NAME="pgfId=342579">
+ </A>
+Synonym for <EM CLASS="word">
+r14</EM>
+. </P>
+</DIV>
+<DIV>
+<H4 CLASS="word-hdr">
+<A NAME="pgfId=342580">
+ </A>
+<EM CLASS="word">
+pc</EM>
+</H4>
+<P CLASS="word-def">
+<A NAME="pgfId=342581">
+ </A>
+Synonym for <EM CLASS="word">
+r15</EM>
+. </P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="3Heading">
+<A NAME="pgfId=327094">
+ </A>
+7.1.2
+Floating-Point Registers</H3>
+<P CLASS="Body">
+<A NAME="pgfId=327095">
+ </A>
+Implementation of floating point register access is optional.</P>
+<DIV>
+<H4 CLASS="word-hdr">
+<A NAME="pgfId=327096">
+ </A>
+<EM CLASS="word">
+f0</EM>
+ through <EM CLASS="word">
+f7</EM>
+</H4>
+<P CLASS="word-def">
+<A NAME="pgfId=327097">
+ </A>
+Access saved copies of floating point registers.</P>
+</DIV>
+</DIV>
+<DIV>
+<H3 CLASS="3Heading">
+<A NAME="pgfId=340979">
+ </A>
+7.1.3
+SCC Registers</H3>
+<P CLASS="FirstBody">
+<A NAME="pgfId=340980">
+ </A>
+<EM CLASS="Bold">
+TBD</EM>
+</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="2Heading">
+<A NAME="pgfId=340988">
+ </A>
+7.2
+ROM Upgrade Method</H2>
+<P CLASS="FirstBody">
+<A NAME="pgfId=342622">
+ </A>
+The following command is optional.</P>
+<DIV>
+<H3 CLASS="3Heading">
+<A NAME="pgfId=342624">
+ </A>
+7.2.1
+<EM CLASS="OFTerm">
+net-flash ( -- )</EM>
+</H3>
+<P CLASS="FirstBody">
+<A NAME="pgfId=342625">
+ </A>
+Reprograms the firmware from the network.<EM CLASS="Bold">
+</EM>
+</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="2Heading">
+<A NAME="pgfId=342626">
+ </A>
+7.3
+Configuration Variables</H2>
+<P CLASS="Body">
+<A NAME="pgfId=342627">
+ </A>
+There are no ARM-specific configuration variables.</P>
+</DIV>
+</DIV>
+<HR>
+<DIV CLASS="footnotes">
+<DIV CLASS="footnote">
+<P CLASS="Footnote">
+<SPAN CLASS="footnoteNumber">
+1.</SPAN>
+<A NAME="pgfId=341367">
+ </A>
+<EM CLASS="OFTerm">
+string_size</EM>
+<A NAME="39128">
+ </A>
+ is the 32-bit, little-endian value at <EM CLASS="word">
+load-base</EM>
+ + <EM CLASS="OFTerm">
+a_text</EM>
+ + <EM CLASS="OFTerm">
+a_data</EM>
+ + <EM CLASS="OFTerm">
+a_sym</EM>
+ which describes the length in bytes of the string &quot;section&quot; of the symbol table.</P>
+</DIV>
+</DIV>
+</BODY>
+</HTML>

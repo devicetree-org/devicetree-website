@@ -1,0 +1,219 @@
+Date: Mon, 17 Nov 97 10:30:13 -0600
+From: "Richard L. Arndt" <rlarndt@austin.ibm.com>
+Subject: Item #429: Minutes 11 Nov 97 OFWG
+
+P1275 Openboot Working Group Proposal -- Proposal #:429 Ver 1.0
+
+Title:          Minutes 11 Nov 97 OFWG
+
+Author:         Richard L. Arndt
+
+Date:           13 Nov 1997
+
+Ed/Tech:        Administrative
+
+Synopsis:        Minutes of the 11 Nov 1997  Open Firmware Working
+                 Group Meeting Firmworks Mountain View, Ca.
+
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+ 0- Attendees (OFWG)
+   =================
+
+Richard Arndt          IBM         512-838-8502 rlarndt@austin.ibm.com
+Mitch Bradley          Firmworks   650-917-6984 wmb@firmworks.com
+Ron Hochsprung         Apple/      408-974-2661 ron@apple.com
+                       System Arch
+David Kahn             Sun         650-786-6203 dmk@eng.sun.com
+Tarl Neustaedter       Sun         978-442-0346 tarl@east.sun.com
+John Hall              Apple       408-974-6862 jdhall@apple.com
+Chris Bellman          Adaptec     408-945-8600 cbellman@corp.adaptec.com
+
+Randy Leberknight      Motorola    602-438-3275 RandyL@phx.mcd.mot.com
+Mike Perry             Firmworks   650-917-6986 perry@firmworks.com
+Jordan Brown           Sun         310-348-6039 jordan.brown@west.sun.com
+John Rible             Sand Piper  408-458-0399 jrible@sandpipers.com
+                       Technology
+Paul Thomas            Sun         650-786-6388 paul.thomas@eng.sun.com
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+  1- Establish quorum & Voting rights
+     ================================
+        A quorum was declared by the working group chair.
+
+  2- Review Agenda:
+     ==============
+        The agenda was approved with the chair reserving the right to
+        reorder items to accommodate participants.
+
+  3- Approve Minutes of 15 July 1997 Meeting (Item # 422 )
+     =====================================================
+        Approved with the notation of typos.
+
+  4- Future Meetings:
+     ================
+
+     The next meeting scheduled:
+
+        Date                    Host Location
+        ----                    -------------
+
+        10 Feb 1998             Firmworks Mountain View, CA.
+
+        12 May 1998             Firmworks Mountain View, CA.
+
+
+  5- Status of Action Items:
+     =======================
+Item# (See Summary at the end of the minutes for Description etc.)
+        Action:
+ 2      No specific action -- ongoing remains open
+ 4      Closed due to lack of general interest
+ 11     Closed due to lack of general interest
+ 12     Closed due to lack of general interest
+ 27     To be investigated -- remains open
+ 28     Closed due to lack of general interest
+ 30     Closed due to lack of general interest
+ 32     Completed -- Closed
+ 33     Continued -- remains open
+ 34     Completed -- Closed
+ 35     Continued -- remains open
+ 36     Combined with #35 -- Closed
+ 37     Continued -- remains open
+ 38     Item # 428 see discussion below* -- remains open
+ 39     Updates made -- republish to playground -- remains open
+ 40     Continued -- remains open
+
+ S2     Editor presented proposal after some wordsmithing, was authorized
+        to submit "Forth Source & FCode Image Support" as an approved
+        Recommended Practice. -- Closed
+ S4     Closed due to lack of general interest
+ S5     Closed due to lack of general interest
+ S14    Closed due to lack of general interest
+ S17    Closed due to lack of general interest
+
+
+
+  * Item # 428 (which replaces #426) Firewire Binding
+The following changes were recommended to the author who will present
+a revised proposal to the next meeting.
+   a) Power management should be handled with a _parallel_ node, with the
+      unit offset to the CSR registers. This is similar to how superios are
+      handled.
+   b) Keep flat address space.
+   c) Remove phy-b@ and phy-b!, they need not be exposed.
+   d) Remove send-async* and recv-async*, need not be exposed.
+   e) Remove reset flag clearing from get-nodeid.
+   f) Remove get-nodeid and get-speed, add set-address(guid) This will
+      set per-instance values, which are translated and kept up to date
+      by parent.
+   g) Change remote-xxx to remove addr.3 addr.hi.
+   h) rename addr.lo...addr.hi into guid.hi, guid.lo, offset,hi, offset.lo
+   i) Move error codes into separate note at top of section. Refer to 1394.
+   j) Change name of child node to "unit".
+
+  6- New Proposals:
+     ==============
+     Item #424 (which supersedes #423) Boot Reply Packet
+        Approved:  Editor to revise document (Action Item# 41)
+
+     Item #425 Normative fix of the informative "show-lun" method
+        Approved:  Editor of core erata to submit changes (Action Item #42)
+
+
+     Item #427 USB binding
+     =====================
+The following changes were recommended, a subcommittee consisting of:
+David Kahn, Tarl Neustaedter, John Hall, and Jordan Brown was formed to
+rework the conceptual design and post the working draft to playground
+for implementation.
+    a) Delete root hub
+    b) delete device type
+    c) Change combined node creation criteria to DC=0 or =9, and eliminate
+       requirement #4 for hub. This means most devices will qualify as
+       combined nodes. Relocate paragraph to section 3.4.
+
+        7- Action Items Summary:
+           =====================
+
+   |----|------------|------------------------------------------------------|
+   | No.|Who         |Description                                    |Status|
+   |----|------------|-----------------------------------------------|------|
+   |  2 |Editors of  |Update document template and contents per      | Open |
+   |    |Recommended |discussion.                                    |      |
+   |    |Practice    |                                               |      |
+   |    |documents   |                                               |      |
+   |----|------------|-----------------------------------------------|------|
+   |  4 |Greg H.     |Standard properties document.                  |Closed|
+   |    |John H.     |                                               |      |
+   |----|------------|-----------------------------------------------|------|
+   | 11 |Jordan B.   |Reorganize discussion of probing in ISA binding|Closed|
+   |----|------------|-----------------------------------------------|------|
+   | 12 |Jordan B.   |Suggest wording for IRQ 2 vs 9 ISA binding     |Closed|
+   |----|------------|-----------------------------------------------|------|
+   | 27 |Jordan B.   |Propose replacement for #323b (withdrawn)      | Open |
+   |--- |------------|-----------------------------------------------|------|
+   | 28 |Ron H.      |Make a proposal for PCI 'hot plug'.            |Closed|
+   |----|------------|-----------------------------------------------|------|
+   | 30 |Jordan B.   |Make a proposal for a registry for lists of    |Closed|
+   |    |            |supported things.                              |      |
+   |    |            |(e.g.. kybds, network types, etc.)             |      |
+   |----|------------|-----------------------------------------------|------|
+   | 32 |David K.    |Publish Item #404                              |Closed|
+   |----|------------|-----------------------------------------------|------|
+   | 33 |David P.    |Propose display-modes property along with      | Open |
+   |    |Mitch B.    |set & read display modes methods               |      |
+   |----|------------|-----------------------------------------------|------|
+   | 34 |David K.    |Publish Item #410                              |Closed|
+   |----|------------|-----------------------------------------------|------|
+   | 35 |Ron H.      |Create formal PCI-IDE device binding document  | Open |
+   |----|------------|-----------------------------------------------|------|
+   | 36 |Ron H.      |Proposal for correcting the limitations on the |Closed|
+   |    |            |"reg" property entries specified in the PCI    | Dup  |
+   |    |            |binding.                                       | 35   |
+   |--- |------------|-----------------------------------------------|------|
+   | 37 |David P.    |Modify "boilerplate" on VME bus binding.       | Open |
+   |----|------------|-----------------------------------------------|------|
+   | 38 |Tarl N.     |Create a formal 1394 binding                   | Open |
+   |----|------------|-----------------------------------------------|------|
+   | 39 |Richard A.  |Update CHRP source to reflect item #419        | Open |
+   |----|------------|-----------------------------------------------|------|
+   | 40 |Ron H.      |Update PCI  source to reflect item #420        | Open |
+   |----|------------|-----------------------------------------------|------|
+   | 41 |Ron H.      |Update PCI  source to reflect item #424        | New  |
+   |----|------------|-----------------------------------------------|------|
+   | 41 |Ron H.      |Update Core Erata  to reflect item #425        | New  |
+   |----|------------|-----------------------------------------------|------|
+
+
+
+ Subcommittee Action Items:
+   |----|------------|------------------------------------------------------|
+   | S2 |Ron H.      | Update and create v1.1 Forth and FCode Rec    |Closed|
+   |    |            | Practice                                      |      |
+   |----|------------|------------------------------------------------------|
+   | S4 |Richard A.  | Make "shared-bus-master" proposal             |Closed|
+   |    |            | (Multi-initiator SCSI)                        |      |
+   |----|------------|------------------------------------------------------|
+   | S5 |Ron H.      | Make "chording" proposal                      |Closed|
+   |----|------------|------------------------------------------------------|
+   | S14|Jordan B.   | Create a picture to explain sound device      |Closed|
+   |    |            | terminology.                                  |      |
+   |----|------------|------------------------------------------------------|
+   |S17 |Ron H.      |Regenerate a proposal for Mac OS HFS File      |Closed|
+   |    |Bruce R.    |system support.                                |      |
+   |    |Richard A.  |                                               |      |
+   |----|------------|------------------------------------------------------|
+   |S18 |David K.    |Rework proposal #427 for usb binding into a    | New  |
+   |    |Tarl N.     |working draft for implementation               |      |
+   |    |John H.     |                                               |      |
+   |    |Jordon B.   |                                               |      |
+   |----|------------|------------------------------------------------------|
+
+
+
+[ P1275 Item #429 -- Received: Mon Nov 17 08:32:34 PST 1997 ]
+

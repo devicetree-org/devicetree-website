@@ -1,0 +1,135 @@
+Subject: Item #411: Mac HFS support for CHRP
+Date: Tue, 8 Jul 97 13:00:44 -0700
+From: <ron@apple.com>
+
+P1275 Open Firmware Working Group Proposal -- Proposal #411 Ver 1
+
+Title:          MacOS HFS File System Support
+
+Author:         Ron Hochsprung
+
+Date:           7/7/97
+
+Ed/Tech:        Technical
+
+Synopsis:       Add HFS support requirement to CHRP
+
+Doc & Version:  CHRP binding, Revision 1.7
+
+Problem:        MacOS now requires support for HFS
+
+Rationale:
+
+In order to cleanly support Macintosh ROM-in-RAM and Rhapsody booting,
+Apple has determined that support for its HFS file system is now
+required for CHRP platforms.  Some implementations already support a
+subset of the required facilities.  This proposal is meant to specify
+the exact requirements of the HFS implementations.
+
+The basic support of HFS involves locating a file by name in a
+heirarchical scan of a specified volume (partition).  The =
+representation
+of file names to allow extended character set support uses the HTML =
+and
+Apple Single/Double encoding to represent characters unambiguously and
+to represent "illegal" characters (e.g., a space in a MacOS file =
+name).
+
+In addition to locating files by name, the MacOS allows files to be
+located by 'type' and/or 'creator', which are properties of a file =
+that
+are contained within the file's catalog information.  The HFS support
+required by this proposal supports locating a file by its 'type'.
+
+The ROM-in-RAM packaging is planning to use the "bootinfo" mechanism. 
+The bootinfo file will contain the normal bootinfo.txt text =
+information,
+but will also include the ELF-encoded client program and the ROM =
+image. 
+This single file then encapsulates everything necessary to support
+ROM-in-RAM.  A bootinfo file will be required to be in the "blessed"
+folder (usually called "System Folder") of the selected MacOS boot
+volume for that volume to be considered "bootable".  (A folder is
+"blessed" by virtue of containing both a "system" file and a "finder"
+file.)
+
+However, due to internationalization issues, and the ability of users =
+to
+arbitrarily rename their files, locating files by name does not =
+provide
+a "standard" way of locating the bootinfo file.  So, in addition to
+locating a file by name, a special syntax is used to specify a file by
+MacOS "type" and to specify that the "blessed" system folder be used
+instead of the root.  The "blessed" system folder of a volume is
+identified by its unique catalog ID in the boot-blocks of the volume's
+Master Directory Block.
+
+Proposal:
+
+The following changes are proposed in the 1.7 version of the CHRP
+binding.  I use HTML italics (<i>,</i>) and bold (<b>,</b>) to =
+indicate
+the desired typography in the document.
+
+>>> add new table entry for Table 1, page 18, under Any block device:
+
+    <i>device</i>:<i>partition</i>,:????    Mac HFS file system
+
+Note: ???? is TBD, hopefully by meeting time.
+
+>>> replace line 42 of page 56 with:
+
+    =80 MacOS Heirarchical File System
+
+>>> add new section:
+
+    <h4>1.1.1.2 Mac HFS File System Support</h4>
+    
+    A CHRP platform that is to support the MacOS <i>shall</i>
+    support a Mac HFS volume by detecting the HFS partition
+    signature and interposing an HFS file system package.  The
+    complete syntax that <i>shall</i> be supported by this mechanism
+    by an <b>open-dev</b> of an HFS file is as follows:
+    
+    =
+<i>device</i>:[<i>partition</i>],[<i>folder-path</i><i>filename</i>]
+    
+    where <i>device</i> is the device's pathname (e.g.,
+    '/pci/mac-io/scsi/disk@0'), <i>partition</i> is the (decimal)
+    partition number, <i>folder-path</i> is the heirarchical
+    sequence of folder names using '\' as the separator and
+    <i>filename-or-type</i> is the target file's name or type.  For
+    each of the folder,  filename or type components, special
+    characters (e.g., space or '\') are represented by '%<i>nn</i>',
+    where <i>nn</i> are 2 hex digits that are the character's value.
+    
+    If <i>partition</i> is present, then corresponding partition map
+    entry is used to locate the partition.  If the specified
+    partition does not exist or is not a valid HFS partition, the
+    <b>open-dev</b> <i>shall</> fail.  If <i>partition</i> component
+    is absent, the first HFS partition is implied;  if no such
+    partition is found on the device, the <b>open-dev</b>
+    <i>shall</> fail.
+    
+    The <i>folder-path</i> component consists of a sequence of
+    folder (directory) names separated by '\'.  If the first
+    character of <i>folder-path</i> is '\', then the search is done
+    starting from the root of the volume.
+    
+    If the first character of the <i>folder-path</i> is not '\',
+    then the search starts with the "blessed" folder of the volume. 
+    If no "blessed" folder exists for the specified volume
+    (partition), the <b>open-dev</b> call <i>shall</i> fail.
+    
+    The <i>filename-or-type</i> component is either a filename or
+    consists of a ':' followed by 4 (possibly '%<i>nn</i>' encoded)
+    characters that is the file type to be located within the
+    specified folder.  If no such file exists, the <b>open-dev</b>
+    call <i>shall</i> fail.  If multiple files of the given type are
+    found, any one of them may be used.
+
+>>> the OPEN algorithm starting on page 57 is still!! has some errors.
+I plan to clean it up and submit it as another proposal.
+
+[ P1275 Item #411 -- Received: Tue Jul  8 13:01:14 PDT 1997 ]
+

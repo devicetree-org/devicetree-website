@@ -1,0 +1,38 @@
+From: kingman@austin.ibm.com (Kingman)
+Subject: Item #361: CHRP PIC dev: add "reserved-interrupts" property
+Date: Tue, 11 Jun 1996 13:53:37 -0500 (CDT)
+
+P1275 Open Firmware Working Group Proposal -- Proposal #361 Ver <Auth-Vers#>
+
+Title:          Add "reserved-interrupts" property to isa-pic node
+
+Author:         John Kingman
+
+Date:           June 11, 1996
+
+Ed/Tech:        Technical
+
+Synopsis:       use "reserved-interrupts" to indicate unusable interrupts
+
+Doc & Version:  CHRP ISA Interrupt Controller Device Binding Version 1.0
+
+Problem:        The isa-pic node is using "interrupts" to indicate 
+                unusable interrupts, which is not the intent of the 
+                "interrupts" property.
+
+Proposal:       Add a new property "reserved-interrupts" which shall be
+                a list of IRQs which cannot be assigned due to cascading, 
+                wiring, or other reasons.  
+
+                On page 4, line 30 change "interrupts" to 
+                "reserved-interrupts" and delete the first two sentences 
+                starting at line 34.
+
+-- 
+    John A. Kingman         /~ ~_~ ~ ~ ~_~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+  Kingman@Austin.IBM.com   /   | | ___ | |_ ._ _        
+ IBM RSD, Austin, Texas   /   _| |/ . \| . || ' | 
+ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~    \__/\___/|_|_||_|_|
+
+[ P1275 Item #361 -- Received: Tue Jun 11 11:52:07 PDT 1996 ]
+

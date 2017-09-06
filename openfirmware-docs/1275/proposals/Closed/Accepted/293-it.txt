@@ -1,0 +1,47 @@
+Date: Wed, 4 Oct 1995 16:07:54 -0700
+From: brianh@lexus.West.Sun.COM (Brian Horn)
+Subject: Item #293: PCI bus master capable property (revised)
+
+P1275 Open Firmware Working Group Proposal -- Proposal #293 Ver 1.1
+
+Title:		PCI bus master capable property
+
+Author:		Brian.Horn@west.sun.com
+
+Date:		Oct 4, 1995
+
+Ed/Tech:	Technical
+
+Synopsis:	no mechanism exists to determine bus mastering capabilities
+
+Doc & Version:	PCI Bus Binding to IEEE1275-1994 Rev 1.5 Draft
+
+Problem:	A PCI device driver cannot tell whether bus mastering is available
+
+Proposal:	
+
+	Add in the Bus-specific properties for Bus Nodes (page 11) after
+"slot-names" (lines 35-43):
+
+	"bus-master-capable"
+
+		prop-name, describes whether the device is wired to be
+		PCI bus master capable.
+
+		prop-encoded-array:  An integer, encoded as with encode-int.
+		The property value is a bitmask indicating whether the
+		device is wired to be bus master capable.  The bit being set
+		implies that the device is so wired and the bit being reset
+		implies that the device is not so wired.  The least significant
+		bit corresponds to Device Number 0, the next bit corresponds
+		to Device Number 1, etc.
+
+(note: Mitch has suggested that the property be named "slave-only" and that
+       the bit values have the inverse meaning.  Apparently there is some
+       history to this name of which I am unaware.  Mitch could you enlighten
+       us?  It seems to me that the name "bus-master-capable" is more easily
+       associated with the PCI command bit "Bus Master" [as named in the PCI
+       specification rev 2.1])
+
+[ P1275 Item #293 -- Received: Wed Oct  4 16:04:55 PDT 1995 ]
+

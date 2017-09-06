@@ -1,0 +1,63 @@
+Date: Fri, 1 Mar 1996 20:47:51 -0800
+From: dmk@uask4it-223 (David Kahn)
+Subject: Item #324: New Draft Recommended Practice: 'Generic Names'
+
+Posting for Bob Coffin ...
+
+A place holder for the draft recommended practice.
+I'll edit and update the proposal file before it goes on
+playground with a url for the attachment.
+
+-David
+
+[ The attachment is 324.attachment.ps accessible via http from the proposals
+  page on playground, or via ftp in the proposals area on playground ]
+
+----- Begin Included Message -----
+
+From owner-p1275-wg@risc.sps.mot.com  Fri Mar  1 11:46:31 1996
+From: coffin@vnet.ibm.com
+Date: Fri, 1 Mar 96 13:38:34 CST
+To: p1275-wg@risc.sps.mot.com
+Cc: kingman@vnet.ibm.com
+Subject: Item #324: Open Firmware Recommended Practice: 'Generic Names'
+
+	To: Mail list p1275-wg
+	From: coffin@VNET.IBM.COM
+
+I have put a postscript version of the first pass of the 'Generic Names'
+Recommended Practice, Version 1.0 Draft, Document to discuss at the next
+Open Firmware Meeting on an IBM Server Machine.  This document may not be
+added to 'playground' in time for the meeting next week, so the document can
+be found at:
+
+
+External to IBM: anonymous sign-on
+
+    ftp://ftp.austin.ibm.com/pub/OpenFirmware GNAMV10D.PS
+
+
+John Kingman, under the agenda item for Recommended Practices; 'Generic
+Names', I would recommend the following actions:
+
+1) General review of document
+
+2) As a group, collectively review the list of 'generic names' under
+   Section Guideline 1, page 4.  Modify or add any new 'generic names'
+   as required.
+
+3) As a group, fill out the PCI Class Code Names in Table 1, last column,
+   beginning on page 6.
+
+Regards,
+Bob Coffin
+coffin@vnet.ibm.com
+(512) 838-8240
+IBM Austin, RS/6000 HW Architecture
+
+
+----- End Included Message -----
+
+
+[ P1275 Item #324 -- Received: Fri Mar  1 20:46:15 PST 1996 ]
+

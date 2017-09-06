@@ -1,0 +1,846 @@
+Date: Tue, 3 Jan 1995 15:35:22 -0800
+From: dmk@hsmpk14a-91 (David Kahn)
+Subject: Item #218: x86 binding *first draft*
+
+
+----- Begin Included Message -----
+
+From jordan@pongo.West.Sun.COM Tue Jan  3 15:15 PST 1995
+Date: Tue, 3 Jan 1995 15:11:19 -0800
+From: jordan@pongo.West.Sun.COM (Jordan Brown)
+To: brianh@ramada.West.Sun.COM, dmk@Eng
+Subject: Item #218: x86 binding *first draft*
+
+[[ Section numbering follows the PowerPC binding.  This often means that
+numbers are skipped. ]]
+
+[[ I'd like to give credit to the PowerPC binding as a source, but
+there doesn't seem to be any place to put it. ]]
+
+Intel x86 processor binding to:
+
+IEEE Std 1274-1994
+Standard for Boot
+(Initialization, Configuration)
+Firmware
+
+1.  Overview
+
+This document specifies the application of IEEE Std 1275-1994 Standard
+for Boot (Initialization, Configuration) Firmware, Core Practices and
+Requirements to computer systems that use the x86 Instruction Set
+Architecture, including instruction-set-specific requirements and
+practices for debugging, client program interface and data formats.
+
+This document addresses the 80386, i486, and Pentium architectures.
+
+This document defines the binding to x86 processors that use 32-bit
+addressing and have both "memory" and "I/O" instructions.  Since the
+minimum cell size of Open Firmware is 32 bits, two cells are necessary
+to represent addresses and cycle types of processor bus devices; hence,
+the value of "#address-cells" for / (the root of the device tree) shall
+be 2.
+
+[[ From what dmk's said, the definition of #address-cells for / doesn't
+belong in this document. ]]
+
+1.3.  x86 address translation model
+
+This section describes the model that is used for co-existence of Open
+Firmware and client programs (i.e., operating systems) with respect to
+address translation.
+
+[[ There are undoubtedly issues here that need to be discussed, but
+I am not sufficiently familiar with x86 memory management to write them. ]]
+
+1.4. Open Firmware's use of memory
+
+[[ There are undoubtedly issues here that need to be discussed, but
+I am not sufficiently familiar with x86 memory management to write them. ]]
+
+1.5.  Open Firmware's Virtual-Mode rules
+
+[[ There are undoubtedly issues here that need to be discussed, but
+I am not sufficiently familiar with x86 memory management to write them. ]]
+
+2.  References and Terms
+
+2.1.  References
+
+This standard shall be used in conjunction with the following
+publications.  When the following standards are superceded by an
+approved revision, the revision shall apply.
+
+[1] IEEE Std 1275-1994 Standard for Boot (Initialization, Configuration)
+Firmware, Core Practices and Requirements.
+
+[2] <Appropriate Intel documents>
+
+[3] System V Application Binary Interface, published by UNIX System
+Laboratories.  This document describes the generic architecture of the
+ELF (Executable and Linking Format) object file format.
+
+[4] MS-DOS Programmer's Reference, published by Microsoft.  This
+document describes the MS-DOS partition, directory, and FAT formats used
+by the disk-label support package.
+
+[5] Peering inside the PE:  A Tour of the Win32 Portable Executable File
+Format, found in the March, 1994 issue of Microsoft Systems Journal.
+
+[6] Bootstrap Protocol, Internet RFC 951; see also RFC 1532.
+
+[7] ISO-9660, Information Processing -- Volume and file structure of
+CD-ROM for information interchange, published by International
+Organization for Standardization.
+
+[8] System V Application Binary Interface, [[x86?]] Processor
+Supplement, published by UNIX System Laboratories.  This document
+defines the x86 specific  ABI for System V and also gives details on the
+x86 ELF format.
+
+[9] ISO 6429, Information processing -- ISO 7-bit and 8-bit coded
+character sets -- Additional control functions for character-imaging
+devices, published by International Organization for Standardization.
+
+[10] ANSI/IEEE X3.215-1994, Programming Languages -- Forth.
+
+[11] ISO-639, ??? (Specifies language names and/or abbreviations)
+
+2.2.  Terms
+
+This standard uses technical terms as they are defined in the documents
+cited in "Refere", plus the following terms:
+
+core, core specification:  refers to IEEE Std 1275-1994 Standard for
+Boot (Initialization, Configuration) Firmware, Core Practices and
+Requirements
+
+ELF:  Executable and Linking Format.  A binary object file format
+defined by [3,8] that is used to represent client programs in Open
+Firmware for x86.
+
+FDISK:  Refers to the boot-record and partition table format used by
+MS-DOS, as defined in [4].
+
+Open Firmware:  The firmware architecture defined by the core
+specification or, when used as an adjective, a software component
+compliant with the core specification.
+
+PE:  Portable Executable.  A binary object file format defined by [5];
+this format is used by Microsoft's NT operating system.
+
+Real-Mode:  [[ Some discussion of real mode vs protected mode will
+undoubtedly be required, but I don't know what yet. ]]
+
+Virtual-Mode:  [[ Some discussion of real mode vs protected mode will
+undoubtedly be required, but I don't know what yet. ]]
+
+3.  Data Formats and Representations
+
+The cell size shall be 32 bits.  Number ranges for n, u, and other
+cell-sized items are consistent with 32-bit, two's complement number
+representation.
+
+[[ Alignment requirements? ]]
+
+4.  Device Interface Requirements
+
+An implementation of Open Firmware for x86 shall implement the core
+requirements as defined in [1] and the following x86-specific
+extensions.
+
+4.1.  Reboot command
+
+When Open Firmware restarts (e.g., by using reset-all), it may need to
+re-process a command line that has already been entered by the user.  In
+this case, the command line needs to be saved in a "well-known" place so
+that Open Firmware can act upon it during the restart.  Another similar
+example is a "multi-boot" client program that wants to "fake" a command
+line and restart Open Firmware (e.g., to force a load of a particular
+OS).
+
+For that purpose, Open Firmware defines an area of (real) memory that
+can be used as a "reboot command".  The location of this area shall be
+published via the value of the "reboot-command-address" Configuration
+variable.  This area shall be 16-byte-aligned [[ why? ]] and shall be
+preserved across hardware reset (as with reset-all).
+
+The first words of this area contain a "magic value" that can be checked
+by Open Firmware to verify that this is, in fact, a valid restart
+vector.  The following Forth struct definition describes the layout of
+this area.
+
+	struct
+	/L	field	rv.magic0
+	/L	field	rv.magic1
+	16	field	rv.reserved
+	/L	field	rv.len
+	/C	field	rv.str
+
+The value of rv.magic0 shall be 0x1275ED8A; the value of rv.magic1 shall
+be 0xED8A1275.  The null-terminated string, beginning at rv.str (of
+length rv.len) contains the command to be executed.  A 16-byte area
+(rv.reserved) is reserved for use by Open Firmware.
+
+If, after configuration and probing, Open Firmware detects a valid
+restart vector (i.e., rv.magic0 and rv.magic1 contain the correct
+values), it shall copy the command string and clear the reboot command
+area (so that it is not re-processed again).  It shall then evaluate the
+copied string (guarded by catch).  If the evaluation of the string
+returns (or, fails via a throw) Open Firmware shall continue its normal
+boot process; normally this evaluation would not return (e.g., a boot
+command would be contained in the command string).
+
+4.2.  "disk-label" Support Package
+
+The disk-label support package for x86 shall support the following
+client program loading mechanisms; an implementation may support
+additional mechanisms, in an implementation-specific manner.
+
+The process of loading and executing a client program is described in
+two stages.  The first stage determines what file to read into memory.
+This is done by locating a file from the boot device, usually by means
+of a name lookup within a directory contained within a disk "partition".
+The second stage examines the front portion (header) of the image for
+"well-known" program formats.  When the format of the image has been
+determined, the loading is completed in a manner determined by that
+format.
+
+The name of the file (and, the partition in which it is contained) can
+be explicitly specified by the user via the load or boot command, or can
+be implicitly specified by the value of the "boot-device" property of
+the "/options" node.  The filename is the ARGUMENTS portion of the final
+COMPONENT of the PATH_NAME, as described in section 4.3.1 of [1].
+
+The syntax for explicit file name specification is as follows:
+
+	[n][,filename]
+
+where n is the partition number to be used and filename is the name of a
+file within that partition.  If n is omitted, the default partition (as
+determined by the partition format) is used.  If filename is omitted,
+the default filename (i.e., the filename component of the "boot-device"
+path-name) is used.  If n=0, the entire device is implied.
+
+4.2.1.  Partition formats
+
+The following partition formats shall be recognized by a compliant Open
+Firmware implementation; other formats may be recognized in an
+implementation-specific manner.
+
+The Open Firmware implementation does not typically know what the
+device-type is when the "disk-label" package is invoked.  Therefore, the
+locate-file procedure described below supports FAT-12, FAT-16, FDISK, or
+ISO-9660 directory structures on any "block" device-type.  However, for
+maximum portability, the following device formats should be used.
+
+Floppy Disk
+
+	1.44/2.88 MB, MFM floppy disks should be in FAT-12 format, as
+	described in [4].
+
+Hard Disk
+
+	Hard Disks should have an FDISK partition map, as described in [4].
+
+	Note:  since the bootsector is used to contain boot program for
+	floppies and the FDISK partition map for hard disks, the
+	"disk-label" package must use the value of the bsMedia byte
+	(located at offset 15h) to determine whether a partition map is
+	present.  If the value is 0F8h, it indicates a hard disk and a
+	partition map should be present in the bootsector; any other
+	value indicates a floppy disk.
+
+CD-ROM
+
+	CD-ROMs should be formatted according to ISO-9660, as described
+	in [7].
+
+locate-file procedure
+
+This procedure is used to locate the correct file and/or load image from
+the specified device.  The device is determined as described in 7.4.3.2
+of [1].  A filename can be explicitly given as the arguments field of
+the device-specifier (i.e., the field following the ':' of the last path
+component).
+
+	read sector 0 (bootsector)
+	if last 2 bytes of sector are 0AA55h (little-endian)
+		if bsMedia == 0F8h \ FDISK partition on hard drive
+			if an explicit partition has been requested
+				select partition number n
+			else
+				select bootable partition (80h in
+					peBootable field)
+			use directory of the selected partition to
+				locate file
+		else (non-partitioned)
+			use FAT-12/FAT-16 directory to locate file
+	else
+		read sector 16
+		if a valid ISO-9660 directory is found
+			locate the file, using the ISO-9660 directory
+		else
+			FAIL, in an implementation-specific manner.
+
+4.2.2.  Program-image formats.
+
+The program-image formats that shall be recognized and processed by an
+Open Firmware implementation are ELF[3,8] and PE[5].  [[ MS-DOS? ]]
+PE format support is provided only for booting NT; all other clients
+shall use ELF.  Other formats may be handled in an implementation-specific
+manner.
+
+After locating the file, read the image into memory at the location
+specified by the load-base Configuration Variable.  Then, perform the
+following procedure to prepare the image for execution.
+
+[[ This undoubtedly needs work ]]
+init-program.
+	examine the header of the image.
+	if the image is in ELF format
+		move and/or relocate the ELF image.
+	else if the file is in PE format
+		move and/or relocate the PE image.
+	else
+		FAIL, in an implementation-specific manner.
+
+4.3.  "obp-tftp" Support Package
+
+The "obp-tftp" Support Package of an Open Firmware implementation (used
+to load from "network" devices) shall use the BOOTP protocol, as
+described in [6].
+
+4.4.  TLB node properties
+
+[[ Something is probably needed here ]]
+
+4.5.  x86-specific properties
+
+4.5.1.  Root node properties
+
+The following properties of the root node ("/") shall be created by an
+Open Firmware implementation.  Note that the root node typically
+corresponds to the common processor bus in an x86 system.
+
+"#address-cells"
+	Standard property, encoded as with encode-int, that specifies
+	the number of cells required to represent physical addresses on
+	the processor bus; the value of "#address-cells" for the
+	processor bus shall be 2.
+
+"clock-frequency"
+	Standard property, encoded as with encode-int, that represents
+	the primary system bus speed (in hertz).  [[ I _think_ this
+	means the chip external speed, eg 33Mhz for a DX2-66. ]]
+
+4.5.2.  CPU node properties
+
+For each CPU in the system, a cpu-node shall be defined as a child of
+"/" (the root).  The following properties apply to each of these nodes.
+
+"device_type"
+	Open Firmware standard property.  The value of this property for
+	CPU nodes shall be "cpu".
+
+"cpu-version"
+	Standard property, encoded as with encode-int, that represents
+	the processor type. [[ 385, 486, 586? ]]
+
+"clock-frequency"
+	Standard property, encoded as with encode-int, that represents
+	the internal processor speed (in hertz) of this node.
+
+4.5.3.  Internal (L1) cache properties
+
+The internal (also referred to as "L1") caches of x86 processors are
+represented in the Open Firmware device tree by the following properties
+contained within "cpu" nodes.
+
+"cache-unified"
+	This property, if present, indicates that the internal cache has
+	a unified organization.  Absence of this property indicates that
+	the internal caches are implemented as separate instruction and
+	data caches.
+
+"i-cache-size"
+	Standard property, encoded as with encode-int, that represents
+	the total size (in bytes) of the internal instruction cache.
+
+"i-cache-sets" [[ needed?? ]]
+"i-cache-block-size" [[ needed?? ]]
+
+"d-cache-size"
+	Standard property, encoded as with encode-int, that represents
+	the total size (in bytes) of the internal data cache.
+
+"d-cache-sets" [[ needed?? ]]
+"d-cache-block-size" [[ needed?? ]]
+
+"l2-cache"
+	Standard property, encoded as with encode-int, that represents
+	another level of cache in the memory hierarchy.
+
+	Absence of this property indicates that no further levels of
+	cache are present.  If present, its value is the phandle of the
+	device node that represents the L2 cache.
+
+4.5.4.  External (L2, L3, ...) cache properties
+
+Some systems might include external (L2) cache(s).  As with the internal
+caches, they can be implemented as either Harvard-style [[??]] or
+unified.  Unlike the L1 properties, that are contained within the "cpu"
+nodes, L2 caches are contained within other device tree nodes.
+
+The following properties define the characteristics of such L2 caches.
+These properties shall be contained as a child node of one of the CPU
+nodes; this is to allow path-name access to the node.  All "cpu" nodes
+that share the same L2 cache (including the cpu node under which the L2
+cache node is contained) shall contain an "l2-cache" property whose
+value is the phandle of that L2 cache node.
+
+Note:  it is possible to extend this scheme to arbitrary levels of
+secondary, tertiary, etc. caches.  The "l2-cache" property shall be used
+in one level of the cache hierarchy to represent the next level.  The
+device node for a subsequent level shall appear as a child of one of the
+caches in the hierarchy to allow path-name traversal.
+
+"device-type"
+	Open Firmware Standard property; the device-type of L2-cache
+	nodes shall be "cache".
+
+"cache-unified"
+	This property, if present, indicates that the L2 cache has
+	a unified organization.  Absence of this property indicates that
+	the L2 caches are implemented as separate instruction and
+	data caches.
+
+"i-cache-size"
+	Standard property, encoded as with encode-int, that represents
+	the total size (in bytes) of the L2 instruction cache.
+
+"i-cache-sets" [[ needed?? ]]
+"i-cache-block-size" [[ needed?? ]]
+
+"d-cache-size"
+	Standard property, encoded as with encode-int, that represents
+	the total size (in bytes) of the L2 data cache.
+
+"d-cache-sets" [[ needed?? ]]
+"d-cache-block-size" [[ needed?? ]]
+
+"l2-cache"
+	Standard property, encoded as with encode-int, that represents
+	another level of cache in the memory hierarchy.
+
+	Absence of this property indicates that no further levels of
+	cache are present.  If present, its value is the phandle of the
+	device node that represents the cache at the next level.
+
+4.5.5.  TLB properties
+
+[[ probably need something here ]]
+
+4.5.6.  MMU methods
+
+The methods defined by section 3.6.5. of [1] shall be implemented by CPU
+nodes.  The value of the mode parameter for the relevant methods (e.g.,
+map) shall be the value that is contained within PTEs [[ ... more needed
+here, but need to check references ]]  In order for I/O accesses to be
+properly performed, address ranges that are mapped by map-in shall be
+marked as [[ ?? ]].
+
+5.  Client Interface Requirements
+
+An x86 Open Firmware implementation shall implement a client interface
+(as defined in chapter 6 of [1]) according to the specifications
+contained within this section.
+
+5.1.  Calling Conventions
+
+Register(s)	Value							Notes
+%psw[[??]]	preserved by client interface				1
+%esp		preserved by client interface
+%ebp		preserved by client interface
+%esi		preserved by client interface
+%edi		preserved by client interface
+%eax		argument array address on client interface entry	2
+		result value (true or false) on client interface return	2
+%cs		preserved by client interface
+%ds		preserved by client interface
+%es		preserved by client interface
+%fs		preserved by client interface
+%gs		preserved by client interface
+%ss		preserved by client interface
+[[floats]]	preserved by client interface
+Others		undefined						3
+
+Table 1.  Register usage conventions
+
+Notes
+	1.  Only the non-volatile fields ([[??]]) need to be preserved.
+	2.  As defined by section 6.3.1. of [1].
+	3.  Other registers include %ebx, %ecx, %edx
+
+To invoke a client interface service, a client program constructs a
+client interface argument array as specified in the core Open Firmware
+document, places its address in %eax and executes a [[??]] CALL to the
+client interface handler.
+
+The client interface handler shall perform the service specified by the
+contents of the argument array that begins at the address in %eax, place
+the return value (indicating success or failure of the attempt to invoke
+the client interface service) back into %eax, and return to the client
+program.
+
+6.  Client Program Requirements
+
+6.1.  Client Program Format
+
+The data format of a client program compliant with this specification
+shall be either ELF (Executable and Linkage Format) as defined by [3,8],
+and extended by section 6.1.1., or PE (Portable Executable) as defined
+by [7].  The standard ELF format contains explicit indication as to the
+program's execution modes [[ applicability to x86? ]]
+
+	Note:  other client program formats may be supported, in an
+	implementation-specific manner, by an Open Firmware
+	implementation.
+
+A standard client program shall be statically linked, requiring no
+relocation of the image.
+
+6.1.1. ELF Note Section
+
+Part of the process of loading a client program involves verifying its
+environmental requirements (e.g., endian-ness) against the current
+firmware configuration.  The client's endian-ness can be directly
+determined by examining the ELF EI-DATA value; ELFDATA2LSB (1) implies
+Little-Endian while ELFDATA2MSB (2) implies Big-Endian.  However, the
+other client requirements (e.g. translation mode) are defined by means
+of an ELF Note Section (SHT_NOTE).  The following describes the format
+of the Note Section for a client program file.
+
+As defined by [3], an ELF file can be "annotated" by means of Note
+Sections within the executable file.  A Note Section contains a "header"
+followed by a (possibly null) "descriptor", as follows:
+
+	namesz --\
+	descsz   |
+	type     +-- header
+	name     |
+	...    --/
+
+	desc   --\
+		 +-- descriptor
+	...    --/
+
+The format of a Note Section header can be described by an Open Firmware
+struct as:
+
+struct	\ Note Section header for x86 Open Firmware
+/L	field	ns.namesz	\ length of ns.name, including NULL
+/L	field	ns.descrsz
+/L	field	ns.type
+0	field	ns.name		\ NULL-terminated, /L padded
+
+The ns.name field of the Open Firmware (for x86) Note Section shall be
+"x86"; the ns.type field shall be 0x1275.
+
+Following the Note Section header is a descriptor (desc); the length (in
+bytes) is specified by a word in the Note Section's header (descsz).
+The interpretation of the descriptor depends on the kind of Note Section
+in which it is contained.  For Open Firmware, the format of the Note
+Section's descriptor can be described by an Open Firmware struct, as
+follows: [[ ?? ]]
+
+struct	\ Note Section descriptor for x86 Open Firmware
+/L	field	ns.real-mode
+/L	field	ns.virt-base
+/L	field	ns.virt-size
+
+6.2.  Client Program Loading
+
+The loading of a client program is performed by reading its ELF header
+(into the location specified by load-base) and determining if the
+current addressing modes are appropriate.  The addressing mode checks
+are done by comparing the values in the Note Section (if present)
+against the current configuration.  If any values are inconsistent with
+the current configuration of Open Firmware, the corresponding
+Configuration Variables shall be set from the Note Section, and the
+system shall be restarted, as with reset-all.
+
+Upon determining that the ELF image is valid and the Note Section fields
+are compatible with the current Open Firmware configuration, space for
+the .text and .data segments shall be allocated and mapped; these
+segments shall then be moved (if necessary) into the relevant locations.
+
+The program's entry point (e_entry) shall contain the address of the
+first x86 instruction of the client program.
+
+Note:  the entry point is the address of the first instruction of the
+client program, not that of a procedure descriptor.
+
+6.3.  The load address is specified by the value of the load-base
+Configuration Variable.  At least 4 MB of memory shall be available at
+that address.  It is strongly recommended that as much memory as is
+practical for the particular system be available there, thus allowing
+the loading of large client programs.  Note that this address represents
+the area into which the client program file will be read by load; it
+does not correspond to the addresses at which the program will be
+executed.
+
+6.4.  Initial Program State
+
+This section defines the "initial program state", the execution
+environment that exists when the first machine instruction of a client
+program of the format specified above begins execution.  Many aspects of
+the "initial program state" are established by init-program, which sets
+the saved program state so that subsequent execution of go will begin
+execution of the client program with the specified environment.
+
+6.4.1.  Initial Register Values
+
+Upon entry to the client program, the following registers shall contain
+the following values:
+
+Register	Value						Notes
+%psw		[[???]]						1
+%ss,%esp	see section 6.4.2.
+%eax		see section 6.4.3.
+%ebx,%ecx	see section 6.4.4.
+%cs		[[???]]
+%ds		[[???]]
+%es		[[???]]
+%fs		[[???]]
+%gs		[[???]]
+Others		0
+
+Table 2.  Initial Register Values
+
+Notes:
+
+	1.  Open Firmware will typically require the use of external
+	interrupts for its user interface.  However, when a client
+	program is invoked, external interrupts shall be disabled.  If a
+	client program causes the invocation of the user interface,
+	external interrupts may be reenabled.
+
+6.4.2.  Initial Stack
+
+Client programs shall be invoked with a valid stack pointer with at
+least 32K bytes of memory available for stack growth.  The stack pointer
+shall be 16-byte aligned.  [[ Real vs virtual ]]
+
+6.4.3.  Client Interface Handler Address
+
+When clients are invoked, %eax shall contain the address of the entry
+point of the client interface handler.  [[ Real vs virtual ]]
+
+Note:  This address points to the first instruction of the client
+interface handler, not to a procedure descriptor.
+
+6.4.4.  Client Program Arguments
+
+The calling program may pass to the client an array of bytes of
+arbitrary content; if this array is present, its address and length
+shall be passed in registers %ebx and %ecx, respectively.  For programs
+booted directly by Open Firmware, the length of this array is zero.
+Secondary boot programs may use this argument array to pass information
+to the programs that they boot.
+
+Note:  The Open Firmware standard makes no provision for specifying such
+an array or its contents.  Therefore, in the absence of
+implementation-defined extensions, a client program executed directly
+from an Open Firmware implementation will not be passed such an array.
+However, intermediate boot programs that simulate or propagate the Open
+Firmware client interface to the programs that they load can provide
+such an array for their clients.
+
+[[ Why is this in this standard, if the standard supplies no semantics
+and no way to set it?  Perhaps AIX history? ]]
+
+Note:  boot command line arguments, typically consisting of the name of
+a file to be loaded by a secondary boot program followed by flags
+selecting various secondary boot and operating system options, are
+provided to client programs via the "bootargs" and "bootpath" properties
+of the "/chosen" node.
+
+6.5.  Memory and MMU
+
+If the addressing mode of the system is Virtual-Mode, the MMU shall be
+enabled by Open Firmware.  Note:  many client programs, including most
+secondary boot programs, require no knowlege of the details of the MMU.
+If the addressing mode is Real-Mode, the MMU shall be disabled by Open
+Firmware. [[ ?? ]]
+
+The client program is guaranteed its own code and data memory areas and
+a valid stack, but it may make no other assumptions concerning the
+existence or state of memory, real or virtual.  Through the client
+interface, the client program may query Open Firmware to determine the
+amount and status of memory and may allocate and free portions of that
+memory.
+
+6.6.  Caching
+
+The caches of the processor shall be enabled when the client proram is
+called.  Memory areas allocated on behalf of the client shall be marked
+as cacheable.  Accesses to "I/O" devices (expecially, to devices across
+"bridges") shall be made with the register access words (e.g., rl@)
+using virtual addresses returned by map-in.
+
+6.7.  Interrupts
+
+Open Firmware requires that interrupts be "vectored" to its handlers
+when it is in control of the processor; this will occur when the User
+Interface is running.  Client Interface calls are considered to execute
+in the environment of the client, and hence, do not assume ownership of
+interrupts.
+
+[[ Need to reserve memory?  Don't think so. ]]
+
+Open Firmware shall save and restore the vector for each interrupt that
+it wants to "take over".  I.e., whenever Open Firmware needs the use of
+an interrupt, it shall save the contents of the corresponding interrupt
+vector and replace that vector with the address of its interrupt
+handler.  When Open Firmware returns control, it shall restore the
+vector to its original contents.
+
+6.8.  Client callbacks
+
+This section defines the callback mechanism that allows Open Firmware to
+access services exported to it by the client program.  As described in
+section 6.3.2.6 (and the glossary entries for callback and $callback) in
+[1], the callback mechanism follows the same rules as those of Client
+interface calls.  I.e., an argument array is constructed by Open
+Firmware and the address of that array is passed (via %eax) to the
+client's callback routine; the address of the callback routine is
+supplied to Open Firmware by means of the set-callback client call.
+
+6.8.1  Translation assist callbacks
+
+As mentioned in section 1.5., when Open Firmware is running
+Virtual-Mode, client programs that take over control of the system's
+memory management must provide a set of callback that implement MMU
+functions.  This section defines the input arguments and return values
+for these callbacks.  The notation follows the style used in chapter 6
+of [1].
+
+map
+	IN:  [address] phys, [address] virt, size, mode
+	OUT:  error
+
+	Creates system-specific translation information; this will
+	typically include the addition of PTEs to [[??]].
+	If the mapping is successfully performed, a value of zero shall
+	be placed in the ret1 cell of the argument array; a non-zero
+	error code shall be returned (in ret1) if the mapping cannot be
+	performed.
+
+unmap
+	IN:  [address] virt, size
+	OUT:  none
+
+	The system removes any data structures (e.g., PTEs) for the
+	virtual address range.
+
+translate
+	IN:  [address] virt
+	OUT:  error, [address] real.hi, [address] real.lo, mode
+
+	The system attempts to compute the real address (real) to which
+	the virtual address (virt) is mapped.  If the translation is
+	successful, a PTE shall be placed into the [[??]] for this
+	translation, the resulting real address shall be placed in
+	real.hi,real.lo and ret1 shall be set to false (0).  If the
+	translation is not successful, ret1 shall be set to a non-zero
+	error code.
+
+	This call shall be made when Open Firmware handles a
+	[[DSI/ISI??]] within the User Interface.  A successful result of
+	the translate call indicates that Open Firmware can complete the
+	interrupted access; a failure indicates that an access was made
+	to an invalid address.
+
+7.  User Interface Requirements
+
+An implementation of Open Firmware for x86 shall conform to the core
+requirements as specified in [1] and the following x86-specific
+extensions.
+
+7.1.  Machine Register Access
+
+The following user interface commands represent x86 registers within the
+saved program state.  Executing the command returns the saved value of
+the corresponding register.  The saved value may be set by preceding the
+command with to; the actual registers are restored to the saved values
+when go is executed.
+
+%eax, %ebx, %ecx, %edx, %esi, %edi
+	Access saved copies of the general purpose registers
+
+%esp
+	Access saved copies of the stack pointer register
+
+%ebp
+	Access saved copies of the frame pointer register
+
+%cs, %ds, %es, %fs, %gs, %ss
+	Access saved copies of the segment registers
+
+[[ probably more ]]
+
+The following command displays the x86 CPU's saved program state.
+
+.registers
+
+7.2.  Configuration Variables
+
+[[ How do you implement CVs in the absence of NVRAM? ]]
+
+In addition to the standard Configuration Variables defined by the core
+Open Firmware document, the following Configuration Variables shall be
+implemented for x86:
+
+"real-mode?" [[ ?? ]]
+	This boolean variable controls the address translation mode of
+	Open Firmware.  If true (-1), the addressing mode is Real-Mode;
+	if false (0), the addressing mode is Virtual-Mode.  The default
+	value is implementation dependent.
+
+"virt-base"
+	This integer variable defines the starting virtual address to be
+	used by Open Firmware when running in Virtual-Mode.
+
+"virt-size"
+	This integer variable defined the size of the virtual address
+	space which is used by Open Firmware when it is running in
+	Virtual-Mode.
+
+"load-base"
+	This integer variable defines the default load address for
+	client programs when using the load method.
+	The default value is implementation dependent.
+
+"reboot-command-address"
+	This integer variable defines the (real) address of the reboot
+	command, as defined in section 4.1.
+
+8.  Terminal Emulator Support Package
+
+[[ As for PowerPC, unless moved to a separate standard ]]
+
+9.  Additional device-specific properties
+
+[[ As for PowerPC, unless moved to a separate standard ]]
+
+
+[[ What about "reg" properties for root node?  "interrupts" properties?
+etc? ]]
+
+
+----- End Included Message -----
+
+
+[ P1275 Item #218 -- Received: Tue Jan  3 15:36:03 PST 1995 ]
+

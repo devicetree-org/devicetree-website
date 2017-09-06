@@ -1,0 +1,42 @@
+Date: Mon, 13 Feb 95 20:40:27 PST
+From: dmk (David Kahn)
+Subject: Item #234: Clarify set-symbol-lookup client intfc. (Core errata)
+
+P1275 Open Firmware Working Group Proposal -- Proposal #234 Ver 1
+
+Title:		Clarify set-symbol-lookup client interface (Core errata)
+
+Author:		David M. Kahn
+
+Date:		Feb 13, 1995
+
+Ed/Tech:	Technical
+
+Synopsis:	Specify service name for set-symbol-lookup callbacks
+
+Doc & Version:	P1275.7/Core Errata
+
+Problem:	The description of the "set-symbol-lookup" client interface
+		service omits to specify the service name at the time
+		the callback is executed.  Client programs should be able
+		to use a single callback handler mechanism, and switch
+		on the service name to select and provide the service.
+		If the service name is unspecified, this cannot be done.
+
+Proposal:	
+
+The wording to be added is on D12/Page 80:
+
+After 80:23 add:
+
+	The service name string in the argument array is a pointer
+	to a NULL terminated string containing "sym-to-value".
+
+After 80:29 add:
+
+	The service name string in the argument array is a pointer
+	to a NULL terminated string containing "value-to-sym".
+
+
+[ P1275 Item #234 -- Received: Mon Feb 13 20:40:29 PST 1995 ]
+

@@ -1,0 +1,49 @@
+Date: Fri, 19 May 1995 18:59:29 -0700
+From: dmk@uask4it-91 (David Kahn)
+Subject: Item #269: Core recommended practice: test-method client interface
+
+P1275 Open Firmware Working Group Proposal -- Proposal #269 Ver 1
+
+Title:		'test-method' client interface
+
+Author:		David Kahn
+
+Date:		19 May 1995
+
+Ed/Tech:	Technical
+
+Synopsis:	Create 'test-method' client interface
+
+Doc & Version:	Core Doc, Recomended Practice.
+
+Scope:		Recomended practice to all implementations of the client
+		interface.
+
+Problem:	Though there is a 'test' client interface, there is
+		no 'test-method' client interface, to determine if
+		a given method-name in a given package exists.
+
+Proposal:	
+
+Create a recomended practice, creating the following client interface:
+
+test-method
+
+IN:	phandle, method-cstr
+OUT:	exists-flag?
+
+test-method	( method-cstr phandle -- exists-flag? )
+
+In the package given by the argument *phandle* test for the existance
+of the method given by *method-cstr* (as with find-method) and return
+the value TRUE is the method exists, or FALSE if the method does not
+exist, in the return argument, *exists-flag?*
+
+NOTE: It is recomended that client programs test for existance of
+the TEST-METHOD client interface prior to using it.
+
+See Also: find-method.
+
+
+[ P1275 Item #269 -- Received: Fri May 19 19:01:58 PDT 1995 ]
+

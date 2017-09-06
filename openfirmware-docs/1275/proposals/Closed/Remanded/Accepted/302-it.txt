@@ -1,0 +1,54 @@
+Date: Tue, 12 Dec 1995 11:17:40 -0800
+From: brianh@lexus.West.Sun.COM (Brian Horn)
+Subject: Item #302: PReP floppy and ide device types are inappropriate
+
+P1275 Open Firmware Working Group Proposal -- Proposal #302 Ver 1.0
+
+Title:		Standard ISA mass storage device controllers
+
+Author:		Brian.Horn@west.sun.com
+
+Date:		Dec 12, 1995
+
+Ed/Tech:	Technical
+
+Synopsis:	ide and floppy device types are inappropriate
+
+Doc & Version:	PowerPC Reference Platform Binding revision 0.02
+
+Problem:	ide and floppy controllers are *not* block devices
+
+Proposal:	
+		On page 8 section 6.3 lines 25 & 28 which read
+
+		floppy		"block"
+
+		and
+
+		ide		"block"
+
+		change to
+
+		floppy		"floppy"
+		    disk	"block"
+		    tape	"byte"
+
+		and
+
+		ide		"ide"
+		   disk		"block"
+		   cdrom	"block"
+
+
+		Further there needs to be bindings for floppy and ide, but
+		I'll put that in another proposal.
+
+		Also on page 9 there is the requirement for the
+		alias "floppy", but it unclear whether that should
+		be the controller (like scsi) or whether is should be
+		the default floppy diskette (like disk).  This needs
+		to be made clear.  I propose that it be the controller
+		and the common use would be "floppy/disk@0".
+
+[ P1275 Item #302 -- Received: Tue Dec 12 11:13:55 PST 1995 ]
+

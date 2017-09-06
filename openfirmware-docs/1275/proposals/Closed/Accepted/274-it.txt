@@ -1,0 +1,80 @@
+Date: Thu, 1 Jun 1995 11:52:58 -0700
+From: jordan@pongo.West.Sun.COM (Jordan Brown)
+Subject: Item #274: PCI "reg" property clarification
+
+P1275 Openboot Working Group Proposal -- Proposal #:274 Ver 1.0
+
+Title:          PCI "reg" property clarification
+
+Author:         Jordan Brown
+
+Date:           31 May 1995
+
+Ed/Tech:        Technical
+
+Synopsis:       Clarify the relationship between base registers and OF properties
+
+Doc & Version:  PCI binding 1.5
+
+Problem:
+
+	The relationship between PCI base registers, the "reg"
+	property, the "assigned-addresses" property, and actual
+	physical addresses is complex, and a simple reading of the PCI
+	binding does not make it obvious.
+
+Proposal:       
+
+
+Add after the "Legacy Devices" section the following:
+
+	Relationship between PCI Base Registers and Open Firmware
+	Properties
+
+	Especially in the case of a PCI device with onboard Fcode
+	support, there is no particular relationship between PCI base
+	registers and the "reg" and "assigned-addresses" property.  A
+	particular base register may or may not be represented in "reg"
+	and "assigned-addresses", and those properties may contain
+	entries referring to addresses not controlled by any base
+	register.  No particular ordering is required in either the
+	"reg" property or the "assigned-addresses" property.  A client
+	wishing to make use of the addressing information provided by
+	Open Firmware must scan the "assigned-addresses" property
+	looking for an entry specifying the desired base-register field
+	in its phys.hi.
+
+In "Open Firmware-defined Properties for Child Nodes", under "reg":
+
+After
+	Each additional (phys-addr, size) pair shall specify the address
+	of an addressable region of Memory Space or I/O Space associated
+	with the function.
+add
+	In these pairs, if the "n" bit of phys.hi is 0, reflecting a
+	relocatable address, then phys.mid and phys.lo specify an
+	address relative to the value of the associated base register.
+	In general this value will be zero, specifying an address range
+	corresponding directly to the hardware's.  If the "n" bit of
+	phys.hi is 1, reflecting a non-relocatable address, then
+	phys.mid and phys.hi specify an absolute PCI address.
+
+In "Bus-specific Properties for Child Nodes", under "assigned-addresses":
+
+Change as indicated:
+
+	The entry indicates the physical /+ PCI +/ address that has
+	been assigned to that base register, and the size in bytes of
+	the assigned region.
+	
+
+---
+
+[[ I don't particularly *like* these definitions, but as far as I can
+tell from reading and conversations, they're the truth.  As I have on
+several occasions had to convince developers of this, it seems appropriate
+to put it in black and white. -- jb ]]
+
+
+[ P1275 Item #274 -- Received: Thu Jun  1 11:57:09 PDT 1995 ]
+

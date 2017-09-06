@@ -1,0 +1,35 @@
+Date: Thu, 2 Mar 1995 08:17:31 -0700
+From: ron@apple.com (Ron Hochsprung)
+Subject: Item #246: PowerPC binding - std default font
+
+P1275 Open Firmware Working Group Proposal -- Proposal #246 Ver <Auth-Vers#>
+
+Title:          PowerPC standard default-font
+
+Author:         Ron Hochsprung
+
+Date:           March 2, 1995
+
+Ed/Tech:        Technical
+
+Synopsis:       define the default-font for PowerPC binding
+
+Doc & Version:  PowerPC binding
+
+Problem:        Some Client Programs (e.g., NT) assume a richer font than
+                basic fonts typically used.
+
+Proposal:
+
+add a section that describes the standard font to be used by PowerPC
+implementations of Open Firmware.  I.e., the font that is defined by
+*default-font*.  This would include, at least, the standard font that NT
+assumes.  The more general one would be the "DOS standard font", with the
+exception of the h# 9B character that is used as a short-hand for the ESC-[
+sequence.
+
+
+
+
+[ P1275 Item #246 -- Received: Thu Mar  2 08:19:27 PST 1995 ]
+

@@ -1,0 +1,112 @@
+Date: Mon, 19 Dec 94 16:15:43 PST
+From: paktor@hal.com (David Paktor)
+Subject: Item #216: P 216 V 1 - Register-Access words, correction and clarification
+
+
+                P1275 Openboot Proposal                 Proposal #: 216 Ver 1
+
+Title:          Register-Access words, correction and clarification
+
+Author:         David L. Paktor
+
+Date:           Mon 19 Dec 94
+
+Synopsis:	Changes in both categories:
+Technical:	Correct user-interface semantics of the Register-Access words,
+		 rb@  rb!  rw@  rw!  rl@  rl!
+
+Editorial:	Clarify the timing of the substitution of bus-specific versions
+		    of the Register-Access words into the FCode token-table.
+
+
+Doc Version:    D12
+
+Problem:        The notes in the glossary for the Register-Access words do not
+		    quite make clear when the substitution of the FCode token
+		    should occur, as noted in Proposal Item # 214.  A closer
+		    examination of the situation revealed that the User-Inter-
+		    face semantics as currently specified will not yield the
+		    desired results.
+ 
+Proposal:       Add a section after page 31, line 4, as follows:
+
+
+	3.6.3.1   Bus-Specific Register-Access words
+	    Some expansion bus adaptors have characteristics that interfere with
+		the semantics of the Register-Access words,  RB@ , RB! , RW@ ,
+		RW! , RL@  and  RL! .  For example, some bus bridges swap bytes
+		and others buffer their write operations.  Bus packages for
+		such devices shall substitute, as with  SET-TOKEN , conforming
+		implementations of the Register-Access words during the evalua-
+		tion of their childrens' FCode programs.
+
+	    Such bus-specific Register-Access words can be written in terms of
+		the "generic" Register-Access words, in the expectation that the
+		parent bus will have substituted implementations of those words
+		that handle any peculiar characteristics imposed by the parent
+		bus.  For example, suppose a bus adapter device supports a bus
+		that reverses the ordering of doublets within quadlets.  It can-
+		not predict the characteristics of its parent bus, for example,
+		whether its parent bus buffers ordering of bytes within a
+		doublet.  The FCode program for such a bus adapter would include
+		a definition of a bus-specific quadlet register-read word that
+		might look something like this:
+
+	: my-rl@  ( addr -- n )  rl@ lwflip ;
+
+		When the FCode for this word's definition is evaluated, the
+		definition of  RL@  that will get compiled-in will be the one
+		that was substituted by the node of the parent bus.  The node
+		of the present bus adapter would then, before evaluating its
+		childrens' FCode programs, perform a substitution that might
+		look something like this:
+
+	['] my-rl@ h# 234 set-token
+
+	    Because such a substitution takes place at the time of evaluation
+		of an FCode program, it becomes problematical to ensure that
+		the semantics of the intended Register-Access words will be
+		visible at the User Interface level.  For this reason, it is
+		recommended that device nodes for child-devices supply defini-
+		tions for the Register-Access words that will bind the seman-
+		tics that were substituted for the device's bus to the User
+		Interface name.  Such a definition can be very simple, and
+		might look something like this:
+
+	: rl@ rl@ ;
+
+		The net effect of such a definition would be that when the
+		device is selected, and the user enters the name "RL@", the
+		User Interface interpreter will find the name that occurs in
+		the device's node; that name would be bound to the behavior
+		that was installed in the FCode interpretation token-table at
+		the time the device node's FCode was evaluated, causing the
+		correct behavior to be executed.
+
+
+
+Then replace the "User Interface" sections of the Register-Access words, and
+    the note following, with the following text:
+
+
+	Note:  A bus device can substitute (as with set-token ) a bus-specific
+	    implementation of <this word> for use by its children.  This is
+	    sometimes necessary to correctly implement its semantics with
+	    respect to bit-order and write-buffer flushing.  See section
+	    3.6.3.1 for further details and for User Interface semantics.
+
+
+This text would replace the following:
+  Page		Lines
+  188		 1 to 11
+  188		16 to 26
+  191		34 to 44
+  192		 5 to 15
+  193		 1 to 11
+  193		16 to 26
+
+
+David
+
+[ P1275 Item #216 -- Received: Mon Dec 19 16:17:30 PST 1994 ]
+

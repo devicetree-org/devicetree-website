@@ -1,0 +1,55 @@
+Date: Wed, 19 Apr 95 18:06:26 PDT
+From: dmk (David Kahn)
+Subject: Item #266: Recommended Practice (Core, PCI): Revisit Generic Names #251
+
+
+P1275 Open Firmware Working Group Proposal -- Proposal #266 Ver <v1.0>
+
+Title:		Revisit Generic Names Recomended Practice (re: #251)
+
+Author:		David Kahn
+
+Date:		19 April 1995
+
+Ed/Tech:	Technical
+
+Synopsis:	Revisit the decision on proposal #251
+
+Doc & Version:	Appected Proposal Number 251.Item
+
+Scope:		Recomended Practice
+
+Problem:	If proposal 251 (generic names) will not be adopted
+		by this body as a recomended practice, the committee
+		should revisit that decision and recommend against #251.
+
+Proposal:	
+
+Change the status of proposal #251 to rejected. (Initially accepted,
+but subsequently rejected.)
+
+Discussion ...
+
+Proposal #251 was adopted as a recommended practice at the last
+working group meeting, and has significant impact on the current
+work of various companies.  Apple will not be able to support
+#251 in documentation or in the OS. It's also not likely for
+Sun to get this support into our next OS, either.
+
+It became clear that #251 would not be adopted accross the industry
+after the meeting.  I think the body should revisit the decision to
+support proposal #251.
+
+It would be nice if we can come up with a way to support a better
+form of names on PCI than the default pci<vvvv>,<dddd>, in conjunction
+with the current standards. Alternatively, come up with better
+aliasing mechanisms, and graphical views of the device tree, with
+pop-up information giving the device_type and properties of each
+device node, to solve the ease-of-use issues. All of these methods
+could be adopted as value added enhancements, using the current
+standard plus extensions voted as recommended practices at the
+last meeting.
+
+
+[ P1275 Item #266 -- Received: Wed Apr 19 18:06:28 PDT 1995 ]
+

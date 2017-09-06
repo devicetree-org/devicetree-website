@@ -1,0 +1,103 @@
+Date: Wed, 1 Mar 1995 09:55:05 -0700
+From: ron@apple.com (Ron Hochsprung)
+Subject: Item #238: Open Firmware - Graphics Extension
+
+P1275 Open Firmware Working Group Proposal -- Proposal #238 Ver <Auth-Vers#>
+
+Title:          Graphics extension
+
+Author:         Ron Hochsprung
+
+Date:           March 1, 1995
+
+Ed/Tech:        Technical
+
+Synopsis:       graphics capabilites for "display" devices
+
+Doc & Version:  IEEE Std 1275-1994
+
+Problem:        new client programs desire graphical support
+
+Proposal:
+
+Title:      Graphics support methods for "display" devices
+
+Author:     Ron Hochsprung
+
+Date:       March 1, 1995
+
+Revision:   3
+
+Scope/Documents Affected: Core standard (next revision)
+
+Motivation:  Client Programs require a mechanism to implement "bit-mapped"
+graphics via client interface calls.
+
+References: [1] IEEE Std 1275-1994, [2] ISO 6429-1983, [3] PowerPC Binding
+
+Goals:  extended capability for "display" devices.
+
+Proposal:
+
+Section:  Introduction
+
+A set of "bit-mapped" graphics methods (DRAW-RECTANGLE, FILL-RECTANGLE,
+READ-RECTANGLE) is defined by this extension that are available to
+Client Programs (via CALL-METHOD client callback) to display and read
+rectangular areas of the display buffer.
+
+The display buffer model is an extension of the standard fb8 package.  I.e.,
+the display buffer is considered to consist of 8-bits per pixel, allowing up
+to 256 colors for each pixel.  The data format of Client Program pixel-maps
+follows this 1 byte per pixel model.  If the display buffer is not in 8-bit
+per pixel mode (e.g., 24-bit), the display driver must map the bit map
+accordingly.
+
+The pixel-maps consist of rectangular regions of the display.  Their location
+is determined by specifying an x,y location, where the pixel corresponding to
+the top,left-most screen location is considered 0,0;  x increases to the
+right, y increases down the screen.  The size of the rectangle is specified
+by w,h values that represent the width and height, respectively.
+
+The memory area containing the source (target) of data for DRAW-RECTANGLE
+(READ-RECTANGLE) consist of w*h consecutive bytes, with the first byte
+representing the top,left-most pixel, the second byte representing the pixel
+to the right of the first, etc.  Each byte is the color index of the desired
+pixel.
+
+Note:  a Client Program can detect whether the display package implements
+this extension by using the TEST client callback.
+
+
+Section:  Requirements
+
+A display package (i.e., a package of device-type "display") that implements
+this extension shall provide all of the following methods.
+
+    draw-rectangle    ( adr x y w h -- )
+
+        Displays a rectangular image at pixel location 'x','y' of size
+        'w','h' from the data defined by 'adr'.  'x','y' are display coordinates
+        where 0,0 corresponds to the top,left displayed pixels;  'w','h' are
+        the width and height of the image.
+
+    fill-rectangle    ( index x y w h -- )
+
+        This method fills a rectangular display area, defined by 'x','y','w','h'
+        with the color corresponding to 'index'.
+
+    read-rectangle    ( adr x y w h -- )
+
+        This method copies the 8-bit index values corresponding to the display
+        pixels , defined by 'x','y','w','h' into the buffer specified by 'adr'.
+
+Note: for displays that are not in 8-bit per pixel mode, the read-rectangle
+method is admittedly difficult.  For this reason, it is recommended that
+displays provide an 8-bit mode and that this mode is used during Open
+Firmware execution.
+
+
+
+
+[ P1275 Item #238 -- Received: Wed Mar  1 09:57:53 PST 1995 ]
+

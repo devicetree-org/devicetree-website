@@ -1,0 +1,85 @@
+Date: Tue, 21 Mar 1995 16:30:55 -0800
+From: brianh@pongo.West.Sun.COM (Brian Horn)
+Subject: Item #262: PowerPC devices
+
+P1275 Open Firmware Working Group Proposal -- Proposal #262 Ver 1.0
+
+Title:		PowerPC device methods/properties need small mods
+
+Author:		Brian.Horn@west.sun.com
+
+Date:		March 21, 1995
+
+Ed/Tech:	Editorial & Technical
+
+Synopsis:	Several minor issues w.r.t. PowerPC devices
+
+Doc & Version:	PowerPC processor binding to OpenFirmware Draft 1.0 2/16/95
+
+Problem:	Various PowerPC devices need clarification/changes/wordsmithing
+
+Proposal:	
+		1) Section 11.2.3 page 22 line 33:
+
+		Change "key sequence shall cause" to "key sequence may cause"
+
+		[I don't believe that there is a requirement to *have* a break
+		 sequence].
+
+
+		2) Section 11.3.2 page 23 line 13:
+
+		"The least significant bit corresponds to the left-most
+		 button of the device."
+
+		Drop this.  It is not in general possible to tell which
+		button is on the left or even if there is a left-most button.
+
+
+		3) Section 11.8 page 26 and page 27
+
+		 i) Move this to ISA and SCSI bindings
+
+		ii) but... should "8042" be "i8042" or "INTC,8042"?
+
+		    floppy shouldn't this be :
+			fdc (floppy controller)
+			  floppy@0
+			  floppy@1 (or fd@0 and fd@1)
+
+		   timer... no methods or properties defined for this device!
+
+		   ide: like floppy
+
+		   ide
+			ide-disk@0
+		 	ide-disk@1 (or whatever the ide binding says)
+
+		   nvram and rtc previous version implied the NS1385.  Are
+		   we better off with:
+
+		   NS,nvram-1385 and NS,rtc-1385?
+
+
+		   is the scsi device_type "scsi" or "scsi-2"?
+
+
+		iii) Also section 11.8 page 26 line 51:
+
+		    Suggest changing "super I/O chip must not be created" to
+			"supert I/O chip may not be created". And changing
+			lines 52 and 53 to "If the super I/O chip is not
+			created as a node then the device nodes of the..."
+
+		4) Section 11.9 page 26
+
+			com1 and com2 are not well-defined.  Are these
+			any "serial" device_type devices?  Are they
+			explicitly RS-232?  RS-422?  Does the "1" and "2"
+			in the name imply anything w.r.t. ordering/preference?
+
+
+			"floppy" - is this the floppy drive or the controller?
+
+[ P1275 Item #262 -- Received: Tue Mar 21 16:33:16 PST 1995 ]
+
