@@ -464,14 +464,20 @@ Standard Open Firmware behavior<BR>
 <H2><A NAME="HDR22">8.   Serial port device</A></H2>
 Access to the serial port is supported by this device type.  The serial port is treated as a byte-stream device.<BR>
 <H3><A NAME="HDR23">8.1.   Serial port properties</A></H3>
-As specified in <A HREF="dse1_0a.html#REF37838">[1]</A> and <A HREF="dsev10a.html#REF33177">[6]</A> , with the following additions or modifications.<BR>
+As specified in <A HREF="dse1_0a.html#REF37838">[1]</A> and
+<!-- <A HREF="dsev10a.html#REF33177">[6]</A> -->
+<A HREF="#">[6]</A>
+ , with the following additions or modifications.<BR>
 <p>
   "device_type"    S<BR>
 <p>
 Standard <I>property name</I> to define the device's implemented interface. <BR>
 The meaning of this property is as defined in the Open Firmware core document <A HREF="dse1_0a.html#REF37838">[1]</A>. The value for nodes described by this specification <I>shall</I> be "serial".<BR>
 <H3><A NAME="HDR24">8.2.   Serial port methods</A></H3>
-As specified in <A HREF="dse1_0a.html#REF37838">[1]</A> and <A HREF="dsev10a.html#REF33177">[6]</A>, with the following additions or modifications. <BR>
+As specified in <A HREF="dse1_0a.html#REF37838">[1]</A> and
+<!-- <A HREF="dsev10a.html#REF33177">[6]</A>, -->
+<A HREF="#">[6]</A>,
+ with the following additions or modifications. <BR>
 <H4><A NAME="REF77511">8.2.1.   Device Arguments for Open Method</A></H4>
 <B>open</B><B> </B>is a standard<B> </B>method for the serial device. When the serial device is opened, several device-arguments can be passed as defined below:<BR>
  <BR>
@@ -518,7 +524,10 @@ s     software (XON/XOFF)
 --------------------------
 </pre>
 <H3><A NAME="HDR25">8.3.   Device-specific Methods for Device Nodes</A></H3>
-As specified in <A HREF="dse1_0a.html#REF37838">[1]</A> and <A HREF="dsev10a.html#REF33177">[6]</A>, with the following additions.<BR>
+As specified in <A HREF="dse1_0a.html#REF37838">[1]</A> and
+<!-- <A HREF="dsev10a.html#REF33177">[6]</A>, -->
+<A HREF="#">[6]</A>,
+ with the following additions.<BR>
 <p>
   set-mode   ( adr len -- )  M<BR>
 <p>
