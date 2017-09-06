@@ -1,0 +1,35 @@
+Date: Mon, 17 Jun 1996 17:55:51 -0700
+From: dmk@uask4it-223 (David Kahn)
+Subject: Item #364: TFTP Boot Extensions RP: Draft 0.6 posted
+
+
+P1275 Openboot Working Group Proposal -- Proposal #:364 Ver 1
+
+Title:          TFTP Booting Ext. RP, draft 0.6
+
+Author:         Ron Hochsprung [ Posted by dmk, for Ron. ]
+
+Date:           Jun 17 1996
+
+Ed/Tech:        Technical
+
+Synopsis:       Posted update to TFTP Booting Ext Rec. Practice
+
+Doc & Version:  New draft of tftp0_6d.ps recomended practice.
+
+Problem:        See RP draft.
+
+Proposal:       Draft version 6.  See document for changes.
+
+		The draft proposal has been posted and is available
+		at the following URL:
+
+	http://playground.sun.com/1275/practice/#obp-tftp
+
+		or via anonymous ftp at:
+
+	ftp://playground.sun.com/pub/1275/practice/obp-tftp/tftp0_5d.ps
+
+
+[ P1275 Item #364 -- Received: Mon Jun 17 17:56:29 PDT 1996 ]
+

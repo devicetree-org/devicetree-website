@@ -1,0 +1,171 @@
+Date: Tue, 23 Apr 1996 00:05:02 -0700
+From: jordan@pongo.West.Sun.COM (Jordan Brown)
+Subject: Item #345: CS4231 Device Binding
+
+
+P1275 Openboot Working Group Proposal -- Proposal #:345 Ver 0.2
+
+Title:          Crystal Semiconductor Device Binding
+
+Author:         Jordan Brown
+
+Date:           22 April 1996
+
+Ed/Tech:        Editorial, Technical
+
+Synopsis:       Recast into device binding template.  Apply changes from 01/96.
+
+Doc & Version:  CS423x Device Support Extension (renamed)
+
+Problem:
+
+Recast into device binding template.  Apply changes from 01/96 meeting.
+Add a few hopefully non-controversial things (name, compatible, device_type).
+
+Proposal:
+
+[[ Again, this may not be the right process.  C'est la vie.  The intent
+is to get this into a form suitable for publication as a draft. ]]
+
+Crystal Semiconductor CS423x
+Device Binding to
+
+IEEE 1275-1994
+Standard for Boot (Initialization,
+Configuration) Firmware
+
+Revision 0.2
+DRAFT
+
+22 April 1996
+Vicki Abe, SunSoft
+Jordan Brown, SunSoft
+
+1.	Purpose of this Device Binding
+
+This document specifies the application of Open Firmware to the Crystal
+Semiconductor CS423x audio controller family, including device-specific
+requirements and practices for initialization, properties, and
+methods.
+
+2.	Revision History
+
+	Revision 0.1, 13 October 1995
+		Initial revision, proposal #294.
+		Vicki Abe, SunSoft
+	
+	Revision 0.2, 22 April 1996
+		Fit into binding template.  Changes as per 01/96 meeting.
+		Jordan Brown, SunSoft
+
+3.	References
+
+[1]	IEEE Std 1275-1994 Standard for Boot (Initialization, Configuration)
+	Firmware, Core Practices and Requirements
+[2]	Device Support Extensions to IEEE Std 1275-1994 Standard for Boot
+	(Initialization, Configuration) Firmware
+	http://playground.sun.com/1275/bindings/DeviceX/
+[3]	Crystal Semiconductor CS4231A Product Information Document, DS139PP1
+
+4.	Definition of Terms
+
+5.	Device Characteristics (Informative)
+
+The Crystal Semiconductor CS423x family is a family of multipurpose
+audio controllers.  They implements two general-purpose external
+control lines which are often used to control external source and
+destination switching, external amplifiers, and logic lines like
+interrupts and DMA control.
+
+6.	Device-specific Configuration Variables
+
+	None.
+
+7.	Device Nodes
+
+7.1.	Properties
+
+7.1.1.	Open Firmware-defined Properties for Device Nodes
+
+As defined in [2] and [1], with the following specifics:
+
+"name"
+	If the Generic Names Recommended Practice is implemented by
+	this package, this property shall have the value "sound".
+
+	If the Generic Names Recommended Practice is not implemented
+	by this package, this property shall have the value "cs423x",
+	where "x" is as appropriate for the device.
+
+"compatible"
+	
+	If the Generic Names Recommended Practice is implemented
+	by this package, the first entry in this property shall have
+	the value "cs423x", where "x" is as appropriate for the device.
+
+"device_type"
+	The value of this property shall be "sound".
+
+7.1.2.	Device-specific Properties for Device Nodes
+
+"xctl0"
+	Standard property, encoded with encode-string, that describes
+	the function that occurs when external control line 0 (indirect
+	register 10, bit 6) is set to 1.  Valid values for this property
+	shall be one of "enable internal speaker", "mute internal speaker",
+	"enable headphone", "mute headphone", "enable lineout", "mute
+	lineout", "enable interrupt", "disable interrupt", "enable dma",
+	"disable dma", or "not connected".
+
+"xctl1"
+	Standard property, encoded with encode-string, that describes
+	the function that occurs when external control line 0 (indirect
+	register 10, bit 6) is set to 1.  Valid values for this property
+	are as for "xctl0".
+	
+7.2.	Methods
+
+7.2.1.	Open Firmware-defined Methods for Device Nodes
+
+	As defined in [2], without addition or modification.
+
+7.2.1.1.	Device Arguments for "Open" Method
+
+	None.
+
+7.2.2.	Device-specific Methods for Device Nodes
+
+	None.
+
+8.	User Interface Commands
+
+8.1.	Open Firmware-defined User Interface Commands
+
+	None.
+
+8.2.	Device-specific User Interface Commands
+
+	None.
+
+9.	Device State
+
+9.1.	Device State When Client is Started
+
+	Unspecified.
+
+9.2.	Device State Required When Client Calls Open Firmware
+
+	Unspecified.
+
+9.3.    Device State When Open Firmware Returns Control to Client
+
+	Unspecified.
+
+10.	Other Commentary
+
+	Note:  This binding needs additional work.  In particular, it needs
+	definitions of "reg" and "interrupt", and discussions of device
+	state.
+
+[ P1275 Item #345 -- Received: Tue Apr 23 00:03:21 PDT 1996 ]
+

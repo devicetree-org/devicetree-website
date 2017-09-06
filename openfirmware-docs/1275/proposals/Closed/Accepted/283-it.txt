@@ -1,0 +1,65 @@
+Date: Tue, 15 Aug 1995 18:27:41 -0700
+From: dmk@uask4it-91 (David Kahn)
+Subject: Item #283: Core Errata: Alias expansion buglette
+
+P1275 Open Firmware Working Group Proposal -- Proposal #283 Ver 1
+
+Title:		Aliasion Expansion Buglette
+
+Author:		David Kahn
+
+Date:		Aug 15, 1995
+
+Ed/Tech:	Technical.
+
+Synopsis:	"Otherwise" is incorrect on Page 39 case 'b'.
+
+Doc & Version:	Core Errata
+
+Problem:
+
+In the path resolution procedure, on page 39 item 'b' of the core spec,
+the clause 'otherwise' should allow case 'a' to fall through,
+(omit 'otherwise').  Without the change, in the alias case,
+the root node is never made the active node when the expansion
+expands to a pathname beginning with '/'.
+
+The informative boxed text is correct, the normative item 'b'
+is incorrect because of the word 'otherwise'. In addition,
+the test at clause 'a' could be inverted as a 'goto b' to
+make it clearer that 'a' falls through to 'b'/
+
+Proposal:	
+
+> Isn't the the first section of 4.3.1 on page 38 supposed to fall through
+> into b) on the top of page 39?
+> In other words, the text that says:
+>	b) Otherwise (when PATH_NAME begins with the "/" character),
+> Should be written as:
+>	b) If PATH_NAME (possibly augmented above) begins with
+>	   the "/" character,
+
+I agree with David's analysis.
+
+Mitch
+
+-----------
+
+
+Add the following to the pathname resolution algorithm
+already included in the core errata document:
+
+Change item 'b' on page 39 to:
+
+	b) If PATH_NAME (possibly augmented above) begins with
+	   the '/' character.
+
+Change item 'a' on page 38 to:
+
+	a) If PATH_NAME begins with a "/" character, go to step b).
+
+<END>
+
+
+[ P1275 Item #283 -- Received: Tue Aug 15 18:30:52 PDT 1995 ]
+

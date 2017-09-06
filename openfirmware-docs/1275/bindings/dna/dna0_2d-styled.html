@@ -1,0 +1,1801 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML EXPERIMENTAL 970324//EN">
+<HTML>
+<HEAD>
+<META NAME="GENERATOR" CONTENT="Adobe FrameMaker 5.5/HTML Export Filter">
+<LINK REL="STYLESHEET" HREF="dna-book.css">
+<TITLE>Digital Network Appliance Platform Binding</TITLE></HEAD>
+<BODY BGCOLOR="#ffffff">
+<CENTER>
+<P CLASS="TitleCentered">
+<A NAME="pgfId=509747">
+ </A>
+Digital Network Appliance Platform Binding to:</P>
+<P CLASS="TitleCentered">
+<A NAME="pgfId=509750">
+ </A>
+IEEE 1275-1994</P>
+<P CLASS="TitleCentered">
+<A NAME="pgfId=509751">
+ </A>
+Standard for Boot</P>
+<P CLASS="TitleCentered">
+<A NAME="pgfId=509752">
+ </A>
+(Initialization, Configuration)</P>
+<P CLASS="TitleCentered">
+<A NAME="pgfId=509753">
+ </A>
+Firmware</P>
+<P CLASS="TitleCentered">
+<A NAME="pgfId=509754">
+ </A>
+</P>
+<P CLASS="TitleCentered">
+<A NAME="pgfId=509758">
+ </A>
+Revision: 0.2 DRAFT</P>
+<P CLASS="TitleCentered">
+<A NAME="pgfId=509762">
+ </A>
+Date: January 26, 1998</P>
+<P CLASS="Body">
+<A NAME="pgfId=509743">
+ </A>
+</P>
+</CENTER>
+<DIV>
+<H1 CLASS="Title">
+<A NAME="pgfId=997226">
+ </A>
+Purpose of the Digital Network Appliance Platform Binding</H1>
+<P CLASS="Body">
+<A NAME="pgfId=997230">
+ </A>
+This document specifies the application of <EM CLASS="Emphasis">
+IEEE Std 1275-1994 Standard for Boot (Initialization, Configuration) Firmware, Core Practices and Requirements</EM>
+ to Digital Network Appliance Platform compliant computer systems, including practices for client program interface and data formats. An implementation of Open Firmware for a Digital Network Appliance compliant system <EM CLASS="Emphasis">
+shall</EM>
+ implement the core requirements as defined in <A HREF="#11556" CLASS="XRef">
+[1]</A>
+, the ARM processor-specific extensions described in <A HREF="#21205" CLASS="XRef">
+[2]</A>
+ and the Digital Network Appliance specific extensions described in this binding.</P>
+</DIV>
+<DIV>
+<H1 CLASS="Title">
+<A NAME="pgfId=997237">
+ </A>
+Task Group Members</H1>
+<P CLASS="Body">
+<A NAME="pgfId=997241">
+ </A>
+The Digital Network Appliance Platform Binding Team Members were the following:</P>
+<P CLASS="Body">
+<A NAME="pgfId=997242">
+ </A>
+Mitch Bradley, FirmWorks</P>
+<P CLASS="Body">
+<A NAME="pgfId=997350">
+ </A>
+David Chaiken, Digital Equipment Corporation</P>
+<P CLASS="Body">
+<A NAME="pgfId=997246">
+ </A>
+Greg Hill (editor), FirmWorks</P>
+<P CLASS="Body">
+<A NAME="pgfId=997351">
+ </A>
+Jay Kistler, Digital Equipment Corporation</P>
+</DIV>
+<DIV>
+<H1 CLASS="Title">
+<A NAME="pgfId=997250">
+ </A>
+Trademarks</H1>
+<P CLASS="Body">
+<A NAME="pgfId=997251">
+ </A>
+The following terms, denoted by a registration symbol (&#174;) or trademark symbol() on the first occurrence in this publication, are registered trademarks or trademarks of the companies as shown in the list below:</P>
+<P CLASS="Body">
+<A NAME="pgfId=997252">
+ </A>
+	Trademark	Company </P>
+<TABLE>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=1009782">
+ </A>
+Ethernet</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=1009784">
+ </A>
+Xerox</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=1009786">
+ </A>
+Microsoft&#174;</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=1009788">
+ </A>
+Microsoft Corporation</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=1009792">
+ </A>
+MS-DOS&#174;</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=1009794">
+ </A>
+Microsoft Corporation</P>
+</TD>
+</TR>
+</TABLE>
+</DIV>
+<DIV>
+<H1 CLASS="Title">
+<A NAME="pgfId=997261">
+ </A>
+Revision History </H1>
+<TABLE>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=1009683">
+ </A>
+Revision 0.2 DRAFT</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=1009693">
+ </A>
+July 3, 1997</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=1009685">
+ </A>
+Initial, unapproved release.</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=1009687">
+ </A>
+Revision 0.2 DRAFT</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=1009695">
+ </A>
+January 26, 1998</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellBody">
+<A NAME="pgfId=1009689">
+ </A>
+Changed name to &quot;Digital Network Appliance Platform Binding&quot;.</P>
+</TD>
+</TR>
+</TABLE>
+<P CLASS="Bodyrev">
+<A NAME="pgfId=997199">
+ </A>
+</P>
+</DIV>
+<DIV>
+<H1 CLASS="Title">
+<A NAME="pgfId=423554">
+ </A>
+Table of Contents
+</H1>
+<P CLASS="Body">
+<A NAME="pgfId=423555">
+ </A>
+</P>
+<P CLASS="1HeadingTOC">
+<A NAME="pgfId=424755">
+ </A>
+<A HREF="#pgfId=330140" CLASS="Index">
+	1. Overview	 1</A>
+</P>
+<P CLASS="1HeadingTOC">
+<A NAME="pgfId=424757">
+ </A>
+<A HREF="#pgfId=326808" CLASS="Index">
+	2. References and Terms	 1</A>
+</P>
+<P CLASS="2HeadingTOC">
+<A NAME="pgfId=424759">
+ </A>
+<A HREF="#pgfId=326809" CLASS="Index">
+	2.1 References	1</A>
+</P>
+<P CLASS="2HeadingTOC">
+<A NAME="pgfId=424761">
+ </A>
+<A HREF="#pgfId=335781" CLASS="Index">
+	2.2 Terms	1</A>
+</P>
+<P CLASS="1HeadingTOC">
+<A NAME="pgfId=424763">
+ </A>
+<A HREF="#pgfId=329076" CLASS="Index">
+	3. Packages	 2</A>
+</P>
+<P CLASS="2HeadingTOC">
+<A NAME="pgfId=424765">
+ </A>
+<A HREF="#pgfId=333501" CLASS="Index">
+	3.1
+<EM CLASS="OFTerm">
+&quot;disk-label&quot;</EM>
+ Support Package	2 </A></P>
+<P CLASS="2HeadingTOC">
+<A NAME="pgfId=424767">
+ </A>
+<A HREF="#pgfId=334576" CLASS="Index">
+	3.2 Program-image Formats.	2</A>
+</P>
+<P CLASS="3HeadingTOC">
+<A NAME="pgfId=424769">
+ </A>
+<A HREF="#pgfId=336008" CLASS="Index">
+	3.2.1 Load Address	2</A>
+</P>
+<P CLASS="3HeadingTOC">
+<A NAME="pgfId=424771">
+ </A>
+<A HREF="#pgfId=336012" CLASS="Index">
+	3.2.2 Load Image Formats	2</A>
+</P>
+<P CLASS="3HeadingTOC">
+<A NAME="pgfId=424773">
+ </A>
+<A HREF="#pgfId=336017" CLASS="Index">
+	3.2.3
+<EM CLASS="OFTerm">
+a.out</EM>
+ Format	3 </A></P>
+<P CLASS="3HeadingTOC">
+<A NAME="pgfId=424775">
+ </A>
+<A HREF="#pgfId=336202" CLASS="Index">
+	3.2.4 Raw Binary Format	4</A>
+</P>
+<P CLASS="2HeadingTOC">
+<A NAME="pgfId=424777">
+ </A>
+<A HREF="#pgfId=336203" CLASS="Index">
+	3.3 
+<EM CLASS="OFTerm">
+&quot;obp-tftp&quot;</EM>
+ Support Package	4</A></P>
+<P CLASS="3HeadingTOC">
+<A NAME="pgfId=424779">
+ </A>
+<A HREF="#pgfId=336407" CLASS="Index">
+	3.3.1 Use of BOOTP	4</A>
+</P>
+<P CLASS="3HeadingTOC">
+<A NAME="pgfId=424781">
+ </A>
+<A HREF="#pgfId=334602" CLASS="Index">
+	3.3.2 DHCP Support	4</A>
+</P>
+<P CLASS="1HeadingTOC">
+<A NAME="pgfId=424783">
+ </A>
+<A HREF="#pgfId=336443" CLASS="Index">
+	4. Properties	 5</A>
+</P>
+<P CLASS="2HeadingTOC">
+<A NAME="pgfId=424785">
+ </A>
+<A HREF="#pgfId=334608" CLASS="Index">
+	4.1 Root Node Properties	5</A>
+</P>
+<P CLASS="2HeadingTOC">
+<A NAME="pgfId=424787">
+ </A>
+<A HREF="#pgfId=334164" CLASS="Index">
+	4.2 
+<EM CLASS="OFTerm">
+&quot;/chosen&quot;</EM>
+ Node Properties	5</A></P>
+<P CLASS="2HeadingTOC">
+<A NAME="pgfId=424789">
+ </A>
+<A HREF="#pgfId=335414" CLASS="Index">
+	4.3 
+<EM CLASS="OFTerm">
+&quot;/isa&quot;</EM>
+ Node Properties	6</A></P>
+<P CLASS="2HeadingTOC">
+<A NAME="pgfId=424791">
+ </A>
+<A HREF="#pgfId=334185" CLASS="Index">
+	4.4 
+<EM CLASS="OFTerm">
+&quot;/isa/rtc&quot;</EM>
+ Node Properties	6</A></P>
+<P CLASS="2HeadingTOC">
+<A NAME="pgfId=424793">
+ </A>
+<A HREF="#pgfId=336578" CLASS="Index">
+	4.5 
+<EM CLASS="OFTerm">
+&quot;/openprom&quot;</EM>
+ Node Properties	6</A></P>
+<P CLASS="1HeadingTOC">
+<A NAME="pgfId=424795">
+ </A>
+<A HREF="#pgfId=333759" CLASS="Index">
+	5. Extensions for Digital Network Appliance Platform Systems	 6</A>
+</P>
+<P CLASS="2HeadingTOC">
+<A NAME="pgfId=424797">
+ </A>
+<A HREF="#pgfId=333761" CLASS="Index">
+	5.1 Display Devices	6</A>
+</P>
+<P CLASS="2HeadingTOC">
+<A NAME="pgfId=424799">
+ </A>
+<A HREF="#pgfId=333769" CLASS="Index">
+	5.2 Device Support	7</A>
+</P>
+<P CLASS="2HeadingTOC">
+<A NAME="pgfId=424801">
+ </A>
+<A HREF="#pgfId=333774" CLASS="Index">
+	5.3 Conventions for Devices on ISA	7</A>
+</P>
+<P CLASS="2HeadingTOC">
+<A NAME="pgfId=424803">
+ </A>
+<A HREF="#pgfId=333796" CLASS="Index">
+	5.4 
+<EM CLASS="OFTerm">
+&quot;/aliases&quot;</EM>
+ Node Properties	7</A></P>
+<DIV>
+<H2 CLASS="1Heading">
+<A NAME="pgfId=330140">
+ </A>
+1. Overview</H2>
+<P CLASS="Body">
+<A NAME="pgfId=334072">
+ </A>
+This document specifies the application of <EM CLASS="Emphasis">
+IEEE Std 1275-1994 Standard for Boot (Initialization, Configuration) Firmware, Core Practices and Requirements</EM>
+ to Digital Network Appliance compliant computer systems, including practices for client program interface and data formats. An implementation of Open Firmware for a Digital Network Appliance compliant system <EM CLASS="Emphasis">
+shall</EM>
+ implement the core requirements as defined in <A HREF="#11556" CLASS="XRef">
+[1]</A>
+, the ARM processor-specific extensions described in <A HREF="#21205" CLASS="XRef">
+[2]</A>
+ and the Digital Network Appliance specific extensions described in this binding.</P>
+<P CLASS="Body">
+<A NAME="pgfId=334135">
+ </A>
+The document defines the binding to ARM platforms that use 32-bit addressing. Since the minimum cell size of Open Firmware is 32 bits, only one cell is necessary to represent addresses of processor bus devices; hence the value of <EM CLASS="OFTerm">
+&quot;#address-cells&quot;</EM>
+ for <EM CLASS="OFTerm">
+/</EM>
+ <EM CLASS="Emphasis">
+shall</EM>
+ be 1.</P>
+</DIV>
+<DIV>
+<H2 CLASS="1Heading">
+<A NAME="pgfId=326808">
+ </A>
+<A NAME="29452">
+ </A>
+2. References and Terms</H2>
+</DIV>
+<DIV>
+<H2 CLASS="2Heading">
+<A NAME="pgfId=326809">
+ </A>
+<A NAME="26829">
+ </A>
+2.1 References</H2>
+<P CLASS="Body">
+<A NAME="pgfId=326810">
+ </A>
+This standard shall be used in conjunction with the following publications. When the following standards are superseded by an approved revision, the revision shall apply.</P>
+<OL>
+<LI CLASS="Reference">
+<A NAME="pgfId=326811">
+ </A>
+<A NAME="11556">
+ </A>
+IEEE Std 1275-1994 Standard for Boot (Initialization, Configuration) Firmware, Core Practices and Requirements.</LI>
+<LI CLASS="Reference">
+<A NAME="pgfId=333434">
+ </A>
+<A NAME="21205">
+ </A>
+<EM CLASS="Emphasis">
+ARM processor binding to: IEEE Std 1275-1994, Standard for Boot (Initialization, Configuration) Firmware</EM>
+.</LI>
+<LI CLASS="Reference">
+<A NAME="pgfId=333438">
+ </A>
+<A NAME="29201">
+ </A>
+MS-DOS&#174; Programmer's Reference, published by Microsoft&#174;.   This document describes the MS-DOS partition, directory and FAT formats used by the &quot;<EM CLASS="OFTerm">
+disk-label&quot;</EM>
+ support package.</LI>
+<LI CLASS="Reference">
+<A NAME="pgfId=334345">
+ </A>
+<A NAME="22782">
+ </A>
+a.out file format as defined in the file <EM CLASS="OFTerm">
+include/sys/exec_aout.h</EM>
+ of the NetBSD distribution. http://www.netbsd.org.</LI>
+<LI CLASS="Reference">
+<A NAME="pgfId=335740">
+ </A>
+<A NAME="16270">
+ </A>
+Croft, B., and J. Gilmore, Bootstrap Protocol (BOOTP), RFC 951, Stanford University and Sun Microsystems, September 1985, http://ds.internic.net/rfc/rfc951.txt</LI>
+<LI CLASS="Reference">
+<A NAME="pgfId=335774">
+ </A>
+<EM CLASS="Emphasis">
+</EM>
+<A NAME="34241">
+ </A>
+Deutsch, P., <EM CLASS="Emphasis">
+DEFLATE Compressed Data Format Specification, Version 1.3</EM>
+, RFC 1951, Aladdin Enterprises, May 1996, htttp://ds.internic.net/rfc/rfc1951.txt</LI>
+<LI CLASS="Reference">
+<A NAME="pgfId=335792">
+ </A>
+<EM CLASS="Emphasis">
+</EM>
+<A NAME="15301">
+ </A>
+Deutsch, P., <EM CLASS="Emphasis">
+GZIP File Format Specification, Version 4.3</EM>
+, RFC 1952, Aladdin Enterprises, May 1996, http://ds.internic.net/rfc/rfc1952.txt</LI>
+<LI CLASS="Reference">
+<A NAME="pgfId=335723">
+ </A>
+<A NAME="20225">
+ </A>
+Droms, R., <EM CLASS="Emphasis">
+Dynamic Host Configuration Protocol</EM>
+, RFC 1531, Bucknell University, October 1993, http://ds.internic.net/rfc/rfc1531.txt</LI>
+<LI CLASS="Reference">
+<A NAME="pgfId=335738">
+ </A>
+Wimer, W., <EM CLASS="Emphasis">
+Clarifications and Extensions for the Bootstrap Protocol</EM>
+, RFC 1532, Carnegie Mellon University, October 1993, http://ds.internic.net/rfc/rfc1532.txt</LI>
+<LI CLASS="Reference">
+<A NAME="pgfId=333444">
+ </A>
+<A NAME="25012">
+ </A>
+ISO-9660, Information processing -- Volume and file structure of CD-ROM for information interchange, published by International Organization for Standardization.</LI>
+<LI CLASS="Reference">
+<A NAME="pgfId=333448">
+ </A>
+<A NAME="16706">
+ </A>
+Device Support Extensions to IEEE 1275-1994 Standard for Boot (Initialization, Configuration) Firmware.</LI>
+<LI CLASS="Reference">
+<A NAME="pgfId=333450">
+ </A>
+<A NAME="38111">
+ </A>
+<EM CLASS="Emphasis">
+Open Firmware Recommended Practice: 16-color Text Extension</EM>
+. </LI>
+<LI CLASS="Reference">
+<A NAME="pgfId=335778">
+ </A>
+<A NAME="24870">
+ </A>
+<EM CLASS="Emphasis">
+Open Firmware Recommended Practice: Graphics Extension</EM>
+.</LI>
+<LI CLASS="Reference">
+<A NAME="pgfId=336399">
+ </A>
+<EM CLASS="Emphasis">
+Open Firmware Recommended Practice: TFTP Booting Extension, Version 0.8</EM>
+<A NAME="14322">
+ </A>
+ (Unapproved Draft).<EM CLASS="Emphasis">
+</EM>
+</LI>
+</OL>
+</DIV>
+<DIV>
+<H2 CLASS="2Heading">
+<A NAME="pgfId=335781">
+ </A>
+2.2 Terms</H2>
+<P CLASS="Body">
+<A NAME="pgfId=333460">
+ </A>
+This standard uses technical terms as they are defined in the documents cited in &quot;References&quot;, plus the following terms:</P>
+<P CLASS="Body">
+<A NAME="pgfId=334156">
+ </A>
+a.out: A binary object file format defined in <A HREF="#22782" CLASS="XRef">
+[4]</A>
+ that is used to represent client programs in Open Firmware for ARM.</P>
+<P CLASS="Body">
+<A NAME="pgfId=333468">
+ </A>
+core, core specification: refers to <EM CLASS="Emphasis">
+IEEE Std 1275-1994 Standard for Boot (Initialization, Configuration) Firmware, Core Practices and Requirements</EM>
+</P>
+<P CLASS="Body">
+<A NAME="pgfId=333479">
+ </A>
+FDISK: Refers to the boot-record and partition table format used by MS-DOS, as defined in <A HREF="#29201" CLASS="XRef">
+[3]</A>
+.</P>
+<P CLASS="Body">
+<A NAME="pgfId=333480">
+ </A>
+Open Firmware: The firmware architecture defined by the core specification or, when used as an adjective, a software component compliant with the core specification.</P>
+</DIV>
+<DIV>
+<H2 CLASS="1Heading">
+<A NAME="pgfId=329076">
+ </A>
+3. Packages</H2>
+<P CLASS="FirstBody">
+<A NAME="pgfId=333497">
+ </A>
+This section describes the Digital Network Appliance-specific requirements of Open Firmware packages.</P>
+</DIV>
+<DIV>
+<H2 CLASS="2Heading">
+<A NAME="pgfId=333501">
+ </A>
+3.1
+<EM CLASS="OFTerm">
+&quot;disk-label&quot;</EM>
+ Support Package</H2>
+<P CLASS="FirstBody">
+<A NAME="pgfId=335828">
+ </A>
+The Digital Network Appliance is primarily intended to support diskless systems that store most of their data on network servers. Consequently, many implementations of this architecture lack disk-like mass storage devices (e.g. disks, diskettes, CD-ROMs). Therefore, this binding does not mandate the presence of a &quot;<EM CLASS="OFTerm">
+disk-label&quot;</EM>
+ support package, nor does it specify the exact behavior of a &quot;<EM CLASS="OFTerm">
+disk-label&quot;</EM>
+ support package, should it exist. For variants that do support disk devices, the behavior of the &quot;<EM CLASS="OFTerm">
+disk-label&quot;</EM>
+ support package should be specified in additional documentation pertaining to the platform in its application domain.</P>
+</DIV>
+<DIV>
+<H2 CLASS="2Heading">
+<A NAME="pgfId=334576">
+ </A>
+3.2 Program-image Formats. </H2>
+<DIV>
+<H3 CLASS="3Heading">
+<A NAME="pgfId=336008">
+ </A>
+3.2.1 Load Address</H3>
+<P CLASS="Body">
+<A NAME="pgfId=336009">
+ </A>
+The default load address is 0xF0000000, the value of <EM CLASS="word">
+load-base</EM>
+. Client programs are assumed to be designed to be loaded at 0xF0000000.</P>
+<P CLASS="Body">
+<A NAME="pgfId=336010">
+ </A>
+Prior to the first execution of <EM CLASS="word">
+load</EM>
+, the firmware <EM CLASS="Emphasis">
+shall</EM>
+ allocate and map at least 6 MB of physical memory at this address, unless the hardware configuration of the system makes this impossible. In that case, the firmware <EM CLASS="Emphasis">
+shall</EM>
+ map as much memory as practical.</P>
+</DIV>
+<DIV>
+<H3 CLASS="3Heading">
+<A NAME="pgfId=336012">
+ </A>
+<A NAME="27149">
+ </A>
+3.2.2 Load Image Formats</H3>
+<P CLASS="Body">
+<A NAME="pgfId=334578">
+ </A>
+The <EM CLASS="UserInterface">
+load</EM>
+ User Interface command in conjunction with <EM CLASS="UserInterface">
+init-program</EM>
+ <EM CLASS="Emphasis">
+shall</EM>
+ prepare the loaded image for later execution according to the following algorithm:</P>
+<P CLASS="Code">
+<A NAME="pgfId=335866">
+ </A>
+If the three bytes beginning at the default load address are the gzip compression signature (i.e. Byte 0 = 0x1F, Byte 1 = 0x8B, Byte 2 = 0x08) as described in <A HREF="#15301" CLASS="XRef">
+[7]</A>
+, skip the header according to <A HREF="#15301" CLASS="XRef">
+[7]</A>
+ and inflate the image according to the algorithm described in <A HREF="#34241" CLASS="XRef">
+[6]</A>
+, placing the inflated image at the default load address, and proceed with the following steps.</P>
+<P CLASS="Code">
+<A NAME="pgfId=335878">
+ </A>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=335996">
+ </A>
+If the 4 bytes beginning at the default load address are the a.out signature as described in <A HREF="#36445" CLASS="XRef">
+Section 3.2.3</A>
+, prepare the image for execution as described in <A HREF="#36445" CLASS="XRef">
+Section 3.2.3</A>
+ and skip the remaining steps.</P>
+<P CLASS="Code">
+<A NAME="pgfId=336120">
+ </A>
+<EM CLASS="OFTerm">
+</EM>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=335997">
+ </A>
+Otherwise, if the 2 bytes beginning at the default load address are the Forth source code signature characters &quot;\ &quot; (i.e. 0x5C, 0x20), arrange for the next execution of <EM CLASS="UserInterface">
+go</EM>
+ to interpret the load image as Forth source code, and skip the remaining steps.</P>
+<P CLASS="Code">
+<A NAME="pgfId=336128">
+ </A>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=336496">
+ </A>
+Otherwise, if the byte at the default load address is the <EM CLASS="UserInterface">
+start1</EM>
+ FCode token (i.e. 0xF1), arrange for the next execution of <EM CLASS="UserInterface">
+go</EM>
+ to evaluate the load image as FCode (e.g. as with <EM CLASS="UserInterface">
+&quot;load-base 1 byte-load&quot;</EM>
+), and skip the remaining steps.</P>
+<UL>
+<LI CLASS="Note">
+<A NAME="pgfId=336498">
+ </A>
+At this point, the firmware may recognize and prepare other image formats not specified here.</LI>
+</UL>
+<P CLASS="Code">
+<A NAME="pgfId=336130">
+ </A>
+</P>
+<P CLASS="Code">
+<A NAME="pgfId=336000">
+ </A>
+Otherwise (i.e. if the load image format has not been recognized explicitly), prepare the image for execution as described in <A HREF="#37669" CLASS="XRef">
+Section 3.2.4</A>
+.</P>
+</DIV>
+<DIV>
+<H3 CLASS="3Heading">
+<A NAME="pgfId=336017">
+ </A>
+3.2.3
+<EM CLASS="OFTerm">
+a.out</EM>
+<A NAME="36445">
+ </A>
+ Format</H3>
+<P CLASS="Body">
+<A NAME="pgfId=336019">
+ </A>
+The offsets given below are from the default load address. </P>
+<TABLE>
+<TR>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeadCtr">
+<A NAME="pgfId=336022">
+ </A>
+Offset</P>
+</TH>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=336024">
+ </A>
+Name</P>
+</TH>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=336026">
+ </A>
+Endianess</P>
+</TH>
+<TH ROWSPAN="1" COLSPAN="1">
+<P CLASS="CellHeading">
+<A NAME="pgfId=336028">
+ </A>
+Contents</P>
+</TH>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="Normal">
+<A NAME="pgfId=336030">
+ </A>
+0</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="Normal">
+<A NAME="pgfId=336032">
+ </A>
+<EM CLASS="OFTerm">
+a_midmag</EM>
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="Normal">
+<A NAME="pgfId=336034">
+ </A>
+Big</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="Normal">
+<A NAME="pgfId=336036">
+ </A>
+Signature: 0x008F010B</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="Normal">
+<A NAME="pgfId=336038">
+ </A>
+4</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="Normal">
+<A NAME="pgfId=336040">
+ </A>
+<EM CLASS="OFTerm">
+a_text</EM>
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="Normal">
+<A NAME="pgfId=336042">
+ </A>
+Little</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="Normal">
+<A NAME="pgfId=336044">
+ </A>
+The length in bytes of the header plus the text segment in both the file and the execution image.</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="Normal">
+<A NAME="pgfId=336046">
+ </A>
+8</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="Normal">
+<A NAME="pgfId=336048">
+ </A>
+<EM CLASS="OFTerm">
+a_data</EM>
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="Normal">
+<A NAME="pgfId=336050">
+ </A>
+Little</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="Normal">
+<A NAME="pgfId=336052">
+ </A>
+The length in bytes of the data segment in both the file and the execution image</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="Normal">
+<A NAME="pgfId=336054">
+ </A>
+12</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="Normal">
+<A NAME="pgfId=336056">
+ </A>
+<EM CLASS="OFTerm">
+a_bss</EM>
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="Normal">
+<A NAME="pgfId=336058">
+ </A>
+Little</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="Normal">
+<A NAME="pgfId=336060">
+ </A>
+The length in bytes of the bss segment in the execution image. The bss segment is not stored in the file, because its initial contents are always zero.</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="Normal">
+<A NAME="pgfId=336062">
+ </A>
+16</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="Normal">
+<A NAME="pgfId=336064">
+ </A>
+<EM CLASS="OFTerm">
+a_sym</EM>
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="Normal">
+<A NAME="pgfId=336066">
+ </A>
+Little</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="Normal">
+<A NAME="pgfId=336068">
+ </A>
+The length in bytes of the symbols portion of the file. (The symbol table in the execution image consists of two portions, one for the symbols and a second for the strings.<A HREF="#39128" CLASS="XRef"><sup>1</sup></A>
+)<EM CLASS="OFTerm">
+</EM>
+</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="Normal">
+<A NAME="pgfId=336073">
+ </A>
+20</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="Normal">
+<A NAME="pgfId=336075">
+ </A>
+<EM CLASS="OFTerm">
+a_entry</EM>
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="Normal">
+<A NAME="pgfId=336077">
+ </A>
+Little</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="Normal">
+<A NAME="pgfId=336079">
+ </A>
+The virtual address at which program execution is to begin.</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="Normal">
+<A NAME="pgfId=336081">
+ </A>
+24</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="Normal">
+<A NAME="pgfId=336083">
+ </A>
+<EM CLASS="OFTerm">
+a_trsize</EM>
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="Normal">
+<A NAME="pgfId=336085">
+ </A>
+Little</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="Normal">
+<A NAME="pgfId=336087">
+ </A>
+The size of the text relocation table. Used only for object files. Contains 0 for executable files.</P>
+</TD>
+</TR>
+<TR>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="Normal">
+<A NAME="pgfId=336089">
+ </A>
+28</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="Normal">
+<A NAME="pgfId=336091">
+ </A>
+<EM CLASS="OFTerm">
+a_drsize</EM>
+</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="Normal">
+<A NAME="pgfId=336093">
+ </A>
+Little</P>
+</TD>
+<TD ROWSPAN="1" COLSPAN="1">
+<P CLASS="Normal">
+<A NAME="pgfId=336095">
+ </A>
+The size of the data relocation table. Used only for object files. Contains 0 for executable files.</P>
+</TD>
+</TR>
+</TABLE>
+<P CLASS="Body">
+<A NAME="pgfId=336099">
+ </A>
+The loaded image consists of the above header immediately followed in order by the text segment, the data segment, the symbols portion of the symbol table and the strings portion of the symbol table. After recognizing this header, load <EM CLASS="Emphasis">
+shall</EM>
+:</P>
+<UL>
+<LI CLASS="Bullet">
+<A NAME="pgfId=336100">
+ </A>
+Synchronize the instruction and data caches from <EM CLASS="word">
+load-base</EM>
+ to <EM CLASS="word">
+load-base</EM>
+ + <EM CLASS="OFTerm">
+a_text</EM>
+ + <EM CLASS="OFTerm">
+a_data</EM>
+ + 0x20,</LI>
+<LI CLASS="Bullet">
+<A NAME="pgfId=336101">
+ </A>
+Move the symbol portion and string portion of the symbol table from <EM CLASS="word">
+load-base</EM>
+ + <EM CLASS="OFTerm">
+a_text</EM>
+ + <EM CLASS="OFTerm">
+a_data</EM>
+ + 0x20 to <EM CLASS="word">
+load-base</EM>
+ + <EM CLASS="OFTerm">
+a_text</EM>
+ + <EM CLASS="OFTerm">
+a_data</EM>
+ + <EM CLASS="OFTerm">
+a_bss</EM>
+ + 0x20. </LI>
+<LI CLASS="Bullet">
+<A NAME="pgfId=336102">
+ </A>
+Zero <EM CLASS="OFTerm">
+a_bss</EM>
+ bytes of memory beginning at <EM CLASS="word">
+load-base</EM>
+ + <EM CLASS="OFTerm">
+a_text</EM>
+ + <EM CLASS="OFTerm">
+a_data</EM>
+ + 0x20,</LI>
+<LI CLASS="Bullet">
+<A NAME="pgfId=336103">
+ </A>
+Release and unmap the physical memory from <EM CLASS="word">
+load-base</EM>
+ + <EM CLASS="OFTerm">
+a_text</EM>
+ + <EM CLASS="OFTerm">
+a_data</EM>
+ + <EM CLASS="OFTerm">
+a_bss</EM>
+ + <EM CLASS="OFTerm">
+a_sym</EM>
+ + <EM CLASS="OFTerm">
+string_size<A HREF="#pgfId=336107" CLASS="footnote"><sup>1</sup></A>
+</EM>
+ + 0x20 (i.e. from the end of the prepared client program memory image) to the end of the load area. (The goal of this step is to have the <EM CLASS="OFTerm">
+&quot;available&quot;</EM>
+ properties in the <EM CLASS="OFTerm">
+/memory</EM>
+ and <EM CLASS="OFTerm">
+/mmu</EM>
+ nodes accurately reflect the memory actually consumed by the client program prepared image.)</LI>
+<LI CLASS="Bullet">
+<A NAME="pgfId=336108">
+ </A>
+Set the <EM CLASS="word">
+pc</EM>
+ in the <EM CLASS="Emphasis">
+saved-program-state</EM>
+ to <EM CLASS="OFTerm">
+a_entry</EM>
+.</LI>
+<LI CLASS="Bullet">
+<A NAME="pgfId=336109">
+ </A>
+Set the remaining elements of the <EM CLASS="Emphasis">
+saved-program-state</EM>
+ to their initial values as defined in <A HREF="arm-body.htm#40120" CLASS="XRef">
+Section 6.2.1</A>
+ of <A HREF="#21205" CLASS="XRef">
+[2]</A>
+.</LI>
+<LI CLASS="Note">
+<A NAME="pgfId=336110">
+ </A>
+The above header is that used by NetBSD <A HREF="#22782" CLASS="XRef">
+[4]</A>
+.</LI>
+</UL>
+</DIV>
+<DIV>
+<H3 CLASS="3Heading">
+<A NAME="pgfId=336202">
+ </A>
+<A NAME="37669">
+ </A>
+3.2.4 Raw Binary Format</H3>
+<P CLASS="Body">
+<A NAME="pgfId=336289">
+ </A>
+In order to prepare a raw binary image for execution, <EM CLASS="UserInterface">
+load</EM>
+ <EM CLASS="Emphasis">
+shall</EM>
+:</P>
+<UL>
+<LI CLASS="Bullet">
+<A NAME="pgfId=336290">
+ </A>
+Synchronize the instruction and data caches from <EM CLASS="word">
+load-base</EM>
+ to <EM CLASS="word">
+load-base</EM>
+ + the size of the loaded image,</LI>
+<LI CLASS="Bullet">
+<A NAME="pgfId=336293">
+ </A>
+Release and unmap the physical memory from <EM CLASS="word">
+load-base</EM>
+ + the size of the loaded image (i.e. from the end of the loaded image) to the end of the load area. (The goal of this step is to have the <EM CLASS="OFTerm">
+&quot;available&quot;</EM>
+ properties in the <EM CLASS="OFTerm">
+/memory</EM>
+ and <EM CLASS="OFTerm">
+/mmu</EM>
+ nodes accurately reflect the memory actually consumed by the client program prepared image.)</LI>
+<LI CLASS="Bullet">
+<A NAME="pgfId=336298">
+ </A>
+Set the <EM CLASS="word">
+pc</EM>
+ in the <EM CLASS="Emphasis">
+saved-program-state</EM>
+ to <EM CLASS="UserInterface">
+load-base</EM>
+.</LI>
+<LI CLASS="Bullet">
+<A NAME="pgfId=336299">
+ </A>
+Set the remaining elements of the <EM CLASS="Emphasis">
+saved-program-state</EM>
+ to their initial values as defined in <A HREF="arm-body.htm#40120" CLASS="XRef">
+Section 6.2.1</A>
+ of <A HREF="#21205" CLASS="XRef">
+[2]</A>
+.</LI>
+</UL>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="2Heading">
+<A NAME="pgfId=336203">
+ </A>
+3.3
+<EM CLASS="OFTerm">
+&quot;obp-tftp&quot;</EM>
+ Support Package </H2>
+<P CLASS="Body">
+<A NAME="pgfId=336204">
+ </A>
+The <EM CLASS="OFTerm">
+&quot;obp-tftp&quot;</EM>
+ Support Package <EM CLASS="Emphasis">
+shall</EM>
+ comply with the requirements set forth in Sections 5.1 and 5.2 of <A HREF="#14322" CLASS="XRef">
+[14]</A>
+ with the following extensions.</P>
+<DIV>
+<H3 CLASS="3Heading">
+<A NAME="pgfId=336407">
+ </A>
+3.3.1 Use of BOOTP</H3>
+<P CLASS="FirstBody">
+<A NAME="pgfId=336408">
+ </A>
+BOOTP (in its DHCP variation as described below) <EM CLASS="Emphasis">
+shall</EM>
+ be the default discovery protocol (i.e. if the first argument to the <EM CLASS="OFTerm">
+&quot;obp-tftp&quot;</EM>
+ <EM CLASS="UserInterface">
+open</EM>
+ method is not an IP address BOOTP <EM CLASS="Emphasis">
+shall</EM>
+ be used).</P>
+</DIV>
+<DIV>
+<H3 CLASS="3Heading">
+<A NAME="pgfId=334602">
+ </A>
+3.3.2 DHCP Support</H3>
+<P CLASS="FirstBody">
+<A NAME="pgfId=334986">
+ </A>
+In the <EM CLASS="OFTerm">
+&quot;obp-tftp&quot;</EM>
+ <EM CLASS="UserInterface">
+load</EM>
+ method, if the BOOTP protocol is to be used to discover the server's IP address, the DHCP variant of the BOOTP protocol <EM CLASS="Emphasis">
+shall</EM>
+ be used, beginning at the DHCP INIT state as specified in <A HREF="#20225" CLASS="XRef">
+[8]</A>
+. In addition to the DHCP options required by <A HREF="#20225" CLASS="XRef">
+[8]</A>
+, the DHCPDISCOVER and DHCPREQUEST packets shall contain a &quot;client identifier&quot; option whose value is derived from the <EM CLASS="OFTerm">
+&quot;system-id&quot;</EM>
+ property of the device tree root node, and if the device tree root node contains an <EM CLASS="OFTerm">
+&quot;architecture&quot;</EM>
+ property (whose value is a text string encoded as with <EM CLASS="OFTerm">
+encode-string</EM>
+), the DHCPDISCOVER and DHCPREQUEST packets shall contain a &quot;vendor class identifier&quot; option whose value is the string decoded from the prop-encoded-array of that <EM CLASS="OFTerm">
+&quot;architecture&quot;</EM>
+ property's value. </P>
+<UL>
+<LI CLASS="Note">
+<A NAME="pgfId=336463">
+ </A>
+For this binding, the <EM CLASS="OFTerm">
+&quot;system-id&quot;</EM>
+ property must be derived from <EM CLASS="UserInterface">
+system-mac-address</EM>
+, so the &quot;client identifier&quot; option's value is derived from the hardware address.</LI>
+</UL>
+<P CLASS="Body">
+<A NAME="pgfId=336417">
+ </A>
+If the server responds to the DHCP <EM CLASS="OFTerm">
+DISCOVER</EM>
+ with a <EM CLASS="OFTerm">
+BOOTREPLY</EM>
+ that is not a <EM CLASS="OFTerm">
+DHCPOFFER</EM>
+ (i.e. the options field is empty and does not contain DHCP options), Open Firmware <EM CLASS="Emphasis">
+shall</EM>
+ proceed using the BOOTP protocol. Otherwise (i.e. if the server responds with a DHCPOFFER BOOTREPLY), Open Firmware shall proceed using the DHCP protocol, until the DCHP client (i.e. the firmware) enters the DHCP BOUND state, at which point the firmware has acquired an IP address for its subsequent use.</P>
+<P CLASS="Body">
+<A NAME="pgfId=336532">
+ </A>
+Upon successful completion of the discovery protocol, via either the full DHCP process or the truncated &quot;BOOTP server responds with non-DHCPOFFER&quot; version, the verbatim contents of the final BOOTP or DHCPACK packet from the server shall be reported by encoding those contents as with <EM CLASS="OFTerm">
+encode-bytes</EM>
+ and using the resulting <EM CLASS="Emphasis">
+prop-encoded-array</EM>
+ to create both a <EM CLASS="OFTerm">
+&quot;bootreply-packet&quot;</EM>
+ property and a <EM CLASS="OFTerm">
+&quot;bootp-response&quot;</EM>
+ property in the <EM CLASS="OFTerm">
+/chosen</EM>
+ node. Client programs should use the <EM CLASS="OFTerm">
+&quot;bootreply-packet&quot;</EM>
+ property; the <EM CLASS="OFTerm">
+&quot;bootp-response&quot;</EM>
+ property is a concession to existing client programs.</P>
+<P CLASS="Body">
+<A NAME="pgfId=336471">
+ </A>
+The firmware may, but need not, implement an additional mechanism for remembering a previously-assigned IP address and attempting to re-use that address by skipping the DHCPDISCOVER phase and proceeding directly to the DHCPREQUEST phase, as permitted in <A HREF="#20225" CLASS="XRef">
+[8]</A>
+. The details of such a mechanism are not specified by this binding.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="1Heading">
+<A NAME="pgfId=336443">
+ </A>
+4. Properties</H2>
+<P CLASS="Body">
+<A NAME="pgfId=334606">
+ </A>
+This section describes the standard properties of Digital Network Appliance Platform Open Firmware implementation. </P>
+</DIV>
+<DIV>
+<H2 CLASS="2Heading">
+<A NAME="pgfId=334608">
+ </A>
+4.1 Root Node Properties</H2>
+<P CLASS="Body">
+<A NAME="pgfId=334610">
+ </A>
+The following properties of the root node (&quot;<EM CLASS="OFTerm">
+/</EM>
+&quot;) shall be created by an Open Firmware implementation.</P>
+<UL>
+<LI CLASS="Note">
+<A NAME="pgfId=334995">
+ </A>
+The root node typically corresponds to the VL bus in a Digital Network Appliance system</LI>
+</UL>
+<DIV>
+<H4 CLASS="word-hdr">
+<A NAME="pgfId=334614">
+ </A>
+<EM CLASS="OFTerm">
+&quot;#address-cells&quot;</EM>
+ </H4>
+<P CLASS="word-def">
+<A NAME="pgfId=334616">
+ </A>
+Standard property, encoded as with <EM CLASS="OFTerm">
+encode-int</EM>
+, that specifies the number of cells required to represent physical addresses on the processor bus. The value of <EM CLASS="OFTerm">
+&quot;#address-cells&quot;</EM>
+ for the processor bus shall be 1. </P>
+</DIV>
+<DIV>
+<H4 CLASS="word-hdr">
+<A NAME="pgfId=334620">
+ </A>
+<EM CLASS="OFTerm">
+&quot;clock-frequency&quot;</EM>
+ </H4>
+<P CLASS="word-def">
+<A NAME="pgfId=334622">
+ </A>
+Standard property, encoded as with <EM CLASS="OFTerm">
+encode-int</EM>
+, that represents the primary system bus speed (in hertz).</P>
+</DIV>
+<DIV>
+<H4 CLASS="word-hdr">
+<A NAME="pgfId=335224">
+ </A>
+<EM CLASS="OFTerm">
+&quot;dma-ranges&quot;</EM>
+</H4>
+<P CLASS="word-def">
+<A NAME="pgfId=335222">
+ </A>
+Standard property, whose value is an array of entries of the form: <EM CLASS="Emphasis">
+child-address child-size</EM>
+.</P>
+<P CLASS="word-def">
+<A NAME="pgfId=335249">
+ </A>
+Each entry describes a contiguous DMA address range, giving the base addresses of the range in the child address space and the length of the range, which is expressed in the child's size format. (The &quot;child&quot; address space is the address space defined by the root node.)</P>
+<P CLASS="word-def">
+<A NAME="pgfId=335257">
+ </A>
+Each <EM CLASS="Emphasis">
+child-address</EM>
+ is a physical address, encoded as with <EM CLASS="OFTerm">
+encode-phys</EM>
+, within the child address space. The number of cells therein can be determined from the <EM CLASS="OFTerm">
+&quot;#address-cells&quot;</EM>
+ property of the root node.</P>
+<P CLASS="word-def">
+<A NAME="pgfId=335268">
+ </A>
+Each <EM CLASS="Emphasis">
+child-size</EM>
+ is a sequence of integers, each encoded as with <EM CLASS="OFTerm">
+encode-int</EM>
+. The number of integers is determined from the <EM CLASS="OFTerm">
+&quot;#size-cells&quot;</EM>
+ property of the root node, or by the default value of 1 if the root node contains no <EM CLASS="OFTerm">
+&quot;#size-cells&quot;</EM>
+ property.</P>
+<UL>
+<LI CLASS="Note">
+<A NAME="pgfId=335699">
+ </A>
+The general form of a &quot;<EM CLASS="OFTerm">
+dma-ranges&quot;</EM>
+ entry is <EM CLASS="Emphasis">
+child-address parent-address child-size</EM>
+. Within this node, the <EM CLASS="Emphasis">
+parent-address</EM>
+ portion is zero cells long.</LI>
+</UL>
+</DIV>
+<DIV>
+<H4 CLASS="word-hdr">
+<A NAME="pgfId=333853">
+ </A>
+&quot;system-id&quot;</H4>
+<P CLASS="word-def">
+<A NAME="pgfId=333854">
+ </A>
+Standard property, encoded as with <EM CLASS="OFTerm">
+encode-string</EM>
+, that contains the identification of the computer system. This string shall be unique across all systems and all manufacturers. The system-id <EM CLASS="Emphasis">
+shall</EM>
+ be of the form &quot;0nnnnnnmmmmmm&quot; where nnnnnn is a sequence of 6 uppercase hexadecimal digits representing a 24-bit Organizationally Unique Identifier (OUI) assigned by the IEEE Registration Authority Committee, and mmmmmm is a sequence of 6 uppercase hexadecimal digits representing a 24-bit binary number assigned by the manufacturer to assure uniqueness.</P>
+<P CLASS="word-def">
+<A NAME="pgfId=336450">
+ </A>
+The 6-byte MAC address returned by <EM CLASS="UserInterface">
+system-mac-address</EM>
+ meets the above requirements. For this binding, that MAC address, encoded in the form specified above, shall be used as the system-id.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="2Heading">
+<A NAME="pgfId=334164">
+ </A>
+4.2
+<EM CLASS="OFTerm">
+&quot;/chosen&quot;</EM>
+ Node Properties</H2>
+<P CLASS="Body">
+<A NAME="pgfId=334165">
+ </A>
+The following properties of the <EM CLASS="OFTerm">
+&quot;/chosen&quot;</EM>
+ node shall be created by an Open Firmware implementation.</P>
+<DIV>
+<H4 CLASS="word-hdr">
+<A NAME="pgfId=334169">
+ </A>
+&quot;clock&quot;</H4>
+<P CLASS="word-def">
+<A NAME="pgfId=336613">
+ </A>
+Standard property, encoded as with <EM CLASS="OFTerm">
+encode-int</EM>
+, that represents the ihandle of an instance of the real-time clock node. The purpose of this property is to enable a client program to use the <EM CLASS="OFTerm">
+set-time</EM>
+ method of the <EM CLASS="OFTerm">
+&quot;/isa/rtc&quot;</EM>
+ node easily.</P>
+</DIV>
+<DIV>
+<H4 CLASS="word-hdr">
+<A NAME="pgfId=336641">
+ </A>
+<EM CLASS="OFTerm">
+&quot;nvram&quot;</EM>
+</H4>
+<P CLASS="word-def">
+<A NAME="pgfId=336642">
+ </A>
+Standard property, encoded as with <EM CLASS="OFTerm">
+encode-int</EM>
+, that represents the ihandle of an instance of the NVRAM node.</P>
+<UL>
+<LI CLASS="Note">
+<A NAME="pgfId=336645">
+ </A>
+The nvram node identified in the <EM CLASS="OFTerm">
+/chosen</EM>
+ node shall support a <EM CLASS="OFTerm">
+size</EM>
+ method as specified in Section 7.2 of <A HREF="#16706" CLASS="XRef">
+[11]</A>
+. The <EM CLASS="OFTerm">
+size</EM>
+ method will return a value that is the total DNA platform NVRAM size.</LI>
+</UL>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="2Heading">
+<A NAME="pgfId=335414">
+ </A>
+4.3
+<EM CLASS="OFTerm">
+&quot;/isa&quot;</EM>
+ Node Properties</H2>
+<P CLASS="Body">
+<A NAME="pgfId=335416">
+ </A>
+The following properties of the <EM CLASS="OFTerm">
+&quot;/isa&quot;</EM>
+ node shall be created by an Open Firmware implementation.</P>
+<DIV>
+<H4 CLASS="word-hdr">
+<A NAME="pgfId=335422">
+ </A>
+<EM CLASS="OFTerm">
+&quot;dma-ranges&quot;</EM>
+</H4>
+<P CLASS="word-def">
+<A NAME="pgfId=335423">
+ </A>
+Standard property, whose value is an array of entries of the form: <EM CLASS="Emphasis">
+child-address parent-address child-size</EM>
+</P>
+<P CLASS="word-def">
+<A NAME="pgfId=335437">
+ </A>
+Each entry describes a contiguous DMA address range, giving the base addresses of the range in both the child and parent address spaces and the length of the range, which is expressed in the child's size format. (The &quot;child&quot; address space is the address space defined by the <EM CLASS="OFTerm">
+/isa</EM>
+ node. The &quot;parent&quot; address space is the address space defined by the root node, the <EM CLASS="OFTerm">
+/isa</EM>
+ node's parent.)</P>
+<P CLASS="word-def">
+<A NAME="pgfId=335489">
+ </A>
+Each <EM CLASS="Emphasis">
+child-address</EM>
+ is a physical address, encoded as with <EM CLASS="OFTerm">
+encode-phys</EM>
+, within the child address space. The number of cells used is 2 reflecting the default value of the <EM CLASS="OFTerm">
+&quot;#address-cells&quot;</EM>
+ property since the <EM CLASS="OFTerm">
+/isa</EM>
+ node contains no <EM CLASS="OFTerm">
+&quot;#address-cells&quot;</EM>
+ property.</P>
+<P CLASS="word-def">
+<A NAME="pgfId=335490">
+ </A>
+Each <EM CLASS="Emphasis">
+parent-address</EM>
+ is a physical address, encoded as with <EM CLASS="OFTerm">
+encode-phys</EM>
+, within the parent address space. The number of cells therein is determined from the <EM CLASS="OFTerm">
+&quot;#address-cells&quot;</EM>
+ property of the root node, the <EM CLASS="OFTerm">
+/isa</EM>
+ node's parent.</P>
+<P CLASS="word-def">
+<A NAME="pgfId=335503">
+ </A>
+Each <EM CLASS="Emphasis">
+child-size</EM>
+ is a single integer encoded as with <EM CLASS="OFTerm">
+encode-int</EM>
+. This reflects the default value of the <EM CLASS="OFTerm">
+&quot;#size-cells&quot;</EM>
+ property since the <EM CLASS="OFTerm">
+/isa</EM>
+ node contains no <EM CLASS="OFTerm">
+&quot;#size-cells&quot;</EM>
+ property.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="2Heading">
+<A NAME="pgfId=334185">
+ </A>
+4.4
+<EM CLASS="OFTerm">
+&quot;/isa/rtc&quot;</EM>
+ Node Properties</H2>
+<P CLASS="Body">
+<A NAME="pgfId=334186">
+ </A>
+The following properties of the <EM CLASS="OFTerm">
+&quot;/isa/rtc&quot;</EM>
+ node shall be created by an Open Firmware implementation.</P>
+<DIV>
+<H4 CLASS="word-hdr">
+<A NAME="pgfId=334187">
+ </A>
+&quot;status&quot;</H4>
+<P CLASS="word-def">
+<A NAME="pgfId=334298">
+ </A>
+Standard property, encoded as with <EM CLASS="word">
+encode-string</EM>
+, that specifies the state of the latched and unlatched battery bits of the real-time clock. If either of those bits indicates a battery problem, the &quot;status&quot; property value <EM CLASS="Emphasis">
+shall</EM>
+ be set to the string &quot;bad battery&quot;. In all other cases, the property value <EM CLASS="Emphasis">
+shall</EM>
+ be set to the string <EM CLASS="OFTerm">
+&quot;okay&quot;</EM>
+.</P>
+<UL>
+<LI CLASS="Note">
+<A NAME="pgfId=335569">
+ </A>
+The &quot;latched battery bits&quot; are those bits found at 0xE of the RTC chip. The &quot;unlatched battery bits&quot; are those found at 0xD of the RTC chip.</LI>
+<LI CLASS="Note">
+<A NAME="pgfId=334305">
+ </A>
+Other values may be defined for this property in the future.</LI>
+</UL>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="2Heading">
+<A NAME="pgfId=336578">
+ </A>
+4.5
+<EM CLASS="OFTerm">
+&quot;/openprom&quot;</EM>
+ Node Properties</H2>
+<P CLASS="Body">
+<A NAME="pgfId=336579">
+ </A>
+The following properties of the <EM CLASS="OFTerm">
+&quot;/isa/rtc&quot;</EM>
+ node shall be created by an Open Firmware implementation.</P>
+<DIV>
+<H4 CLASS="word-hdr">
+<A NAME="pgfId=336580">
+ </A>
+&quot;built-on&quot;</H4>
+<P CLASS="word-def">
+<A NAME="pgfId=336581">
+ </A>
+Standard property, encoded as with <EM CLASS="word">
+encode-int</EM>
+, that specifies the year, month and day on which the ROM image was built. The unencoded integer consists of 8 decimal digits ordered from left to right as four digits for the year, two digits for the month, and two digits for the day (e.g. 19970610 for firmware built on June 10, 1997).</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="1Heading">
+<A NAME="pgfId=333759">
+ </A>
+5. Extensions for Digital Network Appliance Platform Systems</H2>
+<P CLASS="Body">
+<A NAME="pgfId=333760">
+ </A>
+This section describes the properties, methods, and device subtrees that are applicable to devices required by the Digital Network Appliance Platform architecture. It is strongly recommended that other platforms follow these definitions for the corresponding devices.</P>
+</DIV>
+<DIV>
+<H2 CLASS="2Heading">
+<A NAME="pgfId=333761">
+ </A>
+5.1 Display Devices</H2>
+<P CLASS="FirstBody">
+<A NAME="pgfId=333762">
+ </A>
+Display device packages (i.e. <EM CLASS="OFTerm">
+device_type</EM>
+ = <EM CLASS="OFTerm">
+&quot;display&quot;</EM>
+) for Digital Network Appliance Platform systems should include in their implementation all the properties and methods called for in <A HREF="#38111" CLASS="XRef">
+[12]</A>
+ and <A HREF="#24870" CLASS="XRef">
+[13]</A>
+.</P>
+<P CLASS="Body">
+<A NAME="pgfId=335552">
+ </A>
+Display device package <EM CLASS="Emphasis">
+shall</EM>
+ also include the following method:</P>
+<DIV>
+<H4 CLASS="word-hdr">
+<A NAME="pgfId=335555">
+ </A>
+text-mode3 ( -- )</H4>
+<P CLASS="word-def">
+<A NAME="pgfId=335573">
+ </A>
+Changes the display device's operating mode to &quot;EGA/VGA text mode 3&quot;.</P>
+</DIV>
+</DIV>
+<DIV>
+<H2 CLASS="2Heading">
+<A NAME="pgfId=333769">
+ </A>
+5.2 Device Support</H2>
+<P CLASS="FirstBody">
+<A NAME="pgfId=333770">
+ </A>
+Open Firmware implementations for Digital Network Appliance Platform systems must implement those device types from <A HREF="#16706" CLASS="XRef">
+[11]</A>
+ that are appropriate to the hardware present.</P>
+</DIV>
+<DIV>
+<H2 CLASS="2Heading">
+<A NAME="pgfId=333774">
+ </A>
+5.3 Conventions for Devices on ISA</H2>
+<P CLASS="FirstBody">
+<A NAME="pgfId=333775">
+ </A>
+This section defines the naming and device type conventions for typical devices on ISA buses. The following lists are the values of the <EM CLASS="OFTerm">
+&quot;name&quot;</EM>
+ and <EM CLASS="OFTerm">
+&quot;device_type&quot;</EM>
+ properties of the devices on an ISA bus:</P>
+<P CLASS="Code">
+<A NAME="pgfId=333776">
+ </A>
+name				device_type</P>
+<P CLASS="Code">
+<A NAME="pgfId=333777">
+ </A>
+8042</P>
+<P CLASS="Code">
+<A NAME="pgfId=333778">
+ </A>
+	kbd			&quot;keyboard&quot;</P>
+<P CLASS="Code">
+<A NAME="pgfId=333779">
+ </A>
+	mouse			&quot;mouse&quot;			</P>
+<P CLASS="Code">
+<A NAME="pgfId=333780">
+ </A>
+floppy				&quot;block&quot;</P>
+<P CLASS="Code">
+<A NAME="pgfId=333781">
+ </A>
+com				&quot;serial&quot;</P>
+<P CLASS="Code">
+<A NAME="pgfId=333782">
+ </A>
+timer				&quot;timer&quot;</P>
+<P CLASS="Code">
+<A NAME="pgfId=333783">
+ </A>
+lpt				&quot;parallel&quot;</P>
+<P CLASS="Code">
+<A NAME="pgfId=333784">
+ </A>
+ide				&quot;block&quot;</P>
+<P CLASS="Code">
+<A NAME="pgfId=333785">
+ </A>
+nvram				&quot;nvram&quot;</P>
+<P CLASS="Code">
+<A NAME="pgfId=333786">
+ </A>
+rtc				&quot;rtc&quot;</P>
+<UL>
+<LI CLASS="Note">
+<A NAME="pgfId=333787">
+ </A>
+The &quot;kbd&quot; and &quot;mouse&quot; names are indented to show that they are the child nodes of the 8042 node.</LI>
+</UL>
+<P CLASS="Body">
+<A NAME="pgfId=333788">
+ </A>
+Some systems use an I/O controller, often called a super I/O chip, which provides control functions of multiple I/O devices. When a system uses a super I/O chip, a device node representing the super I/O chip itself need not exist. Instead, the device nodes of the devices attached to the super I/O chip may be direct children of the bus node representing the bus to which the super I/O chip is attached.</P>
+<P CLASS="Body">
+<A NAME="pgfId=333795">
+ </A>
+It is strongly recommended that the <EM CLASS="OFTerm">
+&quot;compatible&quot;</EM>
+ property be implemented for ISA bus devices to help operating systems find appropriate device drivers for these devices.</P>
+</DIV>
+<DIV>
+<H2 CLASS="2Heading">
+<A NAME="pgfId=333796">
+ </A>
+5.4
+<EM CLASS="OFTerm">
+&quot;/aliases&quot;</EM>
+ Node Properties</H2>
+<P CLASS="FirstBody">
+<A NAME="pgfId=333797">
+ </A>
+An implementation of Open Firmware for the Digital Network Appliance Platform shall provide the following aliases under the <EM CLASS="OFTerm">
+&quot;/aliases&quot;</EM>
+ node if an underlying hardware device is present:</P>
+<P CLASS="Code">
+<A NAME="pgfId=333798">
+ </A>
+audio</P>
+<P CLASS="Code">
+<A NAME="pgfId=336560">
+ </A>
+cdrom</P>
+<P CLASS="Code">
+<A NAME="pgfId=336551">
+ </A>
+com1		The serial port at I/O address 0x3F8</P>
+<P CLASS="Code">
+<A NAME="pgfId=336552">
+ </A>
+com2		The serial port at I/O address 0x2F8</P>
+<P CLASS="Code">
+<A NAME="pgfId=336547">
+ </A>
+disk</P>
+<P CLASS="Code">
+<A NAME="pgfId=336568">
+ </A>
+floppy</P>
+<P CLASS="Code">
+<A NAME="pgfId=333801">
+ </A>
+keyboard</P>
+<P CLASS="Code">
+<A NAME="pgfId=336572">
+ </A>
+net</P>
+<P CLASS="Code">
+<A NAME="pgfId=336574">
+ </A>
+rom</P>
+<P CLASS="Code">
+<A NAME="pgfId=333802">
+ </A>
+screen</P>
+<P CLASS="Code">
+<A NAME="pgfId=333803">
+ </A>
+scsi</P>
+<P CLASS="Code">
+<A NAME="pgfId=336564">
+ </A>
+tape</P>
+<P CLASS="FirstBody">
+<A NAME="pgfId=329151">
+ </A>
+</P>
+</DIV>
+</DIV>
+<HR>
+<DIV CLASS="footnotes">
+<DIV CLASS="footnote">
+<P CLASS="Footnote">
+<SPAN CLASS="footnoteNumber">
+1.</SPAN>
+<A NAME="pgfId=336107">
+ </A>
+<EM CLASS="OFTerm">
+	string_size</EM>
+<A NAME="39128">
+ </A>
+ is the 32-bit, little-endian value at <EM CLASS="word">
+load-base</EM>
+ + <EM CLASS="OFTerm">
+a_text</EM>
+ + <EM CLASS="OFTerm">
+a_data</EM>
+ + <EM CLASS="OFTerm">
+a_sym</EM>
+ which describes the length in bytes of the string portion of the symbol table.</P>
+</DIV>
+</DIV>
+</BODY>
+</HTML>

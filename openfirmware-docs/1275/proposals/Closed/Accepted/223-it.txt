@@ -1,0 +1,50 @@
+Date: Thu, 26 Jan 1995 21:03:01 -0800
+From: jordan@pongo.West.Sun.COM (Jordan Brown)
+To: p1275-wg@prombo.eng.sun.com
+Reply-To: p1275-wg@prombo.eng.sun.com
+Subject: Item #223: Create "Device Extensions to IEEE 1275" document
+
+P1275 Openboot Working Group Proposal -- Proposal #:223 Ver <Author-Version#>
+
+Title:          Create "Device Extensions to IEEE 1275" document
+
+Author:         Jordan Brown
+
+Date:           26 January 1995
+
+Ed/Tech:        Editorial
+
+Synposis:       Extract text from PowerPC and put into a generic doc
+
+Doc & Version:  New document
+
+Problem:
+
+Demand has been seen for specifications for devices in addition to
+those in the core document, and for enhancements to the specifications
+in the core document.
+
+Proposal:       
+
+Therefore, proposed that a new document be created titled "Device
+Extensions to IEEE 1275", containing:
+
+	. The "Multi-color text" extension, by Mitch Bradley and
+	  Ron Hochsprung.
+	. The "Graphics device" extension, by Mitch Bradley and
+	  Ron Hochsprung.
+	(Note:  The above extensions are derived from the PowerPC
+	binding of 10/06/94, removed from that binding on 01/25/95.
+	They were collectively described in a document entitled
+	"Multi-color text".)
+
+	. From the PowerPC processor binding:
+	. . Section 12.2 "Keyboard devices"
+	. . Section 12.3 "Pointing devices"
+	. . Section 12.4 "Real Time Clock (RTC) Device"
+	. . Section 12.5 "Sound Device"
+	. . Section 12.6 "NVRAM Device"
+	. . Section 12.7 "Parallel port device"
+
+[ P1275 Item #223 -- Received: Thu Jan 26 21:08:42 PST 1995 ]
+

@@ -1,0 +1,379 @@
+Date: Tue, 23 Apr 1996 00:20:54 -0700
+From: jordan@pongo.West.Sun.COM (Jordan Brown)
+Subject: Item #348: PC Serial Port Device Binding
+
+
+P1275 Openboot Working Group Proposal -- Proposal #:348 Ver 0.2
+
+Title:          PC Serial Port Device Binding
+
+Author:         Jordan Brown
+
+Date:           23 April 1996
+
+Ed/Tech:        Editorial
+
+Synopsis:       Apply changes per 01/96.
+
+Doc & Version:  PC Serial Port Device Binding v0.1
+
+Problem:
+
+Apply changes per 01/96 meeting.
+
+Proposal:       (diff follows)
+
+PC Serial Port
+Device Binding to
+
+IEEE 1275-1994
+Standard for Boot (Initialization,
+Configuration) Firmware
+
+Revision 0.2
+DRAFT
+
+08 January 1996
+Jordan Brown
+SunSoft
+
+1.	Purpose of this Device Binding
+
+This document specifies the application of Open Firmware to standard PC
+serial port devices, including device-specific requirements and
+practices for initialization, properties, and methods.
+
+2.	Revision History
+
+	Revision 0.1, 08 January 1996
+		Initial revision.
+
+3.	References
+
+[1]	IEEE Std 1275-1994 Standard for Boot (Initialization, Configuration)
+	Firmware, Core Practices and Requirements
+[2]	<Intel doc for 8450>
+[3]	<NS doc for 16550>
+
+4.	Definition of Terms
+
+5.	Device Characteristics (Informative)
+
+	The PC serial port is one of the most standardized pieces of
+	hardware in the industry, mostly due to the relative lack of
+	support for it in older operating systems and so the tendency
+	for applications programs to directly manipulate it.
+
+	The original PC serial ports were implemented using the Intel
+	8450 [2], a simple UART that supplied only a single byte of
+	buffering in each direction.  More modern implementations are
+	based on the National Semiconductor 16550 [3], a superset that
+	supplies a 16-byte FIFO in each direction.
+
+6.	Device-specific Configuration Variables
+
+	None.
+
+7.	Device Nodes
+
+7.1.	Properties
+
+7.1.1.	Open Firmware-defined Properties for Device Nodes
+
+name
+	prop-name, specifies the generic name of the device.
+	prop-encoded array:  a string encoded with encode-string.
+
+	The meaning of this property is as defined in Open Firmware,
+	as modified by the Generic Names Recommended Practice.
+	The value for nodes described by this specification shall
+	be "serial".
+
+device_type
+	prop-name, specifies the implemented interface.
+	prop-encoded array:  a string encoded with encode-string.
+
+	The meaning of this property is as defined in Open Firmware.
+	The value for nodes described by this specification shall
+	be "serial".
+
+compatible
+	prop-name, specifies device names with which this device is
+	compatible.
+	prop-encoded-array:  an array of strings, each encoded with
+	encode-string.
+	
+	The meaning of this property is as defined in Open Firmware, as
+	modified by the Generic Names Recommended Practice.  As
+	described in those documents, the entries are a list of device
+	names with which this device is compatible, starting with the
+	name of the device itself and progressing through successively
+	less precise and possibly less functional compatible devices.
+
+	For the National Semiconductor 16450 and 16550, the names shall
+	be "ns16450" and "ns16550" respectively.  For the Intel
+	8450, the name shall be "i8450".
+
+	Note:  A device compatible with the NS 16550 is also compatible
+	with the NS 16450 and the Intel 8450, and so should list all
+	three.  For example, the National Semiconductor PC87312 is
+	a composite chip containing, among other things, two NS 16550
+	compatible serial interfaces.  Its "compatible" property
+	might well start "ns-pc87312-serial" and should include
+	"ns16550", "ns16450", and "i8450" in that order.
+
+	Additional entries may be supplied, at their appropriate
+	position in the list, to describe devices with which this
+	device is compatible.
+
+reg
+	[boilerplate]
+
+	A single entry describing the device's register set.
+
+interrupts
+	[boilerplate]
+
+	A single entry describing the device's interrupts.
+
+7.1.2.	Device-specific Properties for Device Nodes
+
+out1
+out2
+	[boilerplate]
+
+	These properties specify what the OUT1 and OUT2 (respectively)
+	pins on the device are attached to.  The allowed values are:
+	
+	"enable interrupt"
+	    This pin gates the interrupt line.
+	    
+	    Note:  PC-AT compatible implementations use OUT2 for this
+	    purpose.
+	
+	"" (null string)
+	    This value indicates that the pin is not connected.
+
+	Note:  For historical reasons, it is probably appropriate
+	to assume "enable interrupt" for "out2" and "no connection"
+	for "out1" if these properties are absent.
+
+clock-frequency
+	[boilerplate]
+
+	This property specifies the clock frequency supplied to the
+	baud rate generator, in megahertz.
+
+	Note:  PC compatible implementations use a clock frequency of
+	1.8432 MHz, and so on those implementations this value should
+	be 1843200.
+
+7.2.	Methods
+
+7.2.1.	Open Firmware-defined Methods for Device Nodes
+
+	As specified in [1], without addition or modification.
+
+7.2.1.1.	Device Arguments for "Open" Method
+
+	As specified in [1], without addition or modification.
+
+7.2.2.	Device-specific Methods for Device Nodes
+
+	None.
+
+8.	User Interface Commands
+
+8.1.	Open Firmware-defined User Interface Commands
+
+	None.
+
+8.2.	Device-specific User Interface Commands
+
+	None.
+
+9.	Device State
+
+9.1.	Device State When Client is Started
+
+	[ Note:  this should be specified in the generic definition
+	of serial devices. ]
+
+	For devices not selected as Open Firmware's "standard input" or
+	"standard output", the initial state is undefined.
+
+	For devices which are selected as Open Firmware's "standard input"
+	or "standard output", the device shall be initialized appropriately
+	for the device to which it is attached.
+
+9.2.	Device State Required When Client Calls Open Firmware
+
+	For devices not selected as Open Firmware's "input-device" or
+	"output-device", there is no requirement.
+
+	For devices selected as Open Firmware's "input-device" or
+	"output-device", the client should not modify the device state.
+
+	Note:  If the device is in a different state when the client
+	calls Open Firmware, unpredictable behavior may result if Open
+	Firmware accepts input or generates output.  Clients changing
+	the device state should either restore the original state
+	before calling Open Firmware or should avoid using Open
+	Firmware features requiring user interaction.  Changing the
+	device state is likely to render Open Firmware unusable for
+	debugging purposes.
+
+9.3.    Device State When Open Firmware Returns Control to Client
+
+	Open Firmware must return the device to the client with its
+	state unmodified.
+
+10.	Other Commentary
+
+----------------
+
+*** pc.serial.0.1	Tue Apr 23 00:20:29 1996
+--- pc.serial.0.2	Tue Apr 23 00:17:46 1996
+***************
+*** 5,11 ****
+  Standard for Boot (Initialization,
+  Configuration) Firmware
+  
+! Revision 0.1
+  DRAFT
+  
+  08 January 1996
+--- 5,11 ----
+  Standard for Boot (Initialization,
+  Configuration) Firmware
+  
+! Revision 0.2
+  DRAFT
+  
+  08 January 1996
+***************
+*** 86,97 ****
+  	less precise and possibly less functional compatible devices.
+  
+  	For the National Semiconductor 16450 and 16550, the names shall
+! 	be "nsc,16450" and "nsc,16550" respectively.  For the Intel
+! 	8450, the name shall be "intc,8450".
+  
+  	Note:  A device compatible with the NS 16550 is also compatible
+  	with the NS 16450 and the Intel 8450, and so should list all
+! 	three.
+  
+  	Additional entries may be supplied, at their appropriate
+  	position in the list, to describe devices with which this
+--- 86,101 ----
+  	less precise and possibly less functional compatible devices.
+  
+  	For the National Semiconductor 16450 and 16550, the names shall
+! 	be "ns16450" and "ns16550" respectively.  For the Intel
+! 	8450, the name shall be "i8450".
+  
+  	Note:  A device compatible with the NS 16550 is also compatible
+  	with the NS 16450 and the Intel 8450, and so should list all
+! 	three.  For example, the National Semiconductor PC87312 is
+! 	a composite chip containing, among other things, two NS 16550
+! 	compatible serial interfaces.  Its "compatible" property
+! 	might well start "ns-pc87312-serial" and should include
+! 	"ns16550", "ns16450", and "i8450" in that order.
+  
+  	Additional entries may be supplied, at their appropriate
+  	position in the list, to describe devices with which this
+***************
+*** 116,132 ****
+  	These properties specify what the OUT1 and OUT2 (respectively)
+  	pins on the device are attached to.  The allowed values are:
+  	
+! 	"interrupt enable"
+  	    This pin gates the interrupt line.
+  	    
+  	    Note:  PC-AT compatible implementations use OUT2 for this
+  	    purpose.
+  	
+! 	"no connection"
+  	    This value indicates that the pin is not connected.
+  
+  	Note:  For historical reasons, it is probably appropriate
+! 	to assume "interrupt" enable for "out2" and "no connection"
+  	for "out1" if these properties are absent.
+  
+  clock-frequency
+--- 120,136 ----
+  	These properties specify what the OUT1 and OUT2 (respectively)
+  	pins on the device are attached to.  The allowed values are:
+  	
+! 	"enable interrupt"
+  	    This pin gates the interrupt line.
+  	    
+  	    Note:  PC-AT compatible implementations use OUT2 for this
+  	    purpose.
+  	
+! 	"" (null string)
+  	    This value indicates that the pin is not connected.
+  
+  	Note:  For historical reasons, it is probably appropriate
+! 	to assume "enable interrupt" for "out2" and "no connection"
+  	for "out1" if these properties are absent.
+  
+  clock-frequency
+***************
+*** 170,180 ****
+  	[ Note:  this should be specified in the generic definition
+  	of serial devices. ]
+  
+! 	For devices not selected as Open Firmware's "input-device" or
+! 	"output-device", the initial state is undefined.
+  
+! 	For devices which are selected as Open Firmware's "input-device"
+! 	or "output-device", the device shall be initialized appropriately
+  	for the device to which it is attached.
+  
+  9.2.	Device State Required When Client Calls Open Firmware
+--- 174,184 ----
+  	[ Note:  this should be specified in the generic definition
+  	of serial devices. ]
+  
+! 	For devices not selected as Open Firmware's "standard input" or
+! 	"standard output", the initial state is undefined.
+  
+! 	For devices which are selected as Open Firmware's "standard input"
+! 	or "standard output", the device shall be initialized appropriately
+  	for the device to which it is attached.
+  
+  9.2.	Device State Required When Client Calls Open Firmware
+***************
+*** 183,190 ****
+  	"output-device", there is no requirement.
+  
+  	For devices selected as Open Firmware's "input-device" or
+! 	"output-device", the state should be unmodified from the
+! 	initial state on client startup.
+  
+  	Note:  If the device is in a different state when the client
+  	calls Open Firmware, unpredictable behavior may result if Open
+--- 187,193 ----
+  	"output-device", there is no requirement.
+  
+  	For devices selected as Open Firmware's "input-device" or
+! 	"output-device", the client should not modify the device state.
+  
+  	Note:  If the device is in a different state when the client
+  	calls Open Firmware, unpredictable behavior may result if Open
+***************
+*** 195,198 ****
+--- 198,206 ----
+  	device state is likely to render Open Firmware unusable for
+  	debugging purposes.
+  
++ 9.3.    Device State When Open Firmware Returns Control to Client
++ 
++ 	Open Firmware must return the device to the client with its
++ 	state unmodified.
++ 
+  10.	Other Commentary
+
+[ P1275 Item #348 -- Received: Tue Apr 23 00:19:09 PDT 1996 ]
+

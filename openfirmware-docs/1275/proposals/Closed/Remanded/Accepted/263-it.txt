@@ -1,0 +1,25 @@
+Date: Tue, 21 Mar 1995 17:34:56 -0800
+From: brianh@pongo.West.Sun.COM (Brian Horn)
+Subject: Item #263: typo in PowerPC binding
+
+P1275 Open Firmware Working Group Proposal -- Proposal #263 Ver 1.0
+
+Title:		Correct typo
+
+Author:		Brian.Horn@west.sun.com
+
+Date:		March 21, 1995
+
+Ed/Tech:	Editorial
+
+Synopsis:	Typo on page 11 line 37 needs correcting
+
+Doc & Version:	PowerPC binding to OpenFirmware Draft 1.0 2/16/95
+
+Problem:	"fololowing" should be "following"
+
+Proposal:	Fix the typo (Sorry for not including this in a
+		previous proposal.  I just noticed it.)
+
+[ P1275 Item #263 -- Received: Tue Mar 21 17:37:14 PST 1995 ]
+

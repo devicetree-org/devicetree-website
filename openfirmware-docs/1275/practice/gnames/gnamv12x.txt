@@ -1,0 +1,23 @@
+Editor updates to Recommended Practice - Generic Names Document, Version 1.2.
+
+	Page 4, lines 22 - 30: Added definitions for 'device', 'emulated device' 
+		and 'emulating device'.           
+
+	Page 5, lines  3 -  7: Added names to the "generic" names, Guideline 1
+		Section.  The following names were moved or added to the list:
+		- token-ring 
+		- fddi
+		- fcs
+		- atm
+
+	Page 6, line 25: Changed Section 6. to informative by changing title
+		from 'PCI Name Properties' to 'PCI Name Properties Information'.
+
+	Page 6, Removed Table 1, 'PCI Naming Convention Using Class Codes' from
+		Section 6.  Class Code Naming Convention information moved to
+		PCI binding.
+
+	Page 7, Added new Section 7., 'Compatibility Information'.
+
+ 
+

@@ -1,0 +1,75 @@
+
+The following is the text-only version of the Forth & FCode proposal.
+
+
+Open Firmware
+Recommended Practice:
+
+Forth source & FCode image support
+Version 1.0
+(NOTE:  this is an UNAPPROVED DRAFT)
+
+
+Published by the Open Firmware Working Group
+
+This document is a voluntary-use recommended practice of the Open Firmware
+Working Group. The Open Firmware Working Group is an ad hoc committee
+composed of individuals interested in Open Firmware as defined by IEEE
+1275-1994, related standards, and their application to various computer
+systems.
+The Open Firmware Working Group is involved both in IEEE sanctioned
+standards activities, whose final results are published by IEEE, and in
+informal recommendations such as this, which are published on the Internet
+at:
+        http://playground.sun.com/pub/1275
+Membership in the Open Firmware Working Group is open to all interested
+parties. The working group meets at regular intervals at various locations.
+For more information send email to:
+        p1275-wg@risc.sps.mot.com
+
+Revision History
+1.  Introduction
+Various platform bindings (e.g., PReP) specify particular load image
+formats that are supported by that platform's Open Firmware
+implementations.  This recommended practice adds support for both Forth
+source code and FCode images.  These formats are to be supported on all
+platforms.
+While different image formats are supported on a platform by platform
+basis(e.g., ELF), two formats are inherently defined by the base IEEE Std
+1275-1994 document.  These are Forth source  (as defined by Open Firmware)
+and FCode.
+The intent of this recommended practice is that all Open Firmware
+implementations shall recognize these two formats and deal with them as
+defined within this document.
+2.  Forth source
+A valid Forth source load image shall be recognized (by init-program) when
+the first two bytes of the load image have the binary values 0x5C,0x20,
+which are the (ASCII) character values for '\',' '  (reverse-slash, space).
+This character sequence is the standard way of introducing a comment into
+Forth source.
+Such a load image is then assumed to contain lines of Forth source text,
+each of which is terminated by a line-end (a carriage-return (0x0D)
+optionally preceded or followed by a line-feed (0x0A)).
+init-program, upon recognizing a Forth source image, shall set the state of
+Open Firmware such that a subsequent execution of go will cause the loaded
+Forth source image to be processed as if the lines of text were being
+entered, line by line, as console input to the Open Firmware User
+Interface.  This interpretation of Forth source text shall be guarded by
+catch;  if the evaluation causes an error, Open Firmware shall enter the
+User Interface.
+3.  FCode image
+A valid FCode load image shall be recognized (by init-program) when the
+first two bytes of the load image have the binary values 0xF1,0x08 (the
+first two bytes of a start1 FCode header) and having a valid checksum.  The
+checksum is computed using the length field of the presumed FCode heaader
+and is compared to the checksum field of that header.  If the image passes
+these tests, then it is assumed to be a valid FCode image.
+Upon detecting an FCode image, init-program shall set the state of Open
+Firmware such that a subsequent execution of go will cause the FCode image
+to be evaluated (as with byte-load).  This evaluation shall be guarded by
+catch;  it the FCode evaluation causes an error, Open Firmware shall enter
+the User Interface.
+
+
+
+

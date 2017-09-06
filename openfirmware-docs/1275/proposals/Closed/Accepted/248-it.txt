@@ -1,0 +1,69 @@
+Date: Fri, 3 Mar 95 17:39:00 PST
+From: wmb@FirmWorks.COM (Mitch Bradley)
+Subject: Item #248: Extension to Core - size method
+
+P1275 Open Firmware Working Group Proposal -- Proposal #248 Ver 0
+
+Title:		Extension to Core - "size" method
+
+Author:		Mitch Bradley
+
+Date:		March 3, 1995
+
+Ed/Tech:	Technical
+
+Synopsis:	Add "size" method to various device classes
+
+Doc & Version:	None
+
+Problem:
+
+For packages that refer to a mass-storage device or to a portion
+(e.g. a partition or a file) of that device, some clients (e.g. an ARC
+veneer) need to know the size of the entity.
+
+Proposal:	
+
+In a future standard describing extension to the core standard, define a
+new standard method named "size", which can apply to any package for which
+size information is relevant.  The "size" method would be required for
+future packages of the device classes "block" and "byte", for the related
+support package "disk-label", and for future support packages that
+interpose on those packages to provide file services.  In general, a "size"
+method is likely to be appropriate for any package that has a "seek" method.
+(The converse is not necessarily true; for example a sequential-access
+device might have a well-defined size, but not allow seeking.)
+
+Also define a new standard method "#blocks" for "block" and "byte" device
+classes.
+
+The "disk-label" standard support package and packages of device type "block"
+and "byte" shall implement the following method:
+
+size		( -- d )						M
+
+    Return the size of the device in bytes.
+
+    Return, as a double number "d", the number of bytes of storage
+    associated with the device or instance.  If the size cannot be
+    determined, return the double number -1.
+
+
+Packages of device type "block" and "byte" shall implement the following
+method:
+
+#blocks		( -- u )						M
+
+    Return the size of the device in blocks.
+
+    Return, as an unsigned number "u", the number of blocks of storage
+    associated with the device or instance, where a "block" is a unit
+    of storage consisting of the number of bytes returned by the package's
+    "block-size" method.  If the size cannot be determined, or if the
+    number of blocks exceeds the range of an unsigned number, return
+    the maximum unsigned integer (which, because of Open Firmware's
+    assumption of two's complement arithmetic) is equivalent to the
+    signed number -1).
+
+[ P1275 Item #248 -- Received: Fri Mar  3 17:42:13 PST 1995 ]
+

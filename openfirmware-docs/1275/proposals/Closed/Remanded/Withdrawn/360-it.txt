@@ -1,0 +1,30 @@
+From: kingman@austin.ibm.com (Kingman)
+Subject: Item #360: CHRP: Genericize Open PIC controller name
+Date: Tue, 11 Jun 1996 13:39:14 -0500 (CDT)
+
+P1275 Open Firmware Working Group Proposal -- Proposal #360 Ver <Auth-Vers#>
+
+Title:          Make CHRP Open PIC name generic
+
+Author:         John Kingman
+
+Date:           June 11, 1996
+
+Ed/Tech:        Editorial
+
+Synopsis:       Change name from "open-pic" to "interrupt-controller"
+
+Doc & Version:  CHRP System Binding Version 1.5
+
+Problem:        CHRP's interrupt controller doesn't use the generic name
+
+Proposal:       Page 33, Line 35, change "open-pic" to "interrupt-controller"
+
+-- 
+    John A. Kingman         /~ ~_~ ~ ~ ~_~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+  Kingman@Austin.IBM.com   /   | | ___ | |_ ._ _        
+ IBM RSD, Austin, Texas   /   _| |/ . \| . || ' | 
+ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~    \__/\___/|_|_||_|_|
+
+[ P1275 Item #360 -- Received: Tue Jun 11 11:38:00 PDT 1996 ]
+

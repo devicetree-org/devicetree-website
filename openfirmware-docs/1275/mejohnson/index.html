@@ -1,0 +1,367 @@
+<html>
+<head>
+<title>Hardware Independent Boot Code: Open Firmware</title>
+</head>
+<body>
+
+<h1>About This Web Page</h1>
+
+This Web Page describes Open Firmware at an introductory level.  This 
+description will not substitute for a course given by Firmworks or Forth 
+Inc on Open Firmware, but it will, I hope, give the reader a pretty good 
+idea of how Open Firmware presents the industry with an elegant solution 
+to some knotty problems of booting an operating system.<p>
+
+&#169; 1996 Sabaki Engineering. Copies may be made for strictly non-commercial, 
+non-pecuniary purposes.  All other copies require written permission from 
+Sabaki Engineering.  Links, of course, may be freely made to this page.<P>
+
+<h1>A Note on Reading This Page</h1>
+
+Since not everybody's browser has a navigation key for returning to the 
+previous <STRONG>anchor</STRONG> instead of to the previous 
+<STRONG>document</STRONG>, I have included an anchor titled "Back" for 
+each definition in the Glossary.  But it does not take you back to 
+wherever you were, it takes you back to the first reference to the word 
+defined.
+
+<H2>Disclaimer and Acknowledgments</H2>
+
+This web page on Open Firmware is the exclusive work of Sabaki 
+Engineering.  It does not represent the claims, opinions or promises of 
+any other legal person.  We at Sabaki Engineering express our thanks to 
+the Open Firmware Working Group for hosting this page.<P>
+
+Note that all comments on this page should be directed to the author of 
+this page, <a href="mailto:mejohnsn@netcom.com"><i>Matthew Johnson</i></a> 
+and NOT to the Open Firmware Working Group.
+
+<h1>Open Firmware - A New Class of Software Tool</h1>
+
+Open Firmware provides a novel capability, virtually unheard of before its 
+invention in 1988 at Sun.  This new capability is writing <STRONG>hardware 
+independent</STRONG> boot code, firmware and device drivers.<P>
+
+<H1>A Brief History of Open Firmware</H1>
+
+As mentioned above, Open Firmware was invented at Sun for release in 1988 
+to prevent a maintenance and support nightmare with the then unprecedented 
+wide choice of hardware and software configurations the new product lines 
+required.  Open Firmware, then called Open Boot, prevented the nightmare 
+by allowing one version of the Boot Rom to run on any configuration of 
+hardware and software, even supporting boot-time operations on third-party 
+plug-in cards.<P>
+
+The idea worked so well, other major players in the computer market, such 
+as IBM and Apple, got in on the act as well.  The existence of a 
+comprehensive IEEE standard for Open Firmware, IEEE-1275, makes this 
+possible.<P>
+
+<H1>Hardware Independent Boot Code? Get Real!</H1>
+
+This is such a new capability, it defies belief.  Open Firmware provides 
+this capability by a careful application of the FORTH philosophy.  Just as 
+FORTH has always presented its users with unique capabilities through a 
+careful combination of 1) pushdown stack 2) dictionary and 3) interpreter, 
+so Open Firmware works because of its combination of 1) standardized 
+tokens=<A HREF="#DefFC">FCode</A><A NAME="FC"></A>, 2) <a 
+href="#DefUI">User Interface</a>~=<A NAME="UI"></A> outer interpreter 3) <a 
+href="#DefDI">Device Interface </a>~= <a name="DI"></a>inner interpreter 
+and 4) <A HREF="#DefCI">Client Interface</A><A NAME="CI"></A> to allow the 
+OS to call Open Firmware services with the calling conventions and bindings 
+of a high-level language, such as C.  We will see later in this web page how 
+all these pieces fit together to form such an amazingly flexible whole.<P>
+
+<H1>The Tasks of Boot Code</H1>
+
+Before we can understand why the various pieces of OF fit together the way 
+they do, we must understand for what purpose they do so.  This in turn 
+requires that we understand the basic tasks of boot code on a wide class 
+of systems.  These tasks are largely 1) Boot-time Drivers and 2) building 
+a <EM>device tree</EM>, which the Operating System then uses to discover 
+what devices are available to it and how to use them.  The particular 
+format of the <a href="#DefDT">device tree</a><A NAME="DT"></A> is 
+operating system dependent, but all device trees have a great deal in 
+common.  That commonality can be expressed in a common language 
+independent of the operating system.  The format of an Open Firmware 
+device tree is such a common language.  In a typical installation, the 
+operating system uses Client Interface calls to translate the Open 
+Firmware device tree into the Operating system's own format.  In the rest 
+of this web page, we will assume that  Open Firmware is being used for such 
+a "typical installation", although there are cases when you might want to 
+use only parts of Open Firmware, such as only a Device Interface, for 
+"non-typical" applications.<P>
+
+<H1>An Open Firmware Device Tree</H1>
+
+The Open Firmware Device Tree is a generic and simple format for a device 
+tree.  It can be used to represent the various entries in a device tree 
+for just about any operating system.  Like any tree, it consists of nodes, 
+some of which are leaf nodes, i.e. have no children.  Every node has one 
+parent, except for the top node.  Each node has a node name, and a list of 
+"<a href="#DefPR">properties</a>"<A NAME="Prop"></A> and"<a 
+href="#DefME">methods</a>"<A NAME="Meth"></A>.  In fact, the node name 
+<EM>is</EM> a property, one that is required for every node.  The 
+properties are named data.  Open firmware makes no restrictions on how the 
+operating system will eventually use this named data, except for reserving 
+certain names to have certain meanings: the "name" property, for example, 
+is always the node name.  This named data may also be of any type: string 
+and integer types are specifically supported, while compound types may be 
+grouped together out of combinations of "int" "string" and "bytes", the 
+latter being for any length of arbitrary consecutive bytes.<P>
+
+<H1>Open Firmware Boot Drivers</H1>
+
+The Boot Drivers supplied by Open Firmware are mainly meant for supplying 
+messages that must be displayed during boot time, before the operating 
+system has been loaded.  They are also handy for other purposes, such as 
+debugging hardware that is failing during boot time.  For such purposes, 
+it is not important that this sort of driver knows nothing about the 
+operating system (which typically hasn't even been loaded yet).  These 
+drivers therefore do not work in the background, are not multi-taskable, 
+nor do they use interrupts.  They provide the most basic operations on the 
+device, such as open, close, read and write.  These operations are all 
+implemented as Open Firmware methods, i.e., FORTH words accessible from 
+the User Interface when the given device is selected.  We will cover this 
+concept in more detail later.<P>
+
+This is the Open Firmware component that most closely resembles a 
+traditional FORTH system.  On the Apple PCI Macintoshes, you enter the 
+Open Firmware User Interface by holding down the NMI switch while toggling 
+the Reset Line.  Then the System Firmware, sensing these switches, goes 
+through a truncated boot process; instead of loading the entire system, it 
+starts with low-level hardware diagnostics, then loads Open Firmware, 
+opens the modem port (i.e. Serial Port # 1) for I/O, prints a boot message 
+and awaits your commands on that port, just like QUIT in a traditional 
+FORTH system.  The method of entering the User Interface is not defined by 
+the IEEE-1275 standard; it is implementation dependent.<P>
+
+<H1>Dictionary Searching</H1>
+
+Dictionary Searching is a little strange in Open Firmware.  There are no 
+vocabularies in the FORTH79 or FORTH83 sense of the word.  Instead, Open 
+Firmware supports a new and peculiar notion, the <A 
+href="#DefAct">active-package.</A>  Furthermore, there are really two 
+sorts of definitions possible under the User Interface: conventional FORTH 
+words appended to the root "vocabulary", and Open Firmware methods 
+appended to the active-package.  When the user types in a word, the User 
+Interface looks up the word first in the list of methods of the <A 
+NAME="ActP">active-package</A>, then in the root FORTH definitions not 
+attached to any package.<P>
+
+Clearly, the use of packages instead of the more usual sort of 
+vocabularies takes some getting used to.  But this new sort of vocabulary 
+is pretty well suited for the tasks of boot-time firmware.<p>
+
+An even more marked difference from the traditional method of dictionary 
+searching is the use of <STRONG>$call-method</STRONG> or its congeners 
+<STRONG>$call-parent</STRONG> and <STRONG>call-package</STRONG> to call 
+methods not in the current search order.  These words are used 
+frequently.  We will describe the use of these words in more detail after 
+covering the prerequisite notion of the <A HREF="#DefIC">instance 
+chain</A><A NAME="IC"></A>.
+
+<H1>Devices, Packages and THE Active Package</H1>
+
+Unfortunately, the IEEE-1275 spec and the Open Firmware language itself 
+uses the terms "device" and "package" inconsistently.  Sometimes, the two 
+terms are used to mean the same thing, sometimes they are not!  In the 
+spec's own words:
+<P>
+
+<blockquote>
+	A package is the combination of a device node's properties, methods and 
+	private data.  In most cases, the terms "package" and "device node" may 
+	be used interchangeably. "Device node" is typically used when the 
+	emphasis is on the node as a part of the device tree, and "package" is 
+	used with emphasis on the use of the node's driver methods.</blockquote><P>
+I would have been happier if they had said:<P>
+<blockquote>
+	A package is the combination of a device node's properties, methods and 
+	private data (so far, so good). "Device nodes" and "packages" are 
+	usually strongly linked, i.e, a device node has a package associated 
+	with it, every package has an entry in the device tree, i.e., a device 
+	node associated with it.  But there are pure software packages with no 
+	physical device associated with them.  For all other packages, the 
+	device node and the package are two different ways of looking at the 
+	same thing.</blockquote><P>
+	
+A simple example should make the above ideas more clear: the IEEE-1275 
+spec suggests (but does not require) that the default input device be 
+named "keyboard".  In this case, there will be an entry in the device-tree 
+(i.e. a device node) named "keyboard", which includes methods "open", 
+"close" and "read".  The only property it MUST contain is the "name" 
+property, "keyboard".  For the convenience of the users, the properties 
+"model" (a string property naming the model number) and "compatible" (a 
+string property naming a more popular model with which the keyboard is 
+compatible) might also be included.  In Apple's case, it also defines the 
+property "device_type", setting it equal to "serial".<P>
+
+The collection of all these properties, methods and whatever private data 
+the methods use is the package corresponding to the device "keyboard".<P>
+
+Now many systems will also define a pure software package, called the 
+"deblocker", whose purpose in life is to "deblock" a block-oriented 
+device, i.e., provide <A HREF="#DefByteO">byte-oriented</A><A 
+NAME="BO"></A> methods to access the <A 
+HREF="#DefBlockO">block-oriented</A><A NAME="#BKO"></A> device.  This is 
+analogous to the old FORTH trick of implementing virtual memory using 
+BLOCK, which views the disk as a block-oriented device (hence the name).  
+The deblocker has its own entry in the device-tree much like a true 
+physical device, but there are a few significant differences: it must be a 
+child of the node "/packages" in the device-tree, it has no address, and 
+it can and should be opened with"open-package" instead of with 
+"open-device".<P>
+
+<h1>Blazing the Trail to Plug and Play</h1>
+Open Firmware does not solve all the problems that need to be solved to 
+make Plug & Play a reality in the DOS, Windows or Macintosh environments.  
+However,it solves some of the major problems, and provides a framework for 
+solving the others.  If manufacturers can agree on how to use the 
+properties that might be defined for their devices, then this will go a 
+long way to making plug and play a reality.  Open Firmware makes this much 
+simpler than ever before.<P>
+
+<H1>Why FORTH for all This?</H1>
+Forth programmers have known for years that Forth provides a virtual 
+machine, consisting of a data stack, a return stack and the registers IP, 
+W, RP and SP.  It is amazing how much computing can be done with such a 
+simple machine.  This machine needs only a small supplement to become an 
+excellent virtual machine for all the tasks of boot code.  This supplement 
+is the hardware dependent portion of the Open Firmware code, whether in 
+the Fcode on a plug-in card, or in the Host's Open Firmware interpreter.<P>
+
+<h1>Open Firmware for Debugging</h1>
+In addition to providing a hardware independent method of building the 
+device tree and providing boot drivers, Open Firmware provides a 
+convenient FORTH environment for debugging new hardware and firmware.  
+Suppose, for example, you need to test SCSI device capability, running 
+with different devices in different parts of the chain of SCSI devices.  
+You could write an endless loop as follows:<p>
+
+<pre>
+\ Generate the path name for the drive with the given SCSI-id
+: diskno   30 +  pad c!  pad 1 ( scsi-id -- adr cnt)
+  " /yourprocessorbus/XYZ,scsi@" cat2str ;
+  
+\ Use "open-dev" to open the disk w/ SCSI-ID "diskno", show the instance 
+\ handle, then close it.
+: testdisk  ( diskno --)
+   diskno open-dev
+   ." ihandle= "  dup .
+   close-dev ;
+   
+: scsi-test ( --)
+   begin
+      probe-scsi-all
+      7 0 do i testdisk loop
+   key? until ;</pre><P>
+   
+If you need to test the ability to do real data transfers as well, you 
+need only add the standard block-size/read calls via $call-method, as follows:<P>
+
+<pre>
+0 value my-ih
+1000 alloc-mem constant TEST_BLOCK
+
+: block-size ( --#bytes)
+    " block-size" my-ih $call-method ;
+    
+: read ( bufadr #bytes-to-read -- #actual-read)
+    " read" my-ih $call-method ;
+    
+: testdisk  ( diskno --)
+   dup >r
+   diskno open-dev
+   ." ihandle= "  dup .   to my-ih
+   test_block block-size read
+   block-size - if ." ERROR READING BLOCK Disk: " r> . else r> drop then
+   close-dev ;<\pre><P>
+   
+<H2>Glossary</H2><P>
+<dl>
+<dt>
+<A NAME="DefAct"><B>Active-package</B></a>
+<dd>the package whose methods constitute the current vocabulary
+<A HREF="#ActP">Back</A>
+<dt>
+<A NAME="DefByteO"><B>Byte-oriented</B></a>
+<dd>an Open Firmware device having device_type "byte", and methods 
+<STRONG>read, write, seek</STRONG> and <STRONG>load</STRONG>.  These last 
+two differ from the block-oriented case in that they treat the device 
+like a tape drive.
+<A href="#BO">Back</A>
+<dt>
+<A NAME="DefBlockO"><B>Block-oriented</B></a>
+<dd>an Open Firmware device having device_type "block", and methods 
+<STRONG>read, write, seek</STRONG> and <STRONG>load</STRONG>.  These last 
+two differ from the byte-oriented case in that they treat the device 
+like a disk drive.
+<A href="#BKO">Back</A>
+<dt>
+<a name="DefDT"><b>Device Tree</b></a>
+<dd>a tree each node of which describes a 
+device in terms of properties and methods
+<A HREF="#DT">Back</a>
+<dt>
+<a name="DefDI"><b>Device Interface</b></a>
+<dd>the component of Open Firmware that builds the device tree, which 
+process is dominated by interpreting 
+FCode
+<A HREF="#DI">Back</A>
+<dt>
+<A NAME="DefCI"><B>Client Interface</B></a>
+<dd>the interface providing C calling conventions and bindings for
+Open Firmware
+<A HREF="#CI">Back</a>
+<dt>
+<A NAME="DefFC"><B>FCode</B></A>
+<dd>Open Firmware's hardware independent byte-codes for common 
+operations, such as 0x47 for "duplicate top of stack" or 0x46 for "pop 
+stack"
+<A HREF="#FC">Back</A>
+<dt>
+<A NAME="DefUI"><b>User Interface</b></A>
+<dd>the "shell" of Open Firmware, which interprets FORTH words typed by the user
+on the standard input.
+<A href="#UI">Back</a>
+<dt>
+<a name="DefPR"><b>Properties</b></A>
+<dd>data of arbitrary type describing the device type.
+<A HREF="#Prop">Back</A>
+<dt>
+<a name="DefIC"><b>Instance Chain</b></A>
+<dd>A linked list of <STRONG>Instances</STRONG>.  These in turn are a sort 
+of device context.  Every time you open a device, you create an instance 
+of the device, adding it to the chain.  They are also analogous to 
+multiple handles to the same file, or multiple copies of the same program 
+running as separate tasks in a multi-tasking operating system.
+<A HREF="#IC">Back</A>
+<dt>
+<a name="DefME"><b>Methods</b></A>
+<dd>FORTH words attached to a package, typically for 
+handling driver services, e.g., "read", "write", "open" & "close"
+<A href="#Meth">Back</A>
+<dt>
+</dl>
+
+
+<H2>More Info on Open Firmware</H2>
+<P>The following Web Sites have more info on Open Firmware.<P>
+For the O.F. Working Group's Open Firmware page, click <A 
+HREF="/1275/">here</A> 
+
+For informtion on FORTH in general, go to <EM>The</EM> FORTH Home Page, 
+by clicking <A HREF="http://taygeta.oc.nps.navy.mil/forth.html">here</A>
+
+For the Open Firmware vendor Firmworks, click <A 
+HREF="http://www.firmworks.com/">here</A>
+
+  
+<address> What is Open Firmware / Sabaki Engineering / mejohnsn@netcom.com
+</address>
+
+
+<P>To send an e-mail message to Sabaki Engineering click 
+<A HREF="mailto:mejohnsn@netcom.com">here</A>
+</html>
