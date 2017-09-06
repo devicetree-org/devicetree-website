@@ -101,7 +101,7 @@ PLATFORMS
 DEPENDENCIES
   jekyll (= 3.5.1)
   jekyll-feed (~> 0.6)
-  linaro-jekyll-theme (~> 0.10.91)
+  linaro-jekyll-theme (~> 0.10.90)
   tzinfo-data
 
 BUNDLED WITH
