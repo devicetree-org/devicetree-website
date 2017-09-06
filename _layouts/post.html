@@ -9,12 +9,14 @@ layout: default-no-sub-nav
     <div class="container">
         <div class="row">
             <div class="col-md-9">
+                <div class="post-info">
+                    {% if page.date %}<small class="blog-date text-center"><em>Posted on <b>{{page.date |  date: "%A, %B %-d, %Y"}}</b></em></small>{% endif %} {% if page.author %}<em> By <b>{{page.author}}</b> </em>{% endif %}
+                </div>
                 <article class="post-content">
                     {{ content }}
                 </article>
                 <hr />
-                {% if page.tags %}
-                <h3>Tags</h3>
+                {% if page.tags != '' %}
                       {% assign tags = page.tags %}
                       {% if page.tags %}
                           {% for tag in tags %}
@@ -52,11 +54,19 @@ layout: default-no-sub-nav
                                  </div>
                                  <div class="col-md-3 col-sm-3 col-xs-3 no-padding">
                                     <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-                                    {% if recent_post.image %}
-                                    data-src="/assets{{recent_post.image}}"
-                                    {% else %}
-                                    data-src="{% if site.data.company.placeholder %}{{site.data.company.placeholder}}{% else %}/assets/images/placeholder.png{% endif %}"
-                                    {% endif %}
+                                    {% if site.using_assets == true %}
+                                        {% if recent_post.featured_image %}
+                                             data-src="{% asset_path '{{recent_post.featured_image}}' %}"
+                                        {% else %}
+                                             data-src="{% asset_path '{{site.data.company.placeholder}}' %}"
+                                        {% endif %}
+                                     {% else %}
+                                         {% if recent_post.featured_image %}
+                                              data-src="/assets{{recent_post.featured_image}}' %}"
+                                         {% else %}
+                                              data-src="{% if site.data.company.placeholder %}{{site.data.company.placeholder}}{% else %}/assets/images/placeholder.png{% endif %}"
+                                         {% endif %}
+                                     {% endif %}
                                      alt="{{recent_post.title}}" class="img-responsive lazyload"/>
                                  </div>
                               </div>
