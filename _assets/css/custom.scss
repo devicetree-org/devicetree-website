@@ -23,7 +23,7 @@ $home-page-main-title-color: #fff;
 /* ---------------------- Home Page Op-tee image ---------------------- */
 #devicetree-vertical-image {
   width: auto;
-  height: 200px;
+  height: 150px;
   margin-top: 80px;
 }
 
@@ -32,6 +32,14 @@ h1.home-page-text.text-center {
     color: #FFF;
     font-size:46px;
     font-weight:700;
+}
+h1#home-page-title {
+    color: #FFF;
+    font-size:46px;
+    font-weight:700;
+}
+h4#home-page-text {
+    font-weight: 100;
 }
 
 /* Projects Icons */
@@ -77,7 +85,7 @@ h1.home-page-text.text-center {
     width: 200px;
     height: auto;
     letter-spacing: 2px;
-    background-color: #fff;
+    background-color: transparent;
     border-radius:2px;
     border: 1px solid #131313;
     transition: all 500ms ease;
@@ -126,7 +134,7 @@ h1.home-page-text.text-center {
     	bottom: 0;
     	left: 0;
     	background-image: linear-gradient(to bottom right,#000,#000);
-    	opacity: .6;
+    	opacity: .5;
       }
 }
 
