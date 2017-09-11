@@ -80,9 +80,9 @@ h4#home-page-text {
 }
 
 .collaborate-button {
-    padding: 15px;
+    padding: 7px;
     color: #131313;
-    width: 200px;
+    width: 160px;
     height: auto;
     letter-spacing: 2px;
     background-color: transparent;
@@ -90,6 +90,8 @@ h4#home-page-text {
     border: 1px solid #131313;
     transition: all 500ms ease;
     margin-bottom: 100px;
+    font-weight: bold;
+    font-size: 16px;
 }
 .collaborate-button:hover{
     background-color: #131313;
