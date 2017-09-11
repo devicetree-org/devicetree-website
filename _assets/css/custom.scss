@@ -24,6 +24,7 @@ $home-page-main-title-color: #fff;
 #devicetree-vertical-image {
   width: auto;
   height: 200px;
+  margin-top: 80px;
 }
 
 
@@ -111,8 +112,8 @@ h1.home-page-text.text-center {
 
     background-image: url(/assets/images/background-image.jpg);
     background-repeat: no-repeat;
+    background-position: center;
     background-size: cover;
-    // background-position-y: -70px;
     height: 100%;
     position: absolute;
     width: 100%;
@@ -134,7 +135,6 @@ h1.home-page-text.text-center {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-
     border-bottom: 1px solid #ccc;
 
 }
@@ -152,4 +152,8 @@ div#homepage-jumbotron {
 
 iframe#contact-form{
     top: 30px;
+}
+
+.home-content-container{
+    text-align: center;
 }
