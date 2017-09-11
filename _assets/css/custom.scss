@@ -141,13 +141,24 @@ h4#home-page-text {
       }
 }
 
-.row.device-tree-content {
+.device-tree-content-image {
     background-image: url(/assets/images/devicetree-content-bg.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     border-bottom: 1px solid #ccc;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    opacity: .5;
+}
+.device-tree-content {
+    position: relative;
+}
 
+.device-tree-home-container{
+    position: relative;
+    overflow: hidden;
 }
 
 div#homepage-jumbotron {
