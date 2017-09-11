@@ -23,7 +23,7 @@ $home-page-main-title-color: #fff;
 /* ---------------------- Home Page Op-tee image ---------------------- */
 #devicetree-vertical-image {
   width: auto;
-  height: 200px;
+  height: 150px;
   margin-top: 80px;
 }
 
@@ -32,6 +32,14 @@ h1.home-page-text.text-center {
     color: #FFF;
     font-size:46px;
     font-weight:700;
+}
+h1#home-page-title {
+    color: #FFF;
+    font-size:46px;
+    font-weight:700;
+}
+h4#home-page-text {
+    font-weight: 100;
 }
 
 /* Projects Icons */
@@ -72,15 +80,18 @@ h1.home-page-text.text-center {
 }
 
 .collaborate-button {
-    padding: 15px;
+    padding: 7px;
     color: #131313;
-    width: 200px;
+    width: 160px;
     height: auto;
     letter-spacing: 2px;
-    background-color: #fff;
+    background-color: transparent;
     border-radius:2px;
     border: 1px solid #131313;
     transition: all 500ms ease;
+    margin-bottom: 100px;
+    font-weight: bold;
+    font-size: 16px;
 }
 .collaborate-button:hover{
     background-color: #131313;
@@ -126,17 +137,28 @@ h1.home-page-text.text-center {
     	bottom: 0;
     	left: 0;
     	background-image: linear-gradient(to bottom right,#000,#000);
-    	opacity: .6;
+    	opacity: .5;
       }
 }
 
-.row.device-tree-content {
+.device-tree-content-image {
     background-image: url(/assets/images/devicetree-content-bg.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     border-bottom: 1px solid #ccc;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    opacity: .5;
+}
+.device-tree-content {
+    position: relative;
+}
 
+.device-tree-home-container{
+    position: relative;
+    overflow: hidden;
 }
 
 div#homepage-jumbotron {

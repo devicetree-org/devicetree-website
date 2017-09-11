@@ -1,7 +1,7 @@
 image: device-tree-vertical-logo.png
 columns:
     - title: Device Tree Speciciation
-      url: /specification/
+      url: /specifications/
       items:
         - text: Specifications
           url : /specifications/
