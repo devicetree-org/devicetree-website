@@ -112,7 +112,7 @@ h1.home-page-text.text-center {
     background-image: url(/assets/images/background-image.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    // background-position-y: -70px;
+    background-position: center; // Center the background image for a better position.
     height: 100%;
     position: absolute;
     width: 100%;
