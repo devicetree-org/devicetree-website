@@ -136,18 +136,6 @@ h1.home-page-text.text-center {
     background-position: center;
     background-size: cover;
     border-bottom: 1px solid #ccc;
-    
-    &:before {
-        content: '';
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        background-image: linear-gradient(to bottom right,#ccc,#ccc);
-        opacity: .6;
-      }
-
 
 }
 
