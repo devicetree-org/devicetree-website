@@ -7,6 +7,7 @@ url: "https://www.devicetree.org" # the base hostname & protocol for your site, 
 
 destination: staging.devicetree.org
 
+# Set production to fasle
 production: false
 
 #Github Username
