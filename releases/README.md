@@ -6,8 +6,6 @@ js-vendor: extended
 css-pack: lightbox
 keywords: Releases, Device Tree, RoadMap
 ---
-## Releases planned for 2016
+## Releases planned
 
-**High-Level Timeline**
-
-{% include image.html name="roadmap.png" alt="Device Tree Roadmap" %}
+**Releases will be planned by the Technical Steering Committee**
