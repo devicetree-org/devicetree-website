@@ -11,6 +11,12 @@ $home-page-main-title-color: #fff;
   color: #000;
 }
 
+@media(max-width:1999px){
+    #tabbed-nav-bar-collapse > ul.nav-tabs>li>a {
+      color: #fff;
+    }
+
+}
 /*  -------- Shape Divider ------- */
 #mk-shape-divider-4 .shape__container {
   margin-bottom: 0px;
