@@ -12,7 +12,7 @@ If you are looking for the devicetree specification you’ve come to the right p
 
 ## Current release is [v0.1](https://github.com/devicetree-org/devicetree-specification/releases/tag/v0.1)
 
-## Latest review draft [v0.2-pre4](https://github.com/devicetree-org/devicetree-specification/releases/tag/v0.2-pre4)
+## Latest review draft [v0.2-rc1](https://github.com/devicetree-org/devicetree-specification/releases/tag/v0.2-rc1)
 
 Devicetree.org is a community effort by many companies and individuals to facilitate the future evolution of the Devicetree Standard.
 
