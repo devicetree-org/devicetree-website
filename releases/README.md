@@ -6,10 +6,9 @@ js-vendor: extended
 css-pack: lightbox
 keywords: Releases, Device Tree, RoadMap
 ---
-## Releases planned
+## Releases
 
-[v0.2](https://github.com/devicetree-org/devicetree-specification/releases/tag/v0.2-rc1) - Prereleased and available for review.
-To be officially released before the end of December 2017.
+[v0.2](https://github.com/devicetree-org/devicetree-specification/releases/tag/v0.2) - Released 20 December 2017
 
 [v0.1](https://github.com/devicetree-org/devicetree-specification/releases/tag/v0.1) - Released 24 May 2016
 
