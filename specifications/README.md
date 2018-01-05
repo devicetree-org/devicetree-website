@@ -6,7 +6,7 @@ keywords: Devicetree, Specification, release, v1.0
 ---
 ## **The Devicetree Specification**
 
-<a href="/downloads/devicetree-specification-v0.2.pdf" target="\_blank">
+<a href="https://github.com/devicetree-org/devicetree-specification/releases/download/v0.2/devicetree-specification-v0.2.pdf" target="\_blank">
 <strong>Device Tree Specification Release 0.2</strong>
 </a>
 <br>
