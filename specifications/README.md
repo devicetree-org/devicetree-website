@@ -6,7 +6,10 @@ keywords: Devicetree, Specification, release, v1.0
 ---
 ## **The Devicetree Specification**
 
-<a href="/downloads/devicetree-specification-v0.1-20160524.pdf" target="_blank"><strong>Device Tree Specification Release 0.1</strong></a><br>
+<a href="/downloads/devicetree-specification-v0.2.pdf" target="\_blank">
+<strong>Device Tree Specification Release 0.2</strong>
+</a>
+<br>
 
 This is the first formal baseline release of the device tree specification. This document is a first iteration of ePAPR 1.1 and picks up where it left off in 2012.
 The next release v0.2 is due to be tagged before the end of December 2017.
