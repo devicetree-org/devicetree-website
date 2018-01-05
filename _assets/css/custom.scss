@@ -8,7 +8,7 @@ $home-page-title-text: #fff;
 $home-page-main-title-color: #fff;
 
 #tabbed-nav-bar-collapse > ul.nav-tabs>li>a {
-  color: #000;
+  color: #000 !important;
 }
 
 @media(max-width:1999px){
