@@ -19,6 +19,18 @@ span.latest-release {
     top: -4px;
     position: relative;
 }
+span.pre-release {
+    width: 100px;
+    height: 19px;
+    border: 1px solid #f66a0a;
+    border-radius: 2px;
+    color: #f66a0a;
+    padding: 5px;
+    font-size: 10px;
+    text-align: center;
+    top: -4px;
+    position: relative;
+}
 
 
 #tabbed-nav-bar-collapse > ul.nav-tabs>li>a {
