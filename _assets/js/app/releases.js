@@ -30,6 +30,9 @@ $(document).ready(function(){
            // Check to see if it is the latest release
            if (idx == 0){
                
+                   // Set the current release
+                   $("#current_release").append("<p class='devicetree_release'><a href='" + obj.html_url + "'>DeviceTree Specification Release " + obj.tag_name + "</a> - Released " + formatted_release_date  + " " + latest_release_span + "</p>");
+               
                    // Check to see if obj is a pre-release
                    if(obj.prerelease == true){
                        $("#devicetree_releases").append("<p class='devicetree_release'><a href='" + obj.html_url + "'>" + obj.tag_name + "</a> - Released " + formatted_release_date + " " + prerelease_span + " " + latest_release_span + "</p>");
@@ -42,12 +45,16 @@ $(document).ready(function(){
            }
            else
            {
-               // Check to see if obj is a pre-release
                
+               // Append to previous releases
+
+               // Check to see if obj is a pre-release
                if(obj.prerelease == true){
                    $("#devicetree_releases").append("<p class='devicetree_release'><a href='" + obj.html_url + "'>" + obj.tag_name + "</a> - Released " + formatted_release_date + " " + prerelease_span +  "</p>");
+                   $("#previous_releases").append("<p class='devicetree_release'><a href='" + obj.html_url + "'>DeviceTree Specification Release " + obj.tag_name + "</a> - Released " + formatted_release_date + " " + prerelease_span +  " </p>");
                }
                else{
+                   $("#previous_releases").append("<p class='devicetree_release'><a href='" + obj.html_url + "'>DeviceTree Specification Release " + obj.tag_name + "</a> - Released " + formatted_release_date + " </p>");
                    $("#devicetree_releases").append("<p class='devicetree_release'><a href='" + obj.html_url + "'>" + obj.tag_name + "</a> - Released " + formatted_release_date + "</p>");
                }  
             }     
