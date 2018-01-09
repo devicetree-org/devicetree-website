@@ -7,6 +7,20 @@ $sub-footer-color: #fbfbfb;
 $home-page-title-text: #fff;
 $home-page-main-title-color: #fff;
 
+span.latest-release {
+    width: 100px;
+    height: 19px;
+    border: 1px solid #2cbe4e;
+    border-radius: 2px;
+    color: #2cbe4e;
+    padding: 5px;
+    font-size: 10px;
+    text-align: center;
+    top: -4px;
+    position: relative;
+}
+
+
 #tabbed-nav-bar-collapse > ul.nav-tabs>li>a {
   color: #000 !important;
 }
