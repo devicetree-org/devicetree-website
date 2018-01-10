@@ -3,7 +3,7 @@ email: kyle.kirkby@linaro.org
 description: |-
     Devicetree.org is a community effort by many companies and individuals to facilitate the future evolution of the Devicetree Standard.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://www.devicetree.org" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://staging.devicetree.org" # the base hostname & protocol for your site, e.g. http://example.com
 
 destination: staging.devicetree.org
 
@@ -15,10 +15,13 @@ github_username:  devicetree
 
 # Build settings
 markdown: kramdown
+
+# Theme
 theme: linaro-jekyll-theme
+
+# Plugins
 plugins:
   - jekyll-feed
-include: [_content,]
 
 jekyll_tidy: # Compress the html and beautify it.
     compress_html: true
