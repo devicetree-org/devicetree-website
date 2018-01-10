@@ -7,5 +7,6 @@
 //= require app/sticky-navbar
 
 //= require app/main
+//= require app/releases
 //= require app/tables
 //= require vendor/mc-validate
