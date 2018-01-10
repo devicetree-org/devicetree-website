@@ -51,7 +51,6 @@ $(document).ready(function(){
                // Check to see if obj is a pre-release
                if(obj.prerelease == true){
                    $("#devicetree_releases").append("<p class='devicetree_release'><a href='" + obj.html_url + "'>" + obj.tag_name + "</a> - Released " + formatted_release_date + " " + prerelease_span +  "</p>");
-                   $("#previous_releases").append("<p class='devicetree_release'><a href='" + obj.html_url + "'>DeviceTree Specification Release " + obj.tag_name + "</a> - Released " + formatted_release_date + " " + prerelease_span +  " </p>");
                }
                else{
                    $("#previous_releases").append("<p class='devicetree_release'><a href='" + obj.html_url + "'>DeviceTree Specification Release " + obj.tag_name + "</a> - Released " + formatted_release_date + " </p>");
