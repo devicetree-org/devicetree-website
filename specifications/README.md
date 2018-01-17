@@ -19,6 +19,8 @@ keywords: Devicetree, Specification, release, v1.0
 
 #### Get Involved
 
+## **The Devicetree Specification**
+
 If you would like to get involved please fetch the document source from
 [GitHub](https://github.com/devicetree-org/devicetree-specification)
 and join the [mailing list](http://vger.kernel.org/vger-lists.html#devicetree-spec).

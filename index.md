@@ -10,7 +10,13 @@ keywords: OpenFirmware, OpenPOWER Abstraction Layer (OPAL), Power Architecture P
 
 If you are looking for the devicetree specification you’ve come to the right place!
 
+<<<<<<< HEAD
 ## Current release is [v0.2](https://github.com/devicetree-org/devicetree-specification/releases/tag/v0.2)
+=======
+## Current release is [v0.1](https://github.com/devicetree-org/devicetree-specification/releases/tag/v0.1)
+
+## Latest review draft [v0.2-pre4](https://github.com/devicetree-org/devicetree-specification/releases/tag/v0.2-pre4)
+>>>>>>> 86b6099da5fc45325dc4f128f69ff8bdb781ae02
 
 Devicetree.org is a community effort by many companies and individuals to facilitate the future evolution of the Devicetree Standard.
 
