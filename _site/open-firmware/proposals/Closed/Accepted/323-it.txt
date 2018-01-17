@@ -1,0 +1,45 @@
+Date: Thu, 29 Feb 1996 13:11:38 +0000
+From: Ron Hochsprung <ron@apple.com>
+Subject: Item #323: change to *output* definition
+
+P1275 Openboot Working Group Proposal -- Proposal #:323 Ver 1
+
+Title:          change to *output* definition
+
+Author:         Ron Hochsprung
+
+Date:           2/29/96
+
+Ed/Tech:        Technical
+
+Synopsis:       fix problem with *output* on PCI
+
+Doc & Version:  none
+
+Problem:
+
+The current definition of *output* leaves the current output device open 
+while attempting to open a new one.  On PCI, with multiple "VGA" display 
+devices, this can cause multiple targets to respond, possibly crashing 
+or hanging the system.
+
+Proposal:
+
+Define an alternative definition of *output* that would:
+  1) save the pathname of the current output device.
+  2) close the current output device
+  3) attempt to open the new output device
+  4) if successful, set the new output device as current.
+  5) if the open of the new device fails, re-open the current device,
+     using the pathname that was saved.
+
+There may be alternative ways of dealing with the problem;  e.g., 
+enforcing stricter requirments on what opened devices may have mapped in 
+at any time.  However, I wanted to make sure that the problem gets 
+addressed.
+
+Ron
+
+
+[ P1275 Item #323 -- Received: Thu Feb 29 13:09:33 PST 1996 ]
+

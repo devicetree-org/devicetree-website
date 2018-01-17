@@ -1,0 +1,79 @@
+Date: Wed, 1 Feb 95 19:52:23 PST
+From: paktor@hal.com (David Paktor)
+Subject: Item #226: "Split" and "Join" words for 64-Bit Extension
+
+
+P1275 Open Firmware Working Group Proposal -- Proposal #:226 Ver 1
+
+Title:		"Split" and "Join" words for 64-Bit Extension
+
+Author:		David L. Paktor
+
+Date:		Wed 01 Feb 95
+
+Ed/Tech:	Editorial
+
+Synopsis:	Clarify the phrasing, in the 64-Bit Extension, of the descrip-
+		    tions of  bxjoin  lxjoin  wxjoin  xbsplit  xlsplit  and
+		     xwsplit  along the lines of the clarifications amended to
+		    the Core document.
+
+Doc & Version:	1275.6 D4
+
+Problem:	The descriptions of  bxjoin  lxjoin  wxjoin  xbsplit  xlsplit
+		    and  xwsplit , if taken literally, would be inaccurate.
+
+Proposal:  Change the text on the following page:lines as shown:
+
+    pg:ln#	Word Described
+		Changed Text
+
+     2:39	bxjoin
+		The eight least significant bits of each operand are combined
+		    to form an octlet.  Other operand bits are ignored.
+
+     2:51	lxjoin
+		The thirty-two least significant bits of each operand are com-
+		   bined to form an octlet.  Other operand bits are ignored.
+
+     3:35	wxjoin
+		The sixteen least significant bits of each operand are com-
+		    bined to form an octlet.  Other operand bits are ignored.
+
+     4:06	xbsplit
+		The bits of greater significance than the eight least
+		    significant bits of each of the eight resulting values
+		    will be zero.
+
+     4:29	xlsplit
+		The bits of greater significance than the thirty-two least
+		    significant bits of each of the two resulting values
+		    will be zero.
+
+     4:52	xwsplit
+		The bits of greater significance than the sixteen least
+		    significant bits of each of the four resulting values
+		    will be zero.
+
+
+Discussion:  Perhaps we should highlight the subtle but potentially important
+	shift between the "join" words in the 64-bit supplement and those in
+	the Core:  The Core specifies that the other operand bits "must be
+	zero", i.e., it is the responsibility of the user to make sure they
+	are zero before applying an XXjoin word; in the 64-bit supplement, on
+	the other hand, the implication is that the iplementation will take
+	care of that step.
+
+    In point of fact, I have just tested an implementation in which the other
+	operand bits are not ignored.  Should we modify the phrases that say
+	"are ignored" to read "must be zero"?
+
+    I would prefer to place the burden of trimming out the "other operand
+	bits" on the implementation, rather than on the application, but
+	it might be more important to maintain a consistent policy.
+
+
+David
+
+[ P1275 Item #226 -- Received: Wed Feb  1 19:54:24 PST 1995 ]
+

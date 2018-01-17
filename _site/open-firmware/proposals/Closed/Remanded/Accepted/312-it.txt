@@ -1,0 +1,54 @@
+Date: Wed, 31 Jan 1996 14:33:36 -0800
+From: brianh@lexus.West.Sun.COM (Brian Horn)
+Subject: Item #312: PPC: Add load-base to .note section
+
+P1275 Open Firmware Working Group Proposal -- Proposal #312 Ver 1.0
+
+Title:		Add load-base to .note section
+
+Author:		Brian.Horn@west.sun.com
+
+Date:		Jan 31, 1996
+
+Ed/Tech:	Technical
+
+Synopsis:	Add a address field in the .note section to set "load-base"
+
+Doc & Version:	PowerPC Processor Binding Draft revision 1.6
+
+Problem:	Some systems won't boot without manual user intervention
+
+Proposal:	
+
+	Add after line 35 on page 19:
+
+	/L	field	ns.load-base
+
+	and add text to the effect:
+
+	If the ns.load-base value is not -1 then that value is compared
+	against the current value of the configuration variable "load-base".
+	If they are equal no further action is taken.  If they are
+	not equal then the configuration variable "load-base" is set to
+	the value of ns.load-base and the system is rebooted.
+
+	The reason this is necessary is best shown by example.
+
+	Assume that the default value for load-base is 4M (0x00400000).
+	Further assume that the Open Firmware client ELF image header requires
+	that it be mapped at 4M + 4K (0x00401000) (and of course the memory
+	image of the client is greater than 4Kbytes).  This causes a conflict
+	where the client program may not run as on page 20 line 28 says
+	"The implementation need not take precautions to ensure that the
+	process of copying and zeroing program sections does not overwrite
+	portions of the load image...".  In this case the client image
+	would never execute correctly unless a) the implementation goes
+	beyond the specification and does take precautions when copying and
+	zeroing or b) the configuration variable "load-base" is altered
+	manually by the user.
+
+	Forcing manual intervention by the user should be avoided if at all
+	possible.
+
+[ P1275 Item #312 -- Received: Wed Jan 31 14:30:58 PST 1996 ]
+

@@ -1,0 +1,35 @@
+Date: Mon, 17 Jun 1996 18:05:20 -0700
+From: dmk@uask4it-223 (David Kahn)
+Subject: Item #366: PCI: Draft 1.75 posted
+
+
+P1275 Openboot Working Group Proposal -- Proposal #:366 Ver 1
+
+Title:          PCI: Draft 1.75 posted
+
+Author:         Ron Hochsprung [ Posted by dmk, for Ron. ]
+
+Date:           Mon Jun 17 17:56:59 PDT 1996
+
+Ed/Tech:        Technical
+
+Synopsis:       Posted update to PCI Bus Binding
+
+Doc & Version:  New draft of PCI Bus Binding.
+
+Problem:        See new draft.
+
+Proposal:       Draft version 1.75.  See document for changes.
+
+		The draft proposal has been posted and is available
+		at the following URL:
+
+	http://playground.sun.com/1275/home.html#OFDbusPCI
+
+		or via anonymous ftp at:
+
+	ftp://playground.sun.com/pub/1275/bindings/pci/pci1_75d.ps
+
+
+[ P1275 Item #366 -- Received: Mon Jun 17 18:05:57 PDT 1996 ]
+

@@ -1,0 +1,53 @@
+Date: Wed, 31 Jul 1996 16:13:27 -0700
+From: dmk@Eng.Sun.Com (David Kahn)
+Subject: Item #380: PCI: Include pci class code string in 'compatible'
+
+
+P1275 Openboot Working Group Proposal -- Proposal #:380 Ver 1
+
+Title:          PCI: Include pci class code string in 'compatible'
+
+Author:         David Kahn
+
+Date:           July 31, 1996
+
+Ed/Tech:        Technical
+
+Synopsis:       PCI: Include pci class code string in 'compatible'
+
+Doc & Version:  PCI Binding, 1.75d as augmented by the June minutes
+
+Problem:        In order to be able to chose an arbitrary and generic
+		class code driver in the OS, the driver selection
+		algorithm should be able to chose a class-code driver
+		from the choices presented in the 'compatible' property.
+
+		An example is chosing a class code driver for an
+		arbitrary pci-pci bridge on systems where the host
+		pci node is not a generic pci-pci bridge, but wants
+		to use the name 'pci'.
+
+Proposal:       
+
+	Under probe-pci, in the creation of the 'compatible' property:
+
+	[ Please refer to June minutes. I'm doing this based on the
+	approved changes in the June minutes, which I believe leave
+	this 'compatible' creation description a bit flawed ]
+
+	"compatible" Construct a list of names in most-specific to
+		least-specific order as defined in [4], with the
+		most specific name first in the list derived from the 
+		subsystem id, vendor id [ use existing text here ... ]
+		The second entry in the list is in the form
+		pciclassNNNNNN, where NNNNNN is the device class code.
+		The last entry in the list is the generic form of the name [4],
+		and may be omitted if there is no corresponding mapping
+		to a generic form of the name from the device class code.
+
+	[ The intent is to require this for bridges without FCode.
+	  Do we need to say anything for devices with FCode? ]
+
+
+[ P1275 Item #380 -- Received: Wed Jul 31 16:15:06 PDT 1996 ]
+

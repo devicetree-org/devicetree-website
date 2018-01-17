@@ -1,0 +1,36 @@
+From: Bill Rees <breeze@firePower.com>
+Subject: Item #330: PPC: L2 cache property addition
+Date: Sun, 24 Mar 96 23:19:00 PST
+
+P1275 Openboot Working Group Proposal -- Proposal #:330 Ver 
+Title: 	Additional properties available for Secondary Cache Nodes (L2)
+Author:         Bill Rees, FirePower Systems Inc
+Date:           March 24, 1996
+Ed/Tech:        Technical
+Synopsis:       Additional L2 hardware description required to identify L2
+		as inline or not.
+Doc & Version:
+Problem:
+
+	  The problem is the ambiguity of the L2 description with respect to
+	  function.  Given a piece of software that is trying to describe the
+	  system to an OS, an L2 cache may reside in an OS tree either as a
+	  peer to memory in the case of a look-aside cache, or as a child of
+	  CPU in the case of an in-line cache.
+
+	  The cache node descriptions do not currently provide enough
+	  property info to determine whether the cache node describes a
+	  look-aside or an in-line cache..
+
+Proposal:
+
+	Proposal is to allow an additional property, cache-inline, to
+	describe those secondary caches that physically lie between the cpu
+	and the system bus.
+	
+	The absence of this property would indicate a look-aside cache
+	which sits on the memory bus and functions in parallel with
+	memory.
+
+[ P1275 Item #330 -- Received: Sun Mar 24 23:11:32 PST 1996 ]
+

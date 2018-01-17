@@ -1,0 +1,119 @@
+Message-Id: <9606191837.AA29735@tardis.austin.ibm.com>
+Subject: Item #368: Administrivia: OFWG Agenda for June Meeting
+Date: Wed, 19 Jun 1996 13:37:16 -0500 (CDT)
+
+P1275 Open Firmware Working Group Proposal -- Proposal #368 Ver <Auth-Vers#>
+
+Title:          OFWG Agenda for June Meeting
+
+Author:         John Kingman
+
+To:             Open Firmware Working Group Members,
+
+Attached is the agenda for the Open Firmware Working Group meeting to be
+held at Firmworks, Mountain View, CA on Tuesday June 25, 1996 and Wednesday 
+June 26, 1996. Directions and hotel information are available at:
+
+        http://playground.sun.com/pub/1275
+
+Please check below for any Action Items assigned to you. For those with
+Action Items who cannot come to the meeting, please send me the status of
+your item(s) by e-mail by 8:00AM Central Time Monday, June 24, 1996.
+
+Thanks.
+
+John Kingman, Secretary Open Firmware Working Group
+kingman@austin.ibm.com
+
+-----------------------------------------------------------------------------
+Times are Pacific Daylight Savings Time:
+
+Tuesday June 25, 1996
+
+     9:15AM     - Meet at Firmworks, (see note below for directions)
+                     Light breakfast to be provided by Firmworks.
+     9:30AM   1 - Introduction
+              2 - Review Agenda
+              3 - Administrative/Procedural Items
+              4 - Review and approve minutes from the last meeting
+              5 - Future Meetings
+              6 - Standard Progress Report
+                     P1275.3 (VME - IEEE 1014 bus)
+                     P1275.6: 64-bit Extension Supplement for Open Firmware
+                        - Status on experimental compatibility work from
+                          David Kahn and/or Mitch Bradley (Action Item #5)
+                     P1275.a Errata to 1275-1994 (Core Errata)
+              7 - Action Items Review (see note below)
+              8 - Other Pending/Tabled items
+    12:00M      - Break for LUNCH
+     1:00PM   9 - Proposal Status Review
+             10 - Document Reviews (including associated proposals, if any)
+                    Recommended Practices
+                        TFTP Booting Extension Version 0.6 (#364)
+			Interrupt Mapping Version 0.8 (#365)
+     5:00PM     - Break for the day
+
+Wednesday June 26, 1996
+
+     9:15AM     - Meet at Firmworks
+                     Light breakfast to be provided by Firmworks.
+     9:30AM  10 - Document Reviews (cont'd)
+                    CHRP System Binding Revision 1.5 (#357)
+                    CHRP Device Bindings Revision: 1.0 (#359)
+                    ISA/EISA/ISA-PnP binding, Version 0.2 (#362)
+                    PowerPC Processor Binding Revision 1.10 (#363)
+    12:00M      - Break for LUNCH
+     1:00PM  10 - Document Reviews (cont'd)
+                    PCI Bus Binding Revision 1.75 (#366)
+                    Others?
+     1:30PM     - Summarize/Assign action items and Wrap up
+     2:00PM     - Adjourn
+
+
+NOTES:
+------
+Action Items:
+
+  --------------------------------------------------------------------------
+  | No.|Who         |Description                                           |
+  |----|------------|------------------------------------------------------|
+  |  2 |Editors of  |Update document template and contents per discussion. |
+  |    |Recommended |                                                      |
+  |    |Practice    |                                                      |
+  |    |documents   |                                                      |
+  |----|------------|------------------------------------------------------|
+  |  4 |David K.    |Standard properties document.                         |
+  |----|------------|------------------------------------------------------|
+  |  6 |Ron H.      |Work on "reg"/"assigned-addresses"/base address       |
+  |    |Jordan B.   |registers in the PCI binding.                         |
+  |----|------------|------------------------------------------------------|
+  |  7 |Jordan B.   |Work on names, unit-address... in ISA binding         |
+  |----|------------|------------------------------------------------------|
+  | 11 |Jordan B.   |Reorganize discussion of probing in ISA binding       |
+  |----|------------|------------------------------------------------------|
+  | 12 |Jordan B.   |Suggest wording for IRQ 2 vs 9                        |
+  |----|------------|------------------------------------------------------|
+  | 24 |Ron H.      |talk to Mitch Bradley to clarify line-end for #322    |
+  |----|------------|------------------------------------------------------|
+  | 25 |Ron H.      |Work out use of probe-pci with Paul Thomas (#349)     |
+  --------------------------------------------------------------------------
+
+Subcommittee Action Items:
+  --------------------------------------------------------------------------
+  | S2 |Ron H.      | Update and create v1.1 Forth and FCode Rec Practice  |
+  |----|------------|------------------------------------------------------|
+  | S4 |Bob C.      | Make "shared-bus-master" proposal                    |
+  |----|------------|------------------------------------------------------|
+  | S5 |Ron H.      | Make "chording" proposal                             |
+  |----|------------|------------------------------------------------------|
+  | S8 |Mitch B.    | Propose that debug facilities not be supported       |
+  |    |            | in real-mode.                                        |
+  |----|------------|------------------------------------------------------|
+  | S9 |John K.     |Get with Bill Rees and clarify #330                   |
+  --------------------------------------------------------------------------
+
+
+-----------------------------------------------------------------------------
+
+[ P1275 Item #368 -- Received: Wed Jun 19 11:36:20 PDT 1996 ]
+

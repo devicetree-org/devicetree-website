@@ -1,0 +1,31 @@
+pages:
+  -
+    list:
+      -
+        title: "Specifications"
+        url: /specifications/
+      -
+        title: "Members"
+        url: "/members/"
+    urls: [/specifications/,/members/]
+  -
+    list:
+      -
+        title: Overview
+        url: /governance/
+      -
+        title: Releases
+        url: /releases/
+      -
+        title: Committee
+        url: /committee/
+    urls: [/governance/, /releases/, /committee/]
+  -
+    list:
+      -
+        title: Documentation
+        url: /documentation/
+      -
+        title: License Agreement
+        url: /agreement/
+    urls: [/documentation/, /agreement/]

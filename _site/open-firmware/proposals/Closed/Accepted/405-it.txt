@@ -1,0 +1,74 @@
+Date: Thu, 16 Jan 1997 13:35:11 -0800
+From: dmk@uask4it-95.Eng.Sun.Com (David Kahn)
+Subject: Item #405: pci v2.0: Add 'vendor-id' to 'compatible'
+
+P1275 Openboot Working Group Proposal -- Proposal #:405 Ver 1
+
+NOTE:		This was proposed (and accepted) at the January meeting
+		as #dmk-01.
+
+Title:		Add vendor-id to "compatible" when subsystem-id is non-zero.
+
+Author:		David Kahn
+
+Date:		Jan 13, 1997
+
+Ed/Tech:	Technical
+
+Synopsis:	Add vendor-id to "compatible" property when subsystem-id is
+		non-zero.
+
+Doc & Version:	PCI binding, Version 2.0.  See also #380 which added the
+		pciclass,NNNNNN name.
+
+Problem:	Certain OS drivers may be able to use a more generic
+		'vendor-id' driver even when the card reports a non-zero
+		subsystem-id. An OS could automatically find the vendor-id
+		driver if we created the "compatible" property as follows:
+
+		    subsytem-id-name + vendor-id-name + class-code-name
+
+		Currently, pci V2.0 specifies the subsystem-id name if the
+		subsystem-id is non-zero, otherwise the vendor-id name is
+		published in "compatible".  Proposal #380, accepted after pci
+		binding v2.0 was published, added the class-code name to the
+		end of the "compatible" property.
+
+		There is the potential that this proposal could cause
+		problems if a new card has a vendor-id driver, but no
+		subsystem-id driver and the vendor-id driver causes the
+		system to crash.
+
+Proposal:
+
+		Change the text in pci V2.0, page 9, lines 38-40 for
+		"compatible". Construct a composite string property containing
+		the following elements in the following order with each element
+		constructed as with ENCODE-STRING and each additional element
+		included as with ENCODE+.
+
+
+                1. If the subsystem-id is non-zero, the first encoded string
+                   (the most specific entry in the property) is of the
+                   form pciVVVV,DDDD where VVVV,DDDD shall be the subsystem
+                   vendor-id and the subsystem-id, respectively.  VVVV and
+                   DDDD are lower case ASCII hexadecimal numbers without
+                   leading zeros.  If the subsystem-id is zero, this entry is
+                   not included in "compatible".
+
+                2. Construct an encoded-string of the form pciVVVV,DDDD where
+                   VVVV,DDDD is the vendor-id and device-id, respectively.
+                   VVVV and DDDD are lower case ASCII hexadecimal numbers
+                   without leading zeros.
+
+                3. Construct an encoded-string of the form pciclass,NNNNNN
+                   where NNNNNN is the device's class-code, in lower case,
+                   ASCII hexadecimal numbers *WITH* leading zeros. This entry
+                   is always the least specific entry (the last entry included
+                   with ENCODE+) in "compatible".
+
+	[ Note: The editor is free to change the VVVV,DDDD characters
+	  to something more appropro for case 1. ]
+
+[ P1275 Item #405 -- Received: Thu Jan 16 13:35:05 PST 1997 ]
+

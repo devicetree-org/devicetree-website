@@ -1,0 +1,29 @@
+Date: Tue, 21 Mar 1995 14:35:24 -0800
+From: brianh@pongo.West.Sun.COM (Brian Horn)
+Subject: Item #257: PPC BOOTP extensions not specified
+
+P1275 Open Firmware Working Group Proposal -- Proposal #257 Ver 1,0
+
+Title:		BOOTP packet needs more specification
+
+Author:		Brian.Horn@west.sun.com
+
+Date:		March 21, 1995
+
+Ed/Tech:	Editorial
+
+Synopsis:	BOOTP needs to be specific w.r.t. extensions
+
+Doc & Version:	PowerPC processor binding to OpenFirmware Draft 1.0 2/16/95
+
+Problem:	obp-tftp support package isn't clear w.r.t. BOOTP extensions
+
+Proposal:	On page 9 line 52 add:
+
+		"No vendor extensions to BOOTP shall be utilized."
+
+		[ed. This can revisited later.  Perhaps even a look into DHCP
+		 would be useful in later revisions.]
+
+[ P1275 Item #257 -- Received: Tue Mar 21 14:37:34 PST 1995 ]
+

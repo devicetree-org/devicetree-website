@@ -1,0 +1,347 @@
+Date: Wed, 16 Aug 95 19:45:34 PDT
+From: wmb@FirmWorks.COM (Mitch Bradley)
+Subject: Item #284: PR*P binding: disk label algorithm
+
+P1275 Open Firmware Working Group Proposal -- Proposal #284 Ver 0
+
+Title:		The Great Disk Label Elucidation
+
+Author:		Mitch Bradley
+
+Date:		Aug. 16, 1995
+
+Ed/Tech:	Technical
+
+Synopsis:	PR*P disk label algorithm
+
+Doc & Version:	PR*P binding, Rev. 0.02
+
+Problem:	Describe the disk label algorithm completely
+
+Proposal:	
+
+Replace the first portion of clause 3.1.1 "Partition formats", down to
+but not including the paragraph that begins with "Although the above
+algorithm works ...", with:
+
+
+The "open" method of the "disk-label" support package shall implement
+a disk partition recognition algorithm that supports at least the set
+of disk formats that are supported by the following algorithm.  The
+following algorithm is intended to support raw (uninterpreted) disks,
+raw partitions of disks beginning with an FDISK partition map, and files
+on FAT and ISO-9660 file systems both within FDISK partitions and by
+themselves on disks without a partition map.
+
+That "open" method shall accept an argument string (as returned by "my-args")
+with the following syntax (according to the algorithm below), where brackets
+denote an optional component:
+
+	[partition][,[filename]]
+
+If the argument string contains a comma, or if the argument string begins
+with a decimal digit, the partition component is deemed to be present.
+
+If the partition component is present, it selects the desired partition,
+where partition 0 refers to the entire disk, partition 1 refers to the
+first partition, partition 2 to the second, and so forth.  If the partition
+component is absent and the disk has an FDISK partition map, the first
+"bootable" partition is used, otherwise the first non-null partition is used.
+
+If the filename component is present, it selects a particular file within
+the file system on the disk or partition thereof.
+
+
+OPEN algorithm
+
+   Set D.SIZE to -1
+
+   If the first character of ARGUMENT$ is in the range '0'..'9'
+	LEFT-PARSE ( ARGUMENT$ ) -> PARTITION$, FILENAME$
+   Else
+	Set PARTITION$ to the null string
+	Set FILENAME$ to ARGUMENT$
+
+   If PARTITION$ is not the null string
+	If PARTITION$ cannot be parsed as a decimal number
+		Return FALSE
+	DECIMAL_STRING_TO_NUMBER( PARTITION$ ) -> PARTITION
+	If PARTITION is 0
+		Set OFFSET to 0
+		If the parent device has a "#blocks" method
+			Execute the parent's "#blocks" and "block-size"
+			methods, and set D.SIZE to the product of the
+			two result values.
+	Else
+		Read the first 512 bytes of the device into a buffer
+		SELECT_EXPLICIT_PARTITION(PARTITION)
+		If SELECT_EXPLICIT_PARTITION returned an error indication
+			Return FALSE
+
+   Else  \ PARTITION$ is NULL
+	Read the first 512 bytes of the device into a buffer
+	SELECT_ACTIVE_PARTITION
+	If SELECT_ACTIVE_PARTITION returned an error indication
+		Return FALSE
+
+   \ At this point, D.OFFSET is set to the beginning of the selected partition
+   \ and D.SIZE is set to the size of that partition.  If the entire disk was
+   \ selected, D.OFFSET is 0 and D.SIZE is the size of the disk.
+
+   Call parent's "seek" method with an argument of 0 0.
+
+   If FILENAME$ is not NULL
+
+	If the partition contains an ISO 9660 file system
+
+		Interpose the ISO 9660 file system handler, with FILENAME$
+		as its argument
+		
+	Else If the partition contains a FAT file system
+
+		Interpose the FAT file system handler, with FILENAME$
+		as its argument
+
+	Else If the implementation recognizes the file system type and
+	has a handler for that file system
+
+		Interpose the handler for that file system, with FILENAME$
+		as its argument
+
+	Else
+		Return FALSE
+
+   Return TRUE
+
+
+   CHECK_FOR_BPB procedure
+
+	If the 16-bit little-endian quantity beginning at buffer offset 510
+	is 0xaa55, and the 16-bit little-endian quantity beginning at buffer
+	offset 11 (which is the BPB "bytes per sector" field) is either 256,
+	512, or 1024, and the byte at offset 16 (the BPB "number of FATs"
+	field) is either 1 or 2, the sector is deemed to contain a BPB.
+	Otherwise, the sector does not contain a BPB.
+
+   CHECK_FOR_ISO_9660 procedure
+
+	Read 512-byte sector 64 (the beginning of logical 2048-byte sector 16)
+	into a buffer
+
+	If the byte at offset 0 contains the binary number "1", and the 5
+	bytes beginning at offset 1 contains the text string "CD001", the
+	partition or raw disk is deemed to contain an ISO 9660 file system.
+	Otherwise, the partition or raw disk is deemed not to contain an
+	ISO 9660 file system.
+
+
+   GET_DISK_SIZE procedure
+
+	If the parent device has a "#blocks" method
+
+		Execute the parent's "#blocks" and "block-size"
+		methods, and set D.SIZE to the product of the
+		two result values.
+
+
+   CHECK_FOR_FDISK procedure
+
+	If the buffer does not contain an FDisk partition map signature of
+	"aa55" as a 16-bit little-endian number beginning at buffer offset
+	510, the buffer is deemed not to contain an FDISK partition map.
+
+	If the partition map area (the bytes of the buffer between offsets
+	0x1ae and 0x1fd inclusive) contains all zero bytes, the buffer is
+	deemed not to contain an FDISK partition map.
+
+	If none of the partition type codes (the bytes at buffer offsets
+	0x1b2, 0x1c2, 0x1d2, and 0x1e2) contains a recognizable partition
+	type code (4, 5, 6, 0x41, 0x96, or other types that may be
+	recognized by the implementation), the buffer is deemed not to
+	contain an FDISK partition map.
+
+	Otherwise, the buffer is deemed to contain an FDISK partition map.
+
+	The implementation may, at its option, apply additional tests to
+	determine whether or not the buffer contains a valid partition map.
+
+   INTERPOSE_BY_TYPE procedure
+
+	If FILENAME$ is not the null string
+
+		If PARTITION-TYPE is 0x96
+			INTERPOSE (ISO-9660 File System package, FILENAME$)
+		Else
+			INTERPOSE (FAT File System package, FILENAME$)
+
+   SELECT_ACTIVE_PARTITION procedure
+
+	CHECK_FOR_BPB
+	If the buffer contains a BPB
+		Set OFFSET to 0
+
+		Set D.SIZE to the maximum size of the disk in bytes, as
+		indicated by the information in the BIOS Parameter Block
+
+		If FILENAME$ is not the null string
+
+			INTERPOSE (FAT File System package, FILENAME$)
+
+		Return OKAY
+
+	CHECK_FOR_FDISK
+	If the buffer does not contain an FDISK partition map
+
+		CHECK_FOR_ISO_9660
+		If it is an ISO 9660 disk
+
+			Set OFFSET to 0
+
+			GET_DISK_SIZE
+
+			If FILENAME$ is not the null string
+
+				INTERPOSE (ISO-9660 File System package, FILENAME$)
+
+
+			Return OKAY
+
+		Return ERROR
+
+	Search the FDisk partition map, reading new 512-byte sectors
+	into the buffer if necessary to "chain" to extended partition
+	entries (i.e. ones whose type byte at offset 4 contain "5")
+	for the first partition entry whose "bootable" field (at
+	offset 0 in the partition entry) contains 0x80.
+	If one is found:
+		Set PARTITION-TYPE to that entry's "type" field
+		(the byte at offset 4)
+
+		Set D.OFFSET to the byte offset from the beginning
+		of the disk of the beginning of the partition
+		denoted by that entry.
+
+		Set D.SIZE to the size of the partition denoted by
+		that entry.
+
+		INTERPOSE_BY_TYPE
+
+		Return OKAY
+
+Note: An implementation is required to support only the "logical sector
+number" format of FDISK partition map entries.  It may, but is not required
+to, support the "head/cylinder/sector" format.
+
+	\ No partition was marked "bootable"
+
+	Search the FDisk partition map beginning in 512-byte sector 0,
+	reading new 512-byte sectors into the buffer if necessary to
+	"chain" to extended partition entries, for the first partition
+	entry whose "type" byte is neither 0 nor 5 (5 is the type code
+	that indicates a "chained" extended partition entry).
+	If one is found:
+
+		Set PARTITION-TYPE to that entry's "type" field
+		(the byte at offset 4)
+
+		Set D.OFFSET to the byte offset from the beginning
+		of the disk of the beginning of the partition
+		denoted by that entry.
+
+		Set D.SIZE to the size of the partition in bytes denoted
+		by that entry.
+
+		INTERPOSE_BY_TYPE
+
+		Return OKAY
+
+	\ The partition map did not contain any valid partition entries
+
+	Return ERROR
+
+   GET-DISK-SIZE procedure
+
+	If the parent has a "#blocks" method
+		Execute the parent's "#blocks" and "block-size" methods
+		Set D.SIZE to the product of the numbers they returned
+	Else
+		Set D.SIZE to -1
+
+   SELECT_EXPLICIT_PARTITION(PARTITION) procedure
+
+	If the buffer contains a BPB
+
+		If PARTITION is 1
+
+			Set OFFSET to 0
+
+			GET-DISK-SIZE
+
+			If FILENAME$ is not the null string
+
+				INTERPOSE (FAT File System package, FILENAME$)
+
+			Return OKAY
+		
+		Else
+			Return ERROR
+	Else
+		Search the FDisk partition map beginning in 512-byte sector 0,
+		reading new 512-byte sectors into the buffer if necessary to
+		"chain" to extended partition entries, for the Nth, where
+		N is the value of PARTITION, partition entry whose "type"
+		byte is neither 0 nor 5 (5 is the type code that indicates
+		a "chained" extended partition entry).
+		If one is found:
+
+			Set PARTITION-TYPE to that entry's "type" field
+			(the byte at offset 4)
+
+			Set D.OFFSET to the byte offset from the beginning
+			of the disk of the beginning of the partition
+			denoted by that entry.
+
+			Set D.SIZE to the size of the partition in bytes
+			denoted by that entry.
+
+			INTERPOSE_BY_TYPE
+
+			Return OKAY
+
+		Else
+
+			Return ERROR
+
+
+Note:
+
+Some vendors wish to supply a CD-ROM that contains both an ISO-9660 file
+system, and also a separate boot image in another format.  One way do so,
+that will work with the algorithm described above, is as follows:
+
+	Put the ISO-9660 file system on the CD-ROM in its usual location
+	(i.e. beginning at 2048-byte sector number 16).
+
+	Put the boot image, in one of the defined partition formats (e.g.
+	as a FAT file system or a "41" partition) on the CD-ROM in some
+	area beyond that which is used by the ISO-9660 file system.
+
+	Put an FDISK partition map in the first 512 bytes of the CD-ROM (i.e.
+	in the first quarter of the first 2048-byte sector).  That partition
+	map should contain:
+
+		a) An entry describing the boot image partition.  The
+		   logical sector numbers in that entry should be in
+		   units of 512 bytes.  That entry should be marked "bootable"
+		   (i.e. the first byte of the entry should be 0x80).
+
+	and
+
+		b) An entry describing the ISO-9660 file system.  The
+		   logical sector numbers in that entry should be in
+		   units of 512 bytes.  The beginning sector number field
+		   in that entry should contain 0, thus "including" the
+		   FDISK partition map within the ISO-9660 partition.
+
+[ P1275 Item #284 -- Received: Wed Aug 16 19:51:06 PDT 1995 ]
+

@@ -1,0 +1,40 @@
+Date: Mon, 22 Apr 1996 16:16:59 -0700
+From: ron@apple.com (Ron Hochsprung)
+Subject: Item #340: PCI Binding: add "latency-timer" property
+
+P1275 Openboot Working Group Proposal -- Proposal #:340 Ver <Author-Version#>
+
+Title:          new "latency-timer" property for PCI Binding
+
+Author:         Ron Hochsprung
+
+Date:           4/22/96
+
+Ed/Tech:        Technical
+
+Synopsis:       add new property ("latency-timer") to PCI Binding
+
+Doc & Version:  PCI Binding 1.7
+
+Problem:
+
+We added a new property to report the value that was programmed into a
+device's Cache Line Size register.  We discuss how the Latency Timer
+is supposed to be set by the firmware, but we have no way of reporting
+to what value it was set.
+
+Proposal:
+
+In the list of properties in section 4.1.2.1, add the following:
+
+    "latency-timer"
+
+       This property shall indicate the value to which the device's
+       Latency Timer value was set.
+
+Add this new property into the list of properties that get created by
+*probe-pci*
+in section 5.
+
+[ P1275 Item #340 -- Received: Mon Apr 22 16:15:08 PDT 1996 ]
+

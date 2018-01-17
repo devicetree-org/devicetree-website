@@ -1,0 +1,59 @@
+From: Michael Segapeli <mikes@austin.ibm.com>
+Subject: Item #391: DSE: Clarify Arguments to network Devices
+Date: Mon, 30 Sep 1996 17:39:43 -0500
+
+P1275 Open Firmware Working Group Proposal -- Proposal #391 Ver <Auth-Vers#>
+
+Title:		Clarify Arguments to network Devices
+
+Author:		Mike Segapeli
+
+Date:		September 30, 1996
+
+Ed/Tech:	Technical
+
+Synopsis:	The format of the open arguments are not clear
+
+Doc & Version:	Device Support Extensions Version 0.8
+
+Problem:	The Device Support Extensions defines three arguments to the
+                "open" method for network devices.  The "TFTP Booting 
+                Recommended Practice" defines arguments to the "open" method
+                of the OBP-TFTP support package.  Both sets of arguments
+                are passed via the device's "open" method.  However it is 
+                not clear which set comes first. 
+
+                Also For the arguments "promiscuous, speed and duplex" it is 
+                not clear whether the delimiting commas are needed if one of
+                these arguments is not needed.
+
+Proposal:	In section 9.2 replace:
+
+                   "open network-device:[promiscuous,][speed=n,][duplex=mode,]"
+
+                with
+
+                   "The open arguments to a network device are defined as
+                    follows:
+
+                    open network-device:[promiscuous],[speed=n],[duplex=mode],
+                                        [bootp],[siaddr],[filename],[ciaddr],
+                                        [giaddr],[bootp-retries],[tftp-retries]
+"
+
+                
+                Add the following sentence at the front of the paragraph
+                starting at line 47.
+
+                   "The open method of the device shall parse the first three
+                    arguments and pass the remaining arguments to the OBP-TFTP
+                    support package's "open" method."
+
+
+--------------------------------------------------------------------------
+Michael Segapeli                  (512) 838-8428  (T/L 678-8428)
+IBM RISC System/6000 Division     Internet: mikes@austin.ibm.com
+
+
+[ P1275 Item #391 -- Received: Mon Sep 30 15:38:50 PDT 1996 ]
+

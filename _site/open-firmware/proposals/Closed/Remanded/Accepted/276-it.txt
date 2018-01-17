@@ -1,0 +1,44 @@
+From: Michael Segapeli <mikes@austin.ibm.com>
+Subject: Item #276: PowerPC binding V1.3, Open Firmware's use of BATs
+Date: Fri, 07 Jul 95 15:15:07 -0600
+
+
+P1275 Open Firmware Working Group Proposal -- Proposal #276 Ver 1
+
+Title:          Clarify rules on BAT usage
+
+Author:         Mike Segapeli
+
+Date:           July 7, 1995
+
+Ed/Tech:        Technical
+
+Synopsis:       Remove restriction on Open Firmware's use of BATs
+
+Doc & Version:  PowerPC Binding Version 1.3
+
+Problem:        The rule restricting BAT usage on Open Firmware's part
+		      (page 6, line 32) seems to confilct with the text of
+		      the fourth bullet (line 35/36) which specifies how control 
+                of all address translation hardware is transferred from
+		      Open Firmware to the client.
+
+Proposal:       
+
+On page 6 line 32 (Ver 1.3) remove the following text:
+
+   " - shall not use BATs during Client or User Interface
+       operations."
+
+Also, this section (1.6 Virtual Mode Rules) does not really specify (it
+does seem to imply) who can touch address translation hardware
+before the "set-callback".  Therefore, I propose to add the following
+paragraph after the paragraph that starts on  page 6, line 44:
+
+  "[bullet] A client program shall not manipulate any address translation
+   hardware until it has issued a "set-callback" to install the "translate" 
+   callback."
+
+
+[ P1275 Item #276 -- Received: Fri Jul  7 13:18:14 PDT 1995 ]
+

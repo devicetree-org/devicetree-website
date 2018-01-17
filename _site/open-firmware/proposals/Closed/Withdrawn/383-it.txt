@@ -1,0 +1,58 @@
+Date: Fri, 2 Aug 1996 18:13:28 -0400
+From: milendor@chicklet.East.Sun.COM (Michael Milendorf (Godin) - Sun BOS Firmware)
+Subject: Item #383: clarifications on MEMORY-TEST-SUITE and MASK
+
+[ dmk: reformatted text to 80 char lines ]
+
+P1275 Openboot Working Group Proposal -- Proposal #:383 Ver <Author-Version#>
+
+Title:          Clarification on MASK and MEMORY-TEST-SUITE fcodes
+
+Author:         Michael Milendorf
+
+Date:           August 2, 1996
+
+Ed/Tech:        Technical
+
+Synopsis:       Clarification
+
+Doc & Version:  IEEE Std P1275-1994
+
+Problem:        MEMORY-TEST-SUITE and MASK definitions need clarification
+                
+                The P1275 definition of MEMORY-TEST-SUITE says "perform
+		tests of memory, starting at addr for len bytes". It says
+		that "the actual tests performed are machine specific"
+		however it doesn't clarify on what kinds of memories the
+		test could be applied to, and what kinds of accesses it is
+		using. The test can't be applied to both system and device
+		memories and always provide a correct error reporting 
+                in case of failure. The same types of accesses presumably
+		used in MEMORY-TEST-SUITE wouldn't always work the same
+		way on system and device memories. 
+
+Proposal:       The definition for MEMORY-TEST-SUITE should clearly state
+		that the test is intended for device registers only and
+		shall implement device type reads and writes. Otherwise
+		MEMORY-TEST-SUITE is not guaranteed to work on plug-in cards. 
+
+                In conjunction with clarifications on MEMORY-TEST-SUITE
+		the definiton for MASK should be changed from "which bits
+		out of every cell will be tested" to "which bits will be
+		tested with MEMORY-TEST-SUITE".  
+                
+Note:           To make MEMORY-TEST-SUITE more usefull TWO other FCODEs
+		could be introduced: REG@ and REG! MEMORY-TEST-SUITE shall
+		use REG@ and REG! types of accesses. Each particular FCODE
+		driver or FCODE selftest then shall set the required
+		cell-read and cell-write words along with 
+                MASK value prior to calling MEMORY-TEST-SUITE:
+
+                ['] rl@ to reg@ ['] rl! to reg! ffff.0000 mask !
+                addr len MEMORY-TEST-SUITE
+                
+ 
+ 
+
+[ P1275 Item #383 -- Received: Fri Aug  2 15:19:03 PDT 1996 ]
+

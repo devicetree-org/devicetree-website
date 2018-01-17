@@ -1,0 +1,41 @@
+From: kingman@austin.ibm.com (Kingman)
+Subject: Item #376: CHRP system binding: chosen nvram
+Date: Mon, 22 Jul 1996 17:00:05 -0500 (CDT)
+
+P1275 Open Firmware Working Group Proposal -- Proposal #376 Ver <Auth-Vers#>
+
+Title:          Add nvram property to /chosen
+
+Author:         John Kingman
+
+Date:           July 22, 1996
+
+Ed/Tech:        Technical
+
+Synopsis:       The nvram property is added to the /chosen node
+                to indicate which NVRAM is the CHRP NVRAM.
+
+Doc & Version:  CHRP System binding, Revision 1.5 
+
+Problem:        On a system with more than one NVRAM device node,
+                it is not clear which one is the CHRP NVRAM.  
+
+Proposal:       
+
+Add a subsection (e.g., 5.9) to Section 5 of the CHRP System binding
+named "Chosen Node." 
+
+In this subsection list the property "nvram" as required under the
+/chosen node with the following text (in the manner of section 3.5 
+of the core document):
+
+ Property Name  Encoding  Value
+ -------------  --------  -------------------------------------
+ nvram          int       Ihandle for the package that firmware
+                          is currently using for NVRAM.  This
+                          package must include a size method,
+                          as described in the Device Support
+                          Extensions document.
+
+[ P1275 Item #376 -- Received: Mon Jul 22 14:58:57 PDT 1996 ]
+

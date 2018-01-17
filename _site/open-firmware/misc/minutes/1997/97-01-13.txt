@@ -1,0 +1,301 @@
+From: rtcoffin@austin.ibm.com (Coffin)
+Subject: Item #406: Minutes for OFWG January 1997 Meeting
+Date: Wed, 22 Jan 97 09:44:55 -0600
+
+P1275 Openboot Working Group Proposal -- Proposal #:406 Ver 1
+
+Title:          Minutes of January Open Firmware Working Group Meeting
+
+Author:         Bob Coffin
+
+Date:           January 13, 1997
+
+Attached please find the minutes of our last meeting held January 13, 1997 at
+Salt Lake City, UT.  Thanks to David Kahn/Sun Microsystems for making the
+arrangements and providing the 'goodies'and/or snacks for the meeting.
+
+Also please note that:
+
+(1) Our next meeting will be at the IBM in Austin, TX, on April 15, 1997 and
+
+(2) Check the "Action Item Summary" at the end of this note for your action
+    items.
+
+Regards,
+
+Bob Coffin, Secretary, Open Firmware Working Group
+rtcoffin@austin.ibm.com
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+ 1- Attendees (OFWG)
+   =================
+
+Mitch Bradley          Firmworks   415-917-6984 wmb@firmworks.com
+Bob Coffin (Secretary) IBM         512-838-8240 rtcoffin@austin.ibm.com
+Ron Hochsprung         Apple/      408-974-2661 ron@apple.com
+                       System Arch
+Tracy Hullock          Motorola    512-891-6905 Tracy_Hullock@risc.sps.mot.com
+                       RISC SW
+David Kahn             Sun         415-786-6203 dmk@eng.sun.com
+Michael Milendorf      Sun         508-442-0803 michael.milendorf@east.sun.com
+Bruce Rosenkrantz      Motorola    602-438-3745 brosen@phx.mcd.mot.com
+
+First time attendees:
+
+Patrick Kandlbinder    Firmworks   415-917-6989 patrick@firmworks.cpm
+Brian Strelioff        Motorola    847-435-9813 strlioff@lig.mot.com
+
+Part time attendees:
+
+none
+
+ 2- Review Agenda (OFWG)
+   =====================
+
+   Quorum declared present (6 voting members of 9 members present)
+
+   Proposed agenda (#401) was reviewed and approved with right of revision to
+   the Vice Chair
+
+        Revised by:
+        - Action Item S14 was removed (closed at last meeting)
+        - Action Item 29 was removed (closed by Proposal #370)
+        - Standard Progress Report Section; Status on experimental
+          compatibility work was closed by Proposal #370 and 32-bit mask.
+
+ 3- Administrative/Procedural items
+   ================================
+
+   The OFWG decided to have future meetings on a quarterly basis and to plan
+   on potentially having one day meetings.  The decision to have a one or two
+   day meeting will occurr about a week in advance of the meeting and will
+   depend on the amount of activities scheduled with regards to document
+   reviews, new proposals and in general, Open Firmware business.
+
+ 4- Last meeting minutes review
+   ============================
+
+   Approved the minutes unanimously of the October 14, 1996 (#393) Meeting
+
+ 5- Future Meetings
+   ================
+
+   April 15 - 16, 1997          IBM         Austin, TX
+        Host/contact:           Bob Coffin  (rtcoffin@austin.ibm.com)
+                                            (512-838-8240)
+
+   July 15 - 16, 1997           Firmworks   Mountain View, CA
+        Host/contact:           Greg Hill   (gregh@firmworks.com)
+                                            (415-917-6985)
+
+
+ 6- Standard Progress Report
+   =========================
+
+   David Kahn stated that the OFWG was prepared to drop IEEE approval/publish
+   requests and to utilize the OFWG forum for publicly making information
+   available; placing documents on 'playground.sun' and other mirroring server
+   machines.  A brief IEEE Document status follows:
+
+   IEEE Document Activities - Status:
+
+   --- Closed Activities --
+
+   1275-1994:      OF Core (Official IEEE Standard)
+
+   1275.1-1994:    SPARC ISA  (Official IEEE Standard)
+
+   1275.2-1994:    SBus Bus Binding (Official IEEE Standard)
+
+   1275.4-1996:    FutureBus+ (Official IEEE Standard)
+
+   --- Open Activities  ---
+
+   p1275.3:     Dropped (VME) at the Open Firmware Working Group (OFWG)
+                request (PAR withdrawn).  Any further work on this supplement
+                will have to be provided by a champion. The OFWG has asked
+                David Paktor (VME Champion) to provide an update by the next
+                meeting.
+                OWNER: David Paktor
+
+   p1275.5      Dropped (68K Processor) at the OFWG request (PAR withdrawn).
+                No work is being done on this activity until a person (68k
+                champion) steps forth to do so.
+
+   p1275.6/d5:  64 Bit Extensions - Plan is to drop requests for publishing
+                as an IEEE document, but to continue as OFWG Document
+                published on the web.
+                OWNER: David Kahn
+
+ 7- Action Items Review
+   ====================
+
+    -2- Open
+    -4- Open
+   -11- Open
+   -12- Open
+   -27- Open
+   -28- Open
+   -29- Closed
+   -30- Open
+
+   -S2- Open
+   -S4- Open
+   -S5- Open
+   -S8- Open
+  -S15- Closed
+  -S16- Open
+
+ 8- Other Pending/Tabled items
+   ===========================
+
+   #250 (Email balloting procedure)
+         -- open - skip
+
+ 9- New Proposal Status summary
+   ============================
+
+   #393 (Minutes) accepted as ammended - closed
+
+   #394 (Typo - ISA binding) - withdrawn
+         -- withdrawn by author; corrected in earlier binding version.
+
+   #395 (Typo - PCI binding) - closed
+         -- approved; include correction in PCI binding V2.1
+
+   #396 (Correct max-transfer example - SCSI (Appendix e)) - closed
+         -- approved; publish as core errata with html addendum as additional
+            item on the web.
+
+   #397 (Auto String - DSE Network Device) - closed
+         -- accepted as ammended; change wording for the "chosen-network-type"
+            property to reflect what result value for 'speed' and 'duplex mode'
+            was selected or negotiated for the adapter ('auto' string would not
+            be in the result value of "chosen-network-type" property).  Tech-
+            nical editor to provide wording to include in new Device Support
+            Extension-RP Version.
+
+   #398 (Ping Command - TFTP Booting Extensions-RP) - closed
+         -- accepted as ammended; put brackets around 'client-ip' for ping
+            command definition and include [bootp] in the device arguments
+            definition.  Technical editor to include in new version of
+            TFTP Booting Extension-RP.
+
+   #399 (Map In/Out Clarification - PCI binding) - closed
+         -- rejected; covered in definition of 'map-in', PCI binding (author
+            agreed that item was already covered in PCI binding)
+
+   #400 (Typo - PCI binding) - closed
+         -- accepted; technical editor to include in new PCI binding
+
+   #401 (Agenda)
+         -- accepted as ammended; removed AI 29, S14, and 64-bit Extension
+            Supplement experimental compatibility work status items
+
+   #402 (Interrupt Mapping; #address_cells - Interrupt Mapping-RP) - closed
+         -- accepted as ammended; Technical editor to update code that allows
+            "#address-cells" to have a value of zero to indicate not to use
+            unit-address for a case where a device can directly point to an
+            interrupt controller via the "interrupt-parent" property and to
+            also update an example.
+
+   #403 (Opened by mistake; not really a proposal - withdrawn)
+
+   #405 (Add vendor-id to "compatible" property - PCI binding) - closed
+        [proposal 'dmk-01' at meeting]
+         -- accepted; Technical editor to include in new PCI binding Version.
+
+
+10- Document Reviews (including associated proposals, if any)
+    ================
+
+Generic Names, Version 1.4
+---------------------------
+Reviewed document; no proposed changes.
+
+
+Device Support Extensions-RP, Version 1.0
+------------------------------------------
+Reviewed document; technical editor directed to remove part of sentence under
+Section 13., p18, l47, 'The "disk-label" standard support package and' and
+to correct noted document format errata.  Technical editor directed to make
+changes and produce a new DSE-RP, Version 1.1, Approved Version.
+
+Technical editor directed to include Proposal #397, ammended, as described in
+Section 9- New Proposal Status summary and produce a new DSE-RP, Version 1.2,
+Unapproved Version.
+
+
+SCSI-3 Parallel Interface (SPI) binding, Version 1.0
+-----------------------------------------------------
+Directed technical editor to do a new version of SPI binding to include text
+in Section 3 that defines what SPI is (boiler plate) around p3, l29 about
+SPI is primarily protocols for mass storage devices; i.g., disks, tapes.
+
+
+11- Action Items Summary
+    ====================
+
+    Old AI's:
+    -------
+    The following AI's are still open: 2,4,11,12,27,28,30 &
+    S2,S4,S5,S8,S16
+
+    New  AI's:
+    --------
+    AI 31:
+    Identified problem in SCSI-3 Parallel Interface binding step 7, sense key
+    on p6, l20, with regards to media not being present (Also present in core
+    document, Appendix E).  Mitch Bradley to do proposal to correct problem.
+
+   |----|------------|------------------------------------------------------|
+   | No.|Who         |Description                                           |
+   |----|------------|------------------------------------------------------|
+   |  2 |Editors of  |Update document template and contents per discussion. |
+   |    |Recommended |                                                      |
+   |    |Practice    |                                                      |
+   |    |documents   |                                                      |
+   |----|------------|------------------------------------------------------|
+   |  4 |Greg H.     |Standard properties document.                         |
+   |    |John H.     |                                                      |
+   |----|------------|------------------------------------------------------|
+   | 11 |Jordan B.   |Reorganize discussion of probing in ISA binding       |
+   |----|------------|------------------------------------------------------|
+   | 12 |Jordan B.   |Suggest wording for IRQ 2 vs 9 ISA binding            |
+   |----|------------|------------------------------------------------------|
+   | 27 |Jordan B.   |Propose replacement for #323b (withdrawn)             |
+   |--- |------------|------------------------------------------------------|
+   | 28 |Ron H.      |Make a proposal for PCI 'hot plug'.                   |
+   |----|------------|------------------------------------------------------|
+   | 30 |Jordan B.   |Make a proposal for a registry for lists of supported |
+   |    |            |things (e.g.. kybds, network types, etc.)             |
+   |----|------------|------------------------------------------------------|
+   | 31 |Mitch B.    |Make a proposal to correct SPI binding sense key      |
+   |    |            |(media not being present)                             |
+   |----|------------|------------------------------------------------------|
+
+ Subcommittee Action Items:
+   |----|------------|------------------------------------------------------|
+   | S2 |Ron H.      | Update and create v1.1 Forth and FCode Rec Practice  |
+   |----|------------|------------------------------------------------------|
+   | S4 |Bob C.      | Make "shared-bus-master" proposal                    |
+   |----|------------|------------------------------------------------------|
+   | S5 |Ron H.      | Make "chording" proposal                             |
+   |----|------------|------------------------------------------------------|
+   | S8 |Mitch B.    | Propose that debug facilities not be supported       |
+   |    |            | in real-mode.                                        |
+   |----|------------|------------------------------------------------------|
+   | S14|Jordan B.   | Create a picture to explain sound device terminology.|
+   |----|------------|------------------------------------------------------|
+   | S16|Bob C.      | Migrate PReP source to playground                    |
+   |    |Jordan B.   |                                                      |
+   |-----------------|------------------------------------------------------|
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+
+[ P1275 Item #406 -- Received: Wed Jan 22 07:46:01 PST 1997 ]
+

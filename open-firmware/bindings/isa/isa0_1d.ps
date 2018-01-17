@@ -1,0 +1,8166 @@
+%!PS-Adobe-3.0
+%%BoundingBox: (atend)
+%%Pages: (atend)
+%%PageOrder: (atend)
+%%DocumentFonts: (atend)
+%%Creator: Frame 4.0
+%%DocumentData: Clean7Bit
+%%EndComments
+%%BeginProlog
+%
+% Frame ps_prolog 4.0, for use with Frame 4.0 products
+% This ps_prolog file is Copyright (c) 1986-1993 Frame Technology
+% Corporation.  All rights reserved.  This ps_prolog file may be
+% freely copied and distributed in conjunction with documents created
+% using FrameMaker, FrameBuilder and FrameViewer as long as this 
+% copyright notice is preserved.
+%
+% Frame products normally print colors as their true color on a color printer
+% or as shades of gray, based on luminance, on a black-and white printer. The
+% following flag, if set to True, forces all non-white colors to print as pure
+% black. This has no effect on bitmap images.
+/FMPrintAllColorsAsBlack             false def
+%
+% Frame products can either set their own line screens or use a printer's 
+% default settings. Three flags below control this separately for no 
+% separations, spot separations and process separations. If a flag
+% is true, then the default printer settings will not be changed. If it is
+% false, Frame products will use their own settings from a table based on
+% the printer's resolution.
+/FMUseDefaultNoSeparationScreen      true  def
+/FMUseDefaultSpotSeparationScreen    true  def
+/FMUseDefaultProcessSeparationScreen false def
+%
+% For any given PostScript printer resolution, Frame products have two sets of 
+% screen angles and frequencies for printing process separations, which are 
+% recomended by Adobe. The following variable chooses the higher frequencies
+% when set to true or the lower frequencies when set to false. This is only
+% effective if the appropriate FMUseDefault...SeparationScreen flag is false.
+/FMUseHighFrequencyScreens true def
+%
+% PostScript Level 2 printers contain an "Accurate Screens" feature which can
+% improve process separation rendering at the expense of compute time. This 
+% flag is ignored by PostScript Level 1 printers.
+/FMUseAcccurateScreens true def
+%
+% The following PostScript procedure defines the spot function that Frame
+% products will use for process separations. You may un-comment-out one of
+% the alternative functions below, or use your own.
+%
+% Dot function
+/FMSpotFunction {abs exch abs 2 copy add 1 gt 
+		{1 sub dup mul exch 1 sub dup mul add 1 sub }
+		{dup mul exch dup mul add 1 exch sub }ifelse } def
+%
+% Line function
+% /FMSpotFunction { pop } def
+%
+% Elipse function
+% /FMSpotFunction { dup 5 mul 8 div mul exch dup mul exch add 
+%		sqrt 1 exch sub } def
+%
+%
+/FMversion (4.0) def 
+/FMLevel1 /languagelevel where {pop languagelevel} {1} ifelse 2 lt def
+/FMPColor
+	FMLevel1 {
+		false
+		/colorimage where {pop pop true} if
+	} {
+		true
+	} ifelse
+def
+/FrameDict 400 dict def 
+systemdict /errordict known not {/errordict 10 dict def
+		errordict /rangecheck {stop} put} if
+% The readline in PS 23.0 doesn't recognize cr's as nl's on AppleTalk
+FrameDict /tmprangecheck errordict /rangecheck get put 
+errordict /rangecheck {FrameDict /bug true put} put 
+FrameDict /bug false put 
+mark 
+% Some PS machines read past the CR, so keep the following 3 lines together!
+currentfile 5 string readline
+00
+0000000000
+cleartomark 
+errordict /rangecheck FrameDict /tmprangecheck get put 
+FrameDict /bug get { 
+	/readline {
+		/gstring exch def
+		/gfile exch def
+		/gindex 0 def
+		{
+			gfile read pop 
+			dup 10 eq {exit} if 
+			dup 13 eq {exit} if 
+			gstring exch gindex exch put 
+			/gindex gindex 1 add def 
+		} loop
+		pop 
+		gstring 0 gindex getinterval true 
+		} bind def
+	} if
+/FMshowpage /showpage load def
+/FMquit /quit load def
+/FMFAILURE { 
+	dup = flush 
+	FMshowpage 
+	/Helvetica findfont 12 scalefont setfont
+	72 200 moveto
+	show FMshowpage 
+	FMquit 
+	} def 
+/FMVERSION {
+	FMversion ne {
+		(Frame product version does not match ps_prolog!) FMFAILURE
+		} if
+	} def 
+/FMBADEPSF { 
+	(PostScript Lang. Ref. Man., 2nd Ed., H.2.4 says EPS must not call X              )
+	dup dup (X) search pop exch pop exch pop length 
+	4 -1 roll 
+	putinterval 
+	FMFAILURE
+	} def
+/FMLOCAL {
+	FrameDict begin
+	0 def 
+	end 
+	} def 
+/concatprocs
+	{
+	/proc2 exch cvlit def/proc1 exch cvlit def/newproc proc1 length proc2 length add array def
+	newproc 0 proc1 putinterval newproc proc1 length proc2 putinterval newproc cvx
+}def
+FrameDict begin 
+/FMnone 0 def
+/FMcyan 1 def
+/FMmagenta 2 def
+/FMyellow 3 def
+/FMblack 4 def
+/FMcustom 5 def
+/FrameNegative false def 
+/FrameSepIs FMnone def 
+/FrameSepBlack 0 def
+/FrameSepYellow 0 def
+/FrameSepMagenta 0 def
+/FrameSepCyan 0 def
+/FrameSepRed 1 def
+/FrameSepGreen 1 def
+/FrameSepBlue 1 def
+/FrameCurGray 1 def
+/FrameCurPat null def
+/FrameCurColors [ 0 0 0 1 0 0 0 ] def 
+/FrameColorEpsilon .001 def	
+/eqepsilon {		
+	sub dup 0 lt {neg} if
+	FrameColorEpsilon le
+} bind def
+/FrameCmpColorsCMYK { 
+	2 copy 0 get exch 0 get eqepsilon {
+		2 copy 1 get exch 1 get eqepsilon {
+			2 copy 2 get exch 2 get eqepsilon {
+				3 get exch 3 get eqepsilon
+			} {pop pop false} ifelse
+		}{pop pop false} ifelse
+	} {pop pop false} ifelse
+} bind def
+/FrameCmpColorsRGB { 
+	2 copy 4 get exch 0 get eqepsilon {
+		2 copy 5 get exch 1 get eqepsilon {
+			6 get exch 2 get eqepsilon
+		}{pop pop false} ifelse
+	} {pop pop false} ifelse
+} bind def
+/RGBtoCMYK { 
+	1 exch sub 
+	3 1 roll 
+	1 exch sub 
+	3 1 roll 
+	1 exch sub 
+	3 1 roll 
+	3 copy 
+	2 copy 
+	le { pop } { exch pop } ifelse 
+	2 copy 
+	le { pop } { exch pop } ifelse 
+	dup dup dup 
+	6 1 roll 
+	4 1 roll 
+	7 1 roll 
+	sub 
+	6 1 roll 
+	sub 
+	5 1 roll 
+	sub 
+	4 1 roll 
+} bind def
+/CMYKtoRGB { 
+	dup dup 4 -1 roll add 						  
+	5 1 roll 3 -1 roll add 						  
+	4 1 roll add 								  
+	1 exch sub dup 0 lt {pop 0} if 3 1 roll 	  
+	1 exch sub dup 0 lt {pop 0} if exch 	      
+	1 exch sub dup 0 lt {pop 0} if exch	  		  
+} bind def
+/FrameSepInit {
+	1.0 RealSetgray
+} bind def
+/FrameSetSepColor { 
+	/FrameSepBlue exch def
+	/FrameSepGreen exch def
+	/FrameSepRed exch def
+	/FrameSepBlack exch def
+	/FrameSepYellow exch def
+	/FrameSepMagenta exch def
+	/FrameSepCyan exch def
+	/FrameSepIs FMcustom def
+	setCurrentScreen	
+} bind def
+/FrameSetCyan {
+	/FrameSepBlue 1.0 def
+	/FrameSepGreen 1.0 def
+	/FrameSepRed 0.0 def
+	/FrameSepBlack 0.0 def
+	/FrameSepYellow 0.0 def
+	/FrameSepMagenta 0.0 def
+	/FrameSepCyan 1.0 def
+	/FrameSepIs FMcyan def
+	setCurrentScreen	
+} bind def
+ 
+/FrameSetMagenta {
+	/FrameSepBlue 1.0 def
+	/FrameSepGreen 0.0 def
+	/FrameSepRed 1.0 def
+	/FrameSepBlack 0.0 def
+	/FrameSepYellow 0.0 def
+	/FrameSepMagenta 1.0 def
+	/FrameSepCyan 0.0 def
+	/FrameSepIs FMmagenta def
+	setCurrentScreen
+} bind def
+ 
+/FrameSetYellow {
+	/FrameSepBlue 0.0 def
+	/FrameSepGreen 1.0 def
+	/FrameSepRed 1.0 def
+	/FrameSepBlack 0.0 def
+	/FrameSepYellow 1.0 def
+	/FrameSepMagenta 0.0 def
+	/FrameSepCyan 0.0 def
+	/FrameSepIs FMyellow def
+	setCurrentScreen
+} bind def
+ 
+/FrameSetBlack {
+	/FrameSepBlue 0.0 def
+	/FrameSepGreen 0.0 def
+	/FrameSepRed 0.0 def
+	/FrameSepBlack 1.0 def
+	/FrameSepYellow 0.0 def
+	/FrameSepMagenta 0.0 def
+	/FrameSepCyan 0.0 def
+	/FrameSepIs FMblack def
+	setCurrentScreen
+} bind def
+ 
+/FrameNoSep { 
+	/FrameSepIs FMnone def
+	setCurrentScreen
+} bind def
+/FrameSetSepColors { 
+	FrameDict begin
+	[ exch 1 add 1 roll ]
+	/FrameSepColors  
+	exch def end
+	} bind def
+/FrameColorInSepListCMYK { 
+	FrameSepColors {  
+       		exch dup 3 -1 roll 
+       		FrameCmpColorsCMYK 
+       		{ pop true exit } if
+    	} forall 
+	dup true ne {pop false} if
+	} bind def
+/FrameColorInSepListRGB { 
+	FrameSepColors {  
+       		exch dup 3 -1 roll 
+       		FrameCmpColorsRGB 
+       		{ pop true exit } if
+    	} forall 
+	dup true ne {pop false} if
+	} bind def
+/RealSetgray /setgray load def
+/RealSetrgbcolor /setrgbcolor load def
+/RealSethsbcolor /sethsbcolor load def
+end 
+/setgray { 
+	FrameDict begin
+	FrameSepIs FMnone eq
+		{ RealSetgray } 
+		{ 
+		FrameSepIs FMblack eq 
+			{ RealSetgray } 
+			{ FrameSepIs FMcustom eq 
+			  FrameSepRed 0 eq and
+			  FrameSepGreen 0 eq and
+			  FrameSepBlue 0 eq and {
+			  	RealSetgray
+			  } {
+				1 RealSetgray pop 
+			  } ifelse
+			} ifelse
+		} ifelse
+	end
+} bind def
+/setrgbcolor { 
+	FrameDict begin
+	FrameSepIs FMnone eq
+	{  RealSetrgbcolor }
+	{
+		3 copy [ 4 1 roll ] 
+		FrameColorInSepListRGB
+		{
+				FrameSepBlue eq exch 
+			 	FrameSepGreen eq and exch 
+			 	FrameSepRed eq and
+			 	{ 0 } { 1 } ifelse
+		}
+		{
+			FMPColor {
+				RealSetrgbcolor
+				currentcmykcolor
+			} {
+				RGBtoCMYK
+			} ifelse
+			FrameSepIs FMblack eq
+			{1.0 exch sub 4 1 roll pop pop pop} {
+			FrameSepIs FMyellow eq
+			{pop 1.0 exch sub 3 1 roll pop pop} {
+			FrameSepIs FMmagenta eq
+			{pop pop 1.0 exch sub exch pop } {
+			FrameSepIs FMcyan eq
+			{pop pop pop 1.0 exch sub } 
+			{pop pop pop pop 1} ifelse } ifelse } ifelse } ifelse 
+		} ifelse
+		RealSetgray
+	} 
+	ifelse
+	end
+} bind def
+/sethsbcolor {
+	FrameDict begin
+	FrameSepIs FMnone eq 
+	{ RealSethsbcolor } 
+	{
+		RealSethsbcolor 
+		currentrgbcolor  
+		setrgbcolor 
+	} 
+	ifelse
+	end
+} bind def
+FrameDict begin
+/setcmykcolor where {
+	pop /RealSetcmykcolor /setcmykcolor load def
+} {
+	/RealSetcmykcolor {
+		4 1 roll
+		3 { 3 index add 0 max 1 min 1 exch sub 3 1 roll} repeat 
+		setrgbcolor pop
+	} bind def
+} ifelse
+userdict /setcmykcolor { 
+		FrameDict begin
+		FrameSepIs FMnone eq
+		{ RealSetcmykcolor } 
+		{
+			4 copy [ 5 1 roll ]
+			FrameColorInSepListCMYK
+			{
+				FrameSepBlack eq exch 
+				FrameSepYellow eq and exch 
+				FrameSepMagenta eq and exch 
+				FrameSepCyan eq and 
+				{ 0 } { 1 } ifelse
+			}
+			{
+				FrameSepIs FMblack eq
+				{1.0 exch sub 4 1 roll pop pop pop} {
+				FrameSepIs FMyellow eq
+				{pop 1.0 exch sub 3 1 roll pop pop} {
+				FrameSepIs FMmagenta eq
+				{pop pop 1.0 exch sub exch pop } {
+				FrameSepIs FMcyan eq
+				{pop pop pop 1.0 exch sub } 
+				{pop pop pop pop 1} ifelse } ifelse } ifelse } ifelse 
+			} ifelse
+			RealSetgray
+		}
+		ifelse
+		end
+	} bind put
+FMLevel1 not { 
+	
+	/patProcDict 5 dict dup begin
+		<0f1e3c78f0e1c387> { 3 setlinewidth -1 -1 moveto 9 9 lineto stroke 
+											4 -4 moveto 12 4 lineto stroke
+											-4 4 moveto 4 12 lineto stroke} bind def
+		<0f87c3e1f0783c1e> { 3 setlinewidth -1 9 moveto 9 -1 lineto stroke 
+											-4 4 moveto 4 -4 lineto stroke
+											4 12 moveto 12 4 lineto stroke} bind def
+		<8142241818244281> { 1 setlinewidth -1 9 moveto 9 -1 lineto stroke
+											-1 -1 moveto 9 9 lineto stroke } bind def
+		<03060c183060c081> { 1 setlinewidth -1 -1 moveto 9 9 lineto stroke 
+											4 -4 moveto 12 4 lineto stroke
+											-4 4 moveto 4 12 lineto stroke} bind def
+		<8040201008040201> { 1 setlinewidth -1 9 moveto 9 -1 lineto stroke 
+											-4 4 moveto 4 -4 lineto stroke
+											4 12 moveto 12 4 lineto stroke} bind def
+	end def
+	/patDict 15 dict dup begin
+		/PatternType 1 def		
+		/PaintType 2 def		
+		/TilingType 3 def		
+		/BBox [ 0 0 8 8 ] def 	
+		/XStep 8 def			
+		/YStep 8 def			
+		/PaintProc {
+			begin
+			patProcDict bstring known {
+				patProcDict bstring get exec
+			} {
+				8 8 true [1 0 0 -1 0 8] bstring imagemask
+			} ifelse
+			end
+		} bind def
+	end def
+} if
+/combineColor {
+    FrameSepIs FMnone eq
+	{
+		graymode FMLevel1 or not {
+			
+			[/Pattern [/DeviceCMYK]] setcolorspace
+			FrameCurColors 0 4 getinterval aload pop FrameCurPat setcolor
+		} {
+			FrameCurColors 3 get 1.0 ge {
+				FrameCurGray RealSetgray
+			} {
+				FMPColor graymode and {
+					0 1 3 { 
+						FrameCurColors exch get
+						1 FrameCurGray sub mul
+					} for
+					RealSetcmykcolor
+				} {
+					4 1 6 {
+						FrameCurColors exch get
+						graymode {
+							1 exch sub 1 FrameCurGray sub mul 1 exch sub
+						} {
+							1.0 lt {FrameCurGray} {1} ifelse
+						} ifelse
+					} for
+					RealSetrgbcolor
+				} ifelse
+			} ifelse
+		} ifelse
+	} { 
+		FrameCurColors 0 4 getinterval aload
+		FrameColorInSepListCMYK {
+			FrameSepBlack eq exch 
+			FrameSepYellow eq and exch 
+			FrameSepMagenta eq and exch 
+			FrameSepCyan eq and
+			FrameSepIs FMcustom eq and
+			{ FrameCurGray } { 1 } ifelse
+		} {
+			FrameSepIs FMblack eq
+			{FrameCurGray 1.0 exch sub mul 1.0 exch sub 4 1 roll pop pop pop} {
+			FrameSepIs FMyellow eq
+			{pop FrameCurGray 1.0 exch sub mul 1.0 exch sub 3 1 roll pop pop} {
+			FrameSepIs FMmagenta eq
+			{pop pop FrameCurGray 1.0 exch sub mul 1.0 exch sub exch pop } {
+			FrameSepIs FMcyan eq
+			{pop pop pop FrameCurGray 1.0 exch sub mul 1.0 exch sub } 
+			{pop pop pop pop 1} ifelse } ifelse } ifelse } ifelse 
+		} ifelse
+		graymode FMLevel1 or not {
+			
+			[/Pattern [/DeviceGray]] setcolorspace
+			FrameCurPat setcolor
+		} { 
+			graymode not FMLevel1 and {
+				
+				dup 1 lt {pop FrameCurGray} if
+			} if
+			RealSetgray
+		} ifelse
+	} ifelse
+} bind def
+/savematrix {
+	orgmatrix currentmatrix pop
+	} bind def
+/restorematrix {
+	orgmatrix setmatrix
+	} bind def
+/dmatrix matrix def
+/dpi    72 0 dmatrix defaultmatrix dtransform
+    dup mul exch   dup mul add   sqrt def
+	
+/freq dpi dup 72 div round dup 0 eq {pop 1} if 8 mul div def
+/sangle 1 0 dmatrix defaultmatrix dtransform exch atan def
+/dpiranges   [  2540    2400    1693     1270    1200     635      600      0      ] def
+/CMLowFreqs  [ 100.402  94.8683 89.2289 100.402  94.8683  66.9349  63.2456 47.4342 ] def
+/YLowFreqs   [  95.25   90.0    84.65    95.25   90.0     70.5556  66.6667 50.0    ] def
+/KLowFreqs   [  89.8026 84.8528 79.8088  89.8026 84.8528  74.8355  70.7107 53.033  ] def
+/CLowAngles  [  71.5651 71.5651 71.5651 71.5651  71.5651  71.5651  71.5651 71.5651 ] def
+/MLowAngles  [  18.4349 18.4349 18.4349 18.4349  18.4349  18.4349  18.4349 18.4349 ] def
+/YLowTDot    [  true    true    false    true    true     false    false   false   ] def
+/CMHighFreqs [ 133.87  126.491 133.843  108.503 102.523  100.402   94.8683 63.2456 ] def
+/YHighFreqs  [ 127.0   120.0   126.975  115.455 109.091   95.25    90.0    60.0    ] def
+/KHighFreqs  [ 119.737 113.137 119.713  128.289 121.218   89.8026  84.8528 63.6395 ] def
+/CHighAngles [  71.5651 71.5651 71.5651  70.0169 70.0169  71.5651  71.5651 71.5651 ] def
+/MHighAngles [  18.4349 18.4349 18.4349  19.9831 19.9831  18.4349  18.4349 18.4349 ] def
+/YHighTDot   [  false   false   true     false   false    true     true    false   ] def
+/PatFreq     [	10.5833 10.0     9.4055  10.5833 10.0	  10.5833  10.0	   9.375   ] def
+/screenIndex {
+	0 1 dpiranges length 1 sub { dup dpiranges exch get 1 sub dpi le {exit} {pop} ifelse } for
+} bind def
+/getCyanScreen {
+	FMUseHighFrequencyScreens { CHighAngles CMHighFreqs} {CLowAngles CMLowFreqs} ifelse
+		screenIndex dup 3 1 roll get 3 1 roll get /FMSpotFunction load
+} bind def
+/getMagentaScreen {
+	FMUseHighFrequencyScreens { MHighAngles CMHighFreqs } {MLowAngles CMLowFreqs} ifelse
+		screenIndex dup 3 1 roll get 3 1 roll get /FMSpotFunction load
+} bind def
+/getYellowScreen {
+	FMUseHighFrequencyScreens { YHighTDot YHighFreqs} { YLowTDot YLowFreqs } ifelse
+		screenIndex dup 3 1 roll get 3 1 roll get { 3 div
+			{2 { 1 add 2 div 3 mul dup floor sub 2 mul 1 sub exch} repeat
+			FMSpotFunction } } {/FMSpotFunction load } ifelse
+			0.0 exch
+} bind def
+/getBlackScreen  {
+	FMUseHighFrequencyScreens { KHighFreqs } { KLowFreqs } ifelse
+		screenIndex get 45.0 /FMSpotFunction load 
+} bind def
+/getSpotScreen {
+	getBlackScreen
+} bind def
+/getCompositeScreen {
+	getBlackScreen
+} bind def
+/FMSetScreen 
+	FMLevel1 { /setscreen load 
+	}{ {
+		8 dict begin
+		/HalftoneType 1 def
+		/SpotFunction exch def
+		/Angle exch def
+		/Frequency exch def
+		/AccurateScreens FMUseAcccurateScreens def
+		currentdict end sethalftone
+	} bind } ifelse
+def
+/setDefaultScreen {
+	FMPColor {
+		orgrxfer cvx orggxfer cvx orgbxfer cvx orgxfer cvx setcolortransfer
+	}
+	{
+		orgxfer cvx settransfer
+	} ifelse
+	orgfreq organgle orgproc cvx setscreen
+} bind def
+/setCurrentScreen {
+	FrameSepIs FMnone eq {
+		FMUseDefaultNoSeparationScreen {
+			setDefaultScreen
+		} {
+			getCompositeScreen FMSetScreen
+		} ifelse
+	} {
+		FrameSepIs FMcustom eq {
+			FMUseDefaultSpotSeparationScreen {
+				setDefaultScreen
+			} {
+				getSpotScreen FMSetScreen
+			} ifelse
+		} {
+			FMUseDefaultProcessSeparationScreen {
+				setDefaultScreen
+			} {
+				FrameSepIs FMcyan eq {
+					getCyanScreen FMSetScreen
+				} {
+					FrameSepIs FMmagenta eq {
+						getMagentaScreen FMSetScreen
+					} {
+						FrameSepIs FMyellow eq {
+							getYellowScreen FMSetScreen
+						} {
+							getBlackScreen FMSetScreen
+						} ifelse
+					} ifelse
+				} ifelse
+			} ifelse
+		} ifelse
+	} ifelse 
+} bind def
+end
+	/gstring FMLOCAL
+	/gfile FMLOCAL
+	/gindex FMLOCAL
+	/orgrxfer FMLOCAL
+	/orggxfer FMLOCAL
+	/orgbxfer FMLOCAL
+	/orgxfer FMLOCAL
+	/orgproc FMLOCAL
+	/orgrproc FMLOCAL
+	/orggproc FMLOCAL
+	/orgbproc FMLOCAL
+	/organgle FMLOCAL
+	/orgrangle FMLOCAL
+	/orggangle FMLOCAL
+	/orgbangle FMLOCAL
+	/orgfreq FMLOCAL
+	/orgrfreq FMLOCAL
+	/orggfreq FMLOCAL
+	/orgbfreq FMLOCAL
+	/yscale FMLOCAL
+	/xscale FMLOCAL
+	/edown FMLOCAL
+	/manualfeed FMLOCAL
+	/paperheight FMLOCAL
+	/paperwidth FMLOCAL
+/FMDOCUMENT { 
+	array /FMfonts exch def 
+	/#copies exch def
+	FrameDict begin
+	0 ne /manualfeed exch def
+	/paperheight exch def
+	/paperwidth exch def
+	0 ne /FrameNegative exch def 
+	0 ne /edown exch def 
+	/yscale exch def
+	/xscale exch def
+	FMLevel1 {
+		manualfeed {setmanualfeed} if
+		/FMdicttop countdictstack 1 add def 
+		/FMoptop count def 
+		setpapername 
+		manualfeed {true} {papersize} ifelse 
+		{manualpapersize} {false} ifelse 
+		{desperatepapersize} {false} ifelse 
+		{ (Can't select requested paper size for Frame print job!) FMFAILURE } if
+		count -1 FMoptop {pop pop} for
+		countdictstack -1 FMdicttop {pop end} for 
+		}
+		{{1 dict dup /PageSize [paperwidth paperheight]put setpagedevice}stopped
+		{ (Can't select requested paper size for Frame print job!) FMFAILURE } if
+		 {1 dict dup /ManualFeed manualfeed put setpagedevice } stopped pop }
+	ifelse 
+	
+	FMPColor {
+		currentcolorscreen
+			cvlit /orgproc exch def
+				  /organgle exch def 
+				  /orgfreq exch def
+			cvlit /orgbproc exch def
+				  /orgbangle exch def 
+				  /orgbfreq exch def
+			cvlit /orggproc exch def
+				  /orggangle exch def 
+				  /orggfreq exch def
+			cvlit /orgrproc exch def
+				  /orgrangle exch def 
+				  /orgrfreq exch def
+			currentcolortransfer 
+			FrameNegative {
+				1 1 4 { 
+					pop { 1 exch sub } concatprocs 4 1 roll
+				} for
+				4 copy
+				setcolortransfer
+			} if
+			cvlit /orgxfer exch def
+			cvlit /orgbxfer exch def
+			cvlit /orggxfer exch def
+			cvlit /orgrxfer exch def
+	} {
+		currentscreen 
+			cvlit /orgproc exch def
+				  /organgle exch def 
+				  /orgfreq exch def
+				  
+		currenttransfer 
+		FrameNegative {
+			{ 1 exch sub } concatprocs
+			dup settransfer
+		} if 
+		cvlit /orgxfer exch def
+	} ifelse
+	end 
+} def 
+/pagesave FMLOCAL
+/orgmatrix FMLOCAL
+/landscape FMLOCAL
+/pwid FMLOCAL
+/FMBEGINPAGE { 
+	FrameDict begin 
+	/pagesave save def
+	3.86 setmiterlimit
+	/landscape exch 0 ne def
+	landscape { 
+		90 rotate 0 exch dup /pwid exch def neg translate pop 
+	}{
+		pop /pwid exch def
+	} ifelse
+	edown { [-1 0 0 1 pwid 0] concat } if
+	0 0 moveto paperwidth 0 lineto paperwidth paperheight lineto 
+	0 paperheight lineto 0 0 lineto 1 setgray fill
+	xscale yscale scale
+	/orgmatrix matrix def
+	gsave 
+} def 
+/FMENDPAGE {
+	grestore 
+	pagesave restore
+	end 
+	showpage
+	} def 
+/FMFONTDEFINE { 
+	FrameDict begin
+	findfont 
+	ReEncode 
+	1 index exch 
+	definefont 
+	FMfonts 3 1 roll 
+	put
+	end 
+	} def 
+/FMFILLS {
+	FrameDict begin dup
+	array /fillvals exch def
+	dict /patCache exch def
+	end 
+	} def 
+/FMFILL {
+	FrameDict begin
+	 fillvals 3 1 roll put
+	end 
+	} def 
+/FMNORMALIZEGRAPHICS { 
+	newpath
+	0.0 0.0 moveto
+	1 setlinewidth
+	0 setlinecap
+	0 0 0 sethsbcolor
+	0 setgray 
+	} bind def
+	/fx FMLOCAL
+	/fy FMLOCAL
+	/fh FMLOCAL
+	/fw FMLOCAL
+	/llx FMLOCAL
+	/lly FMLOCAL
+	/urx FMLOCAL
+	/ury FMLOCAL
+/FMBEGINEPSF { 
+	end 
+	/FMEPSF save def 
+	/showpage {} def 
+% See Adobe's "PostScript Language Reference Manual, 2nd Edition", page 714.
+% "...the following operators MUST NOT be used in an EPS file:" (emphasis ours)
+	/banddevice {(banddevice) FMBADEPSF} def
+	/clear {(clear) FMBADEPSF} def
+	/cleardictstack {(cleardictstack) FMBADEPSF} def 
+	/copypage {(copypage) FMBADEPSF} def
+	/erasepage {(erasepage) FMBADEPSF} def
+	/exitserver {(exitserver) FMBADEPSF} def
+	/framedevice {(framedevice) FMBADEPSF} def
+	/grestoreall {(grestoreall) FMBADEPSF} def
+	/initclip {(initclip) FMBADEPSF} def
+	/initgraphics {(initgraphics) FMBADEPSF} def
+	/initmatrix {(initmatrix) FMBADEPSF} def
+	/quit {(quit) FMBADEPSF} def
+	/renderbands {(renderbands) FMBADEPSF} def
+	/setglobal {(setglobal) FMBADEPSF} def
+	/setpagedevice {(setpagedevice) FMBADEPSF} def
+	/setshared {(setshared) FMBADEPSF} def
+	/startjob {(startjob) FMBADEPSF} def
+	/lettertray {(lettertray) FMBADEPSF} def
+	/letter {(letter) FMBADEPSF} def
+	/lettersmall {(lettersmall) FMBADEPSF} def
+	/11x17tray {(11x17tray) FMBADEPSF} def
+	/11x17 {(11x17) FMBADEPSF} def
+	/ledgertray {(ledgertray) FMBADEPSF} def
+	/ledger {(ledger) FMBADEPSF} def
+	/legaltray {(legaltray) FMBADEPSF} def
+	/legal {(legal) FMBADEPSF} def
+	/statementtray {(statementtray) FMBADEPSF} def
+	/statement {(statement) FMBADEPSF} def
+	/executivetray {(executivetray) FMBADEPSF} def
+	/executive {(executive) FMBADEPSF} def
+	/a3tray {(a3tray) FMBADEPSF} def
+	/a3 {(a3) FMBADEPSF} def
+	/a4tray {(a4tray) FMBADEPSF} def
+	/a4 {(a4) FMBADEPSF} def
+	/a4small {(a4small) FMBADEPSF} def
+	/b4tray {(b4tray) FMBADEPSF} def
+	/b4 {(b4) FMBADEPSF} def
+	/b5tray {(b5tray) FMBADEPSF} def
+	/b5 {(b5) FMBADEPSF} def
+	FMNORMALIZEGRAPHICS 
+	[/fy /fx /fh /fw /ury /urx /lly /llx] {exch def} forall 
+	fx fw 2 div add fy fh 2 div add  translate
+	rotate
+	fw 2 div neg fh 2 div neg translate
+	fw urx llx sub div fh ury lly sub div scale 
+	llx neg lly neg translate 
+	/FMdicttop countdictstack 1 add def 
+	/FMoptop count def 
+	} bind def
+/FMENDEPSF {
+	count -1 FMoptop {pop pop} for 
+	countdictstack -1 FMdicttop {pop end} for 
+	FMEPSF restore
+	FrameDict begin 
+	} bind def
+FrameDict begin 
+/setmanualfeed {
+%%BeginFeature *ManualFeed True
+	 statusdict /manualfeed true put
+%%EndFeature
+	} bind def
+/max {2 copy lt {exch} if pop} bind def
+/min {2 copy gt {exch} if pop} bind def
+/inch {72 mul} def
+/pagedimen { 
+	paperheight sub abs 16 lt exch 
+	paperwidth sub abs 16 lt and
+	{/papername exch def} {pop} ifelse
+	} bind def
+	/papersizedict FMLOCAL
+/setpapername { 
+	/papersizedict 14 dict def 
+	papersizedict begin
+	/papername /unknown def 
+		/Letter 8.5 inch 11.0 inch pagedimen
+		/LetterSmall 7.68 inch 10.16 inch pagedimen
+		/Tabloid 11.0 inch 17.0 inch pagedimen
+		/Ledger 17.0 inch 11.0 inch pagedimen
+		/Legal 8.5 inch 14.0 inch pagedimen
+		/Statement 5.5 inch 8.5 inch pagedimen
+		/Executive 7.5 inch 10.0 inch pagedimen
+		/A3 11.69 inch 16.5 inch pagedimen
+		/A4 8.26 inch 11.69 inch pagedimen
+		/A4Small 7.47 inch 10.85 inch pagedimen
+		/B4 10.125 inch 14.33 inch pagedimen
+		/B5 7.16 inch 10.125 inch pagedimen
+	end
+	} bind def
+/papersize {
+	papersizedict begin
+		/Letter {lettertray letter} def
+		/LetterSmall {lettertray lettersmall} def
+		/Tabloid {11x17tray 11x17} def
+		/Ledger {ledgertray ledger} def
+		/Legal {legaltray legal} def
+		/Statement {statementtray statement} def
+		/Executive {executivetray executive} def
+		/A3 {a3tray a3} def
+		/A4 {a4tray a4} def
+		/A4Small {a4tray a4small} def
+		/B4 {b4tray b4} def
+		/B5 {b5tray b5} def
+		/unknown {unknown} def
+	papersizedict dup papername known {papername} {/unknown} ifelse get
+	end
+	statusdict begin stopped end 
+	} bind def
+/manualpapersize {
+	papersizedict begin
+		/Letter {letter} def
+		/LetterSmall {lettersmall} def
+		/Tabloid {11x17} def
+		/Ledger {ledger} def
+		/Legal {legal} def
+		/Statement {statement} def
+		/Executive {executive} def
+		/A3 {a3} def
+		/A4 {a4} def
+		/A4Small {a4small} def
+		/B4 {b4} def
+		/B5 {b5} def
+		/unknown {unknown} def
+	papersizedict dup papername known {papername} {/unknown} ifelse get
+	end
+	stopped 
+	} bind def
+/desperatepapersize {
+	statusdict /setpageparams known
+		{
+		paperwidth paperheight 0 1 
+		statusdict begin
+		{setpageparams} stopped 
+		end
+		} {true} ifelse 
+	} bind def
+/DiacriticEncoding [
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+/.notdef /.notdef /.notdef /.notdef /space /exclam /quotedbl
+/numbersign /dollar /percent /ampersand /quotesingle /parenleft
+/parenright /asterisk /plus /comma /hyphen /period /slash /zero /one
+/two /three /four /five /six /seven /eight /nine /colon /semicolon
+/less /equal /greater /question /at /A /B /C /D /E /F /G /H /I /J /K
+/L /M /N /O /P /Q /R /S /T /U /V /W /X /Y /Z /bracketleft /backslash
+/bracketright /asciicircum /underscore /grave /a /b /c /d /e /f /g /h
+/i /j /k /l /m /n /o /p /q /r /s /t /u /v /w /x /y /z /braceleft /bar
+/braceright /asciitilde /.notdef /Adieresis /Aring /Ccedilla /Eacute
+/Ntilde /Odieresis /Udieresis /aacute /agrave /acircumflex /adieresis
+/atilde /aring /ccedilla /eacute /egrave /ecircumflex /edieresis
+/iacute /igrave /icircumflex /idieresis /ntilde /oacute /ograve
+/ocircumflex /odieresis /otilde /uacute /ugrave /ucircumflex
+/udieresis /dagger /.notdef /cent /sterling /section /bullet
+/paragraph /germandbls /registered /copyright /trademark /acute
+/dieresis /.notdef /AE /Oslash /.notdef /.notdef /.notdef /.notdef
+/yen /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+/ordfeminine /ordmasculine /.notdef /ae /oslash /questiondown
+/exclamdown /logicalnot /.notdef /florin /.notdef /.notdef
+/guillemotleft /guillemotright /ellipsis /.notdef /Agrave /Atilde
+/Otilde /OE /oe /endash /emdash /quotedblleft /quotedblright
+/quoteleft /quoteright /.notdef /.notdef /ydieresis /Ydieresis
+/fraction /currency /guilsinglleft /guilsinglright /fi /fl /daggerdbl
+/periodcentered /quotesinglbase /quotedblbase /perthousand
+/Acircumflex /Ecircumflex /Aacute /Edieresis /Egrave /Iacute
+/Icircumflex /Idieresis /Igrave /Oacute /Ocircumflex /.notdef /Ograve
+/Uacute /Ucircumflex /Ugrave /dotlessi /circumflex /tilde /macron
+/breve /dotaccent /ring /cedilla /hungarumlaut /ogonek /caron
+] def
+/ReEncode { 
+	dup 
+	length 
+	dict begin 
+	{
+	1 index /FID ne 
+		{def} 
+		{pop pop} ifelse 
+	} forall 
+	0 eq {/Encoding DiacriticEncoding def} if 
+	currentdict 
+	end 
+	} bind def
+FMPColor 
+	
+	{
+	/BEGINBITMAPCOLOR { 
+		BITMAPCOLOR} def
+	/BEGINBITMAPCOLORc { 
+		BITMAPCOLORc} def
+	/BEGINBITMAPTRUECOLOR { 
+		BITMAPTRUECOLOR } def
+	/BEGINBITMAPTRUECOLORc { 
+		BITMAPTRUECOLORc } def
+	}
+	
+	{
+	/BEGINBITMAPCOLOR { 
+		BITMAPGRAY} def
+	/BEGINBITMAPCOLORc { 
+		BITMAPGRAYc} def
+	/BEGINBITMAPTRUECOLOR { 
+		BITMAPTRUEGRAY } def
+	/BEGINBITMAPTRUECOLORc { 
+		BITMAPTRUEGRAYc } def
+	}
+ifelse
+/K { 
+	FMPrintAllColorsAsBlack {
+		dup 1 eq 2 index 1 eq and 3 index 1 eq and not
+			{7 {pop} repeat 0 0 0 1 0 0 0} if
+	} if 
+	FrameCurColors astore 
+	pop combineColor
+} bind def
+/graymode true def
+	/bwidth FMLOCAL
+	/bpside FMLOCAL
+	/bstring FMLOCAL
+	/onbits FMLOCAL
+	/offbits FMLOCAL
+	/xindex FMLOCAL
+	/yindex FMLOCAL
+	/x FMLOCAL
+	/y FMLOCAL
+/setPatternMode {
+	FMLevel1 {
+		/bwidth  exch def
+		/bpside  exch def
+		/bstring exch def
+		/onbits 0 def  /offbits 0 def
+		freq sangle landscape {90 add} if 
+			{/y exch def
+			 /x exch def
+			 /xindex x 1 add 2 div bpside mul cvi def
+			 /yindex y 1 add 2 div bpside mul cvi def
+			 bstring yindex bwidth mul xindex 8 idiv add get
+			 1 7 xindex 8 mod sub bitshift and 0 ne FrameNegative {not} if
+			 {/onbits  onbits  1 add def 1}
+			 {/offbits offbits 1 add def 0}
+			 ifelse
+			}
+			setscreen
+		offbits offbits onbits add div FrameNegative {1.0 exch sub} if
+		/FrameCurGray exch def
+	} { 
+		pop pop
+		dup patCache exch known {
+			patCache exch get
+		} { 
+			dup
+			patDict /bstring 3 -1 roll put
+			patDict 
+			9 PatFreq screenIndex get div dup matrix scale
+			makepattern
+			dup 
+			patCache 4 -1 roll 3 -1 roll put
+		} ifelse
+		/FrameCurGray 0 def
+		/FrameCurPat exch def
+	} ifelse
+	/graymode false def
+	combineColor
+} bind def
+/setGrayScaleMode {
+	graymode not {
+		/graymode true def
+		FMLevel1 {
+			setCurrentScreen
+		} if
+	} if
+	/FrameCurGray exch def
+	combineColor
+} bind def
+/normalize {
+	transform round exch round exch itransform
+	} bind def
+/dnormalize {
+	dtransform round exch round exch idtransform
+	} bind def
+/lnormalize { 
+	0 dtransform exch cvi 2 idiv 2 mul 1 add exch idtransform pop
+	} bind def
+/H { 
+	lnormalize setlinewidth
+	} bind def
+/Z {
+	setlinecap
+	} bind def
+	
+/PFill {
+	graymode FMLevel1 or not {
+		gsave 1 setgray eofill grestore
+	} if
+} bind def
+/PStroke {
+	graymode FMLevel1 or not {
+		gsave 1 setgray stroke grestore
+	} if
+	stroke
+} bind def
+	/fillvals FMLOCAL
+/X { 
+	fillvals exch get
+	dup type /stringtype eq
+	{8 1 setPatternMode} 
+	{setGrayScaleMode}
+	ifelse
+	} bind def
+/V { 
+	PFill gsave eofill grestore
+	} bind def
+/Vclip {
+	clip
+	} bind def
+/Vstrk {
+	currentlinewidth exch setlinewidth PStroke setlinewidth
+	} bind def
+/N { 
+	PStroke
+	} bind def
+/Nclip {
+	strokepath clip newpath
+	} bind def
+/Nstrk {
+	currentlinewidth exch setlinewidth PStroke setlinewidth
+	} bind def
+/M {newpath moveto} bind def
+/E {lineto} bind def
+/D {curveto} bind def
+/O {closepath} bind def
+	/n FMLOCAL
+/L { 
+ 	/n exch def
+	newpath
+	normalize
+	moveto 
+	2 1 n {pop normalize lineto} for
+	} bind def
+/Y { 
+	L 
+	closepath
+	} bind def
+	/x1 FMLOCAL
+	/x2 FMLOCAL
+	/y1 FMLOCAL
+	/y2 FMLOCAL
+/R { 
+	/y2 exch def
+	/x2 exch def
+	/y1 exch def
+	/x1 exch def
+	x1 y1
+	x2 y1
+	x2 y2
+	x1 y2
+	4 Y 
+	} bind def
+	/rad FMLOCAL
+/rarc 
+	{rad 
+	 arcto
+	} bind def
+/RR { 
+	/rad exch def
+	normalize
+	/y2 exch def
+	/x2 exch def
+	normalize
+	/y1 exch def
+	/x1 exch def
+	mark
+	newpath
+	{
+	x1 y1 rad add moveto
+	x1 y2 x2 y2 rarc
+	x2 y2 x2 y1 rarc
+	x2 y1 x1 y1 rarc
+	x1 y1 x1 y2 rarc
+	closepath
+	} stopped {x1 y1 x2 y2 R} if 
+	cleartomark
+	} bind def
+/RRR { 
+	/rad exch def
+	normalize /y4 exch def /x4 exch def
+	normalize /y3 exch def /x3 exch def
+	normalize /y2 exch def /x2 exch def
+	normalize /y1 exch def /x1 exch def
+	newpath
+	normalize moveto 
+	mark
+	{
+	x2 y2 x3 y3 rarc
+	x3 y3 x4 y4 rarc
+	x4 y4 x1 y1 rarc
+	x1 y1 x2 y2 rarc
+	closepath
+	} stopped
+	 {x1 y1 x2 y2 x3 y3 x4 y4 newpath moveto lineto lineto lineto closepath} if
+	cleartomark
+	} bind def
+/C { 
+	grestore
+	gsave
+	R 
+	clip
+	setCurrentScreen
+} bind def
+/CP { 
+	grestore
+	gsave
+	Y 
+	clip
+	setCurrentScreen
+} bind def
+	/FMpointsize FMLOCAL
+/F { 
+	FMfonts exch get
+	FMpointsize scalefont
+	setfont
+	} bind def
+/Q { 
+	/FMpointsize exch def
+	F 
+	} bind def
+/T { 
+	moveto show
+	} bind def
+/RF { 
+	rotate
+	0 ne {-1 1 scale} if
+	} bind def
+/TF { 
+	gsave
+	moveto 
+	RF
+	show
+	grestore
+	} bind def
+/P { 
+	moveto
+	0 32 3 2 roll widthshow
+	} bind def
+/PF { 
+	gsave
+	moveto 
+	RF
+	0 32 3 2 roll widthshow
+	grestore
+	} bind def
+/S { 
+	moveto
+	0 exch ashow
+	} bind def
+/SF { 
+	gsave
+	moveto
+	RF
+	0 exch ashow
+	grestore
+	} bind def
+/B { 
+	moveto
+	0 32 4 2 roll 0 exch awidthshow
+	} bind def
+/BF { 
+	gsave
+	moveto
+	RF
+	0 32 4 2 roll 0 exch awidthshow
+	grestore
+	} bind def
+/G { 
+	gsave
+	newpath
+	normalize translate 0.0 0.0 moveto 
+	dnormalize scale 
+	0.0 0.0 1.0 5 3 roll arc 
+	closepath 
+	PFill fill
+	grestore
+	} bind def
+/Gstrk {
+	savematrix
+    newpath
+    2 index 2 div add exch 3 index 2 div sub exch 
+    normalize 2 index 2 div sub exch 3 index 2 div add exch 
+    translate
+    scale 
+    0.0 0.0 1.0 5 3 roll arc 
+    restorematrix
+    currentlinewidth exch setlinewidth PStroke setlinewidth
+    } bind def
+/Gclip { 
+	newpath
+	savematrix
+	normalize translate 0.0 0.0 moveto 
+	dnormalize scale 
+	0.0 0.0 1.0 5 3 roll arc 
+	closepath 
+	clip newpath
+	restorematrix
+	} bind def
+/GG { 
+	gsave
+	newpath
+	normalize translate 0.0 0.0 moveto 
+	rotate 
+	dnormalize scale 
+	0.0 0.0 1.0 5 3 roll arc 
+	closepath
+	PFill
+	fill
+	grestore
+	} bind def
+/GGclip { 
+	savematrix
+	newpath
+    normalize translate 0.0 0.0 moveto 
+    rotate 
+    dnormalize scale 
+    0.0 0.0 1.0 5 3 roll arc 
+    closepath
+	clip newpath
+	restorematrix
+	} bind def
+/GGstrk { 
+	savematrix
+    newpath
+    normalize translate 0.0 0.0 moveto 
+    rotate 
+    dnormalize scale 
+    0.0 0.0 1.0 5 3 roll arc 
+    closepath 
+	restorematrix
+    currentlinewidth exch setlinewidth PStroke setlinewidth
+	} bind def
+/A { 
+	gsave
+	savematrix
+	newpath
+	2 index 2 div add exch 3 index 2 div sub exch 
+	normalize 2 index 2 div sub exch 3 index 2 div add exch 
+	translate 
+	scale 
+	0.0 0.0 1.0 5 3 roll arc 
+	restorematrix
+	PStroke
+	grestore
+	} bind def
+/Aclip {
+	newpath
+	savematrix
+	normalize translate 0.0 0.0 moveto 
+	dnormalize scale 
+	0.0 0.0 1.0 5 3 roll arc 
+	closepath 
+	strokepath clip newpath
+	restorematrix
+} bind def
+/Astrk {
+	Gstrk
+} bind def
+/AA { 
+	gsave
+	savematrix
+	newpath
+	
+	3 index 2 div add exch 4 index 2 div sub exch 
+	
+	normalize 3 index 2 div sub exch 4 index 2 div add exch
+	translate 
+	rotate 
+	scale 
+	0.0 0.0 1.0 5 3 roll arc 
+	restorematrix
+	PStroke
+	grestore
+	} bind def
+/AAclip {
+	savematrix
+	newpath
+    normalize translate 0.0 0.0 moveto 
+    rotate 
+    dnormalize scale 
+    0.0 0.0 1.0 5 3 roll arc 
+    closepath
+	strokepath clip newpath
+	restorematrix
+} bind def
+/AAstrk {
+	GGstrk
+} bind def
+	/x FMLOCAL
+	/y FMLOCAL
+	/w FMLOCAL
+	/h FMLOCAL
+	/xx FMLOCAL
+	/yy FMLOCAL
+	/ww FMLOCAL
+	/hh FMLOCAL
+	/FMsaveobject FMLOCAL
+	/FMoptop FMLOCAL
+	/FMdicttop FMLOCAL
+/BEGINPRINTCODE { 
+	/FMdicttop countdictstack 1 add def 
+	/FMoptop count 7 sub def 
+	/FMsaveobject save def
+	userdict begin 
+	/showpage {} def 
+	FMNORMALIZEGRAPHICS 
+	3 index neg 3 index neg translate
+	} bind def
+/ENDPRINTCODE {
+	count -1 FMoptop {pop pop} for 
+	countdictstack -1 FMdicttop {pop end} for 
+	FMsaveobject restore 
+	} bind def
+/gn { 
+	0 
+	{	46 mul 
+		cf read pop 
+		32 sub 
+		dup 46 lt {exit} if 
+		46 sub add 
+		} loop
+	add 
+	} bind def
+	/str FMLOCAL
+/cfs { 
+	/str sl string def 
+	0 1 sl 1 sub {str exch val put} for 
+	str def 
+	} bind def
+/ic [ 
+	0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0223
+	0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0223
+	0
+	{0 hx} {1 hx} {2 hx} {3 hx} {4 hx} {5 hx} {6 hx} {7 hx} {8 hx} {9 hx}
+	{10 hx} {11 hx} {12 hx} {13 hx} {14 hx} {15 hx} {16 hx} {17 hx} {18 hx}
+	{19 hx} {gn hx} {0} {1} {2} {3} {4} {5} {6} {7} {8} {9} {10} {11} {12}
+	{13} {14} {15} {16} {17} {18} {19} {gn} {0 wh} {1 wh} {2 wh} {3 wh}
+	{4 wh} {5 wh} {6 wh} {7 wh} {8 wh} {9 wh} {10 wh} {11 wh} {12 wh}
+	{13 wh} {14 wh} {gn wh} {0 bl} {1 bl} {2 bl} {3 bl} {4 bl} {5 bl} {6 bl}
+	{7 bl} {8 bl} {9 bl} {10 bl} {11 bl} {12 bl} {13 bl} {14 bl} {gn bl}
+	{0 fl} {1 fl} {2 fl} {3 fl} {4 fl} {5 fl} {6 fl} {7 fl} {8 fl} {9 fl}
+	{10 fl} {11 fl} {12 fl} {13 fl} {14 fl} {gn fl}
+	] def
+	/sl FMLOCAL
+	/val FMLOCAL
+	/ws FMLOCAL
+	/im FMLOCAL
+	/bs FMLOCAL
+	/cs FMLOCAL
+	/len FMLOCAL
+	/pos FMLOCAL
+/ms { 
+	/sl exch def 
+	/val 255 def 
+	/ws cfs 
+	/im cfs 
+	/val 0 def 
+	/bs cfs 
+	/cs cfs 
+	} bind def
+400 ms 
+/ip { 
+	is 
+	0 
+	cf cs readline pop 
+	{	ic exch get exec 
+		add 
+		} forall 
+	pop 
+	
+	} bind def
+/rip { 
+	   
+	  
+	  bis ris copy pop 
+      is
+      0
+      cf cs readline pop 
+      {       ic exch get exec 
+              add 
+              } forall 
+	  pop pop 
+	  ris gis copy pop 
+	  dup is exch 
+	  
+      cf cs readline pop 
+      {       ic exch get exec 
+              add 
+              } forall 
+	  pop pop
+	  gis bis copy pop 
+	  dup add is exch 
+	  
+      cf cs readline pop 
+      {       ic exch get exec 
+              add 
+              } forall 
+      pop 
+      
+      } bind def
+/wh { 
+	/len exch def 
+	/pos exch def 
+	ws 0 len getinterval im pos len getinterval copy pop
+	pos len 
+	} bind def
+/bl { 
+	/len exch def 
+	/pos exch def 
+	bs 0 len getinterval im pos len getinterval copy pop
+	pos len 
+	} bind def
+/s1 1 string def
+/fl { 
+	/len exch def 
+	/pos exch def 
+	/val cf s1 readhexstring pop 0 get def
+	pos 1 pos len add 1 sub {im exch val put} for
+	pos len 
+	} bind def
+/hx { 
+	3 copy getinterval 
+	cf exch readhexstring pop pop 
+	} bind def
+	/h FMLOCAL
+	/w FMLOCAL
+	/d FMLOCAL
+	/lb FMLOCAL
+	/bitmapsave FMLOCAL
+	/is FMLOCAL
+	/cf FMLOCAL
+/wbytes { 
+      dup dup
+      24 eq { pop pop 3 mul }
+      { 8 eq {pop} {1 eq {7 add 8 idiv} {3 add 4 idiv} ifelse} ifelse } ifelse
+	} bind def
+/BEGINBITMAPBWc { 
+	1 {} COMMONBITMAPc
+	} bind def
+/BEGINBITMAPGRAYc { 
+	8 {} COMMONBITMAPc
+	} bind def
+/BEGINBITMAP2BITc { 
+	2 {} COMMONBITMAPc
+	} bind def
+/COMMONBITMAPc { 
+		 
+	/r exch def
+	/d exch def
+	gsave
+	
+	3 index 2 div add exch	
+	4 index 2 div add exch	
+	translate		
+	rotate			
+	1 index 2 div neg	
+	1 index 2 div neg	
+	translate		
+	scale			
+	/h exch def /w exch def
+	/lb w d wbytes def 
+	sl lb lt {lb ms} if 
+	/bitmapsave save def 
+	r                    
+	/is im 0 lb getinterval def 
+	ws 0 lb getinterval is copy pop 
+	/cf currentfile def 
+	w h d [w 0 0 h neg 0 h] 
+	{ip} image 
+	bitmapsave restore 
+	grestore
+	} bind def
+/BEGINBITMAPBW { 
+	1 {} COMMONBITMAP
+	} bind def
+/BEGINBITMAPGRAY { 
+	8 {} COMMONBITMAP
+	} bind def
+/BEGINBITMAP2BIT { 
+	2 {} COMMONBITMAP
+	} bind def
+/COMMONBITMAP { 
+	/r exch def
+	/d exch def
+	gsave
+	
+	3 index 2 div add exch	
+	4 index 2 div add exch	
+	translate		
+	rotate			
+	1 index 2 div neg	
+	1 index 2 div neg	
+	translate		
+	scale			
+	/h exch def /w exch def
+	/bitmapsave save def 
+	r                    
+	/is w d wbytes string def
+	/cf currentfile def 
+	w h d [w 0 0 h neg 0 h] 
+	{cf is readhexstring pop} image
+	bitmapsave restore 
+	grestore
+	} bind def
+/ngrayt 256 array def
+/nredt 256 array def
+/nbluet 256 array def
+/ngreent 256 array def
+	/gryt FMLOCAL
+	/blut FMLOCAL
+	/grnt FMLOCAL
+	/redt FMLOCAL
+	/indx FMLOCAL
+	/cynu FMLOCAL
+	/magu FMLOCAL
+	/yelu FMLOCAL
+	/k FMLOCAL
+	/u FMLOCAL
+FMLevel1 {
+/colorsetup {
+	currentcolortransfer
+	/gryt exch def
+	/blut exch def
+	/grnt exch def
+	/redt exch def
+	0 1 255 {
+		/indx exch def
+		/cynu 1 red indx get 255 div sub def
+		/magu 1 green indx get 255 div sub def
+		/yelu 1 blue indx get 255 div sub def
+		/k cynu magu min yelu min def
+		/u k currentundercolorremoval exec def
+%		/u 0 def
+		nredt indx 1 0 cynu u sub max sub redt exec put
+		ngreent indx 1 0 magu u sub max sub grnt exec put
+		nbluet indx 1 0 yelu u sub max sub blut exec put
+		ngrayt indx 1 k currentblackgeneration exec sub gryt exec put
+	} for
+	{255 mul cvi nredt exch get}
+	{255 mul cvi ngreent exch get}
+	{255 mul cvi nbluet exch get}
+	{255 mul cvi ngrayt exch get}
+	setcolortransfer
+	{pop 0} setundercolorremoval
+	{} setblackgeneration
+	} bind def
+}
+{
+/colorSetup2 {
+	[ /Indexed /DeviceRGB 255 
+		{dup red exch get 255 div 
+		 exch dup green exch get 255 div 
+		 exch blue exch get 255 div}
+	] setcolorspace
+} bind def
+} ifelse
+	/tran FMLOCAL
+/fakecolorsetup {
+	/tran 256 string def
+	0 1 255 {/indx exch def 
+		tran indx
+		red indx get 77 mul
+		green indx get 151 mul
+		blue indx get 28 mul
+		add add 256 idiv put} for
+	currenttransfer
+	{255 mul cvi tran exch get 255.0 div}
+	exch concatprocs settransfer
+} bind def
+/BITMAPCOLOR { 
+	/d 8 def
+	gsave
+	
+	3 index 2 div add exch	
+	4 index 2 div add exch	
+	translate		
+	rotate			
+	1 index 2 div neg	
+	1 index 2 div neg	
+	translate		
+	scale			
+	/h exch def /w exch def
+	/bitmapsave save def
+	FMLevel1 {	
+		colorsetup
+		/is w d wbytes string def
+		/cf currentfile def 
+		w h d [w 0 0 h neg 0 h] 
+		{cf is readhexstring pop} {is} {is} true 3 colorimage 
+	} {
+		colorSetup2
+		/is w d wbytes string def
+		/cf currentfile def 
+		7 dict dup begin
+			/ImageType 1 def
+			/Width w def
+			/Height h def
+			/ImageMatrix [w 0 0 h neg 0 h] def
+			/DataSource {cf is readhexstring pop} bind def
+			/BitsPerComponent d def
+			/Decode [0 255] def
+		end image	
+	} ifelse
+	bitmapsave restore 
+	grestore
+	} bind def
+/BITMAPCOLORc { 
+	/d 8 def
+	gsave
+	
+	3 index 2 div add exch	
+	4 index 2 div add exch	
+	translate		
+	rotate			
+	1 index 2 div neg	
+	1 index 2 div neg	
+	translate		
+	scale			
+	/h exch def /w exch def
+	/lb w d wbytes def 
+	sl lb lt {lb ms} if 
+	/bitmapsave save def 
+	FMLevel1 {	
+		colorsetup
+		/is im 0 lb getinterval def 
+		ws 0 lb getinterval is copy pop 
+		/cf currentfile def 
+		w h d [w 0 0 h neg 0 h] 
+		{ip} {is} {is} true 3 colorimage
+	} {
+		colorSetup2
+		/is im 0 lb getinterval def 
+		ws 0 lb getinterval is copy pop 
+		/cf currentfile def 
+		7 dict dup begin
+			/ImageType 1 def
+			/Width w def
+			/Height h def
+			/ImageMatrix [w 0 0 h neg 0 h] def
+			/DataSource {ip} bind def
+			/BitsPerComponent d def
+			/Decode [0 255] def
+		end image	
+	} ifelse
+	bitmapsave restore 
+	grestore
+	} bind def
+/BITMAPTRUECOLORc { 
+	/d 24 def
+        gsave
+ 	
+	3 index 2 div add exch	
+	4 index 2 div add exch	
+	translate		
+	rotate			
+	1 index 2 div neg	
+	1 index 2 div neg	
+	translate		
+	scale			
+	/h exch def /w exch def
+	/lb w d wbytes def 
+	sl lb lt {lb ms} if 
+        /bitmapsave save def 
+        
+	/is im 0 lb getinterval def	
+	/ris im 0 w getinterval def	
+	/gis im w w getinterval def	
+	/bis im w 2 mul w getinterval def 
+        
+        ws 0 lb getinterval is copy pop 
+        /cf currentfile def 
+        w h 8 [w 0 0 h neg 0 h] 
+        {w rip pop ris} {gis} {bis} true 3 colorimage
+        bitmapsave restore 
+        grestore
+        } bind def
+/BITMAPTRUECOLOR { 
+        gsave
+		
+		3 index 2 div add exch	
+		4 index 2 div add exch	
+		translate		
+		rotate			
+		1 index 2 div neg	
+		1 index 2 div neg	
+		translate		
+		scale			
+		/h exch def /w exch def
+        /bitmapsave save def 
+        /is w string def
+        /gis w string def
+        /bis w string def
+        /cf currentfile def 
+        w h 8 [w 0 0 h neg 0 h] 
+        { cf is readhexstring pop } 
+        { cf gis readhexstring pop } 
+        { cf bis readhexstring pop } 
+        true 3 colorimage 
+        bitmapsave restore 
+        grestore
+        } bind def
+/BITMAPTRUEGRAYc { 
+	/d 24 def
+        gsave
+	
+	3 index 2 div add exch	
+	4 index 2 div add exch	
+	translate		
+	rotate			
+	1 index 2 div neg	
+	1 index 2 div neg	
+	translate		
+	scale			
+	/h exch def /w exch def
+	/lb w d wbytes def 
+	sl lb lt {lb ms} if 
+        /bitmapsave save def 
+        
+	/is im 0 lb getinterval def	
+	/ris im 0 w getinterval def	
+	/gis im w w getinterval def	
+	/bis im w 2 mul w getinterval def 
+        ws 0 lb getinterval is copy pop 
+        /cf currentfile def 
+        w h 8 [w 0 0 h neg 0 h] 
+        {w rip pop ris gis bis w gray} image
+        bitmapsave restore 
+        grestore
+        } bind def
+/ww FMLOCAL
+/r FMLOCAL
+/g FMLOCAL
+/b FMLOCAL
+/i FMLOCAL
+/gray { 
+        /ww exch def
+        /b exch def
+        /g exch def
+        /r exch def
+        0 1 ww 1 sub { /i exch def r i get .299 mul g i get .587 mul
+			b i get .114 mul add add r i 3 -1 roll floor cvi put } for
+        r
+        } bind def
+/BITMAPTRUEGRAY { 
+        gsave
+		
+		3 index 2 div add exch	
+		4 index 2 div add exch	
+		translate		
+		rotate			
+		1 index 2 div neg	
+		1 index 2 div neg	
+		translate		
+		scale			
+		/h exch def /w exch def
+        /bitmapsave save def 
+        /is w string def
+        /gis w string def
+        /bis w string def
+        /cf currentfile def 
+        w h 8 [w 0 0 h neg 0 h] 
+        { cf is readhexstring pop 
+          cf gis readhexstring pop 
+          cf bis readhexstring pop w gray}  image
+        bitmapsave restore 
+        grestore
+        } bind def
+/BITMAPGRAY { 
+	8 {fakecolorsetup} COMMONBITMAP
+	} bind def
+/BITMAPGRAYc { 
+	8 {fakecolorsetup} COMMONBITMAPc
+	} bind def
+/ENDBITMAP {
+	} bind def
+end 
+	/ALDsave FMLOCAL
+	/ALDmatrix matrix def ALDmatrix currentmatrix pop
+/StartALD {
+	/ALDsave save def
+	 savematrix
+	 ALDmatrix setmatrix
+	} bind def
+/InALD {
+	 restorematrix
+	} bind def
+/DoneALD {
+	 ALDsave restore
+	} bind def
+/I { setdash } bind def
+/J { [] 0 setdash } bind def
+%%EndProlog
+%%BeginSetup
+(4.0) FMVERSION
+1 1 0 0 612 792 0 1 14 FMDOCUMENT
+0 0 /Times-BoldItalic FMFONTDEFINE
+1 0 /Times-Roman FMFONTDEFINE
+2 0 /Times-Bold FMFONTDEFINE
+3 0 /Helvetica FMFONTDEFINE
+4 0 /Times-Italic FMFONTDEFINE
+5 0 /Courier FMFONTDEFINE
+6 0 /Courier-Bold FMFONTDEFINE
+32 FMFILLS
+0 0 FMFILL
+1 0.1 FMFILL
+2 0.3 FMFILL
+3 0.5 FMFILL
+4 0.7 FMFILL
+5 0.9 FMFILL
+6 0.97 FMFILL
+7 1 FMFILL
+8 <0f1e3c78f0e1c387> FMFILL
+9 <0f87c3e1f0783c1e> FMFILL
+10 <cccccccccccccccc> FMFILL
+11 <ffff0000ffff0000> FMFILL
+12 <8142241818244281> FMFILL
+13 <03060c183060c081> FMFILL
+14 <8040201008040201> FMFILL
+16 1 FMFILL
+17 0.9 FMFILL
+18 0.7 FMFILL
+19 0.5 FMFILL
+20 0.3 FMFILL
+21 0.1 FMFILL
+22 0.03 FMFILL
+23 0 FMFILL
+24 <f0e1c3870f1e3c78> FMFILL
+25 <f0783c1e0f87c3e1> FMFILL
+26 <3333333333333333> FMFILL
+27 <0000ffff0000ffff> FMFILL
+28 <7ebddbe7e7dbbd7e> FMFILL
+29 <fcf9f3e7cf9f3f7e> FMFILL
+30 <7fbfdfeff7fbfdfe> FMFILL
+%%EndSetup
+%%Page: "1" 1
+%%BeginPaperSize: Letter
+%%EndPaperSize
+612 792 0 FMBEGINPAGE
+[0 0 0 1 0 0 0]
+[ 0 1 1 0 1 0 0]
+[ 1 0 1 0 0 1 0]
+[ 1 1 0 0 0 0 1]
+[ 1 0 0 0 0 1 1]
+[ 0 1 0 0 1 0 1]
+[ 0 0 1 0 1 1 0]
+ 7 FrameSetSepColors
+FrameNoSep
+0 0 0 1 0 0 0 K
+J
+0 0 0 1 0 0 0 K
+0 9 Q
+0 X
+0 0 0 1 0 0 0 K
+(1) 72 750 T
+(ISA/EISA/ISA-PnP) 466.47 750 T
+(February 28, 1996 Revision 0.1 DRAFT) 72 38 T
+540 738 72 738 2 L
+1 H
+2 Z
+N
+540 54 72 54 2 L
+N
+558 72 585 720 C
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+558 72 585 720 R
+7 X
+0 0 0 1 0 0 0 K
+V
+0 0 612 792 C
+27 72 54 720 C
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+27 72 54 720 R
+7 X
+0 0 0 1 0 0 0 K
+V
+1 12 Q
+0 X
+(1) 36 711 T
+(2) 36 699 T
+(3) 36 687 T
+(4) 36 675 T
+(5) 36 663 T
+(6) 36 651 T
+(7) 36 639 T
+(8) 36 627 T
+(9) 36 615 T
+(10) 36 603 T
+(11) 36 591 T
+(12) 36 579 T
+(13) 36 567 T
+(14) 36 555 T
+(15) 36 543 T
+(16) 36 531 T
+(17) 36 519 T
+(18) 36 507 T
+(19) 36 495 T
+(20) 36 483 T
+(21) 36 471 T
+(22) 36 459 T
+(23) 36 447 T
+(24) 36 435 T
+(25) 36 423 T
+(26) 36 411 T
+(27) 36 399 T
+(28) 36 387 T
+(29) 36 375 T
+(30) 36 363 T
+(31) 36 351 T
+(32) 36 339 T
+(33) 36 327 T
+(34) 36 315 T
+(35) 36 303 T
+(36) 36 291 T
+(37) 36 279 T
+(38) 36 267 T
+(39) 36 255 T
+(40) 36 243 T
+(41) 36 231 T
+(42) 36 219 T
+(43) 36 207 T
+(44) 36 195 T
+(45) 36 183 T
+(46) 36 171 T
+(47) 36 159 T
+(48) 36 147 T
+(49) 36 135 T
+(50) 36 123 T
+(51) 36 111 T
+(52) 36 99 T
+(53) 36 87 T
+(54) 36 75 T
+(55) 36 63 T
+0 0 612 792 C
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1 18 Q
+0 X
+0 0 0 1 0 0 0 K
+1.8 (ISA/EISA/ISA-PnP binding to:) 191.19 624 P
+1.8 (IEEE Std 1275-1994) 229.2 550 P
+1.8 (Standard for Boot) 239.71 514 P
+1.8 (\050Initialization, Con\336guration\051) 198.6 478 P
+(Firmware) 271.01 442 T
+1.8 (Revision: 0.1 DRAFT) 224.44 358 P
+1.8 (Date: February 28, 1996) 215.32 316 P
+0 0 0 1 0 0 0 K
+FMENDPAGE
+%%EndPage: "1" 1
+%%Page: "2" 2
+612 792 0 FMBEGINPAGE
+[0 0 0 1 0 0 0]
+[ 0 1 1 0 1 0 0]
+[ 1 0 1 0 0 1 0]
+[ 1 1 0 0 0 0 1]
+[ 1 0 0 0 0 1 1]
+[ 0 1 0 0 1 0 1]
+[ 0 0 1 0 1 1 0]
+ 7 FrameSetSepColors
+FrameNoSep
+0 0 0 1 0 0 0 K
+0 9 Q
+0 X
+0 0 0 1 0 0 0 K
+(ISA/EISA/ISA-PnP binding) 72 750 T
+(2) 535.5 750 T
+-0.64 (February 28, 1996 Revision 0.1 DRAFT) 391.24 38 P
+72 738 540 738 2 L
+1 H
+2 Z
+N
+72 54 540 54 2 L
+N
+27 72 54 720 C
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+27 72 54 720 R
+7 X
+0 0 0 1 0 0 0 K
+V
+27 72 54 720 C
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+27 72 54 720 R
+7 X
+0 0 0 1 0 0 0 K
+V
+1 12 Q
+0 X
+(1) 36 711 T
+(2) 36 699 T
+(3) 36 687 T
+(4) 36 675 T
+(5) 36 663 T
+(6) 36 651 T
+(7) 36 639 T
+(8) 36 627 T
+(9) 36 615 T
+(10) 36 603 T
+(11) 36 591 T
+(12) 36 579 T
+(13) 36 567 T
+(14) 36 555 T
+(15) 36 543 T
+(16) 36 531 T
+(17) 36 519 T
+(18) 36 507 T
+(19) 36 495 T
+(20) 36 483 T
+(21) 36 471 T
+(22) 36 459 T
+(23) 36 447 T
+(24) 36 435 T
+(25) 36 423 T
+(26) 36 411 T
+(27) 36 399 T
+(28) 36 387 T
+(29) 36 375 T
+(30) 36 363 T
+(31) 36 351 T
+(32) 36 339 T
+(33) 36 327 T
+(34) 36 315 T
+(35) 36 303 T
+(36) 36 291 T
+(37) 36 279 T
+(38) 36 267 T
+(39) 36 255 T
+(40) 36 243 T
+(41) 36 231 T
+(42) 36 219 T
+(43) 36 207 T
+(44) 36 195 T
+(45) 36 183 T
+(46) 36 171 T
+(47) 36 159 T
+(48) 36 147 T
+(49) 36 135 T
+(50) 36 123 T
+(51) 36 111 T
+(52) 36 99 T
+(53) 36 87 T
+(54) 36 75 T
+(55) 36 63 T
+27 72 54 720 C
+0 0 612 792 C
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+FMENDPAGE
+%%EndPage: "2" 2
+%%Page: "3" 3
+612 792 0 FMBEGINPAGE
+[0 0 0 1 0 0 0]
+[ 0 1 1 0 1 0 0]
+[ 1 0 1 0 0 1 0]
+[ 1 1 0 0 0 0 1]
+[ 1 0 0 0 0 1 1]
+[ 0 1 0 0 1 0 1]
+[ 0 0 1 0 1 1 0]
+ 7 FrameSetSepColors
+FrameNoSep
+0 0 0 1 0 0 0 K
+0 9 Q
+0 X
+0 0 0 1 0 0 0 K
+(3) 72 750 T
+(ISA/EISA/ISA-PnP) 466.47 750 T
+(February 28, 1996 Revision 0.1 DRAFT) 72 38 T
+540 738 72 738 2 L
+1 H
+2 Z
+N
+540 54 72 54 2 L
+N
+558 72 585 720 C
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+558 72 585 720 R
+7 X
+0 0 0 1 0 0 0 K
+V
+0 0 612 792 C
+27 72 54 720 C
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+27 72 54 720 R
+7 X
+0 0 0 1 0 0 0 K
+V
+1 12 Q
+0 X
+(1) 36 711 T
+(2) 36 699 T
+(3) 36 687 T
+(4) 36 675 T
+(5) 36 663 T
+(6) 36 651 T
+(7) 36 639 T
+(8) 36 627 T
+(9) 36 615 T
+(10) 36 603 T
+(11) 36 591 T
+(12) 36 579 T
+(13) 36 567 T
+(14) 36 555 T
+(15) 36 543 T
+(16) 36 531 T
+(17) 36 519 T
+(18) 36 507 T
+(19) 36 495 T
+(20) 36 483 T
+(21) 36 471 T
+(22) 36 459 T
+(23) 36 447 T
+(24) 36 435 T
+(25) 36 423 T
+(26) 36 411 T
+(27) 36 399 T
+(28) 36 387 T
+(29) 36 375 T
+(30) 36 363 T
+(31) 36 351 T
+(32) 36 339 T
+(33) 36 327 T
+(34) 36 315 T
+(35) 36 303 T
+(36) 36 291 T
+(37) 36 279 T
+(38) 36 267 T
+(39) 36 255 T
+(40) 36 243 T
+(41) 36 231 T
+(42) 36 219 T
+(43) 36 207 T
+(44) 36 195 T
+(45) 36 183 T
+(46) 36 171 T
+(47) 36 159 T
+(48) 36 147 T
+(49) 36 135 T
+(50) 36 123 T
+(51) 36 111 T
+(52) 36 99 T
+(53) 36 87 T
+(54) 36 75 T
+(55) 36 63 T
+0 0 612 792 C
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+2 18 Q
+0 X
+0 0 0 1 0 0 0 K
+1.8 (Purpose of this ISA/EISA/ISA-PnP binding) 72 708 P
+1 10 Q
+1 (This document speci\336es the application of Open Firmware to the bus used on the IBM) 72 678.33 P
+1 8 Q
+0.8 (\250) 431.52 682.33 P
+1 10 Q
+1 ( Personal) 437.6 678.33 P
+1 (Computer/A) 72 666.33 P
+1 (T\252, commonly called the Industry Standard Architecture \050ISA\051 Bus, including requirements and) 120.89 666.33 P
+1 (practices for address formats, interrupts, probing, and related properties and methods speci\336c to the ISA Bus.) 72 654.33 P
+1 (This document also speci\336es the application of Open Firmware to the 32 bit extension to the ISA standard,) 72 635.33 P
+1 (developed by the COMP) 72 623.33 P
+1 (AQ) 173.24 623.33 P
+1 8 Q
+0.8 (\250) 187.68 627.33 P
+1 10 Q
+1 (-led consortium, known as the Extended Industry Standard Architecture \050EISA\252\051.) 193.76 623.33 P
+1 (This document also extends the resource data structures de\336ned for Plug and Play ISA \050PnP ISA\051 adaptor cards) 72 604.33 P
+1 (to be used for con\336guring both legacy ISA and EISA devices.) 72 592.33 P
+1 (The core requirements and practices speci\336ed by Open Firmware must be augmented by system-speci\336c) 72 573.33 P
+1 (requirements to form a complete speci\336cation for the \336rmware for a particular system. This document) 72 561.33 P
+1 (establishes such additional requirements pertaining to the ISA/EISA Bus.) 72 549.33 P
+2 18 Q
+(T) 72 508 T
+(ask Gr) 82.35 508 T
+(oup Members) 134.53 508 T
+1 10 Q
+1 (The following individuals were members of the T) 72 477.33 P
+1 (ask Group that produced this document:) 277.44 477.33 P
+1 (Mitch Bradley) 72 458.33 P
+1 (, FirmW) 130.4 458.33 P
+1 (orks) 164.49 458.33 P
+1 (Jordan Brown, SunSoft Inc.) 72 439.33 P
+1 (Bob Cof) 72 420.33 P
+1 (\336n, \050editor\051, IBM Corporation) 106.99 420.33 P
+1 (David Kahn, Sun MicroSystems) 72 401.33 P
+1 (Dr) 72 382.33 P
+1 (. Luan Duy Nguyen, IBM Corporation) 82 382.33 P
+1 (Lilian W) 72 363.33 P
+1 (alter) 108.03 363.33 P
+1 (, FirePower System Inc.) 125.4 363.33 P
+2 18 Q
+(Registration Symbols and T) 72 322 T
+(rademarks) 285.19 322 T
+1 10 Q
+1 (The following terms, denoted by a registration symbol \050\250\051 or trademark symbol\050\252\051) 72 291.33 P
+1 (on the \336rst occurrence in this publication, are registered trademarks ot trademarks of) 72 279.33 P
+1 (the companies as shown in the list below:) 72 267.33 P
+2 12 Q
+(T) 90 248.33 T
+(rademark) 97.12 248.33 T
+(Company) 176.4 248.33 T
+1 10 Q
+(COMP) 90 229.33 T
+(AQ) 117.42 229.33 T
+1 (COMP) 176.4 229.33 P
+1 (AQ Corporation.) 203.82 229.33 P
+1 (IBM & IBM PC) 90 210.33 P
+1 (International Business Machines) 176.4 210.33 P
+1 (PC/XT & PC/A) 90 191.33 P
+1 (T) 154.24 191.33 P
+1 (International Business Machines) 176.4 191.33 P
+1 (All products or services mentioned in this document are identi\336ed by the trademarks, service marks, or product) 72 172.33 P
+1 (names as designated by the companies who market those products. Inquiries concerning such trademarks should) 72 160.33 P
+1 (be made directly to those companies.) 72 148.33 P
+2 18 Q
+(Revision History) 72 107 T
+3 10 Q
+(Revision 0.00) 72 76.33 T
+(07/94) 144 76.33 T
+(First version.) 198 76.33 T
+52 663 54 685 R
+V
+52 620 54 630 R
+V
+52 455 54 465 R
+V
+52 316 54 427 R
+V
+52 188 54 255 R
+V
+52 73 54 83 R
+V
+0 0 0 1 0 0 0 K
+FMENDPAGE
+%%EndPage: "3" 3
+%%Page: "4" 4
+612 792 0 FMBEGINPAGE
+[0 0 0 1 0 0 0]
+[ 0 1 1 0 1 0 0]
+[ 1 0 1 0 0 1 0]
+[ 1 1 0 0 0 0 1]
+[ 1 0 0 0 0 1 1]
+[ 0 1 0 0 1 0 1]
+[ 0 0 1 0 1 1 0]
+ 7 FrameSetSepColors
+FrameNoSep
+0 0 0 1 0 0 0 K
+0 9 Q
+0 X
+0 0 0 1 0 0 0 K
+(ISA/EISA/ISA-PnP binding) 72 750 T
+(4) 535.5 750 T
+-0.64 (February 28, 1996 Revision 0.1 DRAFT) 391.24 38 P
+72 738 540 738 2 L
+1 H
+2 Z
+N
+72 54 540 54 2 L
+N
+27 72 54 720 C
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+27 72 54 720 R
+7 X
+0 0 0 1 0 0 0 K
+V
+27 72 54 720 C
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+27 72 54 720 R
+7 X
+0 0 0 1 0 0 0 K
+V
+1 12 Q
+0 X
+(1) 36 711 T
+(2) 36 699 T
+(3) 36 687 T
+(4) 36 675 T
+(5) 36 663 T
+(6) 36 651 T
+(7) 36 639 T
+(8) 36 627 T
+(9) 36 615 T
+(10) 36 603 T
+(11) 36 591 T
+(12) 36 579 T
+(13) 36 567 T
+(14) 36 555 T
+(15) 36 543 T
+(16) 36 531 T
+(17) 36 519 T
+(18) 36 507 T
+(19) 36 495 T
+(20) 36 483 T
+(21) 36 471 T
+(22) 36 459 T
+(23) 36 447 T
+(24) 36 435 T
+(25) 36 423 T
+(26) 36 411 T
+(27) 36 399 T
+(28) 36 387 T
+(29) 36 375 T
+(30) 36 363 T
+(31) 36 351 T
+(32) 36 339 T
+(33) 36 327 T
+(34) 36 315 T
+(35) 36 303 T
+(36) 36 291 T
+(37) 36 279 T
+(38) 36 267 T
+(39) 36 255 T
+(40) 36 243 T
+(41) 36 231 T
+(42) 36 219 T
+(43) 36 207 T
+(44) 36 195 T
+(45) 36 183 T
+(46) 36 171 T
+(47) 36 159 T
+(48) 36 147 T
+(49) 36 135 T
+(50) 36 123 T
+(51) 36 111 T
+(52) 36 99 T
+(53) 36 87 T
+(54) 36 75 T
+(55) 36 63 T
+27 72 54 720 C
+0 0 612 792 C
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+3 10 Q
+0 X
+0 0 0 1 0 0 0 K
+(Revision 0.01) 72 713.33 T
+(10/94) 144 713.33 T
+(Simplify first cell of reg property.  Drop \322m\323 from text representation.) 198 713.33 T
+(Revision 0.02) 72 701.33 T
+(01/95) 144 701.33 T
+-0.37 (Miscellaneous changes, mostly editorial.  Add support for twenty-bit aliasing in) 198 701.33 P
+(memory space.) 198 689.33 T
+(Revision 0.03) 72 677.33 T
+(03/21/95) 144 677.33 T
+(Added EISA bus specification and some PnP ISA device support.) 198 677.33 T
+(Revision 0.04) 72 665.33 T
+(09/25/95) 144 665.33 T
+-0.04 (Added PnP ISA resource data structures and extend it to accommodate EISA) 198 665.33 P
+(configuration.) 198 653.33 T
+(Revision 0.05) 72 641.33 T
+(10/11/95) 144 641.33 T
+(Changed document format and add Table of Contents.  Changed content) 198 641.33 T
+(according to approval from the committee on 09/19/1995) 198 629.33 T
+(Revision 0.1) 72 617.33 T
+(02/28/96) 144 617.33 T
+(Changed content according to approval from the committee on 01/16/96.) 198 617.33 T
+(Changed version number from .05 to 0.1.) 198 605.33 T
+52 686 54 720 R
+V
+52 614 54 648 R
+V
+52 587 54 597 R
+V
+0 0 0 1 0 0 0 K
+FMENDPAGE
+%%EndPage: "4" 4
+%%Page: "5" 5
+612 792 0 FMBEGINPAGE
+[0 0 0 1 0 0 0]
+[ 0 1 1 0 1 0 0]
+[ 1 0 1 0 0 1 0]
+[ 1 1 0 0 0 0 1]
+[ 1 0 0 0 0 1 1]
+[ 0 1 0 0 1 0 1]
+[ 0 0 1 0 1 1 0]
+ 7 FrameSetSepColors
+FrameNoSep
+0 0 0 1 0 0 0 K
+0 9 Q
+0 X
+0 0 0 1 0 0 0 K
+(5) 72 750 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(ISA/EISA/ISA-PnP) 466.47 750 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(February 28, 1996 Revision 0.1 DRAFT) 72 38 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+540 738 72 738 2 L
+1 H
+2 Z
+N
+540 54 72 54 2 L
+N
+558 72 585 720 C
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+558 72 585 720 R
+7 X
+0 0 0 1 0 0 0 K
+V
+0 0 612 792 C
+27 72 54 720 C
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+27 72 54 720 R
+7 X
+0 0 0 1 0 0 0 K
+V
+1 12 Q
+0 X
+(1) 36 711 T
+(2) 36 699 T
+(3) 36 687 T
+(4) 36 675 T
+(5) 36 663 T
+(6) 36 651 T
+(7) 36 639 T
+(8) 36 627 T
+(9) 36 615 T
+(10) 36 603 T
+(11) 36 591 T
+(12) 36 579 T
+(13) 36 567 T
+(14) 36 555 T
+(15) 36 543 T
+(16) 36 531 T
+(17) 36 519 T
+(18) 36 507 T
+(19) 36 495 T
+(20) 36 483 T
+(21) 36 471 T
+(22) 36 459 T
+(23) 36 447 T
+(24) 36 435 T
+(25) 36 423 T
+(26) 36 411 T
+(27) 36 399 T
+(28) 36 387 T
+(29) 36 375 T
+(30) 36 363 T
+(31) 36 351 T
+(32) 36 339 T
+(33) 36 327 T
+(34) 36 315 T
+(35) 36 303 T
+(36) 36 291 T
+(37) 36 279 T
+(38) 36 267 T
+(39) 36 255 T
+(40) 36 243 T
+(41) 36 231 T
+(42) 36 219 T
+(43) 36 207 T
+(44) 36 195 T
+(45) 36 183 T
+(46) 36 171 T
+(47) 36 159 T
+(48) 36 147 T
+(49) 36 135 T
+(50) 36 123 T
+(51) 36 111 T
+(52) 36 99 T
+(53) 36 87 T
+(54) 36 75 T
+(55) 36 63 T
+0 0 612 792 C
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+2 18 Q
+0 X
+0 0 0 1 0 0 0 K
+(T) 72 708 T
+(able of Contents) 82.35 708 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1 12 Q
+(1. Overview and References) 90 619 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .) 228 619 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+( 7) 459 619 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(1.1 References) 108 605 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .) 180 605 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(7) 462 605 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(1.2  Definitions of Terms) 108 591 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+( . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .) 231 591 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(7) 462 591 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(2.  Bus Characteristics) 90 577 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .) 198 577 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+( 7) 459 577 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(2.1 Address Spaces) 108 563 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .) 204 563 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(8) 462 563 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(2.1.1 Memory Space) 126 549 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .) 228 549 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(8) 462 549 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(2.1.2 I/O Space) 126 535 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+( . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .) 201 535 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(8) 462 535 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(2.2  Address Formats and Representations) 108 521 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(. . . . . . . . . . . . . . . . . . . . . . . . .) 312 521 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(8) 462 521 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(2.2.1 Physical Address Format: Numerical Representation) 126 507 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(. . . . . . . . .) 408 507 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(8) 462 507 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(2.2.2 Physical Address Format: Text Representation) 126 493 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(. . . . . . . . . . . . . .) 378 493 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(9) 462 493 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(2.2.3 Correspondence between two representations) 126 479 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(. . . . . . . . . . . . . . .) 372 479 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(9) 462 479 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(2.2.4 Open Firmware implication) 126 465 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(. . . . . . . . . . . . . . . . . . . . . . . . . . . .) 288 465 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(10) 456 465 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(2.3 Bus-specific Configuration Variables) 108 451 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(. . . . . . . . . . . . . . . . . . . . . . . . .) 306 451 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(10) 456 451 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(2.3.1 Format of a Probe List) 126 437 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .) 264 437 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(10) 456 437 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(3.  Bus Nodes) 90 423 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+( . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .) 159 423 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+( 10) 453 423 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(3.1 Properties) 108 409 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+( . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .) 177 409 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(10) 456 409 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(3.1.1 Core-specified Properties for Bus Nodes) 126 395 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(. . . . . . . . . . . . . . . . . .) 348 395 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(10) 456 395 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(3.1.2  Bus-specific Properties for Bus Nodes) 126 381 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(. . . . . . . . . . . . . . . . . . .) 342 381 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(11) 456 381 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(3.2 Methods) 108 367 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .) 168 367 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(11) 456 367 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(3.2.1 Standard Open Firmware-defined Methods) 126 353 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(. . . . . . . . . . . . . . . .) 360 353 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(12) 456 353 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(3.2.2 Bus-Specific Open Firmware-defined Methods) 126 339 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+( . . . . . . . . . . . .) 381 339 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(12) 456 339 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(4. Child Nodes) 90 325 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+( . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .) 165 325 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+( 12) 453 325 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(4.1  Properties) 108 311 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .) 180 311 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(13) 456 311 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(4.1.1 Core-specified Properties for Child Nodes) 126 297 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+( . . . . . . . . . . . . . . . .) 357 297 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(13) 456 297 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(4.1.2 Bus-specific Properties for Child Nodes) 126 283 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+( . . . . . . . . . . . . . . . . . .) 345 283 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(14) 456 283 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(4.2 Bus-specific User Interface Commands) 108 269 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+( . . . . . . . . . . . . . . . . . . . . . . .) 315 269 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(16) 456 269 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(5.  Encapsulated Drivers) 90 255 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .) 210 255 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+( 16) 453 255 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(5.1 Naming conventions) 108 241 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .) 228 241 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(17) 456 241 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(6.  Data Resource Information) 90 227 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+( . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .) 237 227 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+( 17) 453 227 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(6.1  Format of Data Resource Information) 108 213 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(. . . . . . . . . . . . . . . . . . . . . . . .) 312 213 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(18) 456 213 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(6.2 Header) 108 199 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .) 162 199 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(18) 456 199 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(6.3  Resource Records) 108 185 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .) 216 185 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(19) 456 185 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(6.3.1 Plug and Play Version Number Record) 126 171 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(. . . . . . . . . . . . . . . . . . .) 342 171 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(21) 456 171 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(6.3.2 ANSI Identifier String Record) 126 157 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(. . . . . . . . . . . . . . . . . . . . . . . . . .) 300 157 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(21) 456 157 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(6.3.3 Unicode Identifier String Record) 126 143 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(. . . . . . . . . . . . . . . . . . . . . . . .) 312 143 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(21) 456 143 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(6.3.4 Logical Device Id Record) 126 129 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+( . . . . . . . . . . . . . . . . . . . . . . . . . . . . .) 279 129 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(21) 456 129 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(6.3.5 Compatible Device Id Record) 126 115 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+( . . . . . . . . . . . . . . . . . . . . . . . . . .) 297 115 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(22) 456 115 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(6.3.6 IRQ Format Record) 126 101 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+( . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .) 249 101 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(22) 456 101 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(6.3.7 DMA Format Record) 126 87 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .) 258 87 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(23) 456 87 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+FMENDPAGE
+%%EndPage: "5" 5
+%%Page: "6" 6
+612 792 0 FMBEGINPAGE
+[0 0 0 1 0 0 0]
+[ 0 1 1 0 1 0 0]
+[ 1 0 1 0 0 1 0]
+[ 1 1 0 0 0 0 1]
+[ 1 0 0 0 0 1 1]
+[ 0 1 0 0 1 0 1]
+[ 0 0 1 0 1 1 0]
+ 7 FrameSetSepColors
+FrameNoSep
+0 0 0 1 0 0 0 K
+0 9 Q
+0 X
+0 0 0 1 0 0 0 K
+(ISA/EISA/ISA-PnP binding) 72 750 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(6) 535.5 750 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+-0.64 (February 28, 1996 Revision 0.1 DRAFT) 391.24 38 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+72 738 540 738 2 L
+1 H
+2 Z
+N
+72 54 540 54 2 L
+N
+27 72 54 720 C
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+27 72 54 720 R
+7 X
+0 0 0 1 0 0 0 K
+V
+27 72 54 720 C
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+27 72 54 720 R
+7 X
+0 0 0 1 0 0 0 K
+V
+1 12 Q
+0 X
+(1) 36 711 T
+(2) 36 699 T
+(3) 36 687 T
+(4) 36 675 T
+(5) 36 663 T
+(6) 36 651 T
+(7) 36 639 T
+(8) 36 627 T
+(9) 36 615 T
+(10) 36 603 T
+(11) 36 591 T
+(12) 36 579 T
+(13) 36 567 T
+(14) 36 555 T
+(15) 36 543 T
+(16) 36 531 T
+(17) 36 519 T
+(18) 36 507 T
+(19) 36 495 T
+(20) 36 483 T
+(21) 36 471 T
+(22) 36 459 T
+(23) 36 447 T
+(24) 36 435 T
+(25) 36 423 T
+(26) 36 411 T
+(27) 36 399 T
+(28) 36 387 T
+(29) 36 375 T
+(30) 36 363 T
+(31) 36 351 T
+(32) 36 339 T
+(33) 36 327 T
+(34) 36 315 T
+(35) 36 303 T
+(36) 36 291 T
+(37) 36 279 T
+(38) 36 267 T
+(39) 36 255 T
+(40) 36 243 T
+(41) 36 231 T
+(42) 36 219 T
+(43) 36 207 T
+(44) 36 195 T
+(45) 36 183 T
+(46) 36 171 T
+(47) 36 159 T
+(48) 36 147 T
+(49) 36 135 T
+(50) 36 123 T
+(51) 36 111 T
+(52) 36 99 T
+(53) 36 87 T
+(54) 36 75 T
+(55) 36 63 T
+27 72 54 720 C
+0 0 612 792 C
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1 12 Q
+0 X
+0 0 0 1 0 0 0 K
+(6.3.8 I/O Port Descriptor Record) 126 712 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+( . . . . . . . . . . . . . . . . . . . . . . . . . . . .) 285 712 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(23) 456 712 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(6.3.9 Fixed Location 10-bit I/O Port Descriptor Record) 126 698 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+( . . . . . . . . . .) 393 698 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(24) 456 698 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(6.3.10 24-bit Memory Range Descriptor Record) 126 684 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+( . . . . . . . . . . . . . . . .) 357 684 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(24) 456 684 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(6.3.11 32-bit Memory Range Descriptor Record) 126 670 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+( . . . . . . . . . . . . . . . .) 357 670 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(25) 456 670 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(6.3.12 32-bit Fixed Location Memory Range Descriptor Record) 126 656 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+( . . .) 435 656 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(26) 456 656 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(6.3.13 Start Dependent Function Record) 126 642 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+( . . . . . . . . . . . . . . . . . . . . . .) 321 642 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(27) 456 642 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(6.3.14 End Dependent Function Record) 126 628 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(. . . . . . . . . . . . . . . . . . . . . . .) 318 628 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(27) 456 628 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(6.3.15 Small Vendor Defined Record) 126 614 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(. . . . . . . . . . . . . . . . . . . . . . . . .) 306 614 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(27) 456 614 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(6.3.16 Large Vendor Defined Record) 126 600 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(. . . . . . . . . . . . . . . . . . . . . . . . .) 306 600 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(27) 456 600 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(6.3.17  End Tag Record) 126 586 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+( . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .) 243 586 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(28) 456 586 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+FMENDPAGE
+%%EndPage: "6" 6
+%%Page: "7" 7
+612 792 0 FMBEGINPAGE
+[0 0 0 1 0 0 0]
+[ 0 1 1 0 1 0 0]
+[ 1 0 1 0 0 1 0]
+[ 1 1 0 0 0 0 1]
+[ 1 0 0 0 0 1 1]
+[ 0 1 0 0 1 0 1]
+[ 0 0 1 0 1 1 0]
+ 7 FrameSetSepColors
+FrameNoSep
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 9 Q
+0 X
+0 0 0 1 0 0 0 K
+(7) 72 750 T
+(ISA/EISA/ISA-PnP) 466.47 750 T
+(February 28, 1996 Revision 0.1 DRAFT) 72 38 T
+540 738 72 738 2 L
+1 H
+2 Z
+N
+540 54 72 54 2 L
+N
+558 72 585 720 C
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+558 72 585 720 R
+7 X
+0 0 0 1 0 0 0 K
+V
+0 0 612 792 C
+27 72 54 720 C
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+27 72 54 720 R
+7 X
+0 0 0 1 0 0 0 K
+V
+1 12 Q
+0 X
+(1) 36 711 T
+(2) 36 699 T
+(3) 36 687 T
+(4) 36 675 T
+(5) 36 663 T
+(6) 36 651 T
+(7) 36 639 T
+(8) 36 627 T
+(9) 36 615 T
+(10) 36 603 T
+(11) 36 591 T
+(12) 36 579 T
+(13) 36 567 T
+(14) 36 555 T
+(15) 36 543 T
+(16) 36 531 T
+(17) 36 519 T
+(18) 36 507 T
+(19) 36 495 T
+(20) 36 483 T
+(21) 36 471 T
+(22) 36 459 T
+(23) 36 447 T
+(24) 36 435 T
+(25) 36 423 T
+(26) 36 411 T
+(27) 36 399 T
+(28) 36 387 T
+(29) 36 375 T
+(30) 36 363 T
+(31) 36 351 T
+(32) 36 339 T
+(33) 36 327 T
+(34) 36 315 T
+(35) 36 303 T
+(36) 36 291 T
+(37) 36 279 T
+(38) 36 267 T
+(39) 36 255 T
+(40) 36 243 T
+(41) 36 231 T
+(42) 36 219 T
+(43) 36 207 T
+(44) 36 195 T
+(45) 36 183 T
+(46) 36 171 T
+(47) 36 159 T
+(48) 36 147 T
+(49) 36 135 T
+(50) 36 123 T
+(51) 36 111 T
+(52) 36 99 T
+(53) 36 87 T
+(54) 36 75 T
+(55) 36 63 T
+0 0 612 792 C
+2 14 Q
+0 X
+0 0 0 1 0 0 0 K
+(1.  Overview and Refer) 72 710.67 T
+(ences) 209.77 710.67 T
+1 10 Q
+1 (References and terms for the ISA/EISA/ISA-PnP binding are listed in this section.) 72 693.33 P
+2 14 Q
+(1.1.  Refer) 72 662.67 T
+(ences) 133.17 662.67 T
+1 10 Q
+1 (This Open Firmware ISA/EISA/ISA-PnP binding standard) 72 645.33 P
+4 F
+1 (shall) 315.21 645.33 P
+1 F
+1 ( be used in conjunction with the following) 334.66 645.33 P
+1 (publications. When the following standards are superseded by an approved revision, the revision) 72 633.33 P
+4 F
+1 (shall) 474.1 633.33 P
+1 F
+1 ( apply) 493.55 633.33 P
+1 (.) 518.62 633.33 P
+([1]) 72 614.33 T
+4 F
+1 (IEEE) 90 614.33 P
+1 (Std 1275-1994 Standar) 115.16 614.33 P
+1 (d for Boot \050Initialization, Con\336guration\051 Firmwar) 209.57 614.33 P
+1 (e, Cor) 414.78 614.33 P
+1 (e Practices and) 440.41 614.33 P
+(Requir) 72 602.33 T
+(ements) 98.85 602.33 T
+1 F
+([2]) 72 583.33 T
+4 F
+1 (T) 90 583.33 P
+1 (echnical Refer) 94.64 583.33 P
+1 (ence, Personal Computer A) 153.31 583.33 P
+1 (T) 266.48 583.33 P
+1 F
+1 (; IBM part number 6280070 [or S229-961) 271.49 583.33 P
+1 (1-00 or 6139362.]) 445.44 583.33 P
+([3]) 72 564.33 T
+4 F
+1 (IEEE) 90 564.33 P
+1 (P996 Personal Computer Bus) 115.16 564.33 P
+1 (Standar) 241.38 564.33 P
+1 (d) 272.68 564.33 P
+1 F
+([4]) 72 545.33 T
+4 F
+1 (Extended Industry Standar) 93.5 545.33 P
+1 (d Ar) 202.34 545.33 P
+1 (chitectur) 220.47 545.33 P
+1 (e Speci\336cation) 255.65 545.33 P
+1 F
+1 (, Rev) 315.25 545.33 P
+1 (. 3.12, BCPR Service) 336.71 545.33 P
+([5]) 72 526.33 T
+4 F
+1 (Plug and Play Option ROM Speci\336cation) 93.5 526.33 P
+1 F
+([6]) 72 507.33 T
+4 F
+1 (Plug and Play BIOS Speci\336cation) 93.5 507.33 P
+1 F
+1 (, V) 233.04 507.33 P
+1 (er 1.0a, May 1994) 245.15 507.33 P
+([7]) 72 488.33 T
+4 F
+1 (Plug and Play ISA Speci\336cation) 93.5 488.33 P
+1 F
+1 (, V) 225.82 488.33 P
+1 (er 1.0a, May 1994) 237.93 488.33 P
+([8]) 72 469.33 T
+4 F
+1 (PCI Bus Binding to IEEE 1275) 93.5 469.33 P
+1 F
+1 (, Rev 1.6, March 1995.) 223.22 469.33 P
+2 14 Q
+(1.2.   De\336nitions of T) 72 438.67 T
+(erms) 194.78 438.67 T
+1 10 Q
+0.84 (This standard uses technical terms as they are de\336ned in the documents cited in "References", plus the following) 72 421.33 P
+1 (terms:) 72 409.33 P
+2 F
+1 (Bus contr) 72 390.33 P
+1 (oller:) 114.21 390.33 P
+1 F
+1 ( a hardware device that implements an ISA/EISA bus.) 136.98 390.33 P
+2 F
+1 (bus node:) 72 371.33 P
+1 F
+1 ( an Open Firmware device node that represents a bus controller) 114.4 371.33 P
+1 (. In cases where a node represents the) 377.12 371.33 P
+1 (interface, or \322bridge\323, between one bus and another) 72 359.33 P
+1 (, the node is both a bus node relative to the bus it controls,) 284.92 359.33 P
+1 (and a child node of its parent bus. Note that an Open Firmware device node is not in itself a physical hardware) 72 347.33 P
+1 (device; rather) 72 335.33 P
+1 (, it is a software abstraction that describes a hardware device.) 127.3 335.33 P
+2 F
+1 (child node:) 72 316.33 P
+1 F
+1 (an Open Firmware device node that represents an ISA/EISA function. Such a node can correspond) 124.01 316.33 P
+1 (to either a device that is \322hardwired\323 to a planar ISA/EISA bus, or to an \322add in\323 expansion card that is) 72 304.33 P
+1 (plugged into a standard ISA/EISA expansion connector) 72 292.33 P
+1 (.) 299.64 292.33 P
+2 F
+1 (EISA:) 72 273.33 P
+1 F
+1 ( Extended Industry Standard Architecture) 98.67 273.33 P
+2 F
+1 (EISA device:) 72 254.33 P
+1 F
+1 (a hardware device that connects to or \322plugs in\323 to an EISA bus: one of a number of logically-) 132.33 254.33 P
+1 (independent parts of an EISA device. Many EISA devices have only one function per device; in such cases, the) 72 242.33 P
+1 (terms \322EISA function\323 and \322EISA device\323 can be used interchangeably) 72 230.33 P
+1 (.) 366.66 230.33 P
+2 F
+1 (ISA:) 72 211.33 P
+1 F
+1 ( Industry Standard Architecture.) 92 211.33 P
+2 F
+1 (ISA device) 72 192.33 P
+1 F
+1 (: a hardware device that connects to or \322plugs in\323 to an ISA/ EISA bus: one of a number of) 118.83 192.33 P
+1 (logically-independent parts of an ISA device. Many ISA devices have only one function per device; in such) 72 180.33 P
+1 (cases, the terms \322ISA function\323 and \322ISA device\323 can be used interchangeably) 72 168.33 P
+1 (.) 397.26 168.33 P
+2 F
+1 (PnP ISA device:) 72 149.33 P
+1 F
+1 (a new generation of ISA cards that incorporate hardware mechanisms that enables resolution) 146.94 149.33 P
+1 (of resource con\337icts between PnP ISA cards solely by software. A PnP ISA card may have more than one) 72 137.33 P
+1 (logical devices, or) 72 125.33 P
+1 (, alternately) 146.64 125.33 P
+1 (, function.) 194.2 125.33 P
+2 14 Q
+(2.   Bus Characteristics) 72 94.67 T
+1 10 Q
+1 (This section describes the ISA Bus addressing and con\336guration characteristics and/or attributes.) 72 77.33 P
+52 630 54 652 R
+V
+52 561 54 571 R
+V
+52 466 54 476 R
+V
+52 406 54 428 R
+V
+52 189 54 378 R
+V
+52 146 54 175 R
+V
+52 90 54 132 R
+V
+FMENDPAGE
+%%EndPage: "7" 7
+%%Page: "8" 8
+612 792 0 FMBEGINPAGE
+[0 0 0 1 0 0 0]
+[ 0 1 1 0 1 0 0]
+[ 1 0 1 0 0 1 0]
+[ 1 1 0 0 0 0 1]
+[ 1 0 0 0 0 1 1]
+[ 0 1 0 0 1 0 1]
+[ 0 0 1 0 1 1 0]
+ 7 FrameSetSepColors
+FrameNoSep
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 9 Q
+0 X
+0 0 0 1 0 0 0 K
+(ISA/EISA/ISA-PnP binding) 72 750 T
+(8) 535.5 750 T
+-0.64 (February 28, 1996 Revision 0.1 DRAFT) 391.24 38 P
+72 738 540 738 2 L
+1 H
+2 Z
+N
+72 54 540 54 2 L
+N
+27 72 54 720 C
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+27 72 54 720 R
+7 X
+0 0 0 1 0 0 0 K
+V
+27 72 54 720 C
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+27 72 54 720 R
+7 X
+0 0 0 1 0 0 0 K
+V
+1 12 Q
+0 X
+(1) 36 711 T
+(2) 36 699 T
+(3) 36 687 T
+(4) 36 675 T
+(5) 36 663 T
+(6) 36 651 T
+(7) 36 639 T
+(8) 36 627 T
+(9) 36 615 T
+(10) 36 603 T
+(11) 36 591 T
+(12) 36 579 T
+(13) 36 567 T
+(14) 36 555 T
+(15) 36 543 T
+(16) 36 531 T
+(17) 36 519 T
+(18) 36 507 T
+(19) 36 495 T
+(20) 36 483 T
+(21) 36 471 T
+(22) 36 459 T
+(23) 36 447 T
+(24) 36 435 T
+(25) 36 423 T
+(26) 36 411 T
+(27) 36 399 T
+(28) 36 387 T
+(29) 36 375 T
+(30) 36 363 T
+(31) 36 351 T
+(32) 36 339 T
+(33) 36 327 T
+(34) 36 315 T
+(35) 36 303 T
+(36) 36 291 T
+(37) 36 279 T
+(38) 36 267 T
+(39) 36 255 T
+(40) 36 243 T
+(41) 36 231 T
+(42) 36 219 T
+(43) 36 207 T
+(44) 36 195 T
+(45) 36 183 T
+(46) 36 171 T
+(47) 36 159 T
+(48) 36 147 T
+(49) 36 135 T
+(50) 36 123 T
+(51) 36 111 T
+(52) 36 99 T
+(53) 36 87 T
+(54) 36 75 T
+(55) 36 63 T
+27 72 54 720 C
+0 0 612 792 C
+2 14 Q
+0 X
+0 0 0 1 0 0 0 K
+(2.1.  Addr) 72 710.67 T
+(ess Spaces) 131.64 710.67 T
+1 10 Q
+1 (ISA/EISA has two address spaces \050Memory) 72 693.33 P
+1 (, I/O\051 with dif) 252.15 693.33 P
+1 (ferent addressing characteristics.) 310.52 693.33 P
+2 12 Q
+(2.1.1.  Memory Space) 72 668 T
+1 10 Q
+1 (Memory Space is the primary address space of the ISA/EISA bus; it corresponds to traditional memory and) 72 651.33 P
+1 (\322memory-mapped\323 I/O.) 72 639.33 P
+1 (The full ISA bus allows for a 24-bit address space. The \3228-bit\323 or \322PC/XT\323 subset allows for a 20-bit address) 72 620.33 P
+1 (space but sense hardware protocols prevent an appropriate decoding of such devices, no special provisions need) 72 608.33 P
+1 (to be made by this binding to deal with this addressing structure.) 72 596.33 P
+1 (The EISA bus allows for a 32-bit address space.) 72 577.33 P
+2 12 Q
+(2.1.2.  I/O Space) 72 552 T
+1 10 Q
+1 (I/O Space is similar to Memory Space, except that it is intended to be used with the special \322I/O access\323) 72 535.33 P
+1 (instructions that some processors have.) 72 523.33 P
+1 (The full ISA/EISA bus allows for a 16-bit address space. The \3228-bit\323 subset allows for a 10-bit address space.) 72 504.33 P
+1 (Devices are allowed to \322alias\323 I/O addresses by ignoring all but the lower 10 bits of an I/O address. T) 72 485.33 P
+1 (o) 496.33 485.33 P
+1 (conserve \322) 72 473.33 P
+2 F
+1 (r) 115.48 473.33 P
+1 (eg) 119.74 473.33 P
+1 F
+1 (\323 property space, a bit \050the 't' bit, for ten-bit alias\051 is included in the encoding of I/O addresses to) 129.18 473.33 P
+1 (indicate that the corresponding \322) 72 461.33 P
+2 F
+1 (r) 206.53 461.33 P
+1 (eg) 210.79 461.33 P
+1 F
+1 (\323 range includes all such aliases.) 220.23 461.33 P
+0.83 (Devices are allowed to \322alias\323 I/O addresses by ignoring all but the lower 1) 72 442.33 P
+0.83 (1 bits of an I/O address. T) 384.34 442.33 P
+0.83 (o conserve) 492.79 442.33 P
+1 (\322) 72 430.33 P
+2 F
+1 (r) 76.44 430.33 P
+1 (eg) 80.7 430.33 P
+1 F
+1 (\323 property space, a bit \050the 'v\325' bit, for eleven-bit alias\051 is included in the encoding of I/O addresses to) 90.14 430.33 P
+1 (indicate that the corresponding \322) 72 418.33 P
+2 F
+1 (r) 206.53 418.33 P
+1 (eg) 210.79 418.33 P
+1 F
+1 (\323 range includes all such aliases.) 220.23 418.33 P
+2 14 Q
+(2.2.   Addr) 72 387.67 T
+(ess Formats and Repr) 135.14 387.67 T
+(esentations) 265.93 387.67 T
+1 10 Q
+1 (This section describes the physcial address representation and the Open Firmware implications.) 72 370.33 P
+2 12 Q
+(2.2.1.  Physical Addr) 72 345 T
+(ess Format: Numerical Repr) 177.79 345 T
+(esentation) 323.87 345 T
+1 10 Q
+1 (The numerical address of a ISA/EISA address consists of two cells, encoded as follows. For this purpose, the) 72 328.33 P
+1 (least-signi\336cant 32 bits of a cell is used; if the cell size is lar) 72 316.33 P
+1 (ger than 32 bits, any additional high-order bits are) 325.63 316.33 P
+1 (zero. Bit #0 refers to the least-signi\336cant bit.) 72 304.33 P
+1 (Bit#) 102.24 286 P
+5 F
+2.4 (:) 119.47 286 P
+(33222222) 133.2 286 T
+(22221111) 183.6 286 T
+(11111100) 234 286 T
+(00000000) 284.4 286 T
+(10987654) 133.2 277 T
+(32109876) 183.6 277 T
+(54321098) 234 277 T
+(76543210) 284.4 277 T
+1 F
+1 (phys.hi cell:) 72 265 P
+5 F
+(00000000) 133.2 265 T
+(00000000) 183.6 265 T
+(00000000) 234 265 T
+(00000vts) 284.4 265 T
+1 F
+1 (phys.lo cell:) 72 249 P
+5 F
+(nnnnnnnn) 133.2 249 T
+(nnnnnnnn) 183.6 249 T
+(nnnnnnnn) 234 249 T
+(nnnnnnnn) 284.4 249 T
+1 F
+(where:) 72 234.33 T
+(t) 133.2 215.33 T
+1 (is 1 if the address is 10-bit aliased \050for I/O\051) 176.4 215.33 P
+(v) 133.2 196.33 T
+1 (is 1 if the address is 1) 176.4 196.33 P
+1 (1-bit aliased \050for I/O\051) 268.69 196.33 P
+(s) 133.2 177.33 T
+1 (is 2-bit \336eld denoting memory or I/O space) 176.4 177.33 P
+(nn..nn) 133.2 158.33 T
+1 (is a 32-bit unsigned number) 176.4 158.33 P
+1 (Encoding of type code \322s\323:) 90 120.33 P
+1 (1 denotes I/O space, in which case:) 90 101.33 P
+(t) 133.2 82.33 T
+1 (is set if 10-bit aliasing is present.) 176.4 82.33 P
+52 593 54 646 R
+V
+52 367 54 377 R
+V
+FMENDPAGE
+%%EndPage: "8" 8
+%%Page: "9" 9
+612 792 0 FMBEGINPAGE
+[0 0 0 1 0 0 0]
+[ 0 1 1 0 1 0 0]
+[ 1 0 1 0 0 1 0]
+[ 1 1 0 0 0 0 1]
+[ 1 0 0 0 0 1 1]
+[ 0 1 0 0 1 0 1]
+[ 0 0 1 0 1 1 0]
+ 7 FrameSetSepColors
+FrameNoSep
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 9 Q
+0 X
+0 0 0 1 0 0 0 K
+(9) 72 750 T
+(ISA/EISA/ISA-PnP) 466.47 750 T
+(February 28, 1996 Revision 0.1 DRAFT) 72 38 T
+540 738 72 738 2 L
+1 H
+2 Z
+N
+540 54 72 54 2 L
+N
+558 72 585 720 C
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+558 72 585 720 R
+7 X
+0 0 0 1 0 0 0 K
+V
+0 0 612 792 C
+27 72 54 720 C
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+27 72 54 720 R
+7 X
+0 0 0 1 0 0 0 K
+V
+1 12 Q
+0 X
+(1) 36 711 T
+(2) 36 699 T
+(3) 36 687 T
+(4) 36 675 T
+(5) 36 663 T
+(6) 36 651 T
+(7) 36 639 T
+(8) 36 627 T
+(9) 36 615 T
+(10) 36 603 T
+(11) 36 591 T
+(12) 36 579 T
+(13) 36 567 T
+(14) 36 555 T
+(15) 36 543 T
+(16) 36 531 T
+(17) 36 519 T
+(18) 36 507 T
+(19) 36 495 T
+(20) 36 483 T
+(21) 36 471 T
+(22) 36 459 T
+(23) 36 447 T
+(24) 36 435 T
+(25) 36 423 T
+(26) 36 411 T
+(27) 36 399 T
+(28) 36 387 T
+(29) 36 375 T
+(30) 36 363 T
+(31) 36 351 T
+(32) 36 339 T
+(33) 36 327 T
+(34) 36 315 T
+(35) 36 303 T
+(36) 36 291 T
+(37) 36 279 T
+(38) 36 267 T
+(39) 36 255 T
+(40) 36 243 T
+(41) 36 231 T
+(42) 36 219 T
+(43) 36 207 T
+(44) 36 195 T
+(45) 36 183 T
+(46) 36 171 T
+(47) 36 159 T
+(48) 36 147 T
+(49) 36 135 T
+(50) 36 123 T
+(51) 36 111 T
+(52) 36 99 T
+(53) 36 87 T
+(54) 36 75 T
+(55) 36 63 T
+0 0 612 792 C
+1 10 Q
+0 X
+0 0 0 1 0 0 0 K
+(v) 133.2 713.33 T
+1 (is set if 1) 176.4 713.33 P
+1 (1-bit aliasing is present.) 215.42 713.33 P
+(nn..nn) 133.2 694.33 T
+1 (must be 65535 or less.) 176.4 694.33 P
+1 (0 denotes Memory Space, in which case:) 90 675.33 P
+(t) 133.2 656.33 T
+1 (is always 0.) 176.4 656.33 P
+(v) 133.2 637.33 T
+1 (is always 0.) 176.4 637.33 P
+(nn..nn) 133.2 618.33 T
+1 (is the 32-bit Memory Space address) 176.4 618.33 P
+2 9 Q
+0.9 (Note: Since the numeric r) 108 600 P
+0.9 (epr) 209.92 600 P
+0.9 (esentation of an ISA/EISA physical addr) 222.75 600 P
+0.9 (ess consists of 2) 382.86 600 P
+0.74 (addr) 108 590 P
+0.74 (ess cells, and the number of cells used to encode the size \336eld of a child's r) 126.34 590 P
+0.74 (eg pr) 419.7 590 P
+0.74 (operty) 440.02 590 P
+0.9 (is 1, and these ar) 108 580 P
+0.9 (e the IEEE 1275 defaults, explicit implementation of the standard pr) 175.69 580 P
+0.9 (oper-) 446.78 580 P
+0.9 (ties #addr) 108 570 P
+0.9 (ess-cells and #size-cells need not be pr) 146.99 570 P
+0.9 (esent.) 297.22 570 P
+2 12 Q
+(2.2.2.  Physical Addr) 72 546 T
+(ess Format: T) 177.79 546 T
+(ext Repr) 248 546 T
+(esentation) 292.1 546 T
+1 10 Q
+1 (The text representation of an ISA/EISA address is one of the following forms:) 72 529.33 P
+1 (i[t,v]NNNN) 90 510.33 P
+(NNNNNNNN) 90 491.33 T
+(where:) 72 472.33 T
+1 (NNNN is an ASCII hexadecimal number in the range 0..0xFFFF) 133.2 453.33 P
+1 (NNNNNNNN is an ASCII hexadecimal number in the range 0..0xFFFFFFFF) 133.2 434.33 P
+(t) 133.2 415.33 T
+1 (is the letter 't', whose presence is optional) 176.4 415.33 P
+(v) 133.2 396.33 T
+1 (is the letter 'v', whose presence is optional) 176.4 396.33 P
+(i) 133.2 377.33 T
+1 (is the letter 'i') 176.4 377.33 P
+2 12 Q
+(2.2.3.  Corr) 72 352 T
+(espondence between two r) 130.1 352 T
+(epr) 263.53 352 T
+(esentations) 280.64 352 T
+1 10 Q
+1 (The correspondence between text representations and numerical representations is as follows:) 72 335.33 P
+1 (i[t]NNNN: corresponds to an I/O Space address with the numerical value. If 't' is present, only the) 90 316.33 P
+1 (low-order 10 bits of an I/O address range is indicated; aliases are assumed for all high-order bits within) 90 304.13 P
+1 (the) 90 291.93 P
+6 F
+2.4 ("ranges") 105.72 291.93 P
+1 F
+1 ( property) 153.72 291.93 P
+1 (.) 190.45 291.93 P
+1 (The numerical value is:) 90 272.93 P
+(s) 133.2 253.93 T
+1 (is 1) 176.4 253.93 P
+(nn..nn) 133.2 234.93 T
+1 (is the binary encoding of NNNN) 176.4 234.93 P
+1 (i[v]NNNN: corresponds to an I/O Space address with the numerical value. If 'v' is present, only the) 90 215.93 P
+1 (low-order 1) 90 203.73 P
+1 (1 bits of an I/O address range is indicated; aliases are assumed for all high-order bits within) 137.56 203.73 P
+1 (the) 90 191.53 P
+6 F
+2.4 ("ranges") 105.72 191.53 P
+1 F
+1 ( property) 153.72 191.53 P
+1 (.) 190.45 191.53 P
+1 (The numerical value is:) 90 172.53 P
+(s) 133.2 153.53 T
+1 (is 1) 176.4 153.53 P
+(nn..nn) 133.2 134.53 T
+1 (is the binary encoding of NNNN) 176.4 134.53 P
+1 (NNNNNNNN: corresponds to a Memory Space address. The numerical value is:) 90 115.53 P
+(s) 133.2 96.53 T
+1 (is 0) 176.4 96.53 P
+(nn..nnn) 133.2 77.53 T
+1 (is the binary encoding of NNNNNNNN) 176.4 77.53 P
+52 288.6 54 342 R
+V
+52 188.2 54 210.4 R
+V
+52 112.2 54 122.2 R
+V
+FMENDPAGE
+%%EndPage: "9" 9
+%%Page: "10" 10
+612 792 0 FMBEGINPAGE
+[0 0 0 1 0 0 0]
+[ 0 1 1 0 1 0 0]
+[ 1 0 1 0 0 1 0]
+[ 1 1 0 0 0 0 1]
+[ 1 0 0 0 0 1 1]
+[ 0 1 0 0 1 0 1]
+[ 0 0 1 0 1 1 0]
+ 7 FrameSetSepColors
+FrameNoSep
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 9 Q
+0 X
+0 0 0 1 0 0 0 K
+(ISA/EISA/ISA-PnP binding) 72 750 T
+(10) 531 750 T
+-0.64 (February 28, 1996 Revision 0.1 DRAFT) 391.24 38 P
+72 738 540 738 2 L
+1 H
+2 Z
+N
+72 54 540 54 2 L
+N
+27 72 54 720 C
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+27 72 54 720 R
+7 X
+0 0 0 1 0 0 0 K
+V
+27 72 54 720 C
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+27 72 54 720 R
+7 X
+0 0 0 1 0 0 0 K
+V
+1 12 Q
+0 X
+(1) 36 711 T
+(2) 36 699 T
+(3) 36 687 T
+(4) 36 675 T
+(5) 36 663 T
+(6) 36 651 T
+(7) 36 639 T
+(8) 36 627 T
+(9) 36 615 T
+(10) 36 603 T
+(11) 36 591 T
+(12) 36 579 T
+(13) 36 567 T
+(14) 36 555 T
+(15) 36 543 T
+(16) 36 531 T
+(17) 36 519 T
+(18) 36 507 T
+(19) 36 495 T
+(20) 36 483 T
+(21) 36 471 T
+(22) 36 459 T
+(23) 36 447 T
+(24) 36 435 T
+(25) 36 423 T
+(26) 36 411 T
+(27) 36 399 T
+(28) 36 387 T
+(29) 36 375 T
+(30) 36 363 T
+(31) 36 351 T
+(32) 36 339 T
+(33) 36 327 T
+(34) 36 315 T
+(35) 36 303 T
+(36) 36 291 T
+(37) 36 279 T
+(38) 36 267 T
+(39) 36 255 T
+(40) 36 243 T
+(41) 36 231 T
+(42) 36 219 T
+(43) 36 207 T
+(44) 36 195 T
+(45) 36 183 T
+(46) 36 171 T
+(47) 36 159 T
+(48) 36 147 T
+(49) 36 135 T
+(50) 36 123 T
+(51) 36 111 T
+(52) 36 99 T
+(53) 36 87 T
+(54) 36 75 T
+(55) 36 63 T
+27 72 54 720 C
+0 0 612 792 C
+1 10 Q
+0 X
+0 0 0 1 0 0 0 K
+1 (Conversion of hexadecimal numbers from text representation to numeric shall be case-insensitive, and leading) 72 713.33 P
+1 (zeros shall be permitted but not required.) 72 701.33 P
+0.92 (Conversion from numeric representation to text representation shall use the lower case forms of the hexadecimal) 72 682.33 P
+1 (digits in the range a..f, suppressing leading zeroes.) 72 670.33 P
+2 12 Q
+(2.2.4.  Open Firmwar) 72 645 T
+(e implication) 181.78 645 T
+1 10 Q
+1 (Open Firmware assumes a single memory-like address space. ISA/EISA I/O space is a distinct address space) 72 628.33 P
+1 (from memory space, and so requires special consideration. On some processors, I/O space is physically mapped) 72 616.33 P
+1 (as a subset of memory space and so can be conveniently accessed using standard register access primitives) 72 604.33 P
+0.94 (\050rb@, rw!, etc\051; all that need be done is that map-in recognize an I/O space physical address and of) 72 592.33 P
+0.94 (fset it by the) 484.01 592.33 P
+1 (base of the I/O space area. On other processors, special instructions must be executed to access I/O space. On) 72 580.33 P
+1 (these processors, it is recommended that Open Firmware reserve a block of virtual addresses for I/O space) 72 568.33 P
+1 (access. When map-in is given an I/O physical address, it would return a virtual address in this reserved range.) 72 556.33 P
+1 (The register access words would examine each address they are given, and if the address is in the reserved) 72 544.33 P
+1 (range they would execute the special instructions required to access I/O space.) 72 532.33 P
+2 14 Q
+(2.3.  Bus-speci\336c Con\336guration V) 72 501.67 T
+(ariables) 270.62 501.67 T
+1 10 Q
+1 (An Open Firmware-compliant User Interface on a platform with a single built-in EISA bus may implement the) 72 484.33 P
+1 (following EISA-speci\336c Con\336guration V) 72 472.33 P
+1 (ariable.) 239.16 472.33 P
+6 F
+(eisa-probe-list) 90 453.33 T
+5 F
+2.4 (\050 -- list-str list-len) 188.4 453.33 P
+6 F
+2.4 (\051) 336 453.33 P
+(S) 475.2 453.33 T
+2 12 Q
+(2.3.1.  Format of a Pr) 72 428 T
+(obe List) 181.09 428 T
+1 10 Q
+0.89 (Each EISA expansion slot is assigned an unique address, the most signi\336cant nibble \050bits 12 to 15\051 of 16-bit I/O) 72 411.33 P
+0.98 (address. 0 is assigned to the embedded or plug-in ISA devices on the EISA bus. 1 is assigned to EISA slot one,) 72 399.33 P
+1 (and so on.) 72 387.33 P
+1 (The probe list is thus a comma-separated list of EISA slots to probe, e.g. 1,2,3,4,5,6 on a 6-slot EISA bus.) 72 368.33 P
+1 (There are no corresponding probe lists for ISA and PnP ISA because of the following:) 72 349.33 P
+1 (The con\336guration data of ISA adaptor cards is stored in NVRAM) 90 330.33 P
+1 (\050See \322Format of Data Resource Information\323 on page) 90 317.83 P
+1 (18.\051. By the nature of ISA cards, all the resources) 313.61 317.83 P
+1 (that are requested must be met.) 90 305.33 P
+1 (PnP ISA cards cannot be addressed with a physical address by slot.) 90 286.33 P
+2 14 Q
+(3.   Bus Nodes) 72 255.67 T
+1 10 Q
+1 (This section describes the Open Firmware properties and methods for the ISA and EISA buses.) 72 238.33 P
+2 9 Q
+0.9 (Note: A bridge is a par) 108 220 P
+0.9 (ent of one bus and is a child of another) 200.08 220 P
+0.9 (.  Consequently) 355.62 220 P
+0.9 (, a node r) 416.18 220 P
+0.9 (ep-) 454.71 220 P
+0.9 (r) 108 210 P
+0.9 (esenting a bridge is both a Bus Node and a Child node, with both sets of pr) 111.83 210 P
+0.9 (operties and) 411.86 210 P
+(methods.) 108 200 T
+2 14 Q
+(3.1.  Pr) 72 170.67 T
+(operties) 114.52 170.67 T
+1 10 Q
+1 (This section de\336nes ISA and EISA bus Open Firmware Properties.) 72 153.33 P
+2 12 Q
+(3.1.1.  Cor) 72 128 T
+(e-speci\336ed Pr) 124.78 128 T
+(operties for Bus Nodes) 193.55 128 T
+1 10 Q
+0.85 (The following standard properties, as de\336ned in Open Firmware, have special meanings or interpretations for the) 72 111.33 P
+1 (ISA/EISA bus.) 72 99.33 P
+6 F
+2.4 (\322name\323) 90 80.33 P
+(S) 475.2 80.33 T
+52 283 54 337 R
+V
+FMENDPAGE
+%%EndPage: "10" 10
+%%Page: "11" 11
+612 792 0 FMBEGINPAGE
+[0 0 0 1 0 0 0]
+[ 0 1 1 0 1 0 0]
+[ 1 0 1 0 0 1 0]
+[ 1 1 0 0 0 0 1]
+[ 1 0 0 0 0 1 1]
+[ 0 1 0 0 1 0 1]
+[ 0 0 1 0 1 1 0]
+ 7 FrameSetSepColors
+FrameNoSep
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 9 Q
+0 X
+0 0 0 1 0 0 0 K
+(11) 72 750 T
+(ISA/EISA/ISA-PnP) 466.47 750 T
+(February 28, 1996 Revision 0.1 DRAFT) 72 38 T
+540 738 72 738 2 L
+1 H
+2 Z
+N
+540 54 72 54 2 L
+N
+558 72 585 720 C
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+558 72 585 720 R
+7 X
+0 0 0 1 0 0 0 K
+V
+0 0 612 792 C
+27 72 54 720 C
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+27 72 54 720 R
+7 X
+0 0 0 1 0 0 0 K
+V
+1 12 Q
+0 X
+(1) 36 711 T
+(2) 36 699 T
+(3) 36 687 T
+(4) 36 675 T
+(5) 36 663 T
+(6) 36 651 T
+(7) 36 639 T
+(8) 36 627 T
+(9) 36 615 T
+(10) 36 603 T
+(11) 36 591 T
+(12) 36 579 T
+(13) 36 567 T
+(14) 36 555 T
+(15) 36 543 T
+(16) 36 531 T
+(17) 36 519 T
+(18) 36 507 T
+(19) 36 495 T
+(20) 36 483 T
+(21) 36 471 T
+(22) 36 459 T
+(23) 36 447 T
+(24) 36 435 T
+(25) 36 423 T
+(26) 36 411 T
+(27) 36 399 T
+(28) 36 387 T
+(29) 36 375 T
+(30) 36 363 T
+(31) 36 351 T
+(32) 36 339 T
+(33) 36 327 T
+(34) 36 315 T
+(35) 36 303 T
+(36) 36 291 T
+(37) 36 279 T
+(38) 36 267 T
+(39) 36 255 T
+(40) 36 243 T
+(41) 36 231 T
+(42) 36 219 T
+(43) 36 207 T
+(44) 36 195 T
+(45) 36 183 T
+(46) 36 171 T
+(47) 36 159 T
+(48) 36 147 T
+(49) 36 135 T
+(50) 36 123 T
+(51) 36 111 T
+(52) 36 99 T
+(53) 36 87 T
+(54) 36 75 T
+(55) 36 63 T
+0 0 612 792 C
+1 10 Q
+0 X
+0 0 0 1 0 0 0 K
+1 (Standard) 90 713.33 P
+4 F
+1 ( pr) 125.55 713.33 P
+1 (op-name) 137.57 713.33 P
+1 F
+1 ( to specify the name of the package.) 172.56 713.33 P
+4 F
+1 (pr) 90 695.33 P
+1 (op-encoded-array) 98.52 695.33 P
+1 F
+1 (: a string encoded as with) 170.72 695.33 P
+2 F
+1 (encode-string) 281.15 695.33 P
+1 F
+1 (.) 338.92 695.33 P
+1 (The meaning of this property is as de\336ned in Open Firmware. The name of the package de\336ning the legacy) 90 677.33 P
+1 (A) 90 667.33 P
+1 (T style I/O bus is \322) 96.11 667.33 P
+4 F
+1 (isa.) 176.94 667.33 P
+1 F
+1 (\323) 191.11 667.33 P
+6 F
+2.4 (\322device_type\323) 90 649.33 P
+(S) 475.2 649.33 T
+1 F
+1 (Standard) 90 634.33 P
+4 F
+1 ( pr) 125.55 634.33 P
+1 (op-name) 137.57 634.33 P
+1 F
+1 ( to specify the implemented interface.) 172.56 634.33 P
+4 F
+1 (pr) 90 616.33 P
+1 (op-encoded-array) 98.52 616.33 P
+1 F
+1 (: a string encoded as with) 170.72 616.33 P
+2 F
+1 (encode-string) 281.15 616.33 P
+1 F
+1 (.) 338.92 616.33 P
+1 (The meaning of this property is as de\336ned in Open Firmware.  A Standard Package conforming to this) 90 598.33 P
+1 (speci\336cation and corresponding to a device that implements an ISA bus shall implement this property with) 90 588.33 P
+1 (the string value \322) 90 578.33 P
+4 F
+1 (isa) 161.6 578.33 P
+1 F
+1 (\323.  A device that implements an EISA extension shall implement this property with the) 173.27 578.33 P
+1 (string value \322) 90 568.33 P
+4 F
+1 (eisa) 145.88 568.33 P
+1 F
+1 (\323.) 161.99 568.33 P
+6 F
+2.4 (\322ranges\323) 90 550.33 P
+(S) 475.2 550.33 T
+1 F
+1 (Standard) 90 535.33 P
+4 F
+1 ( pr) 125.55 535.33 P
+1 (op-name,) 137.57 535.33 P
+1 F
+1 ( de\336nes the mapping of parent address to child address spaces.) 175.06 535.33 P
+1 (This property) 90 517.33 P
+4 F
+1 (shall) 148.66 517.33 P
+1 F
+1 (be present) 171.61 517.33 P
+1 (for all ISA/EISA bus bridges) 216.93 517.33 P
+4 F
+1 (.) 337.03 517.33 P
+1 F
+1 (There) 346.53 517.33 P
+4 F
+1 (shall) 373.35 517.33 P
+1 F
+1 ( be an entry in the) 392.8 517.33 P
+6 F
+2.4 (\322ranges\323) 473.23 517.33 P
+1 F
+0.88 (property for each of the Memory and/or I/O spaces if that address space is mapped through the bridge.  The) 90 507.33 P
+1 (format for physical addresses entries is as speci\336ed in Section) 90 497.33 P
+1 (2.2. on page) 348.96 497.33 P
+1 (8.) 402.34 497.33 P
+1 (The child address spaces are de\336ned in this binding document and the parent address spaces would be) 90 479.33 P
+1 (de\336ned by the appropriate bus binding.) 90 469.33 P
+2 12 Q
+(3.1.2.   Bus-speci\336c Pr) 72 446 T
+(operties for Bus Nodes) 184.12 446 T
+1 10 Q
+1 (The following bus-speci\336c properties have special meanings or interpretations for the ISA and/or EISA bus.) 72 429.33 P
+6 F
+2.4 (\322eisa-slots\323) 90 410.33 P
+(S) 475.2 410.33 T
+4 F
+1 (pr) 90 395.33 P
+1 (op-name) 98.52 395.33 P
+1 F
+1 ( to specify the bit map of EISA slots.) 133.51 395.33 P
+6 F
+2.4 (\322clock-frequency\323) 90 377.33 P
+(S) 475.2 377.33 T
+4 F
+1 (pr) 90 362.33 P
+1 (op-name) 98.52 362.33 P
+1 F
+1 ( to specify the bus clock frequency) 133.51 362.33 P
+1 (.) 278.27 362.33 P
+4 F
+1 (pr) 90 344.33 P
+1 (op-encoded-array) 98.52 344.33 P
+1 F
+1 (: Integer clock frequency in hertz, encoded as with) 170.72 344.33 P
+2 F
+1 (encode-int) 384.66 344.33 P
+1 F
+1 (.) 429.1 344.33 P
+6 F
+("slot-names") 90 326.33 T
+(S) 475.2 326.33 T
+4 F
+1 (pr) 90 311.33 P
+1 (op-name:) 98.52 311.33 P
+1 F
+1 ( Describes external labeling of add-in platform slots.) 136.84 311.33 P
+4 F
+1 (pr) 90 293.33 P
+1 (op-encoded-array) 98.52 293.33 P
+1 F
+1 (: An integer) 170.72 293.33 P
+1 (, encoded as with) 220.09 293.33 P
+2 F
+1 (encode-int,) 296.02 293.33 P
+1 F
+1 (followed by a list of strings, each encoded as) 346.46 293.33 P
+1 (with) 90 283.33 P
+2 F
+1 ( encode-string.) 107.78 283.33 P
+1 F
+1 (The integer  portion of the property value is a bitmask of available bus slots; for each add-in slot on the) 90 265.33 P
+1 (ISA bus, the bit corresponding to that slot\325) 90 255.33 P
+1 (s id number is set from least-signi\336cant to most-signi\336cant id) 267 255.33 P
+1 (number) 90 245.33 P
+1 (.  The number of following strings is the same as the number of slots; the \336rst string gives a label) 120 245.33 P
+1 (for the slot with the smallest id number) 90 235.33 P
+1 (, and so on.  The string contents would be platform dependent.) 253.54 235.33 P
+2 9 Q
+0.9 (Note: For an ISA bus, a method to get this information does not exist. T) 108 218 P
+0.9 (ypically) 394.42 218 P
+0.9 (, a plat-) 423.93 218 P
+0.9 (form could pr) 108 208 P
+0.9 (ovide a means to allow a user thr) 163.13 208 P
+0.9 (ough a con\336guration utility to stor) 295.52 208 P
+0.9 (e a slot) 431.61 208 P
+0.9 (name in NVRAM\050or other non-volatile storage\051.  Open Firmwar) 108 198 P
+0.9 (e would then construct) 362.25 198 P
+0.9 (this pr) 108 188 P
+0.9 (operty fr) 133.99 188 P
+0.9 (om the slot name information stor) 168.97 188 P
+0.9 (ed in NVRAM.) 304.04 188 P
+6 10 Q
+2.4 (\322subtractive-decode\323) 90 173.33 P
+(S) 475.2 173.33 T
+4 F
+1 (pr) 90 158.33 P
+1 (op-name:) 98.52 158.33 P
+1 F
+1 ( If the bridge supports substractive decode, the property) 136.84 158.33 P
+4 F
+1 (shall) 371.35 158.33 P
+1 F
+1 ( be present. If the property is) 390.8 158.33 P
+1 (present, the implication is that the memory address and I/O address space entries in the) 90 148.33 P
+6 F
+2.4 ("ranges") 455.5 148.33 P
+1 F
+1 (property are subtractively decoded.  The child node\050ISA/EISA bus\051 will respond to an access not claimed) 90 138.33 P
+1 (by the parent node\050ISA/EISA Bridge Chip\051 within the de\336nition of the) 90 128.33 P
+6 F
+2.4 ("ranges") 386.26 128.33 P
+1 F
+1 ( property) 434.26 128.33 P
+1 (.) 470.99 128.33 P
+2 14 Q
+(3.2.  Methods) 72 99.67 T
+1 10 Q
+1 (This section de\336nes methods for the ISA and/or EISA Bus and Child Nodes.) 72 82.33 P
+52 646 54 656 R
+V
+52 504 54 557 R
+V
+52 466 54 486 R
+V
+52 125 54 333 R
+V
+FMENDPAGE
+%%EndPage: "11" 11
+%%Page: "12" 12
+612 792 0 FMBEGINPAGE
+[0 0 0 1 0 0 0]
+[ 0 1 1 0 1 0 0]
+[ 1 0 1 0 0 1 0]
+[ 1 1 0 0 0 0 1]
+[ 1 0 0 0 0 1 1]
+[ 0 1 0 0 1 0 1]
+[ 0 0 1 0 1 1 0]
+ 7 FrameSetSepColors
+FrameNoSep
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 9 Q
+0 X
+0 0 0 1 0 0 0 K
+(ISA/EISA/ISA-PnP binding) 72 750 T
+(12) 531 750 T
+-0.64 (February 28, 1996 Revision 0.1 DRAFT) 391.24 38 P
+72 738 540 738 2 L
+1 H
+2 Z
+N
+72 54 540 54 2 L
+N
+27 72 54 720 C
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+27 72 54 720 R
+7 X
+0 0 0 1 0 0 0 K
+V
+27 72 54 720 C
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+27 72 54 720 R
+7 X
+0 0 0 1 0 0 0 K
+V
+1 12 Q
+0 X
+(1) 36 711 T
+(2) 36 699 T
+(3) 36 687 T
+(4) 36 675 T
+(5) 36 663 T
+(6) 36 651 T
+(7) 36 639 T
+(8) 36 627 T
+(9) 36 615 T
+(10) 36 603 T
+(11) 36 591 T
+(12) 36 579 T
+(13) 36 567 T
+(14) 36 555 T
+(15) 36 543 T
+(16) 36 531 T
+(17) 36 519 T
+(18) 36 507 T
+(19) 36 495 T
+(20) 36 483 T
+(21) 36 471 T
+(22) 36 459 T
+(23) 36 447 T
+(24) 36 435 T
+(25) 36 423 T
+(26) 36 411 T
+(27) 36 399 T
+(28) 36 387 T
+(29) 36 375 T
+(30) 36 363 T
+(31) 36 351 T
+(32) 36 339 T
+(33) 36 327 T
+(34) 36 315 T
+(35) 36 303 T
+(36) 36 291 T
+(37) 36 279 T
+(38) 36 267 T
+(39) 36 255 T
+(40) 36 243 T
+(41) 36 231 T
+(42) 36 219 T
+(43) 36 207 T
+(44) 36 195 T
+(45) 36 183 T
+(46) 36 171 T
+(47) 36 159 T
+(48) 36 147 T
+(49) 36 135 T
+(50) 36 123 T
+(51) 36 111 T
+(52) 36 99 T
+(53) 36 87 T
+(54) 36 75 T
+(55) 36 63 T
+27 72 54 720 C
+0 0 612 792 C
+2 12 Q
+0 X
+0 0 0 1 0 0 0 K
+(3.2.1.  Standard Open Firmwar) 72 712 T
+(e-de\336ned Methods) 232.79 712 T
+1 10 Q
+1 (A Standard Package implementing the \322) 72 695.33 P
+4 F
+1 (isa) 237.81 695.33 P
+1 F
+1 (\323 or \322) 249.48 695.33 P
+4 F
+1 (eisa) 273.69 695.33 P
+1 F
+1 (\323 device type shall implement the following standard) 289.8 695.33 P
+1 (methods as de\336ned in Open Firmware, with the physical address representations as speci\336ed in Section) 72 683.33 P
+1 (2.2. on) 501.5 683.33 P
+1 (page) 72 671.33 P
+1 (8 of this document, and with additional ISA-/EISA-speci\336c semantics:) 93.38 671.33 P
+6 F
+(open) 90 652.33 T
+5 F
+2.4 (\050 -- okay?\051) 180 652.33 P
+6 F
+(M) 475.2 652.33 T
+1 F
+1 (Prepare this device for subsequent use.) 90 637.33 P
+6 F
+(close) 90 619.33 T
+5 F
+2.4 (\050 -- \051) 180 619.33 P
+6 F
+(M) 475.2 619.33 T
+1 F
+1 (Close this previously-open device.) 90 604.33 P
+6 F
+(map-in) 90 586.33 T
+5 F
+2.4 (\050 phys.lo phys.hi size -- virt \051) 180 586.33 P
+6 F
+(M) 475.2 586.33 T
+1 F
+1 (Map the speci\336ed subregion.) 90 571.33 P
+6 F
+(map-out) 90 553.33 T
+5 F
+2.4 (\050 virt size -- \051) 180 553.33 P
+6 F
+(M) 475.2 553.33 T
+1 F
+1 (Destroy mapping from previous) 90 538.33 P
+2 F
+1 (map-in) 224.54 538.33 P
+1 F
+1 (.) 255.1 538.33 P
+6 F
+(dma-alloc) 90 520.33 T
+5 F
+2.4 (\050 size -- virt \051) 180 520.33 P
+6 F
+(M) 475.2 520.33 T
+1 F
+1 (Allocate a 24-bit address memory region for later use\050for ISA and EISA implementations\051.) 90 505.33 P
+6 F
+(dma-free) 90 487.33 T
+5 F
+2.4 (\050 virt size -- \051) 180 487.33 P
+6 F
+(M) 475.2 487.33 T
+1 F
+1 (Free memory allocated with dma-alloc.) 90 472.33 P
+6 F
+(dma-map-in) 90 454.33 T
+5 F
+2.4 (\050 virt size cacheable? -- devaddr \051) 180 454.33 P
+6 F
+(M) 475.2 454.33 T
+1 F
+1 (Convert virtual address to device bus DMA address.) 90 439.33 P
+6 F
+2.4 (dma-map-out) 90 421.33 P
+5 F
+2.4 (\050 virt devaddr size -- \051) 156 421.33 P
+6 F
+(M) 475.2 421.33 T
+1 F
+1 (Free DMA mapping set up with) 90 406.33 P
+2 F
+1 (dma-map-in) 225.99 406.33 P
+1 F
+1 (.) 278.77 406.33 P
+6 F
+(dma-sync) 90 388.33 T
+5 F
+2.4 (\050 virt devaddr size -- \051) 180 388.33 P
+6 F
+(M) 475.2 388.33 T
+1 F
+1 (Synchronize \050\337ush\051 DMA memory caches.) 90 373.33 P
+6 F
+(probe-self) 90 355.33 T
+5 F
+2.4 (\050 arg-str arg-len reg-str reg-len fcode-str fcode-len) 180 355.33 P
+2.4 (-- \051) 180 340.33 P
+6 F
+(M) 475.2 340.33 T
+1 F
+1 (If FCode exists, make a child node for adapter) 90 325.33 P
+1 (.  Used to probe both ISA and EISA devices.) 282.69 325.33 P
+6 F
+(decode-unit) 90 307.33 T
+5 F
+2.4 (\050 addr len -- phys.lo phys.hi \051) 180 307.33 P
+6 F
+(M) 475.2 307.33 T
+1 F
+1 (Convert text representation of address to numerical representation.) 90 292.33 P
+6 F
+(encode-unit) 90 274.33 T
+5 F
+2.4 (\050 phys.lo phys.hi -- addr len \051) 180 274.33 P
+6 F
+(M) 475.2 274.33 T
+1 F
+1 (Convert numerical representation of address to text representation.) 90 259.33 P
+2 12 Q
+(3.2.2.  Bus-Speci\336c Open Firmwar) 72 236 T
+(e-de\336ned Methods) 247.45 236 T
+1 10 Q
+1 (A standard package implementing the \322) 72 219.33 P
+4 F
+1 (isa) 235.58 219.33 P
+1 F
+1 (\323 or \322) 247.25 219.33 P
+4 F
+1 (eisa) 271.46 219.33 P
+1 F
+1 (\323 device type shall implement the following bus-speci\336c) 287.57 219.33 P
+1 (method as de\336ned in Open Firmware, with the physical address representations as speci\336ed in Section) 72 207.33 P
+1 (2.2. on) 497.61 207.33 P
+1 (page) 72 195.33 P
+1 (8 of this document, and with additional ISA-/EISA-speci\336c semantics:) 93.38 195.33 P
+6 F
+(probe-pnp) 90 176.33 T
+5 F
+2.4 (\050 -- \051) 180 176.33 P
+6 F
+(M) 475.2 176.33 T
+1 F
+1 (Used to probe all PnP ISA cards.) 90 161.33 P
+2 14 Q
+(4.  Child Nodes) 72 132.67 T
+1 10 Q
+1 (Logical devices and/or independent functions of a physical adapter card) 72 115.33 P
+4 F
+1 (shall) 371.93 115.33 P
+1 F
+1 ( each have a child node of the) 391.38 115.33 P
+1 (\322) 72 103.33 P
+4 F
+1 (isa) 76.44 103.33 P
+1 F
+1 (\323 or) 88.11 103.33 P
+4 F
+1 ("eisa") 107.88 103.33 P
+1 F
+1 ( bus node.) 132.39 103.33 P
+1 (There are potentially three sources of input to Open Firmware in creating the child nodes:) 72 84.33 P
+52 502 54 527 R
+V
+52 322 54 347 R
+V
+52 158 54 244 R
+V
+52 81 54 91 R
+V
+FMENDPAGE
+%%EndPage: "12" 12
+%%Page: "13" 13
+612 792 0 FMBEGINPAGE
+[0 0 0 1 0 0 0]
+[ 0 1 1 0 1 0 0]
+[ 1 0 1 0 0 1 0]
+[ 1 1 0 0 0 0 1]
+[ 1 0 0 0 0 1 1]
+[ 0 1 0 0 1 0 1]
+[ 0 0 1 0 1 1 0]
+ 7 FrameSetSepColors
+FrameNoSep
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 9 Q
+0 X
+0 0 0 1 0 0 0 K
+(13) 72 750 T
+(ISA/EISA/ISA-PnP) 466.47 750 T
+(February 28, 1996 Revision 0.1 DRAFT) 72 38 T
+540 738 72 738 2 L
+1 H
+2 Z
+N
+540 54 72 54 2 L
+N
+558 72 585 720 C
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+558 72 585 720 R
+7 X
+0 0 0 1 0 0 0 K
+V
+0 0 612 792 C
+27 72 54 720 C
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+27 72 54 720 R
+7 X
+0 0 0 1 0 0 0 K
+V
+1 12 Q
+0 X
+(1) 36 711 T
+(2) 36 699 T
+(3) 36 687 T
+(4) 36 675 T
+(5) 36 663 T
+(6) 36 651 T
+(7) 36 639 T
+(8) 36 627 T
+(9) 36 615 T
+(10) 36 603 T
+(11) 36 591 T
+(12) 36 579 T
+(13) 36 567 T
+(14) 36 555 T
+(15) 36 543 T
+(16) 36 531 T
+(17) 36 519 T
+(18) 36 507 T
+(19) 36 495 T
+(20) 36 483 T
+(21) 36 471 T
+(22) 36 459 T
+(23) 36 447 T
+(24) 36 435 T
+(25) 36 423 T
+(26) 36 411 T
+(27) 36 399 T
+(28) 36 387 T
+(29) 36 375 T
+(30) 36 363 T
+(31) 36 351 T
+(32) 36 339 T
+(33) 36 327 T
+(34) 36 315 T
+(35) 36 303 T
+(36) 36 291 T
+(37) 36 279 T
+(38) 36 267 T
+(39) 36 255 T
+(40) 36 243 T
+(41) 36 231 T
+(42) 36 219 T
+(43) 36 207 T
+(44) 36 195 T
+(45) 36 183 T
+(46) 36 171 T
+(47) 36 159 T
+(48) 36 147 T
+(49) 36 135 T
+(50) 36 123 T
+(51) 36 111 T
+(52) 36 99 T
+(53) 36 87 T
+(54) 36 75 T
+(55) 36 63 T
+0 0 612 792 C
+1 10 Q
+0 X
+0 0 0 1 0 0 0 K
+(1\051) 72 713.33 T
+1 (For platform speci\336c ISA and/or EISA devices\050) 90 713.33 P
+4 F
+1 (built-in) 287.08 713.33 P
+1 F
+1 ( devices\051, Open Firmware provides information) 316.53 713.33 P
+1 (directly in creating nodes in device tree.) 90 704.33 P
+(2\051) 72 682.33 T
+1 (For a legacy ISA and EISA adaptor cards, the resource allocation information is provided by the user via) 90 682.33 P
+1 (some con\336guration utilities. The information is stored in NVRAM\050or some other non-volatile storage\051. The) 90 673.33 P
+1 (format of this data is based on the PnP ISA resource data structures de\336ned for PnP ISA adaptor cards) 90 664.33 P
+1 (\050presented in a later section of this document, Section) 90 655.33 P
+1 (6. on page) 315.19 655.33 P
+1 (17\051.) 361.07 655.33 P
+(3\051) 72 628.33 T
+1 (For a PnP ISA adaptor card, the resource information is obtained directly from the adaptor card.) 90 628.33 P
+2 14 Q
+(4.1.   Pr) 72 597.67 T
+(operties) 118.02 597.67 T
+1 10 Q
+1 (This section de\336nes core-speci\336ed and bus-speci\336c child node properties.) 72 580.33 P
+2 12 Q
+(4.1.1.  Cor) 72 555 T
+(e-speci\336ed Pr) 124.78 555 T
+(operties for Child Nodes) 193.55 555 T
+1 10 Q
+1 (The following properties, as de\336ned in Open Firmware, have special meanings or interpretations for the) 72 538.33 P
+1 (ISA/EISA bus.) 72 526.33 P
+6 F
+2.4 (\322name\323) 90 507.33 P
+(S) 475.2 507.33 T
+1 F
+1 (Standard) 90 492.33 P
+4 F
+1 ( pr) 125.55 492.33 P
+1 (op-name) 137.57 492.33 P
+1 F
+1 ( to specify the generic name of the child node \050See \322Header\323 on page) 172.56 492.33 P
+1 (18. and/or See) 464.92 492.33 P
+1 (\322Logical Device Id Record\323 on page) 90 482.33 P
+1 (21. for a \325generic\325 name form of) 243.84 482.33 P
+4 F
+1 (isa,aaa,bbb,sss) 382.46 482.33 P
+1 F
+1 ( where string) 443.3 482.33 P
+4 F
+1 (aaa) 501.01 482.33 P
+1 F
+1 (could be the) 90 472.33 P
+1 (vendor id or the product id, string) 144.38 472.33 P
+4 F
+1 (bbb) 288.59 472.33 P
+1 F
+1 ( could be the product number or the function number) 303.59 472.33 P
+1 (and string) 90 462.33 P
+4 F
+1 (sss) 134.22 462.33 P
+1 F
+1 ( is a serial number) 145.89 462.33 P
+1 (.) 222.66 462.33 P
+4 F
+1 (pr) 90 444.33 P
+1 (op-encoded-array) 98.52 444.33 P
+1 F
+1 (: a string encoded as with) 170.72 444.33 P
+2 F
+1 (encode-string) 281.15 444.33 P
+1 F
+1 (.) 338.92 444.33 P
+6 F
+2.4 (\322reg\323) 90 426.33 P
+(S) 475.2 426.33 T
+1 F
+1 (Standard) 90 411.33 P
+4 F
+1 ( pr) 125.55 411.33 P
+1 (op-name) 137.57 411.33 P
+1 F
+1 (, de\336nes device's addressable regions.) 172.56 411.33 P
+4 F
+1 (pr) 90 393.33 P
+1 (op-encoded-array) 98.52 393.33 P
+1 F
+1 (: array with an arbitrary number of \050) 170.72 393.33 P
+4 F
+1 (phys-addr) 322.4 393.33 P
+1 (size) 366.45 393.33 P
+1 F
+1 (\051 pairs.) 381.45 393.33 P
+4 F
+1 (phys-addr) 108 375.33 P
+1 F
+1 ( is \050phys.lo phys.hi\051, encoded as with) 148.55 375.33 P
+2 F
+1 (encode-phys) 306.65 375.33 P
+1 F
+1 (.) 359.43 375.33 P
+4 F
+1 (size) 108 357.33 P
+1 F
+1 ( is an integer) 123 357.33 P
+1 (, encoded as with) 176.98 357.33 P
+2 F
+1 (encode-int) 252.91 357.33 P
+1 F
+1 (.) 297.35 357.33 P
+1 (The property value consists of a sequence of \050) 90 339.33 P
+4 F
+1 (phys-addr) 281.84 339.33 P
+1 (size) 325.89 339.33 P
+1 F
+1 (\051 pairs.  Each \050) 340.89 339.33 P
+4 F
+1 (phys-addr) 403.48 339.33 P
+1 (size) 447.53 339.33 P
+1 F
+1 (\051 pair) 462.53 339.33 P
+4 F
+1 (shall) 488.41 339.33 P
+1 F
+1 (specify the address of an addressable region of Memory Space or I/O Space associated with the function.) 90 329.33 P
+1 (Order of the) 90 311.33 P
+6 F
+2.4 (\322reg\323) 144.37 311.33 P
+1 F
+1 ( property entries are determined by the devcie binding.) 174.37 311.33 P
+2 9 Q
+0.9 (Note: As a gneral guideline for new device drivers,  the pr) 108 294 P
+0.9 (eferr) 339.21 294 P
+0.9 (ed order of Memory and) 358.03 294 P
+0.9 (I/O addr) 108 284 P
+0.9 (esses ar) 142.5 284 P
+0.9 (e in an ascending order) 172.48 284 P
+0.9 (.) 264.75 284 P
+6 10 Q
+(\322interrupts\323) 90 269.33 T
+(S) 475.2 269.33 T
+1 F
+0.95 (Standard) 90 254.33 P
+4 F
+0.95 (pr) 129 254.33 P
+0.95 (op-name) 137.52 254.33 P
+1 F
+0.95 (, the presence of which indicates that the function represented by this node is connected) 172.51 254.33 P
+1 (to an ISA/EISA bus interrupt line.) 90 244.33 P
+4 F
+1 (pr) 90 226.33 P
+1 (op-encoded-array) 98.52 226.33 P
+1 F
+1 (: an arbitraty array of integers\050) 170.72 226.33 P
+4 F
+1 (ir) 298.18 226.33 P
+1 (q#) 304.48 226.33 P
+1 (type) 317.98 226.33 P
+1 F
+1 (\051 with one or more pairs where:) 334.64 226.33 P
+4 F
+1 (ir) 108 208.33 P
+1 (q#) 114.3 208.33 P
+1 F
+1 ( is an integer) 124.3 208.33 P
+1 (, encoded as with) 178.28 208.33 P
+2 F
+1 (encode-int) 254.21 208.33 P
+1 F
+1 (. The) 298.65 208.33 P
+4 F
+1 (ir) 323.7 208.33 P
+1 (q#) 330 208.33 P
+1 F
+1 ( integer represents the interrupt line to which) 340 208.33 P
+1 (this function's interrupt is connected. This value is in the range 0..15 \050decimal\051.) 108 198.23 P
+4 F
+1 (type) 108 178.03 P
+1 F
+1 ( is an integer) 124.66 178.03 P
+1 (, encoded as with) 178.64 178.03 P
+2 F
+1 (encode-int) 254.57 178.03 P
+1 F
+1 (, indicating an interrupt type. The interrupt types are) 299.01 178.03 P
+1 (represented by the following integer values:) 108 167.93 P
+1 (0 = \3251\325, active low level sensitive type enabled) 133.2 154.93 P
+1 (1 = \3251\325, active high level sensitive type enabled) 133.2 142.83 P
+1 (2 = \3251\325, high to low edge sensitive type enabled) 133.2 130.73 P
+1 (3 = \3251\325, high to low edge sensitive type enabled) 133.2 118.63 P
+1 (Refer to \322IRQ Format Record\323 on page) 90 99.63 P
+1 (22 for where the ") 256.24 99.63 P
+2 F
+1 (interrupts) 332.63 99.63 P
+1 F
+1 (" property obtains the interrupt) 375.96 99.63 P
+1 (attributes or characteristics.) 90 89.63 P
+52 625 54 720 R
+V
+52 459 54 499 R
+V
+52 164.6 54 433 R
+V
+52 96.3 54 106.3 R
+V
+FMENDPAGE
+%%EndPage: "13" 13
+%%Page: "14" 14
+612 792 0 FMBEGINPAGE
+[0 0 0 1 0 0 0]
+[ 0 1 1 0 1 0 0]
+[ 1 0 1 0 0 1 0]
+[ 1 1 0 0 0 0 1]
+[ 1 0 0 0 0 1 1]
+[ 0 1 0 0 1 0 1]
+[ 0 0 1 0 1 1 0]
+ 7 FrameSetSepColors
+FrameNoSep
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 9 Q
+0 X
+0 0 0 1 0 0 0 K
+(ISA/EISA/ISA-PnP binding) 72 750 T
+(14) 531 750 T
+-0.64 (February 28, 1996 Revision 0.1 DRAFT) 391.24 38 P
+72 738 540 738 2 L
+1 H
+2 Z
+N
+72 54 540 54 2 L
+N
+27 72 54 720 C
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+27 72 54 720 R
+7 X
+0 0 0 1 0 0 0 K
+V
+27 72 54 720 C
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+27 72 54 720 R
+7 X
+0 0 0 1 0 0 0 K
+V
+1 12 Q
+0 X
+(1) 36 711 T
+(2) 36 699 T
+(3) 36 687 T
+(4) 36 675 T
+(5) 36 663 T
+(6) 36 651 T
+(7) 36 639 T
+(8) 36 627 T
+(9) 36 615 T
+(10) 36 603 T
+(11) 36 591 T
+(12) 36 579 T
+(13) 36 567 T
+(14) 36 555 T
+(15) 36 543 T
+(16) 36 531 T
+(17) 36 519 T
+(18) 36 507 T
+(19) 36 495 T
+(20) 36 483 T
+(21) 36 471 T
+(22) 36 459 T
+(23) 36 447 T
+(24) 36 435 T
+(25) 36 423 T
+(26) 36 411 T
+(27) 36 399 T
+(28) 36 387 T
+(29) 36 375 T
+(30) 36 363 T
+(31) 36 351 T
+(32) 36 339 T
+(33) 36 327 T
+(34) 36 315 T
+(35) 36 303 T
+(36) 36 291 T
+(37) 36 279 T
+(38) 36 267 T
+(39) 36 255 T
+(40) 36 243 T
+(41) 36 231 T
+(42) 36 219 T
+(43) 36 207 T
+(44) 36 195 T
+(45) 36 183 T
+(46) 36 171 T
+(47) 36 159 T
+(48) 36 147 T
+(49) 36 135 T
+(50) 36 123 T
+(51) 36 111 T
+(52) 36 99 T
+(53) 36 87 T
+(54) 36 75 T
+(55) 36 63 T
+27 72 54 720 C
+0 0 612 792 C
+2 9 Q
+0 X
+0 0 0 1 0 0 0 K
+0.9 (Note: ISA interrupt contr) 108 714 P
+0.9 (oller legacy uses Interrupt 2 or 9 to cascade two 8259\325) 209.27 714 P
+0.9 (s for 16) 423.9 714 P
+0.9 (interrupt lines implementation and is platform dependent.) 108 704 P
+6 10 Q
+(\322status\323) 90 689.33 T
+(S) 475.2 689.33 T
+1 F
+1 (Standard) 93.5 674.33 P
+4 F
+1 ( pr) 129.05 674.33 P
+1 (operty name) 141.07 674.33 P
+1 F
+1 (, the presence of indicates the operational status of the device.) 191.78 674.33 P
+4 F
+1 (pr) 90 656.33 P
+1 (op-encoded-array) 98.52 656.33 P
+1 F
+1 (: T) 170.72 656.33 P
+1 (ext string, encoded as) 182.41 656.33 P
+2 F
+1 (encode-string) 275.56 656.33 P
+1 F
+1 (.) 333.33 656.33 P
+6 F
+("compatible") 90 638.33 T
+(S) 475.2 638.33 T
+1 F
+1 (Standard) 90 623.33 P
+4 F
+1 ( pr) 125.55 623.33 P
+1 (op-name:) 137.57 623.33 P
+1 F
+1 (  De\336nes alternate ") 175.89 623.33 P
+2 F
+1 (name) 258.95 623.33 P
+1 F
+1 (" property values.) 282.28 623.33 P
+4 F
+1 (pr) 90 605.33 P
+1 (op-encoded-array) 98.52 605.33 P
+1 F
+1 (: The concatenation, with) 170.72 605.33 P
+2 F
+1 (encode+) 278.87 605.33 P
+1 F
+1 (, of an arbitraty number of text strings, each encoded) 314.01 605.33 P
+1 (with) 90 595.33 P
+2 F
+1 (encode-string.) 111.28 595.33 P
+1 F
+1 (The \336rst entry is derived from the "Logical Device ID Record", Section) 178.55 595.33 P
+1 (6.3.4. on) 478.49 595.33 P
+1 (page) 90 585.33 P
+1 (21.  Additional entries, if present, come from the "Compatible Device ID Record, Section) 111.38 585.33 P
+1 (6.3.5. on) 485.63 585.33 P
+1 (page) 90 575.33 P
+1 (22.) 111.38 575.33 P
+1 (The \336rst entry) 90 557.33 P
+4 F
+1 (shall) 152.16 557.33 P
+1 F
+1 ( be in the form of a string, \325) 171.61 557.33 P
+4 F
+1 (isavvv) 289.87 557.33 P
+1 (,ppp) 314.12 557.33 P
+1 F
+1 (\325, where the \325) 331.62 557.33 P
+4 F
+1 (vvv) 387.93 557.33 P
+1 F
+1 (\325 string portion indicates a) 401.25 557.33 P
+1 (vendor id and the  \325) 90 547.33 P
+4 F
+1 (ppp) 173.04 547.33 P
+1 F
+1 (\325 string portion indicates a product id.) 188.04 547.33 P
+2 12 Q
+(4.1.2.  Bus-speci\336c Pr) 72 524 T
+(operties for Child Nodes) 181.12 524 T
+1 10 Q
+1 (Standard Packages corresponding to devices that are children of an ISA or EISA bus) 72 507.33 P
+4 F
+1 (shall) 427.04 507.33 P
+1 F
+1 ( implement the) 446.49 507.33 P
+1 (following properties, if applicable.) 72 495.33 P
+6 F
+(\322dma\323) 90 476.33 T
+(S) 475.2 476.33 T
+4 F
+0.9 (Standar) 90 461.33 P
+0.9 (d) 121.3 461.33 P
+0.9 (pr) 129.7 461.33 P
+0.9 (op-name) 138.22 461.33 P
+1 F
+0.9 (, the presence of which indicates that the function represented by this node is connected) 173.21 461.33 P
+1 (to an ISA/EISA bus DMA line.) 90 451.33 P
+4 F
+1 (pr) 90 433.33 P
+1 (op-encoded-array) 98.52 433.33 P
+1 F
+1 (: An arbitrary array of integers\050) 170.72 433.33 P
+4 F
+1 (dma) 301.51 433.33 P
+1 F
+1 (#) 318.73 433.33 P
+4 F
+1 (mode) 327.23 433.33 P
+1 (width countwidth busmaster) 352.39 433.33 P
+1 F
+1 (\051 indicating the) 467.18 433.33 P
+1 (dma channel number) 90 423.33 P
+1 (, dma mode, dma transfer width and dma count width where:) 175.47 423.33 P
+4 F
+1 (dma#) 108 405.33 P
+1 F
+1 ( is an integer) 130.22 405.33 P
+1 (, encoded as with) 184.2 405.33 P
+2 F
+1 (encode-int) 260.13 405.33 P
+1 F
+1 (, where the value represents the DMA line to which this) 304.57 405.33 P
+1 (function's DMA functionality is connected. This value is in the range of 0-3 and 5-7.) 108 395.23 P
+4 F
+1 (mode) 108 377.23 P
+1 F
+1 ( is an integer) 129.66 377.23 P
+1 (, encoded as with) 183.64 377.23 P
+2 F
+1 (encode-int) 259.57 377.23 P
+1 F
+1 (, where the value indicates the mode of the) 304.01 377.23 P
+1 (corresponding dma channel:) 108 367.13 P
+(0) 133.2 349.13 T
+1 (device runs in compatibility mode.) 176.4 349.13 P
+(1) 133.2 337.03 T
+1 (device runs in DMA \322A\323 mode.) 176.4 337.03 P
+(2) 133.2 324.93 T
+1 (device runs in DMA \322B\323 mode.) 176.4 324.93 P
+(3) 133.2 312.83 T
+1 (device runs in DMA \322F\323 mode.) 176.4 312.83 P
+(4) 133.2 300.73 T
+1 (device runs in DMA \322C\323 mode.) 176.4 300.73 P
+4 F
+1 (width) 108 281.73 P
+1 F
+1 (is an integer) 133.73 281.73 P
+1 (, encoded as with) 184.21 281.73 P
+2 F
+1 (encode-int) 260.14 281.73 P
+1 F
+1 (, where the value represents the dma transfer size of the) 304.58 281.73 P
+1 (corresponding dma channel.  The value of the integer will be 8, 16 or 32.) 108 271.63 P
+4 F
+1 (countwidth) 108 253.63 P
+1 F
+1 ( is an integer) 152.45 253.63 P
+1 (, encoded as with) 206.43 253.63 P
+2 F
+1 (encode-int) 282.36 253.63 P
+1 F
+1 (, where the value represents the count width of the) 326.8 253.63 P
+1 (corresponding dma channel.  The value of the integer will be 8, 16 or 32.) 108 243.53 P
+4 F
+1 (busmaster) 108 225.53 P
+1 F
+1 (is an integer) 152.61 225.53 P
+1 (, encoded as with) 203.09 225.53 P
+2 F
+1 (encode-int) 279.02 225.53 P
+1 F
+1 (, where a value of 1 indicates a bus mastering) 323.46 225.53 P
+1 (capability and a 0 indicates no bus mastering capability) 108 215.33 P
+1 (.) 336.99 215.33 P
+2 9 Q
+0.9 (Note: DMA Channel 4 is not available.) 108 198 P
+6 10 Q
+("connectors") 90 183.33 T
+(S) 475.2 183.33 T
+4 F
+1 (pr) 90 168.33 P
+1 (op-name:) 98.52 168.33 P
+1 F
+1 (  Describes external labeling of adapter/device connectors.) 136.84 168.33 P
+4 F
+1 (pr) 90 150.33 P
+1 (op-encoded-array) 98.52 150.33 P
+1 F
+1 (: A list of strings, each encoded as with) 170.72 150.33 P
+2 F
+1 ( encode-string.) 336.2 150.33 P
+1 F
+1 (The strings indicate a label for each connector) 90 132.33 P
+1 (.) 281.12 132.33 P
+2 9 Q
+0.87 (Note: Each device that has a connector would identify the order and contents of the list of) 108 115 P
+(strings.) 108 105 T
+6 10 Q
+(\322interrupt-choices\323) 90 90.33 T
+(S) 475.2 90.33 T
+52 701 54 720 R
+V
+52 635 54 663 R
+V
+52 520 54 612 R
+V
+52 458 54 483 R
+V
+52 363.8 54 440 R
+V
+52 87 54 288.4 R
+V
+FMENDPAGE
+%%EndPage: "14" 14
+%%Page: "15" 15
+612 792 0 FMBEGINPAGE
+[0 0 0 1 0 0 0]
+[ 0 1 1 0 1 0 0]
+[ 1 0 1 0 0 1 0]
+[ 1 1 0 0 0 0 1]
+[ 1 0 0 0 0 1 1]
+[ 0 1 0 0 1 0 1]
+[ 0 0 1 0 1 1 0]
+ 7 FrameSetSepColors
+FrameNoSep
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 9 Q
+0 X
+0 0 0 1 0 0 0 K
+(15) 72 750 T
+(ISA/EISA/ISA-PnP) 466.47 750 T
+(February 28, 1996 Revision 0.1 DRAFT) 72 38 T
+540 738 72 738 2 L
+1 H
+2 Z
+N
+540 54 72 54 2 L
+N
+558 72 585 720 C
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+558 72 585 720 R
+7 X
+0 0 0 1 0 0 0 K
+V
+0 0 612 792 C
+27 72 54 720 C
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+27 72 54 720 R
+7 X
+0 0 0 1 0 0 0 K
+V
+1 12 Q
+0 X
+(1) 36 711 T
+(2) 36 699 T
+(3) 36 687 T
+(4) 36 675 T
+(5) 36 663 T
+(6) 36 651 T
+(7) 36 639 T
+(8) 36 627 T
+(9) 36 615 T
+(10) 36 603 T
+(11) 36 591 T
+(12) 36 579 T
+(13) 36 567 T
+(14) 36 555 T
+(15) 36 543 T
+(16) 36 531 T
+(17) 36 519 T
+(18) 36 507 T
+(19) 36 495 T
+(20) 36 483 T
+(21) 36 471 T
+(22) 36 459 T
+(23) 36 447 T
+(24) 36 435 T
+(25) 36 423 T
+(26) 36 411 T
+(27) 36 399 T
+(28) 36 387 T
+(29) 36 375 T
+(30) 36 363 T
+(31) 36 351 T
+(32) 36 339 T
+(33) 36 327 T
+(34) 36 315 T
+(35) 36 303 T
+(36) 36 291 T
+(37) 36 279 T
+(38) 36 267 T
+(39) 36 255 T
+(40) 36 243 T
+(41) 36 231 T
+(42) 36 219 T
+(43) 36 207 T
+(44) 36 195 T
+(45) 36 183 T
+(46) 36 171 T
+(47) 36 159 T
+(48) 36 147 T
+(49) 36 135 T
+(50) 36 123 T
+(51) 36 111 T
+(52) 36 99 T
+(53) 36 87 T
+(54) 36 75 T
+(55) 36 63 T
+0 0 612 792 C
+1 10 Q
+0 X
+0 0 0 1 0 0 0 K
+0.95 (Standard) 90 713.33 P
+4 F
+0.95 (pr) 129 713.33 P
+0.95 (op-name) 137.52 713.33 P
+1 F
+0.95 (, the presence of which indicates that the function represented by this node can possibly) 172.51 713.33 P
+1 (be connected to any of the identi\336ed ISA/EISA bus interrupt lines.) 90 703.33 P
+4 F
+1 (pr) 90 685.33 P
+1 (op-encoded-array) 98.52 685.33 P
+1 F
+1 (: an array of) 170.72 685.33 P
+4 F
+1 (ir) 225.81 685.33 P
+1 (q#mask) 232.11 685.33 P
+1 F
+1 (integers) 266.16 685.33 P
+4 F
+1 (,) 297.82 685.33 P
+1 F
+1 (followed by) 303.82 685.33 P
+1 (an arbitrary list of) 356.37 685.33 P
+4 F
+1 (type) 434.8 685.33 P
+1 F
+1 (integers, where:) 454.96 685.33 P
+1 (The) 108 667.33 P
+4 F
+1 ( ir) 123.55 667.33 P
+1 (q#mask) 133.35 667.33 P
+1 F
+1 ( integer portion of the property value is a bitmask of possible selected interrupts that) 163.9 667.33 P
+1 (could be used by this device, encoded as with) 108 657.23 P
+2 F
+1 (encode-int,) 301.97 657.23 P
+1 F
+1 (for the sixteen\05016\051 interrupt lines.) 352.41 657.23 P
+1 ( The) 494.61 657.23 P
+1 (most-signi\336cant bit corresponds to interrupt line 0 and the least-signi\336cant bit to interrupt line 15.) 108 647.13 P
+1 (The) 108 626.93 P
+4 F
+1 ( type) 123.55 626.93 P
+1 F
+1 ( integer portion of the property value, encoded as with) 143.71 626.93 P
+2 F
+1 (encode-int) 373.39 626.93 P
+1 F
+1 (, indicating an interrupt type.) 417.83 626.93 P
+1 (The number of) 108 616.83 P
+4 F
+1 (type) 172.93 616.83 P
+1 F
+1 ( integers shall equal the number of possible selected interrupts in the) 189.59 616.83 P
+4 F
+1 (ir) 478.22 616.83 P
+1 (q#mask) 484.52 616.83 P
+1 F
+1 (bitmask integer) 108 606.73 P
+1 (.  The interrupt types are represented by the following integer values:) 170.39 606.73 P
+1 (0 = \3251\325, active low level sensitive type enabled) 133.2 593.73 P
+1 (1 = \3251\325, active high level sensitive type enabled) 133.2 581.63 P
+1 (2 = \3251\325, high to low edge sensitive type enabled) 133.2 569.53 P
+1 (3 = \3251\325, high to low edge sensitive type enabled) 133.2 557.43 P
+1 (Refer to \322IRQ Format Record\323 on page) 90 538.43 P
+1 (22 for where the ") 256.24 538.43 P
+2 F
+1 (interrupt) 332.63 538.43 P
+1 F
+1 (" property obtains the interrupt) 372.07 538.43 P
+1 (attributes or characteristics.) 90 528.43 P
+6 F
+2.4 (\322dma-choices\323) 90 510.43 P
+(S) 475.2 510.43 T
+4 F
+1 (pr) 90 495.43 P
+1 (op-name) 98.52 495.43 P
+1 F
+1 (, indicating the possible dma lines and modes that could be selected by a device.) 133.51 495.43 P
+4 F
+0.88 (pr) 90 477.43 P
+0.88 (op-encoded-array) 98.52 477.43 P
+1 F
+0.88 (: an array of a) 170.72 477.43 P
+4 F
+0.88 (dma#mask) 233.14 477.43 P
+1 F
+0.88 (integer) 279.29 477.43 P
+4 F
+0.88 (, f) 305.95 477.43 P
+1 F
+0.88 (ollowed by) 314.61 477.43 P
+0.88 (an arbitrary list of) 363.58 477.43 P
+4 F
+0.88 (mode) 441.52 477.43 P
+0.88 (width countwidth) 466.56 477.43 P
+1 (busmaster) 90 467.43 P
+1 F
+1 (integers, indicating the possible dma channel number that could be selected, dma mode, dma) 134.61 467.43 P
+1 (transfer width, dma count width and bus mastering capability where:) 90 457.43 P
+1 (The) 108 439.43 P
+4 F
+1 ( dma#mask) 123.55 439.43 P
+1 F
+1 ( integer portion of the property value is a bitmask of possible selected dma channels that) 169.82 439.43 P
+1 (could be used by this device, encoded as with) 108 429.33 P
+2 F
+1 (encode-int,) 301.97 429.33 P
+1 F
+1 (for the eight\0508\051 dma channels.) 352.41 429.33 P
+1 ( The) 480.16 429.33 P
+1 (most-signi\336cant bit corresponds to dma channel 0 and the least-signi\336cant bit to dma channel 7.) 108 419.23 P
+4 F
+1 (mode) 108 391.13 P
+1 F
+1 ( is an integer) 129.66 391.13 P
+1 (, encoded as with) 183.64 391.13 P
+2 F
+1 (encode-int) 259.57 391.13 P
+1 F
+1 (, where the value indicates the mode of the) 304.01 391.13 P
+1 (corresponding dma channel:) 108 381.03 P
+(0) 133.2 363.03 T
+1 (device runs in compatibility mode.) 176.4 363.03 P
+(1) 133.2 350.93 T
+1 (device runs in DMA \322A\323 mode.) 176.4 350.93 P
+(2) 133.2 338.83 T
+1 (device runs in DMA \322B\323 mode.) 176.4 338.83 P
+(3) 133.2 326.73 T
+1 (device runs in DMA \322F\323 mode.) 176.4 326.73 P
+(4) 133.2 314.63 T
+1 (device runs in DMA \322C\323 mode.) 176.4 314.63 P
+4 F
+1 (width) 108 295.63 P
+1 F
+1 (is an integer) 133.73 295.63 P
+1 (, encoded as with) 184.21 295.63 P
+2 F
+1 (encode-int) 260.14 295.63 P
+1 F
+1 (, where the value represents the dma transfer size of the) 304.58 295.63 P
+1 (corresponding dma channel.  The value of the integer will be 8, 16 or 32.) 108 285.53 P
+4 F
+1 (countwidth) 108 267.53 P
+1 F
+1 ( is an integer) 152.45 267.53 P
+1 (, encoded as with) 206.43 267.53 P
+2 F
+1 (encode-int) 282.36 267.53 P
+1 F
+1 (, where the value represents the count width of the) 326.8 267.53 P
+1 (corresponding dma channel.  The value of the integer will be 8, 16 or 32.) 108 257.43 P
+4 F
+1 (busmaster) 108 239.43 P
+1 F
+1 (is an integer) 152.61 239.43 P
+1 (, encoded as with) 203.09 239.43 P
+2 F
+1 (encode-int) 279.02 239.43 P
+1 F
+1 (, where a value of 1 indicates a bus mastering) 323.46 239.43 P
+1 (capability and a 0 indicates no bus mastering capability) 108 229.23 P
+1 (.) 336.99 229.23 P
+1 (The number of sets of integers) 108 211.23 P
+4 F
+1 (\050mode) 234.92 211.23 P
+1 (width countwidth busmaster\051) 263.41 211.23 P
+1 (shall) 385.03 211.23 P
+1 F
+1 ( equal the number of \3251\325) 404.48 211.23 P
+1 (characters in the) 108 203.13 P
+4 F
+1 (dma#mask) 179.03 203.13 P
+1 F
+1 ( string.) 221.8 203.13 P
+2 9 Q
+0.9 (Note: Most existing data structur) 108 187.6 P
+0.9 (es has 3 for mode F on ISA and 3 for mode C for EISA.) 238.91 187.6 P
+0.9 (Assigning 4 for mode C is done in order to support both busses.) 108 177.6 P
+6 10 Q
+(\322eisa\323) 90 143.93 T
+(S) 475.2 143.93 T
+4 F
+1 (pr) 90 128.93 P
+1 (op-name) 98.52 128.93 P
+1 F
+1 (: if exists, indicates an EISA device.) 133.51 128.93 P
+0 1 1 0 1 0 0 K
+0 1 1 0 1 0 0 K
+324.51 110.72 108 110.72 2 L
+0 1 1 0 1 0 0 K
+V
+0.49 H
+0 Z
+N
+0 0 0 1 0 0 0 K
+0 1 1 0 1 0 0 K
+0 9 Q
+0.9 (Author Note: The next three properties were a note in V) 108 111.6 P
+0 1 1 0 1 0 0 K
+466.23 110.72 323.51 110.72 2 L
+V
+N
+0 0 0 1 0 0 0 K
+0 1 1 0 1 0 0 K
+0.9 (ersion 0.05 of the ISA binding.  The) 323.51 111.6 P
+0 0 0 1 0 0 0 K
+0 1 1 0 1 0 0 K
+0 1 1 0 1 0 0 K
+179.31 100.72 108 100.72 2 L
+V
+N
+0 0 0 1 0 0 0 K
+0 1 1 0 1 0 0 K
+0.9 (Open Firmware W) 108 101.6 P
+0 1 1 0 1 0 0 K
+297.02 100.72 178.64 100.72 2 L
+V
+N
+0 0 0 1 0 0 0 K
+0 1 1 0 1 0 0 K
+0.9 (orking Ground did not discuss.) 178.64 101.6 P
+0 0 0 1 0 0 0 K
+6 10 Q
+0 0 0 1 0 0 0 K
+(1\051) 72 86.93 T
+(\322pnp-csn\323) 90 86.93 T
+(S) 475.2 86.93 T
+52 700 54 720 R
+V
+52 643.8 54 674 R
+V
+52 623.6 54 633.6 R
+V
+52 603.4 54 613.4 R
+V
+52 426 54 545.1 R
+V
+52 377.7 54 397.8 R
+V
+52 199.8 54 302.3 R
+V
+52 174.6 54 193.6 R
+V
+52 83.6 54 117.6 R
+V
+100.5 349 100.5 349.5 C
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 612 792 C
+FMENDPAGE
+%%EndPage: "15" 15
+%%Page: "16" 16
+612 792 0 FMBEGINPAGE
+[0 0 0 1 0 0 0]
+[ 0 1 1 0 1 0 0]
+[ 1 0 1 0 0 1 0]
+[ 1 1 0 0 0 0 1]
+[ 1 0 0 0 0 1 1]
+[ 0 1 0 0 1 0 1]
+[ 0 0 1 0 1 1 0]
+ 7 FrameSetSepColors
+FrameNoSep
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 9 Q
+0 X
+0 0 0 1 0 0 0 K
+(ISA/EISA/ISA-PnP binding) 72 750 T
+(16) 531 750 T
+-0.64 (February 28, 1996 Revision 0.1 DRAFT) 391.24 38 P
+72 738 540 738 2 L
+1 H
+2 Z
+N
+72 54 540 54 2 L
+N
+27 72 54 720 C
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+27 72 54 720 R
+7 X
+0 0 0 1 0 0 0 K
+V
+27 72 54 720 C
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+27 72 54 720 R
+7 X
+0 0 0 1 0 0 0 K
+V
+1 12 Q
+0 X
+(1) 36 711 T
+(2) 36 699 T
+(3) 36 687 T
+(4) 36 675 T
+(5) 36 663 T
+(6) 36 651 T
+(7) 36 639 T
+(8) 36 627 T
+(9) 36 615 T
+(10) 36 603 T
+(11) 36 591 T
+(12) 36 579 T
+(13) 36 567 T
+(14) 36 555 T
+(15) 36 543 T
+(16) 36 531 T
+(17) 36 519 T
+(18) 36 507 T
+(19) 36 495 T
+(20) 36 483 T
+(21) 36 471 T
+(22) 36 459 T
+(23) 36 447 T
+(24) 36 435 T
+(25) 36 423 T
+(26) 36 411 T
+(27) 36 399 T
+(28) 36 387 T
+(29) 36 375 T
+(30) 36 363 T
+(31) 36 351 T
+(32) 36 339 T
+(33) 36 327 T
+(34) 36 315 T
+(35) 36 303 T
+(36) 36 291 T
+(37) 36 279 T
+(38) 36 267 T
+(39) 36 255 T
+(40) 36 243 T
+(41) 36 231 T
+(42) 36 219 T
+(43) 36 207 T
+(44) 36 195 T
+(45) 36 183 T
+(46) 36 171 T
+(47) 36 159 T
+(48) 36 147 T
+(49) 36 135 T
+(50) 36 123 T
+(51) 36 111 T
+(52) 36 99 T
+(53) 36 87 T
+(54) 36 75 T
+(55) 36 63 T
+27 72 54 720 C
+0 0 612 792 C
+4 10 Q
+0 X
+0 0 0 1 0 0 0 K
+1 (pr) 90 713.33 P
+1 (op-name) 98.52 713.33 P
+1 F
+1 (, is a property of device whose bus-interface is \322) 133.51 713.33 P
+2 F
+1 (pnp) 335.79 713.33 P
+1 F
+1 (\323.) 352.47 713.33 P
+4 F
+1 (pr) 90 695.33 P
+1 (op-encoded-array) 98.52 695.33 P
+1 F
+1 (: Integer encoded with) 170.72 695.33 P
+2 F
+1 (encode-int) 266.92 695.33 P
+1 F
+1 (. This is the Card Selection Number \050CSN\051 that the) 311.36 695.33 P
+1 (Open Firmware assigns to the device represented by this node in the process of PnP device isolation.) 90 685.33 P
+6 F
+(2\051) 72 667.33 T
+(\322description\323) 90 667.33 T
+(S) 475.2 667.33 T
+4 F
+1 (pr) 90 652.33 P
+1 (op-name) 98.52 652.33 P
+1 F
+1 (, is a property of which the value is the identi\336er string from the PnP data resource record.) 133.51 652.33 P
+4 F
+1 (pr) 90 634.33 P
+1 (op-encoded-array) 98.52 634.33 P
+1 F
+1 (: a string, as encoded with) 170.72 634.33 P
+2 F
+1 (ecode-string) 283.65 634.33 P
+1 F
+1 (, of the identi\336er string from bytes 3 through) 335.86 634.33 P
+4 F
+1 (n) 525.96 634.33 P
+1 F
+1 (from the \322ANSI Identi\336er String Record\323 on page) 90 624.33 P
+1 (21.) 299.74 624.33 P
+6 F
+(3\051) 72 606.33 T
+(\322pnp-data\323) 90 606.33 T
+(S) 475.2 606.33 T
+4 F
+1 (pr) 90 591.33 P
+1 (op-name) 98.52 591.33 P
+1 F
+1 (, is a property of device whose bus-interface is \322) 133.51 591.33 P
+2 F
+1 (pnp) 335.79 591.33 P
+1 F
+1 (\323.) 352.47 591.33 P
+4 F
+1 (pr) 90 573.33 P
+1 (op-encoded-array) 98.52 573.33 P
+1 F
+1 (: a list of concatenated strings, as encoded with) 170.72 573.33 P
+2 F
+1 (ecode+,) 370.8 573.33 P
+1 F
+1 (where an individual string in) 406.38 573.33 P
+1 (the list is encoded as with) 90 563.33 P
+2 F
+1 (encode-string) 201.55 563.33 P
+1 F
+1 (.  Format of the data resource structure is tbd.) 259.32 563.33 P
+2 14 Q
+(4.2.  Bus-speci\336c User Interface Commands) 72 534.67 T
+1 10 Q
+1 (An Open Firmware-compliant User Interface on a platform with an A) 72 517.33 P
+1 (T bus should implement the following A) 359.71 517.33 P
+1 (T) 527.38 517.33 P
+1 (-) 532.57 517.33 P
+1 (speci\336c user interface commands.) 72 505.33 P
+6 F
+(probe-isa) 90 486.33 T
+5 F
+2.4 (\050 -- \051) 180 486.33 P
+1 F
+1.61 (The probe-isa word should probe the legacy ISA adaptor cards \336rst. The reason is that legacy ISA devices are) 72 471.33 P
+2.02 (the most in\337exible with regards to resource assignments, generally not programmable and cannot be disabled;) 72 459.33 P
+2.42 (thus, the resource assignment must be satis\336ed \336rst. PnP ISA adaptor cards and EISA adaptor cards can be) 72 447.33 P
+1 (probed in any order) 72 435.33 P
+1 (, depending on the implementation.) 153.19 435.33 P
+1 (In addition, if there is a PCI bus in the platform to which the ISA bus is subordinate,) 72 418.33 P
+2 F
+1 (pr) 429.98 418.33 P
+1 (obe-pci) 439.8 418.33 P
+4 F
+1 (shall) 474.41 418.33 P
+1 F
+1 ( call) 493.86 418.33 P
+2 F
+1 (pr) 72 406.33 P
+1 (obe-isa) 81.82 406.33 P
+1 F
+1 ( automatically and the ISA bus) 111.82 406.33 P
+4 F
+1 (shall) 243.92 406.33 P
+1 F
+1 ( be probed before the PCI bus.) 263.37 406.33 P
+2 14 Q
+(5.   Encapsulated Drivers) 72 375.67 T
+1 10 Q
+0.82 (This section describes a mechanism which allows the encapsulation of run-time drivers within the standard Open) 72 358.33 P
+1 (Firmware expansion ROM.) 72 346.33 P
+1 (The FCode contained with a card's expansion ROM provides for Open Firmware drivers for the device. T) 72 327.33 P
+1 (o) 509.85 327.33 P
+1 (enhance the \322plug-and-play\323 of cards in common system platforms, it is desirable to be able to include run-time) 72 315.33 P
+1 (drivers within this expansion ROM, thus eliminating the extra step of installing drivers onto the OS boot device.) 72 303.33 P
+0.83 (The information about run-time drivers is encoded as additional standard properties within the device tree. These) 72 284.33 P
+1 (properties are created by the FCode probe code of the plug-in card, and are used by the OS to locate and load) 72 272.33 P
+1 (the appropriate driver) 72 260.33 P
+1 (. T) 160.09 260.33 P
+1 (wo new properties are de\336ned; they dif) 171.5 260.33 P
+1 (fer as to how the location of the run-time driver) 333.95 260.33 P
+1 (is de\336ned.) 72 248.33 P
+6 F
+2.4 (\322driver,...\323 format) 90 229.33 P
+(S) 475.2 229.33 T
+1 F
+1 (This property) 90 214.33 P
+1 (, encoded as with) 144.51 214.33 P
+2 F
+1 (encode-bytes) 220.44 214.33 P
+1 F
+1 (, contains the run-time driver) 275.43 214.33 P
+1 (.) 395.25 214.33 P
+1 (This format is used when the run-time driver is contained within the FCode image, itself. The value of the) 90 196.33 P
+1 (property is the encapsulated driver; the) 90 186.33 P
+4 F
+1 (pr) 254.3 186.33 P
+1 (op-addr) 262.82 186.33 P
+1 F
+1 (,) 294.64 186.33 P
+4 F
+1 (pr) 300.64 186.33 P
+1 (op-len) 309.16 186.33 P
+1 F
+1 ( reported by the various \322) 334.71 186.33 P
+2 F
+1 (get-pr) 441.63 186.33 P
+1 (operty) 467.55 186.33 P
+1 F
+1 (\323 FCodes) 495.32 186.33 P
+1 (and/or getprop Client interface calls represent the location and size of the driver within the device tree's) 90 176.33 P
+1 (data space. I.e.,) 90 166.33 P
+2 F
+1 (decode-bytes) 157.14 166.33 P
+1 F
+1 ( could be used to copy the driver into the desired run-time location.) 212.13 166.33 P
+6 F
+2.4 (\322driver-reg,...\323 format) 90 148.33 P
+(S) 475.2 148.33 T
+1 F
+1 (This property) 90 133.33 P
+1 (, encoded as with the \322) 144.51 133.33 P
+2 F
+1 (r) 240.6 133.33 P
+1 (eg) 244.86 133.33 P
+1 F
+1 (\323 standard property) 254.3 133.33 P
+1 (, contains a relative pointer to the run-time driver) 332.85 133.33 P
+1 (.) 537.21 133.33 P
+1 (This format is used when the driver is not directly contained within the FCode image, but rather) 90 115.33 P
+1 (, is located) 489.17 115.33 P
+0.96 (in some other portion of the Expansion ROM. The value is encoded in a \322) 90 105.33 P
+2 F
+0.96 (r) 398.64 105.33 P
+0.96 (eg) 402.9 105.33 P
+1 F
+0.96 (\323 format, where the address is) 412.35 105.33 P
+1 (relative to the expansion ROM's base address. This format conserves device tree \050and, FCode\051 space, but) 90 95.33 P
+1 (requires the OS to perform the actions of mapping in the Expansion ROM, using the information supplied) 90 85.33 P
+1 (by this property and the address of the Expansion ROM, and copying the driver) 90 75.33 P
+1 (, itself.) 420.89 75.33 P
+52 710 54 720 R
+V
+52 588 54 674 R
+V
+52 530 54 570 R
+V
+52 444 54 466 R
+V
+FMENDPAGE
+%%EndPage: "16" 16
+%%Page: "17" 17
+612 792 0 FMBEGINPAGE
+[0 0 0 1 0 0 0]
+[ 0 1 1 0 1 0 0]
+[ 1 0 1 0 0 1 0]
+[ 1 1 0 0 0 0 1]
+[ 1 0 0 0 0 1 1]
+[ 0 1 0 0 1 0 1]
+[ 0 0 1 0 1 1 0]
+ 7 FrameSetSepColors
+FrameNoSep
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 9 Q
+0 X
+0 0 0 1 0 0 0 K
+(17) 72 750 T
+(ISA/EISA/ISA-PnP) 466.47 750 T
+(February 28, 1996 Revision 0.1 DRAFT) 72 38 T
+540 738 72 738 2 L
+1 H
+2 Z
+N
+540 54 72 54 2 L
+N
+558 72 585 720 C
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+558 72 585 720 R
+7 X
+0 0 0 1 0 0 0 K
+V
+0 0 612 792 C
+27 72 54 720 C
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+27 72 54 720 R
+7 X
+0 0 0 1 0 0 0 K
+V
+1 12 Q
+0 X
+(1) 36 711 T
+(2) 36 699 T
+(3) 36 687 T
+(4) 36 675 T
+(5) 36 663 T
+(6) 36 651 T
+(7) 36 639 T
+(8) 36 627 T
+(9) 36 615 T
+(10) 36 603 T
+(11) 36 591 T
+(12) 36 579 T
+(13) 36 567 T
+(14) 36 555 T
+(15) 36 543 T
+(16) 36 531 T
+(17) 36 519 T
+(18) 36 507 T
+(19) 36 495 T
+(20) 36 483 T
+(21) 36 471 T
+(22) 36 459 T
+(23) 36 447 T
+(24) 36 435 T
+(25) 36 423 T
+(26) 36 411 T
+(27) 36 399 T
+(28) 36 387 T
+(29) 36 375 T
+(30) 36 363 T
+(31) 36 351 T
+(32) 36 339 T
+(33) 36 327 T
+(34) 36 315 T
+(35) 36 303 T
+(36) 36 291 T
+(37) 36 279 T
+(38) 36 267 T
+(39) 36 255 T
+(40) 36 243 T
+(41) 36 231 T
+(42) 36 219 T
+(43) 36 207 T
+(44) 36 195 T
+(45) 36 183 T
+(46) 36 171 T
+(47) 36 159 T
+(48) 36 147 T
+(49) 36 135 T
+(50) 36 123 T
+(51) 36 111 T
+(52) 36 99 T
+(53) 36 87 T
+(54) 36 75 T
+(55) 36 63 T
+0 0 612 792 C
+1 10 Q
+0 X
+0 0 0 1 0 0 0 K
+0.92 (The \322) 90 713.33 P
+2 F
+0.92 (fcode-r) 113.41 713.33 P
+0.92 (om-offset) 143.77 713.33 P
+1 F
+0.92 (\323 property facilitates the generation of this property within the context of the FCode's) 183.75 713.33 P
+1 (image. The driver can be located relative to the ROM image that contains the FCode \050but, does not have to) 90 703.33 P
+1 (be within the FCode, itself\051 without regard to the location of that ROM image relative to others within the) 90 693.33 P
+1 (same expansion ROM. Therefore, \322self-relocating\323 images containing encapsulated drivers can be creates) 90 683.33 P
+0.87 (that can be concatenated with other images without altering any data within an image \050except, of course, for) 90 673.33 P
+1 (the indicator to properly indicate the last image\051.) 90 663.33 P
+2 14 Q
+(5.1.  Naming conventions) 72 634.67 T
+1 10 Q
+1 (The complete property name for these encapsulated drivers is chosen to allow multiple drivers to coexist within) 72 617.33 P
+1 (the expansion ROM. An OS will locate its driver by an exact match of its property name among any such) 72 605.33 P
+1 (\322driver) 72 593.33 P
+1 (,\323 \050\322driver) 99.92 593.33 P
+1 (-reg,\323\051 properties contained within the device tree for this device. The formats of the complete) 141.81 593.33 P
+1 (names are:) 72 581.33 P
+1 (\322driver) 90 562.33 P
+1 (,OS-vendor) 117.92 562.33 P
+1 (,OS-type,Instruction-set\323 \322driver) 163.9 562.33 P
+1 (-reg,OS-vendor) 296.06 562.33 P
+1 (,OS-type,Instruction-set\323) 358.14 562.33 P
+1 (The OS-vendor component is as de\336ned for device-names; i.e., or) 72 544.33 P
+1 (ganizational unique identi\336er \050e.g., stock) 344.1 544.33 P
+1 (symbol\051. The OS-type & Instruction-set components are as de\336ned by the OS-vendor) 72 532.33 P
+1 (. An example would be:) 424.07 532.33 P
+(\322driver) 90 513.33 T
+(-reg,AAPL,MacOS,PowerPC\323) 118.12 513.33 T
+2 14 Q
+(6.   Data Resour) 72 484.67 T
+(ce Information) 167.79 484.67 T
+1 10 Q
+1 (For legacy ISA and EISA adaptor cards, the resource allocation information) 72 467.33 P
+4 F
+1 (shall) 389.6 467.33 P
+1 F
+1 ( be provided by the user via) 409.05 467.33 P
+1 (\336rmware and/or con\336guration utilities that can be platform speci\336c. This information could be stored in the) 72 455.33 P
+1 (platform\325) 72 443.33 P
+1 (s NVRAM. The Open Firmware W) 109.22 443.33 P
+1 (orking Group recommends that the format of this data be based on) 255.06 443.33 P
+1 (the PnP ISA resource data structures de\336ned for PnP ISA adaptor cards.  For a PnP ISA adaptor card, the) 72 431.33 P
+1 (resource information can be obtained directly from the adaptor card.) 72 419.33 P
+1 (Here is an example data \337ow diagram example showing how the information could be initialized and) 72 400.33 P
+(maintained:) 72 388.33 T
+2 9 Q
+(FIGURE  1) 72 128 T
+1 12 Q
+(Example of data \337ow diagram for \325legacy\325 ISA Card information) 126 128 T
+1 10 Q
+1 (The user must \336rst run the con\336guration utility to describe the hardware con\336guration of the platform, in) 72 114.33 P
+1 (particular) 72 102.33 P
+1 (, the ISA and EISA plug in cards. The con\336guration utility is responsible for warning the user of) 109.92 102.33 P
+1 (unsolvable resource con\337ict, based on the information that the user entered. For example, the user cannot have) 72 90.33 P
+144 150 468 366 C
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+207 330 261 357 R
+1.5 H
+0 Z
+0 X
+0 0 0 1 0 0 0 K
+N
+1 10 Q
+(User) 224.13 339.1 T
+198 240 270 294 R
+N
+( Con\336g Utility/) 201.85 267.09 T
+(     Firmware) 201.85 256.03 T
+198 159 270 204 R
+7 X
+V
+0 X
+N
+(  Open Firmware) 198 179.16 T
+351 159 441 213 R
+7 X
+V
+0 X
+N
+(NVRAM) 371.47 192.29 T
+(PnP ISA Cards) 371.47 170.16 T
+285.86 181.45 270 186 285.86 190.55 285.86 186 4 Y
+V
+335.14 190.55 351 186 335.14 181.45 335.14 186 4 Y
+V
+285.86 186 335.14 186 2 L
+N
+230.69 318.46 234 330 237.31 318.46 234 318.46 4 Y
+V
+237.31 305.54 234 294 230.69 305.54 234 305.54 4 Y
+V
+234 318.46 234 305.54 2 L
+1 H
+N
+230.69 228.47 234 240 237.31 228.47 234 228.47 4 Y
+V
+237.31 215.53 234 204 230.69 215.53 234 215.53 4 Y
+V
+234 228.47 234 215.53 2 L
+N
+(data  resource) 243 305.16 T
+(data  resource) 241.5 215.16 T
+(   data) 290.15 168.09 T
+(resource) 290.15 157.03 T
+360 249 432 294 R
+7 X
+V
+1.5 H
+0 X
+N
+392.69 237.47 396 249 399.31 237.47 396 237.47 4 Y
+V
+399.31 224.53 396 213 392.69 224.53 396 224.53 4 Y
+V
+396 237.47 396 224.53 2 L
+1 H
+N
+(data resource) 405 222 T
+(Con\336g Utility) 369 267 T
+387 285 459 330 R
+7 X
+V
+1.5 H
+0 X
+N
+(OS Client) 396 312 T
+(Program) 396 303 T
+0 0 612 792 C
+52 397 54 407 R
+0 X
+0 0 0 1 0 0 0 K
+V
+FMENDPAGE
+%%EndPage: "17" 17
+%%Page: "18" 18
+612 792 0 FMBEGINPAGE
+[0 0 0 1 0 0 0]
+[ 0 1 1 0 1 0 0]
+[ 1 0 1 0 0 1 0]
+[ 1 1 0 0 0 0 1]
+[ 1 0 0 0 0 1 1]
+[ 0 1 0 0 1 0 1]
+[ 0 0 1 0 1 1 0]
+ 7 FrameSetSepColors
+FrameNoSep
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 9 Q
+0 X
+0 0 0 1 0 0 0 K
+(ISA/EISA/ISA-PnP binding) 72 750 T
+(18) 531 750 T
+-0.64 (February 28, 1996 Revision 0.1 DRAFT) 391.24 38 P
+72 738 540 738 2 L
+1 H
+2 Z
+N
+72 54 540 54 2 L
+N
+27 72 54 720 C
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+27 72 54 720 R
+7 X
+0 0 0 1 0 0 0 K
+V
+27 72 54 720 C
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+27 72 54 720 R
+7 X
+0 0 0 1 0 0 0 K
+V
+1 12 Q
+0 X
+(1) 36 711 T
+(2) 36 699 T
+(3) 36 687 T
+(4) 36 675 T
+(5) 36 663 T
+(6) 36 651 T
+(7) 36 639 T
+(8) 36 627 T
+(9) 36 615 T
+(10) 36 603 T
+(11) 36 591 T
+(12) 36 579 T
+(13) 36 567 T
+(14) 36 555 T
+(15) 36 543 T
+(16) 36 531 T
+(17) 36 519 T
+(18) 36 507 T
+(19) 36 495 T
+(20) 36 483 T
+(21) 36 471 T
+(22) 36 459 T
+(23) 36 447 T
+(24) 36 435 T
+(25) 36 423 T
+(26) 36 411 T
+(27) 36 399 T
+(28) 36 387 T
+(29) 36 375 T
+(30) 36 363 T
+(31) 36 351 T
+(32) 36 339 T
+(33) 36 327 T
+(34) 36 315 T
+(35) 36 303 T
+(36) 36 291 T
+(37) 36 279 T
+(38) 36 267 T
+(39) 36 255 T
+(40) 36 243 T
+(41) 36 231 T
+(42) 36 219 T
+(43) 36 207 T
+(44) 36 195 T
+(45) 36 183 T
+(46) 36 171 T
+(47) 36 159 T
+(48) 36 147 T
+(49) 36 135 T
+(50) 36 123 T
+(51) 36 111 T
+(52) 36 99 T
+(53) 36 87 T
+(54) 36 75 T
+(55) 36 63 T
+27 72 54 720 C
+0 0 612 792 C
+1 10 Q
+0 X
+0 0 0 1 0 0 0 K
+1 (two primary IDE controllers. Of course, the inaccuracy of the information for ISA devices really cannot be) 72 713.33 P
+1 (detected by software.) 72 701.33 P
+1 (The con\336guration utility updates the NVRAM with the provided information via the Open Firmware.) 72 682.33 P
+1 (After reset, the Open Firmware recreates the comprehensive device tree, making use of the NVRAM data. It is) 72 663.33 P
+1 (also responsible for resolving resource allocation con\337icts among programmable devices \050PCI, EISA and PnP) 72 651.33 P
+1 (ISA\051. When a programmable device cannot be enabled due to resource con\337icts, the \322) 72 639.33 P
+2 F
+1 (status) 428.52 639.33 P
+1 F
+1 (\323 property is) 453.52 639.33 P
+1 (generated for that device as failed.) 72 627.33 P
+2 9 Q
+0.9 (Note: Refer to device bindings for the r) 108 609 P
+0.9 (esour) 264.36 609 P
+0.9 (ce data.) 285.19 609 P
+2 14 Q
+(6.1.   Format of Data Resour) 72 579.67 T
+(ce Information) 242.04 579.67 T
+1 10 Q
+1 (The location in NVRAM or other non-volatile storage where the data information is stored and the methods to) 72 562.33 P
+1 (read and write to it are to be determined by the platform bindings.) 72 550.33 P
+1 (Open Firmware retrieves the resource information from NVRAM for ISA and EISA devices. In addition, the) 72 531.33 P
+1 (Open Firmware probes the PnP ISA devices for their resource information.) 72 519.33 P
+1 (Regardless of the source of information, they all have the same format, as de\336ned below) 72 500.33 P
+1 (. The information fully) 439.17 500.33 P
+1 (describes all resource requirements of a PnP ISA, legacy ISA and EISA cards as well as resource) 72 488.33 P
+1 (programmability and interdependencies. The EISA cards, in addition, contains additional information as to how) 72 476.33 P
+1 (to program the cards.) 72 464.33 P
+1 (Each device has a header followed by a number of resource records and ended with the end resource record.) 72 445.33 P
+1 (The general format of data resource information for a device is:) 72 433.33 P
+(0.) 90 414.33 T
+1 (Header) 133.2 414.33 P
+(1.) 90 395.33 T
+1 (Plug and Play version number) 133.2 395.33 P
+(2.) 90 376.33 T
+1 (ID String) 133.2 376.33 P
+(3.) 90 357.33 T
+1 (Logical Device ID) 133.2 357.33 P
+(a.) 133.2 338.33 T
+1 (Compatible Device ID, if any) 176.4 338.33 P
+1 (, for this logical device) 298.34 338.33 P
+(b.) 133.2 319.33 T
+1 (Resource data to match what the logical device uses \050IRQ, memory) 176.4 319.33 P
+1 (, I/O, DMA\051, of) 455.42 319.33 P
+1 (which the order for dif) 176.4 306.33 P
+1 (ferent types is unimportant, but is important for same type.) 270.75 306.33 P
+(c.) 133.2 287.33 T
+1 (Dependent functions, if any) 176.4 287.33 P
+(i.) 176.4 268.33 T
+1 (Start dependent function) 198 268.33 P
+(ii.) 176.4 255.53 T
+1 (Resource data) 198 255.53 P
+(iii.) 176.4 242.73 T
+1 (Repeat i and ii for each set of dependencies) 198 242.73 P
+(iv) 176.4 229.93 T
+(.) 183.53 229.93 T
+1 (End dependent function) 198 229.93 P
+(4.) 90 210.93 T
+1 (Repeat 3 for each logical device) 133.2 210.93 P
+(5.) 90 191.93 T
+1 (End tag) 133.2 191.93 P
+2 14 Q
+(6.2.  Header) 72 161.27 T
+1 10 Q
+1 (The header is also known as the Serial Identi\336er in the PnP ISA Spec [7]. It is also known as the Device) 72 143.93 P
+1 (Product Identi\336er in the PnP BIOS Spec [6]. The \336rst 4 byes of the header is known as the Compressed Id in) 72 131.93 P
+1 (the EISA Spec[4]. The header is de\336ned as below:) 72 119.93 P
+(byte) 133.2 100.93 T
+1 (de\336nition) 176.4 100.93 P
+(0) 133.2 81.93 T
+1 (bit 7) 176.4 81.93 P
+1 (0) 234 81.93 P
+52 606 54 646 R
+V
+52 547 54 569 R
+V
+52 303 54 326 R
+V
+FMENDPAGE
+%%EndPage: "18" 18
+%%Page: "19" 19
+612 792 0 FMBEGINPAGE
+[0 0 0 1 0 0 0]
+[ 0 1 1 0 1 0 0]
+[ 1 0 1 0 0 1 0]
+[ 1 1 0 0 0 0 1]
+[ 1 0 0 0 0 1 1]
+[ 0 1 0 0 1 0 1]
+[ 0 0 1 0 1 1 0]
+ 7 FrameSetSepColors
+FrameNoSep
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 9 Q
+0 X
+0 0 0 1 0 0 0 K
+(19) 72 750 T
+(ISA/EISA/ISA-PnP) 466.47 750 T
+(February 28, 1996 Revision 0.1 DRAFT) 72 38 T
+540 738 72 738 2 L
+1 H
+2 Z
+N
+540 54 72 54 2 L
+N
+558 72 585 720 C
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+558 72 585 720 R
+7 X
+0 0 0 1 0 0 0 K
+V
+0 0 612 792 C
+27 72 54 720 C
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+27 72 54 720 R
+7 X
+0 0 0 1 0 0 0 K
+V
+1 12 Q
+0 X
+(1) 36 711 T
+(2) 36 699 T
+(3) 36 687 T
+(4) 36 675 T
+(5) 36 663 T
+(6) 36 651 T
+(7) 36 639 T
+(8) 36 627 T
+(9) 36 615 T
+(10) 36 603 T
+(11) 36 591 T
+(12) 36 579 T
+(13) 36 567 T
+(14) 36 555 T
+(15) 36 543 T
+(16) 36 531 T
+(17) 36 519 T
+(18) 36 507 T
+(19) 36 495 T
+(20) 36 483 T
+(21) 36 471 T
+(22) 36 459 T
+(23) 36 447 T
+(24) 36 435 T
+(25) 36 423 T
+(26) 36 411 T
+(27) 36 399 T
+(28) 36 387 T
+(29) 36 375 T
+(30) 36 363 T
+(31) 36 351 T
+(32) 36 339 T
+(33) 36 327 T
+(34) 36 315 T
+(35) 36 303 T
+(36) 36 291 T
+(37) 36 279 T
+(38) 36 267 T
+(39) 36 255 T
+(40) 36 243 T
+(41) 36 231 T
+(42) 36 219 T
+(43) 36 207 T
+(44) 36 195 T
+(45) 36 183 T
+(46) 36 171 T
+(47) 36 159 T
+(48) 36 147 T
+(49) 36 135 T
+(50) 36 123 T
+(51) 36 111 T
+(52) 36 99 T
+(53) 36 87 T
+(54) 36 75 T
+(55) 36 63 T
+0 0 612 792 C
+1 10 Q
+0 X
+0 0 0 1 0 0 0 K
+(bits[6:2]) 176.4 713.33 T
+1 (1st char of vendor id) 234 713.33 P
+(bits[1:0]) 176.4 694.33 T
+1 (2nd char of vendor id bits[4:3]) 234 694.33 P
+(1) 133.2 675.33 T
+(bits[7:5]) 176.4 675.33 T
+1 (2nd char of vendor id bits[2:0]) 234 675.33 P
+(bits[4:0]) 176.4 656.33 T
+1 (3rd char of vendor id) 234 656.33 P
+(2) 133.2 637.33 T
+(bits[7:4]) 176.4 637.33 T
+1 (1st hex digit of product number) 234 637.33 P
+(bits[3:0]) 176.4 618.33 T
+1 (2nd hex digit of product number) 234 618.33 P
+(3) 133.2 599.33 T
+(bits[7:4]) 176.4 599.33 T
+1 (3rd hex digit of product number) 234 599.33 P
+(bits[3:0]) 176.4 580.33 T
+1 (hex digit of revision level) 234 580.33 P
+(4) 133.2 561.33 T
+1 (serial number bits[7:0]) 234 561.33 P
+(5) 133.2 542.33 T
+1 (serial number bits[15:8]) 234 542.33 P
+(6) 133.2 523.33 T
+1 (serial number bits[23:16]) 234 523.33 P
+(7) 133.2 504.33 T
+1 (serial number bits[31:24]) 234 504.33 P
+(8) 133.2 485.33 T
+(checksum) 234 485.33 T
+1 (The values above presented here are in little-endian.) 72 466.33 P
+1 (The V) 72 447.33 P
+1 (endor id is an EISA manufacturer identi\336er in 5-bit compressed ASCII, where \32200001\323=\323A\323, ...,) 97.16 447.33 P
+1 (\3221) 72 435.33 P
+1 (1010\323=\323Z\323. This \336eld is assigned to each manufacturer by the EISA administrative agent. It is the vendor's) 81.07 435.33 P
+1 (responsibility to assign a unique product number and revision for their products. The vendor id and product) 72 423.33 P
+1 (number \336elds are used to create the name \336eld for the child node as) 72 411.33 P
+4 F
+1 (isavvv) 358.72 411.33 P
+1 (,ppp,sss) 382.97 411.33 P
+1 F
+1 (.  The 32-bit serial number) 414.64 411.33 P
+1 (dif) 72 399.33 P
+1 (ferentiates between multiple PnP ISA cards with the same vendor id when they are plugged into one system.) 82.93 399.33 P
+1 (Set this \336eld to 0xFFFFFFFF for ISA and EISA cards.) 72 387.33 P
+2 9 Q
+0.9 (Note: The last nibble of byte 3 is de\336ned as a r) 108 369 P
+0.9 (evision level.  Curr) 294.99 369 P
+0.9 (ent industry practice) 370.02 369 P
+0.9 (uses the nibble as part of the pr) 108 359 P
+0.9 (oduct number) 234.89 359 P
+0.9 (.) 289.21 359 P
+1 10 Q
+1 (The checksum is computed as follow:) 72 344.33 P
+(b7) 86.4 325.33 T
+(b6) 100.8 325.33 T
+(b5) 115.2 325.33 T
+(b4) 129.6 325.33 T
+(b3) 144 325.33 T
+(b2) 158.4 325.33 T
+(b1) 172.8 325.33 T
+1 (b0  = 0x6A) 187.2 325.33 P
+1 ( y) 86.4 306.33 P
+(b7) 100.8 306.33 T
+(b6) 115.2 306.33 T
+(b5) 129.6 306.33 T
+(b4) 144 306.33 T
+(b3) 158.4 306.33 T
+(b2) 172.8 306.33 T
+1 (b1) 187.2 306.33 P
+1 ( z) 86.4 287.33 P
+1 ( y) 100.8 287.33 P
+(b7) 115.2 287.33 T
+(b6) 129.6 287.33 T
+(b5) 144 287.33 T
+(b4) 158.4 287.33 T
+(b3) 172.8 287.33 T
+1 (b2) 187.2 287.33 P
+1 (        ...) 72 268.33 P
+1 (where y = x0 xor x1 xor byte 0 bit 0) 72 249.33 P
+1 (        z = x1 xor x2 xor byte 0 bit 1) 72 230.33 P
+1 (and the process repeats for each bit of the \336rst 8 bytes of the header) 72 211.33 P
+1 (. After 64 iterations, x7' x6' x5' x4' x3' x2') 355.38 211.33 P
+1 (x1' x0' is the checksum.) 72 199.33 P
+2 14 Q
+(6.3.   Resour) 72 168.67 T
+(ce Records) 146.02 168.67 T
+1 10 Q
+1 (Following the header is a collection of resource records for the device.  The resource records have been) 72 151.33 P
+1 (extended from the PnP data format  in order to support the EISA Bus\050\322DMA Format Record\323 on page) 72 139.33 P
+1 (23\051.) 500.05 139.33 P
+1 (There are two basic kinds of records, small and lar) 72 127.33 P
+1 (ge.) 282.99 127.33 P
+1 (Small records have the following format:) 90 108.33 P
+2 F
+(byte) 133.2 89.33 T
+1 (de\336nition) 176.4 89.33 P
+52 408 54 418 R
+V
+52 356 54 375 R
+V
+52 124 54 158 R
+V
+FMENDPAGE
+%%EndPage: "19" 19
+%%Page: "20" 20
+612 792 0 FMBEGINPAGE
+[0 0 0 1 0 0 0]
+[ 0 1 1 0 1 0 0]
+[ 1 0 1 0 0 1 0]
+[ 1 1 0 0 0 0 1]
+[ 1 0 0 0 0 1 1]
+[ 0 1 0 0 1 0 1]
+[ 0 0 1 0 1 1 0]
+ 7 FrameSetSepColors
+FrameNoSep
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 9 Q
+0 X
+0 0 0 1 0 0 0 K
+(ISA/EISA/ISA-PnP binding) 72 750 T
+(20) 531 750 T
+-0.64 (February 28, 1996 Revision 0.1 DRAFT) 391.24 38 P
+72 738 540 738 2 L
+1 H
+2 Z
+N
+72 54 540 54 2 L
+N
+27 72 54 720 C
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+27 72 54 720 R
+7 X
+0 0 0 1 0 0 0 K
+V
+27 72 54 720 C
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+27 72 54 720 R
+7 X
+0 0 0 1 0 0 0 K
+V
+1 12 Q
+0 X
+(1) 36 711 T
+(2) 36 699 T
+(3) 36 687 T
+(4) 36 675 T
+(5) 36 663 T
+(6) 36 651 T
+(7) 36 639 T
+(8) 36 627 T
+(9) 36 615 T
+(10) 36 603 T
+(11) 36 591 T
+(12) 36 579 T
+(13) 36 567 T
+(14) 36 555 T
+(15) 36 543 T
+(16) 36 531 T
+(17) 36 519 T
+(18) 36 507 T
+(19) 36 495 T
+(20) 36 483 T
+(21) 36 471 T
+(22) 36 459 T
+(23) 36 447 T
+(24) 36 435 T
+(25) 36 423 T
+(26) 36 411 T
+(27) 36 399 T
+(28) 36 387 T
+(29) 36 375 T
+(30) 36 363 T
+(31) 36 351 T
+(32) 36 339 T
+(33) 36 327 T
+(34) 36 315 T
+(35) 36 303 T
+(36) 36 291 T
+(37) 36 279 T
+(38) 36 267 T
+(39) 36 255 T
+(40) 36 243 T
+(41) 36 231 T
+(42) 36 219 T
+(43) 36 207 T
+(44) 36 195 T
+(45) 36 183 T
+(46) 36 171 T
+(47) 36 159 T
+(48) 36 147 T
+(49) 36 135 T
+(50) 36 123 T
+(51) 36 111 T
+(52) 36 99 T
+(53) 36 87 T
+(54) 36 75 T
+(55) 36 63 T
+27 72 54 720 C
+0 0 612 792 C
+1 10 Q
+0 X
+0 0 0 1 0 0 0 K
+(0) 133.2 713.33 T
+1 (bit 7) 176.4 713.33 P
+1 (0 = small) 234 713.33 P
+(bits[6:3]) 176.4 694.33 T
+1 (small record type) 234 694.33 P
+(bits[2:0]) 176.4 675.33 T
+1 (number of bytes following byte 0) 234 675.33 P
+(1-n) 133.2 656.33 T
+1 (actual information) 176.4 656.33 P
+1 (Lar) 90 618.33 P
+1 (ge records have the following format:) 103.7 618.33 P
+2 F
+(byte) 133.2 599.33 T
+1 (de\336nition) 176.4 599.33 P
+1 F
+(0) 133.2 580.33 T
+1 ( bit 7) 176.4 580.33 P
+1 (1 = lar) 234 580.33 P
+1 (ge) 262.01 580.33 P
+(bits[6:0]) 176.4 561.33 T
+1 (lar) 234 561.33 P
+1 (ge record type) 244.37 561.33 P
+(1) 133.2 542.33 T
+1 (number of bytes following byte 2, bits[7:0]) 176.4 542.33 P
+(2) 133.2 523.33 T
+1 (number of bytes following byte 2, bits[15:8]) 176.4 523.33 P
+(3-n) 133.2 504.33 T
+1 (actual information) 176.4 504.33 P
+1 (Small record types are:) 90 466.33 P
+(1) 133.2 447.33 T
+1 (Plug and Play version number) 176.4 447.33 P
+(2) 133.2 428.33 T
+1 (logical device id) 176.4 428.33 P
+(3) 133.2 409.33 T
+1 (compatible device id) 176.4 409.33 P
+(4) 133.2 390.33 T
+1 (IRQ format) 176.4 390.33 P
+(5) 133.2 371.33 T
+1 (DMA format) 176.4 371.33 P
+(6) 133.2 352.33 T
+1 (start dependent function) 176.4 352.33 P
+(7) 133.2 333.33 T
+1 (end dependent function) 176.4 333.33 P
+(8) 133.2 314.33 T
+1 (I/O port descriptor) 176.4 314.33 P
+(9) 133.2 295.33 T
+1 (\336xed location 10-bit I/O port descriptor) 176.4 295.33 P
+(0xa-0xd) 133.2 276.33 T
+1 (reserved) 176.4 276.33 P
+(0xe) 133.2 257.33 T
+1 (vendor de\336ned) 176.4 257.33 P
+(0xf) 133.2 238.33 T
+1 (end tag) 176.4 238.33 P
+1 (Lar) 90 200.33 P
+1 (ge record types are:) 103.7 200.33 P
+(1) 133.2 181.33 T
+1 (24-bit memory range descriptor) 176.4 181.33 P
+(2) 133.2 162.33 T
+1 (ANSI id string) 176.4 162.33 P
+(3) 133.2 143.33 T
+1 (Unicode id string) 176.4 143.33 P
+(4) 133.2 124.33 T
+1 ( vendor de\336ned) 176.4 124.33 P
+(5) 133.2 105.33 T
+1 (32-bit memory range descriptor) 176.4 105.33 P
+(6) 133.2 86.33 T
+1 (32-bit \336xed memory range descriptor) 176.4 86.33 P
+FMENDPAGE
+%%EndPage: "20" 20
+%%Page: "21" 21
+612 792 0 FMBEGINPAGE
+[0 0 0 1 0 0 0]
+[ 0 1 1 0 1 0 0]
+[ 1 0 1 0 0 1 0]
+[ 1 1 0 0 0 0 1]
+[ 1 0 0 0 0 1 1]
+[ 0 1 0 0 1 0 1]
+[ 0 0 1 0 1 1 0]
+ 7 FrameSetSepColors
+FrameNoSep
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 9 Q
+0 X
+0 0 0 1 0 0 0 K
+(21) 72 750 T
+(ISA/EISA/ISA-PnP) 466.47 750 T
+(February 28, 1996 Revision 0.1 DRAFT) 72 38 T
+540 738 72 738 2 L
+1 H
+2 Z
+N
+540 54 72 54 2 L
+N
+558 72 585 720 C
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+558 72 585 720 R
+7 X
+0 0 0 1 0 0 0 K
+V
+0 0 612 792 C
+27 72 54 720 C
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+27 72 54 720 R
+7 X
+0 0 0 1 0 0 0 K
+V
+1 12 Q
+0 X
+(1) 36 711 T
+(2) 36 699 T
+(3) 36 687 T
+(4) 36 675 T
+(5) 36 663 T
+(6) 36 651 T
+(7) 36 639 T
+(8) 36 627 T
+(9) 36 615 T
+(10) 36 603 T
+(11) 36 591 T
+(12) 36 579 T
+(13) 36 567 T
+(14) 36 555 T
+(15) 36 543 T
+(16) 36 531 T
+(17) 36 519 T
+(18) 36 507 T
+(19) 36 495 T
+(20) 36 483 T
+(21) 36 471 T
+(22) 36 459 T
+(23) 36 447 T
+(24) 36 435 T
+(25) 36 423 T
+(26) 36 411 T
+(27) 36 399 T
+(28) 36 387 T
+(29) 36 375 T
+(30) 36 363 T
+(31) 36 351 T
+(32) 36 339 T
+(33) 36 327 T
+(34) 36 315 T
+(35) 36 303 T
+(36) 36 291 T
+(37) 36 279 T
+(38) 36 267 T
+(39) 36 255 T
+(40) 36 243 T
+(41) 36 231 T
+(42) 36 219 T
+(43) 36 207 T
+(44) 36 195 T
+(45) 36 183 T
+(46) 36 171 T
+(47) 36 159 T
+(48) 36 147 T
+(49) 36 135 T
+(50) 36 123 T
+(51) 36 111 T
+(52) 36 99 T
+(53) 36 87 T
+(54) 36 75 T
+(55) 36 63 T
+0 0 612 792 C
+1 10 Q
+0 X
+0 0 0 1 0 0 0 K
+(7-0x7f) 133.2 713.33 T
+(reserved) 176.4 713.33 T
+2 12 Q
+(6.3.1.  Plug and Play V) 72 688 T
+(ersion Number Record) 186.91 688 T
+1 10 Q
+1 (The Plug and Play version number identi\336es the version of the PnP speci\336cation with which the card is) 72 671.33 P
+1 (compatible. For legacy and EISA cards, this record is not required.) 72 659.33 P
+2 F
+(byte) 133.2 640.33 T
+1 (de\336nition) 234 640.33 P
+1 F
+(0) 133.2 621.33 T
+1 (0x0a, length = 1) 234 621.33 P
+(1) 133.2 602.33 T
+1 (PnP version number in packed BCD) 234 602.33 P
+(bits[7:4]) 176.4 583.33 T
+1 (major version) 234 583.33 P
+(bits[3:0]) 176.4 564.33 T
+1 (minor version) 234 564.33 P
+(2) 133.2 545.33 T
+1 (vendor speci\336c version number) 234 545.33 P
+2 12 Q
+(6.3.2.  ANSI Identi\336er String Record) 72 520 T
+1 10 Q
+1 (Each adaptor card is required to have an identi\336er string. The ") 72 503.33 P
+2 F
+1 (description) 334.8 503.33 P
+1 F
+1 (" property is derived from this is) 382.58 503.33 P
+1 (ANSI identi\336er string.) 72 491.33 P
+2 F
+(byte) 133.2 472.33 T
+1 (de\336nition) 234 472.33 P
+1 F
+(0) 133.2 453.33 T
+1 (0x82) 234 453.33 P
+(1) 133.2 434.33 T
+1 (identi\336er string length, lower 8 bits) 234 434.33 P
+(2) 133.2 415.33 T
+1 (identi\336er string length, upper 8 bits) 234 415.33 P
+(3-n) 133.2 396.33 T
+1 (identi\336er string, not zero terminated) 234 396.33 P
+2 12 Q
+(6.3.3.  Unicode Identi\336er String Record) 72 371 T
+2 10 Q
+(byte) 133.2 354.33 T
+1 (de\336nition) 234 354.33 P
+1 F
+(0) 133.2 335.33 T
+1 (0x83) 234 335.33 P
+(1) 133.2 316.33 T
+1 (length of string + 2, lower 8 bits) 234 316.33 P
+(2) 133.2 297.33 T
+1 (length of string + 2, upper 8 bits) 234 297.33 P
+(3) 133.2 278.33 T
+1 (country identi\336er) 234 278.33 P
+1 (, lower 8 bits) 303.76 278.33 P
+(4) 133.2 259.33 T
+1 (country identi\336er) 234 259.33 P
+1 (, upper 8 bits) 303.76 259.33 P
+(5-n) 133.2 240.33 T
+1 (identi\336er string) 234 240.33 P
+2 12 Q
+(6.3.4.  Logical Device Id Record) 72 215 T
+1 10 Q
+1 (The logical device id provides a mechanism for uniquely identifying multiple logical devices embedded in a) 72 198.33 P
+1 (single card. This identi\336er may be used to select the appropriate device driver) 72 186.33 P
+1 (.) 394.22 186.33 P
+1 (The \336rst entry of the "compatible" property comes from this logical device id record.) 72 167.33 P
+2 F
+(byte) 133.2 148.33 T
+1 (de\336nition) 234 148.33 P
+1 F
+(0) 133.2 129.33 T
+1 (0x15 or 0x16, length = 5 or 6) 234 129.33 P
+(1) 133.2 110.33 T
+(bits[6:2]) 176.4 110.33 T
+1 (1st char of device id) 234 110.33 P
+(bits[1:0]) 176.4 91.33 T
+1 (2nd char of device id bits[4:3]) 234 91.33 P
+52 500 54 510 R
+V
+FMENDPAGE
+%%EndPage: "21" 21
+%%Page: "22" 22
+612 792 0 FMBEGINPAGE
+[0 0 0 1 0 0 0]
+[ 0 1 1 0 1 0 0]
+[ 1 0 1 0 0 1 0]
+[ 1 1 0 0 0 0 1]
+[ 1 0 0 0 0 1 1]
+[ 0 1 0 0 1 0 1]
+[ 0 0 1 0 1 1 0]
+ 7 FrameSetSepColors
+FrameNoSep
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 9 Q
+0 X
+0 0 0 1 0 0 0 K
+(ISA/EISA/ISA-PnP binding) 72 750 T
+(22) 531 750 T
+-0.64 (February 28, 1996 Revision 0.1 DRAFT) 391.24 38 P
+72 738 540 738 2 L
+1 H
+2 Z
+N
+72 54 540 54 2 L
+N
+27 72 54 720 C
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+27 72 54 720 R
+7 X
+0 0 0 1 0 0 0 K
+V
+27 72 54 720 C
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+27 72 54 720 R
+7 X
+0 0 0 1 0 0 0 K
+V
+1 12 Q
+0 X
+(1) 36 711 T
+(2) 36 699 T
+(3) 36 687 T
+(4) 36 675 T
+(5) 36 663 T
+(6) 36 651 T
+(7) 36 639 T
+(8) 36 627 T
+(9) 36 615 T
+(10) 36 603 T
+(11) 36 591 T
+(12) 36 579 T
+(13) 36 567 T
+(14) 36 555 T
+(15) 36 543 T
+(16) 36 531 T
+(17) 36 519 T
+(18) 36 507 T
+(19) 36 495 T
+(20) 36 483 T
+(21) 36 471 T
+(22) 36 459 T
+(23) 36 447 T
+(24) 36 435 T
+(25) 36 423 T
+(26) 36 411 T
+(27) 36 399 T
+(28) 36 387 T
+(29) 36 375 T
+(30) 36 363 T
+(31) 36 351 T
+(32) 36 339 T
+(33) 36 327 T
+(34) 36 315 T
+(35) 36 303 T
+(36) 36 291 T
+(37) 36 279 T
+(38) 36 267 T
+(39) 36 255 T
+(40) 36 243 T
+(41) 36 231 T
+(42) 36 219 T
+(43) 36 207 T
+(44) 36 195 T
+(45) 36 183 T
+(46) 36 171 T
+(47) 36 159 T
+(48) 36 147 T
+(49) 36 135 T
+(50) 36 123 T
+(51) 36 111 T
+(52) 36 99 T
+(53) 36 87 T
+(54) 36 75 T
+(55) 36 63 T
+27 72 54 720 C
+0 0 612 792 C
+1 10 Q
+0 X
+0 0 0 1 0 0 0 K
+(2) 133.2 713.33 T
+(bits[7:5]) 176.4 713.33 T
+1 (2nd char of device id bits[2:0]) 234 713.33 P
+(bits[4:0]) 176.4 694.33 T
+1 (3rd char of device id) 234 694.33 P
+(3) 133.2 675.33 T
+(bits[7:4]) 176.4 675.33 T
+1 (1st hex digit of function number) 234 675.33 P
+(bits[3:0]) 176.4 656.33 T
+1 (2nd hex digit of function number) 234 656.33 P
+(4) 133.2 637.33 T
+(bits[7:4]) 176.4 637.33 T
+1 (3rd hex digit of function number) 234 637.33 P
+(bits[3:0]) 176.4 618.33 T
+1 (hex digit of revision level) 234 618.33 P
+(5) 133.2 599.33 T
+(bits[7:1]) 176.4 599.33 T
+1 (if set, indicate commands supported per logical device for registers in) 234 599.33 P
+1 (the range of 31 to 37 respectively) 234 580.33 P
+(bit[0]) 176.4 561.33 T
+1 (if set, indicates this logical device is capable of participating in the boot) 234 561.33 P
+1 (process. Otherwise, the Open Firmware does not activate this device.) 234 542.33 P
+1 (Thus this bit should be 0 for redundant adaptor cards.) 234 523.33 P
+(6) 133.2 504.33 T
+(bits[7:0]) 176.4 504.33 T
+1 (if set, indicate commands supported per logical device for registers in the) 234 504.33 P
+1 (range of 38 to 3f respectively) 234 485.33 P
+1 (The name \336eld of the child node of the device node is derived from the device id, function number and serial) 72 466.33 P
+1 (number\050See \322Header\323 on page) 72 454.33 P
+1 (18.\051 \336elds as) 199.95 454.33 P
+4 F
+1 (isaddd,fff,sss) 256.28 454.33 P
+1 F
+1 (.) 307.96 454.33 P
+2 9 Q
+0.9 (Note: The last nibble of byte 4 is de\336ned as a r) 108 436 P
+0.9 (evision level.  Curr) 294.99 436 P
+0.9 (ent industry practice) 370.02 436 P
+0.9 (uses the nibble as part of the function number) 108 426 P
+0.9 (.) 290.88 426 P
+2 12 Q
+(6.3.5.  Compatible Device Id Record) 72 402 T
+1 10 Q
+1 (This record provides the id of other devices with which this device is compatible. The operating system uses) 72 385.33 P
+1 (this information to load compatible device drivers if necessary) 72 373.33 P
+1 (. The Open Firmware uses this record to generate) 329.31 373.33 P
+1 (compatible property) 72 361.33 P
+1 (.) 153.17 361.33 P
+1 (The rest of the "compatible" property comes from this compatible device id record, in the order that they appear) 72 342.33 P
+1 (.) 537.24 342.33 P
+2 F
+(byte) 133.2 323.33 T
+1 (de\336nition) 234 323.33 P
+1 F
+(0) 133.2 304.33 T
+1 (0x1c, length = 4) 234 304.33 P
+(1-4) 133.2 285.33 T
+1 (compatible device id in the same format as the logical device id) 234 285.33 P
+1 (bytes 1-4) 234 266.33 P
+1 (The \322) 72 247.33 P
+2 F
+1 (compatible) 95.49 247.33 P
+1 F
+1 (\323 property assumes the value of the ASCII representation of the compatible device id.) 142.71 247.33 P
+2 12 Q
+(6.3.6.  IRQ Format Record) 72 222 T
+1 10 Q
+1 (This record indicates that the device uses an IRQ and supplies a mask with bits set indicating the IRQ levels) 72 205.33 P
+1 (implemented in this device. This record is repeated for each separate IRQ required.) 72 193.33 P
+2 F
+(byte) 133.2 174.33 T
+1 (de\336nition) 234 174.33 P
+1 F
+(0) 133.2 155.33 T
+1 (0x22 or 0x23, length = 2 or 3) 234 155.33 P
+(1) 133.2 136.33 T
+(bits[7:0]) 176.4 136.33 T
+1 (representing IRQ[7:0]) 234 136.33 P
+(2) 133.2 117.33 T
+(bits[7:0]) 176.4 117.33 T
+1 (representing IRQ[15:8]) 234 117.33 P
+(3) 133.2 98.33 T
+(bits[7:4]) 176.4 98.33 T
+1 (reserved, must be 0) 234 98.33 P
+(bit[3]) 176.4 79.33 T
+1 (active low level sensitive \050EISA\051) 234 79.33 P
+52 423 54 461 R
+V
+FMENDPAGE
+%%EndPage: "22" 22
+%%Page: "23" 23
+612 792 0 FMBEGINPAGE
+[0 0 0 1 0 0 0]
+[ 0 1 1 0 1 0 0]
+[ 1 0 1 0 0 1 0]
+[ 1 1 0 0 0 0 1]
+[ 1 0 0 0 0 1 1]
+[ 0 1 0 0 1 0 1]
+[ 0 0 1 0 1 1 0]
+ 7 FrameSetSepColors
+FrameNoSep
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 9 Q
+0 X
+0 0 0 1 0 0 0 K
+(23) 72 750 T
+(ISA/EISA/ISA-PnP) 466.47 750 T
+(February 28, 1996 Revision 0.1 DRAFT) 72 38 T
+540 738 72 738 2 L
+1 H
+2 Z
+N
+540 54 72 54 2 L
+N
+558 72 585 720 C
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+558 72 585 720 R
+7 X
+0 0 0 1 0 0 0 K
+V
+0 0 612 792 C
+27 72 54 720 C
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+27 72 54 720 R
+7 X
+0 0 0 1 0 0 0 K
+V
+1 12 Q
+0 X
+(1) 36 711 T
+(2) 36 699 T
+(3) 36 687 T
+(4) 36 675 T
+(5) 36 663 T
+(6) 36 651 T
+(7) 36 639 T
+(8) 36 627 T
+(9) 36 615 T
+(10) 36 603 T
+(11) 36 591 T
+(12) 36 579 T
+(13) 36 567 T
+(14) 36 555 T
+(15) 36 543 T
+(16) 36 531 T
+(17) 36 519 T
+(18) 36 507 T
+(19) 36 495 T
+(20) 36 483 T
+(21) 36 471 T
+(22) 36 459 T
+(23) 36 447 T
+(24) 36 435 T
+(25) 36 423 T
+(26) 36 411 T
+(27) 36 399 T
+(28) 36 387 T
+(29) 36 375 T
+(30) 36 363 T
+(31) 36 351 T
+(32) 36 339 T
+(33) 36 327 T
+(34) 36 315 T
+(35) 36 303 T
+(36) 36 291 T
+(37) 36 279 T
+(38) 36 267 T
+(39) 36 255 T
+(40) 36 243 T
+(41) 36 231 T
+(42) 36 219 T
+(43) 36 207 T
+(44) 36 195 T
+(45) 36 183 T
+(46) 36 171 T
+(47) 36 159 T
+(48) 36 147 T
+(49) 36 135 T
+(50) 36 123 T
+(51) 36 111 T
+(52) 36 99 T
+(53) 36 87 T
+(54) 36 75 T
+(55) 36 63 T
+0 0 612 792 C
+1 10 Q
+0 X
+0 0 0 1 0 0 0 K
+(bit[2]) 176.4 713.33 T
+1 (active high level sensitive) 234 713.33 P
+(bit[1]) 176.4 694.33 T
+1 (high to low edge sensitive) 234 694.33 P
+(bit[0]) 176.4 675.33 T
+1 (low to high edge sensitive \050ISA\051) 234 675.33 P
+2 12 Q
+(6.3.7.  DMA Format Record) 72 650 T
+1 10 Q
+1 (This record indicates that the device uses a DMA channel and supplies a mask with bits set indicating the) 72 633.33 P
+1 (channels actually implemented in this device. This record is repeated for each separate DMA channel required.) 72 621.33 P
+2 F
+(byte) 133.2 602.33 T
+1 (de\336nition) 234 602.33 P
+1 F
+(0) 133.2 583.33 T
+1 (0x2a or 0x2d, length = 2 or 5) 234 583.33 P
+(1) 133.2 564.33 T
+(bits[7:0]) 176.4 564.33 T
+1 (representing DMA channel[7:0]) 234 564.33 P
+(2) 133.2 545.33 T
+(bit[7]) 176.4 545.33 T
+1 (reserved, must be 0) 234 545.33 P
+(bits[6:5]) 176.4 526.33 T
+1 (DMA channel speed supported) 234 526.33 P
+(00) 252 507.33 T
+1 (compatibility mode) 270 507.33 P
+(01) 252 488.33 T
+1 (type A DMA) 270 488.33 P
+(10) 252 469.33 T
+1 (type B DMA) 270 469.33 P
+(1) 252 450.33 T
+(1) 256.63 450.33 T
+1 (type F DMA) 270 450.33 P
+(bit[4]) 176.4 431.33 T
+1 (if set, DMA may execute in count by word mode) 234 431.33 P
+(bit[3]) 176.4 412.33 T
+1 (if set, DMA may execute in count by byte mode) 234 412.33 P
+(bit[2]) 176.4 393.33 T
+1 (if set, logical device is a bus mastering device) 234 393.33 P
+(bits[1:0]) 176.4 374.33 T
+1 (DMA transfer type) 234 374.33 P
+(00) 252 355.33 T
+1 (8-bit only) 270 355.33 P
+(01) 252 336.33 T
+1 (8- and 16-bit) 270 336.33 P
+(10) 252 317.33 T
+1 (16-bit only) 270 317.33 P
+(1) 252 298.33 T
+(1) 256.63 298.33 T
+1 (reserved) 270 298.33 P
+(3) 133.2 279.33 T
+1 (extended dma channel speed supported) 234 279.33 P
+(bit[7]) 176.4 260.33 T
+1 (1 = ok to use extended bytes) 252 260.33 P
+(bits[6:0]) 176.4 241.33 T
+(0) 252 241.33 T
+1 (compatibility mode) 270 241.33 P
+(1) 252 222.33 T
+1 (type A DMA) 270 222.33 P
+(2) 252 203.33 T
+1 (type B DMA) 270 203.33 P
+(3) 252 184.33 T
+1 (type F DMA) 270 184.33 P
+(4) 252 165.33 T
+1 (type C DMA) 270 165.33 P
+(4) 133.2 146.33 T
+1 (extended DMA count type: 8, 16, 32) 234 146.33 P
+(5) 133.2 127.33 T
+1 (extended DMA transfer type: 8, 16, 32) 234 127.33 P
+1 (Bytes 3-5 in the record are added to support EISA function.  PnP ISA cards will have only 0x2a in byte 0. The) 72 108.33 P
+1 (additional bytes have been added to support extended EISA function which is capable of 32-bit DMA and type) 72 96.33 P
+1 (C DMA.) 72 84.33 P
+FMENDPAGE
+%%EndPage: "23" 23
+%%Page: "24" 24
+612 792 0 FMBEGINPAGE
+[0 0 0 1 0 0 0]
+[ 0 1 1 0 1 0 0]
+[ 1 0 1 0 0 1 0]
+[ 1 1 0 0 0 0 1]
+[ 1 0 0 0 0 1 1]
+[ 0 1 0 0 1 0 1]
+[ 0 0 1 0 1 1 0]
+ 7 FrameSetSepColors
+FrameNoSep
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 9 Q
+0 X
+0 0 0 1 0 0 0 K
+(ISA/EISA/ISA-PnP binding) 72 750 T
+(24) 531 750 T
+-0.64 (February 28, 1996 Revision 0.1 DRAFT) 391.24 38 P
+72 738 540 738 2 L
+1 H
+2 Z
+N
+72 54 540 54 2 L
+N
+27 72 54 720 C
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+27 72 54 720 R
+7 X
+0 0 0 1 0 0 0 K
+V
+27 72 54 720 C
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+27 72 54 720 R
+7 X
+0 0 0 1 0 0 0 K
+V
+1 12 Q
+0 X
+(1) 36 711 T
+(2) 36 699 T
+(3) 36 687 T
+(4) 36 675 T
+(5) 36 663 T
+(6) 36 651 T
+(7) 36 639 T
+(8) 36 627 T
+(9) 36 615 T
+(10) 36 603 T
+(11) 36 591 T
+(12) 36 579 T
+(13) 36 567 T
+(14) 36 555 T
+(15) 36 543 T
+(16) 36 531 T
+(17) 36 519 T
+(18) 36 507 T
+(19) 36 495 T
+(20) 36 483 T
+(21) 36 471 T
+(22) 36 459 T
+(23) 36 447 T
+(24) 36 435 T
+(25) 36 423 T
+(26) 36 411 T
+(27) 36 399 T
+(28) 36 387 T
+(29) 36 375 T
+(30) 36 363 T
+(31) 36 351 T
+(32) 36 339 T
+(33) 36 327 T
+(34) 36 315 T
+(35) 36 303 T
+(36) 36 291 T
+(37) 36 279 T
+(38) 36 267 T
+(39) 36 255 T
+(40) 36 243 T
+(41) 36 231 T
+(42) 36 219 T
+(43) 36 207 T
+(44) 36 195 T
+(45) 36 183 T
+(46) 36 171 T
+(47) 36 159 T
+(48) 36 147 T
+(49) 36 135 T
+(50) 36 123 T
+(51) 36 111 T
+(52) 36 99 T
+(53) 36 87 T
+(54) 36 75 T
+(55) 36 63 T
+27 72 54 720 C
+0 0 612 792 C
+2 12 Q
+0 X
+0 0 0 1 0 0 0 K
+(6.3.8.  I/O Port Descriptor Record) 72 712 T
+2 10 Q
+(byte) 133.2 695.33 T
+(de\336nition) 234 695.33 T
+1 F
+(0) 133.2 676.33 T
+1 (0x47, length = 7) 234 676.33 P
+(1) 133.2 657.33 T
+(bits[7:1]) 176.4 657.33 T
+1 (reserved, must be 0) 234 657.33 P
+(bit[0]) 176.4 638.33 T
+1 (if set, the logical device decodes the full 16-bit ISA address) 234 638.33 P
+(2) 133.2 619.33 T
+1 (minimum I/O base address, bits[7:0]) 234 619.33 P
+(3) 133.2 600.33 T
+1 (minimum I/O base address, bits[15:8]) 234 600.33 P
+(4) 133.2 581.33 T
+1 (maximum I/O base address, bits[7:0]) 234 581.33 P
+(5) 133.2 562.33 T
+1 (maximum I/O base address, bits[15:8]) 234 562.33 P
+(6) 133.2 543.33 T
+1 (I/O base address alignment) 234 543.33 P
+(7) 133.2 524.33 T
+1 (number of contiguous I/O ports requested) 234 524.33 P
+2 12 Q
+(6.3.9.  Fixed Location 10-bit I/O Port Descriptor Record) 72 499 T
+2 10 Q
+(byte) 133.2 482.33 T
+1 (de\336nition) 234 482.33 P
+1 F
+(0) 133.2 463.33 T
+1 (0x4b) 234 463.33 P
+(1) 133.2 444.33 T
+1 (I/O base address, bits[7:0]) 234 444.33 P
+(2) 133.2 425.33 T
+(bits[1:0]) 176.4 425.33 T
+1 (I/O base address, bits[9:8]) 234 425.33 P
+(3) 133.2 406.33 T
+1 (number of contiguous I/O ports requested) 234 406.33 P
+2 12 Q
+(6.3.10.  24-bit Memory Range Descriptor Record) 72 381 T
+1 10 Q
+1 (Mixing of 24-bit and 32-bit memory descriptors is not allowed.) 72 364.33 P
+2 F
+(byte) 133.2 345.33 T
+1 (de\336nition) 234 345.33 P
+1 F
+(0) 133.2 326.33 T
+1 (0x81) 234 326.33 P
+(1) 133.2 307.33 T
+1 (9, least signi\336cant byte of record length) 234 307.33 P
+(2) 133.2 288.33 T
+1 (0, most  signi\336cant byte of record length) 234 288.33 P
+(3) 133.2 269.33 T
+(bit[7]) 176.4 269.33 T
+1 (reserved, must be 0) 234 269.33 P
+(bit[6]) 176.4 250.33 T
+1 (memory is an expansion ROM) 234 250.33 P
+(bit[5]) 176.4 231.33 T
+1 (memory is shadowable) 234 231.33 P
+(bit[4:3]) 176.4 212.33 T
+1 (memory control) 234 212.33 P
+(00) 252 193.33 T
+1 (8-bit memory only) 270 193.33 P
+(01) 252 174.33 T
+1 (16-bit memory only) 270 174.33 P
+(10) 252 155.33 T
+1 (8- and 16 supported) 270 155.33 P
+(1) 252 136.33 T
+(1) 256.63 136.33 T
+1 (reserved) 270 136.33 P
+(bit[2]) 176.4 117.33 T
+1 (decode support type) 234 117.33 P
+(0) 252 98.33 T
+1 (decode supports rnage length) 270 98.33 P
+(1) 252 79.33 T
+1 (decode supports high address) 270 79.33 P
+FMENDPAGE
+%%EndPage: "24" 24
+%%Page: "25" 25
+612 792 0 FMBEGINPAGE
+[0 0 0 1 0 0 0]
+[ 0 1 1 0 1 0 0]
+[ 1 0 1 0 0 1 0]
+[ 1 1 0 0 0 0 1]
+[ 1 0 0 0 0 1 1]
+[ 0 1 0 0 1 0 1]
+[ 0 0 1 0 1 1 0]
+ 7 FrameSetSepColors
+FrameNoSep
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 9 Q
+0 X
+0 0 0 1 0 0 0 K
+(25) 72 750 T
+(ISA/EISA/ISA-PnP) 466.47 750 T
+(February 28, 1996 Revision 0.1 DRAFT) 72 38 T
+540 738 72 738 2 L
+1 H
+2 Z
+N
+540 54 72 54 2 L
+N
+558 72 585 720 C
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+558 72 585 720 R
+7 X
+0 0 0 1 0 0 0 K
+V
+0 0 612 792 C
+27 72 54 720 C
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+27 72 54 720 R
+7 X
+0 0 0 1 0 0 0 K
+V
+1 12 Q
+0 X
+(1) 36 711 T
+(2) 36 699 T
+(3) 36 687 T
+(4) 36 675 T
+(5) 36 663 T
+(6) 36 651 T
+(7) 36 639 T
+(8) 36 627 T
+(9) 36 615 T
+(10) 36 603 T
+(11) 36 591 T
+(12) 36 579 T
+(13) 36 567 T
+(14) 36 555 T
+(15) 36 543 T
+(16) 36 531 T
+(17) 36 519 T
+(18) 36 507 T
+(19) 36 495 T
+(20) 36 483 T
+(21) 36 471 T
+(22) 36 459 T
+(23) 36 447 T
+(24) 36 435 T
+(25) 36 423 T
+(26) 36 411 T
+(27) 36 399 T
+(28) 36 387 T
+(29) 36 375 T
+(30) 36 363 T
+(31) 36 351 T
+(32) 36 339 T
+(33) 36 327 T
+(34) 36 315 T
+(35) 36 303 T
+(36) 36 291 T
+(37) 36 279 T
+(38) 36 267 T
+(39) 36 255 T
+(40) 36 243 T
+(41) 36 231 T
+(42) 36 219 T
+(43) 36 207 T
+(44) 36 195 T
+(45) 36 183 T
+(46) 36 171 T
+(47) 36 159 T
+(48) 36 147 T
+(49) 36 135 T
+(50) 36 123 T
+(51) 36 111 T
+(52) 36 99 T
+(53) 36 87 T
+(54) 36 75 T
+(55) 36 63 T
+0 0 612 792 C
+1 10 Q
+0 X
+0 0 0 1 0 0 0 K
+(bit[1]) 176.4 713.33 T
+1 (cache support type) 234 713.33 P
+(0) 252 694.33 T
+1 (non-cacheable) 270 694.33 P
+(1) 252 675.33 T
+1 (read cacheable, write-through) 270 675.33 P
+(bit[0]) 176.4 656.33 T
+1 (write status) 234 656.33 P
+(0) 252 637.33 T
+1 (ROM) 270 637.33 P
+(1) 252 618.33 T
+1 (writeable) 270 618.33 P
+(4) 133.2 599.33 T
+1 (minimum base memory address, bits[15:8]) 234 599.33 P
+1 (memory base address [7:0] are assumed to be 0) 234 580.33 P
+(5) 133.2 561.33 T
+1 (minimum base memory address, bits[23:16]) 234 561.33 P
+(6) 133.2 542.33 T
+1 (maximum base memory address, bits[15:8]) 234 542.33 P
+(7) 133.2 523.33 T
+1 (maximum base memory address, bits[23:16]) 234 523.33 P
+(8) 133.2 504.33 T
+1 (base alignment, bits[15:8]) 234 504.33 P
+(9) 133.2 485.33 T
+1 (base alignment, bits[23:16]) 234 485.33 P
+(10) 133.2 466.33 T
+1 (length of memory range in 256 byte blocks, lower 8 bits) 234 466.33 P
+(1) 133.2 447.33 T
+(1) 137.83 447.33 T
+1 (length of memory range in 256 byte blocks, upper 8 bits) 234 447.33 P
+2 12 Q
+(6.3.1) 72 422 T
+(1.  32-bit Memory Range Descriptor Record) 95.34 422 T
+2 10 Q
+(byte) 133.2 405.33 T
+1 (de\336nition) 234 405.33 P
+1 F
+(0) 133.2 386.33 T
+1 (0x85) 234 386.33 P
+(1) 133.2 367.33 T
+1 (7,  least signi\336cant byte of record length) 234 367.33 P
+(2) 133.2 348.33 T
+1 (0,  most signi\336cant byte of record length) 234 348.33 P
+(3) 133.2 329.33 T
+(bit[7]) 176.4 329.33 T
+1 (reserved, must be 0) 234 329.33 P
+(bit[6]) 176.4 310.33 T
+1 (memory is an expansion ROM) 234 310.33 P
+(bit[5]) 176.4 291.33 T
+1 (memory is shadowable) 234 291.33 P
+(bit[4:3]) 176.4 272.33 T
+1 (memory control) 234 272.33 P
+(00) 252 253.33 T
+1 (8-bit memory only) 270 253.33 P
+(01) 252 234.33 T
+1 (16-bit memory only) 270 234.33 P
+(10) 252 215.33 T
+1 (8- and 16-bit supported) 270 215.33 P
+(1) 252 196.33 T
+(1) 256.63 196.33 T
+1 (reserved) 270 196.33 P
+(bit[2]) 176.4 177.33 T
+1 (decode support type) 234 177.33 P
+(0) 252 158.33 T
+1 (decode supports rnage length) 270 158.33 P
+(1) 252 139.33 T
+1 (decode supports high address) 270 139.33 P
+(bit[1]) 176.4 120.33 T
+1 (cache support type) 234 120.33 P
+(0) 252 101.33 T
+1 (non-cacheable) 270 101.33 P
+(1) 252 82.33 T
+1 (read cacheable, write-through) 270 82.33 P
+FMENDPAGE
+%%EndPage: "25" 25
+%%Page: "26" 26
+612 792 0 FMBEGINPAGE
+[0 0 0 1 0 0 0]
+[ 0 1 1 0 1 0 0]
+[ 1 0 1 0 0 1 0]
+[ 1 1 0 0 0 0 1]
+[ 1 0 0 0 0 1 1]
+[ 0 1 0 0 1 0 1]
+[ 0 0 1 0 1 1 0]
+ 7 FrameSetSepColors
+FrameNoSep
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 9 Q
+0 X
+0 0 0 1 0 0 0 K
+(ISA/EISA/ISA-PnP binding) 72 750 T
+(26) 531 750 T
+-0.64 (February 28, 1996 Revision 0.1 DRAFT) 391.24 38 P
+72 738 540 738 2 L
+1 H
+2 Z
+N
+72 54 540 54 2 L
+N
+27 72 54 720 C
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+27 72 54 720 R
+7 X
+0 0 0 1 0 0 0 K
+V
+27 72 54 720 C
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+27 72 54 720 R
+7 X
+0 0 0 1 0 0 0 K
+V
+1 12 Q
+0 X
+(1) 36 711 T
+(2) 36 699 T
+(3) 36 687 T
+(4) 36 675 T
+(5) 36 663 T
+(6) 36 651 T
+(7) 36 639 T
+(8) 36 627 T
+(9) 36 615 T
+(10) 36 603 T
+(11) 36 591 T
+(12) 36 579 T
+(13) 36 567 T
+(14) 36 555 T
+(15) 36 543 T
+(16) 36 531 T
+(17) 36 519 T
+(18) 36 507 T
+(19) 36 495 T
+(20) 36 483 T
+(21) 36 471 T
+(22) 36 459 T
+(23) 36 447 T
+(24) 36 435 T
+(25) 36 423 T
+(26) 36 411 T
+(27) 36 399 T
+(28) 36 387 T
+(29) 36 375 T
+(30) 36 363 T
+(31) 36 351 T
+(32) 36 339 T
+(33) 36 327 T
+(34) 36 315 T
+(35) 36 303 T
+(36) 36 291 T
+(37) 36 279 T
+(38) 36 267 T
+(39) 36 255 T
+(40) 36 243 T
+(41) 36 231 T
+(42) 36 219 T
+(43) 36 207 T
+(44) 36 195 T
+(45) 36 183 T
+(46) 36 171 T
+(47) 36 159 T
+(48) 36 147 T
+(49) 36 135 T
+(50) 36 123 T
+(51) 36 111 T
+(52) 36 99 T
+(53) 36 87 T
+(54) 36 75 T
+(55) 36 63 T
+27 72 54 720 C
+0 0 612 792 C
+1 10 Q
+0 X
+0 0 0 1 0 0 0 K
+(bit[0]) 176.4 713.33 T
+1 (write status) 234 713.33 P
+(0) 252 694.33 T
+1 (ROM) 270 694.33 P
+(1) 252 675.33 T
+1 (writeable) 270 675.33 P
+(4) 133.2 656.33 T
+1 (minimum base memory address, bits[7:0]) 234 656.33 P
+(5) 133.2 637.33 T
+1 (minimum base memory address, bits[15:8]) 234 637.33 P
+(6) 133.2 618.33 T
+1 (minimum base memory address, bits[23:16]) 234 618.33 P
+(7) 133.2 599.33 T
+1 (minimum base memory address, bits[31:24]) 234 599.33 P
+(8) 133.2 580.33 T
+1 (maximum base memory address, bits[7:0]) 234 580.33 P
+(9) 133.2 561.33 T
+1 (maximum base memory address, bits[15:8]) 234 561.33 P
+(10) 133.2 542.33 T
+1 (maximum base memory address, bits[23:16]) 234 542.33 P
+(1) 133.2 523.33 T
+(1) 137.83 523.33 T
+1 (maximum base memory address, bits[31:24]) 234 523.33 P
+(12) 133.2 504.33 T
+1 (base alignment, bits[7:0]) 234 504.33 P
+(13) 133.2 485.33 T
+1 (base alignment, bits[15:8]) 234 485.33 P
+(14) 133.2 466.33 T
+1 (base alignment, bits[23:16]) 234 466.33 P
+(15) 133.2 447.33 T
+1 (base alignment, bits[31:24]) 234 447.33 P
+(16) 133.2 428.33 T
+1 (length of memory range, bits[7:0]) 234 428.33 P
+(17) 133.2 409.33 T
+1 (length of memory range, bits[15:8]) 234 409.33 P
+(18) 133.2 390.33 T
+1 (length of memory range, bits[23:16]) 234 390.33 P
+(19) 133.2 371.33 T
+1 (length of memory range, bits[31:24]) 234 371.33 P
+2 12 Q
+(6.3.12.  32-bit Fixed Location Memory Range Descriptor Record) 72 346 T
+2 10 Q
+(byte) 133.2 329.33 T
+1 (de\336nition) 234 329.33 P
+1 F
+(0) 133.2 310.33 T
+1 (0x86) 234 310.33 P
+(1) 133.2 291.33 T
+1 (9, least signi\336cant byte of record length) 234 291.33 P
+(2) 133.2 272.33 T
+1 (0, most  signi\336cant byte of record length) 234 272.33 P
+(3) 133.2 253.33 T
+(bit[7]) 176.4 253.33 T
+1 (reserved, must be 0) 234 253.33 P
+(bit[6]) 176.4 234.33 T
+1 (memory is an expansion ROM) 234 234.33 P
+(bit[5]) 176.4 215.33 T
+1 (memory is shadowable) 234 215.33 P
+(bit[4:3]) 176.4 196.33 T
+1 (memory control) 234 196.33 P
+(00) 252 177.33 T
+1 (8-bit memory only) 270 177.33 P
+(01) 252 158.33 T
+1 (16-bit memory only) 270 158.33 P
+(10) 252 139.33 T
+1 (8- and 16-bit supported) 270 139.33 P
+(1) 252 120.33 T
+(1) 256.63 120.33 T
+1 (reserved) 270 120.33 P
+(bit[2]) 176.4 101.33 T
+1 (decode support type) 234 101.33 P
+(0) 252 82.33 T
+1 (decode supports rnage length) 270 82.33 P
+FMENDPAGE
+%%EndPage: "26" 26
+%%Page: "27" 27
+612 792 0 FMBEGINPAGE
+[0 0 0 1 0 0 0]
+[ 0 1 1 0 1 0 0]
+[ 1 0 1 0 0 1 0]
+[ 1 1 0 0 0 0 1]
+[ 1 0 0 0 0 1 1]
+[ 0 1 0 0 1 0 1]
+[ 0 0 1 0 1 1 0]
+ 7 FrameSetSepColors
+FrameNoSep
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 9 Q
+0 X
+0 0 0 1 0 0 0 K
+(27) 72 750 T
+(ISA/EISA/ISA-PnP) 466.47 750 T
+(February 28, 1996 Revision 0.1 DRAFT) 72 38 T
+540 738 72 738 2 L
+1 H
+2 Z
+N
+540 54 72 54 2 L
+N
+558 72 585 720 C
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+558 72 585 720 R
+7 X
+0 0 0 1 0 0 0 K
+V
+0 0 612 792 C
+27 72 54 720 C
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+27 72 54 720 R
+7 X
+0 0 0 1 0 0 0 K
+V
+1 12 Q
+0 X
+(1) 36 711 T
+(2) 36 699 T
+(3) 36 687 T
+(4) 36 675 T
+(5) 36 663 T
+(6) 36 651 T
+(7) 36 639 T
+(8) 36 627 T
+(9) 36 615 T
+(10) 36 603 T
+(11) 36 591 T
+(12) 36 579 T
+(13) 36 567 T
+(14) 36 555 T
+(15) 36 543 T
+(16) 36 531 T
+(17) 36 519 T
+(18) 36 507 T
+(19) 36 495 T
+(20) 36 483 T
+(21) 36 471 T
+(22) 36 459 T
+(23) 36 447 T
+(24) 36 435 T
+(25) 36 423 T
+(26) 36 411 T
+(27) 36 399 T
+(28) 36 387 T
+(29) 36 375 T
+(30) 36 363 T
+(31) 36 351 T
+(32) 36 339 T
+(33) 36 327 T
+(34) 36 315 T
+(35) 36 303 T
+(36) 36 291 T
+(37) 36 279 T
+(38) 36 267 T
+(39) 36 255 T
+(40) 36 243 T
+(41) 36 231 T
+(42) 36 219 T
+(43) 36 207 T
+(44) 36 195 T
+(45) 36 183 T
+(46) 36 171 T
+(47) 36 159 T
+(48) 36 147 T
+(49) 36 135 T
+(50) 36 123 T
+(51) 36 111 T
+(52) 36 99 T
+(53) 36 87 T
+(54) 36 75 T
+(55) 36 63 T
+0 0 612 792 C
+1 10 Q
+0 X
+0 0 0 1 0 0 0 K
+(1) 252 713.33 T
+1 (decode supports high address) 270 713.33 P
+(bit[1]) 176.4 694.33 T
+1 (cache support type) 234 694.33 P
+(0) 252 675.33 T
+1 (non-cacheable) 270 675.33 P
+1 (1    read cacheable, write-through) 252 656.33 P
+(bit[0]) 176.4 637.33 T
+1 (write status) 234 637.33 P
+(0) 252 618.33 T
+1 (ROM) 270 618.33 P
+(1) 252 599.33 T
+1 (writeable) 270 599.33 P
+(4) 133.2 580.33 T
+1 (base memory address, bits[7:0]) 234 580.33 P
+(5) 133.2 561.33 T
+1 (base memory address, bits[15:8]) 234 561.33 P
+(6) 133.2 542.33 T
+1 (base memory address, bits[23:16]) 234 542.33 P
+(7) 133.2 523.33 T
+1 (base memory address, bits[31:24]) 234 523.33 P
+(8) 133.2 504.33 T
+1 (length of memory range, bits[7:0]) 234 504.33 P
+(9) 133.2 485.33 T
+1 (length of memory range, bits[15:8]) 234 485.33 P
+(10) 133.2 466.33 T
+1 (length of memory range, bits[23:16]) 234 466.33 P
+(1) 133.2 447.33 T
+(1) 137.83 447.33 T
+1 (length of memory range, bits[31:24]) 234 447.33 P
+2 12 Q
+(6.3.13.  Start Dependent Function Record) 72 422 T
+1 10 Q
+1 (The resources required by a logical device may have interdependencies that need to be expressed to allow) 72 405.33 P
+1 (software to make resource allocation decisions about the device. Dependent functions are used to express these) 72 393.33 P
+1 (interdependencies. For example, serial I/O ports are linked with a particular IRQ.) 72 381.33 P
+2 F
+(byte) 133.2 362.33 T
+1 (de\336nition) 234 362.33 P
+1 F
+(0) 133.2 343.33 T
+1 (0x30 or 0x31, length = 0 or 1) 234 343.33 P
+(1) 133.2 324.33 T
+1 (priority byte) 234 324.33 P
+(0) 252 305.33 T
+1 (highest priority and preferred con\336guration) 270 305.33 P
+(1) 252 286.33 T
+1 (lower priority but acceptable con\336guration) 270 286.33 P
+(2) 133.2 267.33 T
+1 (sub-optimal con\336guration) 234 267.33 P
+(3-f) 133.2 248.33 T
+(f) 144.68 248.33 T
+(reserved) 234 248.33 T
+2 12 Q
+(6.3.14.  End Dependent Function Record) 72 223 T
+1 10 Q
+1 (Dependent Functions are not nestable. Therefore, only one End Dependent Function record is allowed per) 72 206.33 P
+1 (logical device.) 72 194.33 P
+2 F
+(byte) 133.2 175.33 T
+1 (de\336nition) 234 175.33 P
+1 F
+(0) 133.2 156.33 T
+1 (0x38, length = 0) 234 156.33 P
+2 12 Q
+(6.3.15.  Small V) 72 131 T
+(endor De\336ned Record) 150.9 131 T
+2 10 Q
+(byte) 133.2 114.33 T
+1 (de\336nition) 234 114.33 P
+1 F
+(0) 133.2 95.33 T
+1 (0x71-0x77, length = 1-7) 234 95.33 P
+(1-7) 133.2 76.33 T
+1 (vendor de\336ned) 234 76.33 P
+FMENDPAGE
+%%EndPage: "27" 27
+%%Page: "28" 28
+612 792 0 FMBEGINPAGE
+[0 0 0 1 0 0 0]
+[ 0 1 1 0 1 0 0]
+[ 1 0 1 0 0 1 0]
+[ 1 1 0 0 0 0 1]
+[ 1 0 0 0 0 1 1]
+[ 0 1 0 0 1 0 1]
+[ 0 0 1 0 1 1 0]
+ 7 FrameSetSepColors
+FrameNoSep
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 9 Q
+0 X
+0 0 0 1 0 0 0 K
+(ISA/EISA/ISA-PnP binding) 72 750 T
+(28) 531 750 T
+-0.64 (February 28, 1996 Revision 0.1 DRAFT) 391.24 38 P
+72 738 540 738 2 L
+1 H
+2 Z
+N
+72 54 540 54 2 L
+N
+27 72 54 720 C
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+27 72 54 720 R
+7 X
+0 0 0 1 0 0 0 K
+V
+27 72 54 720 C
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+27 72 54 720 R
+7 X
+0 0 0 1 0 0 0 K
+V
+1 12 Q
+0 X
+(1) 36 711 T
+(2) 36 699 T
+(3) 36 687 T
+(4) 36 675 T
+(5) 36 663 T
+(6) 36 651 T
+(7) 36 639 T
+(8) 36 627 T
+(9) 36 615 T
+(10) 36 603 T
+(11) 36 591 T
+(12) 36 579 T
+(13) 36 567 T
+(14) 36 555 T
+(15) 36 543 T
+(16) 36 531 T
+(17) 36 519 T
+(18) 36 507 T
+(19) 36 495 T
+(20) 36 483 T
+(21) 36 471 T
+(22) 36 459 T
+(23) 36 447 T
+(24) 36 435 T
+(25) 36 423 T
+(26) 36 411 T
+(27) 36 399 T
+(28) 36 387 T
+(29) 36 375 T
+(30) 36 363 T
+(31) 36 351 T
+(32) 36 339 T
+(33) 36 327 T
+(34) 36 315 T
+(35) 36 303 T
+(36) 36 291 T
+(37) 36 279 T
+(38) 36 267 T
+(39) 36 255 T
+(40) 36 243 T
+(41) 36 231 T
+(42) 36 219 T
+(43) 36 207 T
+(44) 36 195 T
+(45) 36 183 T
+(46) 36 171 T
+(47) 36 159 T
+(48) 36 147 T
+(49) 36 135 T
+(50) 36 123 T
+(51) 36 111 T
+(52) 36 99 T
+(53) 36 87 T
+(54) 36 75 T
+(55) 36 63 T
+27 72 54 720 C
+0 0 612 792 C
+2 12 Q
+0 X
+0 0 0 1 0 0 0 K
+(6.3.16.  Large V) 72 712 T
+(endor De\336ned Record) 152.22 712 T
+2 10 Q
+(byte) 133.2 695.33 T
+1 (de\336nition) 234 695.33 P
+1 F
+(0) 133.2 676.33 T
+1 (0x84) 234 676.33 P
+(1) 133.2 657.33 T
+1 (length of data, lower 8 bits) 234 657.33 P
+(2) 133.2 638.33 T
+1 (length of data, upper 8 bits) 234 638.33 P
+(3-n) 133.2 619.33 T
+1 (vendor de\336ned data) 234 619.33 P
+2 12 Q
+(6.3.17.   End T) 72 594 T
+(ag Record) 145.25 594 T
+1 10 Q
+1 (This record identi\336es the end of resource information for the adaptor card.) 72 577.33 P
+2 F
+(byte) 133.2 558.33 T
+1 (de\336nition) 234 558.33 P
+1 F
+(0) 133.2 539.33 T
+1 (0x79, length = 1) 234 539.33 P
+1 (checksum covering all resource data after the serial identi\336er) 234 527.13 P
+1 (. This) 485.27 527.13 P
+1 (checksum is generated such that adding it to the sum of all data) 234 514.93 P
+1 (bytes will produce a zero sum. If the \336eld is 0, the resource data is) 234 502.73 P
+1 (treated as if it checksummed correctly) 234 490.53 P
+1 (.) 390.81 490.53 P
+2 14 Q
+1.4 (- END OF DOCUMENT -) 225.43 126.87 P
+FMENDPAGE
+%%EndPage: "28" 28
+%%Trailer
+%%BoundingBox: 0 0 612 792
+%%PageOrder: Ascend
+%%Pages: 28
+%%DocumentFonts: Times-BoldItalic
+%%+ Times-Roman
+%%+ Times-Bold
+%%+ Helvetica
+%%+ Times-Italic
+%%+ Courier
+%%+ Courier-Bold
+%%EOF

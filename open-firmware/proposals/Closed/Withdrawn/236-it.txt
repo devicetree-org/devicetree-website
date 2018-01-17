@@ -1,0 +1,36 @@
+Date: Sun, 26 Feb 1995 13:19:06 -0800
+From: brianh@swift.West.Sun.COM (Brian D. Horn)
+Subject: Item #236: Change "reg" prop names in PCI binding
+
+Title:          Conformance of "reg" property for PCI binding
+
+Author:         Brian Horn
+
+Date:           Feb. 26, 1995
+
+Ed/Tech:        Technical
+
+Synopsis:       Change names of two "reg" like properties
+
+Doc & Version:  PCI binding to 1275 version 1.4
+
+Problem:        The "reg" property has different base semantics other bindings
+
+Proposal:       At the moment there is described two properties that
+		have "reg"-like semantics.  One is "reg" and the other
+		is "assigned-adresses".  However, the "reg" property is being
+		used at the device driver interface level as a request
+		to the base 1275 code for where the device would like to
+		"live".  The "assigned-adresses" is where the 1275 finally
+		configures the device to actually "live".  All the other
+		bindings have the semantics of the "reg" property
+		being where the device actually does "live".  To have
+		the PCI devices work differently is awkward and surprising.
+		Suggestion: change the current "reg" property to be
+		"requested-addresses" and change "assigned-adresses" to
+		be "reg".  This preserves the current behaviour of the device
+		"asks" the the base 1275 code selects, but brings PCI
+		devices into line with the other bindings.
+
+[ P1275 Item #236 -- Received: Sun Feb 26 13:22:44 PST 1995 ]
+

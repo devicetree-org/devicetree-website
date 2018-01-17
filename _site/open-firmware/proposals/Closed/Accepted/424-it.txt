@@ -1,0 +1,95 @@
+From: dmk@uask4it-95 (David Kahn)
+Date: Thu, 11 Sep 1997 16:58:22 -0700
+Subject: Item #424: OBP-TFTP RP: /chosen/bootreply-packet ...
+
+
+P1275 Openboot Working Group Proposal -- Proposal #:424 Ver <dmk-02>
+
+Title:          Boot Reply Packet property should be MAC independent
+
+Author:         David Kahn (For Michael.Carney@East.Sun.Com)
+
+Date:           Wed Sep 11 18:37:01 PDT 1997
+
+Ed/Tech:        Technical
+
+Synopsis:       The bootreply packet property should
+		exclude the encapsulating MAC and protocol
+		dependent packet info.
+
+		Note: This superscedes proposal #423
+
+		Changes from #423: Deprecate "bootreply-packet",
+		  create new "bootp-response" property. Plus some
+		  minor 'tightening' of the wording.
+
+Doc & Version:  OBP-TFTP RP, draft ver 0.6
+
+Problem:        MAC-layer independent software shouldn't have to
+		know about the protocol layer encapsulation of
+		the bootp bootreply packet ... it should be able
+		to interpret the contents without knowing or
+		caring about the encapsulating MAC layer prototocol
+		headers.
+
+		The "load" method specifically states that the 
+		/chosen/bootreply-packet include the "entire packet".
+
+		The BOOT Protocol (and DHCP by inheritance) is designed
+		to include enough (and no more) information required
+		by an implementation to operate without violating any
+		of the protocol layering. That's why the BOOTP header
+		contains such fields as hardware type (htype), hardware
+		address len (hlen), flags, and client hardware address
+		(chaddr). They allow an implementation above the UDP
+		layer to effectively address, send, and receive BOOT
+		protocol datagrams by permitting such functions as
+		updating the ARP table (chaddr + ciaddr) such that a
+		server can unicast a response to a client. We don't
+		need the data in the link-layer, IP, or UDP headers
+		to do this, and to expose these headers needlessly exposes
+		link-layer and IP layer (IP options) dependencies.
+
+		There is some exising practice for the current (draft)
+		specification of the 'bootreply-packet' property
+		at IBM, including the encapsulating headers.
+
+		Firmworks implementation creates a 'bootp-response'
+		property, which excludes the encapsulating headers.
+
+		This proposal can deprecate the bootreply-packet
+		property and create a new bootp-response property,
+		so that client programs will be able to work with
+		both implementations. (First look for bootp-response,
+		if not found, look for bootreply-packet.)
+
+Proposal:       
+
+
+  Direct the editor to inlcude the following change in the next version of the
+  document and publish this proposal as an addenda/errata to version 0.6
+  on the recommended practices page of the web site.
+
+  Replace this text in the "load" method definition
+  on  page 7 of obp-tftp RP, draft version 0.6:
+
+    If a BOOTP sequence is performed and succeeds, the BOOTP BOOTREPLY packet
+    shall be reported by creating a "bootreply-packet" property under the
+    "/chosen" node. The entire packet (including hardware addresses) shall be
+    reported, encode as with encode-bytes.
+
+  With this text:
+
+    If a BOOTP sequence is performed and succeeds, the BOOTP[3] BOOTREPLY packet
+    shall be reported by creating a "bootp-response" property in the
+    "/chosen" node. The contents of this property are encoded as with
+    'encode-bytes', and contain only the BOOTP[3] packet, with the
+    encapsulating UDP[4], IP[8], and link-layer headers and trailers omitted.
+
+  Add the following reference to the references section:
+
+    [8] RFC 791, Internet Protocol, IETF, J. Postel. Sep-01-1981.
+
+
+[ P1275 Item #424 -- Received: Thu Sep 11 16:59:31 PDT 1997 ]
+

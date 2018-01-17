@@ -1,0 +1,62 @@
+Subject: Agenda for Open Firmware meeting on 10/31/95
+Date: Thu, 26 Oct 95 16:14:24 -0600
+From: "Dr. Luan D. Nguyen" <duyluan@austin.ibm.com>
+
+Dear IEEE 1275-1994 Committee Members,
+
+ATTACHED IS THE AGENDA FOR OPEN FIRMWARE WORKGROUP MEETING AT FIRMWORKS,
+MOUNTAIN VIEW, CA ON TUESDAY 10/31/1995. SEE YOU ALL NEXT WEEK. 
+Please check the minutes of our last meeting on "Action Items" assigned to
+you. For those who cannot come to the meeting, please send me e-mail by
+tommorrow 5:00PM Central Time stating the current status of your action
+item(s) and updated status of your assignment(s). Thanks.
+P.S.: David Kahn, Please post this agenda to our WEB page. Thank you.
+------------------------------------------------------------------------------
+Time is Pacific time:
+9:00AM            Meet at FirmWorks office location.
+                  Light breakfast to be provided by FirmWorks.
+9:15AM            Introduction
+                  Review Agenda
+9:30AM            Review and approve the minutes from our last 
+                  meeting on 09/19/1995
+9:50AM            Standard Progress Report
+                  Action Items Review
+10:15AM           Future Meetings
+10:45AM           Errata document
+11:10AM           Recommended Practice documents
+
+12:00PM           Break for LUNCH also provided by FirmWorks
+
+1:00PM            Recommended Practice documents (cont.)
+                  Device extensions document
+1:20PM            P1275.3 (VME - IEEE 1014 bus)
+                     1- Status from David Paktor
+                     2- Motorola's position from Tracy
+1:30PM           P1275.4 (Future Bus +)
+                     1- New status from Martin Walsh 
+1:40PM           P1275.6: 64-bit Extension Supplement for Open Firmware
+                     1- Status on experimental compatibility work from
+                        Mitch and/or DAvid Kahn
+2:00PM           ISA/EISA/ISA PNP binding document:
+                     1- Review draft 0.05 available on our WEB page
+2:45PM           Any other proposals on the table
+3:00PM           PowerPC Processor binding
+                     1- Review latest update 
+4:00PM           PCMCIA and cardbus binding supplement
+                     1- Status from subcommittee working on 
+                        this PAR
+                     2- Review latest update (any?)
+4:15PM           PCI Binding for Open Firmware
+                     1- Any new status  
+5:00PM - 5:15PM   Summarize/ Assign action items and Wrap up
+
+
+NOTE:
+------        
+Directions and hotel information are available at:
+
+	http://playground.sun.com/pub/1275
+
+Choose "Working group meetings and info" from the table of
+contents.
+

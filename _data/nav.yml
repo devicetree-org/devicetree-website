@@ -1,0 +1,18 @@
+search: true
+brand:
+    text: DeviceTree
+    image: device-tree-logo.png
+    url: /
+pages:
+    - title: Home
+      url: /
+    - title: Specifications
+      url: /specifications/
+    - title: Governance
+      url: /governance/
+    - title: Collaborate
+      url: /collaborate/
+    - title: FAQ
+      url: /faq/
+    - title: Blog
+      url: /blog/

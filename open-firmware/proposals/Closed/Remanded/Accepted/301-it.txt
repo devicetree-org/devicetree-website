@@ -1,0 +1,56 @@
+Date: Tue, 12 Dec 1995 11:16:30 -0800
+From: brianh@lexus.West.Sun.COM (Brian Horn)
+Subject: Item #301: 8042 device binding
+
+P1275 Open Firmware Working Group Proposal -- Proposal #301 Ver 1.0
+
+Title:		8042 device binding
+
+Author:		Brian.Horn@west.sun.com
+
+Date:		Dec 12, 1995
+
+Ed/Tech:	Technical
+
+Synopsis:	There exists no 8042 device binding
+
+Doc & Version:	Device extensions?  (Really a new document)
+
+Problem:	There is no specification for the 8042 and children
+
+Proposal:	
+		For the 8042 itself (which is an interior node)
+
+		Additional Properties:
+
+		"device_type"		"8042"
+		"#address-cells"	1
+		"#size-cells"		0
+
+		Additional Methods:
+
+		encode-unit
+		decode-unit
+
+		Numeric representation of unit addresses:
+
+		Prop encoded int whose value is either 0 (for the main port)
+		or 1 (for the aux port).
+
+		Text representation of unit addresses:
+
+		"main" for the main port and "aux" for the aux port.
+
+		Note: it is possible to have either two keyboard or two
+		mice connected or reverse the mouse and keyboard plugs.
+
+		Additional requirements:
+
+		Open Firmware shall initialize and utilize the keyboard
+		and the keyboard controller in the default or power-up
+		mode(s).  This avoids surprises to the OS and also causes
+		Open Firmware to function correctly in the event that
+		the keyboard is unplugged and replugged after startup.
+
+[ P1275 Item #301 -- Received: Tue Dec 12 11:12:54 PST 1995 ]
+

@@ -1,0 +1,64 @@
+Date: Mon, 30 Oct 1995 15:32:06 -0800
+From: brianh@lexus.West.Sun.COM (Brian Horn)
+To: p1275-wg@prombo.eng.sun.com
+Reply-To: p1275-wg@prombo.eng.sun.com
+Subject: Item #298: DS1385 binding
+
+P1275 Open Firmware Working Group Proposal -- Proposal #298 Ver 1.0
+
+Title:		NVRAM device binding (Dallas Semiconductor 1385)
+
+Author:		Brian.Horn@west.sun.com
+
+Date:		Oct 30, 1995
+
+Ed/Tech:	Technical
+
+Synopsis:	Device specific binding for an NVRAM device
+
+Doc & Version:	New binding
+
+Problem:	There is no specification for the register of a NVRAM device
+
+Proposal:	Define device specific properties for the Dallas Semi 1385
+
+
+		"name"
+			Standard Open Firmware property; the value of this
+			property shall follow the standard rules for Open
+			Firmware device names. (i.e. "nvram")
+
+		"compatible"
+			Standard Open Firmware property; the value of this
+			property shall start with "DS,1385" .
+
+		"device_type"
+			Standard Open Firmware property; the value of this
+			property shall be "nvram"
+
+		"reg"
+			Standard Open Firmware property; the value of this
+			property shall follow the standard rules of Open
+			Firmware devices (i.e. the format of the bus by
+			which this device may be addressed - ISA bus)
+
+			The first tuple shall define the address of the
+			least significant byte of the ISA I/O address port
+
+			The second tuple shall define the address off the
+			most significant byte of the ISA I/O address port
+
+			The third tuple shalle define the address of the
+			ISA I/O data port.
+
+Example (follows PR*P reference implementation):
+
+"name"		"nvram"
+"device_type"	"nvram"
+"compatible"	"DS,1385"
+"reg"		0x1, 0x74, 0x1 (prop encoded ints)
+		0x1, 0x75, 0x1
+		0x1, 0x77, 0x1
+
+[ P1275 Item #298 -- Received: Mon Oct 30 15:28:44 PST 1995 ]
+

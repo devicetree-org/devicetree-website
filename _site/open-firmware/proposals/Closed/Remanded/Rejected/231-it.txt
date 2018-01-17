@@ -1,0 +1,105 @@
+From: rlarndt@austin.ibm.com (Richard L. Arndt)
+Subject: Item #231: Halt-Dump
+Date: Mon, 06 Feb 95 16:30:51 -0600
+
+P1275 Open Firmware Working Group Proposal -- Proposal #231 Ver <Auth-Vers#>
+
+Title:          Halt-Dump
+
+Author:         R. L. Arndt rlarndt@austin.ibm.com
+
+Date:           6 Feb 95
+
+Ed/Tech:        Technical
+
+Synopsis:       Add mandatory support of the halt string "dump"
+
+Doc & Version:  PowerPC processor binding -- dated: 941006
+
+Problem:        Need mechanisms for creating a dump of selected ram upon
+                OS crash.
+
+Proposal:
+
+The firmware shall support halt string "dump" in the following manner.
+Function:
+ 1. The firmware shall dump the sections of main storage specified by the
+dump list to the disk halt area.  NOTE: The HALT procedure may move
+elements of the dump list and/or the dump areas to make room for the open
+firmware code.
+ 2. This is followed by a reboot as defined under the "boot" halt string of
+the HALT procedure.
+
+System State at call:
+ Memory:
+        The dump list may be contained and may specify any range of
+        storage outside of that reserved for the Halt procedure.
+ Master processor:
+        As specified for other halt call-back functions.
+        |%r3 | -halt argument-> | 1st pointer | --> dump[0]
+                                | 2nd pointer | --dump_list_____
+  ______________________________________________________________]
+ [__-->|   Link    |---------------...-------------->|Link=0 (end)|
+       |  pointer  |-area_name--> Dump_Area_1[0]  |--|  pointer   |-
+       |area length|                              |  |area  length|
+       |ra    len  |      ________________________|  |ra     len  |
+       |   .       |      |                          |    .       |
+       |   .       |      |-> Dump_Area_Last[0]      |    .       |
+       |   .       |                                 |    .       |
+       |ra    len  |                                 |ra     len  |
+ Slave Processors:
+        In an SMP system only one processor shall call the Halt procedure
+        with a halt string of "dump" all other processors shall call the
+        halt procedure with the halt string "slave".  The Halt procedure
+        may cause the slave processors to loop in a program that does not
+        change the state of memory.
+        |%r3 | -halt argument-> | 1st pointer | --> slave[0]
+ IO Sub-system:
+        All elements of the IO sub-system shall be in a safe state.  In a
+        safe state, they shall not be transferring data to or from memory
+        nor shall they cause an interrupt to any processor.
+ Interrupt Sub-system:
+        The processor's MSR EE=0 prior to calling the Halt procedure.
+ Disk Halt partition:
+        The halt partition on the IPL disk shall consist of contiguous
+        blocks of storage.  The size requirement of the halt partition is
+        system dependent
+Disk Halt partition after dump:
+        --------------------------------
+        | Endian Flag                  |
+        --------------------------------
+        | int <number of dump areas>   |
+        --------------------------------
+        |int <len of DA + name string> |
+        --------------------------------
+        |Dump_Area_1[0] <name string>  |
+        --------------------------------
+        |Dump area 1's data            |
+        --------------------------------
+        | Pad to 4 byte boundary       |
+        --------------------------------
+        |int <len of DA + name string> |
+        --------------------------------
+        |Dump_Area_2[0] <name string>  |
+        --------------------------------
+        |Dump area 2's data            |
+        --------------------------------
+        | Pad to 4 byte boundary       |
+        --------------------------------
+                        .
+                        .
+                        .
+        --------------------------------
+        |int <len of DA + name string> |
+        --------------------------------
+        |Dump_Area_N[0] <name string>  |
+        --------------------------------
+        |Dump area N's data            |
+        --------------------------------
+        | Pad to 4 byte boundary       |
+        --------------------------------
+
+
+
+[ P1275 Item #231 -- Received: Mon Feb  6 14:32:58 PST 1995 ]
+

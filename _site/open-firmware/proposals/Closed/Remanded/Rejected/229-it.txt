@@ -1,0 +1,109 @@
+From: rlarndt@austin.ibm.com (Richard L. Arndt)
+Subject: Item #229: Halt-Hibernate
+Date: Mon, 06 Feb 95 16:28:12 -0600
+
+P1275 Open Firmware Working Group Proposal -- Proposal #229 Ver <Auth-Vers#>
+
+Title:          Halt-Hibernate
+
+Author:         R. L. Arndt rlarndt@austin.ibm.com
+
+Date:           6 Feb 95
+
+Ed/Tech:        Technical
+
+Synopsis:       Add mandatory support of the halt string "hibernate"
+
+Doc & Version:  PowerPC processor binding -- dated: 941006
+
+Problem:        Need mechanisms for creating and restoring the ram image
+                in support of hardware hibernation function.
+
+Proposal:
+
+The firmware shall support the halt string "hibernate" in the following
+manner.
+
+Function:
+ 1. The firmware shall write the ram image exclusive of that devoted to
+firmware use (see System State at call below) to the IPL disk's halt
+partition.
+ 2. If the firmware encounters an error or the hardware does not
+support hibernate the halt procedure shall set the appropriate return code
+(see System State at return below) and return to the caller.
+ 3. The firmware shall record hibernation restoration parameters in the
+system's configuration memory.
+ 4. The firmware shall set the system power state to hibernate in a system
+dependent manner (this usually means powering down the machine).
+ 5. When the system is subsequently powered up, the firmware reads the
+hibernation restoration parameters and:
+ 6. Initializes the system hardware as on IPL.
+ 7. Rather than loading the standard client program, loads the saved ram
+image from the halt partition.
+ 8. Resets the hibernation restoration parameters in configuration memory.
+ 9. Returns to the caller of hibernation (see System State at Return
+below).
+
+System State at call:
+ Memory:
+        The memory range defined by the "real-base" and "real-size"
+        configuration variable is undefined but available for use by open
+        firmware.
+ Master processor:
+        As specified for other halt call-back functions.
+        |%r3 | -halt argument-> | 1st pointer | --> hibernate[0]
+ Slave Processors:
+        In an SMP system only one processor shall call the Halt procedure
+        with a halt string of "hibernate" all other processors shall call
+        the halt procedure with the halt string "slave".  The Halt
+        procedure may cause the slave processors to loop in a program that
+        does not change the state of memory.
+        |%r3 | -halt argument-> | 1st pointer | --> slave[0]
+ IO Sub-system:
+        All elements of the IO sub-system shall be in a safe state.  In a
+        safe state, they shall not be transferring data to or from memory
+        nor shall they cause an interrupt to any processor.
+ Interrupt Sub-system:
+        The processor's MSR EE=0 prior to calling the Halt procedure.
+ Disk Halt partition:
+        The halt partition on the IPL disk shall consist of contiguous
+        blocks of storage.  The size requirement of the halt partition is
+        system dependent
+
+System State at return:
+ Memory:
+        The state of the memory locations, exclusive of the range defined
+        by the "real-base" and "real-size" configuration variables, shall
+        be restored to the state they were in at the call to the Halt
+        procedure.
+ Master Processor:
+        The state of the master processor shall be as defined for the
+        "initial program state" with the following exceptions.  The
+        processor will start executing at the address which was in the
+        master processor's link register when the Halt procedure was
+        called. %r3 shall contain the return code see below.
+ Slave Processors:
+        The state of the slave processors upon restoration from hibernation
+        shall as follows: The MSR as defined for "initial program state".
+        All non-architected processor dependent registers shall be set to
+        the system dependent default value. All other architected registers
+        are undefined. The processor shall start executing at the address
+        which was in the slave processor's link register when the Halt
+        procedure was called. %r3 shall contain the return code 0.
+ IO Sub-system:
+        All elements of the IO sub-system shall be initialized to a safe
+        state.  The device tree shall be re-established as on IPL.
+ Interrupt Sub-system:
+        The processor's MSR EE=0.
+ Return Codes:
+        0 -> Restored from hibernation / slave
+        -1 -> Hardware does not support hibernate power state
+        -2 -> Hardware write error
+        -3 -> No Halt partition
+        -4 -> Halt partition too small
+
+
+
+
+[ P1275 Item #229 -- Received: Mon Feb  6 14:30:52 PST 1995 ]
+

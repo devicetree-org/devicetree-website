@@ -1,0 +1,156 @@
+Subject: Minutes of IEEE 1275 Committee on 01/24/95
+Date: Tue, 14 Feb 95 10:29:51 -0600
+From: "Dr. Luan D. Nguyen" <duyluan@austin.ibm.com>
+
+Dear IEEE 1275-1994 Committee members,
+Attached please find the minutes of our last meeting on 01/24/95 at
+FirmWorks, CA. Have a nice day.
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+1- Attendees
+
+Ron Hochsprung Apple/Sys. Arch.    (408)974-2661  ron@apple.com
+Mitch Bradley  FirmWorks/President (415)961-1302  wmb@firmworks.com
+               Chairman IEEE 1275-1994 Committee
+David M. Kahn  Sun Microsystems/   (415)336-2784  dmk@Eng.Sun.Com
+               Vice Chair IEEE 1275-1994 Committee/
+               Firmware/OS Architecture
+Luan Nguyen    IBM/Sys. Arch./     (512)838-1292  duyluan@austin.ibm.com
+               Secretary IEEE 1275-1994 Committee
+Yongjae Rim    IBM pPS 		   (512)838-8508  yrim@austin.ibm.com
+David Paktor   HAL   		   (408)379-7000  paktor@hal.com
+John Beidl     IBM NS Raleigh      (919)254-2855  jbeidl@vnet.ibm.com
+Mike Segapel   IBM pPS Firmware    (512)838-4228  mikes@austin.ibm.com
+John Beidl     IBM NS Raleigh      (919)254-2855  jbeidl@vnet.ibm.com
+Bob Coffin     IBM pPS Arch.       (512)838-8240  coffin@vnet.ibm.com
+Jordan Brown   Sunsoft PowerPC     (310)348-6039  jordan.Brown@west.sun.com
+John Rible     Quicksand           (408)458-0399  jrible@cruzio.com 
+                                                  (as of 2/1/1995)
+David Trissel  Motorola Austin                    dave_trissel@risc.sps.mot.com
+Ilan Rabinowitz Ilanet             (408)354-9991  ilanet!ir@apple.com
+Lilian Leung   Firepower Systems   (415)462-6217  lilian_leung@firepower.com
+
+
+
+2- Review Agenda
+
+Proposed agenda was approved with the following amendments: 
+* Drop 1275.0 item and add (1) review and approve minutes, (2) editor report, 
+  and (3) action review meeting.
+* Add P1275.6 and P1275.7 after P1275.4 item.
+* Add x86 binding and New Proposal items after ISA PNP binding item.
+
+
+
+3- Standard Progress report
+  
+* P1275.3: AI for David Paktor to drive and Martin Walsh to help to push it 
+  through IEEE RevCom.
+* P1275.1 and P1275.2 are done and will be dropped out from future meeting agenda.
+* P1275.4: ballot sent out.
+* P1275.5: notice to BASC sent by David Kahn.
+* P1275.6: PAR was approved and balloting invitation went out.
+* GOAA has shown interested on IEEE 1275-1994
+
+
+4- Last minutes meeting review
+
+Vote unanimously to approve the minutes of last meeting sent out with the 
+following admendments: 
+(1) Item 9: add note that the committee voted unanimously to withdraw P1275.5 PAR, 
+(2) Item 11 changes to a note saying that P1275.7 will be errata only and other 
+    additions will be published on the net under separate authority (e.i. not 
+    under IEEE)
+
+AI David Kahn to log all of the minutes from now on to the playground
+
+
+5- Editor report
+
+John Rible resigned from being the editor after a job very well done. His work is
+much appreciate by all of us.
+
+
+6- Action Items Review
+
+The committee reviewed and updated the list of action items assigned from our last 
+meeting. From now on, we decided that the updated action item summary at the end
+of each meeting will be included in the minutes of that meeting (refer to section
+11 Action Item below). 
+
+
+
+7- Future Meetings
+
+March 07, 1995: to be hosted by IBM Austin.
+April 25, 1995: to be hosted by David Paktor, HAL Inc., Campbell, CA. But April 
+26, 1994, PowerPC and PCMCIA bindings meeting will be hosted by Ron Hochsprung
+(Apple location)
+June 6, 1995: to be hosted by Motorola Austin (David Trissel will confirm).
+
+
+
+8- Non-relocatable (hard-decoded) address spaces and "Compatibility" devices
+
+* Two or more devices want the same hard-decoded non-relocatable address 
+* Request that cannot be fulfilled
+
+
+
+9- ISA binding
+
+The committee reviewed draft from Jordan Brown. AI to Jordan to update the document
+as discussed and post the new version back to the playground. It has been 
+recommended that ISA, EISA, and ISA PNP are combined to one binding.
+
+
+
+10-Other proposals 
+
+A- Unanimous vote to accept proposal #216 version 1 from Paktor. This will go into 
+   the errata document.
+B- Unanimous vote to accept two errata items from Mitch which will go into the 
+   errata document.
+C- Accepted as admendment the following:
+   The new functions approved at the last meeting are: 0x129 push-package and 0x12a
+   pop-package. Should we decide to approve the "interpose" function that has been 
+   informally proposed, its Fcode number will be 0x12b.
+D- Multi-color text:
+   Ron will split this document into three proposals and will post the updated 
+   documents as discussed.
+
+
+11- Action Items:
+
+Paktor: to check the wording of 64-bit "split" words in P1275.6
+Paktor: to own and drive P1275.3 with helps from Martin Walsh.
+Kahn: to create P1275.7 PAR
+Mitch: to follow up TI patent issue with Harrison Beasley
+Mitch: to make formal proposals on the following items
+       1- Interposer 
+       2 -Size Method
+       3- %msr  %pc
+       4- ARC Terminal
+Kahn: has the following AI 
+       1- publish proposal template
+       2- minutes and new proposals log on playground
+Ron: split multi-color text document into three document
+Lilian works with Jordan on EISA and ISA PNP. Lilian accepts to be the owner.
+x86 binding will be co-driven by Mitch Bradley and Jordan Brown
+
+Device tree:
+1- anything soldered in
+2- plug-in devices on memory-mapped busses (SCSI is not)
+3- known plug-in devices on m-m bus (nvram stored info o the card, or
+   diskette, PNP protocol(?)).
+
+
+------------------------------------------------------------------------------ 
+Dr. Luan D. Nguyen                             Phone: 512-838-1292,t/l 678-1292
+System Architect                               Unix:  duyluan@austin.ibm.com
+IBM System Technology and Architecture Div.    Vnet:  duyluan at austin
+11400 Burnet Road IMAD 9450
+Austin, TX 78758
+
+
+

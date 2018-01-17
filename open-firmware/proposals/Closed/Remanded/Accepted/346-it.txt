@@ -1,0 +1,183 @@
+Date: Tue, 23 Apr 1996 00:11:53 -0700
+From: jordan@pongo.West.Sun.COM (Jordan Brown)
+Subject: Item #346: Dallas Semiconductor 1385 Device Binding
+
+P1275 Openboot Working Group Proposal -- Proposal #:346 Ver 0.2
+
+Title:          Dallas Semiconductor 1385 Device Binding
+
+Author:         Jordan Brown
+
+Date:           22 April 1996
+
+Ed/Tech:        Editorial, Technical
+
+Synopsis:       Recast into device binding template.  Changes per 01/96.
+		Add device state notes.
+
+Doc & Version:  NVRAM device binding (Dallas Semiconductor 1385) (rename)
+
+Problem:
+
+This binding was approved with modifications as proposal 298.  This
+proposal applies those modifications, recasts it into the device binding
+template for publication, and proposes a few additions exposed by the
+template outline.
+
+Proposal:       
+
+Dallas Semiconductor 1385 NVRAM
+Device Binding to
+
+IEEE 1275-1994
+Standard for Boot (Initialization,
+Configuration) Firmware
+
+Revision 0.2
+DRAFT
+
+22 April 1996
+Jordan Brown, SunSoft
+Brian Horn, SunSoft
+
+1.	Purpose of this Device Binding
+
+This document specifies the application of Open Firmware to the NVRAM
+portion of the Dallas Semiconductor 1385, as implemented on an ISA bus,
+including device-specific requirements and practices for initialization,
+properties, and methods.
+
+2.	Revision History
+
+	Revision 0.1, 30 October 1995
+		Initial revision, proposal #298.
+		Brian Horn, SunSoft.
+	
+	Revision 0.2, 22 April 1996
+		Change device name.  Add backwards compatibility note.
+		Editorial changes.  Fit to "device binding" template.
+		Add device state notes.
+		Jordan Brown, SunSoft
+
+3.	References
+
+[1]	IEEE Std 1275-1994 Standard for Boot (Initialization, Configuration)
+	Firmware, Core Practices and Requirements
+[2]	Device Support Extensions to IEEE Std 1275-1994 Standard for Boot
+	(Initialization, Configuration) Firmware
+	http://playground.sun.com/1275/bindings/DeviceX/
+[3]	ISA/EISA/ISA-PnP binding to IEEE Std 1275-1994 Standard for Boot
+	(Initialization, Configuration) Firmware
+	http://playground.sun.com/1275/bindings/isa/
+
+4.	Definition of Terms
+
+5.	Device Characteristics (Informative)
+
+	The Dallas Semiconductor 1385 is a combination of a Motorola
+	MC146818 compatible realtime clock / CMOS RAM device and an
+	NVRAM device.  This document describes the Open Firmware
+	interface to the NVRAM portion of the device.
+
+6.	Device-specific Configuration Variables
+
+	None.
+
+7.	Device Nodes
+
+7.1.	Properties
+
+7.1.1.	Open Firmware-defined Properties for Device Nodes
+
+"name"
+	If the Generic Names Recommended Practice is implemented by
+	this package, this property shall have the value "nvram".
+
+	If the Generic Names Recommended Practice is not implemented
+	by this package, this property shall have the value "ds1385-nvram".
+
+"compatible"
+	If the Generic Names Recommended Practice is implemented by
+	this package, this property shall have the value "ds1385-nvram".
+
+"device_type"
+	Standard Open Firmware property.  The value of this property
+	shall be "nvram".
+
+"reg"
+	Standard Open Firmware property.  The value of this property
+	shall follow the standard rules of Open Firmware devices, and
+	in particular the definitions set forth in [3].
+
+	The first entry shall define the address of the least significant
+	byte of the "address" port.
+
+	The second entry shall define the address of the most significant
+	byte of the "address" port.
+
+	The third entry shall define the address of the "data" port.
+
+	Note:  Some existing implementations of support for this
+	part use only two entries:  one entry describing the "address"
+	registers and the second describing the "data" port.
+
+7.1.2.	Device-specific Properties for Device Nodes
+
+	None.
+
+7.2.	Methods
+
+7.2.1.	Open Firmware-defined Methods for Device Nodes
+
+	As defined in [1] and [2].
+
+7.2.1.1.	Device Arguments for "Open" Method
+
+	None.
+
+7.2.2.	Device-specific Methods for Device Nodes
+
+	None.
+
+8.	User Interface Commands
+
+8.1.	Open Firmware-defined User Interface Commands
+
+	None.
+
+8.2.	Device-specific User Interface Commands
+
+	None.
+
+9.	Device State
+
+9.1.	Device State When Client is Started
+
+	The value of the "address" register is undefined.
+	The contents of the NVRAM shall be internally consistent, in
+	accordance with any applicable specifications.
+
+9.2.	Device State Required When Client Calls Open Firmware
+
+	The value of the "address" register is undefined.
+	The contents of the NVRAM shall be internally consistent, in
+	accordance with any applicable specifications.  The client
+	may have changed the contents of the NVRAM.
+
+	Note:  Internal consistency is guaranteed only on normal
+	"Client Service" entries to Open Firmware; it is *not*
+	guaranteed on, eg, breakpoints.
+
+9.3.    Device State When Open Firmware Returns Control to Client
+
+	The value of the "address" register is undefined.
+	The contents of the NVRAM shall be internally consistent, in
+	accordance with any applicable specifications.  Open Firmware
+	may have changed the contents of the NVRAM.
+
+10.	Other Commentary
+
+	None.
+
+[ P1275 Item #346 -- Received: Tue Apr 23 00:10:12 PDT 1996 ]
+

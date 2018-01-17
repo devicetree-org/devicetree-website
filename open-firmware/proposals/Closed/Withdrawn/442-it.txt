@@ -1,0 +1,11 @@
+Date: Wed, 19 Aug 1998 18:16:08 -0700
+From: dmk@Eng.Sun.Com (David Kahn)
+Subject: Item #442: testing moved proposal daemon
+
+
+This is a test, this is not a proposal.
+
+-David
+
+[ P1275 Item #442 -- Received: Wed Aug 19 18:16:09 PDT 1998 ]
+

@@ -1,0 +1,97 @@
+From rlarndt@us.ibm.com  Fri Mar  5 07:02:42 1999
+Date: Fri, 5 Mar 1999 09:00:43 -0600
+Subject: Item #460: Agenda OFWG meeting 9 March 99
+
+
+Agenda for March 9, 1999 Meeting at Firmworks Moutain View, Ca.
+Host:  Mitch Bradley
+Starting Time:  10 AM.
+
+
+
+  1- Establish quorum & Voting rights
+     ================================
+
+  2- Review Agenda:
+     ==============
+
+  3- Approve Minutes of September 1, 1998 Meeting  (Item #447)
+     ========================================================
+
+  4- Future Meetings:
+     ================
+
+     The next meeting scheduled:
+
+        Date                    Host Location
+        ----                    -------------
+
+        Sept. 14,1999           Apple
+
+
+  5- Status of Action Items:
+     =======================
+
+|-----------------+-----------------+-----------------+-----------------|
+|Action Item      |Assigned to:     |Description      |Status           |
+|Number:          |                 |                 |                 |
+|-----------------+-----------------+-----------------+-----------------|
+|2                |Editors of       |Update document  |Continuing       |
+|                 |Recommended      |template and     |                 |
+|                 |Practice         |contents per     |                 |
+|                 |Documents        |discussion.      |                 |
+|-----------------+-----------------+-----------------+-----------------|
+|33               |Mitch B.         |Propose          |Open             |
+|                 |                 |display-modes    |                 |
+|                 |                 |property along   |                 |
+|                 |                 |with set & read  |                 |
+|                 |                 |display modes    |                 |
+|                 |                 |methods.         |                 |
+|-----------------+-----------------+-----------------+-----------------|
+|43               |Mitch B          |Look into the    |Open             |
+|                 |                 |reaffermation of |                 |
+|                 |                 |IEEE 1275        |                 |
+|                 |                 |standard.        |                 |
+|-----------------+-----------------+-----------------+-----------------|
+|44               |Mitch B          |Ship latest      |Open             |
+|                 |                 |version of ARM   |                 |
+|                 |                 |binding for      |                 |
+|                 |                 |posting.         |                 |
+|-----------------+-----------------+-----------------+-----------------|
+|45               |David K.         |To post          |Open             |
+|                 |                 |clarification per|                 |
+|                 |                 |#440             |                 |
+|-----------------+-----------------+-----------------+-----------------|
+|46               |Ron H.           |Ship TFTP        |Closed           |
+|                 |                 |approved draft to|                 |
+|                 |                 |David for        |                 |
+|                 |                 |posting.         |                 |
+|-----------------+-----------------+-----------------+-----------------|
+|47               |Ron H.           |Ship PCI approved|Closed           |
+|                 |                 |revision to David|                 |
+|                 |                 |for posting.     |                 |
+|-----------------+-----------------+-----------------+-----------------|
+
+
+
+
+
+  6- New Proposals:
+     ==============
+     Item #448  Clarification on ABORT function description
+     Item #449  Clarification on ABORT function description
+     Item #457  Ad find-fcode to USB binding
+     Item #458  64-bit Extension Wordset is incomplete
+
+
+Richard L Arndt
+     Making IBM computers, software friendly
+     DDCA/9232 Austin, Tx. T/L 678-8502
+     Phone (512)838-8502 Fax (512)838-2640
+     internet: rlarndt@austin.ibm.com
+
+
+
+
+[ P1275 Item #460 -- Received: Fri Mar  5 07:02:43 PST 1999 ]
+

@@ -1,0 +1,9 @@
+Date: Wed, 9 Jul 1997 13:37:31 -0700
+From: dmk@Eng.Sun.Com (David Kahn)
+Subject: Item #417: administrative test
+
+
+test, ignore.
+
+[ P1275 Item #417 -- Received: Wed Jul  9 13:38:24 PDT 1997 ]
+

@@ -1,0 +1,44 @@
+Date: Mon, 28 Nov 94 13:53:21 PST
+From: paktor@hal.com (David Paktor)
+Subject: Item #212: P 212 V 1 - Core Document errata: "xxJoin"
+
+
+
+		P1275 Openboot Proposal			Proposal #: 212 Ver 1
+
+		1275.0 Errata Proposal
+
+(This is a re-send to get an official proposal number.  The text is unchanged.)
+
+
+Title:		"xxJoin"
+
+Author:		David L. Paktor
+
+Date:		Mon 28 Nov 94
+
+Ed/Tech:	Editorial
+
+Synopsis:	Improve phrasing in Core descriptions of  bljoin  and  wljoin
+
+Doc Version:	1275.0 D12
+
+Problem:	The descriptions of  bljoin  and  wljoin , if taken literally,
+		would be inaccurate.
+		 
+
+Proposal:   1275.0 D12 Page 131 line 12, change to:
+		"Bits 8 and above of the four input parameters must be zero."
+	    1275.0 D12 Page 208 line 3, change to:
+		"Bits 16 and above of the two input parameters must be zero."
+
+
+Discussion:  I would have liked this to read "are ignored" instead of
+		 "must be zero", but, in fact, existing implementations
+		 do not ignore these bits.
+
+
+David
+
+[ P1275 Item #212 -- Received: Mon Nov 28 13:54:58 PST 1994 ]
+

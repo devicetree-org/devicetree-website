@@ -1,0 +1,46 @@
+From: kingman@tardis.austin.ibm.com (John Kingman)
+Subject: Item #275: PowerPC processor binding, 64-bit properties
+Date: Fri, 16 Jun 1995 15:28:41 -0500 (CDT)
+
+P1275 Open Firmware Working Group Proposal -- Proposal #275 Ver <Auth-Vers#>
+
+Title:          new PowerPC processor binding properties -- "64b-addr" and 
+                "64b-exec"
+
+Author:         John A. Kingman
+
+Date:           June 16, 1995
+
+Ed/Tech:        Technical
+
+Synopsis:       add new properties ("64b-addr", "64b-exec") to CPU nodes
+
+Doc & Version:  PowerPC processor Binding 1.02 
+
+Problem:        Current binding does not identify processors with 64-bit 
+                capabilities and operating systems should not have to rely
+                on specific model numbers to determine this.
+
+Proposal:       
+
+Add the following words to the section: "CPU node properties"
+
+"64b-addr"
+    This property, if present, indicates that the PowerPC processor (defined 
+    by this CPU node) has standard PowerPC 64-bit addressing capability in 
+    addition to standard PowerPC 32-bit addressing capability.  The absence 
+    of this property indicates that the PowerPC processor (defined by this 
+    CPU node) has only the standard PowerPC 32-bit addressing capability.
+
+"64b-exec"
+    This property, if present, indicates that the PowerPC processor (defined 
+    by this CPU node) has standard PowerPC 64-bit instruction execution 
+    capability in addition to the standard PowerPC 32-bit instruction execution 
+    capability.  The absence of this property indicates that the PowerPC 
+    processor (defined by this CPU node) has only the standard PowerPC 32-bit 
+    instruction execution capability.
+
+John Kingman (kingman@austin.ibm.com)
+
+[ P1275 Item #275 -- Received: Fri Jun 16 13:31:30 PDT 1995 ]
+

@@ -1,0 +1,172 @@
+Date: Thu, 14 Mar 1996 16:34:45 -0800
+From: pt@jadeite (Paul Thomas)
+Subject: Item #328: SCSI-3 Binding: Create binding document
+
+
+P1275 Openboot Working Group Proposal -- Proposal #:328 Ver 1
+
+Title:          1275 Bindings for SCSI-3
+
+Author:         Paul Thomas
+
+Date:           March 14, 1986
+
+Ed/Tech:        Technical
+
+Synopsis:       A draft of the content for a SCSI-3 binding is presented.
+
+Doc & Version:  SCSI-3 Binding
+
+Problem:        
+
+There is interest in developing a document for the bindings between SCSI-3
+and 1275.
+
+
+Proposal:       
+
+The following is the content of a standard binding SCSI-3 (ANS X3T10/Project
+994D) to 1275.  The boilerplate is missing.
+
+
+1.  Physical address formats and representations
+
+SCSI-3 devices are addressed with two 32-bit "target" identifiers and two
+32-bit "logical unit" identifiers.
+
+The numerical representation of a SCSI-3 bus physical address consists of the
+most significant target identifier in the high number, the least significant
+target identifier in the next position, the most significant logical unit
+identifier third, and the least significant logical unit identifier in the low
+number.  The text string representation is targethi,targetlo,lunhi,lunlo,
+where targethi, targetlo, lunhi, and lunlo are all hexadecimal numbers.
+
+The significance of the bits in the target identifiers and the bits in the
+logical unit identifiers is determined by a combination of the particular
+scsi-3 device and the particular scsi-3 target identified by the target
+identifiers:
+
+   In the case where the physical implementation of the scsi-3 device satisfies
+	Fibre Channel Arbitrated Loop (FC-AL), the target identifiers are the
+	most significant 32 bits of the wwn of the target as targethi, the
+	least significant 32 bits of the wwn as targetlo, the most significant
+	32 bits of the logical unit identifier as lunhi, and the least
+	significant 32 bits of the logical unit identifier as lunlo.  The
+	64 total bits of the logical unit identifier are interpreted by the
+	target.
+
+   In the case where the physical implementation of the scsi-3 device satisfies
+	SCSI-3 Parallel Interface (SPI), the target identifiers are 0 for
+	targethi and the 5-bit target id embedded as the low bits of the 32-bit
+	targetlo.  The most significant 32 bits of the logical unit identifier
+	form lunhi and the least significant 32 bits are lunlo, for a total of
+	64 bits as interpreted by the target.
+
+   In the case where the physical implementation of the scsi-3 device satisfies
+	Fibre Channel Protocol for SCSI (FCP), the target identifiers are the
+	most significant 32 bits of the wwn of the target as targethi, the
+	least significant 32 bits of the wwn as targetlo, the most significant
+	32 bits of the logical unit identifier as lunhi, and the least
+	significant 32 bits of the logical unit identifier as lunlo.  The
+	64 total bits of the logical unit identifier are interpreted by the
+	target.
+
+
+2.  Properties
+
+These properties are required for all scsi-3 devices:
+
+   device_type		scsi-3
+   #address-cells	4
+   scsi3-id		byte array, 8 bytes in size
+
+
+These properties are required when the physical implementation satisfies SPI
+if the device is differential or capable of 16 bit parallel data transfers:
+
+   wide
+   differential
+
+
+   scsi-initiator-id	integer
+   wwn			byte array, 8 bytes in size
+   local-wwn		byte array, 8 bytes in size
+
+If the physical implementation is SPI, scsi-initiator-id is required.  If
+the interface is FC-AL or FCP, wwn is required.  If wwn is derived via the
+mac-address/local-mac-address interaction, local-wwn is required if the
+device has one.
+
+In either case, scsi3-id is required.  If scsi-initiator-id exists, scsi3-id
+is the same with the integer embedded in the least significant bits of the
+byte array.  If wwn exists, scsi3-id is the same as wwn.
+
+
+3.  Methods
+
+These methods are required (descriptions as per the current descriptions for
+SCSI-2 where not given here):
+
+   close  ( -- )
+
+   decode-unit  ( addr len -- lunlo lunhi targetlo targethi )
+
+   diagnose  ( -- error-code | 0 )
+
+   dma-alloc  ( ...size -- virt )
+
+   dma-free  ( virt size -- )
+
+   encode-unit  ( lunlo lunhi targetlo targethi -- addr len )
+
+   execute-command  ( buf-addr,len dir cmd-addr,len -- hw-err? | statbyte 0 )
+
+   max-transfer  ( -- n )
+
+   no-data-command  ( cmd-addr -- error? )
+
+   open  ( -- okay? )
+	If the physical implementation is SPI, the interaction with
+	inherited scsi-initiator-id is required.  If the physical
+	implementation is FC-AL or FCP, and the wwn for the device is
+	derived via the mac-address/local-mac-address interaction, then
+	the wwn for the device must be checked when open runs.
+
+   retry-command  ( buf-addr,len dir cmd-addr,len #retries -- 
+					0 | hw-err? stat | sensebuf 0 stat )
+
+   set-responder  ( unit-addr,len target-addr,len -- )
+	Unit-addr,len points to an array of bytes holding a binary
+	representation of the desired unit identifier, most significant bits
+	first.  Target-addr,len points to a similar array of bytes for the
+	desired target identifier.
+
+[Note: set-responder replaces set-address from the scsi-2 set of methods.]
+
+   set-timeout  ( msecs -- )
+
+   short-data-command  ( data-len cmd-addr,len -- error? | data-addr 0 )
+
+   translate-address  ( unit1-addr,len target1-addr,len --
+					unit2-addr,len target2-addr,len )
+	Unit1-addr,len points to an array of bytes holding a binary
+	representation of the desired unit identifier, most significant bits
+	first.  Target1-addr,len is similar for the desired target identifier.
+	Unit2-addr,len points to an array of bytes holding a binary
+	representation of the desired unit identifier as translated for use
+	inside a scsi-3 command block in the current physical implementation.
+	Target2-addr,len is a similar translation for the desired target
+	identifier for the current physical implementation.
+
+[Note: translate-address may not be required.  It would be used by commands
+ such as copy that need to know the wwn in order to include it in their
+ command packet or data.]
+
+
+This method is optional:
+
+   show-children  ( -- )
+
+
+[ P1275 Item #328 -- Received: Thu Mar 14 16:32:42 PST 1996 ]
+

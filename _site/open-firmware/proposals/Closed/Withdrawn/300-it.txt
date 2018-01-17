@@ -1,0 +1,75 @@
+From CBellman@corp.adaptec.com  Thu Nov 16 12:30:31 1995
+Date: 16 Nov 95 12:31:00 EST
+Subject: Item #300: Device Ext: max-scsi-targets property
+
+P1275 Open Firmware Working Group Proposal -- Proposal #:300 Ver 1
+
+Title:			New property for supported number of SCSI targets
+
+Author:			Chris Bellman
+
+Date:			Nov 16, 1995
+
+Ed/Tech:		Technical
+
+Synopsis:		prop-name, indicating the number of SCSI targets 
+			supported by a controller
+
+Doc & Version:	Device Support Extensions to IEEE Std 1275-1994, 
+		Core Errata & Device Extensions
+
+Problem:
+
+In consideration of IEEE 1394, SSA, Fibre Channel, and future SCSI bus 
+architectures, there exists the need for software to communicate the
+maximum number of SCSI targets supported by a bus controller.  Regardless
+of the width of the parallel SCSI bus, there is an architectural concept
+of a maximum of 64 bits for the unique identifier, and since the 
+number of devices supported is a function of the physical and transport 
+layers, SCSI has no restrictions on this.  SCSI-2 supports up to 8 targets
+on an 8-bit narrow bus, and up to 16 targets on a 16-bit or 32-bit wide bus;
+The SCSI-3 physical layer supports up to 32 targets on a 32-bit wide parallel
+bus, and many more on the three differential serial versions.
+
+Proposal:
+
+Add the following standard property definition to the Device Support 
+Extensions to IEEE Std 1275-1994 document:
+
+9.1.  Properties for SCSI Bus Nodes
+
+"max-scsi-targets"
+
+	prop-name, indicating the maximum number of SCSI targets supported by 
+	this controller.
+
+	prop-encoded-array:  one integer, encoded as with encode-int.
+
+	This property specifies the 32-bit maximum number of SCSI device target 
+	identifiers supported by the SCSI bus controller represented by this
+	node.  The absense of this property indicates an assumed maximum of
+	eight (8) targets.  
+
+
+Ammend the Core Errata, Appendix E.6.3, as follows:
+
+E.6.3  hacom.fth
+
+...
+
+: show-children  ( -- )
+   open  0=  if  ." Can't open SCSI host adapter" cr  exit  then
+   " max-scsi-targets"  get-my-property  if  8  else  decode-int nip nip  
+then
+   0 ?do
+      i probe-target  if
+         ." Target " i . cr
+         8 0  ?do  i j show-lun  loop
+      then
+   loop
+;
+
+...
+
+[ P1275 Item #300 -- Received: Thu Nov 16 12:30:34 PST 1995 ]
+

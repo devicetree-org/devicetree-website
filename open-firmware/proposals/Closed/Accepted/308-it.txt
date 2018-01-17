@@ -1,0 +1,55 @@
+Date: Mon, 22 Jan 1996 21:33:20 -0500
+From: tomc@snowdon.East.Sun.COM (Tom Caron - Sun BOS Software)
+Subject: Item #308: PCI Binding: firware should set cache line size
+
+
+Title: Initialization of the Cache Line Size Register for PCI Bus Master Devices
+
+Author: Tom Caron
+
+Date: 12/17/95
+
+Ed/Tech: Technical
+
+Synopsis: probe-pci should set cache line size register for each bus master
+
+Doc & Version: PCI Bus Binding to IEEE Std 1275-1994 Standard for Boot Firmware
+	Revision 1.6
+
+Problem:
+
+    The current bindings specify how certain configuration registers
+    for PCI devices should be set during the "probe-pci" command but
+    make no provisions for setting the cache line size register.
+
+Proposal:
+
+    Add the following entry to the list of properties in section 4.1.2.1
+
+	"cache-line-size"
+
+	   This property shall be present if the function's cache line
+	   size register is set to a non zero value and shall be absent
+	   otherwise.
+
+    Add the follwing entry to list of properties created by the "probe-pci"
+    command.  This can be found in section 5, beginning on line 42.
+
+	"cache-line-size"
+
+    Also in section 5, lines 42 and 43 of page 16 specify how the Latency
+    Timer registers should be initialized during a "probe-pci" command. 
+    Before this paragraph a new paragraph should be added to describe how
+    the Cache Line Size registers should be initialized.  This paragraph
+    sould read as follows:
+
+	On the host bus, set the Cache Line Size register for each master 
+	to the system cache line size.  On subordinate buses, set the
+	Cache Line Size register for each master to the value of the
+	the Cache Line Size register of the bridge for that bus.  That value
+	should be either the system cache line size if that line size is
+	supported by the bridge or zero otherwise.
+	
+
+[ P1275 Item #308 -- Received: Mon Jan 22 18:31:12 PST 1996 ]
+

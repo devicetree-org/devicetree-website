@@ -1,0 +1,33 @@
+Date: Tue, 21 Mar 1995 16:16:33 -0800
+From: brianh@pongo.West.Sun.COM (Brian Horn)
+Subject: Item #261: PPC translate client callback return values are incorrect
+
+P1275 Open Firmware Working Group Proposal -- Proposal #261 Ver 1.0
+
+Title:		translate callback return values are incorrect
+
+Author:		Brian.Horn@west.sun.com
+
+Date:		March 21, 1995
+
+Ed/Tech:	Editorial
+
+Synopsis:	The translate callback should return a 32-bit physical address
+
+Doc & Version:	PowerPC processor binding to OpenFirmware Draft 1.0 2/16/95
+
+Problem:	The translate return values have a real.hi and real.lo
+
+Proposal:	In section 8.6.2 page 18 line 9 the "out" return values state:
+
+		OUT: error, [address] real.hi, [address] real.lo, mode
+
+		but this binding specifies that #size-cells for the CPU
+		(mmu) is 1 thus only 32-bits.  This appears to be an oversight.
+
+		Suggest:
+
+		OUT: error, [address] real, mode
+
+[ P1275 Item #261 -- Received: Tue Mar 21 16:18:43 PST 1995 ]
+

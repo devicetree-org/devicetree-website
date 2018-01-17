@@ -1,0 +1,44 @@
+Date: Tue, 3 Sep 96 10:31:35 PDT
+From: wmb@FirmWorks.COM (Mitch Bradley)
+Subject: Item #389: Core: Stack diagram error in endcase and b(endcase)
+
+P1275 Open Firmware Working Group Proposal -- Proposal #389 Ver <Auth-Vers#>
+
+Title:		Stack diagram error in endcase and b(endcase)
+
+Author:		Mitch Bradley
+
+Date:		September 9, 1995
+
+Ed/Tech:	Technical
+
+Synopsis:	The stack diagram for endcase and b(endcase) is wrong
+
+Doc & Version:	1275-1994
+
+Problem:	The run-time stack diagram for endcase and b(endcase)
+		in 1275 disagrees with the stack diagram for ENDCASE
+		in ANS Forth.  It should be ( sel -- ), not
+		( sel | <nothing> -- ).  The <nothing> case does not
+		exist, because endof transfers control to the point
+		just *after* endcase.  The run-time action of endcase
+		executes only when no "of" clause succeeded, i.e. the
+		default case.  I think this is just a documentation
+		error, because I'm not aware of any implementation that
+		does the wrong thing.
+
+Proposal:	
+
+1) On the Web page, move the link to the "core errata" document so that it
+   appears near the link to the core document.
+
+2) Create an on-line document named "additional errata", with a link located
+   just after the link to the core errata document.  Add to that document
+   the text in the "Problem" section above.
+
+3) If and when we do another revision of the IEEE core errata document,
+   incorporate the contents of the on-line additional errata document
+   into the IEEE document.
+
+[ P1275 Item #389 -- Received: Tue Sep  3 10:29:50 PDT 1996 ]
+

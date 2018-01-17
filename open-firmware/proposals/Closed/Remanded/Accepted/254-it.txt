@@ -1,0 +1,28 @@
+Date: Tue, 21 Mar 1995 13:50:32 -0800
+From: brianh@pongo.West.Sun.COM (Brian Horn)
+Subject: Item #254: memory granularity on PowerPC
+
+P1275 Open Firmware Working Group Proposal -- Proposal #254 Ver 1.0
+
+Title:		Granularity of memory
+
+Author:		Brian.Horn@west.sun.com
+
+Date:		March 21, 1995
+
+Ed/Tech:	Technical
+
+Synopsis:	The granularify of memory utilization needs specification
+
+Doc & Version:	PowerPC processor binding to OpenFirmware Draft 1.0 2/16/95
+
+Problem:	No where is the smallest unit of memory allocation/mapping speced
+
+Proposal:	Specify in section 1.4 (starting page 4) that:
+
+		"The largest unit of memory allocation and (if virtual mode)
+		mapping cannot exceed 64Kbytes and it is strongly recommended
+		that 4Kbyte units be utilized."
+
+[ P1275 Item #254 -- Received: Tue Mar 21 13:52:43 PST 1995 ]
+

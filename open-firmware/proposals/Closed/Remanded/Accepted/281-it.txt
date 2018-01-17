@@ -1,0 +1,31 @@
+Date: Fri, 11 Aug 1995 15:12:10 -0700
+From: brianh@pongo.West.Sun.COM (Brian Horn)
+Subject: Item #281: PReP binding 0.02 halt-address clarification
+
+P1275 Open Firmware Working Group Proposal -- Proposal #281 Ver 1.0
+
+Title:		Clarification of "halt-address" calling requirements
+
+Author:		Brian.Horn@west.sun.com
+
+Date:		Aug 11, 1995
+
+Ed/Tech:	Editorial
+
+Synopsis:	Requiring disabling of virtual translations is not clear
+
+Doc & Version:	PowerPC Reference Platform binding to IEEE Std 1275-1994 (0.02)
+
+Problem:	The wording is currently "murky"
+
+Proposal:	
+
+Change the 2nd sentence staring on page 5 line 48 from:
+"The client program must establish the real mode address translation for
+the firmware."
+to:
+"The client program must disable both instruction and data virtual address
+translations prior to executing the halt callback."
+
+[ P1275 Item #281 -- Received: Fri Aug 11 15:15:09 PDT 1995 ]
+

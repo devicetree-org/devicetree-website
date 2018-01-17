@@ -1,0 +1,90 @@
+Date: Tue, 30 Jan 96 10:53:18 PST
+From: mwi@FirmWorks.COM (Mark Insley)
+Subject: Item #311: Item#303: Ammendment
+
+
+P1275 Openboot Working Group Proposal -- Proposal #:303 Ver 2
+
+Title:          PCI Bus Binding: Create a reserved word in the PCI node.
+
+Author:         Mark Insley
+
+Date:           January 30th, 1996
+
+Ed/Tech:        Technical
+
+Synopsis:       Addition of reserved word to PCI node to fix firmware incompatibilies.
+
+Doc & Version:  PCI Bus Binding   Version 1.5
+
+   During the discussion of this item at the last OFW meeting, it was
+   agreed that we would provide a coding example of how to code a driver
+   based upon the proposed changes. Included below is the example code
+   which would be used within a PCI device's driver code.
+   
+   \ Flag is true if the parent's map-in method doesn't work with
+   \ relocatable addresses.
+   
+   : map-in-broken?  ( -- flag )
+      \ Look for the method that is present when the bug is present
+      " add-range"  my-parent  ihandle>phandle   ( adr len phandle )
+      find-method  dup  if  nip  then            ( flag )  \ Discard xt if present
+   ;
+   
+   
+   \ Return phys.lo and phys.mid of the address assigned to the PCI base address
+   \ register indicated by phys.hi .
+   
+   : get-base-address  ( phys.hi -- phys.lo phys.mid phys.hi )
+   
+      " assigned-addresses" get-my-property  if   ( phys.hi )
+         ." No address property found!" cr
+         0 0 rot  exit                            \ Error exit
+      then                      ( phys.hi adr len )
+   
+      rot >r                    ( adr len )  ( r: phys.hi )
+      \ Found assigned-addresses, get address
+      begin  dup  while         ( adr len' )  \ Loop over entries
+         decode-phys            ( adr len' phys.lo phys.mid phys.hi )
+         h# ff and  r@ h# ff and  =  if  ( adr len' phys.lo phys.mid )  \ This one?
+            2swap 2drop         ( phys.lo phys.mid )          \ This is the one
+            r> exit             ( phys.lo phys.mid phys.hi )
+         else                   ( adr len' phys.lo phys.mid ) \ Not this one
+            2drop               ( adr len' )
+         then                   ( adr len' )
+         decode-int drop decode-int drop        \ Discard boring fields
+      repeat
+      2drop                     ( )
+   
+      ." Base address not assigned!" cr
+   
+      0 0 r>                    ( 0 0 phys.hi )
+   ;
+   
+   
+   \ Example code to compute the phys.lo..hi arguments for "map-in", using the
+   \ above functions so that the code works both on systems that implement
+   \ map-in according to the PCI binding document, and also on systems whose
+   \ PCI map-in method requires phys.lo,phys.mid to contain the assigned base
+   \ address.
+   
+      \ Compute entire phys.lo..hi address for base address register 10
+      map-in-broken?  if
+         my-space h# 8200.0010 +  get-base-address        ( phys.lo,mid,hi )
+      else
+         0 0  my-space h# 200.0010 +                      ( phys.lo,mid,hi )
+      then                                                ( phys.lo,mid,hi )
+   
+   
+   \ An FCode driver that need not work on systems with the map-in bug could
+   \ use the following code, omitting the definitions of "map-in-broken?"
+   \ and "get-base-address".
+   \
+   \    0 0  my-space h# 200.0010 +                      ( phys.lo,mid,hi )
+   
+   
+   
+   
+
+[ P1275 Item #311 -- Received: Tue Jan 30 11:06:06 PST 1996 ]
+

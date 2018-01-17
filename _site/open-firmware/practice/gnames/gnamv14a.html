@@ -1,0 +1,355 @@
+<HTML>
+<HR><!-- This file was created with the fm2html filter.The filter is copyright
+Norwegian Telecom Research and was programmed by Jon Stephenson von Tetzchner. -->
+<HEAD>
+<H1><B>Open Firmware - Recommended Practice: Generic Names</B></H1>
+<P>
+<H2><B><I>Version 1.4, Approved Version</I></B></H2>
+<P>
+<H2>December 30, 1996</H2>
+</HEAD>
+<bgproperties=fixed
+text=#000000
+link=#0000ff
+vlink=#ff0000
+bgcolor=#ffffff>
+
+<P>
+<H3>
+Published by the Open Firmware Working Group.</H3>
+<P>
+This document is a voluntary-use recommended practice of the Open Firmware
+Working Group.  The Open Firmware Working Group is an ad hoc committee
+composed of individuals interested in Open Firmware as defined by
+IEEE 1275-1994, related standards, and their application to various computer
+systems.
+
+<P>
+The Open Firmware Working Group is involved both in IEEE sanctioned standards activities, whose final results are published by IEEE, and in informal recommendations such as this, which are published on the Internet at:
+<A HREF= "http://playground.sun.com/1275/">
+<B><I>http://playground.sun.com/1275</I>
+</B></A><BR>
+<P>
+Membership in the Open Firmware Working Group is open to all interested parties.  The working group meets at regular intervals at various locations. For more information send email to:<BR>
+<I>p1275-wg@risc.sps.mot.com</I><BR>
+
+<ADDRESS>
+<H4>
+<p>
+Last Changed: 12/30/96 by R. T. Coffin, Technical Editor
+</H4>
+</ADDRESS>
+
+<HR><H2>Table of Contents</H2>
+
+<UL>
+<A HREF="gnamv14a.html#HDR0"><B>1.   Introduction</B></A>
+
+<UL>
+<A HREF="gnamv14a.html#HDR1">1.1.   Purpose</A>
+<BR>
+
+</UL>
+
+<A HREF="gnamv14a.html#HDR3"><B>2.   References and Definitions</B></A>
+
+<UL>
+<A HREF="gnamv14a.html#HDR4">2.1.   References</A>
+<BR>
+
+<A HREF="gnamv14a.html#HDR5">2.2.    Definitions</A>
+</UL>
+
+<A HREF="gnamv14a.html#HDR6"><B>3.   <I>Generic</I> Names</B></A>
+<BR>
+
+<A HREF="gnamv14a.html#HDR7"><B>4.   Effect on OS Driver Selection Code</B></A>
+<BR>
+
+<A HREF="gnamv14a.html#HDR8"><B>5.   Existing Devices</B></A>
+<BR>
+
+<A HREF="gnamv14a.html#HDR9"><B>6.   Compatibility (Informative)</B></A>
+
+<UL>
+<A HREF="gnamv14a.html#HDR10">6.1.   Historical Perspective</A>
+<BR>
+
+<A HREF="gnamv14a.html#HDR11">6.2.   Compatibility Intent</A>
+<BR>
+
+<A HREF="gnamv14a.html#HDR12">6.3.   Hardware Programming Interface</A>
+<BR>
+
+<A HREF="gnamv14a.html#HDR13">6.4.   Open Firmware Properties</A>
+<BR>
+
+<A HREF="gnamv14a.html#HDR14">6.5.   Open Firmware Methods</A>
+<BR>
+
+<A HREF="gnamv14a.html#HDR15">6.6.   What does <I>compatible</I> NOT imply?</A>
+<BR>
+
+<A HREF="gnamv14a.html#HDR16">6.7.   Real World Perspective</A>
+</UL>
+</UL>
+
+<P>
+<pre>
+<B>Table 1. <B>Revision History</B></B>
+---------------------------------------------------------------------------------------------------------------
+<B>Version</B>      <B>Date</B>      <B>History</B>
+---------------------------------------------------------------------------------------------------------------
+Version 1.0  03/01/96  First version of document.
+
+Version 1.1  04/11/96  Added an authorized-by section to 1.0, extended scope to
+                       add who the recommended practice applies to, modified
+                       Generic Names List (Guide line 1), and added Generic
+                       Names to table 1.  Editorial changes were also made.
+
+Version 1.2  08/07/96  Added definitions (Section 2.2).  Edited Guildeline 1
+                       name list (removed 'other', added 'interrupt-controller',
+                       'fddi', 'fcc' &amp; 'atm').  Removed material in Section
+                       3.0., Generic <I>Names</I> per proposal #358.  Made
+                       Section 6.0 an Information Section and removed PCI Class
+                       Codes Table 1 (Referenced the PCI binding).  Added new
+                       Section 7.0, 'Compatibility Information'.
+
+Version 1.3  09/23/96  Added new or changed <I>generic</I> names to Guideline 1
+                       list ('fdc', 'fiber- channel', 'ssa', 'pc-card',
+                       interrupt-controller &amp; 'dma-controller' ).  Removed
+                       'old'  Section 6.0 (Contents moved to <I>PCI binding
+                       </I>).  Removed references to PCI Bus.    Made editorial
+                       changes to 'new' Section 6.0, <I>compatibility</I>.
+
+Version 1.4  10/21/96  Made Version 1.4 an Approved Version.  Made numerous
+                       editorial changes; changed all property quotation marks
+                       to computer format ones, corrected spacing and spelling
+                       of 'fibre-channel'.
+
+---------------------------------------------------------------------------------------------------------------
+</pre>
+<BR>
+<H2><A NAME="HDR0">1.   Introduction</A></H2>
+This <I>Generic Names</I> Recommended Practice was authorized by the Open Firmware Working Group accepting Proposal Number 251.  <p>
+<H3><A NAME="HDR1">1.1.   Purpose</A></H3>
+The rules for device naming described in Reference <A HREF="gnamv14a.html#REF19072">[1]</A> attempt to simultaneously accomplish two objectives:<BR>
+<BR>
+
+<UL>
+<LI>To provide a human-readable identifier for use in device paths. <BR>
+
+<LI>To provide a unique identification of the device's detailed programming model to allow operating systems to determine which driver to use.<BR>
+</UL>
+
+
+These objectives conflict with one another.  For human use within a device path, a brief name that suggests the device's function is preferable.  For use in determining an appropriate operating system device driver, an explicit, unique name that
+includes the manufacturer name and the detailed programming model information is preferable.  Attempting to accomplish both objectives with a single name often results in a name that is unsatisfactory for either purpose.<BR>
+Historically, implementations have often adopted a mixed approach, using brief names for built-in devices and verbose names for plug-in devices.  This approach has the problem that the name of a particular device may be different depending on
+whether
+ the device is built-in or plug-in.  Also, because of the tension between the conflicting objectives, different manufacturers chose different trade-offs, some sacrificing uniqueness in favor of human readability and others making the opposite choice.</
+NKNOWN><BR>
+There is no inherent reason why a single property (<B>"name"</B>) must be used for both purposes.  The <B>"compatible"</B> property already participates in the OS driver selection process, and if the first component of that property's value is an
+explicit, unique name, precise driver matching will result, even if the <B>"name"</B> property's value is a brief  <I>generic</I> name (e.g. "disk").<BR>
+Furthermore, the use of <I>generic</I> names does not defeat the purpose of unambiguously choosing a a particular device within the device tree through the use of a device path.  The fundamental means for ensuring unambiguous node names is the
+<I>
+unit address</I> component (the portion after the "@" character, which matches the first entry of the <B>"reg"</B> property's value).  The driver-name component (which matches the <B>"name"</B> property's value) is inherently unreliable for the purpose of
+precisely choosing a particular device, due to the possibility of multiple identical devices at a given level of the device tree.  Since, in the most general case, the <I>unit address</I> component must be used to distinguish two devices of the same type,
+the increased probability of <I>name space collisions</I> that would result from the use of  <I>generic</I> names does not cause loss of functionality.  Indeed, it is not unreasonable to think that some users might prefer to distinguish two display devices
+ by the device paths:<BR>
+<p>
+      <I>/pci/display@2</I> and <I>/pci/display@4</I><BR>
+<p>
+       as compared to:<BR>
+<p>
+      <I>/pci/IBM,v915</I> and <I>/pci/number9-723</I><BR>
+<p>
+As already noted, OS driver selection software almost certainly prefers to have the explicit information contained in, for example, IBM<I>,</I>v915, but the software can get that information from the <B>"compatible"</B> property as easily as from
+the <B>"name"</B> property.<BR>
+<H3><A NAME="HDR2">1.2.   Scope</A></H3>
+This recommended practice changes the naming conventions for device nodes, affecting plug-in cards, Open Firmware system implementations, and client programs.<BR>
+Applies to all new recommended practices and system, bus and device bindings.  Existing bindings may choose to accept this recommended practice for future revisions as appropriate. <BR>
+<H2><A NAME="HDR3">2.   References and Definitions</A></H2>
+<H3><A NAME="HDR4">2.1.   References</A></H3>
+<A NAME="REF19072">[1]  <I>IEEE Std. 1275-1994, IEEE Standard for Boot(Initialization Configuration)Firmware:Core Requirements and Practices</I>, published by IEEE.</A><BR>
+<H3><A NAME="HDR5">2.2.    Definitions</A></H3>
+<B>device:</B>    Normally, a particular hardware implementation of a function.    Sometimes, a particular definition of an abstract implementation.<BR>
+<B>emulated device:</B>    A device, usually an older device, with which the device  claims compatibility.  The newer device claims to emulate   the older.<BR>
+<B>emulating device:</B>    A device, usually a newer device, that claims compatibility with   another,     usually older, device.<BR>
+<H2><A NAME="HDR6">3.   <I>Generic</I> Names</A></H2>
+Because of the difficulties that result from using <I>name</I> for two conflicting purposes,  and since that dual use is unnecessary,  the working group recommends the following guidelines for future devices:<BR>
+<B>Guideline 1:</B> <B>"name"</B> property values must be <I>generic</I>, reflecting the device's function, but not necessarily its precise programming model.  If appropriate, the value should be one of the following listed below:<BR>
+·  disk<BR>
+·  fdc<BR>
+·  tape<BR>
+·  pci<BR>
+·  pc-card <BR>
+·  vme <BR>
+·  sbus<BR>
+·  scsi<BR>
+·  ide <BR>
+·  isa <BR>
+·  keyboard <BR>
+·  display <BR>
+·  mouse   <BR>
+·  sound <BR>
+·  ethernet<BR>
+·  token-ring <BR>
+·  fddi<BR>
+·  fcs<BR>
+·  fibre-channel<BR>
+·  atm <BR>
+·  timer <BR>
+·  memory <BR>
+·  printer <BR>
+·  serial<BR>
+·  ssa <BR>
+·  rtc <BR>
+·  nvram <BR>
+·  scanner<BR>
+·  interrupt-controller<BR>
+·  dma-controller<BR>
+   <BR>
+The Open Firmware Working Group may define additional <I>generic</I> names in future recommended practice documents or binding documents.    For devices that do not fit in any existing generic category, the developer may request that the working
+group establish a new generic name, or may use an explicit name prefaced with a manufacturer name and a comma.<BR>
+<B>Guideline 2:</B>  The <B>"compatible"</B> property must be present.  Its first component should be an explicit, unique name that identifies the device precisely enough to be able to infer the detailed programming model from that name.  The format
+of that explicit name is <I>manufacturer,model</I>, as specified by the <B>"name"</B> properties of plug-in devices (see Reference <A HREF="gnamv14a.html#REF19072">[1]</A>, page 162).<BR>
+<H2><A NAME="HDR7">4.   Effect on OS Driver Selection Code</A></H2>
+An operating system that implements the driver searching technique that Reference <A HREF="gnamv14a.html#REF19072">[1]</A> recommends for the <B>"compatible"</B> property (see Reference <A HREF="gnamv14a.html#REF19072">[1]</A>, page 127)
+is likely to require no changes as a result of this recommended practice.  If a <B>"name"</B> property has a generic value, the search for a driver matching that generic name is likely to fail, but the next step of the search (using the
+<B>"compatible"</B> property) will succeed, finding the same driver that would have been found had the explicit name been in the <B>"name"</B> property.<BR>
+It is possible that the operating system will find a driver matching the generic name, and that said driver will not be the correct one. However, this is not a new problem, because generic names have already been used in the past for built-in
+devices. Consequently, an operating system that does not already have a mechanism for resolving or avoiding such <I>false matches</I> is likely to have problems eventually, with or without the proliferation of generic names.<BR>
+<p>
+The following suggests some possible techniques for dealing with such <I>false generic matches</I>.<BR>
+<p>
+a) In collections of OS drivers, avoid the use of generic names for the drivers themselves.  For example, it is generally unwise to name a driver <I>ethernet</I>, since there are many different ethernet adapters with different programming models.
+Using the generic name <I>ethernet</I> to identify only one such driver is presumptuous.<BR>
+<p>
+b) Separate the OS's name spaces for drivers for <I>real</I> hardware devices and <I>pseudo-drivers</I> (collections of support routines that are used by <I>real</I> drivers).  Some operating systems load such pseudo-drivers using a mechanism
+ similar
+to the mechanism used for <I>real</I> drivers. Pseudo drivers often perform g<I>eneric</I> functions that apply equally well to, for example, all ethernet adapters, independent of their low-level programming models. Consequently, it is reasonable to
+use generic names (e.g. <I>ethernet</I>) for such pseudo-drivers. Separating the name spaces of <I>real</I> drivers and pseudo-drivers avoids false matches from generic device names to generic psuedo-driver names.<BR>
+<p>
+c) Make the OS's driver search mechanism depend upon the device's parent. In other words, separate the OS's driver name spaces so that drivers for devices that attach to, for example, PCI bus can be distinguished from those that attach to, for
+example, ISA bus.  This reduces the range over which <I>false matches</I> can occur.<BR>
+<p>
+d) For cases where false matches are unavoidable (for example, if there is an existing driver with a generic name that must be retained for backwards compatibility) allow the drivers that can be incorrectly matched the possibility of rejecting
+the match.
+  One technique for doing so is to for the driver to inspect the compatible property to ensure that it is appropriate.  Another common technique is to have the generic driver <I>probe</I> the hardware to see if it behaves as expected (although this
+technique can cause problems).<BR>
+<H2><A NAME="HDR8">5.   Existing Devices</A></H2>
+Existing devices with explicit names need not change.  The  recommended search techniques continue to work correctly with such devices.<BR>
+<H2><A NAME="HDR9">6.   Compatibility (Informative)</A></H2>
+This section discusses compatibility concerns and implications associated with the strings identifying device compatibility in the Open Firmware <B>&quot;compatible&quot;</B> property.  <BR>
+<H3><A NAME="HDR10">6.1.   Historical Perspective</A></H3>
+Historically, one of the problems with devices that identify themselves is that they have a choice:  they can identify themselves accurately, or they can identify a well-known product they claim to emulate.  If they identify themselves
+accurately
+then there is a backwards compatibility problem;  existing software will not recognize new hardware, even if the new hardware is a pure superset of the old, supported, hardware.  If, on the other hand, they identify themselves as an older product that
+ they emulate, the identification is incorrect or misleads humans and makes it difficult for software to take advantage of added features or work around <I>imperfections</I> in the implementation of the emulation.<BR>
+<H3><A NAME="HDR11">6.2.   Compatibility Intent</A></H3>
+Open Firmware's <B>"compatible"</B> property attempts to address these concerns by allowing both precise identification of the device and explicit identification of other devices with which this device is compatible. The intent is that if software
+ does not have explicit support for this particular device but does have support for one of the devices with which it is <I>compatible</I>, the software will be able to function and correctly operate the device.  Because the device may have features in
+addition to those supported by the compatible device, the software may not take full advantage of the hardware.<BR>
+This  recommended practice takes this one step further, by noting that the attributes or characteristics that a particular device is MOST compatible with it is itself, and requiring that the device itself be the first entry in the
+<B>&quot;compatible&quot;</B> property.       <BR>
+<H3><A NAME="HDR12">6.3.   Hardware Programming Interface</A></H3>
+Ideally, the hardware programming interface of a new device that is <I>compatible</I> with an old device will be exactly the same as, or a pure superset of, the interface supported by the old device.  This means not only that the device is
+<I>capable</I> of operating in a compatible fashion, but that the firmware will set it up to operate compatibly.<BR>
+In particular:<BR>
+   <BR>
+
+<UL>
+<LI>  All defined registers must have their defined semantics.<BR>
+<LI>  All defined commands (if applicable) must have their defined   semantics.<BR>
+
+<LI>  Additional registers and/or commands may exist which provide   additional   functionality, but manipulating them must not be   required to operate the device in a   compatible fashion.<BR>
+
+<LI>  Device responses must conform to the defined semantics.<BR>
+
+<LI>  Additional device responses may be possible, but they   must be disabled so that the software receives only compatible   responses.<BR>
+</UL>
+
+
+<H3><A NAME="HDR13">6.4.   Open Firmware Properties</A></H3>
+As with the hardware interface, Open Firmware Properties must be the same as, or a pure superset of, the defined Open Firmware Properties of the emulated device.<BR>
+In particular:<BR>
+
+<UL>
+<LI>  All properties defined by the emulated device must have their   defined semantics.<BR>
+
+<LI>  Additional properties may exist, but their use must not   be required for <I>compatible</I> operation.<BR>
+
+<LI>  All defined entries in <B>"</B><B>reg</B><B>"</B>, <B>"</B><B>interrupts</B><B>"</B>, and similar properties   must have their defined semantics.   Such entries must be at the   beginning of the property, in the order defined by the emulated   devic
+.<BR>
+
+<LI>  Additional entries in <B>"</B><B>reg</B><B>"</B>, <B>"</B><B>interrupts</B><B>"</B>, and   similar properties may exist, but their use must not be required for <I>  compatible</I> operation.   Such entries may be added only at   the <I>end</I> of th
+ property, after all entries defined by the   emulated device.<BR>
+
+<LI>  A property defined by the emulated device may not have a value   other than those defined by the emulated device.<BR>
+</UL>
+
+
+<H3><A NAME="HDR14">6.5.   Open Firmware Methods</A></H3>
+Again, the methods supplied must be the same as, or a pure superset of, the defined properties of the emulated device.<BR>
+In particular:<BR>
+
+<UL>
+<LI>  All methods defined by the emulated device must have their   defined semantics.<BR>
+
+<LI>  Additional methods may exist, but their use must not be   required for <I>compatible</I> operation.<BR>
+
+<LI>  All defined arguments to methods, in particular <B>open</B> arguments,   must have the semantics defined by the emulated device.<BR>
+
+<LI>  Additional arguments values for methods may exist, but   their use must not be required for <I>compatible</I> operation.<BR>
+
+<LI>  Methods return values defined by the emulated device   must have values as defined by the emulated device.<BR>
+</UL>
+
+
+<H3><A NAME="HDR15">6.6.   What does <I>compatible</I> NOT imply?</A></H3>
+Compatibility does not imply the following:<BR>
+
+<UL>
+<LI>Anything explicitly specified as <I>undefined</I> by the emulated device may differ, and should be expected to differ, in the emulating device.<BR>
+
+<LI>Anything not defined by the emulated device may differ in the emulating device.<BR>
+
+<LI>Any registers, portions of registers, commands, methods, properties, and behaviors marked in the emulated device as <I>reserved</I>, <I>undefined</I>, <I>obsolete</I>, <I>do not use</I>, et cetera,  may have different semantics in the emulating device
+<BR>
+
+<LI>Contents of <B>"</B><B>reg</B><B>"</B>, <B>"</B><B>interrupts</B><B>"</B>, or similar properties after the last entry defined by the emulated device are undefined and may be used in emulating devices.<BR>
+
+<LI>Absolute register addresses, interrupt routing, et cetera, may differ between the two devices.  Software must use the properties supplied to determine these values and must not make assumptions based on the device identification.<BR>
+
+<LI>Two devices may have different electrical interfaces.<BR>
+
+<LI>Two devices may have different physical appearance and packaging.<BR>
+
+<LI>Two devices may have different labeling, jumpers, switches, installation procedures, etc.<BR>
+</UL>
+
+
+<H3><A NAME="HDR16">6.7.   Real World Perspective</A></H3>
+Two devices are seldom perfectly compatible.
+New functionality often requires a tradeoff with the older and seldomly used functionality.
+Subtle undocumented behaviors are often different.
+While the comments above imply absolute compatibility, in reality,
+placing a device into a compatible list is subjective and results in a
+judgement call by a vendor.
+If the newer device is compatible with all but a few never-used
+interfaces of the old, it may be appropriate to call it <I>compatible</I>
+even though it is not strictly a superset.
+The vendor must decide whether the customer's best interests lie with the ability to, most likely, use the new hardware with existing software, or with an absolute guarantee of compatibility.
+No simple set of rules can say how to make this decision; it will depend on the exact device and its market.
+This gray area is why it is absolutely essential that all devices
+identify themselves precisely as possible so that, in the event that
+there is an unexpected incomptibility, the software can take
+appropriate device-specific corrective action.
+Even when a new device is designed to be a perfect emulation of an old device,
+it is best to identify the new device distinctively and list the older device
+after it in <B>"compatible"</B>.<BR>
+<P>
+-- END OF DOCUMENT --<BR>
+<A NAME="ENDFILE"><PRE> </PRE></A>
+</HTML>

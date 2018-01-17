@@ -1,0 +1,144 @@
+Date: Wed, 31 May 1995 00:03:10 -0700
+From: "Dr. Luan D. Nguyen" <duyluan@austin.ibm.com>
+Subject: Item #271: Open Firmware binding proposal for SMP
+
+
+----- Begin Included Message -----
+
+Subject: Item #271: Open Firmware binding proposal for SMP
+Date: Tue, 30 May 95 13:24:02 -0600
+From: "Dr. Luan D. Nguyen" <duyluan@austin.ibm.com>
+
+P1275 Open Firmware Working Group Proposal -- Proposal #271 Ver <Auth-Vers#>
+
+Title:		Open Firmware binding proposal for SMP
+
+Author:		Luan Duy Nguyen
+
+Date:		26 May 1995
+
+Ed/Tech:	Technical
+
+Synopsis:	Create Open Firmware SMP binding
+
+Doc & Version:	Recommended practice or new binding document
+
+Scope:		To cover mainly PowerPC SMP systems, but the scope
+                can be widened to cover other SMP systems
+
+Problem:	No current Open Firmware SMP binding for SMP system
+                implementers
+
+Proposal:       To create a SMP recommended practice or SMP binding.
+                Attached please find the draft of the proposal to be
+                reviewed in our next meeting June 6, 1995 in Austin.
+                This proposal also includes SMP requirements
+                from FirePower thru Lilian Leung
+
+
+
+In a SMP configuration, every system has at least one interconnect at 
+processor level which is oftenly called processor bus. Due to the important 
+role of this bus in MP systems, there should be a bus node defined in the 
+device tree for each processor bus in the system, /cpus.  Note that there 
+isn't any address space associated with the processor bus in the SMP systems.
+The property "type" indicates topology types such as "bus", "star" and "ring".
+Other properties include "clock-frequency" and "l2-cache".  At this level, the 
+L2 cache is shared by all the  processors on the processor bus.
+
+
+The following is the list of define methods :
+
+	cpu-id@  ( -- cpu# )  to return the hardware cpu id # to the
+	            caller. The client program shall use this method to
+	            determine which cpu it is 		running on.
+
+	cpu-state@  ( cpu# -- state ) to return the current state of the
+	            specified cpu.  The valid states are: 
+		00	no cpu present 
+		01	idle 
+		10	not allowed to run 	
+		11	running 
+		After reset, all cpus except one are in idle state. 
+		The cpu which actually powerup to the ok prompt or 
+		boot the client program is in running state.  The
+		client parses the device tree and determines which
+		cpus are present and use the cpu-state@ method to find 	
+		out the idle cpus and start them up with the 
+		cpu-machine-execute method.
+		However if the client does not want to run a
+		particular cpu for reasons such as different cpu
+		speed, it can disallow the cpu from ever getting
+		into running state with the cpu-kill method.
+
+	cpu-idle  ( cpu# -- true | false ) to put the specified cpu from
+		running state to idle state.  This operation fails
+		if the specified cpu does not exist or is in "not
+		allowed to run" state.
+
+	cpu-kill  ( cpu# -- true | false ) to put the specified cpu out of
+		commission until the system is reset.  This
+		operation fails if the specified cpu does not exist.
+
+	cpu-forth-execute  ( xt cpu# -- true | false ) to invoke the
+		specified cpu to execute the forth word addressed by
+		xt.  When xt is done, the specified cpu is back in the
+		idle state.  The invoking cpu continues running
+		independent of the specified cpu.  This operation
+		fails if the specified cpu does not exist,  is in "not
+		allowed to run" state, or is in "running" state.
+
+	cpu-machine-execute  ( addr cpu# -- true | false ) to invoke the 
+		specified cpu to start executing from the specified
+		address. This is basically what the operating system
+		uses to startup the other cpus.  If successful, the
+		targeted cpu is in running state.  This operation
+		fails if the specified cpu does not exist, is in
+		"not allowed to run" state, or is in "running" state.
+
+	cpu-feature@  ( cpu# -- feature-list ) for power and system
+		management. Details to be determined.
+
+	cpu-feature!  ( feature-list cpu# -- ) for power and system
+		management. Details to be determined.
+
+Each processor on the processor bus is a child node.
+
+The child node has the "reg" property which identifies the physical address of 
+the processor (implementation  dependent).
+
+The child node also has the "mailbox" property which is a pair of address 
+and size of the interprocessor  mailbox specifically assigned to the cpu.
+
+In addition, it has all the properties of the current cpu nodes as described 
+in the PowerPC binding.  If the cpu  has a dedicated L2 cache, the "l2-
+cache" property points to that particular level of cache.  If absence, 
+there  may still be L2 cache in the /cpus bus node.  But that L2 cache is 
+shared by all processors and thus is  elevated to the /cpus bus node.
+
+There should be the "state" property which describes the cpu states: "idle", 
+"busy" and "master".  The booting  cpu is always in "master" state.  The other 
+cpus are either in idle or running states.  In the idle state, the cpu is  
+ready to execute xt or addr requested by another cpu.  In the running state, 
+the cpu is executing the xt or addr  requested by another cpu.
+
+The states of all the processors when booting the client program is exactly 
+what the client program expects,  depending on real-mode?, little-endian?, 
+virt-base and virt-size.  All cpus should have access to the complete  
+device tree.
+	
+
+------------------------------------------------------------------------------ 
+Dr. Luan D. Nguyen                             Phone: 512-838-1292,t/l 678-1292
+System Architect                               Unix:  duyluan@austin.ibm.com
+IBM System Technology and Architecture Div.    Vnet:  duyluan at austin
+11400 Burnet Road IMAD 9450
+Austin, TX 78758
+
+
+
+----- End Included Message -----
+
+
+[ P1275 Item #271 -- Received: Wed May 31 00:05:36 PDT 1995 ]
+

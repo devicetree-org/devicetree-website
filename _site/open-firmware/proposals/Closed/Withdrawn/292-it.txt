@@ -1,0 +1,40 @@
+Date: Wed, 4 Oct 1995 13:51:41 -0700
+From: brianh@lexus.West.Sun.COM (Brian Horn)
+Subject: Item #292: PCI bus-master-capable property
+
+P1275 Open Firmware Working Group Proposal -- Proposal #292 Ver 1.0
+
+Title:		PCI bus master capable property
+
+Author:		Brian.Horn@west.sun.com
+
+Date:		Oct 4, 1995
+
+Ed/Tech:	Technical
+
+Synopsis:	no mechanism exists to determine bus mastering capabilities
+
+Doc & Version:	PCI Bus Binding to IEEE1275-1994 Rev 1.5 Draft
+
+Problem:	A PCI device driver cannot tell whether bus mastering is available
+
+Proposal:	
+
+	Add in the Bus-specific properties for Bus Nodes (page 11) after
+"slot-names" (lines 35-43):
+
+	"bus-master-capable"
+
+		prop-name, describes whether the device is wired to be
+		PCI bus master capable.
+
+		prop-encoded-array:  An integer, encoded as with encode-int.
+		The property value is a bitmask indicating whether the
+		device is PCI bus master capable.  The bit being set implies
+		that the device is capable and the bit being reset implies
+		that the device is not capable.  The least significant bit
+		corresponds to Device Number 0, the next bit corresponds
+		to Device Number 1, etc.
+
+[ P1275 Item #292 -- Received: Wed Oct  4 13:48:39 PDT 1995 ]
+
