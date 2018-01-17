@@ -1,12 +1,7 @@
 source "https://rubygems.org"
 
-gem "jekyll", "3.5.1"
-
-gem 'linaro-jekyll-theme', "0.10.101"
-
+gem "jumbo-jekyll-theme", "1.4.2.3"
 
 group :jekyll_plugins do
-   gem "jekyll-feed", "~> 0.6"
+  gem "jekyll-data"
 end
-
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
