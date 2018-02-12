@@ -10,14 +10,14 @@ github_username:  devicetree
 
 # Build settings
 markdown: kramdown
-theme: linaro-jekyll-theme
-plugins:
-  - jekyll-feed
-include: [_content]
 
-jekyll_tidy: # Compress the html and beautify it.
-    compress_html: true
-    exclude: ["assets/**/*.js", robots.txt] #Add the js file to exclude to stop jekyll tidy errors.
+# Use the Jumbo Jekyll Theme
+theme: jumbo-jekyll-theme
+
+exclude:
+    - .asset-cache
+    - .sass-cache
+    - _site
 
 # Jekyll Assets Setup
 assets:
@@ -26,33 +26,85 @@ assets:
   autoprefixer:
       browsers: ["last 2 versions","> 5%","IE 9"]
   sources:
-    - _assets/js
-    - _assets/images
-    - _assets/images/posts
+    - assets/js
+    - assets/images
+    - assets/css
+    - assets/images/posts
+# Permalink style to be used for paginating pages in pagination.html
+paginate_path: /blog/:num/
 
-#Jekyll Defaults Setup
+# Jekyll Pagination V2 Configuration
+pagination:
+    # Default pagination path for Jekyll Posts
+    # For other permalinks set in the front matter of the post index page
+    permalink: /blog/:num/
+    # Enabled or not?
+    enabled: true
+    # Home many posts to display by default
+    per_page: 5
+    # Number of pages to show either side of the current page i.e - 1, 2, {3}, 4, 5
+    trail:
+        before: 2
+        after: 2
+    # Reverse the order of paginated pages
+    sort_reverse: true
+    # Field to sort posts by when paginating
+    sort_field: 'date'
+
+# Jekyll pagination v2 autopages configuration.
+autopages:
+  enabled: false
+  
+ # Jekyll_get plugin configuration. This will not be needed in all jekyll sites
+ # only those that are displaying news from the news db or listing Linaro members.
+# jekyll_get:
+#   data: members
+#   json: 'https://github.com/Linaro/db'
+
+# Jekyll defaults - used to set default front matter values to collections and posts
 defaults:
+  #  Set a default Social Media Image
   - scope:
       path: ""
     values:
       image: /assets/images/social-media-image.png
+      
+# Jekyll Assets setup
+assets:
+  # Compress JS Assets - uses the uglifier 
+  compression: true
+  gzip: true
+  # Autoprefixer default settings
+  autoprefixer:
+      browsers: ["last 2 versions","> 5%","IE 9"]
+  # These are the paths to look for assets
+  sources:
+    - assets/js/
+    - assets/images/
+    - assets/css/
 
-paginate_path: /blog/:num/ # Pagination Path for Blogs
 
-# Sass Directory
+# Jekyll relative links plugin settings    
+jekyll_relative_links:
+    process_all_collections: true
+    verbose: 1
+    
+plugins:
+    # - jekyll-minimagick
+    - jekyll-seo-tag
+    - jekyll-sitemap
+    - bootstrap-sass
+    - uglifier
+    - jekyll-assets
+    - jekyll-theme-assets
+    - jekyll-tidy
+    - jekyll-redirect-from
+    - autoprefixer-rails
+    - jekyll-paginate-v2
+
+#Sass Directory
 sass:
     style: compressed
-    sass_dir: _assets/css
-
-pagination:
-    enabled: true
-    per_page: 5
-    trail:
-        before: 2
-        after: 2
-    sort_reverse: true
-    sort_field: 'date'
+    sass_dir: assets/css
 
 permalink: /blog/:title/ # Permalink for blog titles
-
-using_assets: true

@@ -1,68 +1,10 @@
-title: DeviceTree
-email: kyle.kirkby@linaro.org
-description: |-
-    Devicetree.org is a community effort by many companies and individuals to facilitate the future evolution of the Devicetree Standard.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://staging.devicetree.org" # the base hostname & protocol for your site, e.g. http://example.com
-
+# In order to build for staging run:
+# $ jekyll build --config _config.yml, _config-staging.yml
+#
+#
+# URL of static site
+url: "https://staging.devicetree.org"
+# Destination folder
 destination: staging.devicetree.org
-
-# Set production to fasle
+# Production boolean used in layouts / includes
 production: false
-
-#Github Username
-github_username:  devicetree
-
-# Build settings
-markdown: kramdown
-
-# Theme
-theme: linaro-jekyll-theme
-
-# Plugins
-plugins:
-  - jekyll-feed
-
-jekyll_tidy: # Compress the html and beautify it.
-    compress_html: true
-    exclude: ["assets/**/*.js", robots.txt] #Add the js file to exclude to stop jekyll tidy errors.
-
-
-# Jekyll Assets Setup
-assets:
-  compress:
-        js: true
-  autoprefixer:
-      browsers: ["last 2 versions","> 5%","IE 9"]
-  sources:
-    - _assets/js
-    - _assets/images
-    - _assets/images/posts
-
-paginate_path: /blog/:num/ # Pagination Path for Blogs
-
-# Sass Directory
-sass:
-    style: compressed
-    sass_dir: _assets/css
-
-pagination:
-    enabled: true
-    per_page: 5
-    trail:
-        before: 2
-        after: 2
-    sort_reverse: true
-    sort_field: 'date'
-
-permalink: /blog/:title/ # Permalink for blog titles
-
-using_assets: true
-
-
-#Jekyll Defaults Setup
-defaults:
-  - scope:
-      path: ""
-    values:
-      image: /assets/images/social-media-image.png
