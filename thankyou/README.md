@@ -1,5 +1,5 @@
 ---
-layout: empty
+layout: container
 title: Thank you for getting in contact!
 permalink: "/thankyou/"
 ---

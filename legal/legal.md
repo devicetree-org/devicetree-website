@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: container-breadcrumb
 title: Legal
 permalink: /legal/
 ---

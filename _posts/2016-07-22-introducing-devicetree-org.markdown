@@ -3,7 +3,10 @@ layout: post
 title:  Introducing devicetree.org
 date:   2016-07-22 12:00:00
 categories: Blog
-featured_image: device-tree-logo-dark.svg
+image:
+    featured: true
+    path: /assets/images/devicetree-logo-dark.png
+    name: devicetree-logo-dark.png
 author: Linaro
 ---
 
