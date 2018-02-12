@@ -2,7 +2,7 @@
 layout: container-breadcrumb
 title: Releases
 permalink: /releases/
-js-package: extended
+js-package: releases
 keywords: Releases, Device Tree, RoadMap
 ---
 {% include sticky-tab-bar.html %}

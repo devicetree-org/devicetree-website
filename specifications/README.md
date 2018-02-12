@@ -2,7 +2,7 @@
 layout: container-breadcrumb
 title: Specifications
 permalink: /specifications/
-js-package: extended
+js-package: releases
 keywords: Devicetree, Specification, release, v1.0
 ---
 {% include sticky-tab-bar.html %}
@@ -20,8 +20,6 @@ keywords: Devicetree, Specification, release, v1.0
 * * *
 
 #### Get Involved
-
-## **The Devicetree Specification**
 
 If you would like to get involved please fetch the document source from
 [GitHub](https://github.com/devicetree-org/devicetree-specification)
