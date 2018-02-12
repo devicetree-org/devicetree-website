@@ -6,6 +6,9 @@
 # Default is the Linaro Sprinkle
 image: device-tree-vertical-logo.png
 
+# Footer Include
+include: devicetree-members.html
+
 # Columns to be added to the fospec-button center-block fade-in-twooter
 columns:
     - title: Device Tree Speciciation
