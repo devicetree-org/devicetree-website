@@ -1,0 +1,171 @@
+span.latest-release {
+    width: 100px;
+    height: 19px;
+    border: 1px solid #2cbe4e;
+    border-radius: 2px;
+    color: #2cbe4e;
+    padding: 5px;
+    font-size: 10px;
+    text-align: center;
+    top: -4px;
+    position: relative;
+}
+
+span.pre-release {
+    width: 100px;
+    height: 19px;
+    border: 1px solid #f66a0a;
+    border-radius: 2px;
+    color: #f66a0a;
+    padding: 5px;
+    font-size: 10px;
+    text-align: center;
+    top: -4px;
+    position: relative;
+}
+
+
+#tabbed-nav-bar-collapse > ul.nav-tabs>li>a {
+  color: #000 !important;
+}
+
+@media(max-width:1999px){
+    #tabbed-nav-bar-collapse > ul.nav-tabs>li>a {
+      color: #fff;
+    }
+
+}
+
+/* ---------------------- Home Page Op-tee image ---------------------- */
+#devicetree-vertical-image {
+  width: auto;
+  height: 150px;
+  margin-top: 80px;
+}
+
+h1.home-page-text.text-center {
+    color: #FFF;
+    font-size:46px;
+    font-weight:700;
+}
+h1#home-page-title {
+    color: #FFF;
+    font-size:46px;
+    font-weight:700;
+}
+h4#home-page-text {
+    font-weight: 100;
+}
+
+/* Projects Icons */
+
+.project-icon {
+    color: #0084ab;
+}
+.project-title {
+    color: #0084ab;
+}
+.project-more-info {
+    color: #0084ab;
+    font-size: 12px;
+}
+
+/* ------------ Projects Icons -------------- */
+.project-icon{
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+}
+#projects a:hover{
+    text-decoration: none !important;
+}
+
+#banner-area-homepage{
+    padding-top:60px;
+}
+
+/* ------------- Supporting Members Section --------------- */
+.member-image{
+  width: 50%;
+  text-align: center;
+}
+.members {
+  padding:40px;
+  background-color: #fff;
+}
+
+.collaborate-button {
+    padding: 7px;
+    color: #131313;
+    width: 160px;
+    height: auto;
+    letter-spacing: 2px;
+    background-color: transparent;
+    border-radius:2px;
+    border: 1px solid #131313;
+    transition: all 500ms ease;
+    margin-bottom: 100px;
+    font-weight: bold;
+    font-size: 16px;
+}
+.collaborate-button:hover{
+    background-color: #131313;
+    color: #fff;
+    text-decoration: none;
+    transition: all 500ms ease;
+}
+.spec-button {
+    padding: 10px;
+    color: #fff;
+    width: 200px;
+    font-size: 15px;    
+    height: auto;
+    letter-spacing: 2px;
+    background-color: transparent;
+    border-radius:2px;
+    text-align: center;
+    border: 1px solid #fff;
+    transition: all 200ms ease;
+}
+.spec-button:hover{
+    background-color: #fff;
+    color: #131313;
+    text-decoration: none;
+    transition: all 500ms ease;
+}
+
+.device-tree-content-image {
+    background-image: url(/assets/images/devicetree-content-bg.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border-bottom: 1px solid #ccc;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    opacity: .5;
+}
+
+
+.device-tree-content {
+    position: relative;
+}
+
+.device-tree-home-container{
+    position: relative;
+    overflow: hidden;
+}
+
+iframe#contact-form{
+    top: 30px;
+    margin-bottom: 50px;
+}
+
+.home-content-container{
+    text-align: center;
+}
+
+/* Contact thanks banner on /contact/ page*/
+div#contact-thanks {
+    margin-top: -20px;
+}
