@@ -12,9 +12,10 @@ slogan: The DeviceTree Specification
 #           url : /specifications/
 #           class: spec-button center-block
           
-homepage_image: /assets/images/background-image.jpg
-breadcrumb-image: /assets/images/breadcrumb-image.jpg
-
+# Breadcrumb Settings
+breadcrumb:
+    image: breadcrumb-image.jpg
+    
 # Mailchimp settings
 mailchimp:
     enabled: true
