@@ -1,16 +1,14 @@
 ---
-layout: default
+layout: container-breadcrumb
 title: Releases
 permalink: /releases/
-js-vendor: extended
-css-pack: lightbox
+js-package: releases
 keywords: Releases, Device Tree, RoadMap
 ---
-## Releases planned
+{% include sticky-tab-bar.html %}
 
-[v0.2](https://github.com/devicetree-org/devicetree-specification/releases/tag/v0.2-pre4) - Prereleased and available for review.
-To be officially released before the end of December 2017.
+## Releases
 
-[v0.1](https://github.com/devicetree-org/devicetree-specification/releases/tag/v0.1) - Released 24 May 2016
+<div id="devicetree_releases"></div>
 
 **Releases schedule is planned by the Technical Steering Committee**
