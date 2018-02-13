@@ -3,6 +3,8 @@ layout: container-breadcrumb
 title: Specifications
 permalink: /specifications/
 js-package: releases
+image:
+    path: /assets/images/arm.jpg
 keywords: Devicetree, Specification, release, v1.0
 ---
 {% include sticky-tab-bar.html %}
