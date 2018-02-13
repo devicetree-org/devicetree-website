@@ -23,19 +23,6 @@ span.pre-release {
     top: -4px;
     position: relative;
 }
-
-
-#tabbed-nav-bar-collapse > ul.nav-tabs>li>a {
-  color: #000 !important;
-}
-
-@media(max-width:1999px){
-    #tabbed-nav-bar-collapse > ul.nav-tabs>li>a {
-      color: #fff;
-    }
-
-}
-
 /* ---------------------- Home Page Op-tee image ---------------------- */
 #devicetree-vertical-image {
   width: auto;
@@ -134,27 +121,7 @@ h4#home-page-text {
     transition: all 500ms ease;
 }
 
-.device-tree-content-image {
-    background-image: url(/assets/images/devicetree-content-bg.png);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    border-bottom: 1px solid #ccc;
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    opacity: .5;
-}
 
-
-.device-tree-content {
-    position: relative;
-}
-
-.device-tree-home-container{
-    position: relative;
-    overflow: hidden;
-}
 
 iframe#contact-form{
     top: 30px;
