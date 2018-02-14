@@ -1,11 +1,14 @@
 ---
-layout: home-shape
+layout: home
+keywords: OpenFirmware, OpenPOWER Abstraction Layer (OPAL), Power Architecture Platform Requirements (PAPR), Flattened Device Tree (FDT), Devicetree, Specification, data, structure
 ---
 <div class="text-center" markdown="1">
 
-## Welcome to devicetree.org
+# Welcome to devicetree.org
 
 If you are looking for the devicetree specification you’ve come to the right place!
+
+## Current release is [v0.2](https://github.com/devicetree-org/devicetree-specification/releases/tag/v0.2)
 
 Devicetree.org is a community effort by many companies and individuals to facilitate the future evolution of the Devicetree Standard.
 

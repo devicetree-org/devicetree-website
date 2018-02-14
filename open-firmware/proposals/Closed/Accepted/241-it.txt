@@ -1,0 +1,55 @@
+Date: Wed, 1 Mar 1995 17:03:37 -0700
+From: ron@apple.com (Ron Hochsprung)
+Subject: Item #241: PCI Binding - legacy devices
+
+P1275 Open Firmware Working Group Proposal -- Proposal #241 Ver
+<Auth-Vers#>
+
+Title:          "legacy" devices
+
+Author:         Ron Hochsprung
+
+Date:           March 1, 1995
+
+Ed/Tech:        Technical
+
+Synopsis:       define default "reg" properties for legacy devices
+
+Doc & Version:  PowerPC Binding 1.4
+
+Problem:                legacy devices (without FCode) are not handled.
+
+Proposal:
+
+add a new section, as follows:
+
+section:        Legacy devices
+
+'Legacy' VGA and IDE devices that are implemented on PCI
+will typically have the same "hard-decoded" addresses as they did on
+ISA.  Such devices that have FCode can use explicit inidication of the
+address requirements as noted above.  However, for cards that have no
+FCode image, Open Firmware shall assume the standard address ranges and
+shall create the "reg" property with these ranges, in addition to any
+relocatable regions that have base registers.
+
+For VGA (class code = 0x000100), the address ranges are:
+        0x3B0-0x3BB             (I/O, aliased;  i.e., t=1)
+        0x3C0-0x3DF             (I/O, aliased;  i.e., t=1)
+        0xA0000-0xBFFFF (Memory, below 1MB, t=1)
+
+For IDE (class code = 0x010100), the address ranges are:
+        0x1F0-0x1F7             Primary Command Block (I/O)
+        0x3F6                   Primary Control Block (I/O)
+        0x170-0x17F             Secondary Command Block (I/O)
+        0x376                   Secondary Control Block (I/O)
+
+Note: For IDE, an encoding of the low-order byte of the class-code (the
+"programming model" field) can be encoded to indicate the ability of the
+device to operate in other than 'compatility' mode.  See the PCI IDE
+Cotnroller Specification for more detail.
+
+
+
+[ P1275 Item #241 -- Received: Wed Mar  1 17:07:18 PST 1995 ]
+

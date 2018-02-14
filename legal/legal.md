@@ -1,18 +1,18 @@
 ---
-layout: default
+layout: container-breadcrumb
 title: Legal
 permalink: /legal/
 ---
 <br>
 <div class="tabbed-area"><!-- Nav tabs -->
-<ul class="nav nav-pills tabbed-nav" id="tab-row" role="tablist">
+<ul class="nav nav-pills tabbed-nav" id="tab-row" role="tablist" id="tabbed_nav">
 	<li class="active"><a  href="#1a" data-toggle="tab">Terms & Conditions</a></li>
 	<li><a href="#2a" data-toggle="tab">Privacy Policy</a></li>
 	<li><a href="#3a" data-toggle="tab">Trademark Usage</a></li>
 </ul>
 
-<div class="tab-content clearfix">
-<div class="tab-pane active" id="1a" markdown="1">
+<div class="tab-content clearfix" id="tabbed_nav_content">
+<div class="tab-pane tab-pane-legal active" id="1a" markdown="1">
 ## Information about the Linaro op-tee.org Website
 
 Please refer to: [https://www.op-tee.org/about/](https://www.op-tee.org/about/)
@@ -88,7 +88,7 @@ Where the Website contains links to other sites and resources provided by third 
 LEC-ELA-30989-V0.91, 10 April 2015\. Copyright (c) 2015 Linaro Limited
 
 </div>
-<div class="tab-pane" id="2a" markdown="1">
+<div class="tab-pane tab-pane-legal" id="2a" markdown="1">
 As an organization Linaro Limited is committed to fairness, both in the collection and use of personal information. Fairness has two elements:
 
 Using information in a way that people would reasonably expect and in a way that is fair;
@@ -204,7 +204,7 @@ Thank you for visiting Our site.
 LEC-ELA-30990-V0.91, 10 April 2015, Copyright (c) 2015 Linaro Limited
 
 </div>
-<div class="tab-pane" id="3a" markdown="1">
+<div class="tab-pane tab-pane-legal" id="3a" markdown="1">
 Linaro® is a registered trademark of Linaro in the United Kingdom and other countries
 
 Linaro has applied to have ‘96 Boards’ registered as a trademark in the UK, US and other countries.
@@ -219,6 +219,6 @@ The Trademark policy and guidelines provide information on what is allowed, what
 
 
 </div>
-	  </div>
+</div>
 
-    </div>
+</div>

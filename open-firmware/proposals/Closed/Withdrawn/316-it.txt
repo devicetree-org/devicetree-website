@@ -1,0 +1,145 @@
+From: Michael Segapeli <mikes@austin.ibm.com>
+Subject: Item #316: PPC: PowerPC Committee meeting minutes 1/17/96
+Date: Fri, 23 Feb 96 09:00:58 -0600
+
+P1275 Open Firmware Working Group Proposal -- Proposal #316 Ver 1
+
+Title:         Minutes of PowerPC Open Firmware Committee meeting 1/17/96.
+
+Author:        Mike Segapeli
+
+Date:          February 23, 1996
+
+Ed/Tech:       Editorial
+
+Synopsis:      Minutes for 1/17/96 meeting held at Motorola-Austin.
+
+Proposal:
+
+Hello,
+Here are the minutes for the second day of the 1275 OFWG meetings held at
+Motorola- Austin on 1/17/96.
+
+Attendees:
+Mitch Bradley  FirmWorks/President (415)961-1302  wmb@firmworks.com
+               Chairman Open Firmware Working Group
+David M. Kahn  Sun Microsystems    (415)336-2784  dmk@Eng.Sun.Com
+               Vice Chairman Open Firmware Working Group
+John Kingman   IBM RSD Architecture(512)838-1546  kingman@austin.ibm.com
+               Secretary Open Firmware Working Group
+Luan Nguyen    IBM IMD Arch.       (512)838-1292  duyluan@austin.ibm.com
+Ron Hochsprung Apple/Sys. Arch.    (408)974-2661  ron@apple.com
+Mike Segapeli  IBM RSD Firmware    (512)838-8428  mikes@austin.ibm.com
+Jordan Brown   Sunsoft             (310)348-6039  jordan.brown@west.sun.com
+Chris M Bellman Adaptec, Inc.      (408)945-8600  cbellman@corp.adpatec.com
+Kip McClanahan Motorola MMTG       (512)891-6525  kip-mcclanahan@risc.sps.mot.c
+om
+Satoru Mamiya  FirePower Systems   (415)462-3009  mamiya@Firepower.com
+Matt Hill      Sun                 (415)786-5321  matt.hill@sun.com
+Jim Wooldridge IBM                 (206)803-5804  jwooldridge@austin.ibm.com
+Rick Foos      Motorola            (512)891-3084  rfoos@ntgate.sps.moto.com
+John Southard  Motorola            (512)891-6236  southard@ntgate.sps.mot.com
+Judy Ho        Motorola            (512)891-6325  judyh@ntgate.sps.mot.com
+Bruce Rosenkrantz  Motorola        (602)345-7128  brosen@phx.mcd.mot.com
+Eric Rainbolt  Motorola            (512)891-7210  eric_rainbolt@risc.sps.mot.co
+m  
+
+Review Agenda:
+- Change agenda to accomodate 'Veneer' NT Meeting
+  - Procedure Change Proposal
+    + Establish time limit for discussion (5 minutes)
+    + Work thru lunch
+  - Cut meeting off at 2:00PM for NT 'Veneer' Meeting     
+  Agenda accepted as ammended
+
+- Minutes accepted as written.
+
+- AI Review:
+  1 Ron to create proposal on recognizing Forth and FCode image
+    formats.  Status:  Almost done; Ron
+  2 Parallel Port Read Method.(Mike S) Status:  No progress
+  3 Mitch to send Mike updated ELF format description.  Status:  Done 
+  4 Mitch to send Mike ammended text for Item 289 "Support for
+    multi-initiator SCSI".  Status:  Done
+  5 Mike to forward to David Kahn Approved changes to Core Errata.
+    Status:  Done
+  6 Luan to send Mike updated text for MP section of PPC Binding.
+    Status:  Done 
+  7 Ron to prepare proposal for Code Page selection.  Status:  No progress
+
+
+- Discussion about how to get bindings accepted; remove draft 
+  name once committee has accepted.  Put on playground for distribution.
+
+- Agenda:
+1) Review PPC Pocessor binding: Version 1.6 draft
+   	- p10; l12 - must to shall
+  	- p10; l17 - font problem
+   	- p13; S6
+ 	- p14; l25 - fix hex encode statement
+	
+   Makes changes as editorial changes; Version 1.8 Approved
+
+2) no changes to PReP binding
+
+3) Review Device Support Extension binding
+   Move to accept changes and editorial changes; accepted
+   Go to 0.5; next draft is 0.6.
+
+Proposals:
+
+#298:
+    Accepted as ammended 
+    Jordan to draft "binding"
+    Ammendments:
+    - change DS,1385 to ds1385-nvram
+    - Make note about different structure for "reg" property in existing
+      implemenation.
+#299:
+    Accepted  
+    Jordan to draft "PC Keyboard Binding"
+
+#300: Withdrawn
+
+#301: 
+    Accepted as ammended
+    Amendments:
+     Delete section titled "Additional Requirements"
+
+    8042 device binding to be created. Brian?
+
+#302:
+    Accept as ammended 
+    Amendments:
+      Change floppy to fdc node name and device type.
+
+    Clarification: Alias floppy refers to primary floppy drive     
+
+#305:
+    Proposal separated into three sections:
+    305A - Template for device bindings.  Accepted
+    305B - Serial Device Binding proposal.  Accepted
+           Need to add generic parameters in device extension document
+           for the open method for serial port.  Make into draft binding
+           document.
+    305C - Closed. Remainder of text to be resubmitted as separate
+           proposals.
+
+Proposals on agenda but handled in Day 1 (See the minutes for the first day
+published in proposal #309):
+
+#291: Accepted as ammended
+#294: Accepted as ammended
+#295: Tabled
+#296: Accepted as amended
+#297: Accepted as amended
+#300: Withdrawn by author
+#304: Withdrawn by author replaced by 305
+
+Review Power PC binding 1.7 Draft: 
+   (Temporary Proposal#: 960117  until number assigned) 
+    Changes approved as Revision 1.9 Draft.
+
+
+[ P1275 Item #316 -- Received: Fri Feb 23 06:58:52 PST 1996 ]
+

@@ -1,0 +1,160 @@
+Date: Wed, 21 Feb 1996 21:45:35 -0600
+From: kingman@austin.ibm.com (John Kingman)
+Subject: Item #315: PPC binding update from CHRP
+
+P1275 Open Firmware Working Group Proposal -- Proposal #315 Ver <Auth-Vers#>
+
+Title:          PowerPC processor binding update
+
+Author:         John A. Kingman
+
+Date:           February 21, 1996
+
+Ed/Tech:        Technical
+
+Synopsis:       Incorporate updates resulting from various reviews
+
+Doc & Version:  PowerPC processor Binding 1.9 DRAFT
+
+Problem:        Current binding needs to be updated to reflect additional
+                editorial and structural changes resulting from additional
+                reviews relating to the PowerPC Common Hardware Reference 
+                Platform (CHRP).
+
+Proposal:
+
+                Key:  E -- editorial change
+                      P -- move to platform (PReP/CHRP) binding
+                      C -- resulting from CHRP review
+                      S -- clarification
+
+K Pg Lines Description of change
+- -- ----- ---------------------------------------------------------------
+
+S 10    3  Replace "either the real-base or virt-base values equal to -1"
+           with "real-base equal to -1 and real-mode? true, or virt-base
+           equal to -1 and real-mode? false"
+           
+        8  Add "If real-mode? is true, real-base is an address and 
+           real-size equals -1, then Open Firmware may assume that there
+           is sufficient real memory to continue. Likewise, if real-mode? 
+           is false, virt-base is an address and virt-size equals -1, then 
+           Open Firmware may assume that there is sufficient virtual memory 
+           to continue."
+
+C 11 24-27 Replace paragraph with the following:
+
+           "Physical memory shall remain managed by Open Firmware until the
+            client program defines the real-mode physical memory management
+            assist callbacks.  The client program shall use the Open Firmware
+            claim client interface service to allocate physical memory while
+            physical memory remains managed by Open Firmware.  The client
+            program shall not call the open, boot, enter or interpret Open
+            Firmware client interface services while physical memory remains
+            managed by Open Firmware.  Physical memory shall be managed by
+            the client program after the client program defines the real-mode
+            physical memory management assist callbacks.  Open Firmware shall
+            use the client program's real-mode physical memory management
+            assist callbacks to allocate physical memory after the client
+            program has assumed physical memory management."
+
+E 13 27-29 Change "unit-number" to "unit-address"
+
+C 16    2  Add the following properties:
+
+           "tlb-split"
+
+              This property, if present, indicates that the TLB has a 
+              split organization. Absence of this property indicates 
+              that the TLB has a unified organization.
+
+           "d-tlb-size"
+
+              Standard property, encoded as with encode-int, that 
+              represents the total number of d-TLB entries.
+
+           "d-tlb-sets"
+
+              Standard property, encoded as with encode-int, that 
+              represents the number of associativity sets of the d-TLB. 
+              A value of 1 indicates that the d-TLB is fully-associative.
+
+           "i-tlb-size"
+
+              Standard property, encoded as with encode-int, that 
+              represents the total number of i-TLB entries.
+
+           "i-tlb-sets"
+
+              Standard property, encoded as with encode-int, that 
+              represents the number of associativity sets of the i-TLB. 
+              A value of 1 indicates that the i-TLB is fully-associative.
+
+C 16   39  Add the following properties and note:
+
+           "i-cache-line-size"
+
+              Standard property, encoded as with encode-int, that 
+              represents the internal instruction cache's line size, 
+              in bytes, if different than its block size.
+
+           "d-cache-line-size"
+
+              Standard property, encoded as with encode-int, that 
+              represents the internal data cache's line size, 
+              in bytes, if different than its block size.
+
+           Note: If this is a unified cache, the corresponding i- and
+           d- sizes must be equal.
+
+C 17   39  Add the following properties and note:
+
+           "i-cache-line-size"
+
+              Standard property, encoded as with encode-int, that 
+              represents this instruction cache's line size, 
+              in bytes, if different than its block size.
+
+           "d-cache-line-size"
+
+              Standard property, encoded as with encode-int, that 
+              represents this data cache's line size, in bytes, if 
+              different than its block size.
+
+           Note: If this is a unified cache, the corresponding i- and
+           d- sizes must be equal.
+
+C 18   32  Add the following to Table 1:
+
+           |--------------|---------------------------------------|------|
+           |%sr0-%sr15    | preserved by client interface         |      |
+           |--------------|---------------------------------------|------|
+
+P 19  8-15 Copy to the platform bindings and replace the 3rd and 4th sentences
+           with the following:
+
+           "All of physical memory from load-base to either the start of
+            Open Firmware physical memory or the end of physical memory,
+            whichever comes first, shall be available for loading the 
+            client program."
+
+C 20   43  Add the following sentences:
+
+           "All caches shall be consistent with memory and with each other
+            when control is passed to the client program.  Also, consistency
+            shall be maintained whenever control is temporarily passed back 
+            to Open Firmware by the client."
+
+S 22   30  Add the following sentences:
+
+          "%sr0 through %sr15
+
+               Access saved copies of segment registers."
+
+S 22 52-54 Move to follow line 12
+
+John Kingman (kingman@austin.ibm.com)
+
+
+[ P1275 Item #315 -- Received: Wed Feb 21 19:43:32 PST 1996 ]
+

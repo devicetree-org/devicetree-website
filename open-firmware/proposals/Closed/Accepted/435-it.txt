@@ -1,0 +1,438 @@
+Date: Wed, 11 Mar 1998 07:42:26 -0500 (EST)
+From: Tarl Neustaedter - SMCC Software <Tarl.Neustaedter@East>
+Subject: Item #435: Revised Bus Binding for IEEE 1394/firewire
+
+This proposal supercedes proposal #428
+
+P1275 Openboot Working Group Proposal -- Proposal #:435 Ver 1.0
+
+Title:          Binding for IEEE 1394/Firewire Bus
+
+Author:         Tarl Neustaedter
+
+Date:           11-March-1998
+
+Ed/Tech:        Technical
+
+Synopsis:       A proposed bus binding for IEEE 1394/Firewire is presented
+
+Doc & Version:  New Document
+
+Problem:        There is interest in developing a document for the bindings
+		between Open Firmware and the IEEE 1394 serial bus.
+
+Proposal:
+
+
+
+
+	IEEE 1394-1995 Bus Binding to IEEE Std 1275-1994
+
+		Version 1.0
+
+1. Overview and References
+
+This document specifies the application of Open Firmware to the IEEE 1394
+(Firewire) serial bus.
+
+1.1 Revision History
+
+	Revision 0.0, 97-02-26, Initial Revision
+	Revision 1.0, 98-01-21, Change interfaces to include address as part
+		of current state. Remove exposed asynchronous interfaces,
+		leaving only remote read/write and isochronous interfaces.
+		Added async_stream messages, which will be used by TCP/IP.
+
+1.2 References
+
+[1]	IEEE Std 1275-1994 Standard for Boot (Initialization Configuration)
+        Firmware: Core Requirements and Practices
+[2]	IEEE Std 1394-1995 Standard for a High-performance Serial Bus
+[3]	1394 Open Host Controller Interface Specification, Version 1.00.
+	ftp://www.austin.ibm.com/pub/chrptech/1394ohci/ohcir100.pdf
+[4]	IEEE Std 1212-1994 (ISO/IEC 13213) Control and Status Registers (CSR)
+	architecture for microcomputer busses
+
+1.3 Definition of Terms
+
+GUID. Globally unique Identifier. A 64-bit extended version of the 48-bit
+	IEEE Global identifiers used as MAC addresses.
+1394 device. A piece of equipment plugged into a 1394 bus, which is assigned
+	a nodeid. Each device contains a 48-bit address space.
+1394 unit. A portion of a 1394 device. The fragmentation of the 1394 device
+	is defined by unit directories in the device's config ROM, and usually
+	represents separate functions. See IEEE 1212 [4] chapter 8.
+1394 node. The 1275 description of a 1394 unit. If a 1394 device does not
+	define any units, the 1394 node will describe the entire 1394 device.
+
+2 Bus Characteristics
+
+While 1394 is a serial bus, it is also a memory-mapped bus. The address
+space is 64 bits, which are subdivided into sixteen bits of device number
+and 48 bits of address space within the devices. These are each further
+subdivided as described below.
+
+The 1394 bus topologies can vary considerably, but we will provide an
+abstraction of a flat address space. All 1394 nodes will hang directly
+off the adapter node, with a unit address based on the GUID and local
+unit address.
+
+2.1 Physical address formats and representations
+
+2.1.1 Physical address format
+
+2.1.1.1 Numerical Representation
+
+The numerical representation of a 1394 address consists of four cells, encoded
+as follows:
+
+	Bit#	33222222 22221111 11111100 00000000
+		10987654 32109876 54321098 76543210
+
+guid.hi cell:	GGGGGGGG GGGGGGGG GGGGGGGG GGGGGGGG
+guid.lo cell:   gggggggg gggggggg gggggggg gggggggg
+offset.hi cell:	bbbbbbbb bbnnnnnn MMMMMMMM MMMMMMMM
+offset.lo cell:	mmmmmmmm mmmmmmmm mmmmmmmm mmmmmmmm
+
+Where:
+
+GG...GG is the high-order 32 bits of the 64-bit GUID identifying a 1394 device
+gg...gg is the low-order 32 bits of the 64-bit GUID identifying a 1394 device.
+bb...bb is a 10-bit bus number, which in this context must always be zero.
+nn...nn is a 6-bit local device id, which in this context must always be zero.
+MM...MM is the high-order 16 bits of a 48-bit address within the 1394 device.
+mm...mm is the low-order 32 bits of 48-bit address within the 1394 device.
+
+2.1.1.2 Text Representation
+
+The text representation of a 1394 address is as follows:
+
+	GGGGGGGGGGGGGGGG[,AAAAAAAAAAAA]
+Where
+	GGGGGGGGGGGGGGGG is an ASCII hexadecimal number in the range
+			 0..(2^64)-1, containing the device's GUID.
+	AAAAAAAAAAAA     is an ASCII hexadecimal number in the range
+			 0..(2^48)-1, containing a 1394 memory address.
+			 This is optional and defined to be zero if
+			 not present.
+
+Note that the simplest 1394 devices will have unit-addresses with only the GUID
+visible. Individual units on multi-unit devices will be allocated sub-ranges of
+the device's 48-bit address space, and thus will show the full GUID,ADDR
+unit-address.
+
+2.2 Bus-specific configuration variables
+
+None.
+
+3 Bus Nodes
+
+3.1 Properties
+
+3.1.1 Open Firmware-defined properties for Bus Nodes
+
+The following standard properties, as defined in Open Firmware, have special
+meanings or interpretations for 1394:
+
+"device_type"								S
+	Standard prop-name to specify the implemented interface. prop-encoded
+	array, a string encoded with encode-string. The meaning of this
+	property is as defined in Open Firmware. A Standard Package conforming
+	to this specification and corresponding to a device that implements a
+	1394 bus shall implement this property with the value "ieee1394".
+
+"#address-cells"							S
+	Standard prop-name to define the number of cells necessary to represent
+	a physical address. prop-encoded-array: Integer constant 4, encoded as
+	with encode-int.
+
+	The value of "#address-cells" for 1394 Bus Nodes is 4.
+
+"#size-cells"								S
+	Standard prop-name to define the number of cells necessary to represent
+	the length of a physical address range. prop-encoded-array: Integer
+	constant 2, encoded as with encode-int.
+
+	The value of "#size-cells" for 1394 Bus Nodes is 2, reflecting 1394's
+	48-bit address space.
+
+"reg"									S
+	Standard prop-name to define the package's unit-address.
+
+3.2 Methods
+
+3.2.1 Open Firmware-defined methods for bus nodes
+
+A package implementing the "1394" device type shall implement the
+following standard methods as defined in Open Firmware.
+
+   open ( -- okay? )
+	Prepare this device for subsequent use.
+
+   close  ( -- )
+	Close this previously opened device.
+
+   decode-unit  ( addr len -- phys.lo phys.2 phys.3 phys.hi )
+	Decodes a unit address.
+
+   encode-unit  ( phys.lo phys.2 phys.3 phys.hi -- addr len )
+	Encodes a unit address.
+
+   dma-alloc ( size -- virt )
+	Allocate a memory region for later use.
+
+   dma-free ( virt size -- )
+	Free memory allocated with dma-alloc.
+
+   map-in ( phys.lo phys.2 phys.3 phys.hi size -- virt )
+	Map the specified subregion. Note that some 1394 bus controllers
+	(most notably OpenHCI) do not provide this function.
+
+   map-out ( virt size -- )
+	Destroy mapping from a previous map-in
+
+   dma-map-in ( virt size cacheable? -- devaddr.lo devaddr.hi )
+	Convert the virtual address to a 1394 bus address. The 1394 bus
+	address includes our bus#/node#. This address is only valid until
+	the next bus reset, at which point communication with 1394 nodes
+	must be restarted.
+
+   dma-map-out ( virt devaddr.lo devaddr.hi size -- )
+	Free DMA mapping set up with dma-map-in.
+
+   dma-sync ( virt devaddr.lo devaddr.hi size -- )
+	Synchronize caches.
+
+3.2.2 Bus-specific methods for bus nodes
+
+A package implementing the "1394" device type shall implement the
+following standard methods as defined in Open Firmware, with physical
+address representations as specified in 2.1. In the below methods, all
+buffers supplied must have been allocated with dma-alloc.
+
+   get-selfids ( buffer len -- generation len )
+	Copies the selfid buffer stored at the last bus reset into the user's
+	buffer. The maximum length of the returned buffer is 2kB. If a smaller
+	buffer is specified and more data needs to be returned, the data will
+	be truncated and the true data length reflected in the return argument.
+	The generation number returned is incremented each time a bus-reset
+	occurs and invalidates the previous self-id information.
+
+	The selfid packets are defined in IEEE 1394 [2] section 4.3.4.1. The
+	topology of the bus can be derived from these packets, see Annex E of
+	the same document.
+
+   set-remote-node ( guid.lo guid.hi -- okay? )
+	Select a particular 1394 device for future remote-read, remote-write
+	and remote-lock transactions. This information shall be stored in
+	per-instance variables. If the GUID supplied in the guid.lo and guid.hi
+	cells refers to a node which is not currently connected to the local
+	1394 bus, an error will be returned.
+
+   remote-read ( offset.lo offset.hi buffer len -- error | 0 )
+	This performs a read operation from the remote node selected by
+	set-remote-node into the buffer specified. This builds the request
+	packet, enqueues it and waits for the response. If a recoverable
+	failure occurs due to a bus reset, the request is invisibly re-built
+	and retried.
+
+   remote-write ( offset.lo offset.hi buffer len -- error | 0 )
+	This performs a write operation to the remote node selected by
+	set-remote-node from the buffer specified. This builds the request
+	packet, enqueues it and waits for the response. If a recoverable
+	failure occurs due to a bus reset, the request is re-built and retried.
+
+   remote-lock ( offset.lo offset.hi buffer len xtcode -- error | 0)
+	This performs a lock operation on a remote node with the buffer
+	specified. The XtCodes are defined in section 6.2.4.9 of IEEE 1394 [2]
+	and section 3.3 of IEEE 1212 [4], which define a limited set of atomic
+	operations. The current list is:
+	  1) mask_swap
+	  2) compare_swap
+	  3) fetch_add
+	  4) little_add
+	  5) bounded_add
+	  6) wrap_add
+	Additional codes are undefined but shall not be excluded. The
+        standards currently only allow two valid buffer sizes (8 and 16
+	bytes), but additional sizes shall not be excluded by this code. In
+	all cases, the request is to be built and enqueued, leaving the
+	success or failure in the hands of the remote node.
+
+        A lock operation can fail due to a bus reset; This is a case where
+        lower-level software cannot determine proper actions to recover from
+        a partially completed transaction. A user program which uses lock
+        operations must also contain code to recover from arbitrary failure
+        of the operation due to bus resets.
+
+   show-children ( -- )
+	This method determines which 1394 nodes are available and displays
+	their descriptions in human-readable form. The format of the output
+	is not specified.
+
+	The bus is probed by parsing the selfid packets generated at bus
+        reset time. This gives us the list of 1394 devices, from which the
+	list of 1394 units can be determined by reading the config ROM of
+	each 1394 device. The 1394 unit addresses are defined by combining the
+        1394 device GUID with the Unit_Location config ROM entry. If no
+	Unit_Location entry exists (a single-unit device), zero is used.
+
+   enable-isochronous ( channel -- okay? )
+        Allocates and initializes a pair of isochronous DMA channels (one
+	receive, one transmit) for the specified 1394 isochronous channel.
+	The channel number must be determined by the user - either allocated
+        (see IEEE 1394 [2] section 8.3.2.3.8), or provided by an external
+	agency. Note that this method allocates and initializes buffers for
+	isochronous receive.
+
+   disable-isochronous ( channel -- okay? )
+        Deallocates isochronous DMA channels associated with the specified
+	1394 channel, and cleans up DMA resources associated with the channel.
+
+   send-isochronous ( buffer len header -- okay? )	
+	Allocates dma descriptors, puts packet on the dma engine assigned
+	to the channel specified in the header.	This method does not wait for
+	transmission to complete, so the buffer specified cannot be re-used
+	until wait-isoch-send is called.
+
+	The header argument contains information for the isochronous transmit
+	header, defined in OHCI [3] 9.6, as follows:
+
+	Bit#	33222222 22221111 11111100 00000000
+		10987654 32109876 54321098 76543210
+
+		zzzzzzzz zzzzzsss ttcccccc TTTTyyyy
+
+	where:
+	zz..zz is reserved and must be zero.
+	sss    is the transmit speed code (0=100mbps, 1=200mbps, 2=400mbps)
+	tt     is the data format, usually 0 (see 1394 [2], section 6.2.4.12)
+	cccccc is the channel number specified in enable-isochronous above.
+	TTTT   is the tcode for isochronous, must contain 0xA (binary 1010).
+	yyyy   is the application-specific synchronization code.
+
+	This header is a modified version of the header specified in 1394 [2]
+	section 6.2.3.1, where the length has been replaced with a speed code.
+
+   wait-isoch-send ( channel -- )
+	Waits for all queued isochronous packets on the specified channel to
+        finish, and cleans up any dma resources associated allocated to these
+	packets.
+
+   recv-isochronous ( buffer len channel -- okay? )
+	Looks in isochronous receive queue for the specified channel
+	to copy a packet to the users buffer/len and return TRUE. If the
+	queue is empty, FALSE is returned.
+
+   send-async-stream ( buffer len header -- okay? )
+	Sends an isochronous-format message during the asynchronous timeslice.
+	This is defined as an asynchronous stream message, allowing an
+	asynchronous multicast. This method takes the same arguments as
+	send-isochronous, but this method will wait for transmission to
+	complete, and buffers can be re-used immediatley.
+
+
+4 Child nodes
+
+Child nodes are 1394 units, represented by a fraction of a 1394 device's
+address space. In addition, there will be a child node to represent the
+CSR space for the entire 1394 device, which will be used for any device-wide
+control necessary.
+
+4.1 Properties for Unit Child Nodes
+
+4.1.1 Open Firmware-defined Properties for unit Child Nodes
+
+The following properties, as defined in OBP [1], have special meanings or
+interpretations for 1394.
+
+"name"									S
+	Standard prop-name, whose value is an encoded array, encoded as with
+	encode-string, that defines the name of the node. The contents of
+	this string shall be "unit".
+
+"compatible"								S
+	Standard prop-name, defines devices with which this device is
+	compatible.
+
+	Prop-encoded array: The concatenation, as with encode+, of an
+	arbitrary number of text strings, each encoded with encode-string.
+
+	This property will include names derived from config rom entries in
+	the device. The format will be firewireVVVV,DDDD, where VVVV and DDDD
+	are the vendor id and version/device ID pairs, from the following list:
+		1) Unit_Spec_Id, Unit_SW_Version
+		2) Node_Spec_Id, Node_SW_Version,
+		3) Node_Vendor_Id, Node_Hw_Version
+		4) Module_Spec_Id, Module_SW_Version
+		5) Module_Vendor_Id, Module_HW_Version
+	The above list is in order from most-specific (unit_SW_Version) to
+	least specific (module_vendor).
+
+	See IEEE 1212 [4] Chapter 8 (ROM Specification) for details on
+	these ROM directory entries.
+
+"reg"									S
+	Minimal 1394 devices will define a single reg entry encompassing
+	the device's entire 48-bit address space.
+
+	1394 devices with multiple units or more specific ROMs (that is,
+	devices with unit directories present in the ROM) will define reg
+	entries for each Unit_Location entry in the unit directory (see
+	IEEE 1212 [4], section 8.5.4).
+
+4.2 Properties for Control Child Nodes
+
+4.2.1 Open Firmware-defined Properties for Control Child Nodes
+
+The following properties, as defined in OBP [1], have special meanings or
+interpretations for 1394.
+
+"name"									S
+	Standard prop-name, whose value is an encoded array, encoded as with
+	encode-string, that defines the name of the node. The contents of
+	this string shall be "control".
+
+"compatible"								S
+	Standard prop-name, defines devices with which this device is
+	compatible.
+
+	Prop-encoded array: The concatenation, as with encode+, of an
+	arbitrary number of text strings, each encoded with encode-string.
+
+	This property will include names derived from config rom entries in
+	the device. The format will be fwcontrolVVVV,DDDD, where VVVV and DDDD
+	are the vendor id and version/device ID pairs, from the following list:
+		1) Module_Spec_Id, Module_SW_Version
+		2) Module_Vendor_Id, Module_HW_Version
+		3) The string "fwcontrol".
+
+"reg"									S
+
+	Control child nodes register properties will define the address
+	space FFFF.F000.0000 through FFFF.FFFF.FFFF, which is the CSR space
+	defined in IEEE 1394 [2] section 3.3.
+
+4.3 Child node methods
+
+4.3.1 Open Firmware-defined methods for child nodes
+
+   open ( -- okay? )
+	Prepare this device for subsequent use.
+
+   close  ( -- )
+	Close this previously opened device.
+
+   seek ( offset.lo offset.hi -- okay? )
+	Set the base address for reads and writes to/from remote node.
+
+   read ( buffer len -- actual )
+	Read len bytes from current base address at remote node into buffer.
+	Shall update the base address by the number of bytes read.
+
+   write ( buffer len -- actual )
+	Write len bytes from buffer to remote node at the base address.
+	Shall update the base address by the number of bytes written.
+
+[ P1275 Item #435 -- Received: Wed Mar 11 04:47:15 PST 1998 ]
+

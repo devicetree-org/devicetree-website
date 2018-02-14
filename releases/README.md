@@ -1,10 +1,16 @@
 ---
-layout: default
+layout: container-breadcrumb
 title: Releases
 permalink: /releases/
+js-package: releases
+keywords: Releases, Device Tree, RoadMap
 ---
-## Releases planned for 2016
+{% include sticky-tab-bar.html %}
 
-**High-Level Timeline**
+## Releases
 
-![](/assets/images/roadmap.png)
+<div id="devicetree_releases"></div>
+
+**Releases schedule is planned by the Technical Steering Committee**
+
+

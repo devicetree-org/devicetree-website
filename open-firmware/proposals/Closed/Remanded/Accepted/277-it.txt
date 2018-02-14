@@ -1,0 +1,53 @@
+From: kingman@tardis.austin.ibm.com (John Kingman)
+Subject: Item #277: PowerPC processor binding, 64-bit properties V2
+Date: Wed, 12 Jul 1995 13:47:58 -0500 (CDT)
+
+P1275 Open Firmware Working Group Proposal -- Proposal #277 Ver 2
+
+Title:          new PowerPC processor binding property -- 
+                "64-bit-addressing"
+
+Author:         John A. Kingman
+
+Date:           July 12, 1995
+
+Ed/Tech:        Technical
+
+Synopsis:       add new property ("64-bit-addressing") to CPU nodes
+
+Doc & Version:  PowerPC processor Binding 1.02 
+
+Problem:        Current binding does not identify processors with 64-bit 
+                capabilities and operating systems should not have to rely
+                on specific model numbers to determine this.
+
+Proposal:       
+
+(This proposal supercedes P1275 Item #275; the text is the same as my note 
+of July 11 to p1275-wg@prombo.Eng.Sun.COM.)
+
+Add the following words to the section: "CPU node properties"
+
+"64-bit-addressing"
+    This property, if present, indicates that the PowerPC microprocessor 
+    (defined by this CPU node) has standard PowerPC 64-bit addressing 
+    capability in addition to standard PowerPC 32-bit addressing capability.  
+    The absence of this property indicates that the PowerPC microprocessor 
+    (defined by this CPU node) has only the standard PowerPC 32-bit 
+    addressing capability.
+
+Rationale:
+
+The "64-bit-addressing" property allows software to recognize that the 
+processor uses the 64-bit implementation of the PowerPC Segmented Address 
+Translation mechanism.  This will allow a 32-bit operating system which 
+supports this mechanism to utilize a 64-bit PowerPC microprocessor in 
+32-bit mode without having to rely on the microprocessor's specific model 
+number to determine whether it is a 64-bit PowerPC microprocessor 
+implementation.  This property does not imply that there is anything in 
+the system which is addressable with more than 32-bits of real address.
+
+John Kingman (kingman@austin.ibm.com)
+
+[ P1275 Item #277 -- Received: Wed Jul 12 11:52:15 PDT 1995 ]
+

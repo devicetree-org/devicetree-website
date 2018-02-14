@@ -1,7 +1,18 @@
-image: /assets/images/device-tree-vertical-logo.png
+# Footer Configuration
+# - Add your footer structure to the columns key
+# - Add company links to be displayed in the footer.
+
+# Image to be used in the footer. 
+# Default is the Linaro Sprinkle
+image: device-tree-vertical-logo.png
+
+# Footer Include
+include: devicetree-members.html
+
+# Columns to be added to the fospec-button center-block fade-in-twooter
 columns:
     - title: Device Tree Speciciation
-      url: /specification/
+      url: /specifications/
       items:
         - text: Specifications
           url : /specifications/
@@ -17,7 +28,12 @@ columns:
         - text: View all
           url : https://www.linaro.org/work/
     - title:
-      url: 
+      url:
+    - title:
+      url:
+    - title:
+      url:
+# Company Related Links to be displayed in the footer.
 companylinks:
     - name: Legal
       url: /legal/

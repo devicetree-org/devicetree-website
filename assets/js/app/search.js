@@ -35,5 +35,6 @@ function getAllUrlParams(url) {
       return obj;
     }
 
-var searchQuery = getAllUrlParams().q;
+var searchQuery = getAllUrlParams().s;
+ 
 $('#searchIframe').attr('src', "https://search.linaro.org/search/?fields.label=DeviceTree&q=" + searchQuery);

@@ -1,0 +1,62 @@
+Date: Wed, 31 Jan 96 17:30:06 PST
+From: mwi@FirmWorks.COM (Mark Insley)
+Subject: Item #314: PCI: get-inherited-property bug in Apple OF
+
+
+P1275 Openboot Working Group Proposal -- Proposal #:314 Ver 1
+
+Title:          More Apple Bug Fixes.
+
+Author:         Mark Insley
+
+Date:           January 31st, 1996
+
+Ed/Tech:        Technical
+
+Synopsis:       Proposal to add additional wording to PCI Bus Binding
+
+Doc & Version:  PCI Bus Bindings to IEEE 1275-1994 Draft 1.5, 20 March 1995
+
+Problem:        The Apple implementation of Open Firmware returns an incorrect
+		number of items to the stack when the method "get-inherited-property"
+		is executed.
+
+Proposal:       The proposal is to modify the previously added documentation
+		regarding map-in functions to include additional text about
+		this problem as well.
+
+Overview
+
+   According to the IEEE P1275 Standard, the stack description for get-inherited-
+   property is:
+
+	get-inherited-property  ( name-str name-len -- true | prop-addr prop-len false )
+
+   With the current Apple OFW implementation, when a property is found, the prop-len
+   is missing from the stack after the call to get-inherited-property. Instead of three
+   stack items after a successful call, there are only two, the prop-addr and false.
+   
+Proposed Solution
+
+   We propose that Apple fix this bug at the same time that the map-in
+   problem is fixed as described in proposal #303. And that if they agree
+   to make this fix, then the text added to the PCI binding document should
+   read as follows:
+	
+      The method "add-range" is reserved and shall not be implemented in
+      future releases of OFW. The presence of this method in the PCI node
+      indicates to child nodes both that the "map-in" method of this bus
+      node requires the phys.lo address to be extracted from the
+      "assigned-addresses" property and that the method
+      "get-inherited-property" does not return the "prop-len" (only the
+      "prop-addr" and "false") if the property is found.  The non-existence
+      of this method indicates to child nodes that the phys.lo address is an
+      offset relative to the base address and that "get-inherited-property"
+      returns three stack items ("prop-addr" "prop-len" and "false") if the
+      inherited property is found.
+
+[1] PCI Bus Bindings to IEEE 1275-1994 Draft 1.5, 20 March 1995
+[2] Item #303: PCI Bus Binding: Create reserved word in the PCI node
+
+[ P1275 Item #314 -- Received: Wed Jan 31 17:27:30 PST 1996 ]
+

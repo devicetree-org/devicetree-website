@@ -1,0 +1,31 @@
+Date: Thu, 1 Jun 1995 11:48:31 -0700
+From: jordan@pongo.West.Sun.COM (Jordan Brown)
+Subject: Item #273: Editorial changes to PCI binding
+
+P1275 Openboot Working Group Proposal -- Proposal #:273 Ver 1.0
+
+Title:          Editorial changes to PCI binding
+
+Author:         Jordan Brown
+
+Date:           May 31 1995
+
+Ed/Tech:        Editorial
+
+Synopsis:       A few typos.
+
+Doc & Version:  PCI binding 1.5
+
+Problem:        A few typos.
+
+Proposal:       
+
+On Page 3, under "Memory Space", there's a paragraph that begins "And
+encoding of the base ...".  That sentence just doesn't make sense.  I
+think it can be fixed by changing "And" to "The".
+
+On page 14, under "assigned-addresses", in the paragraph starting "The
+values reported in ...", the word "resource" is spelled "resourcs".
+
+[ P1275 Item #273 -- Received: Thu Jun  1 11:52:49 PDT 1995 ]
+

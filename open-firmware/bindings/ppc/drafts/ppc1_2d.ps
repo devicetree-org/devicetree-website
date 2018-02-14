@@ -1,0 +1,6599 @@
+%!PS-Adobe-3.0
+%%BoundingBox: (atend)
+%%Pages: (atend)
+%%PageOrder: (atend)
+%%DocumentFonts: (atend)
+%%Creator: Frame 4.0
+%%DocumentData: Clean7Bit
+%%EndComments
+%%BeginProlog
+%
+% Frame ps_prolog 4.0, for use with Frame 4.0 products
+% This ps_prolog file is Copyright (c) 1986-1993 Frame Technology
+% Corporation.  All rights reserved.  This ps_prolog file may be
+% freely copied and distributed in conjunction with documents created
+% using FrameMaker, FrameBuilder and FrameViewer as long as this 
+% copyright notice is preserved.
+%
+% Frame products normally print colors as their true color on a color printer
+% or as shades of gray, based on luminance, on a black-and white printer. The
+% following flag, if set to True, forces all non-white colors to print as pure
+% black. This has no effect on bitmap images.
+/FMPrintAllColorsAsBlack             false def
+%
+% Frame products can either set their own line screens or use a printer's 
+% default settings. Three flags below control this separately for no 
+% separations, spot separations and process separations. If a flag
+% is true, then the default printer settings will not be changed. If it is
+% false, Frame products will use their own settings from a table based on
+% the printer's resolution.
+/FMUseDefaultNoSeparationScreen      true  def
+/FMUseDefaultSpotSeparationScreen    true  def
+/FMUseDefaultProcessSeparationScreen false def
+%
+% For any given PostScript printer resolution, Frame products have two sets of 
+% screen angles and frequencies for printing process separations, which are 
+% recomended by Adobe. The following variable chooses the higher frequencies
+% when set to true or the lower frequencies when set to false. This is only
+% effective if the appropriate FMUseDefault...SeparationScreen flag is false.
+/FMUseHighFrequencyScreens true def
+%
+% PostScript Level 2 printers contain an "Accurate Screens" feature which can
+% improve process separation rendering at the expense of compute time. This 
+% flag is ignored by PostScript Level 1 printers.
+/FMUseAcccurateScreens true def
+%
+% The following PostScript procedure defines the spot function that Frame
+% products will use for process separations. You may un-comment-out one of
+% the alternative functions below, or use your own.
+%
+% Dot function
+/FMSpotFunction {abs exch abs 2 copy add 1 gt 
+		{1 sub dup mul exch 1 sub dup mul add 1 sub }
+		{dup mul exch dup mul add 1 exch sub }ifelse } def
+%
+% Line function
+% /FMSpotFunction { pop } def
+%
+% Elipse function
+% /FMSpotFunction { dup 5 mul 8 div mul exch dup mul exch add 
+%		sqrt 1 exch sub } def
+%
+%
+/FMversion (4.0) def 
+/FMLevel1 /languagelevel where {pop languagelevel} {1} ifelse 2 lt def
+/FMPColor
+	FMLevel1 {
+		false
+		/colorimage where {pop pop true} if
+	} {
+		true
+	} ifelse
+def
+/FrameDict 400 dict def 
+systemdict /errordict known not {/errordict 10 dict def
+		errordict /rangecheck {stop} put} if
+% The readline in PS 23.0 doesn't recognize cr's as nl's on AppleTalk
+FrameDict /tmprangecheck errordict /rangecheck get put 
+errordict /rangecheck {FrameDict /bug true put} put 
+FrameDict /bug false put 
+mark 
+% Some PS machines read past the CR, so keep the following 3 lines together!
+currentfile 5 string readline
+00
+0000000000
+cleartomark 
+errordict /rangecheck FrameDict /tmprangecheck get put 
+FrameDict /bug get { 
+	/readline {
+		/gstring exch def
+		/gfile exch def
+		/gindex 0 def
+		{
+			gfile read pop 
+			dup 10 eq {exit} if 
+			dup 13 eq {exit} if 
+			gstring exch gindex exch put 
+			/gindex gindex 1 add def 
+		} loop
+		pop 
+		gstring 0 gindex getinterval true 
+		} bind def
+	} if
+/FMshowpage /showpage load def
+/FMquit /quit load def
+/FMFAILURE { 
+	dup = flush 
+	FMshowpage 
+	/Helvetica findfont 12 scalefont setfont
+	72 200 moveto
+	show FMshowpage 
+	FMquit 
+	} def 
+/FMVERSION {
+	FMversion ne {
+		(Frame product version does not match ps_prolog!) FMFAILURE
+		} if
+	} def 
+/FMBADEPSF { 
+	(PostScript Lang. Ref. Man., 2nd Ed., H.2.4 says EPS must not call X              )
+	dup dup (X) search pop exch pop exch pop length 
+	4 -1 roll 
+	putinterval 
+	FMFAILURE
+	} def
+/FMLOCAL {
+	FrameDict begin
+	0 def 
+	end 
+	} def 
+/concatprocs
+	{
+	/proc2 exch cvlit def/proc1 exch cvlit def/newproc proc1 length proc2 length add array def
+	newproc 0 proc1 putinterval newproc proc1 length proc2 putinterval newproc cvx
+}def
+FrameDict begin 
+/FMnone 0 def
+/FMcyan 1 def
+/FMmagenta 2 def
+/FMyellow 3 def
+/FMblack 4 def
+/FMcustom 5 def
+/FrameNegative false def 
+/FrameSepIs FMnone def 
+/FrameSepBlack 0 def
+/FrameSepYellow 0 def
+/FrameSepMagenta 0 def
+/FrameSepCyan 0 def
+/FrameSepRed 1 def
+/FrameSepGreen 1 def
+/FrameSepBlue 1 def
+/FrameCurGray 1 def
+/FrameCurPat null def
+/FrameCurColors [ 0 0 0 1 0 0 0 ] def 
+/FrameColorEpsilon .001 def	
+/eqepsilon {		
+	sub dup 0 lt {neg} if
+	FrameColorEpsilon le
+} bind def
+/FrameCmpColorsCMYK { 
+	2 copy 0 get exch 0 get eqepsilon {
+		2 copy 1 get exch 1 get eqepsilon {
+			2 copy 2 get exch 2 get eqepsilon {
+				3 get exch 3 get eqepsilon
+			} {pop pop false} ifelse
+		}{pop pop false} ifelse
+	} {pop pop false} ifelse
+} bind def
+/FrameCmpColorsRGB { 
+	2 copy 4 get exch 0 get eqepsilon {
+		2 copy 5 get exch 1 get eqepsilon {
+			6 get exch 2 get eqepsilon
+		}{pop pop false} ifelse
+	} {pop pop false} ifelse
+} bind def
+/RGBtoCMYK { 
+	1 exch sub 
+	3 1 roll 
+	1 exch sub 
+	3 1 roll 
+	1 exch sub 
+	3 1 roll 
+	3 copy 
+	2 copy 
+	le { pop } { exch pop } ifelse 
+	2 copy 
+	le { pop } { exch pop } ifelse 
+	dup dup dup 
+	6 1 roll 
+	4 1 roll 
+	7 1 roll 
+	sub 
+	6 1 roll 
+	sub 
+	5 1 roll 
+	sub 
+	4 1 roll 
+} bind def
+/CMYKtoRGB { 
+	dup dup 4 -1 roll add 						  
+	5 1 roll 3 -1 roll add 						  
+	4 1 roll add 								  
+	1 exch sub dup 0 lt {pop 0} if 3 1 roll 	  
+	1 exch sub dup 0 lt {pop 0} if exch 	      
+	1 exch sub dup 0 lt {pop 0} if exch	  		  
+} bind def
+/FrameSepInit {
+	1.0 RealSetgray
+} bind def
+/FrameSetSepColor { 
+	/FrameSepBlue exch def
+	/FrameSepGreen exch def
+	/FrameSepRed exch def
+	/FrameSepBlack exch def
+	/FrameSepYellow exch def
+	/FrameSepMagenta exch def
+	/FrameSepCyan exch def
+	/FrameSepIs FMcustom def
+	setCurrentScreen	
+} bind def
+/FrameSetCyan {
+	/FrameSepBlue 1.0 def
+	/FrameSepGreen 1.0 def
+	/FrameSepRed 0.0 def
+	/FrameSepBlack 0.0 def
+	/FrameSepYellow 0.0 def
+	/FrameSepMagenta 0.0 def
+	/FrameSepCyan 1.0 def
+	/FrameSepIs FMcyan def
+	setCurrentScreen	
+} bind def
+ 
+/FrameSetMagenta {
+	/FrameSepBlue 1.0 def
+	/FrameSepGreen 0.0 def
+	/FrameSepRed 1.0 def
+	/FrameSepBlack 0.0 def
+	/FrameSepYellow 0.0 def
+	/FrameSepMagenta 1.0 def
+	/FrameSepCyan 0.0 def
+	/FrameSepIs FMmagenta def
+	setCurrentScreen
+} bind def
+ 
+/FrameSetYellow {
+	/FrameSepBlue 0.0 def
+	/FrameSepGreen 1.0 def
+	/FrameSepRed 1.0 def
+	/FrameSepBlack 0.0 def
+	/FrameSepYellow 1.0 def
+	/FrameSepMagenta 0.0 def
+	/FrameSepCyan 0.0 def
+	/FrameSepIs FMyellow def
+	setCurrentScreen
+} bind def
+ 
+/FrameSetBlack {
+	/FrameSepBlue 0.0 def
+	/FrameSepGreen 0.0 def
+	/FrameSepRed 0.0 def
+	/FrameSepBlack 1.0 def
+	/FrameSepYellow 0.0 def
+	/FrameSepMagenta 0.0 def
+	/FrameSepCyan 0.0 def
+	/FrameSepIs FMblack def
+	setCurrentScreen
+} bind def
+ 
+/FrameNoSep { 
+	/FrameSepIs FMnone def
+	setCurrentScreen
+} bind def
+/FrameSetSepColors { 
+	FrameDict begin
+	[ exch 1 add 1 roll ]
+	/FrameSepColors  
+	exch def end
+	} bind def
+/FrameColorInSepListCMYK { 
+	FrameSepColors {  
+       		exch dup 3 -1 roll 
+       		FrameCmpColorsCMYK 
+       		{ pop true exit } if
+    	} forall 
+	dup true ne {pop false} if
+	} bind def
+/FrameColorInSepListRGB { 
+	FrameSepColors {  
+       		exch dup 3 -1 roll 
+       		FrameCmpColorsRGB 
+       		{ pop true exit } if
+    	} forall 
+	dup true ne {pop false} if
+	} bind def
+/RealSetgray /setgray load def
+/RealSetrgbcolor /setrgbcolor load def
+/RealSethsbcolor /sethsbcolor load def
+end 
+/setgray { 
+	FrameDict begin
+	FrameSepIs FMnone eq
+		{ RealSetgray } 
+		{ 
+		FrameSepIs FMblack eq 
+			{ RealSetgray } 
+			{ FrameSepIs FMcustom eq 
+			  FrameSepRed 0 eq and
+			  FrameSepGreen 0 eq and
+			  FrameSepBlue 0 eq and {
+			  	RealSetgray
+			  } {
+				1 RealSetgray pop 
+			  } ifelse
+			} ifelse
+		} ifelse
+	end
+} bind def
+/setrgbcolor { 
+	FrameDict begin
+	FrameSepIs FMnone eq
+	{  RealSetrgbcolor }
+	{
+		3 copy [ 4 1 roll ] 
+		FrameColorInSepListRGB
+		{
+				FrameSepBlue eq exch 
+			 	FrameSepGreen eq and exch 
+			 	FrameSepRed eq and
+			 	{ 0 } { 1 } ifelse
+		}
+		{
+			FMPColor {
+				RealSetrgbcolor
+				currentcmykcolor
+			} {
+				RGBtoCMYK
+			} ifelse
+			FrameSepIs FMblack eq
+			{1.0 exch sub 4 1 roll pop pop pop} {
+			FrameSepIs FMyellow eq
+			{pop 1.0 exch sub 3 1 roll pop pop} {
+			FrameSepIs FMmagenta eq
+			{pop pop 1.0 exch sub exch pop } {
+			FrameSepIs FMcyan eq
+			{pop pop pop 1.0 exch sub } 
+			{pop pop pop pop 1} ifelse } ifelse } ifelse } ifelse 
+		} ifelse
+		RealSetgray
+	} 
+	ifelse
+	end
+} bind def
+/sethsbcolor {
+	FrameDict begin
+	FrameSepIs FMnone eq 
+	{ RealSethsbcolor } 
+	{
+		RealSethsbcolor 
+		currentrgbcolor  
+		setrgbcolor 
+	} 
+	ifelse
+	end
+} bind def
+FrameDict begin
+/setcmykcolor where {
+	pop /RealSetcmykcolor /setcmykcolor load def
+} {
+	/RealSetcmykcolor {
+		4 1 roll
+		3 { 3 index add 0 max 1 min 1 exch sub 3 1 roll} repeat 
+		setrgbcolor pop
+	} bind def
+} ifelse
+userdict /setcmykcolor { 
+		FrameDict begin
+		FrameSepIs FMnone eq
+		{ RealSetcmykcolor } 
+		{
+			4 copy [ 5 1 roll ]
+			FrameColorInSepListCMYK
+			{
+				FrameSepBlack eq exch 
+				FrameSepYellow eq and exch 
+				FrameSepMagenta eq and exch 
+				FrameSepCyan eq and 
+				{ 0 } { 1 } ifelse
+			}
+			{
+				FrameSepIs FMblack eq
+				{1.0 exch sub 4 1 roll pop pop pop} {
+				FrameSepIs FMyellow eq
+				{pop 1.0 exch sub 3 1 roll pop pop} {
+				FrameSepIs FMmagenta eq
+				{pop pop 1.0 exch sub exch pop } {
+				FrameSepIs FMcyan eq
+				{pop pop pop 1.0 exch sub } 
+				{pop pop pop pop 1} ifelse } ifelse } ifelse } ifelse 
+			} ifelse
+			RealSetgray
+		}
+		ifelse
+		end
+	} bind put
+FMLevel1 not { 
+	
+	/patProcDict 5 dict dup begin
+		<0f1e3c78f0e1c387> { 3 setlinewidth -1 -1 moveto 9 9 lineto stroke 
+											4 -4 moveto 12 4 lineto stroke
+											-4 4 moveto 4 12 lineto stroke} bind def
+		<0f87c3e1f0783c1e> { 3 setlinewidth -1 9 moveto 9 -1 lineto stroke 
+											-4 4 moveto 4 -4 lineto stroke
+											4 12 moveto 12 4 lineto stroke} bind def
+		<8142241818244281> { 1 setlinewidth -1 9 moveto 9 -1 lineto stroke
+											-1 -1 moveto 9 9 lineto stroke } bind def
+		<03060c183060c081> { 1 setlinewidth -1 -1 moveto 9 9 lineto stroke 
+											4 -4 moveto 12 4 lineto stroke
+											-4 4 moveto 4 12 lineto stroke} bind def
+		<8040201008040201> { 1 setlinewidth -1 9 moveto 9 -1 lineto stroke 
+											-4 4 moveto 4 -4 lineto stroke
+											4 12 moveto 12 4 lineto stroke} bind def
+	end def
+	/patDict 15 dict dup begin
+		/PatternType 1 def		
+		/PaintType 2 def		
+		/TilingType 3 def		
+		/BBox [ 0 0 8 8 ] def 	
+		/XStep 8 def			
+		/YStep 8 def			
+		/PaintProc {
+			begin
+			patProcDict bstring known {
+				patProcDict bstring get exec
+			} {
+				8 8 true [1 0 0 -1 0 8] bstring imagemask
+			} ifelse
+			end
+		} bind def
+	end def
+} if
+/combineColor {
+    FrameSepIs FMnone eq
+	{
+		graymode FMLevel1 or not {
+			
+			[/Pattern [/DeviceCMYK]] setcolorspace
+			FrameCurColors 0 4 getinterval aload pop FrameCurPat setcolor
+		} {
+			FrameCurColors 3 get 1.0 ge {
+				FrameCurGray RealSetgray
+			} {
+				FMPColor graymode and {
+					0 1 3 { 
+						FrameCurColors exch get
+						1 FrameCurGray sub mul
+					} for
+					RealSetcmykcolor
+				} {
+					4 1 6 {
+						FrameCurColors exch get
+						graymode {
+							1 exch sub 1 FrameCurGray sub mul 1 exch sub
+						} {
+							1.0 lt {FrameCurGray} {1} ifelse
+						} ifelse
+					} for
+					RealSetrgbcolor
+				} ifelse
+			} ifelse
+		} ifelse
+	} { 
+		FrameCurColors 0 4 getinterval aload
+		FrameColorInSepListCMYK {
+			FrameSepBlack eq exch 
+			FrameSepYellow eq and exch 
+			FrameSepMagenta eq and exch 
+			FrameSepCyan eq and
+			FrameSepIs FMcustom eq and
+			{ FrameCurGray } { 1 } ifelse
+		} {
+			FrameSepIs FMblack eq
+			{FrameCurGray 1.0 exch sub mul 1.0 exch sub 4 1 roll pop pop pop} {
+			FrameSepIs FMyellow eq
+			{pop FrameCurGray 1.0 exch sub mul 1.0 exch sub 3 1 roll pop pop} {
+			FrameSepIs FMmagenta eq
+			{pop pop FrameCurGray 1.0 exch sub mul 1.0 exch sub exch pop } {
+			FrameSepIs FMcyan eq
+			{pop pop pop FrameCurGray 1.0 exch sub mul 1.0 exch sub } 
+			{pop pop pop pop 1} ifelse } ifelse } ifelse } ifelse 
+		} ifelse
+		graymode FMLevel1 or not {
+			
+			[/Pattern [/DeviceGray]] setcolorspace
+			FrameCurPat setcolor
+		} { 
+			graymode not FMLevel1 and {
+				
+				dup 1 lt {pop FrameCurGray} if
+			} if
+			RealSetgray
+		} ifelse
+	} ifelse
+} bind def
+/savematrix {
+	orgmatrix currentmatrix pop
+	} bind def
+/restorematrix {
+	orgmatrix setmatrix
+	} bind def
+/dmatrix matrix def
+/dpi    72 0 dmatrix defaultmatrix dtransform
+    dup mul exch   dup mul add   sqrt def
+	
+/freq dpi dup 72 div round dup 0 eq {pop 1} if 8 mul div def
+/sangle 1 0 dmatrix defaultmatrix dtransform exch atan def
+/dpiranges   [  2540    2400    1693     1270    1200     635      600      0      ] def
+/CMLowFreqs  [ 100.402  94.8683 89.2289 100.402  94.8683  66.9349  63.2456 47.4342 ] def
+/YLowFreqs   [  95.25   90.0    84.65    95.25   90.0     70.5556  66.6667 50.0    ] def
+/KLowFreqs   [  89.8026 84.8528 79.8088  89.8026 84.8528  74.8355  70.7107 53.033  ] def
+/CLowAngles  [  71.5651 71.5651 71.5651 71.5651  71.5651  71.5651  71.5651 71.5651 ] def
+/MLowAngles  [  18.4349 18.4349 18.4349 18.4349  18.4349  18.4349  18.4349 18.4349 ] def
+/YLowTDot    [  true    true    false    true    true     false    false   false   ] def
+/CMHighFreqs [ 133.87  126.491 133.843  108.503 102.523  100.402   94.8683 63.2456 ] def
+/YHighFreqs  [ 127.0   120.0   126.975  115.455 109.091   95.25    90.0    60.0    ] def
+/KHighFreqs  [ 119.737 113.137 119.713  128.289 121.218   89.8026  84.8528 63.6395 ] def
+/CHighAngles [  71.5651 71.5651 71.5651  70.0169 70.0169  71.5651  71.5651 71.5651 ] def
+/MHighAngles [  18.4349 18.4349 18.4349  19.9831 19.9831  18.4349  18.4349 18.4349 ] def
+/YHighTDot   [  false   false   true     false   false    true     true    false   ] def
+/PatFreq     [	10.5833 10.0     9.4055  10.5833 10.0	  10.5833  10.0	   9.375   ] def
+/screenIndex {
+	0 1 dpiranges length 1 sub { dup dpiranges exch get 1 sub dpi le {exit} {pop} ifelse } for
+} bind def
+/getCyanScreen {
+	FMUseHighFrequencyScreens { CHighAngles CMHighFreqs} {CLowAngles CMLowFreqs} ifelse
+		screenIndex dup 3 1 roll get 3 1 roll get /FMSpotFunction load
+} bind def
+/getMagentaScreen {
+	FMUseHighFrequencyScreens { MHighAngles CMHighFreqs } {MLowAngles CMLowFreqs} ifelse
+		screenIndex dup 3 1 roll get 3 1 roll get /FMSpotFunction load
+} bind def
+/getYellowScreen {
+	FMUseHighFrequencyScreens { YHighTDot YHighFreqs} { YLowTDot YLowFreqs } ifelse
+		screenIndex dup 3 1 roll get 3 1 roll get { 3 div
+			{2 { 1 add 2 div 3 mul dup floor sub 2 mul 1 sub exch} repeat
+			FMSpotFunction } } {/FMSpotFunction load } ifelse
+			0.0 exch
+} bind def
+/getBlackScreen  {
+	FMUseHighFrequencyScreens { KHighFreqs } { KLowFreqs } ifelse
+		screenIndex get 45.0 /FMSpotFunction load 
+} bind def
+/getSpotScreen {
+	getBlackScreen
+} bind def
+/getCompositeScreen {
+	getBlackScreen
+} bind def
+/FMSetScreen 
+	FMLevel1 { /setscreen load 
+	}{ {
+		8 dict begin
+		/HalftoneType 1 def
+		/SpotFunction exch def
+		/Angle exch def
+		/Frequency exch def
+		/AccurateScreens FMUseAcccurateScreens def
+		currentdict end sethalftone
+	} bind } ifelse
+def
+/setDefaultScreen {
+	FMPColor {
+		orgrxfer cvx orggxfer cvx orgbxfer cvx orgxfer cvx setcolortransfer
+	}
+	{
+		orgxfer cvx settransfer
+	} ifelse
+	orgfreq organgle orgproc cvx setscreen
+} bind def
+/setCurrentScreen {
+	FrameSepIs FMnone eq {
+		FMUseDefaultNoSeparationScreen {
+			setDefaultScreen
+		} {
+			getCompositeScreen FMSetScreen
+		} ifelse
+	} {
+		FrameSepIs FMcustom eq {
+			FMUseDefaultSpotSeparationScreen {
+				setDefaultScreen
+			} {
+				getSpotScreen FMSetScreen
+			} ifelse
+		} {
+			FMUseDefaultProcessSeparationScreen {
+				setDefaultScreen
+			} {
+				FrameSepIs FMcyan eq {
+					getCyanScreen FMSetScreen
+				} {
+					FrameSepIs FMmagenta eq {
+						getMagentaScreen FMSetScreen
+					} {
+						FrameSepIs FMyellow eq {
+							getYellowScreen FMSetScreen
+						} {
+							getBlackScreen FMSetScreen
+						} ifelse
+					} ifelse
+				} ifelse
+			} ifelse
+		} ifelse
+	} ifelse 
+} bind def
+end
+	/gstring FMLOCAL
+	/gfile FMLOCAL
+	/gindex FMLOCAL
+	/orgrxfer FMLOCAL
+	/orggxfer FMLOCAL
+	/orgbxfer FMLOCAL
+	/orgxfer FMLOCAL
+	/orgproc FMLOCAL
+	/orgrproc FMLOCAL
+	/orggproc FMLOCAL
+	/orgbproc FMLOCAL
+	/organgle FMLOCAL
+	/orgrangle FMLOCAL
+	/orggangle FMLOCAL
+	/orgbangle FMLOCAL
+	/orgfreq FMLOCAL
+	/orgrfreq FMLOCAL
+	/orggfreq FMLOCAL
+	/orgbfreq FMLOCAL
+	/yscale FMLOCAL
+	/xscale FMLOCAL
+	/edown FMLOCAL
+	/manualfeed FMLOCAL
+	/paperheight FMLOCAL
+	/paperwidth FMLOCAL
+/FMDOCUMENT { 
+	array /FMfonts exch def 
+	/#copies exch def
+	FrameDict begin
+	0 ne /manualfeed exch def
+	/paperheight exch def
+	/paperwidth exch def
+	0 ne /FrameNegative exch def 
+	0 ne /edown exch def 
+	/yscale exch def
+	/xscale exch def
+	FMLevel1 {
+		manualfeed {setmanualfeed} if
+		/FMdicttop countdictstack 1 add def 
+		/FMoptop count def 
+		setpapername 
+		manualfeed {true} {papersize} ifelse 
+		{manualpapersize} {false} ifelse 
+		{desperatepapersize} {false} ifelse 
+		{ (Can't select requested paper size for Frame print job!) FMFAILURE } if
+		count -1 FMoptop {pop pop} for
+		countdictstack -1 FMdicttop {pop end} for 
+		}
+		{{1 dict dup /PageSize [paperwidth paperheight]put setpagedevice}stopped
+		{ (Can't select requested paper size for Frame print job!) FMFAILURE } if
+		 {1 dict dup /ManualFeed manualfeed put setpagedevice } stopped pop }
+	ifelse 
+	
+	FMPColor {
+		currentcolorscreen
+			cvlit /orgproc exch def
+				  /organgle exch def 
+				  /orgfreq exch def
+			cvlit /orgbproc exch def
+				  /orgbangle exch def 
+				  /orgbfreq exch def
+			cvlit /orggproc exch def
+				  /orggangle exch def 
+				  /orggfreq exch def
+			cvlit /orgrproc exch def
+				  /orgrangle exch def 
+				  /orgrfreq exch def
+			currentcolortransfer 
+			FrameNegative {
+				1 1 4 { 
+					pop { 1 exch sub } concatprocs 4 1 roll
+				} for
+				4 copy
+				setcolortransfer
+			} if
+			cvlit /orgxfer exch def
+			cvlit /orgbxfer exch def
+			cvlit /orggxfer exch def
+			cvlit /orgrxfer exch def
+	} {
+		currentscreen 
+			cvlit /orgproc exch def
+				  /organgle exch def 
+				  /orgfreq exch def
+				  
+		currenttransfer 
+		FrameNegative {
+			{ 1 exch sub } concatprocs
+			dup settransfer
+		} if 
+		cvlit /orgxfer exch def
+	} ifelse
+	end 
+} def 
+/pagesave FMLOCAL
+/orgmatrix FMLOCAL
+/landscape FMLOCAL
+/pwid FMLOCAL
+/FMBEGINPAGE { 
+	FrameDict begin 
+	/pagesave save def
+	3.86 setmiterlimit
+	/landscape exch 0 ne def
+	landscape { 
+		90 rotate 0 exch dup /pwid exch def neg translate pop 
+	}{
+		pop /pwid exch def
+	} ifelse
+	edown { [-1 0 0 1 pwid 0] concat } if
+	0 0 moveto paperwidth 0 lineto paperwidth paperheight lineto 
+	0 paperheight lineto 0 0 lineto 1 setgray fill
+	xscale yscale scale
+	/orgmatrix matrix def
+	gsave 
+} def 
+/FMENDPAGE {
+	grestore 
+	pagesave restore
+	end 
+	showpage
+	} def 
+/FMFONTDEFINE { 
+	FrameDict begin
+	findfont 
+	ReEncode 
+	1 index exch 
+	definefont 
+	FMfonts 3 1 roll 
+	put
+	end 
+	} def 
+/FMFILLS {
+	FrameDict begin dup
+	array /fillvals exch def
+	dict /patCache exch def
+	end 
+	} def 
+/FMFILL {
+	FrameDict begin
+	 fillvals 3 1 roll put
+	end 
+	} def 
+/FMNORMALIZEGRAPHICS { 
+	newpath
+	0.0 0.0 moveto
+	1 setlinewidth
+	0 setlinecap
+	0 0 0 sethsbcolor
+	0 setgray 
+	} bind def
+	/fx FMLOCAL
+	/fy FMLOCAL
+	/fh FMLOCAL
+	/fw FMLOCAL
+	/llx FMLOCAL
+	/lly FMLOCAL
+	/urx FMLOCAL
+	/ury FMLOCAL
+/FMBEGINEPSF { 
+	end 
+	/FMEPSF save def 
+	/showpage {} def 
+% See Adobe's "PostScript Language Reference Manual, 2nd Edition", page 714.
+% "...the following operators MUST NOT be used in an EPS file:" (emphasis ours)
+	/banddevice {(banddevice) FMBADEPSF} def
+	/clear {(clear) FMBADEPSF} def
+	/cleardictstack {(cleardictstack) FMBADEPSF} def 
+	/copypage {(copypage) FMBADEPSF} def
+	/erasepage {(erasepage) FMBADEPSF} def
+	/exitserver {(exitserver) FMBADEPSF} def
+	/framedevice {(framedevice) FMBADEPSF} def
+	/grestoreall {(grestoreall) FMBADEPSF} def
+	/initclip {(initclip) FMBADEPSF} def
+	/initgraphics {(initgraphics) FMBADEPSF} def
+	/initmatrix {(initmatrix) FMBADEPSF} def
+	/quit {(quit) FMBADEPSF} def
+	/renderbands {(renderbands) FMBADEPSF} def
+	/setglobal {(setglobal) FMBADEPSF} def
+	/setpagedevice {(setpagedevice) FMBADEPSF} def
+	/setshared {(setshared) FMBADEPSF} def
+	/startjob {(startjob) FMBADEPSF} def
+	/lettertray {(lettertray) FMBADEPSF} def
+	/letter {(letter) FMBADEPSF} def
+	/lettersmall {(lettersmall) FMBADEPSF} def
+	/11x17tray {(11x17tray) FMBADEPSF} def
+	/11x17 {(11x17) FMBADEPSF} def
+	/ledgertray {(ledgertray) FMBADEPSF} def
+	/ledger {(ledger) FMBADEPSF} def
+	/legaltray {(legaltray) FMBADEPSF} def
+	/legal {(legal) FMBADEPSF} def
+	/statementtray {(statementtray) FMBADEPSF} def
+	/statement {(statement) FMBADEPSF} def
+	/executivetray {(executivetray) FMBADEPSF} def
+	/executive {(executive) FMBADEPSF} def
+	/a3tray {(a3tray) FMBADEPSF} def
+	/a3 {(a3) FMBADEPSF} def
+	/a4tray {(a4tray) FMBADEPSF} def
+	/a4 {(a4) FMBADEPSF} def
+	/a4small {(a4small) FMBADEPSF} def
+	/b4tray {(b4tray) FMBADEPSF} def
+	/b4 {(b4) FMBADEPSF} def
+	/b5tray {(b5tray) FMBADEPSF} def
+	/b5 {(b5) FMBADEPSF} def
+	FMNORMALIZEGRAPHICS 
+	[/fy /fx /fh /fw /ury /urx /lly /llx] {exch def} forall 
+	fx fw 2 div add fy fh 2 div add  translate
+	rotate
+	fw 2 div neg fh 2 div neg translate
+	fw urx llx sub div fh ury lly sub div scale 
+	llx neg lly neg translate 
+	/FMdicttop countdictstack 1 add def 
+	/FMoptop count def 
+	} bind def
+/FMENDEPSF {
+	count -1 FMoptop {pop pop} for 
+	countdictstack -1 FMdicttop {pop end} for 
+	FMEPSF restore
+	FrameDict begin 
+	} bind def
+FrameDict begin 
+/setmanualfeed {
+%%BeginFeature *ManualFeed True
+	 statusdict /manualfeed true put
+%%EndFeature
+	} bind def
+/max {2 copy lt {exch} if pop} bind def
+/min {2 copy gt {exch} if pop} bind def
+/inch {72 mul} def
+/pagedimen { 
+	paperheight sub abs 16 lt exch 
+	paperwidth sub abs 16 lt and
+	{/papername exch def} {pop} ifelse
+	} bind def
+	/papersizedict FMLOCAL
+/setpapername { 
+	/papersizedict 14 dict def 
+	papersizedict begin
+	/papername /unknown def 
+		/Letter 8.5 inch 11.0 inch pagedimen
+		/LetterSmall 7.68 inch 10.16 inch pagedimen
+		/Tabloid 11.0 inch 17.0 inch pagedimen
+		/Ledger 17.0 inch 11.0 inch pagedimen
+		/Legal 8.5 inch 14.0 inch pagedimen
+		/Statement 5.5 inch 8.5 inch pagedimen
+		/Executive 7.5 inch 10.0 inch pagedimen
+		/A3 11.69 inch 16.5 inch pagedimen
+		/A4 8.26 inch 11.69 inch pagedimen
+		/A4Small 7.47 inch 10.85 inch pagedimen
+		/B4 10.125 inch 14.33 inch pagedimen
+		/B5 7.16 inch 10.125 inch pagedimen
+	end
+	} bind def
+/papersize {
+	papersizedict begin
+		/Letter {lettertray letter} def
+		/LetterSmall {lettertray lettersmall} def
+		/Tabloid {11x17tray 11x17} def
+		/Ledger {ledgertray ledger} def
+		/Legal {legaltray legal} def
+		/Statement {statementtray statement} def
+		/Executive {executivetray executive} def
+		/A3 {a3tray a3} def
+		/A4 {a4tray a4} def
+		/A4Small {a4tray a4small} def
+		/B4 {b4tray b4} def
+		/B5 {b5tray b5} def
+		/unknown {unknown} def
+	papersizedict dup papername known {papername} {/unknown} ifelse get
+	end
+	statusdict begin stopped end 
+	} bind def
+/manualpapersize {
+	papersizedict begin
+		/Letter {letter} def
+		/LetterSmall {lettersmall} def
+		/Tabloid {11x17} def
+		/Ledger {ledger} def
+		/Legal {legal} def
+		/Statement {statement} def
+		/Executive {executive} def
+		/A3 {a3} def
+		/A4 {a4} def
+		/A4Small {a4small} def
+		/B4 {b4} def
+		/B5 {b5} def
+		/unknown {unknown} def
+	papersizedict dup papername known {papername} {/unknown} ifelse get
+	end
+	stopped 
+	} bind def
+/desperatepapersize {
+	statusdict /setpageparams known
+		{
+		paperwidth paperheight 0 1 
+		statusdict begin
+		{setpageparams} stopped 
+		end
+		} {true} ifelse 
+	} bind def
+/DiacriticEncoding [
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+/.notdef /.notdef /.notdef /.notdef /space /exclam /quotedbl
+/numbersign /dollar /percent /ampersand /quotesingle /parenleft
+/parenright /asterisk /plus /comma /hyphen /period /slash /zero /one
+/two /three /four /five /six /seven /eight /nine /colon /semicolon
+/less /equal /greater /question /at /A /B /C /D /E /F /G /H /I /J /K
+/L /M /N /O /P /Q /R /S /T /U /V /W /X /Y /Z /bracketleft /backslash
+/bracketright /asciicircum /underscore /grave /a /b /c /d /e /f /g /h
+/i /j /k /l /m /n /o /p /q /r /s /t /u /v /w /x /y /z /braceleft /bar
+/braceright /asciitilde /.notdef /Adieresis /Aring /Ccedilla /Eacute
+/Ntilde /Odieresis /Udieresis /aacute /agrave /acircumflex /adieresis
+/atilde /aring /ccedilla /eacute /egrave /ecircumflex /edieresis
+/iacute /igrave /icircumflex /idieresis /ntilde /oacute /ograve
+/ocircumflex /odieresis /otilde /uacute /ugrave /ucircumflex
+/udieresis /dagger /.notdef /cent /sterling /section /bullet
+/paragraph /germandbls /registered /copyright /trademark /acute
+/dieresis /.notdef /AE /Oslash /.notdef /.notdef /.notdef /.notdef
+/yen /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+/ordfeminine /ordmasculine /.notdef /ae /oslash /questiondown
+/exclamdown /logicalnot /.notdef /florin /.notdef /.notdef
+/guillemotleft /guillemotright /ellipsis /.notdef /Agrave /Atilde
+/Otilde /OE /oe /endash /emdash /quotedblleft /quotedblright
+/quoteleft /quoteright /.notdef /.notdef /ydieresis /Ydieresis
+/fraction /currency /guilsinglleft /guilsinglright /fi /fl /daggerdbl
+/periodcentered /quotesinglbase /quotedblbase /perthousand
+/Acircumflex /Ecircumflex /Aacute /Edieresis /Egrave /Iacute
+/Icircumflex /Idieresis /Igrave /Oacute /Ocircumflex /.notdef /Ograve
+/Uacute /Ucircumflex /Ugrave /dotlessi /circumflex /tilde /macron
+/breve /dotaccent /ring /cedilla /hungarumlaut /ogonek /caron
+] def
+/ReEncode { 
+	dup 
+	length 
+	dict begin 
+	{
+	1 index /FID ne 
+		{def} 
+		{pop pop} ifelse 
+	} forall 
+	0 eq {/Encoding DiacriticEncoding def} if 
+	currentdict 
+	end 
+	} bind def
+FMPColor 
+	
+	{
+	/BEGINBITMAPCOLOR { 
+		BITMAPCOLOR} def
+	/BEGINBITMAPCOLORc { 
+		BITMAPCOLORc} def
+	/BEGINBITMAPTRUECOLOR { 
+		BITMAPTRUECOLOR } def
+	/BEGINBITMAPTRUECOLORc { 
+		BITMAPTRUECOLORc } def
+	}
+	
+	{
+	/BEGINBITMAPCOLOR { 
+		BITMAPGRAY} def
+	/BEGINBITMAPCOLORc { 
+		BITMAPGRAYc} def
+	/BEGINBITMAPTRUECOLOR { 
+		BITMAPTRUEGRAY } def
+	/BEGINBITMAPTRUECOLORc { 
+		BITMAPTRUEGRAYc } def
+	}
+ifelse
+/K { 
+	FMPrintAllColorsAsBlack {
+		dup 1 eq 2 index 1 eq and 3 index 1 eq and not
+			{7 {pop} repeat 0 0 0 1 0 0 0} if
+	} if 
+	FrameCurColors astore 
+	pop combineColor
+} bind def
+/graymode true def
+	/bwidth FMLOCAL
+	/bpside FMLOCAL
+	/bstring FMLOCAL
+	/onbits FMLOCAL
+	/offbits FMLOCAL
+	/xindex FMLOCAL
+	/yindex FMLOCAL
+	/x FMLOCAL
+	/y FMLOCAL
+/setPatternMode {
+	FMLevel1 {
+		/bwidth  exch def
+		/bpside  exch def
+		/bstring exch def
+		/onbits 0 def  /offbits 0 def
+		freq sangle landscape {90 add} if 
+			{/y exch def
+			 /x exch def
+			 /xindex x 1 add 2 div bpside mul cvi def
+			 /yindex y 1 add 2 div bpside mul cvi def
+			 bstring yindex bwidth mul xindex 8 idiv add get
+			 1 7 xindex 8 mod sub bitshift and 0 ne FrameNegative {not} if
+			 {/onbits  onbits  1 add def 1}
+			 {/offbits offbits 1 add def 0}
+			 ifelse
+			}
+			setscreen
+		offbits offbits onbits add div FrameNegative {1.0 exch sub} if
+		/FrameCurGray exch def
+	} { 
+		pop pop
+		dup patCache exch known {
+			patCache exch get
+		} { 
+			dup
+			patDict /bstring 3 -1 roll put
+			patDict 
+			9 PatFreq screenIndex get div dup matrix scale
+			makepattern
+			dup 
+			patCache 4 -1 roll 3 -1 roll put
+		} ifelse
+		/FrameCurGray 0 def
+		/FrameCurPat exch def
+	} ifelse
+	/graymode false def
+	combineColor
+} bind def
+/setGrayScaleMode {
+	graymode not {
+		/graymode true def
+		FMLevel1 {
+			setCurrentScreen
+		} if
+	} if
+	/FrameCurGray exch def
+	combineColor
+} bind def
+/normalize {
+	transform round exch round exch itransform
+	} bind def
+/dnormalize {
+	dtransform round exch round exch idtransform
+	} bind def
+/lnormalize { 
+	0 dtransform exch cvi 2 idiv 2 mul 1 add exch idtransform pop
+	} bind def
+/H { 
+	lnormalize setlinewidth
+	} bind def
+/Z {
+	setlinecap
+	} bind def
+	
+/PFill {
+	graymode FMLevel1 or not {
+		gsave 1 setgray eofill grestore
+	} if
+} bind def
+/PStroke {
+	graymode FMLevel1 or not {
+		gsave 1 setgray stroke grestore
+	} if
+	stroke
+} bind def
+	/fillvals FMLOCAL
+/X { 
+	fillvals exch get
+	dup type /stringtype eq
+	{8 1 setPatternMode} 
+	{setGrayScaleMode}
+	ifelse
+	} bind def
+/V { 
+	PFill gsave eofill grestore
+	} bind def
+/Vclip {
+	clip
+	} bind def
+/Vstrk {
+	currentlinewidth exch setlinewidth PStroke setlinewidth
+	} bind def
+/N { 
+	PStroke
+	} bind def
+/Nclip {
+	strokepath clip newpath
+	} bind def
+/Nstrk {
+	currentlinewidth exch setlinewidth PStroke setlinewidth
+	} bind def
+/M {newpath moveto} bind def
+/E {lineto} bind def
+/D {curveto} bind def
+/O {closepath} bind def
+	/n FMLOCAL
+/L { 
+ 	/n exch def
+	newpath
+	normalize
+	moveto 
+	2 1 n {pop normalize lineto} for
+	} bind def
+/Y { 
+	L 
+	closepath
+	} bind def
+	/x1 FMLOCAL
+	/x2 FMLOCAL
+	/y1 FMLOCAL
+	/y2 FMLOCAL
+/R { 
+	/y2 exch def
+	/x2 exch def
+	/y1 exch def
+	/x1 exch def
+	x1 y1
+	x2 y1
+	x2 y2
+	x1 y2
+	4 Y 
+	} bind def
+	/rad FMLOCAL
+/rarc 
+	{rad 
+	 arcto
+	} bind def
+/RR { 
+	/rad exch def
+	normalize
+	/y2 exch def
+	/x2 exch def
+	normalize
+	/y1 exch def
+	/x1 exch def
+	mark
+	newpath
+	{
+	x1 y1 rad add moveto
+	x1 y2 x2 y2 rarc
+	x2 y2 x2 y1 rarc
+	x2 y1 x1 y1 rarc
+	x1 y1 x1 y2 rarc
+	closepath
+	} stopped {x1 y1 x2 y2 R} if 
+	cleartomark
+	} bind def
+/RRR { 
+	/rad exch def
+	normalize /y4 exch def /x4 exch def
+	normalize /y3 exch def /x3 exch def
+	normalize /y2 exch def /x2 exch def
+	normalize /y1 exch def /x1 exch def
+	newpath
+	normalize moveto 
+	mark
+	{
+	x2 y2 x3 y3 rarc
+	x3 y3 x4 y4 rarc
+	x4 y4 x1 y1 rarc
+	x1 y1 x2 y2 rarc
+	closepath
+	} stopped
+	 {x1 y1 x2 y2 x3 y3 x4 y4 newpath moveto lineto lineto lineto closepath} if
+	cleartomark
+	} bind def
+/C { 
+	grestore
+	gsave
+	R 
+	clip
+	setCurrentScreen
+} bind def
+/CP { 
+	grestore
+	gsave
+	Y 
+	clip
+	setCurrentScreen
+} bind def
+	/FMpointsize FMLOCAL
+/F { 
+	FMfonts exch get
+	FMpointsize scalefont
+	setfont
+	} bind def
+/Q { 
+	/FMpointsize exch def
+	F 
+	} bind def
+/T { 
+	moveto show
+	} bind def
+/RF { 
+	rotate
+	0 ne {-1 1 scale} if
+	} bind def
+/TF { 
+	gsave
+	moveto 
+	RF
+	show
+	grestore
+	} bind def
+/P { 
+	moveto
+	0 32 3 2 roll widthshow
+	} bind def
+/PF { 
+	gsave
+	moveto 
+	RF
+	0 32 3 2 roll widthshow
+	grestore
+	} bind def
+/S { 
+	moveto
+	0 exch ashow
+	} bind def
+/SF { 
+	gsave
+	moveto
+	RF
+	0 exch ashow
+	grestore
+	} bind def
+/B { 
+	moveto
+	0 32 4 2 roll 0 exch awidthshow
+	} bind def
+/BF { 
+	gsave
+	moveto
+	RF
+	0 32 4 2 roll 0 exch awidthshow
+	grestore
+	} bind def
+/G { 
+	gsave
+	newpath
+	normalize translate 0.0 0.0 moveto 
+	dnormalize scale 
+	0.0 0.0 1.0 5 3 roll arc 
+	closepath 
+	PFill fill
+	grestore
+	} bind def
+/Gstrk {
+	savematrix
+    newpath
+    2 index 2 div add exch 3 index 2 div sub exch 
+    normalize 2 index 2 div sub exch 3 index 2 div add exch 
+    translate
+    scale 
+    0.0 0.0 1.0 5 3 roll arc 
+    restorematrix
+    currentlinewidth exch setlinewidth PStroke setlinewidth
+    } bind def
+/Gclip { 
+	newpath
+	savematrix
+	normalize translate 0.0 0.0 moveto 
+	dnormalize scale 
+	0.0 0.0 1.0 5 3 roll arc 
+	closepath 
+	clip newpath
+	restorematrix
+	} bind def
+/GG { 
+	gsave
+	newpath
+	normalize translate 0.0 0.0 moveto 
+	rotate 
+	dnormalize scale 
+	0.0 0.0 1.0 5 3 roll arc 
+	closepath
+	PFill
+	fill
+	grestore
+	} bind def
+/GGclip { 
+	savematrix
+	newpath
+    normalize translate 0.0 0.0 moveto 
+    rotate 
+    dnormalize scale 
+    0.0 0.0 1.0 5 3 roll arc 
+    closepath
+	clip newpath
+	restorematrix
+	} bind def
+/GGstrk { 
+	savematrix
+    newpath
+    normalize translate 0.0 0.0 moveto 
+    rotate 
+    dnormalize scale 
+    0.0 0.0 1.0 5 3 roll arc 
+    closepath 
+	restorematrix
+    currentlinewidth exch setlinewidth PStroke setlinewidth
+	} bind def
+/A { 
+	gsave
+	savematrix
+	newpath
+	2 index 2 div add exch 3 index 2 div sub exch 
+	normalize 2 index 2 div sub exch 3 index 2 div add exch 
+	translate 
+	scale 
+	0.0 0.0 1.0 5 3 roll arc 
+	restorematrix
+	PStroke
+	grestore
+	} bind def
+/Aclip {
+	newpath
+	savematrix
+	normalize translate 0.0 0.0 moveto 
+	dnormalize scale 
+	0.0 0.0 1.0 5 3 roll arc 
+	closepath 
+	strokepath clip newpath
+	restorematrix
+} bind def
+/Astrk {
+	Gstrk
+} bind def
+/AA { 
+	gsave
+	savematrix
+	newpath
+	
+	3 index 2 div add exch 4 index 2 div sub exch 
+	
+	normalize 3 index 2 div sub exch 4 index 2 div add exch
+	translate 
+	rotate 
+	scale 
+	0.0 0.0 1.0 5 3 roll arc 
+	restorematrix
+	PStroke
+	grestore
+	} bind def
+/AAclip {
+	savematrix
+	newpath
+    normalize translate 0.0 0.0 moveto 
+    rotate 
+    dnormalize scale 
+    0.0 0.0 1.0 5 3 roll arc 
+    closepath
+	strokepath clip newpath
+	restorematrix
+} bind def
+/AAstrk {
+	GGstrk
+} bind def
+	/x FMLOCAL
+	/y FMLOCAL
+	/w FMLOCAL
+	/h FMLOCAL
+	/xx FMLOCAL
+	/yy FMLOCAL
+	/ww FMLOCAL
+	/hh FMLOCAL
+	/FMsaveobject FMLOCAL
+	/FMoptop FMLOCAL
+	/FMdicttop FMLOCAL
+/BEGINPRINTCODE { 
+	/FMdicttop countdictstack 1 add def 
+	/FMoptop count 7 sub def 
+	/FMsaveobject save def
+	userdict begin 
+	/showpage {} def 
+	FMNORMALIZEGRAPHICS 
+	3 index neg 3 index neg translate
+	} bind def
+/ENDPRINTCODE {
+	count -1 FMoptop {pop pop} for 
+	countdictstack -1 FMdicttop {pop end} for 
+	FMsaveobject restore 
+	} bind def
+/gn { 
+	0 
+	{	46 mul 
+		cf read pop 
+		32 sub 
+		dup 46 lt {exit} if 
+		46 sub add 
+		} loop
+	add 
+	} bind def
+	/str FMLOCAL
+/cfs { 
+	/str sl string def 
+	0 1 sl 1 sub {str exch val put} for 
+	str def 
+	} bind def
+/ic [ 
+	0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0223
+	0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0223
+	0
+	{0 hx} {1 hx} {2 hx} {3 hx} {4 hx} {5 hx} {6 hx} {7 hx} {8 hx} {9 hx}
+	{10 hx} {11 hx} {12 hx} {13 hx} {14 hx} {15 hx} {16 hx} {17 hx} {18 hx}
+	{19 hx} {gn hx} {0} {1} {2} {3} {4} {5} {6} {7} {8} {9} {10} {11} {12}
+	{13} {14} {15} {16} {17} {18} {19} {gn} {0 wh} {1 wh} {2 wh} {3 wh}
+	{4 wh} {5 wh} {6 wh} {7 wh} {8 wh} {9 wh} {10 wh} {11 wh} {12 wh}
+	{13 wh} {14 wh} {gn wh} {0 bl} {1 bl} {2 bl} {3 bl} {4 bl} {5 bl} {6 bl}
+	{7 bl} {8 bl} {9 bl} {10 bl} {11 bl} {12 bl} {13 bl} {14 bl} {gn bl}
+	{0 fl} {1 fl} {2 fl} {3 fl} {4 fl} {5 fl} {6 fl} {7 fl} {8 fl} {9 fl}
+	{10 fl} {11 fl} {12 fl} {13 fl} {14 fl} {gn fl}
+	] def
+	/sl FMLOCAL
+	/val FMLOCAL
+	/ws FMLOCAL
+	/im FMLOCAL
+	/bs FMLOCAL
+	/cs FMLOCAL
+	/len FMLOCAL
+	/pos FMLOCAL
+/ms { 
+	/sl exch def 
+	/val 255 def 
+	/ws cfs 
+	/im cfs 
+	/val 0 def 
+	/bs cfs 
+	/cs cfs 
+	} bind def
+400 ms 
+/ip { 
+	is 
+	0 
+	cf cs readline pop 
+	{	ic exch get exec 
+		add 
+		} forall 
+	pop 
+	
+	} bind def
+/rip { 
+	   
+	  
+	  bis ris copy pop 
+      is
+      0
+      cf cs readline pop 
+      {       ic exch get exec 
+              add 
+              } forall 
+	  pop pop 
+	  ris gis copy pop 
+	  dup is exch 
+	  
+      cf cs readline pop 
+      {       ic exch get exec 
+              add 
+              } forall 
+	  pop pop
+	  gis bis copy pop 
+	  dup add is exch 
+	  
+      cf cs readline pop 
+      {       ic exch get exec 
+              add 
+              } forall 
+      pop 
+      
+      } bind def
+/wh { 
+	/len exch def 
+	/pos exch def 
+	ws 0 len getinterval im pos len getinterval copy pop
+	pos len 
+	} bind def
+/bl { 
+	/len exch def 
+	/pos exch def 
+	bs 0 len getinterval im pos len getinterval copy pop
+	pos len 
+	} bind def
+/s1 1 string def
+/fl { 
+	/len exch def 
+	/pos exch def 
+	/val cf s1 readhexstring pop 0 get def
+	pos 1 pos len add 1 sub {im exch val put} for
+	pos len 
+	} bind def
+/hx { 
+	3 copy getinterval 
+	cf exch readhexstring pop pop 
+	} bind def
+	/h FMLOCAL
+	/w FMLOCAL
+	/d FMLOCAL
+	/lb FMLOCAL
+	/bitmapsave FMLOCAL
+	/is FMLOCAL
+	/cf FMLOCAL
+/wbytes { 
+      dup dup
+      24 eq { pop pop 3 mul }
+      { 8 eq {pop} {1 eq {7 add 8 idiv} {3 add 4 idiv} ifelse} ifelse } ifelse
+	} bind def
+/BEGINBITMAPBWc { 
+	1 {} COMMONBITMAPc
+	} bind def
+/BEGINBITMAPGRAYc { 
+	8 {} COMMONBITMAPc
+	} bind def
+/BEGINBITMAP2BITc { 
+	2 {} COMMONBITMAPc
+	} bind def
+/COMMONBITMAPc { 
+		 
+	/r exch def
+	/d exch def
+	gsave
+	
+	3 index 2 div add exch	
+	4 index 2 div add exch	
+	translate		
+	rotate			
+	1 index 2 div neg	
+	1 index 2 div neg	
+	translate		
+	scale			
+	/h exch def /w exch def
+	/lb w d wbytes def 
+	sl lb lt {lb ms} if 
+	/bitmapsave save def 
+	r                    
+	/is im 0 lb getinterval def 
+	ws 0 lb getinterval is copy pop 
+	/cf currentfile def 
+	w h d [w 0 0 h neg 0 h] 
+	{ip} image 
+	bitmapsave restore 
+	grestore
+	} bind def
+/BEGINBITMAPBW { 
+	1 {} COMMONBITMAP
+	} bind def
+/BEGINBITMAPGRAY { 
+	8 {} COMMONBITMAP
+	} bind def
+/BEGINBITMAP2BIT { 
+	2 {} COMMONBITMAP
+	} bind def
+/COMMONBITMAP { 
+	/r exch def
+	/d exch def
+	gsave
+	
+	3 index 2 div add exch	
+	4 index 2 div add exch	
+	translate		
+	rotate			
+	1 index 2 div neg	
+	1 index 2 div neg	
+	translate		
+	scale			
+	/h exch def /w exch def
+	/bitmapsave save def 
+	r                    
+	/is w d wbytes string def
+	/cf currentfile def 
+	w h d [w 0 0 h neg 0 h] 
+	{cf is readhexstring pop} image
+	bitmapsave restore 
+	grestore
+	} bind def
+/ngrayt 256 array def
+/nredt 256 array def
+/nbluet 256 array def
+/ngreent 256 array def
+	/gryt FMLOCAL
+	/blut FMLOCAL
+	/grnt FMLOCAL
+	/redt FMLOCAL
+	/indx FMLOCAL
+	/cynu FMLOCAL
+	/magu FMLOCAL
+	/yelu FMLOCAL
+	/k FMLOCAL
+	/u FMLOCAL
+FMLevel1 {
+/colorsetup {
+	currentcolortransfer
+	/gryt exch def
+	/blut exch def
+	/grnt exch def
+	/redt exch def
+	0 1 255 {
+		/indx exch def
+		/cynu 1 red indx get 255 div sub def
+		/magu 1 green indx get 255 div sub def
+		/yelu 1 blue indx get 255 div sub def
+		/k cynu magu min yelu min def
+		/u k currentundercolorremoval exec def
+%		/u 0 def
+		nredt indx 1 0 cynu u sub max sub redt exec put
+		ngreent indx 1 0 magu u sub max sub grnt exec put
+		nbluet indx 1 0 yelu u sub max sub blut exec put
+		ngrayt indx 1 k currentblackgeneration exec sub gryt exec put
+	} for
+	{255 mul cvi nredt exch get}
+	{255 mul cvi ngreent exch get}
+	{255 mul cvi nbluet exch get}
+	{255 mul cvi ngrayt exch get}
+	setcolortransfer
+	{pop 0} setundercolorremoval
+	{} setblackgeneration
+	} bind def
+}
+{
+/colorSetup2 {
+	[ /Indexed /DeviceRGB 255 
+		{dup red exch get 255 div 
+		 exch dup green exch get 255 div 
+		 exch blue exch get 255 div}
+	] setcolorspace
+} bind def
+} ifelse
+	/tran FMLOCAL
+/fakecolorsetup {
+	/tran 256 string def
+	0 1 255 {/indx exch def 
+		tran indx
+		red indx get 77 mul
+		green indx get 151 mul
+		blue indx get 28 mul
+		add add 256 idiv put} for
+	currenttransfer
+	{255 mul cvi tran exch get 255.0 div}
+	exch concatprocs settransfer
+} bind def
+/BITMAPCOLOR { 
+	/d 8 def
+	gsave
+	
+	3 index 2 div add exch	
+	4 index 2 div add exch	
+	translate		
+	rotate			
+	1 index 2 div neg	
+	1 index 2 div neg	
+	translate		
+	scale			
+	/h exch def /w exch def
+	/bitmapsave save def
+	FMLevel1 {	
+		colorsetup
+		/is w d wbytes string def
+		/cf currentfile def 
+		w h d [w 0 0 h neg 0 h] 
+		{cf is readhexstring pop} {is} {is} true 3 colorimage 
+	} {
+		colorSetup2
+		/is w d wbytes string def
+		/cf currentfile def 
+		7 dict dup begin
+			/ImageType 1 def
+			/Width w def
+			/Height h def
+			/ImageMatrix [w 0 0 h neg 0 h] def
+			/DataSource {cf is readhexstring pop} bind def
+			/BitsPerComponent d def
+			/Decode [0 255] def
+		end image	
+	} ifelse
+	bitmapsave restore 
+	grestore
+	} bind def
+/BITMAPCOLORc { 
+	/d 8 def
+	gsave
+	
+	3 index 2 div add exch	
+	4 index 2 div add exch	
+	translate		
+	rotate			
+	1 index 2 div neg	
+	1 index 2 div neg	
+	translate		
+	scale			
+	/h exch def /w exch def
+	/lb w d wbytes def 
+	sl lb lt {lb ms} if 
+	/bitmapsave save def 
+	FMLevel1 {	
+		colorsetup
+		/is im 0 lb getinterval def 
+		ws 0 lb getinterval is copy pop 
+		/cf currentfile def 
+		w h d [w 0 0 h neg 0 h] 
+		{ip} {is} {is} true 3 colorimage
+	} {
+		colorSetup2
+		/is im 0 lb getinterval def 
+		ws 0 lb getinterval is copy pop 
+		/cf currentfile def 
+		7 dict dup begin
+			/ImageType 1 def
+			/Width w def
+			/Height h def
+			/ImageMatrix [w 0 0 h neg 0 h] def
+			/DataSource {ip} bind def
+			/BitsPerComponent d def
+			/Decode [0 255] def
+		end image	
+	} ifelse
+	bitmapsave restore 
+	grestore
+	} bind def
+/BITMAPTRUECOLORc { 
+	/d 24 def
+        gsave
+ 	
+	3 index 2 div add exch	
+	4 index 2 div add exch	
+	translate		
+	rotate			
+	1 index 2 div neg	
+	1 index 2 div neg	
+	translate		
+	scale			
+	/h exch def /w exch def
+	/lb w d wbytes def 
+	sl lb lt {lb ms} if 
+        /bitmapsave save def 
+        
+	/is im 0 lb getinterval def	
+	/ris im 0 w getinterval def	
+	/gis im w w getinterval def	
+	/bis im w 2 mul w getinterval def 
+        
+        ws 0 lb getinterval is copy pop 
+        /cf currentfile def 
+        w h 8 [w 0 0 h neg 0 h] 
+        {w rip pop ris} {gis} {bis} true 3 colorimage
+        bitmapsave restore 
+        grestore
+        } bind def
+/BITMAPTRUECOLOR { 
+        gsave
+		
+		3 index 2 div add exch	
+		4 index 2 div add exch	
+		translate		
+		rotate			
+		1 index 2 div neg	
+		1 index 2 div neg	
+		translate		
+		scale			
+		/h exch def /w exch def
+        /bitmapsave save def 
+        /is w string def
+        /gis w string def
+        /bis w string def
+        /cf currentfile def 
+        w h 8 [w 0 0 h neg 0 h] 
+        { cf is readhexstring pop } 
+        { cf gis readhexstring pop } 
+        { cf bis readhexstring pop } 
+        true 3 colorimage 
+        bitmapsave restore 
+        grestore
+        } bind def
+/BITMAPTRUEGRAYc { 
+	/d 24 def
+        gsave
+	
+	3 index 2 div add exch	
+	4 index 2 div add exch	
+	translate		
+	rotate			
+	1 index 2 div neg	
+	1 index 2 div neg	
+	translate		
+	scale			
+	/h exch def /w exch def
+	/lb w d wbytes def 
+	sl lb lt {lb ms} if 
+        /bitmapsave save def 
+        
+	/is im 0 lb getinterval def	
+	/ris im 0 w getinterval def	
+	/gis im w w getinterval def	
+	/bis im w 2 mul w getinterval def 
+        ws 0 lb getinterval is copy pop 
+        /cf currentfile def 
+        w h 8 [w 0 0 h neg 0 h] 
+        {w rip pop ris gis bis w gray} image
+        bitmapsave restore 
+        grestore
+        } bind def
+/ww FMLOCAL
+/r FMLOCAL
+/g FMLOCAL
+/b FMLOCAL
+/i FMLOCAL
+/gray { 
+        /ww exch def
+        /b exch def
+        /g exch def
+        /r exch def
+        0 1 ww 1 sub { /i exch def r i get .299 mul g i get .587 mul
+			b i get .114 mul add add r i 3 -1 roll floor cvi put } for
+        r
+        } bind def
+/BITMAPTRUEGRAY { 
+        gsave
+		
+		3 index 2 div add exch	
+		4 index 2 div add exch	
+		translate		
+		rotate			
+		1 index 2 div neg	
+		1 index 2 div neg	
+		translate		
+		scale			
+		/h exch def /w exch def
+        /bitmapsave save def 
+        /is w string def
+        /gis w string def
+        /bis w string def
+        /cf currentfile def 
+        w h 8 [w 0 0 h neg 0 h] 
+        { cf is readhexstring pop 
+          cf gis readhexstring pop 
+          cf bis readhexstring pop w gray}  image
+        bitmapsave restore 
+        grestore
+        } bind def
+/BITMAPGRAY { 
+	8 {fakecolorsetup} COMMONBITMAP
+	} bind def
+/BITMAPGRAYc { 
+	8 {fakecolorsetup} COMMONBITMAPc
+	} bind def
+/ENDBITMAP {
+	} bind def
+end 
+	/ALDsave FMLOCAL
+	/ALDmatrix matrix def ALDmatrix currentmatrix pop
+/StartALD {
+	/ALDsave save def
+	 savematrix
+	 ALDmatrix setmatrix
+	} bind def
+/InALD {
+	 restorematrix
+	} bind def
+/DoneALD {
+	 ALDsave restore
+	} bind def
+/I { setdash } bind def
+/J { [] 0 setdash } bind def
+%%EndProlog
+%%BeginSetup
+(4.0) FMVERSION
+1 1 0 0 612 792 0 1 19 FMDOCUMENT
+0 0 /Times-Bold FMFONTDEFINE
+1 0 /Times-Roman FMFONTDEFINE
+2 0 /Times-Italic FMFONTDEFINE
+3 0 /Courier FMFONTDEFINE
+4 0 /Courier-Bold FMFONTDEFINE
+5 0 /Times-BoldItalic FMFONTDEFINE
+6 0 /Palatino-Roman FMFONTDEFINE
+7 0 /Courier-Oblique FMFONTDEFINE
+8 0 /Helvetica-Bold FMFONTDEFINE
+32 FMFILLS
+0 0 FMFILL
+1 0.1 FMFILL
+2 0.3 FMFILL
+3 0.5 FMFILL
+4 0.7 FMFILL
+5 0.9 FMFILL
+6 0.97 FMFILL
+7 1 FMFILL
+8 <0f1e3c78f0e1c387> FMFILL
+9 <0f87c3e1f0783c1e> FMFILL
+10 <cccccccccccccccc> FMFILL
+11 <ffff0000ffff0000> FMFILL
+12 <8142241818244281> FMFILL
+13 <03060c183060c081> FMFILL
+14 <8040201008040201> FMFILL
+16 1 FMFILL
+17 0.9 FMFILL
+18 0.7 FMFILL
+19 0.5 FMFILL
+20 0.3 FMFILL
+21 0.1 FMFILL
+22 0.03 FMFILL
+23 0 FMFILL
+24 <f0e1c3870f1e3c78> FMFILL
+25 <f0783c1e0f87c3e1> FMFILL
+26 <3333333333333333> FMFILL
+27 <0000ffff0000ffff> FMFILL
+28 <7ebddbe7e7dbbd7e> FMFILL
+29 <fcf9f3e7cf9f3f7e> FMFILL
+30 <7fbfdfeff7fbfdfe> FMFILL
+%%EndSetup
+%%Page: "1" 1
+%%BeginPaperSize: Letter
+%%EndPaperSize
+612 792 0 FMBEGINPAGE
+[0 0 0 1 0 0 0]
+[ 0 1 1 0 1 0 0]
+[ 1 0 1 0 0 1 0]
+[ 1 1 0 0 0 0 1]
+[ 1 0 0 0 0 1 1]
+[ 0 1 0 0 1 0 1]
+[ 0 0 1 0 1 1 0]
+ 7 FrameSetSepColors
+FrameNoSep
+0 0 0 1 0 0 0 K
+J
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 12 Q
+0 X
+0 0 0 1 0 0 0 K
+(          PowerPC pr) 170.39 748 T
+(ocessor binding to Open Firmwar) 263.83 748 T
+(e) 436.28 748 T
+(May 5, 1995 Revision 1.02 DRAFT) 72 36 T
+(1 of 17) 506 36 T
+72 738 540 738 2 L
+1 H
+2 Z
+N
+72 54 540 54 2 L
+N
+27 72 54 720 C
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+27 72 54 720 R
+7 X
+0 0 0 1 0 0 0 K
+V
+27 72 54 720 C
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+27 72 54 720 R
+7 X
+0 0 0 1 0 0 0 K
+V
+1 12 Q
+0 X
+(1) 36 711 T
+(2) 36 699 T
+(3) 36 687 T
+(4) 36 675 T
+(5) 36 663 T
+(6) 36 651 T
+(7) 36 639 T
+(8) 36 627 T
+(9) 36 615 T
+(10) 36 603 T
+(11) 36 591 T
+(12) 36 579 T
+(13) 36 567 T
+(14) 36 555 T
+(15) 36 543 T
+(16) 36 531 T
+(17) 36 519 T
+(18) 36 507 T
+(19) 36 495 T
+(20) 36 483 T
+(21) 36 471 T
+(22) 36 459 T
+(23) 36 447 T
+(24) 36 435 T
+(25) 36 423 T
+(26) 36 411 T
+(27) 36 399 T
+(28) 36 387 T
+(29) 36 375 T
+(30) 36 363 T
+(31) 36 351 T
+(32) 36 339 T
+(33) 36 327 T
+(34) 36 315 T
+(35) 36 303 T
+(36) 36 291 T
+(37) 36 279 T
+(38) 36 267 T
+(39) 36 255 T
+(40) 36 243 T
+(41) 36 231 T
+(42) 36 219 T
+(43) 36 207 T
+(44) 36 195 T
+(45) 36 183 T
+(46) 36 171 T
+(47) 36 159 T
+(48) 36 147 T
+(49) 36 135 T
+(50) 36 123 T
+(51) 36 111 T
+(52) 36 99 T
+(53) 36 87 T
+(54) 36 75 T
+27 72 54 720 C
+0 0 612 792 C
+1 18 Q
+0 X
+0 0 0 1 0 0 0 K
+1.8 (PowerPC processor binding to:) 191.05 624 P
+1.8 (IEEE Std 1275-1994) 229.2 550 P
+1.8 (Standard for Boot) 239.71 514 P
+1.8 (\050Initialization, Con\336guration\051) 198.6 478 P
+(Firmware) 271.01 442 T
+1.8 (Revision: 1.02 DRAFT) 219.94 358 P
+1.8 (Date: May 5, 1995) 235.81 316 P
+52 310 54 370 R
+V
+FMENDPAGE
+%%EndPage: "1" 1
+%%Page: "2" 2
+612 792 0 FMBEGINPAGE
+[0 0 0 1 0 0 0]
+[ 0 1 1 0 1 0 0]
+[ 1 0 1 0 0 1 0]
+[ 1 1 0 0 0 0 1]
+[ 1 0 0 0 0 1 1]
+[ 0 1 0 0 1 0 1]
+[ 0 0 1 0 1 1 0]
+ 7 FrameSetSepColors
+FrameNoSep
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 12 Q
+0 X
+0 0 0 1 0 0 0 K
+(          PowerPC pr) 170.39 748 T
+(ocessor binding to Open Firmwar) 263.83 748 T
+(e) 436.28 748 T
+(May 5, 1995 Revision 1.02 DRAFT) 72 36 T
+(2 of 17) 506 36 T
+72 738 540 738 2 L
+1 H
+2 Z
+N
+72 54 540 54 2 L
+N
+27 72 54 720 C
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+27 72 54 720 R
+7 X
+0 0 0 1 0 0 0 K
+V
+27 72 54 720 C
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+27 72 54 720 R
+7 X
+0 0 0 1 0 0 0 K
+V
+1 12 Q
+0 X
+(1) 36 711 T
+(2) 36 699 T
+(3) 36 687 T
+(4) 36 675 T
+(5) 36 663 T
+(6) 36 651 T
+(7) 36 639 T
+(8) 36 627 T
+(9) 36 615 T
+(10) 36 603 T
+(11) 36 591 T
+(12) 36 579 T
+(13) 36 567 T
+(14) 36 555 T
+(15) 36 543 T
+(16) 36 531 T
+(17) 36 519 T
+(18) 36 507 T
+(19) 36 495 T
+(20) 36 483 T
+(21) 36 471 T
+(22) 36 459 T
+(23) 36 447 T
+(24) 36 435 T
+(25) 36 423 T
+(26) 36 411 T
+(27) 36 399 T
+(28) 36 387 T
+(29) 36 375 T
+(30) 36 363 T
+(31) 36 351 T
+(32) 36 339 T
+(33) 36 327 T
+(34) 36 315 T
+(35) 36 303 T
+(36) 36 291 T
+(37) 36 279 T
+(38) 36 267 T
+(39) 36 255 T
+(40) 36 243 T
+(41) 36 231 T
+(42) 36 219 T
+(43) 36 207 T
+(44) 36 195 T
+(45) 36 183 T
+(46) 36 171 T
+(47) 36 159 T
+(48) 36 147 T
+(49) 36 135 T
+(50) 36 123 T
+(51) 36 111 T
+(52) 36 99 T
+(53) 36 87 T
+(54) 36 75 T
+27 72 54 720 C
+0 0 612 792 C
+0 14 Q
+0 X
+0 0 0 1 0 0 0 K
+(1.  Overview) 72 710.67 T
+1 10 Q
+1 (This document speci\336es the application of) 72 693.33 P
+2 F
+1 (IEEE Std 1275-1994 Standar) 249.65 693.33 P
+1 (d for Boot \050Initialization, Con\336guration\051) 369.22 693.33 P
+1 (Firmwar) 72 681.33 P
+1 (e, Cor) 107.19 681.33 P
+1 (e Practices and Requir) 132.82 681.33 P
+1 (ements) 227.38 681.33 P
+1 F
+1 ( to computer systems that use the PowerPC Instruction Set) 255.15 681.33 P
+0.86 (Architecture, including instruction-set-speci\336c requirements and practices for debugging, client program interface) 72 669.33 P
+1 (and data formats. An implementation of Open Firmware for PowerPC) 72 657.33 P
+2 F
+1 (shall) 364.46 657.33 P
+1 F
+1 ( implement the core requirements as) 383.91 657.33 P
+1 (de\336ned in [1] and the PowerPC-speci\336c extensions described in this binding.) 72 645.33 P
+1 (While this document addresses the of) 72 626.33 P
+1 (\336cial PowerPC architecture [2], the name "PowerPC" only requires) 226.52 626.33 P
+1 (compliance to Book I. The descriptions that follow) 72 614.33 P
+1 (, and the relevant sections describing translation features for) 282.22 614.33 P
+1 (this binding, assume that the system\325) 72 602.33 P
+1 (s PowerPC processor\050s\051 implement the entire set of Books I-III. Some) 224.23 602.33 P
+0.9 ("PowerPC" processors may implement dif) 72 590.33 P
+0.9 (ferent Book II-III features;  such processors may need a variant of this) 244.7 590.33 P
+1 (binding describing the dif) 72 578.33 P
+1 (ferences to the mapping functions, etc.) 177.87 578.33 P
+1 (This document de\336nes the binding to PowerPC processors that use 32-bit addressing.  Since the minimum cell) 72 559.33 P
+1 (size of Open Firmware is 32 bits, only one cell is necessary to represent addresses of processor bus devices;) 72 547.33 P
+1 (hence, the value of) 72 535.33 P
+3 F
+2.4 ("#address-cells") 154.03 535.33 P
+1 F
+1 ( for) 250.03 535.33 P
+3 F
+2.4 (/) 268.69 535.33 P
+2 F
+1 (shall) 278.19 535.33 P
+1 F
+1 ( be 1.) 297.64 535.33 P
+0 9 Q
+0.9 (Note: 64-bit pr) 108 517 P
+0.9 (ocessors can follow the speci\336cations contained her) 166.63 517 P
+0.9 (ein as long as all) 367.35 517 P
+0.8 (addr) 108 507 P
+0.8 (esses r) 126.34 507 P
+0.8 (elevant to Open Firmwar) 151.73 507 P
+0.8 (e ar) 251.21 507 P
+0.8 (e kept within the \336rst 4 GB; i.e., the upper 32 bits) 266.6 507 P
+0.9 (of 64-bit addr) 108 497 P
+0.9 (esses ar) 162.64 497 P
+0.9 (e assumed to contain 0s.) 192.62 497 P
+0 14 Q
+(1.1.  Endian-ness Support) 72 467.67 T
+1 10 Q
+1 (The implementation of the PowerPC Open Firmware must support both Big- and Little-Endian system) 72 450.33 P
+0.8 (implementation. This section describes added features to the core Open Firmware architecture features to support) 72 438.33 P
+1 (bi-endian booting.) 72 426.33 P
+0 14 Q
+(1.2.  Bi-Endian Booting) 72 395.67 T
+1 10 Q
+0.79 (The Con\336guration V) 72 378.33 P
+0.79 (ariable) 155.79 378.33 P
+4 F
+1.88 (little-endian?) 186.29 378.33 P
+1 F
+0.79 ( must be implemented. The basic concept of bi-endian support is) 270.29 378.33 P
+1 (to keep in the) 72 366.33 P
+4 F
+2.4 (little-endian?) 132.66 366.33 P
+1 F
+1 ( variable a "cached" indication of the desired endian-ness of client programs) 216.66 366.33 P
+1 (\050for example operating systems or their loaders\051. This variable indicates the expected endian-mode of a boot) 72 354.33 P
+1 (tar) 72 342.33 P
+1 (get;) 82.37 342.33 P
+4 F
+2.4 (false) 100.87 342.33 P
+1 F
+1 ( \0500\051 indicates Big-Endian,) 130.87 342.33 P
+4 F
+2.4 (true) 240.69 342.33 P
+1 F
+1 ( \050-1\051 indicates Little-Endian; the default value of) 264.69 342.33 P
+4 F
+2.4 (little-) 469.32 342.33 P
+2.4 (endian?) 72 330.33 P
+1 F
+1 ( is implementation dependent.) 114 330.33 P
+1 (The client program must describe its endian-mode in the header section of its image as described in) 72 311.33 P
+1 (section) 72 299.33 P
+1 (7.1.1.. When Open Firmware is started, Open Firmware must use the value of) 102.83 299.33 P
+4 F
+2.4 (little-endian?) 429.11 299.33 P
+1 F
+1 ( to) 513.11 299.33 P
+1 (establish the endian-mode of a system. After Open Firmware locates and loads a client program, the correct) 72 287.33 P
+1 (endian-mode must be veri\336ed with the description in the header section of the client program image. If the) 72 275.33 P
+1 (cached value is correct, Open Firmware proceeds, with the system in its current endian-mode.) 72 263.33 P
+0.94 (If, however) 72 244.33 P
+0.94 (, Open Firmware determines that the endian-mode of the client program is dif) 118.64 244.33 P
+0.94 (ferent from what it had) 440.58 244.33 P
+1 (assumed, it must set) 72 232.33 P
+4 F
+2.4 (little-endian?) 159.06 232.33 P
+1 F
+1 ( appropriately and recon\336gure the) 243.06 232.33 P
+413.86 231.24 386.08 231.24 2 L
+V
+0.49 H
+0 Z
+N
+1 (system) 386.08 232.33 P
+1 ( \050hardware and \336rmware\051 for) 413.86 232.33 P
+1 (the new endian-mode, possibly by resetting the system as with) 72 220.33 P
+4 F
+2.4 (reset-all) 334.48 220.33 P
+3 F
+2.4 (.) 388.48 220.33 P
+0 9 Q
+0.9 (Note: the endian-mode applies to the entir) 108 202 P
+0.9 (e hardwar) 274.73 202 P
+0.9 (e system, including the pr) 315.21 202 P
+0.9 (ocessor\050s\051.) 416.9 202 P
+0.9 (Open Firmwar) 108 192 P
+0.9 (e) 166.48 192 P
+5 F
+0.9 (shall) 173.63 192 P
+0 F
+0.9 ( perform whatever steps ar) 191.64 192 P
+0.9 (e r) 299.04 192 P
+0.9 (equir) 310.02 192 P
+0.9 (ed to enable the system to run in) 330.36 192 P
+0.9 (the speci\336ed mode) 108 182 P
+5 F
+0.9 (.) 180.3 182 P
+2 10 Q
+0.83 (Client pr) 72 167.33 P
+0.83 (ogram) 108.3 167.33 P
+1 F
+0.83 (s can use) 134.41 167.33 P
+3 F
+1.98 (setprop) 175.48 167.33 P
+1 F
+0.83 ( to alter the value of) 217.48 167.33 P
+4 F
+1.98 (little-endian?) 305.2 167.33 P
+3 F
+1.98 (;) 389.2 167.33 P
+1 F
+0.83 ( users can alter it via the) 395.2 167.33 P
+4 F
+1.98 (setenv) 500.67 167.33 P
+1 F
+1 (command from the) 72 155.33 P
+2 F
+1 (user interface) 153.6 155.33 P
+1 F
+1 ( \050if present\051. The alteration of) 209.87 155.33 P
+4 F
+2.4 (little-endian?) 336.67 155.33 P
+2 F
+1 (shall not) 424.17 155.33 P
+1 F
+1 ( cause the system) 459.9 155.33 P
+1 (to be recon\336gured until the system is re-booted.) 72 143.33 P
+0 9 Q
+0.9 (Note:  this mechanism intr) 108 125 P
+0.9 (oduces an extra con\336guration pass. However) 213.43 125 P
+0.9 (, this occurs only) 388.59 125 P
+0.9 (when switching the endian-mode fr) 108 115 P
+0.9 (om that which was last used. For most boots, Open) 246.44 115 P
+0.9 (Firmwar) 108 105 P
+0.9 (e will be appr) 142.33 105 P
+0.9 (opriately con\336gur) 197.12 105 P
+0.9 (ed, so that no additional overhead will occur) 266.61 105 P
+0.9 (.) 442.09 105 P
+52 532 54 542 R
+V
+FMENDPAGE
+%%EndPage: "2" 2
+%%Page: "3" 3
+612 792 0 FMBEGINPAGE
+[0 0 0 1 0 0 0]
+[ 0 1 1 0 1 0 0]
+[ 1 0 1 0 0 1 0]
+[ 1 1 0 0 0 0 1]
+[ 1 0 0 0 0 1 1]
+[ 0 1 0 0 1 0 1]
+[ 0 0 1 0 1 1 0]
+ 7 FrameSetSepColors
+FrameNoSep
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 12 Q
+0 X
+0 0 0 1 0 0 0 K
+(          PowerPC pr) 170.39 748 T
+(ocessor binding to Open Firmwar) 263.83 748 T
+(e) 436.28 748 T
+(May 5, 1995 Revision 1.02 DRAFT) 72 36 T
+(3 of 17) 506 36 T
+72 738 540 738 2 L
+1 H
+2 Z
+N
+72 54 540 54 2 L
+N
+27 72 54 720 C
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+27 72 54 720 R
+7 X
+0 0 0 1 0 0 0 K
+V
+27 72 54 720 C
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+27 72 54 720 R
+7 X
+0 0 0 1 0 0 0 K
+V
+1 12 Q
+0 X
+(1) 36 711 T
+(2) 36 699 T
+(3) 36 687 T
+(4) 36 675 T
+(5) 36 663 T
+(6) 36 651 T
+(7) 36 639 T
+(8) 36 627 T
+(9) 36 615 T
+(10) 36 603 T
+(11) 36 591 T
+(12) 36 579 T
+(13) 36 567 T
+(14) 36 555 T
+(15) 36 543 T
+(16) 36 531 T
+(17) 36 519 T
+(18) 36 507 T
+(19) 36 495 T
+(20) 36 483 T
+(21) 36 471 T
+(22) 36 459 T
+(23) 36 447 T
+(24) 36 435 T
+(25) 36 423 T
+(26) 36 411 T
+(27) 36 399 T
+(28) 36 387 T
+(29) 36 375 T
+(30) 36 363 T
+(31) 36 351 T
+(32) 36 339 T
+(33) 36 327 T
+(34) 36 315 T
+(35) 36 303 T
+(36) 36 291 T
+(37) 36 279 T
+(38) 36 267 T
+(39) 36 255 T
+(40) 36 243 T
+(41) 36 231 T
+(42) 36 219 T
+(43) 36 207 T
+(44) 36 195 T
+(45) 36 183 T
+(46) 36 171 T
+(47) 36 159 T
+(48) 36 147 T
+(49) 36 135 T
+(50) 36 123 T
+(51) 36 111 T
+(52) 36 99 T
+(53) 36 87 T
+(54) 36 75 T
+27 72 54 720 C
+0 0 612 792 C
+0 14 Q
+0 X
+0 0 0 1 0 0 0 K
+(1.3.  PowerPC addr) 72 710.67 T
+(ess translation model) 188.79 710.67 T
+1 10 Q
+1 (This section describes the model that is used for co-existence of Open Firmware and client programs \050i.e.,) 72 693.33 P
+1 (operating systems\051 with respect to address translation.) 72 681.33 P
+0.82 (The following overview of translation is provided so that the issues relevant to Open Firmware for PowerPC can) 72 662.33 P
+1 (be discussed. Details that are not relevant to Open Firmware issues \050e.g., protection\051 are not described in detail;) 72 650.33 P
+1 (the PowerPC architecture [2], particularly Book III, should be consulted for the details. For the scope of this) 72 638.33 P
+1 (section, terms will be used as de\336ned in [2] and the 32-bit processor model is assumed.) 72 626.33 P
+0 12 Q
+(1.3.1.  T) 72 601 T
+(ranslation r) 112.12 601 T
+(equir) 172.24 601 T
+(ements) 199.36 601 T
+1 10 Q
+2.26 (The default access mode of storage for load and stores \050i.e., with translation disabled -- referred to as) 72 584.33 P
+2 F
+2.26 (Real-) 518.34 584.33 P
+1.23 (Mode) 72 572.33 P
+1 F
+1.23 (\051 within PowerPC assumes that caches are enabled \050in copy-back mode\051. In order to perform access to I/O) 94.77 572.33 P
+1.23 (device registers, the access mode must be set to Cache-Inhibited, Guarded by establishing a translation with this) 72 560.33 P
+1.24 (mode and enabling translation. Thus, even though most of a client program and/or Open Firmware can run with) 72 548.33 P
+1 (translation disabled, it) 72 536.33 P
+185.56 535.24 166.11 535.24 2 L
+V
+0.49 H
+0 Z
+N
+1 (must) 166.11 536.33 P
+1 ( be enabled when performing I/O.) 185.56 536.33 P
+0 12 Q
+(1.3.2.  HT) 72 511 T
+(AB translation) 121.45 511 T
+1 10 Q
+1 (An Ef) 72 494.33 P
+1 (fective Address \050EA\051 of the PowerPC processors is 32 bit wide. Each EA is then translated into a 52-bit) 96.98 494.33 P
+0.9 (V) 72 482.33 P
+0.9 (irtual Address \050V) 78.62 482.33 P
+0.9 (A) 148.56 482.33 P
+159.11 481.24 155.78 481.24 2 L
+V
+N
+0.9 (\051) 155.78 482.33 P
+0.9 ( by prepending a 24-bit V) 159.11 482.33 P
+0.9 (irtual Segment Id \050VSID\051 to the 28 LSbs of the ef) 266.06 482.33 P
+0.9 (fective address;) 473.21 482.33 P
+1 (the VSID is obtained by indexing into a set of 16 Segment Registers \050SRs\051 using the 4 MSbs of the EA.) 72 470.33 P
+1 (Finally) 72 458.33 P
+1 (, the virtual address is translated into a Real Address \050RA\051.   This is done by mapping the V) 99.69 458.33 P
+1 (irtual Page-) 484.44 458.33 P
+0.88 (Number \050VPN\051 \050bits 0-39 of the V) 72 446.33 P
+0.88 (A\051 into a Real Page Number \050RPN\051 and concatenating this RPN with the byte) 214.32 446.33 P
+1 (of) 72 434.33 P
+1 (fset \050bits 40-51 of the V) 80.15 434.33 P
+1 (A\051. The mapping of VPN to RPN involves a hashing algorithm within the Hashed) 179.68 434.33 P
+1 (Page T) 72 422.33 P
+1 (able \050HT) 100.35 422.33 P
+1 (AB\051 to locate a Page T) 136.37 422.33 P
+1 (able Entry \050PTE\051 that matches the VPN and using that entry\325) 232.04 422.33 P
+1 (s RPN) 484.79 422.33 P
+1 (component. If a valid entry is not found, a Data Storage Interrupt \050DSI\051 or Instruction Storage Interrupt \050ISI\051 is) 72 410.33 P
+1 (signalled, depending upon the source of the access.) 72 398.33 P
+1 (This process is not performed for every translation! Processors will typically have a T) 72 379.33 P
+1 (ranslation Look-aside) 428.2 379.33 P
+1 (Buf) 72 367.33 P
+1 (fer \050TLB\051 that caches the most recent translations, thus exploiting the natural spatial locality of programs to) 86.82 367.33 P
+1 (reduce the overhead of address translation. On most PowerPC processors, the TLB updates are performed in) 72 355.33 P
+1 (hardware. However) 72 343.33 P
+1 (, the architecture allows an implementation to use a software-assisted mechanism to perform) 151.45 343.33 P
+0.97 (the TLB updates. Such schemes must not af) 72 331.33 P
+0.97 (fect the architected state of the processor unless the translation fails;) 254.13 331.33 P
+1 (i.e., the HT) 72 319.33 P
+1 (AB does not contain a valid PTE for the V) 118.47 319.33 P
+1 (A and a DSI/ISI is signalled.) 296.44 319.33 P
+0 9 Q
+0.9 (Note: one unusual featur) 108 301 P
+0.9 (e of this translation mechanism is that valid translations might) 205.79 301 P
+0.9 (not be found in the HT) 108 291 P
+0.9 (AB; the HT) 199.6 291 P
+0.9 (AB might be too small to contain all of the curr) 245.74 291 P
+0.9 (ently) 435.56 291 P
+0.9 (valid translations. This intr) 108 281 P
+0.9 (oduces a level of complexity in the use of addr) 215.56 281 P
+0.9 (ess translation) 399.24 281 P
+0.9 (by Open Firmwar) 108 271 P
+0.9 (e, as discussed below) 179.14 271 P
+0.9 (.) 260.85 271 P
+0 12 Q
+(1.3.3.  BA) 72 247 T
+(T translation) 120.78 247 T
+1 10 Q
+0.81 (T) 72 230.33 P
+0.81 (o further reduce the translation overhead for contiguous regions of virtual and real address spaces \050e.g., a frame) 77.41 230.33 P
+1 (buf) 72 218.33 P
+1 (fer) 85.15 218.33 P
+1 (, or all of real memory\051, the Block Address T) 95.85 218.33 P
+1 (ranslation \050BA) 285.3 218.33 P
+1 (T\051 mechanism is also supported by PowerPC.) 344.35 218.33 P
+1 (The Block Address T) 72 206.33 P
+1 (ranslation involves the use of BA) 160.47 206.33 P
+1 (T registers that contain a Block Ef) 297.96 206.33 P
+1 (fective Page Index) 440.98 206.33 P
+1 (\050BEPI\051, a Block Length \050BL\051 speci\336er and a Block Real Page Number \050BRPN\051; the architecture de\336nes 4 BA) 72 194.33 P
+1 (T) 526.71 194.33 P
+1 (registers for data \050DBA) 72 182.33 P
+1 (T registers\051 and 4 BA) 168.03 182.33 P
+1 (T registers for instruction \050IBA) 257.57 182.33 P
+1 (T registers\051) 385.44 182.33 P
+1 8 Q
+0.8 (1) 432.26 186.33 P
+1 10 Q
+1 (.) 436.26 182.33 P
+1 (Block Address T) 72 163.33 P
+1 (ranslation is done my matching some number of upper bits of the EA \050speci\336ed by the BL) 141.42 163.33 P
+1 (value\051 against each of the BA) 72 151.33 P
+1 (T registers. If a match is found, the corresponding BRPN bits replace the matched) 194.47 151.33 P
+1 (bits in the EA to produce the RA.) 72 139.33 P
+72 86 540 116 C
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+207 94 351 94 2 L
+0.25 H
+2 Z
+0 X
+0 0 0 1 0 0 0 K
+N
+0 0 612 792 C
+6 8 Q
+0 X
+0 0 0 1 0 0 0 K
+(1.) 108 83.33 T
+1 10 Q
+(The 601 has a single set of BA) 118 79.33 T
+(T registers that are shared by both instruction and data accesses) 239.93 79.33 T
+6 F
+(.) 493.76 79.33 T
+52 376 54 405 R
+V
+FMENDPAGE
+%%EndPage: "3" 3
+%%Page: "4" 4
+612 792 0 FMBEGINPAGE
+[0 0 0 1 0 0 0]
+[ 0 1 1 0 1 0 0]
+[ 1 0 1 0 0 1 0]
+[ 1 1 0 0 0 0 1]
+[ 1 0 0 0 0 1 1]
+[ 0 1 0 0 1 0 1]
+[ 0 0 1 0 1 1 0]
+ 7 FrameSetSepColors
+FrameNoSep
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 12 Q
+0 X
+0 0 0 1 0 0 0 K
+(          PowerPC pr) 170.39 748 T
+(ocessor binding to Open Firmwar) 263.83 748 T
+(e) 436.28 748 T
+(May 5, 1995 Revision 1.02 DRAFT) 72 36 T
+(4 of 17) 506 36 T
+72 738 540 738 2 L
+1 H
+2 Z
+N
+72 54 540 54 2 L
+N
+27 72 54 720 C
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+27 72 54 720 R
+7 X
+0 0 0 1 0 0 0 K
+V
+27 72 54 720 C
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+27 72 54 720 R
+7 X
+0 0 0 1 0 0 0 K
+V
+1 12 Q
+0 X
+(1) 36 711 T
+(2) 36 699 T
+(3) 36 687 T
+(4) 36 675 T
+(5) 36 663 T
+(6) 36 651 T
+(7) 36 639 T
+(8) 36 627 T
+(9) 36 615 T
+(10) 36 603 T
+(11) 36 591 T
+(12) 36 579 T
+(13) 36 567 T
+(14) 36 555 T
+(15) 36 543 T
+(16) 36 531 T
+(17) 36 519 T
+(18) 36 507 T
+(19) 36 495 T
+(20) 36 483 T
+(21) 36 471 T
+(22) 36 459 T
+(23) 36 447 T
+(24) 36 435 T
+(25) 36 423 T
+(26) 36 411 T
+(27) 36 399 T
+(28) 36 387 T
+(29) 36 375 T
+(30) 36 363 T
+(31) 36 351 T
+(32) 36 339 T
+(33) 36 327 T
+(34) 36 315 T
+(35) 36 303 T
+(36) 36 291 T
+(37) 36 279 T
+(38) 36 267 T
+(39) 36 255 T
+(40) 36 243 T
+(41) 36 231 T
+(42) 36 219 T
+(43) 36 207 T
+(44) 36 195 T
+(45) 36 183 T
+(46) 36 171 T
+(47) 36 159 T
+(48) 36 147 T
+(49) 36 135 T
+(50) 36 123 T
+(51) 36 111 T
+(52) 36 99 T
+(53) 36 87 T
+(54) 36 75 T
+27 72 54 720 C
+0 0 612 792 C
+1 10 Q
+0 X
+0 0 0 1 0 0 0 K
+1 (BA) 72 713.33 P
+1 (T translation takes precedence over HT) 84.78 713.33 P
+1 (AB translation; i.e., if a mapping for a storage location is present in) 246.43 713.33 P
+1 (both a BA) 72 701.33 P
+1 (T register and the HT) 114 701.33 P
+1 (AB, the Block Address T) 203.29 701.33 P
+1 (ranslation will be used.) 308.32 701.33 P
+0 14 Q
+(1.4.  Open Firmwar) 72 670.67 T
+(e\325) 189.57 670.67 T
+(s use of memory) 199.93 670.67 T
+1 10 Q
+1 (Open Firmware must use the memory resources within the space indicated by the) 72 653.33 P
+4 F
+2.4 (real-base, real-) 413 653.33 P
+2.4 (size, virt-base) 72 641.33 P
+3 F
+2.4 (and) 172.8 641.33 P
+4 F
+2.4 ( virt-size) 190.8 641.33 P
+1 F
+1 (  Con\336guration V) 253.2 641.33 P
+1 (ariables de\336ned for PowerPC. As described in) 325.37 641.33 P
+1 (section) 72 629.33 P
+1 (7.1.1., a mechanism is de\336ned to enable Open Firmware to determine if its current con\336guration is) 102.83 629.33 P
+1 (consistent with the requirements of the client.) 72 617.33 P
+1 (When a client program is loaded and the header of the client has either the) 72 598.33 P
+4 F
+2.4 (real-base) 386.65 598.33 P
+1 F
+1 ( or) 440.65 598.33 P
+0 F
+1 (virt-base) 455.98 598.33 P
+1 F
+1 ( values) 493.75 598.33 P
+1 (equal to -1, \336rmware may choose its base locations.  If the values in the header of the client con\337ict with the) 72 586.33 P
+1 (current values of the con\336guration variables then \336rmware shall set the con\336gurations variables to those found) 72 574.33 P
+1 (in the client\325) 72 562.33 P
+1 (s header and restart itself.) 124 562.33 P
+1 (If a client does not provide enough real or virtual memory for \336rmware then the \336rmware should not boot the) 72 543.33 P
+1 (client and the condition should be reported to the user) 72 531.33 P
+1 (A PowerPC Open Firmware binding) 72 512.33 P
+2 F
+1 (shall) 225.6 512.33 P
+1 F
+1 ( support two dif) 245.05 512.33 P
+1 (ferent addressing models, depending upon the setting) 311.48 512.33 P
+1 (of the) 72 500.33 P
+4 F
+2.4 (real-mode?) 99.55 500.33 P
+1 F
+1 ( Con\336guration V) 159.55 500.33 P
+1 (ariable. This variable indicates the Open Firmware addressing mode that a) 228.22 500.33 P
+1 (client program expects;) 72 488.33 P
+4 F
+2.4 (false) 171.37 488.33 P
+1 F
+1 ( \0500\051 indicates V) 201.37 488.33 P
+1 (irtual-Mode,) 265.7 488.33 P
+4 F
+2.4 (true) 319.47 488.33 P
+1 F
+1 ( \050-1\051 indicates Real-Mode; the default value of) 343.47 488.33 P
+4 F
+2.4 (real-mode?) 72 476.33 P
+1 F
+1 ( is implementation dependent.) 132 476.33 P
+1.19 (The management of) 72 457.33 P
+4 F
+2.87 (real-mode?) 158.06 457.33 P
+1 F
+1.19 ( is analogous to) 218.06 457.33 P
+4 F
+2.87 (little-endian?) 287.84 457.33 P
+1 F
+1.19 (. Open Firmware determines its address-) 371.84 457.33 P
+1.63 (ing mode using the value of) 72 445.33 P
+4 F
+3.92 (real-mode?) 195.69 445.33 P
+1 F
+1.63 (. If the current state of) 255.69 445.33 P
+4 F
+3.92 (real-mode?) 356.86 445.33 P
+1 F
+1.63 ( \050and hence, the current state) 416.86 445.33 P
+1.74 (of Open Firmware\051 is incorrect, it) 72 433.33 P
+2 F
+1.74 (shall) 219.91 433.33 P
+1 F
+1.74 ( set) 239.36 433.33 P
+4 F
+4.18 (real-mode?) 258.95 433.33 P
+1 F
+1.74 ( appropriately and reset itself, possibly by executing) 318.95 433.33 P
+4 F
+(reset-all) 72 421.33 T
+1 F
+(.) 126 421.33 T
+1 (Memory that connot be allocated for general purpose use, for example physical memory on PowerPC systems) 72 404.33 P
+1 (used for interrupt vectors, shall not appear in the "available" property of the memory node.  A Client Program) 72 392.33 P
+1 (that needs to use such memory for its architected purpose must not claim that area prior to use.) 72 380.33 P
+1 (In the following two sections, some of conventions in Real-Mode and V) 72 361.33 P
+1 (irtual-Mode address translations are) 371.26 361.33 P
+1 (described. Remaining sections describe the assumptions that Open Firmware makes about the state and control) 72 349.33 P
+1 (of the system in regard to Open Firmware\325) 72 337.33 P
+1 (s use of system resources for three Open Firmware interfaces \050e.g.) 249.25 337.33 P
+1 (Device, User and Client interfaces\051.) 72 325.33 P
+0 12 Q
+(1.4.1.  Real-Mode) 72 300 T
+1 10 Q
+1.96 (When) 72 283.33 P
+4 F
+4.69 (real-mode?) 100.33 283.33 P
+1 F
+1.96 ( is) 160.34 283.33 P
+4 F
+4.69 (true) 175.91 283.33 P
+1 F
+1.96 (, Open Firmware must con\336gure its address translation to run in Real-Mode. In) 199.91 283.33 P
+1.43 (Real-Mode, the uses of address translations by Open Firmware and its clients are considered independentt; they) 72 271.33 P
+1.35 (do not share any translations. All interfaces between the two must pass addresses with the RA of the data. Any) 72 259.33 P
+1.64 (data structure shared by Open Firmware and its clients that refer to) 72 247.33 P
+2 F
+1.64 (virt) 361.6 247.33 P
+1 F
+1.64 ( addresses in [1], or this binding, must) 375.48 247.33 P
+1 (be RAs \050i.e., hardware addresses\051.) 72 235.33 P
+0 9 Q
+0.9 (Note: in particular) 108 217 P
+0.9 (, that the addr) 180.96 217 P
+0.9 (ess of the Client interface handler) 238.5 217 P
+0.9 (, that is passed to the) 371.4 217 P
+0.9 (client, has to be a RA.) 108 207 P
+1 10 Q
+1 (The Con\336guration V) 72 192.33 P
+1 (ariables) 156.22 192.33 P
+4 F
+2.4 (real-base) 190.82 192.33 P
+1 F
+1 ( and) 244.82 192.33 P
+4 F
+2.4 (real-size) 266.26 192.33 P
+1 F
+1 ( should indicate the physical memory base and size) 320.26 192.33 P
+0.96 (in which Open Firmware must locate itself.   The Con\336guration V) 72 180.33 P
+0.96 (ariables) 345.89 180.33 P
+4 F
+2.31 (virt-base) 380.46 180.33 P
+3 F
+2.31 (and) 442.77 180.33 P
+4 F
+2.31 ( virt-size) 460.77 180.33 P
+1 F
+0.96 ( do) 523.08 180.33 P
+1 (not have meaning and should be set to -1.) 72 168.33 P
+0 12 Q
+(1.4.2.  V) 72 124 T
+(irtual-Mode) 113.22 124 T
+1 10 Q
+1.56 (When) 72 107.33 P
+4 F
+3.75 (real-mode?) 99.94 107.33 P
+1 F
+1.56 ( is) 159.94 107.33 P
+4 F
+3.75 (false) 174.74 107.33 P
+1 F
+1.56 (, Open Firmware) 204.74 107.33 P
+2 F
+1.56 (shall) 279.97 107.33 P
+1 F
+1.56 ( con\336gure itself to run in) 299.42 107.33 P
+2 F
+1.56 (V) 410.45 107.33 P
+1.56 (irtual-Mode) 415.82 107.33 P
+1 F
+1.56 (. In V) 464.15 107.33 P
+1.56 (irtual-Mode,) 489.73 107.33 P
+1.26 (Open Firmware and its client will share a single virtual address space. This binding provides interfaces to allow) 72 95.33 P
+1 (Open Firmware and its client to ensure that this single virtual address model can be maintained.) 72 83.33 P
+52 377 54 411 R
+V
+FMENDPAGE
+%%EndPage: "4" 4
+%%Page: "5" 5
+612 792 0 FMBEGINPAGE
+[0 0 0 1 0 0 0]
+[ 0 1 1 0 1 0 0]
+[ 1 0 1 0 0 1 0]
+[ 1 1 0 0 0 0 1]
+[ 1 0 0 0 0 1 1]
+[ 0 1 0 0 1 0 1]
+[ 0 0 1 0 1 1 0]
+ 7 FrameSetSepColors
+FrameNoSep
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 12 Q
+0 X
+0 0 0 1 0 0 0 K
+(          PowerPC pr) 170.39 748 T
+(ocessor binding to Open Firmwar) 263.83 748 T
+(e) 436.28 748 T
+(May 5, 1995 Revision 1.02 DRAFT) 72 36 T
+(5 of 17) 506 36 T
+72 738 540 738 2 L
+1 H
+2 Z
+N
+72 54 540 54 2 L
+N
+27 72 54 720 C
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+27 72 54 720 R
+7 X
+0 0 0 1 0 0 0 K
+V
+27 72 54 720 C
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+27 72 54 720 R
+7 X
+0 0 0 1 0 0 0 K
+V
+1 12 Q
+0 X
+(1) 36 711 T
+(2) 36 699 T
+(3) 36 687 T
+(4) 36 675 T
+(5) 36 663 T
+(6) 36 651 T
+(7) 36 639 T
+(8) 36 627 T
+(9) 36 615 T
+(10) 36 603 T
+(11) 36 591 T
+(12) 36 579 T
+(13) 36 567 T
+(14) 36 555 T
+(15) 36 543 T
+(16) 36 531 T
+(17) 36 519 T
+(18) 36 507 T
+(19) 36 495 T
+(20) 36 483 T
+(21) 36 471 T
+(22) 36 459 T
+(23) 36 447 T
+(24) 36 435 T
+(25) 36 423 T
+(26) 36 411 T
+(27) 36 399 T
+(28) 36 387 T
+(29) 36 375 T
+(30) 36 363 T
+(31) 36 351 T
+(32) 36 339 T
+(33) 36 327 T
+(34) 36 315 T
+(35) 36 303 T
+(36) 36 291 T
+(37) 36 279 T
+(38) 36 267 T
+(39) 36 255 T
+(40) 36 243 T
+(41) 36 231 T
+(42) 36 219 T
+(43) 36 207 T
+(44) 36 195 T
+(45) 36 183 T
+(46) 36 171 T
+(47) 36 159 T
+(48) 36 147 T
+(49) 36 135 T
+(50) 36 123 T
+(51) 36 111 T
+(52) 36 99 T
+(53) 36 87 T
+(54) 36 75 T
+27 72 54 720 C
+0 0 612 792 C
+1 10 Q
+0 X
+0 0 0 1 0 0 0 K
+1 (The Con\336guration V) 72 713.33 P
+1 (ariables) 156.22 713.33 P
+4 F
+2.4 (virt-base) 190.82 713.33 P
+3 F
+2.4 (and) 253.22 713.33 P
+4 F
+2.4 ( virt-size) 271.22 713.33 P
+1 F
+1 (  should indicate the virtual address space base) 333.62 713.33 P
+1 (address and size that Open Firmware should use. The Con\336guration V) 72 701.33 P
+1 (ariables) 362.24 701.33 P
+4 F
+2.4 (real-base) 396.84 701.33 P
+1 F
+1 ( and) 450.84 701.33 P
+4 F
+2.4 (real-size) 472.28 701.33 P
+1 F
+1 (should indicate the physical memory base and size in which Open Firmware must locate itself.) 72 689.33 P
+0 12 Q
+(1.4.3.   Device Interface \050Real-Mode\051) 72 664 T
+1 10 Q
+1 (While Open Firmware is performing system initialization and probing functions, it establishes and maintains its) 72 647.33 P
+1 (own translations. In particular) 72 635.33 P
+1 (, it maintains its own HT) 194.58 635.33 P
+1 (AB \050and/or BA) 298.23 635.33 P
+1 (T registers\051 and handles any DSI/ISI) 360.78 635.33 P
+1 (interrupts itself.) 72 623.33 P
+0 9 Q
+0.9 (Note: in Real-Mode, all translations will be) 108 605 P
+5 F
+0.9 (virt=real) 281.3 605 P
+0 F
+0.9 (; the primary r) 313.42 605 P
+0.9 (eason for translation is) 373.7 605 P
+0.9 (to allow appr) 108 595 P
+0.9 (opriate I/O accesses.) 160.64 595 P
+0 12 Q
+(1.4.4.  Device Interface \050V) 72 571 T
+(irtual-Mode\051) 203.84 571 T
+1 10 Q
+1.59 (Open Firmware will establish its own translation environment, handling DSI/ISI interrupts as in the Real-Mode) 72 554.33 P
+1.29 (case. However) 72 542.33 P
+1.29 (, this environment will, in general, contain) 131.75 542.33 P
+2 F
+1.29 (virt\255r) 313.02 542.33 P
+1.29 (eal) 330.43 542.33 P
+1 F
+1.29 ( translations. The virtual address space used by) 342.65 542.33 P
+1 (Open Firmware must be compatible with its client.) 72 530.33 P
+0 9 Q
+0.9 (Note: Since these virtual addr) 108 512 P
+0.9 (esses will be used by the Client and/or User Interfaces \050e.g.,) 225.93 512 P
+0.9 (for pointers to its code, device-tr) 108 502 P
+0.9 (ee, etc.\051, their translations must be pr) 236.81 502 P
+0.9 (eserved until the) 385.27 502 P
+0.9 (target OS decides that it no longer r) 108 492 P
+0.9 (equir) 251.87 492 P
+0.9 (es the services of Open Firmwar) 272.21 492 P
+0.9 (e.) 400.27 492 P
+0 12 Q
+(1.4.5.  Client Interface \050Real-Mode\051) 72 468 T
+1 10 Q
+1.47 (In Real-Mode, addresses of client data are real.; the client must ensure that all data areas referred to across the) 72 451.33 P
+1.25 (Client Interface are valid real addresses. This may require moving data to meet any requirements for contiguous) 72 439.33 P
+2.77 (storage areas \050e.g., for) 72 427.33 P
+4 F
+6.64 (read/write) 174.42 427.33 P
+1 F
+2.77 ( calls\051. T) 234.42 427.33 P
+2.77 (ranslation) 274.87 427.33 P
+2 F
+2.77 (shall) 319.58 427.33 P
+1 F
+2.77 ( be disabled before the client interface call is) 339.03 427.33 P
+(made.) 72 415.33 T
+1 (Open Firmware will typically have to maintain its translations in order to perform I/O. Since the client may be) 72 398.33 P
+1 (running with translation enabled \050except for the Client interface call\051, Open Firmware) 72 386.33 P
+2 F
+1 (shall) 429.76 386.33 P
+1 F
+1 ( save the state of all) 449.21 386.33 P
+1 (relevant translation resources \050e.g., SDR1, BA) 72 374.33 P
+1 (T) 261.69 374.33 P
+1 (s\051 and restore them before returning to the client. Likewise, it) 267.1 374.33 P
+2 F
+0.96 (may) 72 362.33 P
+1 F
+0.96 ( take over the DSI/ISI interrupts for its own use \050e.g., for doing "lazy" allocation of BA) 88.66 362.33 P
+0.96 (T) 451.87 362.33 P
+0.96 (s\051; it) 457.28 362.33 P
+2 F
+0.96 (shall) 479.76 362.33 P
+1 F
+0.96 ( preserve) 499.21 362.33 P
+1 (the state of any interrupt vectors for its client.) 72 350.33 P
+1 (Since the state of the address translation system is not predictable to any interrupts, the client) 72 331.33 P
+2 F
+1 (shall) 462.68 331.33 P
+1 F
+1 ( ensure that) 482.13 331.33 P
+1 (interrupts are disabled before calling the Client Interface handler) 72 319.33 P
+1 (.) 338.27 319.33 P
+1 (Once client program starts execution, physical memory shall be managed by client program. Since Open) 72 300.33 P
+1 (Firmware does not know which physical memory the client program is using, Open Firmware shall request) 72 288.33 P
+1 (physical memory) 72 276.33 P
+1 (, if needed, to the client program \050using) 141.51 276.33 P
+0 F
+1 (alloc-r) 310.04 276.33 P
+1 (eal-mem) 337.63 276.33 P
+1 F
+1 (\051.) 374.28 276.33 P
+0 12 Q
+(1.4.6.  Client Interface \050V) 72 251 T
+(irtual-Mode\051) 201.19 251 T
+1 10 Q
+1 (Client interface calls are essentially "subroutine" calls to Open Firmware. Hence, the client interface executes in) 72 234.33 P
+1 (the environment of its client, including any translations that the OS has established. E.g., addresses passed in to) 72 222.33 P
+1 (the client interface are assumed to be valid virtual addresses within the scope of the OS. Any DSI/ISI interrupts) 72 210.33 P
+1 (are either invalid addresses or caused by HT) 72 198.33 P
+1 (AB "spills". In either case, the OS has the responsibility for the) 255.65 198.33 P
+1 (handling of such exceptions.) 72 186.33 P
+0 9 Q
+0.9 (Note: addr) 108 168 P
+0.9 (esses that the Open Firmwar) 150.48 168 P
+0.9 (e internal use will be those that wer) 264.4 168 P
+0.9 (e established) 406.28 168 P
+0.9 (by the Device interface \050or) 108 158 P
+0.9 (, by subsequent actions of the Client or User interface\051. Thus,) 212.24 158 P
+0.9 (the client must pr) 108 148 P
+0.9 (eserve these Open Firmwar) 178.28 148 P
+0.9 (e translations if it takes over the virtual) 286.54 148 P
+0.9 (memory management function.) 108 138 P
+1 10 Q
+0.94 (In addition to using existing translations, the Client Interface might require the establishment of new translations) 72 123.33 P
+1 (\050e.g., due to) 72 111.33 P
+4 F
+2.4 (map-in) 124.99 111.33 P
+1 F
+1 ( calls during) 160.99 111.33 P
+4 F
+2.4 (open) 215.93 111.33 P
+1 F
+1 ( time\051, or the removal of old translations \050e.g., during) 239.93 111.33 P
+4 F
+2.4 (map-out) 465.46 111.33 P
+1 F
+1 ( calls) 507.46 111.33 P
+1 (during) 72 99.33 P
+4 F
+2.4 (close) 101.61 99.33 P
+1 F
+1 ( time\051. Since this requires altering the Client\325) 131.61 99.33 P
+1 (s translation resources \050e.g., HT) 318.6 99.33 P
+1 (AB\051, possibly) 449.27 99.33 P
+1 (handling spill conditions, Open Firmware can not know how to perform these updates to the HT) 72 87.33 P
+1 (AB.) 471.16 87.33 P
+FMENDPAGE
+%%EndPage: "5" 5
+%%Page: "6" 6
+612 792 0 FMBEGINPAGE
+[0 0 0 1 0 0 0]
+[ 0 1 1 0 1 0 0]
+[ 1 0 1 0 0 1 0]
+[ 1 1 0 0 0 0 1]
+[ 1 0 0 0 0 1 1]
+[ 0 1 0 0 1 0 1]
+[ 0 0 1 0 1 1 0]
+ 7 FrameSetSepColors
+FrameNoSep
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 12 Q
+0 X
+0 0 0 1 0 0 0 K
+(          PowerPC pr) 170.39 748 T
+(ocessor binding to Open Firmwar) 263.83 748 T
+(e) 436.28 748 T
+(May 5, 1995 Revision 1.02 DRAFT) 72 36 T
+(6 of 17) 506 36 T
+72 738 540 738 2 L
+1 H
+2 Z
+N
+72 54 540 54 2 L
+N
+27 72 54 720 C
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+27 72 54 720 R
+7 X
+0 0 0 1 0 0 0 K
+V
+27 72 54 720 C
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+27 72 54 720 R
+7 X
+0 0 0 1 0 0 0 K
+V
+1 12 Q
+0 X
+(1) 36 711 T
+(2) 36 699 T
+(3) 36 687 T
+(4) 36 675 T
+(5) 36 663 T
+(6) 36 651 T
+(7) 36 639 T
+(8) 36 627 T
+(9) 36 615 T
+(10) 36 603 T
+(11) 36 591 T
+(12) 36 579 T
+(13) 36 567 T
+(14) 36 555 T
+(15) 36 543 T
+(16) 36 531 T
+(17) 36 519 T
+(18) 36 507 T
+(19) 36 495 T
+(20) 36 483 T
+(21) 36 471 T
+(22) 36 459 T
+(23) 36 447 T
+(24) 36 435 T
+(25) 36 423 T
+(26) 36 411 T
+(27) 36 399 T
+(28) 36 387 T
+(29) 36 375 T
+(30) 36 363 T
+(31) 36 351 T
+(32) 36 339 T
+(33) 36 327 T
+(34) 36 315 T
+(35) 36 303 T
+(36) 36 291 T
+(37) 36 279 T
+(38) 36 267 T
+(39) 36 255 T
+(40) 36 243 T
+(41) 36 231 T
+(42) 36 219 T
+(43) 36 207 T
+(44) 36 195 T
+(45) 36 183 T
+(46) 36 171 T
+(47) 36 159 T
+(48) 36 147 T
+(49) 36 135 T
+(50) 36 123 T
+(51) 36 111 T
+(52) 36 99 T
+(53) 36 87 T
+(54) 36 75 T
+27 72 54 720 C
+0 0 612 792 C
+1 10 Q
+0 X
+0 0 0 1 0 0 0 K
+1 (Hence, there) 72 713.33 P
+2 F
+1 (shall) 127.03 713.33 P
+1 F
+1 ( be) 146.48 713.33 P
+3 F
+2.4 (callback) 162.92 713.33 P
+1 F
+1 ( services provided by the client for use by Open Firmware for such actions;) 210.92 713.33 P
+1 (see section) 72 701.33 P
+1 (7.6.2..) 119.1 701.33 P
+0 12 Q
+(1.4.7.  User Interface \050Real-Mode\051) 72 676 T
+1 10 Q
+1.29 (In Real-Mode, Open Firmware regains total control of the system. As with the Client interface in Real-Mode, it) 72 659.33 P
+2 F
+1.89 (shall) 72 647.33 P
+1 F
+1.89 ( save the state of the translation resources \050including interrupt vectors\051 upon entry and) 91.45 647.33 P
+2 F
+1.89 (shall) 464.55 647.33 P
+1 F
+1.89 ( restore them) 484 647.33 P
+1 (upon exit.) 72 635.33 P
+0 12 Q
+(1.4.8.  User Interface \050V) 72 610 T
+(irtual-Mode\051) 193.85 610 T
+1 10 Q
+1 (When the User interface is invoked, Open Firmware is responsible for managing the machine. Therefore, it will) 72 593.33 P
+1 (take over control of any relevant interrupt vectors for its own handling. In particular) 72 581.33 P
+1 (, it will take over DSI/ISI) 420.64 581.33 P
+1 (handling in order to report errors to the user for bad addresses, protection violations, etc. However) 72 569.33 P
+1 (, as described) 479.85 569.33 P
+1 (above, one source of DSI/ISI may simply be HT) 72 557.33 P
+1 (AB spills. As with the case of) 272.78 557.33 P
+4 F
+2.4 (map-in) 401.44 557.33 P
+1 F
+1 ( and) 437.44 557.33 P
+4 F
+2.4 (map-out) 458.88 557.33 P
+1 F
+1 ( calls,) 500.88 557.33 P
+1 (the User interface can not know how to handle such spill conditions, itself, or even if this is, in fact, a spill) 72 545.33 P
+1 (versus a bad address.) 72 533.33 P
+1 (Hence, there) 72 514.33 P
+2 F
+1 (shall) 127.03 514.33 P
+1 F
+1 ( be a of) 146.48 514.33 P
+3 F
+2.4 (callback) 182.69 514.33 P
+1 F
+1 ( service provided by the client for use by Open Firmware to resolve such) 230.69 514.33 P
+1 (translations; see section) 72 502.33 P
+1 (7.6.2.) 171.49 502.33 P
+196.49 501.24 193.99 501.24 2 L
+V
+0.49 H
+0 Z
+N
+1 (.) 193.99 502.33 P
+0 14 Q
+(1.5.  Real Mode rules) 72 471.67 T
+1 10 Q
+1 (Claim methods shall not allocate more pages than are necessary to satisfy the request.) 72 454.33 P
+0 14 Q
+(1.6.  V) 72 423.67 T
+(irtual-Mode rules) 109.59 423.67 T
+1 10 Q
+1 (In order to let clients \050i.e., tar) 72 406.33 P
+1 (get operating systems\051 know where Open Firmware lives in the address space, the) 194.74 406.33 P
+1 (following rules) 72 394.33 P
+2 F
+1 (shall) 137.33 394.33 P
+1 F
+1 ( be followed by an Open Firmware implementation for PowerPC and by client programs) 156.78 394.33 P
+1 (that make use of its Client and/or User interfaces.) 72 382.33 P
+1 (Open Firmware:) 72 363.33 P
+4 11 Q
+(\245) 108 348.33 T
+2 10 Q
+(shall) 114.6 348.33 T
+1 F
+( maintain its) 134.05 348.33 T
+3 F
+("translations") 186 348.33 T
+("mmu") 272.5 348.33 T
+1 F
+(-node property \050see section) 302.5 348.33 T
+(4.2.3.\051) 413.58 348.33 T
+4 11 Q
+(\245) 108 337.33 T
+2 10 Q
+(shall not) 114.6 337.33 T
+1 F
+( use BA) 149.33 337.33 T
+(TS during Client or User interface operations) 180.44 337.33 T
+4 11 Q
+(\245) 108 326.33 T
+1 10 Q
+(Claim methods) 114.6 326.33 T
+2 F
+(shall) 177.94 326.33 T
+1 F
+(not allocate more pages than are necessary to satisfy the request.) 199.89 326.33 T
+1 (Client programs:) 72 314.33 P
+4 11 Q
+(\245) 108 302.33 T
+2 10 Q
+(shall) 117.1 302.33 T
+1 F
+( provide callbacks to assist Open Firmware in address translation.) 136.55 302.33 T
+0 14 Q
+(2.  Refer) 72 275.67 T
+(ences and T) 122.67 275.67 T
+(erms) 192.16 275.67 T
+(2.1.  Refer) 72 243.67 T
+(ences) 133.17 243.67 T
+1 10 Q
+1 (This standard shall be used in conjunction with the following publications. When the following standards are) 72 226.33 P
+1 (superseded by an approved revision, the revision) 72 214.33 P
+2 F
+1 (shall) 276.74 214.33 P
+1 F
+1 ( apply) 296.19 214.33 P
+1 (.) 321.26 214.33 P
+([1]) 72 195.33 T
+2 F
+1 (IEEE Std 1275-1994 Standar) 90 195.33 P
+1 (d for Boot \050Initialization, Con\336guration\051 Firmwar) 209.57 195.33 P
+1 (e, Cor) 414.78 195.33 P
+1 (e Practices and) 440.41 195.33 P
+(Requir) 72 183.33 T
+(ements) 98.85 183.33 T
+1 F
+(.) 126.62 183.33 T
+([2]) 72 164.33 T
+2 F
+1 (PowerPC Ar) 90 164.33 P
+1 (chitectur) 142.02 164.33 P
+1 (e) 177.2 164.33 P
+1 F
+1 (, published by IBM \050Customer Reorder Number 52G7487\051.) 181.64 164.33 P
+([3]) 72 145.33 T
+2 F
+1 (System V Application Binary Interface) 90 145.33 P
+1 F
+1 (, published by UNIX System Laboratories. This document describes) 247.87 145.33 P
+1 (the generic architecture of the ELF \050Executable and Linking Format\051 object \336le format.) 72 133.33 P
+([4]) 72 114.33 T
+2 F
+1 (Peering Inside the PE: A T) 90 114.33 P
+1 (our of the W) 202.12 114.33 P
+1 (in32 Portable Executable File Format) 254.29 114.33 P
+1 F
+1 (, found in the March, 1994) 411.61 114.33 P
+1 (issue of) 72 102.33 P
+2 F
+1 (Micr) 107.33 102.33 P
+1 (osoft Systems Journal) 126.4 102.33 P
+1 F
+1 (.) 215.62 102.33 P
+52 419 54 481 R
+V
+52 323 54 333 R
+V
+52 99 54 140 R
+V
+FMENDPAGE
+%%EndPage: "6" 6
+%%Page: "7" 7
+612 792 0 FMBEGINPAGE
+[0 0 0 1 0 0 0]
+[ 0 1 1 0 1 0 0]
+[ 1 0 1 0 0 1 0]
+[ 1 1 0 0 0 0 1]
+[ 1 0 0 0 0 1 1]
+[ 0 1 0 0 1 0 1]
+[ 0 0 1 0 1 1 0]
+ 7 FrameSetSepColors
+FrameNoSep
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 12 Q
+0 X
+0 0 0 1 0 0 0 K
+(          PowerPC pr) 170.39 748 T
+(ocessor binding to Open Firmwar) 263.83 748 T
+(e) 436.28 748 T
+(May 5, 1995 Revision 1.02 DRAFT) 72 36 T
+(7 of 17) 506 36 T
+72 738 540 738 2 L
+1 H
+2 Z
+N
+72 54 540 54 2 L
+N
+27 72 54 720 C
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+27 72 54 720 R
+7 X
+0 0 0 1 0 0 0 K
+V
+27 72 54 720 C
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+27 72 54 720 R
+7 X
+0 0 0 1 0 0 0 K
+V
+1 12 Q
+0 X
+(1) 36 711 T
+(2) 36 699 T
+(3) 36 687 T
+(4) 36 675 T
+(5) 36 663 T
+(6) 36 651 T
+(7) 36 639 T
+(8) 36 627 T
+(9) 36 615 T
+(10) 36 603 T
+(11) 36 591 T
+(12) 36 579 T
+(13) 36 567 T
+(14) 36 555 T
+(15) 36 543 T
+(16) 36 531 T
+(17) 36 519 T
+(18) 36 507 T
+(19) 36 495 T
+(20) 36 483 T
+(21) 36 471 T
+(22) 36 459 T
+(23) 36 447 T
+(24) 36 435 T
+(25) 36 423 T
+(26) 36 411 T
+(27) 36 399 T
+(28) 36 387 T
+(29) 36 375 T
+(30) 36 363 T
+(31) 36 351 T
+(32) 36 339 T
+(33) 36 327 T
+(34) 36 315 T
+(35) 36 303 T
+(36) 36 291 T
+(37) 36 279 T
+(38) 36 267 T
+(39) 36 255 T
+(40) 36 243 T
+(41) 36 231 T
+(42) 36 219 T
+(43) 36 207 T
+(44) 36 195 T
+(45) 36 183 T
+(46) 36 171 T
+(47) 36 159 T
+(48) 36 147 T
+(49) 36 135 T
+(50) 36 123 T
+(51) 36 111 T
+(52) 36 99 T
+(53) 36 87 T
+(54) 36 75 T
+27 72 54 720 C
+0 0 612 792 C
+1 10 Q
+0 X
+0 0 0 1 0 0 0 K
+([5]) 72 713.33 T
+2 F
+0.93 (System V Application Binary Interface, PowerPC Pr) 90 713.33 P
+0.93 (ocessor Supplement) 305.46 713.33 P
+1 F
+0.93 (, Sunsoft. This document de\336nes the) 386.1 713.33 P
+1 (PowerPC speci\336c ABI for System V and also gives details on the PowerPC ELF format.) 72 701.33 P
+0 14 Q
+(2.2.  T) 72 670.67 T
+(erms) 108.05 670.67 T
+1 10 Q
+0.84 (This standard uses technical terms as they are de\336ned in the documents cited in "References", plus the following) 72 653.33 P
+(terms:) 72 641.33 T
+0 F
+1 (cor) 72 622.33 P
+1 (e, cor) 85.7 622.33 P
+1 (e speci\336cation) 109.84 622.33 P
+1 F
+1 (: refers to) 170.56 622.33 P
+2 F
+1 (IEEE Std 1275-1994 Standar) 214.38 622.33 P
+1 (d for Boot \050Initialization, Con\336guration\051) 333.95 622.33 P
+1 (Firmwar) 72 610.33 P
+1 (e, Cor) 107.19 610.33 P
+1 (e Practices and Requir) 132.82 610.33 P
+1 (ements) 227.38 610.33 P
+0 F
+1 (ELF) 72 591.33 P
+1 F
+1 (: Executable and Linking Format. A binary object \336le format de\336ned by [3][5] that is used to represent) 91.45 591.33 P
+2 F
+1 (client pr) 72 579.33 P
+1 (ograms) 106.24 579.33 P
+1 F
+1 ( in Open Firmware for PowerPC.) 136.24 579.33 P
+0 F
+1 (linkage ar) 72 560.33 P
+1 (ea) 115.88 560.33 P
+1 F
+1 (: An area within the stack that is reserved for saving certain registers across procedure calls in) 125.32 560.33 P
+1 (PowerPC run-time models. This area is reserved by the caller and is allocated above the current stack pointer) 72 548.33 P
+(\050) 72 536.33 T
+4 F
+(%r1) 75.33 536.33 T
+1 F
+(\051.) 93.33 536.33 T
+0 F
+1 (Open Firmwar) 72 517.33 P
+1 (e) 136.98 517.33 P
+1 F
+1 (: The \336rmware architecture de\336ned by the core speci\336cation or) 141.42 517.33 P
+1 (, when used as an adjective, a) 401.9 517.33 P
+1 (software component compliant with the core speci\336cation.) 72 505.33 P
+0 F
+1 (pr) 72 486.33 P
+1 (ocedur) 81.82 486.33 P
+1 (e descriptor) 111.08 486.33 P
+1 F
+1 (: a data structure used by some PowerPC run-time models to represent a C "pointer to) 162.9 486.33 P
+1 (procedure". The \336rst word of this structure contains the actual address of the procedure.) 72 474.33 P
+0 F
+1 (Real-Mode) 72 455.33 P
+1 F
+1 (: The mode in which Open Firmware and its client are running with translation disabled; all) 119.21 455.33 P
+1 (addresses passed between the client and Open Firmware are real \050i.e., hardware\051 addresses.) 72 443.33 P
+0 F
+1 (T) 72 424.33 P
+1 (able of Contents \050T) 77.75 424.33 P
+1 (OC\051) 162.51 424.33 P
+1 F
+1 (: A data structure used by some PowerPC run-time models that is used for access to) 180.84 424.33 P
+1 (global variables and for inter) 72 412.33 P
+1 (-module linkage. When a T) 191.33 412.33 P
+1 (OC is used,) 304.85 412.33 P
+0 F
+1 (%r2) 356.74 412.33 P
+1 F
+1 ( contains its base address.) 376.18 412.33 P
+0 F
+1 (V) 72 393.33 P
+1 (irtual-Mode) 78.85 393.33 P
+1 F
+1 (: The mode in which Open Firmware and its client share a single virtual address space, and) 130.51 393.33 P
+0.85 (address translation is enabled; all addresses passed between the client and Open Firmware are virtual \050translated\051) 72 381.33 P
+(addresses.) 72 369.33 T
+0 14 Q
+(3.  Data Formats and Repr) 72 338.67 T
+(esentations) 231.95 338.67 T
+1 10 Q
+1 (The cell size) 72 321.33 P
+2 F
+1 (shall) 128.04 321.33 P
+1 F
+1 ( be 32 bits. Number ranges for) 147.49 321.33 P
+2 F
+1 (n) 278.91 321.33 P
+1 F
+1 (,) 283.91 321.33 P
+2 F
+1 (u) 289.91 321.33 P
+1 F
+1 (, and other cell-sized items are consistent with 32-bit,) 294.91 321.33 P
+1 (two's-complement number representation.) 72 309.33 P
+1 (The required alignment for items accessed with) 72 290.33 P
+2 F
+1 (a-addr) 271.46 290.33 P
+1 F
+1 ( addresses) 298.68 290.33 P
+2 F
+1 (shall) 344 290.33 P
+1 F
+1 ( be four) 363.45 290.33 P
+1 (-byte aligned \050i.e., a multiple of) 396.35 290.33 P
+(4\051.) 72 278.33 T
+1 (Each operation involving a) 72 259.33 P
+2 F
+1 (qaddr) 186.54 259.33 P
+1 F
+1 ( address) 210.43 259.33 P
+2 F
+1 (shall) 247.42 259.33 P
+1 F
+1 ( be performed with a single 32-bit access to the addressed) 266.87 259.33 P
+1 (location; similarly) 72 247.33 P
+1 (, each) 145.41 247.33 P
+2 F
+1 (waddr) 173.23 247.33 P
+1 F
+1 ( access) 198.79 247.33 P
+2 F
+1 (shall) 231.33 247.33 P
+1 F
+1 ( be performed with a single 16-bit access. This implies four) 250.78 247.33 P
+1 (-byte) 498.6 247.33 P
+1 (alignment for) 72 235.33 P
+2 F
+1 (qaddrs) 130.66 235.33 P
+1 F
+1 ( and two-byte alignment for) 158.44 235.33 P
+2 F
+1 (waddrs) 277.59 235.33 P
+1 F
+1 (.) 307.04 235.33 P
+0 14 Q
+(4.  Pr) 72 204.67 T
+(operties) 104.02 204.67 T
+1 10 Q
+1 (This section describes the standard properties of PowerPC Open Firmware implementation.) 72 187.33 P
+0 14 Q
+(4.1.  Root node pr) 72 156.67 T
+(operties) 178.3 156.67 T
+1 10 Q
+1 (The following properties of the root node \050) 72 139.33 P
+3 F
+2.4 ("/") 250.36 139.33 P
+1 F
+1 (\051 shall be created by an Open Firmware implementation.) 268.36 139.33 P
+0 9 Q
+0.9 (Note: Note that the r) 108 121 P
+0.9 (oot node typically corr) 190.91 121 P
+0.9 (esponds to the common pr) 280.19 121 P
+0.9 (ocessor bus in a) 384.62 121 P
+0.9 (PowerPC system.) 108 111 P
+4 10 Q
+("#address-cells") 72 96.33 T
+52 666 54 720 R
+V
+52 557 54 586 R
+V
+52 483 54 512 R
+V
+52 200 54 242 R
+V
+FMENDPAGE
+%%EndPage: "7" 7
+%%Page: "8" 8
+612 792 0 FMBEGINPAGE
+[0 0 0 1 0 0 0]
+[ 0 1 1 0 1 0 0]
+[ 1 0 1 0 0 1 0]
+[ 1 1 0 0 0 0 1]
+[ 1 0 0 0 0 1 1]
+[ 0 1 0 0 1 0 1]
+[ 0 0 1 0 1 1 0]
+ 7 FrameSetSepColors
+FrameNoSep
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 12 Q
+0 X
+0 0 0 1 0 0 0 K
+(          PowerPC pr) 170.39 748 T
+(ocessor binding to Open Firmwar) 263.83 748 T
+(e) 436.28 748 T
+(May 5, 1995 Revision 1.02 DRAFT) 72 36 T
+(8 of 17) 506 36 T
+72 738 540 738 2 L
+1 H
+2 Z
+N
+72 54 540 54 2 L
+N
+27 72 54 720 C
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+27 72 54 720 R
+7 X
+0 0 0 1 0 0 0 K
+V
+27 72 54 720 C
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+27 72 54 720 R
+7 X
+0 0 0 1 0 0 0 K
+V
+1 12 Q
+0 X
+(1) 36 711 T
+(2) 36 699 T
+(3) 36 687 T
+(4) 36 675 T
+(5) 36 663 T
+(6) 36 651 T
+(7) 36 639 T
+(8) 36 627 T
+(9) 36 615 T
+(10) 36 603 T
+(11) 36 591 T
+(12) 36 579 T
+(13) 36 567 T
+(14) 36 555 T
+(15) 36 543 T
+(16) 36 531 T
+(17) 36 519 T
+(18) 36 507 T
+(19) 36 495 T
+(20) 36 483 T
+(21) 36 471 T
+(22) 36 459 T
+(23) 36 447 T
+(24) 36 435 T
+(25) 36 423 T
+(26) 36 411 T
+(27) 36 399 T
+(28) 36 387 T
+(29) 36 375 T
+(30) 36 363 T
+(31) 36 351 T
+(32) 36 339 T
+(33) 36 327 T
+(34) 36 315 T
+(35) 36 303 T
+(36) 36 291 T
+(37) 36 279 T
+(38) 36 267 T
+(39) 36 255 T
+(40) 36 243 T
+(41) 36 231 T
+(42) 36 219 T
+(43) 36 207 T
+(44) 36 195 T
+(45) 36 183 T
+(46) 36 171 T
+(47) 36 159 T
+(48) 36 147 T
+(49) 36 135 T
+(50) 36 123 T
+(51) 36 111 T
+(52) 36 99 T
+(53) 36 87 T
+(54) 36 75 T
+27 72 54 720 C
+0 0 612 792 C
+1 10 Q
+0 X
+0 0 0 1 0 0 0 K
+1 (Standard property) 90 713.33 P
+1 (, encoded as with) 162.28 713.33 P
+4 F
+2.4 (encode-int) 238.21 713.33 P
+1 F
+1 (, that speci\336es the number of cells required to represent) 298.21 713.33 P
+1 (physical addresses on the processor bus; the value of) 90 703.33 P
+3 F
+2.4 ("#address-cells") 312.57 703.33 P
+1 F
+1 ( for the processor bus) 408.57 703.33 P
+2 F
+1 (shall) 502.16 703.33 P
+1 F
+1 ( be) 521.61 703.33 P
+3 F
+(1) 90 693.33 T
+1 F
+(.) 96 693.33 T
+4 F
+("clock-frequency") 72 675.33 T
+1 F
+1 (Standard property) 90 660.33 P
+1 (, encoded as with) 162.28 660.33 P
+4 F
+2.4 (encode-int) 238.21 660.33 P
+1 F
+1 (, that represents the primary system bus speed \050in hertz\051.) 298.21 660.33 P
+0 14 Q
+(4.2.  CPU node pr) 72 631.67 T
+(operties) 178.3 631.67 T
+1 10 Q
+1 (For each CPU in the system, a cpu-node) 72 614.33 P
+2 F
+1 (shall) 243.59 614.33 P
+1 F
+1 ( be de\336ned as a child of) 263.04 614.33 P
+3 F
+2.4 ("/") 367.52 614.33 P
+1 F
+1 ( \050the root\051. The following properties) 385.52 614.33 P
+1 (apply to each of these nodes.) 72 602.33 P
+4 F
+("name") 72 583.33 T
+1 F
+1 (Open Firmware standard propetry) 90 568.33 P
+1 (.  The value of the is property shall be of the form: "PowerPC,XXX",) 228.15 568.33 P
+1 (where XXX is  601, 603, 604 etc.) 90 558.33 P
+4 F
+2.4 ("device_type") 72 540.33 P
+1 F
+1 (Open Firmware standard property) 90 525.33 P
+1 (. The value of this property for CPU nodes) 228.15 525.33 P
+2 F
+1 (shall) 410.46 525.33 P
+1 F
+1 ( be) 429.91 525.33 P
+3 F
+2.4 ("cpu") 446.35 525.33 P
+1 F
+1 (.) 476.35 525.33 P
+4 F
+("cpu-version") 72 507.33 T
+1 F
+0.86 (Standard property) 90 492.33 P
+0.86 (, encoded as with) 162.14 492.33 P
+4 F
+2.07 (encode-int) 237.52 492.33 P
+1 F
+0.86 (, that represents the processor type. This value is obtained) 297.52 492.33 P
+1 (by reading the Processor V) 90 482.33 P
+1 (ersion Register of the CPU.) 201.2 482.33 P
+4 F
+("clock-frequency") 72 464.33 T
+1 F
+1 (Standard property) 90 449.33 P
+1 (, encoded as with) 162.28 449.33 P
+4 F
+2.4 (encode-int) 238.21 449.33 P
+1 F
+1 (, that represents the internal processor speed \050in hertz\051 of) 298.21 449.33 P
+1 (this node.) 90 439.33 P
+4 F
+("timebase-frequency") 72 421.33 T
+1 F
+1 (Standard property) 90 406.33 P
+1 (, encoded as with) 162.28 406.33 P
+4 F
+2.4 (encode-int) 238.21 406.33 P
+1 F
+1 (, that represents the rate \050in hertz\051 at which the PowerPC) 298.21 406.33 P
+1 (T) 90 396.33 P
+1 (imeBase and Decrementer registers increment.) 95.76 396.33 P
+1 (Note:  The 601 PowerPC does not have a timebase frequency) 90 378.33 P
+1 (, therefore on a 601 PowerPC the value) 344.86 378.33 P
+1 (reported in this property shall be 1 billiion which represents the logical rate of the real time clock.) 90 368.33 P
+0 12 Q
+(4.2.1.  TLB pr) 72 345 T
+(operties) 143.8 345 T
+1 10 Q
+1.41 (Since the PowerPC architecture de\336nes the MMU as being part of the processor) 72 328.33 P
+1.41 (, the properties de\336ned by Sec-) 408.51 328.33 P
+1 (tion 3.6.5 of [1] and the following MMU-related properties shall be presented under "cpu" nodes.) 72 316.33 P
+4 F
+("tlb-size") 72 299.33 T
+1 F
+1 (Standard property) 90 284.33 P
+1 (, encoded as with) 162.28 284.33 P
+4 F
+2.4 (encode-int) 238.21 284.33 P
+1 F
+1 (, that represents the total number of TLB entries.) 298.21 284.33 P
+4 F
+("tlb-sets") 72 266.33 T
+1 F
+1 (Standard property) 90 251.33 P
+1 (, encoded as with encode-int, that represents the number of associativity sets of the TLB.) 162.28 251.33 P
+1 (A value of 1 indicates that the TLB is fully-associative.) 90 241.33 P
+0 12 Q
+(4.2.2.  Internal \050L1\051 cache pr) 72 218 T
+(operties) 218.44 218 T
+1 10 Q
+1 (The PowerPC architecture de\336nes a Harvard-style cache architecture; however) 72 201.33 P
+1 (, uni\336ed caches are an) 395.05 201.33 P
+1 (implementation option. All of the PowerPC cache instructions act upon a cache "block" \050also referred to as a) 72 189.33 P
+1 (cache "line"\051. The internal \050also referred to as "L1"\051 caches of PowerPC processors are represented in the Open) 72 177.33 P
+1 (Firmware device tree by the following properties contained under) 72 165.33 P
+3 F
+2.4 ("cpu") 346.22 165.33 P
+1 F
+1 ( nodes.) 376.22 165.33 P
+4 F
+("cache-unif) 72 146.33 T
+(ied") 138 146.33 T
+1 F
+1 (This property) 90 131.33 P
+1 (, if present, indicates that the internal cache has a uni\336ed or) 144.51 131.33 P
+1 (ganization. Absence of this) 392.78 131.33 P
+1 (property indicates that the internal caches are implemented as separate instruction and data caches.) 90 121.33 P
+4 F
+("i-cache-size") 72 103.33 T
+1 F
+1 (Standard property) 90 88.33 P
+1 (, encoded as with) 162.28 88.33 P
+4 F
+2.4 (encode-int) 238.21 88.33 P
+1 F
+1 (, that represents the total size \050in bytes\051 of the internal) 298.21 88.33 P
+1 (instruction cache.) 90 78.33 P
+52 365 54 385 R
+V
+FMENDPAGE
+%%EndPage: "8" 8
+%%Page: "9" 9
+612 792 0 FMBEGINPAGE
+[0 0 0 1 0 0 0]
+[ 0 1 1 0 1 0 0]
+[ 1 0 1 0 0 1 0]
+[ 1 1 0 0 0 0 1]
+[ 1 0 0 0 0 1 1]
+[ 0 1 0 0 1 0 1]
+[ 0 0 1 0 1 1 0]
+ 7 FrameSetSepColors
+FrameNoSep
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 12 Q
+0 X
+0 0 0 1 0 0 0 K
+(          PowerPC pr) 170.39 748 T
+(ocessor binding to Open Firmwar) 263.83 748 T
+(e) 436.28 748 T
+(May 5, 1995 Revision 1.02 DRAFT) 72 36 T
+(9 of 17) 506 36 T
+72 738 540 738 2 L
+1 H
+2 Z
+N
+72 54 540 54 2 L
+N
+27 72 54 720 C
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+27 72 54 720 R
+7 X
+0 0 0 1 0 0 0 K
+V
+27 72 54 720 C
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+27 72 54 720 R
+7 X
+0 0 0 1 0 0 0 K
+V
+1 12 Q
+0 X
+(1) 36 711 T
+(2) 36 699 T
+(3) 36 687 T
+(4) 36 675 T
+(5) 36 663 T
+(6) 36 651 T
+(7) 36 639 T
+(8) 36 627 T
+(9) 36 615 T
+(10) 36 603 T
+(11) 36 591 T
+(12) 36 579 T
+(13) 36 567 T
+(14) 36 555 T
+(15) 36 543 T
+(16) 36 531 T
+(17) 36 519 T
+(18) 36 507 T
+(19) 36 495 T
+(20) 36 483 T
+(21) 36 471 T
+(22) 36 459 T
+(23) 36 447 T
+(24) 36 435 T
+(25) 36 423 T
+(26) 36 411 T
+(27) 36 399 T
+(28) 36 387 T
+(29) 36 375 T
+(30) 36 363 T
+(31) 36 351 T
+(32) 36 339 T
+(33) 36 327 T
+(34) 36 315 T
+(35) 36 303 T
+(36) 36 291 T
+(37) 36 279 T
+(38) 36 267 T
+(39) 36 255 T
+(40) 36 243 T
+(41) 36 231 T
+(42) 36 219 T
+(43) 36 207 T
+(44) 36 195 T
+(45) 36 183 T
+(46) 36 171 T
+(47) 36 159 T
+(48) 36 147 T
+(49) 36 135 T
+(50) 36 123 T
+(51) 36 111 T
+(52) 36 99 T
+(53) 36 87 T
+(54) 36 75 T
+27 72 54 720 C
+0 0 612 792 C
+4 10 Q
+0 X
+0 0 0 1 0 0 0 K
+("i-cache-sets") 72 713.33 T
+1 F
+1 (Standard property) 90 698.33 P
+1 (, encoded as with) 162.28 698.33 P
+4 F
+2.4 (encode-int) 238.21 698.33 P
+1 F
+1 (, that represents number of associativity sets of the) 298.21 698.33 P
+1 (internal instruction cache. A value of 1 signi\336es that the instruction cache is fully associative.) 90 688.33 P
+4 F
+("i-cache-block-size") 72 670.33 T
+1 F
+0.86 (Standard property) 90 655.33 P
+0.86 (, encoded as with) 162.14 655.33 P
+4 F
+2.05 (encode-int) 237.49 655.33 P
+1 F
+0.86 (, that represents the internal instruction cache's block size,) 297.49 655.33 P
+1 (in bytes.) 90 645.33 P
+4 F
+("d-cache-size") 72 627.33 T
+1 F
+1 (Standard property) 90 612.33 P
+1 (, encoded as with) 162.28 612.33 P
+4 F
+2.4 (encode-int) 238.21 612.33 P
+1 F
+1 (, that represents the total size \050in bytes\051 of the internal) 298.21 612.33 P
+1 (data cache.) 90 602.33 P
+4 F
+("d-cache-sets") 72 584.33 T
+1 F
+1 (Standard property) 90 569.33 P
+1 (, encoded as with) 162.28 569.33 P
+4 F
+2.4 (encode-int) 238.21 569.33 P
+1 F
+1 (, that represents number of associativity sets of the) 298.21 569.33 P
+1 (internal data cache. A value of 1 signi\336es that the data cache is fully associative.) 90 559.33 P
+4 F
+("d-cache-block-size") 72 541.33 T
+1 F
+1 (Standard property) 90 526.33 P
+1 (, encoded as with) 162.28 526.33 P
+4 F
+2.4 (encode-int) 238.21 526.33 P
+1 F
+1 (, that represents the internal \050L1\051 data cache's block size,) 298.21 526.33 P
+1 (in bytes.) 90 516.33 P
+4 F
+("l2-cache") 72 498.33 T
+1 F
+1 (Standard property) 90 483.33 P
+1 (, encoded as with) 162.28 483.33 P
+4 F
+2.4 (encode-int) 238.21 483.33 P
+1 F
+1 (, that represents another level of cache in the memory) 298.21 483.33 P
+(hierarchy) 90 473.33 T
+(.) 127.11 473.33 T
+1 (Absence of this property indicates that no further levels of cache are present. If present, its value is the) 90 455.33 P
+2 F
+1 (phandle) 90 445.33 P
+1 F
+1 ( of the device node that represents the L2 cache.) 122.22 445.33 P
+0 12 Q
+(4.2.3.  Memory Management Unit pr) 72 422 T
+(operties) 259.75 422 T
+1 10 Q
+1.51 (T) 72 405.33 P
+1.51 (o aid a client in "taking over" the translation mechanism and still interact with Open Firmware \050via the clie) 77.41 405.33 P
+2 F
+1.51 (nt) 532.22 405.33 P
+1.51 (interface) 72 393.33 P
+1 F
+1.51 (\051, the client needs to know what translations have been established by Open Firmware.  The following) 107.55 393.33 P
+1 (standard property  should be implemented for all devices of "device-type" = "cpu".) 72 381.33 P
+4 F
+("translations") 72 364.33 T
+1 F
+1 (This property) 90 349.33 P
+1 (, consisting of sets of translations, de\336nes the currently active translations that have been) 144.51 349.33 P
+1 (established by Open Firmware \050e.g., using map\051. Each set has the following format:) 90 339.33 P
+3 F
+2.4 (\050 virt size phys mode \051) 126 321.33 P
+1 F
+1 (Each value is encoded as with) 90 303.33 P
+4 F
+2.4 (encode-int) 218.75 303.33 P
+1 F
+1 (.) 278.75 303.33 P
+0 14 Q
+(4.3.  External \050L2,L3...\051 cache node pr) 72 274.67 T
+(operties) 298.07 274.67 T
+1 10 Q
+1 (Some systems might include external \050L2\051 cache\050s\051. As with the internal caches, they can be implemented as) 72 257.33 P
+1 (either Harvard-style or uni\336ed. Unlike the L1 properties, that are contained within the) 72 245.33 P
+3 F
+2.4 ("cpu") 430.77 245.33 P
+1 F
+1 ( nodes, L2 caches) 460.77 245.33 P
+1 (are contained within other device tree nodes.) 72 233.33 P
+1 (The following properties de\336ne the characteristics of such L2 caches. These properties) 72 214.33 P
+2 F
+1 (shall) 433.08 214.33 P
+1 F
+1 ( be contained as a) 452.53 214.33 P
+0.99 (child node of one of the CPU nodes; this is to allow path-name access to the node. All) 72 202.33 P
+3 F
+2.36 ("cpu") 436.63 202.33 P
+1 F
+0.99 ( nodes that share) 466.63 202.33 P
+1 (the same L2 cache \050including the cpu node under which the L2 cache node is contained\051) 72 190.33 P
+2 F
+1 (shall) 443.47 190.33 P
+1 F
+1 ( contain an) 462.92 190.33 P
+3 F
+2.4 ("l2-) 512.3 190.33 P
+2.4 (cache") 72 178.33 P
+1 F
+1 ( property whose value is the) 108 178.33 P
+7 F
+2.4 (phandle) 228.98 178.33 P
+1 F
+1 ( of that L2 cache node.) 270.98 178.33 P
+0 9 Q
+0.9 (Note: it is possible to extend this scheme to arbitrary levels of secondary) 108 160 P
+0.9 (, tertiary) 394.27 160 P
+0.9 (, etc.) 428.66 160 P
+0.9 (caches. The) 108 150 P
+3 F
+2.16 ("l2-cache") 156.55 150 P
+0 F
+0.9 ( pr) 210.55 150 P
+0.9 (operty shall be used in one level of the cache hierar) 222.53 150 P
+0.9 (chy to) 426.86 150 P
+0.9 (r) 108 140 P
+0.9 (epr) 111.83 140 P
+0.9 (esent the next level. The device node for a subsequent level shall appear as a child of) 124.67 140 P
+0.9 (one of the caches in the hierar) 108 130 P
+0.9 (chy to allow path-name traversal.) 228.22 130 P
+4 10 Q
+("device-type") 72 115.33 T
+1 F
+1 (Open Firmware Standard property; the device-type of L2-cache nodes) 90 100.33 P
+2 F
+1 (shall) 381.98 100.33 P
+1 F
+1 ( be) 401.43 100.33 P
+3 F
+2.4 ("cache") 417.87 100.33 P
+1 F
+1 (.) 459.87 100.33 P
+4 F
+("cache-unif) 72 82.33 T
+(ied") 138 82.33 T
+52 390 54 400 R
+V
+FMENDPAGE
+%%EndPage: "9" 9
+%%Page: "10" 10
+612 792 0 FMBEGINPAGE
+[0 0 0 1 0 0 0]
+[ 0 1 1 0 1 0 0]
+[ 1 0 1 0 0 1 0]
+[ 1 1 0 0 0 0 1]
+[ 1 0 0 0 0 1 1]
+[ 0 1 0 0 1 0 1]
+[ 0 0 1 0 1 1 0]
+ 7 FrameSetSepColors
+FrameNoSep
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 12 Q
+0 X
+0 0 0 1 0 0 0 K
+(          PowerPC pr) 170.39 748 T
+(ocessor binding to Open Firmwar) 263.83 748 T
+(e) 436.28 748 T
+(May 5, 1995 Revision 1.02 DRAFT) 72 36 T
+(10 of 17) 500 36 T
+72 738 540 738 2 L
+1 H
+2 Z
+N
+72 54 540 54 2 L
+N
+27 72 54 720 C
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+27 72 54 720 R
+7 X
+0 0 0 1 0 0 0 K
+V
+27 72 54 720 C
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+27 72 54 720 R
+7 X
+0 0 0 1 0 0 0 K
+V
+1 12 Q
+0 X
+(1) 36 711 T
+(2) 36 699 T
+(3) 36 687 T
+(4) 36 675 T
+(5) 36 663 T
+(6) 36 651 T
+(7) 36 639 T
+(8) 36 627 T
+(9) 36 615 T
+(10) 36 603 T
+(11) 36 591 T
+(12) 36 579 T
+(13) 36 567 T
+(14) 36 555 T
+(15) 36 543 T
+(16) 36 531 T
+(17) 36 519 T
+(18) 36 507 T
+(19) 36 495 T
+(20) 36 483 T
+(21) 36 471 T
+(22) 36 459 T
+(23) 36 447 T
+(24) 36 435 T
+(25) 36 423 T
+(26) 36 411 T
+(27) 36 399 T
+(28) 36 387 T
+(29) 36 375 T
+(30) 36 363 T
+(31) 36 351 T
+(32) 36 339 T
+(33) 36 327 T
+(34) 36 315 T
+(35) 36 303 T
+(36) 36 291 T
+(37) 36 279 T
+(38) 36 267 T
+(39) 36 255 T
+(40) 36 243 T
+(41) 36 231 T
+(42) 36 219 T
+(43) 36 207 T
+(44) 36 195 T
+(45) 36 183 T
+(46) 36 171 T
+(47) 36 159 T
+(48) 36 147 T
+(49) 36 135 T
+(50) 36 123 T
+(51) 36 111 T
+(52) 36 99 T
+(53) 36 87 T
+(54) 36 75 T
+27 72 54 720 C
+0 0 612 792 C
+1 10 Q
+0 X
+0 0 0 1 0 0 0 K
+1 (This property) 90 713.33 P
+1 (, if present, indicates that the L2 cache has a uni\336ed or) 144.51 713.33 P
+1 (ganization. Absence of this property) 373.34 713.33 P
+1 (indicates that the L2 caches are implemented as separate instruction and data caches.) 90 703.33 P
+4 F
+("i-cache-size") 72 685.33 T
+1 F
+1 (Standard property) 90 670.33 P
+1 (, encoded as with) 162.28 670.33 P
+4 F
+2.4 (encode-int) 238.21 670.33 P
+1 F
+1 (, that represents the total size \050in bytes\051 of the L2) 298.21 670.33 P
+1 (instruction cache.) 90 660.33 P
+4 F
+("i-cache-sets") 72 642.33 T
+1 F
+1 (Standard property) 90 627.33 P
+1 (, encoded as with) 162.28 627.33 P
+4 F
+2.4 (encode-int) 238.21 627.33 P
+1 F
+1 (, that represents number of associativity sets of the L2) 298.21 627.33 P
+1 (instruction cache. A value of 1 signi\336es that the instruction cache is fully associative.) 90 617.33 P
+4 F
+("d-cache-size") 72 599.33 T
+1 F
+1 (Standard property) 90 584.33 P
+1 (, encoded as with) 162.28 584.33 P
+4 F
+2.4 (encode-int) 238.21 584.33 P
+1 F
+1 (, that represents the total size \050in bytes\051 of the L2 data) 298.21 584.33 P
+(cache.) 90 574.33 T
+4 F
+("d-cache-sets") 72 556.33 T
+1 F
+1 (Standard property) 90 541.33 P
+1 (, encoded as with) 162.28 541.33 P
+4 F
+2.4 (encode-int) 238.21 541.33 P
+1 F
+1 (, that represents number of associativity sets of the L2) 298.21 541.33 P
+1 (instruction cache. A value of 1 signi\336es that the instruction cache is fully associative.) 90 531.33 P
+4 F
+("l2-cache") 72 513.33 T
+1 F
+1 (Standard property) 90 498.33 P
+1 (, encoded as with) 162.28 498.33 P
+4 F
+2.4 (encode-int) 238.21 498.33 P
+1 F
+1 (, that represents another level of cache in the memory) 298.21 498.33 P
+(hierarchy) 90 488.33 T
+(.) 127.11 488.33 T
+1 (Absence of this property indicates that no further levels of cache are present. If present, its value is the) 90 470.33 P
+2 F
+1 (phandle) 90 460.33 P
+1 F
+1 ( of the device node that represents the cache at the next level.) 122.22 460.33 P
+0 14 Q
+(4.4.  "/openpr) 72 431.67 T
+(om" node pr) 154.19 431.67 T
+(operty) 230.16 431.67 T
+(5.  Methods) 72 399.67 T
+1 10 Q
+1 (This section describes the additional standard methods required of a PowerPC Open Firmware implementation.) 72 382.33 P
+0 14 Q
+(5.1.  MMU r) 72 351.67 T
+(elated methods) 146 351.67 T
+1 10 Q
+0.98 (The mmu methods de\336ned by section 3.6.5. of [1]) 72 334.33 P
+2 F
+0.98 (shall) 283.58 334.33 P
+1 F
+0.98 ( be implemented by CPU nodes. The value of the) 303.02 334.33 P
+4 F
+2.35 (mode) 512.52 334.33 P
+1 F
+1 (parameter for the relevant methods \050e.g.,) 72 322.33 P
+4 F
+2.4 (map) 243.23 322.33 P
+1 F
+1 (\051) 261.23 322.33 P
+2 F
+1 (shall) 268.06 322.33 P
+1 F
+1 ( be the value that is contained within PTEs that control) 287.51 322.33 P
+1 (W) 72 310.33 P
+1 (rite-through, Cache-Inhibit, Memory-coherent, Guarded and the 2 protection bits; thus, its format is:) 81.04 310.33 P
+4 F
+2.4 (WIMGxPP) 72 298.33 P
+1 F
+1 (, where x is a reserved bit that) 112.89 298.33 P
+2 F
+1 (shall) 243.36 298.33 P
+1 F
+1 ( be 0. In order for I/O accesses to be properly performed in a) 262.81 298.33 P
+1 (PowerPC system, address ranges that are mapped by) 72 286.33 P
+4 F
+2.4 (map-in) 293.02 286.33 P
+2 F
+1 (shall) 332.52 286.33 P
+1 F
+1 ( be marked as Cache-Inhibited, Guarded.) 351.97 286.33 P
+0 14 Q
+(6.  Client Interface Requir) 72 255.67 T
+(ements) 229.22 255.67 T
+1 10 Q
+1 (A PowerPC Open Firmware implementation) 72 238.33 P
+2 F
+1 (shall) 257.82 238.33 P
+1 F
+1 ( implement a client interface \050as de\336ned in chapter 6 of [1]\051) 277.27 238.33 P
+1 (according to the speci\336cations contained within this section.) 72 226.33 P
+0 14 Q
+(6.1.) 72 195.67 T
+(Calling Conventions) 100 195.67 T
+109 156.5 179.5 174 R
+6 X
+V
+0 12 Q
+0 X
+(Register\050s\051) 114 160 T
+180.5 156.5 467.5 174 R
+6 X
+V
+0 X
+(      V) 186 160 T
+(alue) 211.56 160 T
+468.5 156.5 512 174 R
+6 X
+V
+0 X
+(Notes) 474 160 T
+4 10 Q
+(%msr) 114 144.33 T
+0 F
+(pr) 186 144.33 T
+(eserved by client interface) 195.82 144.33 T
+4 F
+(%cr) 114 129.33 T
+0 F
+(pr) 186 129.33 T
+(eserved by client interface) 195.82 129.33 T
+(1) 481.5 129.33 T
+4 F
+(%r1-%r2) 114 114.33 T
+0 F
+(pr) 186 114.33 T
+(eserved by client interface) 195.82 114.33 T
+4 F
+(%r3) 114 99.33 T
+0 F
+(argument array addr) 186 99.33 T
+(ess on client interface entry) 276.92 99.33 T
+(2) 481.5 99.33 T
+8 9 Q
+(T) 72 80.33 T
+(able  1.) 76.83 80.33 T
+0 10 Q
+(Register usage conventions) 112.36 80.33 T
+108 174 108 95 2 L
+V
+2 H
+0 Z
+N
+180 176 180 95.5 2 L
+V
+1 H
+N
+468 176 468 94.5 2 L
+V
+N
+513 174 513 95.5 2 L
+V
+2 H
+N
+107 175 514 175 2 L
+V
+N
+109 156.25 512 156.25 2 L
+V
+0.5 H
+N
+109 153.75 512 153.75 2 L
+V
+N
+107 140 514 140 2 L
+V
+1 H
+N
+107 125 514 125 2 L
+V
+N
+107 110 514 110 2 L
+V
+N
+179.5 95 514 95 2 L
+4 X
+V
+N
+52 395 54 441 R
+0 X
+V
+FMENDPAGE
+%%EndPage: "10" 10
+%%Page: "11" 11
+612 792 0 FMBEGINPAGE
+[0 0 0 1 0 0 0]
+[ 0 1 1 0 1 0 0]
+[ 1 0 1 0 0 1 0]
+[ 1 1 0 0 0 0 1]
+[ 1 0 0 0 0 1 1]
+[ 0 1 0 0 1 0 1]
+[ 0 0 1 0 1 1 0]
+ 7 FrameSetSepColors
+FrameNoSep
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 12 Q
+0 X
+0 0 0 1 0 0 0 K
+(          PowerPC pr) 170.39 748 T
+(ocessor binding to Open Firmwar) 263.83 748 T
+(e) 436.28 748 T
+(May 5, 1995 Revision 1.02 DRAFT) 72 36 T
+(11 of 17) 500 36 T
+72 738 540 738 2 L
+1 H
+2 Z
+N
+72 54 540 54 2 L
+N
+27 72 54 720 C
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+27 72 54 720 R
+7 X
+0 0 0 1 0 0 0 K
+V
+27 72 54 720 C
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+27 72 54 720 R
+7 X
+0 0 0 1 0 0 0 K
+V
+1 12 Q
+0 X
+(1) 36 711 T
+(2) 36 699 T
+(3) 36 687 T
+(4) 36 675 T
+(5) 36 663 T
+(6) 36 651 T
+(7) 36 639 T
+(8) 36 627 T
+(9) 36 615 T
+(10) 36 603 T
+(11) 36 591 T
+(12) 36 579 T
+(13) 36 567 T
+(14) 36 555 T
+(15) 36 543 T
+(16) 36 531 T
+(17) 36 519 T
+(18) 36 507 T
+(19) 36 495 T
+(20) 36 483 T
+(21) 36 471 T
+(22) 36 459 T
+(23) 36 447 T
+(24) 36 435 T
+(25) 36 423 T
+(26) 36 411 T
+(27) 36 399 T
+(28) 36 387 T
+(29) 36 375 T
+(30) 36 363 T
+(31) 36 351 T
+(32) 36 339 T
+(33) 36 327 T
+(34) 36 315 T
+(35) 36 303 T
+(36) 36 291 T
+(37) 36 279 T
+(38) 36 267 T
+(39) 36 255 T
+(40) 36 243 T
+(41) 36 231 T
+(42) 36 219 T
+(43) 36 207 T
+(44) 36 195 T
+(45) 36 183 T
+(46) 36 171 T
+(47) 36 159 T
+(48) 36 147 T
+(49) 36 135 T
+(50) 36 123 T
+(51) 36 111 T
+(52) 36 99 T
+(53) 36 87 T
+(54) 36 75 T
+27 72 54 720 C
+0 0 612 792 C
+0 10 Q
+0 X
+0 0 0 1 0 0 0 K
+(Notes) 72 515.33 T
+1 (1.) 108 500.33 P
+1 F
+1 (Only the non-volatile \336elds \050) 119 500.33 P
+3 F
+2.4 (cr2-cr4) 238.55 500.33 P
+1 F
+1 (\051 need to be preserved.) 280.55 500.33 P
+0 F
+1 (2.) 108 484.33 P
+1 F
+1 (As de\336ned by section 6.3.1. of [1].) 119 484.33 P
+0 F
+1 (3.) 108 468.33 P
+1 F
+1 ( Other special purpose registers) 115.5 468.33 P
+0.98 (T) 72 452.33 P
+0.98 (o invoke a client interface service, a) 77.41 452.33 P
+2 F
+0.98 (client pr) 230.87 452.33 P
+0.98 (ogram) 265.09 452.33 P
+1 F
+0.98 (constructs a client interface) 294.67 452.33 P
+2 F
+0.98 (ar) 410.77 452.33 P
+0.98 (gument array) 419.29 452.33 P
+1 F
+0.98 ( as speci\336ed in) 474.43 452.33 P
+1 (the core Open Firmware document, places its address in) 72 440.33 P
+4 F
+2.4 (%r3) 307.62 440.33 P
+1 F
+1 ( and transfers to the) 325.62 440.33 P
+2 F
+1 (client interface handler) 411.99 440.33 P
+1 F
+1 (, with) 507.47 440.33 P
+1 (the return address in) 72 428.33 P
+4 F
+2.4 (%lr) 159.87 428.33 P
+1 F
+1 (. \050A typical way of accomplishing this is to copy the) 177.32 428.33 P
+2 F
+1 (client interface handler) 399.97 428.33 P
+1 F
+1 ('s address) 495.85 428.33 P
+1 (into) 72 416.33 P
+4 F
+2.4 (%ctr) 91.06 416.33 P
+1 F
+1 (and executing a) 123.46 416.33 P
+4 F
+2.4 (bctrl) 191.72 416.33 P
+1 F
+1 (.\051) 221.72 416.33 P
+0.86 (The) 72 397.33 P
+2 F
+0.86 (client interface handler) 90.91 397.33 P
+0.86 (shall) 189.87 397.33 P
+1 F
+0.86 ( perform the service speci\336ed by the contents of the ar) 209.32 397.33 P
+0.86 (gument array that begins) 434.91 397.33 P
+1 (at the address in) 72 385.33 P
+4 F
+2.4 (%r3) 143.21 385.33 P
+1 F
+1 (, place the return value \050indicating success or failure of the attempt to invoke the client) 161.21 385.33 P
+1 (interface service\051 back into) 72 373.33 P
+4 F
+2.4 (%r3) 187.07 373.33 P
+1 F
+1 (, and return to the) 205.07 373.33 P
+2 F
+1 (client pr) 283.39 373.33 P
+1 (ogram) 317.63 373.33 P
+1 F
+1 (. This is typically done by a Branch to Link) 343.74 373.33 P
+1 (Register \050) 72 361.33 P
+4 F
+2.4 (blr) 112.16 361.33 P
+1 F
+1 (\051.) 130.16 361.33 P
+1 (The) 72 342.33 P
+2 F
+1 (client interface handler) 91.05 342.33 P
+1 (shall) 190.43 342.33 P
+1 F
+1 ( preserve the contents of the Stack Pointer \050) 209.88 342.33 P
+4 F
+2.4 (%r) 392.29 342.33 P
+0 F
+1 (1) 404.29 342.33 P
+1 F
+1 (\051, T) 409.29 342.33 P
+1 (OC Pointer \050) 424.55 342.33 P
+4 F
+2.4 (%r2) 477.66 342.33 P
+1 F
+1 (\051,) 495.66 342.33 P
+1 (Condition Register \050) 72 330.33 P
+4 F
+2.4 (%cr) 155.67 330.33 P
+1 F
+1 (\051 all non-volatile registers \050) 173.67 330.33 P
+4 F
+2.4 (%r13) 286.54 330.33 P
+3 F
+2.4 (-) 310.54 330.33 P
+4 F
+2.4 (%r31) 316.54 330.33 P
+1 F
+1 (\051 and all special purpose registers except) 340.54 330.33 P
+4 F
+2.4 (%lr) 512.22 330.33 P
+1 F
+1 (,) 529.82 330.33 P
+4 F
+2.4 (%ctr) 72 318.33 P
+1 F
+1 (and) 99.5 318.33 P
+4 F
+2.4 (%xer) 117.44 318.33 P
+1 F
+1 (.) 140.89 318.33 P
+1 (The preservation of) 72 299.33 P
+4 F
+2.4 (%r2) 155.81 299.33 P
+1 F
+1 ( allows T) 173.81 299.33 P
+1 (OC-based client programs to function correctly) 212.85 299.33 P
+1 (. Open Firmware) 406.33 299.33 P
+2 F
+1 (shall not) 479.87 299.33 P
+1 F
+1 (depend upon whether its client is T) 72 287.33 P
+1 (OC-based or not. If the client interface handler) 218.36 287.33 P
+1 (, itself, is T) 412.13 287.33 P
+1 (OC-based, it must) 460.23 287.33 P
+1 (provide for the appropriate initialization of its) 72 275.33 P
+4 F
+2.4 (%r2) 264.81 275.33 P
+1 F
+1 (.) 282.81 275.33 P
+0 14 Q
+(7.  Client Pr) 72 244.67 T
+(ogram Requir) 144.07 244.67 T
+(ements) 228.2 244.67 T
+(7.1.  Client Pr) 72 212.67 T
+(ogram Format) 154.57 212.67 T
+1 10 Q
+1 (The data format of a client program compliant with this speci\336cation) 72 195.33 P
+2 F
+1 (shall) 361.02 195.33 P
+1 F
+1 ( be either ELF \050Executable and) 380.47 195.33 P
+1 (Linkage Format\051 as de\336ned by [3][5], and extended by section) 72 183.33 P
+1 (7.1.1., or PE \050Portable Executable\051 as de\336ned by) 333.45 183.33 P
+1 ([4]. The standard ELF format contains explicit indication as to the program's execution modes \050e.g., 32- or 64-) 72 171.33 P
+1 (bit, Big- or Little-Endian\051; this version of the speci\336cation only deals with the 32-bit version \050i.e.,) 72 159.33 P
+3 F
+(ELFCLASS32) 72 147.33 T
+1 F
+(\051.) 132 147.33 T
+0 9 Q
+0.9 (Note: other client pr) 108 129 P
+0.9 (ogram formats) 188.77 129 P
+5 F
+0.9 (may) 250.05 129 P
+0 F
+0.9 ( be supported, in an implementation speci\336c man-) 265.55 129 P
+0.9 (ner) 108 119 P
+0.9 (, by an Open Firmwar) 120.17 119 P
+0.9 (e implementation.) 209.36 119 P
+1 10 Q
+1 (A standard) 72 104.33 P
+2 F
+1 (client pr) 120.1 104.33 P
+1 (ogram) 154.34 104.33 P
+1 F
+1 ( shall be statically linked, requiring no relocation of the image. The program's entry) 180.45 104.33 P
+1 (point \050) 72 92.33 P
+3 F
+2.4 (e_entry) 99.39 92.33 P
+1 F
+1 (\051) 141.39 92.33 P
+2 F
+1 (shall) 148.22 92.33 P
+1 F
+1 ( contain the address of the \336rst PowerPC instruction of the client program. It is the) 167.67 92.33 P
+1 (responsibility of the client program to establish the appropriate value of the T) 72 80.33 P
+1 (OC \050) 393.78 80.33 P
+4 F
+2.4 (%r2) 414.5 80.33 P
+1 F
+1 (\051, if necessary) 432.5 80.33 P
+1 (.) 489.66 80.33 P
+0 F
+(r) 186 689.33 T
+(esult value \050) 190.26 689.33 T
+4 F
+(true) 241.37 689.33 T
+0 F
+( or) 265.37 689.33 T
+4 F
+(false) 279.81 689.33 T
+0 F
+(\051 on client interface r) 309.81 689.33 T
+(eturn) 399.05 689.33 T
+(2) 481.5 689.33 T
+4 F
+(%r13-%r31) 114 674.33 T
+0 F
+(pr) 186 674.33 T
+(eserved by client interface) 195.82 674.33 T
+4 F
+(%sprg0-) 114 657.33 T
+(%sprg3) 114 645.33 T
+0 F
+(pr) 186 657.33 T
+(eserved by client interface) 195.82 657.33 T
+4 F
+(%fpscr) 114 630.33 T
+0 F
+(pr) 186 630.33 T
+(eserved by client interface) 195.82 630.33 T
+4 F
+(%f0-%f31) 114 613.33 T
+0 F
+(pr) 186 613.33 T
+(eserved by client interface) 195.82 613.33 T
+4 F
+(%lr) 114 596.33 T
+1 F
+(,) 131.6 596.33 T
+4 F
+(%ctr) 114 584.33 T
+1 F
+(,) 137.6 584.33 T
+4 F
+(%xer) 114 572.33 T
+0 F
+(unde\336ned) 186 596.33 T
+(Other SPRs) 114 557.33 T
+(pr) 186 557.33 T
+(eserved by client interface) 195.82 557.33 T
+1 F
+(3) 474 557.33 T
+109 701.5 179.5 719 R
+6 X
+V
+0 12 Q
+0 X
+(Register\050s\051) 114 705 T
+180.5 701.5 467.5 719 R
+6 X
+V
+0 X
+(      V) 186 705 T
+(alue) 211.56 705 T
+468.5 701.5 512 719 R
+6 X
+V
+0 X
+(Notes) 474 705 T
+8 9 Q
+(T) 72 538.33 T
+(able  1.) 76.83 538.33 T
+0 10 Q
+(Register usage conventions) 112.36 538.33 T
+108 719 108 554 2 L
+V
+2 H
+0 Z
+N
+180 721 180 552 2 L
+V
+1 H
+N
+468 721 468 552 2 L
+V
+N
+513 719 513 554 2 L
+V
+2 H
+N
+107 720 514 720 2 L
+V
+N
+179.5 700 514 700 2 L
+4 X
+V
+1 H
+N
+107 685 514 685 2 L
+0 X
+V
+N
+107 668 514 668 2 L
+V
+N
+107 641 514 641 2 L
+V
+N
+107 624 514 624 2 L
+V
+N
+107 607 514 607 2 L
+V
+N
+107 568 514 568 2 L
+V
+N
+107 553 514 553 2 L
+V
+2 H
+N
+FMENDPAGE
+%%EndPage: "11" 11
+%%Page: "12" 12
+612 792 0 FMBEGINPAGE
+[0 0 0 1 0 0 0]
+[ 0 1 1 0 1 0 0]
+[ 1 0 1 0 0 1 0]
+[ 1 1 0 0 0 0 1]
+[ 1 0 0 0 0 1 1]
+[ 0 1 0 0 1 0 1]
+[ 0 0 1 0 1 1 0]
+ 7 FrameSetSepColors
+FrameNoSep
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 12 Q
+0 X
+0 0 0 1 0 0 0 K
+(          PowerPC pr) 170.39 748 T
+(ocessor binding to Open Firmwar) 263.83 748 T
+(e) 436.28 748 T
+(May 5, 1995 Revision 1.02 DRAFT) 72 36 T
+(12 of 17) 500 36 T
+72 738 540 738 2 L
+1 H
+2 Z
+N
+72 54 540 54 2 L
+N
+27 72 54 720 C
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+27 72 54 720 R
+7 X
+0 0 0 1 0 0 0 K
+V
+27 72 54 720 C
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+27 72 54 720 R
+7 X
+0 0 0 1 0 0 0 K
+V
+1 12 Q
+0 X
+(1) 36 711 T
+(2) 36 699 T
+(3) 36 687 T
+(4) 36 675 T
+(5) 36 663 T
+(6) 36 651 T
+(7) 36 639 T
+(8) 36 627 T
+(9) 36 615 T
+(10) 36 603 T
+(11) 36 591 T
+(12) 36 579 T
+(13) 36 567 T
+(14) 36 555 T
+(15) 36 543 T
+(16) 36 531 T
+(17) 36 519 T
+(18) 36 507 T
+(19) 36 495 T
+(20) 36 483 T
+(21) 36 471 T
+(22) 36 459 T
+(23) 36 447 T
+(24) 36 435 T
+(25) 36 423 T
+(26) 36 411 T
+(27) 36 399 T
+(28) 36 387 T
+(29) 36 375 T
+(30) 36 363 T
+(31) 36 351 T
+(32) 36 339 T
+(33) 36 327 T
+(34) 36 315 T
+(35) 36 303 T
+(36) 36 291 T
+(37) 36 279 T
+(38) 36 267 T
+(39) 36 255 T
+(40) 36 243 T
+(41) 36 231 T
+(42) 36 219 T
+(43) 36 207 T
+(44) 36 195 T
+(45) 36 183 T
+(46) 36 171 T
+(47) 36 159 T
+(48) 36 147 T
+(49) 36 135 T
+(50) 36 123 T
+(51) 36 111 T
+(52) 36 99 T
+(53) 36 87 T
+(54) 36 75 T
+27 72 54 720 C
+0 0 612 792 C
+0 9 Q
+0 X
+0 0 0 1 0 0 0 K
+0.9 (Note: the entry point is the addr) 108 714 P
+0.9 (ess of the \336rst instruction of the client pr) 236.73 714 P
+0.9 (ogram, not that) 399.25 714 P
+0.9 (of a pr) 108 704 P
+0.9 (ocedur) 135.13 704 P
+0.9 (e descriptor) 161.47 704 P
+5 F
+0.9 (.) 207.61 704 P
+0 12 Q
+(7.1.1.  ELF Note Section) 72 680 T
+1 10 Q
+1.65 (Part of the process of loading a client program involves verifying its environmental requirements \050e.g., endian-) 72 663.33 P
+1.99 (ness and address translation mode\051 against the current \336rmware con\336guration. The client\325) 72 651.33 P
+1.99 (s endian-ness can be) 452.12 651.33 P
+2.79 (directly determined by examining the ELF EI-DA) 72 639.33 P
+2.79 (T) 287.62 639.33 P
+2.79 (A value; ELFDA) 292.93 639.33 P
+2.79 (T) 366.29 639.33 P
+2.79 (A2LSB \0501\051 implies Little-Endian while) 371.6 639.33 P
+1.21 (ELFDA) 72 627.33 P
+1.21 (T) 103.11 627.33 P
+1.21 (A2MSB \0502\051 implies Big-Endian. However) 108.42 627.33 P
+1.21 (, the other client requirements \050e.g., address translation mode\051) 282.58 627.33 P
+1.95 (are de\336ned by means of an ELF Note Section \050SHT_NOTE\051. The following describes the format of the Note) 72 615.33 P
+1 (Section for a client program \336le.) 72 603.33 P
+0.99 (As de\336ned by [3], an ELF \336le can be "annotated" by means of Note Sections within the executable \336le. A Note) 72 586.33 P
+1 (Section contains a "header" followed by a \050possibly null\051 "descriptor", as follows:) 72 574.33 P
+0 9 Q
+0.9 (Note: the endian format of the values corr) 108 400 P
+0.9 (esponds to the endian-ness speci\336ed by the) 275.36 400 P
+3 10 Q
+2.4 (EI-) 446.92 400 P
+2.4 (DATA) 108 390 P
+0 9 Q
+0.9 ( \336eld of the \336le.) 132 390 P
+1 10 Q
+1 (The format of a Note Section header can be described by an Open Firmware) 72 375.33 P
+3 F
+2.4 (struct) 393.69 375.33 P
+1 F
+1 ( as:) 429.69 375.33 P
+3 F
+(struct) 90 356.33 T
+(\134 Note Section header for PR*P Open Firmware) 144 356.33 T
+(/L) 90 345.33 T
+(field) 117 345.33 T
+(ns.namesz) 171 345.33 T
+(\134 length of ns.name, including NULL) 252 345.33 T
+(/L) 90 334.33 T
+(field) 117 334.33 T
+(ns.descrsz) 171 334.33 T
+(/L) 90 323.33 T
+(field) 117 323.33 T
+(ns.type) 171 323.33 T
+(0) 90 312.33 T
+(field) 117 312.33 T
+(ns.name) 171 312.33 T
+(\134 NULL-terminated, /L padded) 252 312.33 T
+1 F
+1 (The) 72 287.33 P
+3 F
+2.4 (ns.name) 91.05 287.33 P
+1 F
+1 ( \336eld of the PowerPC Open Firmware Note Section) 133.05 287.33 P
+2 F
+1 (shall) 350.64 287.33 P
+1 F
+1 ( be) 370.09 287.33 P
+3 F
+2.4 ("PowerPC") 386.53 287.33 P
+1 F
+1 (; the) 440.53 287.33 P
+3 F
+2.4 (ns.type) 462.53 287.33 P
+1 F
+1 ( \336eld) 504.53 287.33 P
+2 F
+1 (shall) 72 275.33 P
+1 F
+1 ( be) 91.45 275.33 P
+3 F
+2.4 ( 0x1275.) 104.39 275.33 P
+1 F
+1 (Following the Note Section header is a descriptor \050) 72 256.33 P
+3 F
+2.4 (desc) 283.86 256.33 P
+1 F
+1 (\051; the length \050in bytes\051 of the descriptor is speci\336ed by) 307.86 256.33 P
+1 (a word in the Note Section\325) 72 244.33 P
+1 (s header \050) 186.71 244.33 P
+3 F
+2.4 (descsz) 227.58 244.33 P
+1 F
+1 (\051. The interpretation of the descriptor depends upon the kind of) 263.58 244.33 P
+1 (Note Section in which it is contained. For Open Firmware, the format of the Note Section\325) 72 232.33 P
+1 (s descriptor can be) 448.35 232.33 P
+1 (described by an Open Firmware) 72 220.33 P
+3 F
+2.4 (struct) 207.8 220.33 P
+1 F
+1 (, as follows:) 243.8 220.33 P
+3 F
+(struct) 90 201.33 T
+(\134 Note Section descriptor for PR*P Open Firmware) 144 201.33 T
+(/L) 90 190.33 T
+(field) 117 190.33 T
+(ns.real-mode) 171 190.33 T
+(/L) 90 179.33 T
+(field) 117 179.33 T
+(ns.real-base) 171 179.33 T
+(/L) 90 168.33 T
+(field) 117 168.33 T
+(ns.real-size) 171 168.33 T
+(/L) 90 157.33 T
+(field) 117 157.33 T
+(ns.virt-base) 171 157.33 T
+(/L) 90 146.33 T
+(field) 117 146.33 T
+(ns.virt-size) 171 146.33 T
+0 14 Q
+(7.2.  Load Addr) 72 105.67 T
+(ess) 166.26 105.67 T
+1 10 Q
+1 (The load address is speci\336ed by the value of the) 72 88.33 P
+4 F
+2.4 (load-base) 276.41 88.33 P
+1 F
+1 ( Con\336guration V) 330.41 88.33 P
+1 (ariable.  The value of) 399.08 88.33 P
+0 F
+1 (load-base) 491.83 88.33 P
+1 F
+1 (shall be a real address in real mode or a virtual address in virtual mode. At least 4 MB of memory) 72 76.33 P
+2 F
+1 (shall) 486.27 76.33 P
+1 F
+1 ( be) 505.72 76.33 P
+72 72 540 720 C
+97.91 415 514.09 552 C
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+260.19 426 341.19 552 R
+7 X
+0 0 0 1 0 0 0 K
+V
+0.5 H
+0 Z
+0 X
+N
+260.19 534 341.19 534 2 L
+7 X
+V
+2 Z
+0 X
+N
+260.19 516 341.19 516 2 L
+7 X
+V
+0 X
+N
+260.19 498 341.19 498 2 L
+7 X
+V
+0 X
+N
+260.19 462 341.19 462 2 L
+7 X
+V
+0 X
+N
+3 10 Q
+(namesz) 286.19 540.17 T
+(descsz) 287.19 522 T
+(type) 292.19 505 T
+(name) 291.19 484 T
+(. . .) 287.19 473 T
+(desc) 292.19 450 T
+(. . .) 285.19 443 T
+340.91 552 358.91 507 2 L
+7 X
+V
+0 X
+N
+340.91 462 358.91 507 2 L
+7 X
+V
+0 X
+N
+(header) 365.91 505 T
+340.91 462 358.91 444 2 L
+7 X
+V
+0 X
+N
+358.91 444 340.91 426 2 L
+7 X
+V
+0 X
+N
+(descriptor) 365.91 442 T
+72 72 540 720 C
+0 0 612 792 C
+52 73 54 95 R
+0 X
+0 0 0 1 0 0 0 K
+V
+FMENDPAGE
+%%EndPage: "12" 12
+%%Page: "13" 13
+612 792 0 FMBEGINPAGE
+[0 0 0 1 0 0 0]
+[ 0 1 1 0 1 0 0]
+[ 1 0 1 0 0 1 0]
+[ 1 1 0 0 0 0 1]
+[ 1 0 0 0 0 1 1]
+[ 0 1 0 0 1 0 1]
+[ 0 0 1 0 1 1 0]
+ 7 FrameSetSepColors
+FrameNoSep
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 12 Q
+0 X
+0 0 0 1 0 0 0 K
+(          PowerPC pr) 170.39 748 T
+(ocessor binding to Open Firmwar) 263.83 748 T
+(e) 436.28 748 T
+(May 5, 1995 Revision 1.02 DRAFT) 72 36 T
+(13 of 17) 500 36 T
+72 738 540 738 2 L
+1 H
+2 Z
+N
+72 54 540 54 2 L
+N
+27 72 54 720 C
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+27 72 54 720 R
+7 X
+0 0 0 1 0 0 0 K
+V
+27 72 54 720 C
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+27 72 54 720 R
+7 X
+0 0 0 1 0 0 0 K
+V
+1 12 Q
+0 X
+(1) 36 711 T
+(2) 36 699 T
+(3) 36 687 T
+(4) 36 675 T
+(5) 36 663 T
+(6) 36 651 T
+(7) 36 639 T
+(8) 36 627 T
+(9) 36 615 T
+(10) 36 603 T
+(11) 36 591 T
+(12) 36 579 T
+(13) 36 567 T
+(14) 36 555 T
+(15) 36 543 T
+(16) 36 531 T
+(17) 36 519 T
+(18) 36 507 T
+(19) 36 495 T
+(20) 36 483 T
+(21) 36 471 T
+(22) 36 459 T
+(23) 36 447 T
+(24) 36 435 T
+(25) 36 423 T
+(26) 36 411 T
+(27) 36 399 T
+(28) 36 387 T
+(29) 36 375 T
+(30) 36 363 T
+(31) 36 351 T
+(32) 36 339 T
+(33) 36 327 T
+(34) 36 315 T
+(35) 36 303 T
+(36) 36 291 T
+(37) 36 279 T
+(38) 36 267 T
+(39) 36 255 T
+(40) 36 243 T
+(41) 36 231 T
+(42) 36 219 T
+(43) 36 207 T
+(44) 36 195 T
+(45) 36 183 T
+(46) 36 171 T
+(47) 36 159 T
+(48) 36 147 T
+(49) 36 135 T
+(50) 36 123 T
+(51) 36 111 T
+(52) 36 99 T
+(53) 36 87 T
+(54) 36 75 T
+27 72 54 720 C
+0 0 612 792 C
+1 10 Q
+0 X
+0 0 0 1 0 0 0 K
+1 (available for loading at that address. It is strongly recommended that as much memory as is practical for the) 72 713.33 P
+1 (particular system be available there, thus allow the loading of lar) 72 701.33 P
+1 (ge client programs. Note that this address) 340.94 701.33 P
+1 (represents the area into which the client program \336le will be read by) 72 689.33 P
+0 F
+1 (load) 360.22 689.33 P
+1 F
+1 (; it does not correspond to the) 378.56 689.33 P
+1 (addresses at which the program will be executed.) 72 677.33 P
+0 14 Q
+(7.3.  Initial Pr) 72 646.67 T
+(ogram State) 154.59 646.67 T
+1 10 Q
+1 (This section de\336nes the "initial program state", the execution environment that exists when the \336rst machine) 72 629.33 P
+1 (instruction of a) 72 617.33 P
+2 F
+1 (client pr) 138.05 617.33 P
+1 (ogram) 172.29 617.33 P
+1 F
+1 ( of the format speci\336ed above begins execution. Many aspects of the "initial) 198.4 617.33 P
+1 (program state" are established by) 72 605.33 P
+4 F
+2.4 (init-program) 212.44 605.33 P
+1 F
+1 (, which sets the) 284.44 605.33 P
+2 F
+1 (saved pr) 352.6 605.33 P
+1 (ogram state) 387.39 605.33 P
+1 F
+1 ( so that subsequent) 435.89 605.33 P
+1 (execution of) 72 593.33 P
+0 F
+1 (go) 126.21 593.33 P
+1 F
+1 ( will begin execution of the) 136.21 593.33 P
+2 F
+1 (client pr) 254.42 593.33 P
+1 (ogram) 288.66 593.33 P
+1 F
+1 ( with the speci\336ed environment.) 314.77 593.33 P
+0 12 Q
+(7.3.1.  Initial Register V) 72 568 T
+(alues) 192.55 568 T
+1 10 Q
+1 (Upon entry to the client program, the following registers shall contain the following values:) 72 551.33 P
+0 F
+(Notes:) 72 253.33 T
+0.85 (1) 108 238.33 P
+1 F
+0.85 (. Open Firmware will typically require the use of external interrupts for its) 113 238.33 P
+2 F
+0.85 (user interface) 424.03 238.33 P
+1 F
+0.85 (.) 480.15 238.33 P
+1 (However) 108 228.33 P
+1 (, when a) 144.25 228.33 P
+2 F
+1 (client pr) 183.35 228.33 P
+1 (ogram) 217.59 228.33 P
+1 F
+1 ( is invoked, external interrupts) 243.7 228.33 P
+2 F
+1 (shall) 373.13 228.33 P
+1 F
+1 ( be disabled. If a) 392.58 228.33 P
+2 F
+1 (cli-) 466.45 228.33 P
+1 (ent pr) 108 218.33 P
+1 (ogram) 132.24 218.33 P
+1 F
+1 ( causes the invocation of the user interface, external interrupts) 158.35 218.33 P
+2 F
+1 (may) 419.12 218.33 P
+1 F
+1 ( be re-) 435.78 218.33 P
+(enabled.) 108 208.33 T
+0 F
+1 (2) 108 192.33 P
+1 F
+1 (. The 601 processor uses a dif) 113 192.33 P
+1 (ferent mechanism for controlling the endian-mode of the) 237.96 192.33 P
+1 (processor) 108 182.33 P
+1 (. On the 601, the LE bit is contained in the HID0 register; this bit controls the) 145.77 182.33 P
+1 (endian-mode of both program and privileged states.) 108 172.33 P
+0 F
+1 (3) 108 156.33 P
+1 F
+1 (. Open Firmware does not make any assumptions about whether a client program is) 113 156.33 P
+1 (T) 108 146.33 P
+1 (OC-based or not. It is the responsibility of the client program to set) 113.93 146.33 P
+4 F
+2.4 (%r2) 398.02 146.33 P
+1 F
+1 ( to its T) 416.02 146.33 P
+1 (OC, if) 449.68 146.33 P
+(necessary) 108 136.33 T
+(.) 146.22 136.33 T
+0 F
+1 (4) 108 120.33 P
+1 F
+1 (. As de\336ned in the Section 5.6 of the PR*P speci\336cation.) 113 120.33 P
+151.66 523.5 208.84 537 R
+6 X
+V
+0 F
+0 X
+(Register\050s\051) 156.66 526.33 T
+209.84 523.5 460.84 537 R
+6 X
+V
+0 X
+(         V) 215.34 526.33 T
+(alue) 244.14 526.33 T
+461.84 523.5 496.34 537 R
+6 X
+V
+0 X
+(Notes) 467.34 526.33 T
+(%msr) 156.66 513.33 T
+(EE=0, interrupts disabled) 215.34 513.33 T
+(  1) 467.34 513.33 T
+(PR=0, supervisor state) 215.34 500.33 T
+(FP=1, \337oating point enabled) 215.34 485.33 T
+(ME=1, machine checks enabled) 215.34 470.33 T
+(FE0,FE1=0, \337oating point exceptions disabled) 215.34 455.33 T
+(IP= as speci\336ed by load module) 215.34 440.33 T
+(IR,DR, see section) 215.34 425.33 T
+(1.4.1.) 295.6 425.33 T
+(SF=0, 32-bit mode) 215.34 410.33 T
+(ILE,LE, see section) 215.34 395.33 T
+(1.2.) 300.62 395.33 T
+(  2) 467.34 395.33 T
+(%r1) 156.66 382.33 T
+(see section) 215.34 382.33 T
+(7.3.2.) 262.55 382.33 T
+(%r2) 156.66 367.33 T
+(0) 215.34 367.33 T
+(  3) 467.34 367.33 T
+(%r3) 156.66 354.33 T
+(r) 215.34 354.33 T
+(eserved) 219.6 354.33 T
+(  4) 467.34 354.33 T
+(%r4) 156.66 341.33 T
+(r) 215.34 341.33 T
+(eserved) 219.6 341.33 T
+( 4) 470.34 340 T
+(%r5) 156.66 326.33 T
+(see section) 215.34 326.33 T
+(7.3.3.) 262.55 326.33 T
+(%r6,%r7) 156.66 311.33 T
+(see section) 215.34 311.33 T
+(7.3.4.) 262.55 311.33 T
+(Others) 156.66 296.33 T
+(0) 215.34 296.33 T
+8 9 Q
+(T) 150.66 275.33 T
+(able  2.) 155.49 275.33 T
+0 10 Q
+(Initial Register V) 191.02 275.33 T
+(alues) 263.98 275.33 T
+150.66 537 150.66 291 2 L
+V
+2 H
+0 Z
+N
+209.34 539 209.34 289 2 L
+V
+1 H
+N
+461.34 539 461.34 289 2 L
+V
+N
+497.34 537 497.34 291 2 L
+V
+2 H
+N
+149.66 538 498.34 538 2 L
+V
+N
+151.66 523.25 496.34 523.25 2 L
+V
+0.5 H
+N
+151.66 520.75 496.34 520.75 2 L
+V
+N
+208.84 509 498.34 509 2 L
+4 X
+V
+1 H
+N
+208.84 494 498.34 494 2 L
+V
+N
+208.84 479 498.34 479 2 L
+V
+N
+208.84 464 498.34 464 2 L
+V
+N
+208.84 449 498.34 449 2 L
+V
+N
+208.84 434 498.34 434 2 L
+V
+N
+208.84 419 498.34 419 2 L
+V
+N
+208.84 404 498.34 404 2 L
+V
+N
+149.66 391 498.34 391 2 L
+0 X
+V
+N
+149.66 376 498.34 376 2 L
+V
+N
+149.66 363 498.34 363 2 L
+V
+N
+149.66 350 498.34 350 2 L
+V
+N
+149.66 335 498.34 335 2 L
+V
+N
+149.66 320 498.34 320 2 L
+V
+N
+149.66 305 498.34 305 2 L
+V
+N
+149.66 290 498.34 290 2 L
+V
+2 H
+N
+52 710 54 720 R
+V
+52 674 54 684 R
+V
+52 437 54 447 R
+V
+FMENDPAGE
+%%EndPage: "13" 13
+%%Page: "14" 14
+612 792 0 FMBEGINPAGE
+[0 0 0 1 0 0 0]
+[ 0 1 1 0 1 0 0]
+[ 1 0 1 0 0 1 0]
+[ 1 1 0 0 0 0 1]
+[ 1 0 0 0 0 1 1]
+[ 0 1 0 0 1 0 1]
+[ 0 0 1 0 1 1 0]
+ 7 FrameSetSepColors
+FrameNoSep
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 12 Q
+0 X
+0 0 0 1 0 0 0 K
+(          PowerPC pr) 170.39 748 T
+(ocessor binding to Open Firmwar) 263.83 748 T
+(e) 436.28 748 T
+(May 5, 1995 Revision 1.02 DRAFT) 72 36 T
+(14 of 17) 500 36 T
+72 738 540 738 2 L
+1 H
+2 Z
+N
+72 54 540 54 2 L
+N
+27 72 54 720 C
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+27 72 54 720 R
+7 X
+0 0 0 1 0 0 0 K
+V
+27 72 54 720 C
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+27 72 54 720 R
+7 X
+0 0 0 1 0 0 0 K
+V
+1 12 Q
+0 X
+(1) 36 711 T
+(2) 36 699 T
+(3) 36 687 T
+(4) 36 675 T
+(5) 36 663 T
+(6) 36 651 T
+(7) 36 639 T
+(8) 36 627 T
+(9) 36 615 T
+(10) 36 603 T
+(11) 36 591 T
+(12) 36 579 T
+(13) 36 567 T
+(14) 36 555 T
+(15) 36 543 T
+(16) 36 531 T
+(17) 36 519 T
+(18) 36 507 T
+(19) 36 495 T
+(20) 36 483 T
+(21) 36 471 T
+(22) 36 459 T
+(23) 36 447 T
+(24) 36 435 T
+(25) 36 423 T
+(26) 36 411 T
+(27) 36 399 T
+(28) 36 387 T
+(29) 36 375 T
+(30) 36 363 T
+(31) 36 351 T
+(32) 36 339 T
+(33) 36 327 T
+(34) 36 315 T
+(35) 36 303 T
+(36) 36 291 T
+(37) 36 279 T
+(38) 36 267 T
+(39) 36 255 T
+(40) 36 243 T
+(41) 36 231 T
+(42) 36 219 T
+(43) 36 207 T
+(44) 36 195 T
+(45) 36 183 T
+(46) 36 171 T
+(47) 36 159 T
+(48) 36 147 T
+(49) 36 135 T
+(50) 36 123 T
+(51) 36 111 T
+(52) 36 99 T
+(53) 36 87 T
+(54) 36 75 T
+27 72 54 720 C
+0 0 612 792 C
+0 12 Q
+0 X
+0 0 0 1 0 0 0 K
+(7.3.2.  Initial Stack) 72 712 T
+1 10 Q
+1 (Client programs) 72 695.33 P
+2 F
+1 (shall) 141.22 695.33 P
+1 F
+1 ( be invoked with a valid stack pointer \050) 160.67 695.33 P
+4 F
+2.4 (%r1) 324.76 695.33 P
+1 F
+1 (\051 with at least 32K bytes of memory available) 342.76 695.33 P
+1 (for stack growth. The stack pointer) 72 684.33 P
+2 F
+1 (shall) 220.47 684.33 P
+1 F
+1 ( be 16-byte aligned, reserving suf) 239.92 684.33 P
+1 (\336cient room for a linkage area \05032) 378.6 684.33 P
+0.93 (bytes above the address in) 72 673.33 P
+4 F
+2.24 (%r1) 184.14 673.33 P
+1 F
+0.93 (\051. If the system is executing in Real-Mode, the value in) 202.14 673.33 P
+4 F
+2.24 (%r1) 434.88 673.33 P
+1 F
+0.93 ( is a real \050hardware\051) 452.88 673.33 P
+1 (address; if in V) 72 662.33 P
+1 (irtual-Mode, the address in) 135.78 662.33 P
+4 F
+2.4 (%r1) 250.04 662.33 P
+1 F
+1 ( is a mapped virtual address.) 268.04 662.33 P
+0 12 Q
+(7.3.3.  Client Interface Handler Addr) 72 638 T
+(ess) 261.77 638 T
+1 10 Q
+1 (When client programs are invoked,) 72 621.33 P
+4 F
+2.4 (%r5) 220.3 621.33 P
+2 F
+1 (shall) 241.8 621.33 P
+1 F
+1 ( contain the address of the entry point of the) 261.25 621.33 P
+2 F
+1 (client interface) 450.11 621.33 P
+1 (handler) 72 609.33 P
+1 F
+1 (. If the system is executing in Real-Mode, the value in) 102.56 609.33 P
+4 F
+2.4 (%r5) 332.7 609.33 P
+1 F
+1 ( is a real \050hardware\051 address; if in V) 350.7 609.33 P
+1 (irtual-) 501.94 609.33 P
+1 (Mode, the address in) 72 597.33 P
+4 F
+2.4 (%r5) 161.82 597.33 P
+1 F
+1 ( is a mapped virtual address.) 179.82 597.33 P
+0 9 Q
+0.9 (Note: this addr) 108 579 P
+0.9 (ess points to the \336rst instruction of the) 167.63 579 P
+5 F
+0.9 (client interface handler) 323.83 579 P
+0 F
+0.9 (, not to a pr) 411.8 579 P
+0.9 (o-) 459.99 579 P
+0.9 (cedur) 108 569 P
+0.9 (e descriptor) 129.83 569 P
+0.9 (.) 175.64 569 P
+0 12 Q
+(7.3.4.  Client Pr) 72 545 T
+(ogram Arguments) 151.78 545 T
+1 10 Q
+1 (The calling program) 72 528.33 P
+2 F
+1 (may) 159.15 528.33 P
+1 F
+1 (pass to the client an array of bytes of arbitrary content; if this array is present, its) 179.31 528.33 P
+1 (address and length) 72 516.33 P
+2 F
+1 (shall) 151.93 516.33 P
+1 F
+1 ( be passed in registers) 171.38 516.33 P
+4 F
+2.4 (%r6) 266.64 516.33 P
+1 F
+1 ( and) 284.64 516.33 P
+4 F
+2.4 (%r7) 306.08 516.33 P
+1 F
+1 (, respectively) 324.08 516.33 P
+1 (. For programs booted directly by) 377.75 516.33 P
+1 (Open Firmware, the length of this array is zero. Secondary boot programs may use this ar) 72 504.33 P
+1 (gument array to pass) 444.81 504.33 P
+1 (information to the programs that they boot.) 72 492.33 P
+0 9 Q
+0.71 (Note: The Open Firmwar) 108 474 P
+0.71 (e standard makes no pr) 208.19 474 P
+0.71 (ovision for specifying such an array or its) 301.35 474 P
+0.9 (contents. Ther) 108 464 P
+0.9 (efor) 164.23 464 P
+0.9 (e, in the absence of implementation-dependent extensions, a client pr) 179.56 464 P
+0.9 (o-) 450.74 464 P
+0.9 (gram executed dir) 108 454 P
+0.9 (ectly fr) 179.62 454 P
+0.9 (om an Open Firmwar) 207.59 454 P
+0.9 (e implementation will not be passed such) 293.88 454 P
+0.9 (an array) 108 444 P
+0.9 (. However) 141.65 444 P
+0.9 (, intermediate boot pr) 180.71 444 P
+0.9 (ograms that simulate or pr) 267.24 444 P
+0.9 (opagate the Open) 373.66 444 P
+0.9 (Firmwar) 108 434 P
+0.9 (e client interface to the pr) 142.33 434 P
+0.9 (ograms that they load can pr) 245.38 434 P
+0.9 (ovide such an array for) 360.47 434 P
+0.9 (their clients.) 108 424 P
+0.9 (Note:) 108 407 P
+4 F
+2.16 (boot) 132.14 407 P
+0 F
+0.9 ( command line arguments, typically consisting of the name of a \336le to be) 153.74 407 P
+0.9 (loaded by a secondary boot pr) 108 397 P
+0.9 (ogram followed by \337ags selecting various secondary boot) 228.1 397 P
+0.9 (and operating system options, ar) 108 387 P
+0.9 (e pr) 236.69 387 P
+0.9 (ovided to client pr) 252.68 387 P
+0.9 (ograms via the) 324.96 387 P
+3 F
+2.16 ("bootargs") 386.41 387 P
+0 F
+0.9 ( and) 440.4 387 P
+3 F
+2.16 ("bootpath") 108 377 P
+0 F
+0.9 ( pr) 162 377 P
+0.9 (operties of the) 173.99 377 P
+3 F
+2.16 ("/chosen") 233.42 377 P
+0 F
+0.9 ( node.) 282.02 377 P
+0 14 Q
+(7.4.  Caching) 72 347.67 T
+1 10 Q
+1 (The caches of the processor) 72 330.33 P
+2 F
+1 (shall) 190.57 330.33 P
+1 F
+1 ( be enabled when the client program is called. Memory areas allocated on) 210.02 330.33 P
+1 (behalf of the client program) 72 318.33 P
+2 F
+1 (shall) 191.14 318.33 P
+1 F
+1 ( be marked as cacheable. Accesses to "I/O" devices \050especially) 210.59 318.33 P
+1 (, to devices) 470.35 318.33 P
+1 (across "bridges"\051) 72 306.33 P
+2 F
+1 (shall) 144.92 306.33 P
+1 F
+1 ( be made with the register access words \050e.g.,) 164.37 306.33 P
+4 F
+2.4 (rl@) 357.21 306.33 P
+1 F
+1 (\051.) 375.21 306.33 P
+0 14 Q
+(7.5.  Interrupts) 72 275.67 T
+1 10 Q
+1 (Open Firmware requires that interrupts be "vectored" to its handlers when it is in control of the processor; this) 72 258.33 P
+1 (will occur when the User Interface is running. Client Interface calls are considered to execute in the) 72 246.33 P
+1 (environment of the client, and hence, do not assume ownership of interrupts.) 72 234.33 P
+1 (In order for Open Firmware to process interrupts in an ef) 72 215.33 P
+1 (\336cient manner) 309.54 215.33 P
+1 (, an area of memory for the exclusive) 367.63 215.33 P
+1 (use by Open Firmware) 72 203.33 P
+2 F
+1 (shall) 169.87 203.33 P
+1 F
+1 ( be reserved by the client program at \050real\051 memory locations 0x1E0\3110x1FF) 189.32 203.33 P
+1 (.) 509.19 203.33 P
+1 (Open Firmware) 72 184.33 P
+2 F
+1 (shall) 139.54 184.33 P
+1 F
+1 ( save and restore the \336rst location of each interrupt that it wants to "take over". I.e.,) 158.99 184.33 P
+1 (whenever Open Firmware needs the use of an interrupt, it) 72 172.33 P
+2 F
+1 (shall) 315 172.33 P
+1 F
+1 ( save the current contents of the corresponding) 334.45 172.33 P
+1 (entry point and replace that location with a branch to its entry point. When Open Firmware returns control, it) 72 160.33 P
+2 F
+1 (shall) 72 148.33 P
+1 F
+1 ( restore the RAM location to its original contents.) 91.45 148.33 P
+0 14 Q
+(7.6.  Client callbacks) 72 117.67 T
+1 10 Q
+1 (This section de\336nes the callback mechanism that allows Open Firmware to access services exported to it by the) 72 100.33 P
+1 (client program. As described in section 6.3.2.6 \050and the glossary entries for) 72 88.33 P
+3 F
+2.4 (callback) 387.28 88.33 P
+1 F
+1 ( and) 435.28 88.33 P
+3 F
+2.4 ($callback) 456.72 88.33 P
+1 F
+1 (\051 in) 510.72 88.33 P
+1 ([1], the callback mechanism follows the same rules as those of Client interface calls. I.e., an) 72 76.33 P
+2 F
+1 (ar) 458.2 76.33 P
+1 (gument array) 466.72 76.33 P
+1 F
+1 ( is) 521.88 76.33 P
+FMENDPAGE
+%%EndPage: "14" 14
+%%Page: "15" 15
+612 792 0 FMBEGINPAGE
+[0 0 0 1 0 0 0]
+[ 0 1 1 0 1 0 0]
+[ 1 0 1 0 0 1 0]
+[ 1 1 0 0 0 0 1]
+[ 1 0 0 0 0 1 1]
+[ 0 1 0 0 1 0 1]
+[ 0 0 1 0 1 1 0]
+ 7 FrameSetSepColors
+FrameNoSep
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 12 Q
+0 X
+0 0 0 1 0 0 0 K
+(          PowerPC pr) 170.39 748 T
+(ocessor binding to Open Firmwar) 263.83 748 T
+(e) 436.28 748 T
+(May 5, 1995 Revision 1.02 DRAFT) 72 36 T
+(15 of 17) 500 36 T
+72 738 540 738 2 L
+1 H
+2 Z
+N
+72 54 540 54 2 L
+N
+27 72 54 720 C
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+27 72 54 720 R
+7 X
+0 0 0 1 0 0 0 K
+V
+27 72 54 720 C
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+27 72 54 720 R
+7 X
+0 0 0 1 0 0 0 K
+V
+1 12 Q
+0 X
+(1) 36 711 T
+(2) 36 699 T
+(3) 36 687 T
+(4) 36 675 T
+(5) 36 663 T
+(6) 36 651 T
+(7) 36 639 T
+(8) 36 627 T
+(9) 36 615 T
+(10) 36 603 T
+(11) 36 591 T
+(12) 36 579 T
+(13) 36 567 T
+(14) 36 555 T
+(15) 36 543 T
+(16) 36 531 T
+(17) 36 519 T
+(18) 36 507 T
+(19) 36 495 T
+(20) 36 483 T
+(21) 36 471 T
+(22) 36 459 T
+(23) 36 447 T
+(24) 36 435 T
+(25) 36 423 T
+(26) 36 411 T
+(27) 36 399 T
+(28) 36 387 T
+(29) 36 375 T
+(30) 36 363 T
+(31) 36 351 T
+(32) 36 339 T
+(33) 36 327 T
+(34) 36 315 T
+(35) 36 303 T
+(36) 36 291 T
+(37) 36 279 T
+(38) 36 267 T
+(39) 36 255 T
+(40) 36 243 T
+(41) 36 231 T
+(42) 36 219 T
+(43) 36 207 T
+(44) 36 195 T
+(45) 36 183 T
+(46) 36 171 T
+(47) 36 159 T
+(48) 36 147 T
+(49) 36 135 T
+(50) 36 123 T
+(51) 36 111 T
+(52) 36 99 T
+(53) 36 87 T
+(54) 36 75 T
+27 72 54 720 C
+0 0 612 792 C
+1 10 Q
+0 X
+0 0 0 1 0 0 0 K
+1 (constructed by Open Firmware and the address of that array is passed \050via) 72 713.33 P
+4 F
+2.4 (%r3) 383.54 713.33 P
+1 F
+1 (\051 to the client\325) 401.54 713.33 P
+1 (s callback routine;) 460.37 713.33 P
+1 (the address of the callback routine is supplied to Open Firmware by means of the) 72 701.33 P
+3 F
+2.4 (set-callback) 413.89 701.33 P
+1 F
+1 ( client call.) 485.89 701.33 P
+1 (If the system is running in Real-Mode, the address of the client callback routine) 72 682.33 P
+2 F
+1 (shall) 407.34 682.33 P
+1 F
+1 ( be a real \050hardware\051) 426.79 682.33 P
+1 (address; if it is running in V) 72 670.33 P
+1 (irtual-Mode, the client callback routine address) 189.62 670.33 P
+2 F
+1 (shall) 386.97 670.33 P
+1 F
+1 ( be a mapped virtual address.) 406.42 670.33 P
+0 12 Q
+(7.6.1.  Real-Mode physical memory management assist callback) 72 645 T
+1 10 Q
+(Once the control of physical memory is transferred to the client program, Open Firmware which is running in real-) 72 628.33 T
+(mode must use the callback service provided by the client program to allocate physical memory) 72 616.33 T
+(. Client programs) 454.62 616.33 T
+(which expect Open Firmware to operate in read-mode must implement the following physical memory management) 72 604.33 T
+(routine for Open Firmware:) 72 592.33 T
+(alloc_real_mem) 72 576.33 T
+3 F
+(IN:) 108 564.33 T
+([address] min_addr, [address] max_addr, size, mode) 144 564.33 T
+(OUT:) 108 554.33 T
+(error,) 144 554.33 T
+([address] real_addr) 180 554.33 T
+1 F
+-0.67 (This routine allocates a contiguous physical memory of) 108 540.33 P
+2 F
+-0.67 (size) 327.06 540.33 P
+1 F
+-0.67 ( bytes within the address range between) 342.06 540.33 P
+2 F
+-0.67 (min_addr) 499.28 540.33 P
+1 F
+(and) 108 528.33 T
+2 F
+(max_addr) 127.44 528.33 T
+1 F
+(.  The) 167.99 528.33 T
+2 F
+(mode) 193.54 528.33 T
+1 F
+( parameter contains the WIMGxPP bits as defined in section) 215.2 528.33 T
+(5. A non-zero error) 459.61 528.33 T
+-0.46 (code) 108 516.33 P
+2 F
+-0.46 (shall) 128.92 516.33 P
+1 F
+-0.46 ( be returned if the mapping can not be performed. If erro code is zero \050i.e. allocation is succededed\051) 148.37 516.33 P
+(the routine returns the base address of the physical memory allocated for Open Firmware.) 108 504.33 T
+0 12 Q
+(7.6.2.  V) 72 479 T
+(irtual addr) 113.22 479 T
+(ess translation assist callbacks) 169.34 479 T
+1 10 Q
+1 (As mentioned in section) 72 462.33 P
+1 (1.6., when Open Firmware is running V) 174.44 462.33 P
+1 (irtual-Mode, client programs that take over) 339.54 462.33 P
+1 (control of the system\325) 72 450.33 P
+1 (s memory management must provide a set of callbacks that implement MMU functions.) 161.94 450.33 P
+1 (This section de\336nes the input ar) 72 438.33 P
+1 (guments and return values for these callbacks. The notation follows the style) 204.31 438.33 P
+1 (used in chapter 6 of the Open Firmware speci\336cation [1].) 72 426.33 P
+3 F
+(map) 72 407.33 T
+(IN:) 108 395.33 T
+([address] phys, [address] virt, size, mode) 144 395.33 T
+(OUT:) 108 385.33 T
+(error) 144 385.33 T
+1 F
+-0.05 (This routine creates system-specific translation information; this will typically include the addition of PTEs) 108 371.33 P
+(to the HTAB. If the mapping is successfully performed, a value of zero) 108 359.33 T
+2 F
+(shall) 395.44 359.33 T
+1 F
+( be placed in the) 414.89 359.33 T
+7 F
+(ret1) 482.93 359.33 T
+1 F
+( cell of) 506.93 359.33 T
+(the argument array; a non-zero error code) 108 347.33 T
+2 F
+(shall) 277.1 347.33 T
+1 F
+( be returned \050in) 296.55 347.33 T
+7 F
+(ret1) 360.42 347.33 T
+1 F
+(\051 if the mapping can not be performed.) 384.42 347.33 T
+3 F
+(unmap) 72 331.33 T
+(IN:) 108 319.33 T
+([address] virt, size) 144 319.33 T
+(OUT:) 108 309.33 T
+7 F
+(none) 144 309.33 T
+1 F
+(The system removes any data structures \050e.g., PTEs\051 for the virtual address range.) 108 295.33 T
+3 F
+(translate) 72 279.33 T
+(IN: [address] virt) 108 267.33 T
+(OUT: error, [address] real, mode) 108 257.33 T
+1 F
+(The system attempts to compute the real address \050) 108 243.33 T
+3 F
+(real) 307.97 243.33 T
+1 F
+(\051 to which the virtual address \050) 331.97 243.33 T
+3 F
+(virt) 454.17 243.33 T
+1 F
+(\051 is mapped. If) 478.17 243.33 T
+(the translation is successful, a PTE) 108 231.33 T
+2 F
+(shall) 249.93 231.33 T
+1 F
+( be placed into the HTAB for this translation, the resulting real ad-) 269.38 231.33 T
+-0.49 (dress) 108 219.33 P
+2 F
+-0.49 (shall) 130.56 219.33 P
+1 F
+-0.49 ( be returned in) 150.01 219.33 P
+3 F
+-1.17 (real.hi,real.lo) 208.61 219.33 P
+1 F
+-0.49 ( and) 298.61 219.33 P
+7 F
+-1.17 (ret1) 317.08 219.33 P
+1 F
+-0.49 (shall be set to) 345.91 219.33 P
+4 F
+-1.17 (false) 401.19 219.33 P
+1 F
+-0.49 ( \0500\051. If the translation is not) 431.19 219.33 P
+(successful,) 108 207.33 T
+7 F
+(ret1) 154.1 207.33 T
+2 F
+(shall) 180.6 207.33 T
+1 F
+( be set to a non-zero error code.) 200.05 207.33 T
+-0.49 (This call) 108 191.33 P
+2 F
+-0.49 (shall) 144.25 191.33 P
+1 F
+-0.49 ( be made when Open Firmware handles a DSI/ISI within the User interface. A successful result) 163.7 191.33 P
+-0.38 (of the translate call indicates that Open Firmware can complete the interrupted access; a failure indicates that) 108 179.33 P
+(an access was made to an invalid address.) 108 167.33 T
+0 14 Q
+(8.  User Interface Requir) 72 136.67 T
+(ements) 220.65 136.67 T
+1 10 Q
+1 (An implementation of Open Firmware for PowerPC) 72 119.33 P
+2 F
+1 (shall) 289.81 119.33 P
+1 F
+1 ( conform to the core requirements as speci\336ed in [1]) 309.26 119.33 P
+1 (and the following PowerPC-speci\336c extensions.) 72 107.33 P
+52 254 54 264 R
+V
+52 132 54 174 R
+V
+FMENDPAGE
+%%EndPage: "15" 15
+%%Page: "16" 16
+612 792 0 FMBEGINPAGE
+[0 0 0 1 0 0 0]
+[ 0 1 1 0 1 0 0]
+[ 1 0 1 0 0 1 0]
+[ 1 1 0 0 0 0 1]
+[ 1 0 0 0 0 1 1]
+[ 0 1 0 0 1 0 1]
+[ 0 0 1 0 1 1 0]
+ 7 FrameSetSepColors
+FrameNoSep
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 12 Q
+0 X
+0 0 0 1 0 0 0 K
+(          PowerPC pr) 170.39 748 T
+(ocessor binding to Open Firmwar) 263.83 748 T
+(e) 436.28 748 T
+(May 5, 1995 Revision 1.02 DRAFT) 72 36 T
+(16 of 17) 500 36 T
+72 738 540 738 2 L
+1 H
+2 Z
+N
+72 54 540 54 2 L
+N
+27 72 54 720 C
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+27 72 54 720 R
+7 X
+0 0 0 1 0 0 0 K
+V
+27 72 54 720 C
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+27 72 54 720 R
+7 X
+0 0 0 1 0 0 0 K
+V
+1 12 Q
+0 X
+(1) 36 711 T
+(2) 36 699 T
+(3) 36 687 T
+(4) 36 675 T
+(5) 36 663 T
+(6) 36 651 T
+(7) 36 639 T
+(8) 36 627 T
+(9) 36 615 T
+(10) 36 603 T
+(11) 36 591 T
+(12) 36 579 T
+(13) 36 567 T
+(14) 36 555 T
+(15) 36 543 T
+(16) 36 531 T
+(17) 36 519 T
+(18) 36 507 T
+(19) 36 495 T
+(20) 36 483 T
+(21) 36 471 T
+(22) 36 459 T
+(23) 36 447 T
+(24) 36 435 T
+(25) 36 423 T
+(26) 36 411 T
+(27) 36 399 T
+(28) 36 387 T
+(29) 36 375 T
+(30) 36 363 T
+(31) 36 351 T
+(32) 36 339 T
+(33) 36 327 T
+(34) 36 315 T
+(35) 36 303 T
+(36) 36 291 T
+(37) 36 279 T
+(38) 36 267 T
+(39) 36 255 T
+(40) 36 243 T
+(41) 36 231 T
+(42) 36 219 T
+(43) 36 207 T
+(44) 36 195 T
+(45) 36 183 T
+(46) 36 171 T
+(47) 36 159 T
+(48) 36 147 T
+(49) 36 135 T
+(50) 36 123 T
+(51) 36 111 T
+(52) 36 99 T
+(53) 36 87 T
+(54) 36 75 T
+27 72 54 720 C
+0 0 612 792 C
+0 14 Q
+0 X
+0 0 0 1 0 0 0 K
+(8.1.  Machine Register Access) 72 710.67 T
+1 10 Q
+1 (The following) 72 693.33 P
+2 F
+1 (user interface) 133.44 693.33 P
+1 F
+1 ( commands represent PowerPC registers within the) 189.71 693.33 P
+2 F
+1 (saved pr) 403.63 693.33 P
+1 (ogram state) 438.42 693.33 P
+1 F
+1 (. Executing) 486.92 693.33 P
+1 (the command returns the saved value of the corresponding register) 72 681.33 P
+1 (. The saved value may be set by preceding) 346.78 681.33 P
+1 (the command with) 72 669.33 P
+0 F
+1 (to) 151.94 669.33 P
+1 F
+1 (; the actual registers are restored to the saved values when) 160.27 669.33 P
+0 F
+1 (go) 405.93 669.33 P
+1 F
+1 ( is executed.) 415.93 669.33 P
+0 12 Q
+(8.1.1.  Branch Unit Registers) 72 644 T
+4 10 Q
+(%cr) 72 627.33 T
+1 F
+1 (Access saved copy of Condition Register) 90 612.33 P
+1 (.) 259.15 612.33 P
+4 F
+(%ctr) 72 594.33 T
+1 F
+1 (Access saved copy of Count Register) 90 579.33 P
+1 (.) 243.59 579.33 P
+4 F
+(%lr) 72 561.33 T
+1 F
+1 (Access saved copy of Link Register) 90 546.33 P
+1 (.) 238.03 546.33 P
+4 F
+(%msr) 72 528.33 T
+1 F
+1 (Access saved copy of the low order 16 bits of SRR1 register) 90 513.33 P
+1 (.) 341.8 513.33 P
+4 F
+2.4 (%srr0) 72 495.33 P
+1 F
+1 (and) 110.4 495.33 P
+4 F
+2.4 ( %srr1) 124.84 495.33 P
+1 F
+1 (Access saved copy of Save/Restore Registers.) 90 480.33 P
+4 F
+(%pc) 72 462.33 T
+1 F
+1 (An alias of ") 90 447.33 P
+0 F
+1 (%srr0) 143.46 447.33 P
+1 F
+1 (") 171.23 447.33 P
+0 12 Q
+(8.1.2.  Fixed-Point Registers) 72 424 T
+4 10 Q
+2.4 (%r0) 72 407.33 P
+1 F
+1 (through) 98.4 407.33 P
+4 F
+2.4 ( %r31) 129.51 407.33 P
+1 F
+1 (Access saved copies of \336xed-point registers.) 90 392.33 P
+4 F
+(%xer) 72 374.33 T
+1 F
+1 (Access saved copy of XER register) 90 359.33 P
+1 (.) 235.8 359.33 P
+4 F
+2.4 (%sprg0) 72 341.33 P
+1 F
+1 (through) 116.4 341.33 P
+4 F
+2.4 ( %sprg3) 147.51 341.33 P
+1 F
+1 (Access saved copies of SPRG registers.) 90 326.33 P
+0 12 Q
+(8.1.3.  Floating-Point Registers) 72 303 T
+1 10 Q
+1 (Unlike the other registers, the \337oating point unit registers are not normally saved, since they are not used by) 72 286.33 P
+1 (Open Firmware. The following access words, therefore, access the registers directly) 72 274.33 P
+1 (.) 417.09 274.33 P
+4 F
+2.4 (%f0) 72 255.33 P
+1 F
+1 (through) 98.4 255.33 P
+4 F
+2.4 ( %f31) 129.51 255.33 P
+1 F
+1 (Access \337oating point registers.) 90 240.33 P
+4 F
+(%fpscr) 72 222.33 T
+1 F
+1 (Access Floating Point Status and Control Register) 90 207.33 P
+1 (.) 296.01 207.33 P
+1 (The following command displays the PowerPC CPU's) 72 189.33 P
+2 F
+1 (saved pr) 298.3 189.33 P
+1 (ogram state) 333.09 189.33 P
+1 F
+1 (.) 381.59 189.33 P
+4 F
+(.registers) 72 170.33 T
+0 14 Q
+(9.  Con\336guration V) 72 139.67 T
+(ariables) 185.83 139.67 T
+1 10 Q
+1 (In addition to the standard Con\336guration V) 72 122.33 P
+1 (ariables de\336ned by the core Open Firmware document [1], the) 249.66 122.33 P
+1 (following Con\336guration V) 72 110.33 P
+1 (ariables) 179.56 110.33 P
+2 F
+1 (shall) 214.16 110.33 P
+1 F
+1 ( be implemented for PowerPC:) 233.61 110.33 P
+4 F
+("little-endian?") 72 91.33 T
+FMENDPAGE
+%%EndPage: "16" 16
+%%Page: "17" 17
+612 792 0 FMBEGINPAGE
+[0 0 0 1 0 0 0]
+[ 0 1 1 0 1 0 0]
+[ 1 0 1 0 0 1 0]
+[ 1 1 0 0 0 0 1]
+[ 1 0 0 0 0 1 1]
+[ 0 1 0 0 1 0 1]
+[ 0 0 1 0 1 1 0]
+ 7 FrameSetSepColors
+FrameNoSep
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 12 Q
+0 X
+0 0 0 1 0 0 0 K
+(          PowerPC pr) 170.39 748 T
+(ocessor binding to Open Firmwar) 263.83 748 T
+(e) 436.28 748 T
+(May 5, 1995 Revision 1.02 DRAFT) 72 36 T
+(17 of 17) 500 36 T
+72 738 540 738 2 L
+1 H
+2 Z
+N
+72 54 540 54 2 L
+N
+27 72 54 720 C
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+27 72 54 720 R
+7 X
+0 0 0 1 0 0 0 K
+V
+27 72 54 720 C
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+27 72 54 720 R
+7 X
+0 0 0 1 0 0 0 K
+V
+1 12 Q
+0 X
+(1) 36 711 T
+(2) 36 699 T
+(3) 36 687 T
+(4) 36 675 T
+(5) 36 663 T
+(6) 36 651 T
+(7) 36 639 T
+(8) 36 627 T
+(9) 36 615 T
+(10) 36 603 T
+(11) 36 591 T
+(12) 36 579 T
+(13) 36 567 T
+(14) 36 555 T
+(15) 36 543 T
+(16) 36 531 T
+(17) 36 519 T
+(18) 36 507 T
+(19) 36 495 T
+(20) 36 483 T
+(21) 36 471 T
+(22) 36 459 T
+(23) 36 447 T
+(24) 36 435 T
+(25) 36 423 T
+(26) 36 411 T
+(27) 36 399 T
+(28) 36 387 T
+(29) 36 375 T
+(30) 36 363 T
+(31) 36 351 T
+(32) 36 339 T
+(33) 36 327 T
+(34) 36 315 T
+(35) 36 303 T
+(36) 36 291 T
+(37) 36 279 T
+(38) 36 267 T
+(39) 36 255 T
+(40) 36 243 T
+(41) 36 231 T
+(42) 36 219 T
+(43) 36 207 T
+(44) 36 195 T
+(45) 36 183 T
+(46) 36 171 T
+(47) 36 159 T
+(48) 36 147 T
+(49) 36 135 T
+(50) 36 123 T
+(51) 36 111 T
+(52) 36 99 T
+(53) 36 87 T
+(54) 36 75 T
+27 72 54 720 C
+0 0 612 792 C
+1 10 Q
+0 X
+0 0 0 1 0 0 0 K
+1 (This boolean variable controls the endian-mode of Open Firmware. If) 90 713.33 P
+4 F
+2.4 (true) 381.33 713.33 P
+1 F
+1 ( \050-1\051, the endian-mode is Big-) 405.33 713.33 P
+1 (Endian; if) 90 703.33 P
+4 F
+2.4 (false) 134.22 703.33 P
+1 F
+1 ( \0500\051, the endian-mode is Little-Endian. The default value of is implementation dependent.) 164.22 703.33 P
+4 F
+("real-mode?") 72 685.33 T
+1 F
+0.94 (This boolean variable controls the address translation mode of Open Firmware. If) 90 670.33 P
+4 F
+2.25 (true) 429.78 670.33 P
+1 F
+0.94 ( \050-1\051, the addressing) 453.78 670.33 P
+1 (mode is Real-Mode; if) 90 660.33 P
+4 F
+2.4 (false) 186.77 660.33 P
+1 F
+1 ( \0500\051, the addressing mode is V) 216.77 660.33 P
+1 (irtual-Mode. The default value is) 342.43 660.33 P
+1 (implementation dependent.) 90 650.33 P
+4 F
+("real-base") 72 632.33 T
+1 F
+1 (This integer variable de\336nes the starting physical address to be used by Open Firmware.) 90 617.33 P
+4 F
+("real-size") 72 599.33 T
+1 F
+1 (This integer variable de\336nes the size of the physical address space which can be used by Open Firmware.) 90 584.33 P
+4 F
+("virt-base") 72 566.33 T
+1 F
+1 (This integer variable de\336nes the starting virtual memory address which can be used by Open Firmware.) 90 551.33 P
+4 F
+("virt-size") 72 533.33 T
+1 F
+1 (This integer variable de\336nes the size of the virtual address space which can be used by Open Firmware.) 90 518.33 P
+4 F
+2.4 ("load-base") 75.5 503.33 P
+1 F
+0.84 (This integer variable de\336nes the default load address for) 90 488.33 P
+2 F
+0.84 (client pr) 324.97 488.33 P
+0.84 (ogram) 359.05 488.33 P
+1 F
+0.84 (s when using the) 385.16 488.33 P
+4 F
+2.01 (load) 457.94 488.33 P
+1 F
+0.84 ( method. The) 481.94 488.33 P
+1 (default value is implementation dependent.) 90 478.33 P
+52 457 54 485 R
+V
+FMENDPAGE
+%%EndPage: "17" 17
+%%Trailer
+%%BoundingBox: 0 0 612 792
+%%PageOrder: Ascend
+%%Pages: 17
+%%DocumentFonts: Times-Bold
+%%+ Times-Roman
+%%+ Times-Italic
+%%+ Courier
+%%+ Courier-Bold
+%%+ Times-BoldItalic
+%%+ Palatino-Roman
+%%+ Courier-Oblique
+%%+ Helvetica-Bold
+%%EOF

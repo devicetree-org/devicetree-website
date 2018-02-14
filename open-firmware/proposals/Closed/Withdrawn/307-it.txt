@@ -1,0 +1,97 @@
+Date: Fri, 19 Jan 1996 15:47:27 -0800
+From: dmk@uask4it-223 (David Kahn)
+Subject: Item #307: PPC -- Real Base, Load Base comments
+
+
+Asign this stuff an item number and record it.
+
+-David
+
+----- Begin Included Message -----
+
+From owner-p1275-wg@risc.sps.mot.com  Fri Jan 19 11:35:38 1996
+To: p1275-wg@prombo.eng.sun.com
+Cc: kingman@austin.ibm.com
+Subject: Item #307: Real Base, Load Base, etc.
+Date: Fri, 19 Jan 96 10:27:58 -0600
+From: "John A. Kingman" <kingman@austin.ibm.com>
+
+	To: Mail list p1275-wg
+	From: "John A. Kingman" <kingman@austin.ibm.com>
+
+Hi Jordan,
+
+Here's a note from John O'Quin which outlines his concerns about the way
+these variables are defined and used.  John's references are to the PowerPC
+processor binding Version 1.7 which I passed out at the meeting.
+
+If you could help me come up with some verbiage to clarify or replace 
+what's there, I'd appreciate it.  
+
+Thanks,
+
+John Kingman
+~ ~_~ ~ ~ ~_~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ 
+  | | ___ | |_ ._ _   | John A. Kingman        
+ _| |/ . \| . || ' |  | Kingman@Austin.IBM.com 
+ \__/\___/|_|_||_|_|  | IBM RSD, Austin, Texas 
+:::::::::::::::::::::  referenced message  ::::::::::::::::::::::::::
+Date:  Thu, 18 Jan 96 11:36:02 -0600
+From: "John O'Quin" <oquin%austin.RSCS@AUSVM6.AUSTIN.IBM.COM>
+To: "John Kingman" <kingman%austin.RSCS@AUSVM6.AUSTIN.IBM.COM>
+Cc: "Todd Moore" <tmmoore@AUSVM6.AUSTIN.IBM.COM>,
+        "Bob Coffin" <coffin@AUSVM6.AUSTIN.IBM.COM>
+Subject: Item #307: PowerPC Processor Binding Comments/Concerns
+
+PowerPC processor binding to: IEEE Std 1275-1994 Standard for Boot
+(Initialization, Configuration) Firmware: Revision 1.7 dated January
+11, 1996
+
+I have the following comments/concerns about the above identified Open
+Firmware binding:
+
+
+1) Page 9 lines 25-27: This is wrong. It also conflicts with page 16
+lines 10-12. It should say something like OF may choose its base
+location if real-base is -1 and real-mode? is true or virt-base is -1
+and real-mode? is false.
+
+2) Page 9 lines 20-27: Please indicate what happens if real-size or
+virt-size are -1. I expect to set real-mode? to true and real-base to
+an address, but want to be able to set real-size to -1. Is this ok?
+
+3) Page 9 lines 20-27, or page 21 lines 19-25: Need to indicate the
+relationship between real-base/virt-base and load-base. I recommend
+that we say that load-base is ignored if it conflicts with
+real-base/virt-base. Note that real-base/virt-base can be specified in
+the ELF header, but load-base can not so this conflict is very likely
+and OSes can not prevent.
+
+4) Page 13, lines 6-23: Need to add max_number_cpus property that
+defines the maximum number of processors that this platform is designed
+for. This would indicate the difference between a uniprocessor platform
+and an SMP enabled platform with one processor.
+
+5) Page 13, lines 6-23: Need optional slot-names property for external
+labeling. See the PCI binding. The bit mask should be based on cpu reg
+value. (Ron had indicated adding another field to the cpu name property
+for this.)
+
+-- 
+
+ Regards,
+
+  John O'Quin
+
+  International Business Machines    Internet: oquin@austin.ibm.com
+  11400 Burnet Rd                    IBM LAN:  oquin@austin.ibm.com
+  Austin, TX 78758-3493 U.S.A.       IBM VNET: OQUIN at AUSVM6
+  RISC System/6000 Division          Phone: (512) 838-3904 T/L 678-3904 
+  Bldg 905, Room 8A-021, ZIP 9582    FAX: (512) 838-0735 T/L 678-0735
+
+
+----- End Included Message -----
+
+
+[ P1275 Item #307 -- Received: Fri Jan 19 15:47:11 PST 1996 ]
+

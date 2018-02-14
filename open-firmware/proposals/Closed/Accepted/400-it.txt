@@ -1,0 +1,41 @@
+Date: Fri, 3 Jan 1997 15:07:16 -0800
+From: dmk@uask4it-95 (David Kahn)
+Subject: Item #400: PCI Bus v2.0: Typo in 4.1.2.1
+
+
+P1275 Openboot Working Group Proposal -- Proposal #:400 Ver 1
+
+Title:          PCI Bus Binding v2.0: Typos in section 4.1.2.1
+
+Author:         David Kahn
+
+Date:           Jan 3, 1997
+
+Ed/Tech:        Editorial
+
+Synopsis:       Bits 5 and 6 of the status register are reversed in the text.
+
+Doc & Version:  PCI Bus Binding v2.0
+
+Problem:
+	On page 15 of the PCI Bus Binding Rev. 2.0, line 51:
+	
+	..."66 MHz Capable" bit (bit 6) in the function's Status Register...
+	
+	But the PCI spec. v2.1 (page 192) says that it is bit 5.
+	
+	On line 55, "udf-supported" says bit 5 but the PCI spec. says it's 
+	bit 6.
+
+
+Proposal:       
+
+	The bits are reversed according to "PCI System Architecture",
+	3rd edition.  Fix the typo in section 4.1.2.1,  page 15, lines
+	51 and 55.
+
+	udf-supported is bit 6, 66 Mhz Capable is bit 5.
+
+
+[ P1275 Item #400 -- Received: Fri Jan  3 15:07:03 PST 1997 ]
+

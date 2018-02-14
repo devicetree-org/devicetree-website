@@ -1,0 +1,41 @@
+Date: Tue, 26 Sep 1995 15:01:19 -0700
+From: brianh@lexus.West.Sun.COM (Brian Horn)
+Subject: Item #291: PPC default mode for map not defined
+
+P1275 Open Firmware Working Group Proposal -- Proposal #291 Ver 1.0
+
+Title:		Specifiy default MMU mode for "map" method
+
+Author:		Brian.Horn@west.sun.com
+
+Date:		09/26/95
+
+Ed/Tech:	Editorial & Technical
+
+Synopsis:	The default MMU mode is left unspecified
+
+Doc & Version:	PowerPC processor binding to IEEE1275-1994 Rev 1.5 draft
+
+Problem:	Using the default MMU mode parameter is impossible
+
+Proposal:	
+		In section 7.1 MMU related methods add the following:
+
+		If the mode parameter for the map method is -1 (indication
+		the default value ought to be used) then the default
+		value shall be W=0 I=0 M=1 G=0 PP=00.
+
+		Further on line 26/27 (the line numbers don't line up).
+		the text that reads "mapped by map-in shall be marked
+		as Cache-Inhibited, Guarded." should be ammended by
+		appending "and Memory-coherent".
+
+		As a side note I would propose an errata to the base
+		document (IEEE1275-1994) on page 158 (glossary) w.r.t.
+		the method "map".  It states "If mode is -1, an
+		implementation-dependant default mode is used."  I propose
+		that it be changed to "If all mode cells have the value
+		-1, a MMU specific default mode is used."
+
+[ P1275 Item #291 -- Received: Tue Sep 26 14:58:30 PDT 1995 ]
+

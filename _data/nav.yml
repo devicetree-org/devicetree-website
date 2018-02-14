@@ -1,7 +1,17 @@
-search: true
+# Navigation Configuration
+# - Add your navigation structure to this File
+# - Toggle brand image output
+# - Toggle Search Bar.
+# Search Config
+search:
+    enabled: true
+    label: DeviceTree
+
 brand:
     text: DeviceTree
-    image: /assets/images/device-tree-logo.png
+    image: 
+        enabled: true
+        name: device-tree-logo.png
     url: /
 pages:
     - title: Home

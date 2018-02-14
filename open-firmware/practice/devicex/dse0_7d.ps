@@ -1,0 +1,8659 @@
+%!PS-Adobe-3.0
+%%BoundingBox: (atend)
+%%Pages: (atend)
+%%PageOrder: (atend)
+%%DocumentFonts: (atend)
+%%Creator: Frame 4.0
+%%DocumentData: Clean7Bit
+%%EndComments
+%%BeginProlog
+%
+% Frame ps_prolog 4.0, for use with Frame 4.0 products
+% This ps_prolog file is Copyright (c) 1986-1993 Frame Technology
+% Corporation.  All rights reserved.  This ps_prolog file may be
+% freely copied and distributed in conjunction with documents created
+% using FrameMaker, FrameBuilder and FrameViewer as long as this 
+% copyright notice is preserved.
+%
+% Frame products normally print colors as their true color on a color printer
+% or as shades of gray, based on luminance, on a black-and white printer. The
+% following flag, if set to True, forces all non-white colors to print as pure
+% black. This has no effect on bitmap images.
+/FMPrintAllColorsAsBlack             false def
+%
+% Frame products can either set their own line screens or use a printer's 
+% default settings. Three flags below control this separately for no 
+% separations, spot separations and process separations. If a flag
+% is true, then the default printer settings will not be changed. If it is
+% false, Frame products will use their own settings from a table based on
+% the printer's resolution.
+/FMUseDefaultNoSeparationScreen      true  def
+/FMUseDefaultSpotSeparationScreen    true  def
+/FMUseDefaultProcessSeparationScreen false def
+%
+% For any given PostScript printer resolution, Frame products have two sets of 
+% screen angles and frequencies for printing process separations, which are 
+% recomended by Adobe. The following variable chooses the higher frequencies
+% when set to true or the lower frequencies when set to false. This is only
+% effective if the appropriate FMUseDefault...SeparationScreen flag is false.
+/FMUseHighFrequencyScreens true def
+%
+% PostScript Level 2 printers contain an "Accurate Screens" feature which can
+% improve process separation rendering at the expense of compute time. This 
+% flag is ignored by PostScript Level 1 printers.
+/FMUseAcccurateScreens true def
+%
+% The following PostScript procedure defines the spot function that Frame
+% products will use for process separations. You may un-comment-out one of
+% the alternative functions below, or use your own.
+%
+% Dot function
+/FMSpotFunction {abs exch abs 2 copy add 1 gt 
+		{1 sub dup mul exch 1 sub dup mul add 1 sub }
+		{dup mul exch dup mul add 1 exch sub }ifelse } def
+%
+% Line function
+% /FMSpotFunction { pop } def
+%
+% Elipse function
+% /FMSpotFunction { dup 5 mul 8 div mul exch dup mul exch add 
+%		sqrt 1 exch sub } def
+%
+%
+/FMversion (4.0) def 
+/FMLevel1 /languagelevel where {pop languagelevel} {1} ifelse 2 lt def
+/FMPColor
+	FMLevel1 {
+		false
+		/colorimage where {pop pop true} if
+	} {
+		true
+	} ifelse
+def
+/FrameDict 400 dict def 
+systemdict /errordict known not {/errordict 10 dict def
+		errordict /rangecheck {stop} put} if
+% The readline in PS 23.0 doesn't recognize cr's as nl's on AppleTalk
+FrameDict /tmprangecheck errordict /rangecheck get put 
+errordict /rangecheck {FrameDict /bug true put} put 
+FrameDict /bug false put 
+mark 
+% Some PS machines read past the CR, so keep the following 3 lines together!
+currentfile 5 string readline
+00
+0000000000
+cleartomark 
+errordict /rangecheck FrameDict /tmprangecheck get put 
+FrameDict /bug get { 
+	/readline {
+		/gstring exch def
+		/gfile exch def
+		/gindex 0 def
+		{
+			gfile read pop 
+			dup 10 eq {exit} if 
+			dup 13 eq {exit} if 
+			gstring exch gindex exch put 
+			/gindex gindex 1 add def 
+		} loop
+		pop 
+		gstring 0 gindex getinterval true 
+		} bind def
+	} if
+/FMshowpage /showpage load def
+/FMquit /quit load def
+/FMFAILURE { 
+	dup = flush 
+	FMshowpage 
+	/Helvetica findfont 12 scalefont setfont
+	72 200 moveto
+	show FMshowpage 
+	FMquit 
+	} def 
+/FMVERSION {
+	FMversion ne {
+		(Frame product version does not match ps_prolog!) FMFAILURE
+		} if
+	} def 
+/FMBADEPSF { 
+	(PostScript Lang. Ref. Man., 2nd Ed., H.2.4 says EPS must not call X              )
+	dup dup (X) search pop exch pop exch pop length 
+	4 -1 roll 
+	putinterval 
+	FMFAILURE
+	} def
+/FMLOCAL {
+	FrameDict begin
+	0 def 
+	end 
+	} def 
+/concatprocs
+	{
+	/proc2 exch cvlit def/proc1 exch cvlit def/newproc proc1 length proc2 length add array def
+	newproc 0 proc1 putinterval newproc proc1 length proc2 putinterval newproc cvx
+}def
+FrameDict begin 
+/FMnone 0 def
+/FMcyan 1 def
+/FMmagenta 2 def
+/FMyellow 3 def
+/FMblack 4 def
+/FMcustom 5 def
+/FrameNegative false def 
+/FrameSepIs FMnone def 
+/FrameSepBlack 0 def
+/FrameSepYellow 0 def
+/FrameSepMagenta 0 def
+/FrameSepCyan 0 def
+/FrameSepRed 1 def
+/FrameSepGreen 1 def
+/FrameSepBlue 1 def
+/FrameCurGray 1 def
+/FrameCurPat null def
+/FrameCurColors [ 0 0 0 1 0 0 0 ] def 
+/FrameColorEpsilon .001 def	
+/eqepsilon {		
+	sub dup 0 lt {neg} if
+	FrameColorEpsilon le
+} bind def
+/FrameCmpColorsCMYK { 
+	2 copy 0 get exch 0 get eqepsilon {
+		2 copy 1 get exch 1 get eqepsilon {
+			2 copy 2 get exch 2 get eqepsilon {
+				3 get exch 3 get eqepsilon
+			} {pop pop false} ifelse
+		}{pop pop false} ifelse
+	} {pop pop false} ifelse
+} bind def
+/FrameCmpColorsRGB { 
+	2 copy 4 get exch 0 get eqepsilon {
+		2 copy 5 get exch 1 get eqepsilon {
+			6 get exch 2 get eqepsilon
+		}{pop pop false} ifelse
+	} {pop pop false} ifelse
+} bind def
+/RGBtoCMYK { 
+	1 exch sub 
+	3 1 roll 
+	1 exch sub 
+	3 1 roll 
+	1 exch sub 
+	3 1 roll 
+	3 copy 
+	2 copy 
+	le { pop } { exch pop } ifelse 
+	2 copy 
+	le { pop } { exch pop } ifelse 
+	dup dup dup 
+	6 1 roll 
+	4 1 roll 
+	7 1 roll 
+	sub 
+	6 1 roll 
+	sub 
+	5 1 roll 
+	sub 
+	4 1 roll 
+} bind def
+/CMYKtoRGB { 
+	dup dup 4 -1 roll add 						  
+	5 1 roll 3 -1 roll add 						  
+	4 1 roll add 								  
+	1 exch sub dup 0 lt {pop 0} if 3 1 roll 	  
+	1 exch sub dup 0 lt {pop 0} if exch 	      
+	1 exch sub dup 0 lt {pop 0} if exch	  		  
+} bind def
+/FrameSepInit {
+	1.0 RealSetgray
+} bind def
+/FrameSetSepColor { 
+	/FrameSepBlue exch def
+	/FrameSepGreen exch def
+	/FrameSepRed exch def
+	/FrameSepBlack exch def
+	/FrameSepYellow exch def
+	/FrameSepMagenta exch def
+	/FrameSepCyan exch def
+	/FrameSepIs FMcustom def
+	setCurrentScreen	
+} bind def
+/FrameSetCyan {
+	/FrameSepBlue 1.0 def
+	/FrameSepGreen 1.0 def
+	/FrameSepRed 0.0 def
+	/FrameSepBlack 0.0 def
+	/FrameSepYellow 0.0 def
+	/FrameSepMagenta 0.0 def
+	/FrameSepCyan 1.0 def
+	/FrameSepIs FMcyan def
+	setCurrentScreen	
+} bind def
+ 
+/FrameSetMagenta {
+	/FrameSepBlue 1.0 def
+	/FrameSepGreen 0.0 def
+	/FrameSepRed 1.0 def
+	/FrameSepBlack 0.0 def
+	/FrameSepYellow 0.0 def
+	/FrameSepMagenta 1.0 def
+	/FrameSepCyan 0.0 def
+	/FrameSepIs FMmagenta def
+	setCurrentScreen
+} bind def
+ 
+/FrameSetYellow {
+	/FrameSepBlue 0.0 def
+	/FrameSepGreen 1.0 def
+	/FrameSepRed 1.0 def
+	/FrameSepBlack 0.0 def
+	/FrameSepYellow 1.0 def
+	/FrameSepMagenta 0.0 def
+	/FrameSepCyan 0.0 def
+	/FrameSepIs FMyellow def
+	setCurrentScreen
+} bind def
+ 
+/FrameSetBlack {
+	/FrameSepBlue 0.0 def
+	/FrameSepGreen 0.0 def
+	/FrameSepRed 0.0 def
+	/FrameSepBlack 1.0 def
+	/FrameSepYellow 0.0 def
+	/FrameSepMagenta 0.0 def
+	/FrameSepCyan 0.0 def
+	/FrameSepIs FMblack def
+	setCurrentScreen
+} bind def
+ 
+/FrameNoSep { 
+	/FrameSepIs FMnone def
+	setCurrentScreen
+} bind def
+/FrameSetSepColors { 
+	FrameDict begin
+	[ exch 1 add 1 roll ]
+	/FrameSepColors  
+	exch def end
+	} bind def
+/FrameColorInSepListCMYK { 
+	FrameSepColors {  
+       		exch dup 3 -1 roll 
+       		FrameCmpColorsCMYK 
+       		{ pop true exit } if
+    	} forall 
+	dup true ne {pop false} if
+	} bind def
+/FrameColorInSepListRGB { 
+	FrameSepColors {  
+       		exch dup 3 -1 roll 
+       		FrameCmpColorsRGB 
+       		{ pop true exit } if
+    	} forall 
+	dup true ne {pop false} if
+	} bind def
+/RealSetgray /setgray load def
+/RealSetrgbcolor /setrgbcolor load def
+/RealSethsbcolor /sethsbcolor load def
+end 
+/setgray { 
+	FrameDict begin
+	FrameSepIs FMnone eq
+		{ RealSetgray } 
+		{ 
+		FrameSepIs FMblack eq 
+			{ RealSetgray } 
+			{ FrameSepIs FMcustom eq 
+			  FrameSepRed 0 eq and
+			  FrameSepGreen 0 eq and
+			  FrameSepBlue 0 eq and {
+			  	RealSetgray
+			  } {
+				1 RealSetgray pop 
+			  } ifelse
+			} ifelse
+		} ifelse
+	end
+} bind def
+/setrgbcolor { 
+	FrameDict begin
+	FrameSepIs FMnone eq
+	{  RealSetrgbcolor }
+	{
+		3 copy [ 4 1 roll ] 
+		FrameColorInSepListRGB
+		{
+				FrameSepBlue eq exch 
+			 	FrameSepGreen eq and exch 
+			 	FrameSepRed eq and
+			 	{ 0 } { 1 } ifelse
+		}
+		{
+			FMPColor {
+				RealSetrgbcolor
+				currentcmykcolor
+			} {
+				RGBtoCMYK
+			} ifelse
+			FrameSepIs FMblack eq
+			{1.0 exch sub 4 1 roll pop pop pop} {
+			FrameSepIs FMyellow eq
+			{pop 1.0 exch sub 3 1 roll pop pop} {
+			FrameSepIs FMmagenta eq
+			{pop pop 1.0 exch sub exch pop } {
+			FrameSepIs FMcyan eq
+			{pop pop pop 1.0 exch sub } 
+			{pop pop pop pop 1} ifelse } ifelse } ifelse } ifelse 
+		} ifelse
+		RealSetgray
+	} 
+	ifelse
+	end
+} bind def
+/sethsbcolor {
+	FrameDict begin
+	FrameSepIs FMnone eq 
+	{ RealSethsbcolor } 
+	{
+		RealSethsbcolor 
+		currentrgbcolor  
+		setrgbcolor 
+	} 
+	ifelse
+	end
+} bind def
+FrameDict begin
+/setcmykcolor where {
+	pop /RealSetcmykcolor /setcmykcolor load def
+} {
+	/RealSetcmykcolor {
+		4 1 roll
+		3 { 3 index add 0 max 1 min 1 exch sub 3 1 roll} repeat 
+		setrgbcolor pop
+	} bind def
+} ifelse
+userdict /setcmykcolor { 
+		FrameDict begin
+		FrameSepIs FMnone eq
+		{ RealSetcmykcolor } 
+		{
+			4 copy [ 5 1 roll ]
+			FrameColorInSepListCMYK
+			{
+				FrameSepBlack eq exch 
+				FrameSepYellow eq and exch 
+				FrameSepMagenta eq and exch 
+				FrameSepCyan eq and 
+				{ 0 } { 1 } ifelse
+			}
+			{
+				FrameSepIs FMblack eq
+				{1.0 exch sub 4 1 roll pop pop pop} {
+				FrameSepIs FMyellow eq
+				{pop 1.0 exch sub 3 1 roll pop pop} {
+				FrameSepIs FMmagenta eq
+				{pop pop 1.0 exch sub exch pop } {
+				FrameSepIs FMcyan eq
+				{pop pop pop 1.0 exch sub } 
+				{pop pop pop pop 1} ifelse } ifelse } ifelse } ifelse 
+			} ifelse
+			RealSetgray
+		}
+		ifelse
+		end
+	} bind put
+FMLevel1 not { 
+	
+	/patProcDict 5 dict dup begin
+		<0f1e3c78f0e1c387> { 3 setlinewidth -1 -1 moveto 9 9 lineto stroke 
+											4 -4 moveto 12 4 lineto stroke
+											-4 4 moveto 4 12 lineto stroke} bind def
+		<0f87c3e1f0783c1e> { 3 setlinewidth -1 9 moveto 9 -1 lineto stroke 
+											-4 4 moveto 4 -4 lineto stroke
+											4 12 moveto 12 4 lineto stroke} bind def
+		<8142241818244281> { 1 setlinewidth -1 9 moveto 9 -1 lineto stroke
+											-1 -1 moveto 9 9 lineto stroke } bind def
+		<03060c183060c081> { 1 setlinewidth -1 -1 moveto 9 9 lineto stroke 
+											4 -4 moveto 12 4 lineto stroke
+											-4 4 moveto 4 12 lineto stroke} bind def
+		<8040201008040201> { 1 setlinewidth -1 9 moveto 9 -1 lineto stroke 
+											-4 4 moveto 4 -4 lineto stroke
+											4 12 moveto 12 4 lineto stroke} bind def
+	end def
+	/patDict 15 dict dup begin
+		/PatternType 1 def		
+		/PaintType 2 def		
+		/TilingType 3 def		
+		/BBox [ 0 0 8 8 ] def 	
+		/XStep 8 def			
+		/YStep 8 def			
+		/PaintProc {
+			begin
+			patProcDict bstring known {
+				patProcDict bstring get exec
+			} {
+				8 8 true [1 0 0 -1 0 8] bstring imagemask
+			} ifelse
+			end
+		} bind def
+	end def
+} if
+/combineColor {
+    FrameSepIs FMnone eq
+	{
+		graymode FMLevel1 or not {
+			
+			[/Pattern [/DeviceCMYK]] setcolorspace
+			FrameCurColors 0 4 getinterval aload pop FrameCurPat setcolor
+		} {
+			FrameCurColors 3 get 1.0 ge {
+				FrameCurGray RealSetgray
+			} {
+				FMPColor graymode and {
+					0 1 3 { 
+						FrameCurColors exch get
+						1 FrameCurGray sub mul
+					} for
+					RealSetcmykcolor
+				} {
+					4 1 6 {
+						FrameCurColors exch get
+						graymode {
+							1 exch sub 1 FrameCurGray sub mul 1 exch sub
+						} {
+							1.0 lt {FrameCurGray} {1} ifelse
+						} ifelse
+					} for
+					RealSetrgbcolor
+				} ifelse
+			} ifelse
+		} ifelse
+	} { 
+		FrameCurColors 0 4 getinterval aload
+		FrameColorInSepListCMYK {
+			FrameSepBlack eq exch 
+			FrameSepYellow eq and exch 
+			FrameSepMagenta eq and exch 
+			FrameSepCyan eq and
+			FrameSepIs FMcustom eq and
+			{ FrameCurGray } { 1 } ifelse
+		} {
+			FrameSepIs FMblack eq
+			{FrameCurGray 1.0 exch sub mul 1.0 exch sub 4 1 roll pop pop pop} {
+			FrameSepIs FMyellow eq
+			{pop FrameCurGray 1.0 exch sub mul 1.0 exch sub 3 1 roll pop pop} {
+			FrameSepIs FMmagenta eq
+			{pop pop FrameCurGray 1.0 exch sub mul 1.0 exch sub exch pop } {
+			FrameSepIs FMcyan eq
+			{pop pop pop FrameCurGray 1.0 exch sub mul 1.0 exch sub } 
+			{pop pop pop pop 1} ifelse } ifelse } ifelse } ifelse 
+		} ifelse
+		graymode FMLevel1 or not {
+			
+			[/Pattern [/DeviceGray]] setcolorspace
+			FrameCurPat setcolor
+		} { 
+			graymode not FMLevel1 and {
+				
+				dup 1 lt {pop FrameCurGray} if
+			} if
+			RealSetgray
+		} ifelse
+	} ifelse
+} bind def
+/savematrix {
+	orgmatrix currentmatrix pop
+	} bind def
+/restorematrix {
+	orgmatrix setmatrix
+	} bind def
+/dmatrix matrix def
+/dpi    72 0 dmatrix defaultmatrix dtransform
+    dup mul exch   dup mul add   sqrt def
+	
+/freq dpi dup 72 div round dup 0 eq {pop 1} if 8 mul div def
+/sangle 1 0 dmatrix defaultmatrix dtransform exch atan def
+/dpiranges   [  2540    2400    1693     1270    1200     635      600      0      ] def
+/CMLowFreqs  [ 100.402  94.8683 89.2289 100.402  94.8683  66.9349  63.2456 47.4342 ] def
+/YLowFreqs   [  95.25   90.0    84.65    95.25   90.0     70.5556  66.6667 50.0    ] def
+/KLowFreqs   [  89.8026 84.8528 79.8088  89.8026 84.8528  74.8355  70.7107 53.033  ] def
+/CLowAngles  [  71.5651 71.5651 71.5651 71.5651  71.5651  71.5651  71.5651 71.5651 ] def
+/MLowAngles  [  18.4349 18.4349 18.4349 18.4349  18.4349  18.4349  18.4349 18.4349 ] def
+/YLowTDot    [  true    true    false    true    true     false    false   false   ] def
+/CMHighFreqs [ 133.87  126.491 133.843  108.503 102.523  100.402   94.8683 63.2456 ] def
+/YHighFreqs  [ 127.0   120.0   126.975  115.455 109.091   95.25    90.0    60.0    ] def
+/KHighFreqs  [ 119.737 113.137 119.713  128.289 121.218   89.8026  84.8528 63.6395 ] def
+/CHighAngles [  71.5651 71.5651 71.5651  70.0169 70.0169  71.5651  71.5651 71.5651 ] def
+/MHighAngles [  18.4349 18.4349 18.4349  19.9831 19.9831  18.4349  18.4349 18.4349 ] def
+/YHighTDot   [  false   false   true     false   false    true     true    false   ] def
+/PatFreq     [	10.5833 10.0     9.4055  10.5833 10.0	  10.5833  10.0	   9.375   ] def
+/screenIndex {
+	0 1 dpiranges length 1 sub { dup dpiranges exch get 1 sub dpi le {exit} {pop} ifelse } for
+} bind def
+/getCyanScreen {
+	FMUseHighFrequencyScreens { CHighAngles CMHighFreqs} {CLowAngles CMLowFreqs} ifelse
+		screenIndex dup 3 1 roll get 3 1 roll get /FMSpotFunction load
+} bind def
+/getMagentaScreen {
+	FMUseHighFrequencyScreens { MHighAngles CMHighFreqs } {MLowAngles CMLowFreqs} ifelse
+		screenIndex dup 3 1 roll get 3 1 roll get /FMSpotFunction load
+} bind def
+/getYellowScreen {
+	FMUseHighFrequencyScreens { YHighTDot YHighFreqs} { YLowTDot YLowFreqs } ifelse
+		screenIndex dup 3 1 roll get 3 1 roll get { 3 div
+			{2 { 1 add 2 div 3 mul dup floor sub 2 mul 1 sub exch} repeat
+			FMSpotFunction } } {/FMSpotFunction load } ifelse
+			0.0 exch
+} bind def
+/getBlackScreen  {
+	FMUseHighFrequencyScreens { KHighFreqs } { KLowFreqs } ifelse
+		screenIndex get 45.0 /FMSpotFunction load 
+} bind def
+/getSpotScreen {
+	getBlackScreen
+} bind def
+/getCompositeScreen {
+	getBlackScreen
+} bind def
+/FMSetScreen 
+	FMLevel1 { /setscreen load 
+	}{ {
+		8 dict begin
+		/HalftoneType 1 def
+		/SpotFunction exch def
+		/Angle exch def
+		/Frequency exch def
+		/AccurateScreens FMUseAcccurateScreens def
+		currentdict end sethalftone
+	} bind } ifelse
+def
+/setDefaultScreen {
+	FMPColor {
+		orgrxfer cvx orggxfer cvx orgbxfer cvx orgxfer cvx setcolortransfer
+	}
+	{
+		orgxfer cvx settransfer
+	} ifelse
+	orgfreq organgle orgproc cvx setscreen
+} bind def
+/setCurrentScreen {
+	FrameSepIs FMnone eq {
+		FMUseDefaultNoSeparationScreen {
+			setDefaultScreen
+		} {
+			getCompositeScreen FMSetScreen
+		} ifelse
+	} {
+		FrameSepIs FMcustom eq {
+			FMUseDefaultSpotSeparationScreen {
+				setDefaultScreen
+			} {
+				getSpotScreen FMSetScreen
+			} ifelse
+		} {
+			FMUseDefaultProcessSeparationScreen {
+				setDefaultScreen
+			} {
+				FrameSepIs FMcyan eq {
+					getCyanScreen FMSetScreen
+				} {
+					FrameSepIs FMmagenta eq {
+						getMagentaScreen FMSetScreen
+					} {
+						FrameSepIs FMyellow eq {
+							getYellowScreen FMSetScreen
+						} {
+							getBlackScreen FMSetScreen
+						} ifelse
+					} ifelse
+				} ifelse
+			} ifelse
+		} ifelse
+	} ifelse 
+} bind def
+end
+	/gstring FMLOCAL
+	/gfile FMLOCAL
+	/gindex FMLOCAL
+	/orgrxfer FMLOCAL
+	/orggxfer FMLOCAL
+	/orgbxfer FMLOCAL
+	/orgxfer FMLOCAL
+	/orgproc FMLOCAL
+	/orgrproc FMLOCAL
+	/orggproc FMLOCAL
+	/orgbproc FMLOCAL
+	/organgle FMLOCAL
+	/orgrangle FMLOCAL
+	/orggangle FMLOCAL
+	/orgbangle FMLOCAL
+	/orgfreq FMLOCAL
+	/orgrfreq FMLOCAL
+	/orggfreq FMLOCAL
+	/orgbfreq FMLOCAL
+	/yscale FMLOCAL
+	/xscale FMLOCAL
+	/edown FMLOCAL
+	/manualfeed FMLOCAL
+	/paperheight FMLOCAL
+	/paperwidth FMLOCAL
+/FMDOCUMENT { 
+	array /FMfonts exch def 
+	/#copies exch def
+	FrameDict begin
+	0 ne /manualfeed exch def
+	/paperheight exch def
+	/paperwidth exch def
+	0 ne /FrameNegative exch def 
+	0 ne /edown exch def 
+	/yscale exch def
+	/xscale exch def
+	FMLevel1 {
+		manualfeed {setmanualfeed} if
+		/FMdicttop countdictstack 1 add def 
+		/FMoptop count def 
+		setpapername 
+		manualfeed {true} {papersize} ifelse 
+		{manualpapersize} {false} ifelse 
+		{desperatepapersize} {false} ifelse 
+		{ (Can't select requested paper size for Frame print job!) FMFAILURE } if
+		count -1 FMoptop {pop pop} for
+		countdictstack -1 FMdicttop {pop end} for 
+		}
+		{{1 dict dup /PageSize [paperwidth paperheight]put setpagedevice}stopped
+		{ (Can't select requested paper size for Frame print job!) FMFAILURE } if
+		 {1 dict dup /ManualFeed manualfeed put setpagedevice } stopped pop }
+	ifelse 
+	
+	FMPColor {
+		currentcolorscreen
+			cvlit /orgproc exch def
+				  /organgle exch def 
+				  /orgfreq exch def
+			cvlit /orgbproc exch def
+				  /orgbangle exch def 
+				  /orgbfreq exch def
+			cvlit /orggproc exch def
+				  /orggangle exch def 
+				  /orggfreq exch def
+			cvlit /orgrproc exch def
+				  /orgrangle exch def 
+				  /orgrfreq exch def
+			currentcolortransfer 
+			FrameNegative {
+				1 1 4 { 
+					pop { 1 exch sub } concatprocs 4 1 roll
+				} for
+				4 copy
+				setcolortransfer
+			} if
+			cvlit /orgxfer exch def
+			cvlit /orgbxfer exch def
+			cvlit /orggxfer exch def
+			cvlit /orgrxfer exch def
+	} {
+		currentscreen 
+			cvlit /orgproc exch def
+				  /organgle exch def 
+				  /orgfreq exch def
+				  
+		currenttransfer 
+		FrameNegative {
+			{ 1 exch sub } concatprocs
+			dup settransfer
+		} if 
+		cvlit /orgxfer exch def
+	} ifelse
+	end 
+} def 
+/pagesave FMLOCAL
+/orgmatrix FMLOCAL
+/landscape FMLOCAL
+/pwid FMLOCAL
+/FMBEGINPAGE { 
+	FrameDict begin 
+	/pagesave save def
+	3.86 setmiterlimit
+	/landscape exch 0 ne def
+	landscape { 
+		90 rotate 0 exch dup /pwid exch def neg translate pop 
+	}{
+		pop /pwid exch def
+	} ifelse
+	edown { [-1 0 0 1 pwid 0] concat } if
+	0 0 moveto paperwidth 0 lineto paperwidth paperheight lineto 
+	0 paperheight lineto 0 0 lineto 1 setgray fill
+	xscale yscale scale
+	/orgmatrix matrix def
+	gsave 
+} def 
+/FMENDPAGE {
+	grestore 
+	pagesave restore
+	end 
+	showpage
+	} def 
+/FMFONTDEFINE { 
+	FrameDict begin
+	findfont 
+	ReEncode 
+	1 index exch 
+	definefont 
+	FMfonts 3 1 roll 
+	put
+	end 
+	} def 
+/FMFILLS {
+	FrameDict begin dup
+	array /fillvals exch def
+	dict /patCache exch def
+	end 
+	} def 
+/FMFILL {
+	FrameDict begin
+	 fillvals 3 1 roll put
+	end 
+	} def 
+/FMNORMALIZEGRAPHICS { 
+	newpath
+	0.0 0.0 moveto
+	1 setlinewidth
+	0 setlinecap
+	0 0 0 sethsbcolor
+	0 setgray 
+	} bind def
+	/fx FMLOCAL
+	/fy FMLOCAL
+	/fh FMLOCAL
+	/fw FMLOCAL
+	/llx FMLOCAL
+	/lly FMLOCAL
+	/urx FMLOCAL
+	/ury FMLOCAL
+/FMBEGINEPSF { 
+	end 
+	/FMEPSF save def 
+	/showpage {} def 
+% See Adobe's "PostScript Language Reference Manual, 2nd Edition", page 714.
+% "...the following operators MUST NOT be used in an EPS file:" (emphasis ours)
+	/banddevice {(banddevice) FMBADEPSF} def
+	/clear {(clear) FMBADEPSF} def
+	/cleardictstack {(cleardictstack) FMBADEPSF} def 
+	/copypage {(copypage) FMBADEPSF} def
+	/erasepage {(erasepage) FMBADEPSF} def
+	/exitserver {(exitserver) FMBADEPSF} def
+	/framedevice {(framedevice) FMBADEPSF} def
+	/grestoreall {(grestoreall) FMBADEPSF} def
+	/initclip {(initclip) FMBADEPSF} def
+	/initgraphics {(initgraphics) FMBADEPSF} def
+	/initmatrix {(initmatrix) FMBADEPSF} def
+	/quit {(quit) FMBADEPSF} def
+	/renderbands {(renderbands) FMBADEPSF} def
+	/setglobal {(setglobal) FMBADEPSF} def
+	/setpagedevice {(setpagedevice) FMBADEPSF} def
+	/setshared {(setshared) FMBADEPSF} def
+	/startjob {(startjob) FMBADEPSF} def
+	/lettertray {(lettertray) FMBADEPSF} def
+	/letter {(letter) FMBADEPSF} def
+	/lettersmall {(lettersmall) FMBADEPSF} def
+	/11x17tray {(11x17tray) FMBADEPSF} def
+	/11x17 {(11x17) FMBADEPSF} def
+	/ledgertray {(ledgertray) FMBADEPSF} def
+	/ledger {(ledger) FMBADEPSF} def
+	/legaltray {(legaltray) FMBADEPSF} def
+	/legal {(legal) FMBADEPSF} def
+	/statementtray {(statementtray) FMBADEPSF} def
+	/statement {(statement) FMBADEPSF} def
+	/executivetray {(executivetray) FMBADEPSF} def
+	/executive {(executive) FMBADEPSF} def
+	/a3tray {(a3tray) FMBADEPSF} def
+	/a3 {(a3) FMBADEPSF} def
+	/a4tray {(a4tray) FMBADEPSF} def
+	/a4 {(a4) FMBADEPSF} def
+	/a4small {(a4small) FMBADEPSF} def
+	/b4tray {(b4tray) FMBADEPSF} def
+	/b4 {(b4) FMBADEPSF} def
+	/b5tray {(b5tray) FMBADEPSF} def
+	/b5 {(b5) FMBADEPSF} def
+	FMNORMALIZEGRAPHICS 
+	[/fy /fx /fh /fw /ury /urx /lly /llx] {exch def} forall 
+	fx fw 2 div add fy fh 2 div add  translate
+	rotate
+	fw 2 div neg fh 2 div neg translate
+	fw urx llx sub div fh ury lly sub div scale 
+	llx neg lly neg translate 
+	/FMdicttop countdictstack 1 add def 
+	/FMoptop count def 
+	} bind def
+/FMENDEPSF {
+	count -1 FMoptop {pop pop} for 
+	countdictstack -1 FMdicttop {pop end} for 
+	FMEPSF restore
+	FrameDict begin 
+	} bind def
+FrameDict begin 
+/setmanualfeed {
+%%BeginFeature *ManualFeed True
+	 statusdict /manualfeed true put
+%%EndFeature
+	} bind def
+/max {2 copy lt {exch} if pop} bind def
+/min {2 copy gt {exch} if pop} bind def
+/inch {72 mul} def
+/pagedimen { 
+	paperheight sub abs 16 lt exch 
+	paperwidth sub abs 16 lt and
+	{/papername exch def} {pop} ifelse
+	} bind def
+	/papersizedict FMLOCAL
+/setpapername { 
+	/papersizedict 14 dict def 
+	papersizedict begin
+	/papername /unknown def 
+		/Letter 8.5 inch 11.0 inch pagedimen
+		/LetterSmall 7.68 inch 10.16 inch pagedimen
+		/Tabloid 11.0 inch 17.0 inch pagedimen
+		/Ledger 17.0 inch 11.0 inch pagedimen
+		/Legal 8.5 inch 14.0 inch pagedimen
+		/Statement 5.5 inch 8.5 inch pagedimen
+		/Executive 7.5 inch 10.0 inch pagedimen
+		/A3 11.69 inch 16.5 inch pagedimen
+		/A4 8.26 inch 11.69 inch pagedimen
+		/A4Small 7.47 inch 10.85 inch pagedimen
+		/B4 10.125 inch 14.33 inch pagedimen
+		/B5 7.16 inch 10.125 inch pagedimen
+	end
+	} bind def
+/papersize {
+	papersizedict begin
+		/Letter {lettertray letter} def
+		/LetterSmall {lettertray lettersmall} def
+		/Tabloid {11x17tray 11x17} def
+		/Ledger {ledgertray ledger} def
+		/Legal {legaltray legal} def
+		/Statement {statementtray statement} def
+		/Executive {executivetray executive} def
+		/A3 {a3tray a3} def
+		/A4 {a4tray a4} def
+		/A4Small {a4tray a4small} def
+		/B4 {b4tray b4} def
+		/B5 {b5tray b5} def
+		/unknown {unknown} def
+	papersizedict dup papername known {papername} {/unknown} ifelse get
+	end
+	statusdict begin stopped end 
+	} bind def
+/manualpapersize {
+	papersizedict begin
+		/Letter {letter} def
+		/LetterSmall {lettersmall} def
+		/Tabloid {11x17} def
+		/Ledger {ledger} def
+		/Legal {legal} def
+		/Statement {statement} def
+		/Executive {executive} def
+		/A3 {a3} def
+		/A4 {a4} def
+		/A4Small {a4small} def
+		/B4 {b4} def
+		/B5 {b5} def
+		/unknown {unknown} def
+	papersizedict dup papername known {papername} {/unknown} ifelse get
+	end
+	stopped 
+	} bind def
+/desperatepapersize {
+	statusdict /setpageparams known
+		{
+		paperwidth paperheight 0 1 
+		statusdict begin
+		{setpageparams} stopped 
+		end
+		} {true} ifelse 
+	} bind def
+/DiacriticEncoding [
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+/.notdef /.notdef /.notdef /.notdef /space /exclam /quotedbl
+/numbersign /dollar /percent /ampersand /quotesingle /parenleft
+/parenright /asterisk /plus /comma /hyphen /period /slash /zero /one
+/two /three /four /five /six /seven /eight /nine /colon /semicolon
+/less /equal /greater /question /at /A /B /C /D /E /F /G /H /I /J /K
+/L /M /N /O /P /Q /R /S /T /U /V /W /X /Y /Z /bracketleft /backslash
+/bracketright /asciicircum /underscore /grave /a /b /c /d /e /f /g /h
+/i /j /k /l /m /n /o /p /q /r /s /t /u /v /w /x /y /z /braceleft /bar
+/braceright /asciitilde /.notdef /Adieresis /Aring /Ccedilla /Eacute
+/Ntilde /Odieresis /Udieresis /aacute /agrave /acircumflex /adieresis
+/atilde /aring /ccedilla /eacute /egrave /ecircumflex /edieresis
+/iacute /igrave /icircumflex /idieresis /ntilde /oacute /ograve
+/ocircumflex /odieresis /otilde /uacute /ugrave /ucircumflex
+/udieresis /dagger /.notdef /cent /sterling /section /bullet
+/paragraph /germandbls /registered /copyright /trademark /acute
+/dieresis /.notdef /AE /Oslash /.notdef /.notdef /.notdef /.notdef
+/yen /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+/ordfeminine /ordmasculine /.notdef /ae /oslash /questiondown
+/exclamdown /logicalnot /.notdef /florin /.notdef /.notdef
+/guillemotleft /guillemotright /ellipsis /.notdef /Agrave /Atilde
+/Otilde /OE /oe /endash /emdash /quotedblleft /quotedblright
+/quoteleft /quoteright /.notdef /.notdef /ydieresis /Ydieresis
+/fraction /currency /guilsinglleft /guilsinglright /fi /fl /daggerdbl
+/periodcentered /quotesinglbase /quotedblbase /perthousand
+/Acircumflex /Ecircumflex /Aacute /Edieresis /Egrave /Iacute
+/Icircumflex /Idieresis /Igrave /Oacute /Ocircumflex /.notdef /Ograve
+/Uacute /Ucircumflex /Ugrave /dotlessi /circumflex /tilde /macron
+/breve /dotaccent /ring /cedilla /hungarumlaut /ogonek /caron
+] def
+/ReEncode { 
+	dup 
+	length 
+	dict begin 
+	{
+	1 index /FID ne 
+		{def} 
+		{pop pop} ifelse 
+	} forall 
+	0 eq {/Encoding DiacriticEncoding def} if 
+	currentdict 
+	end 
+	} bind def
+FMPColor 
+	
+	{
+	/BEGINBITMAPCOLOR { 
+		BITMAPCOLOR} def
+	/BEGINBITMAPCOLORc { 
+		BITMAPCOLORc} def
+	/BEGINBITMAPTRUECOLOR { 
+		BITMAPTRUECOLOR } def
+	/BEGINBITMAPTRUECOLORc { 
+		BITMAPTRUECOLORc } def
+	}
+	
+	{
+	/BEGINBITMAPCOLOR { 
+		BITMAPGRAY} def
+	/BEGINBITMAPCOLORc { 
+		BITMAPGRAYc} def
+	/BEGINBITMAPTRUECOLOR { 
+		BITMAPTRUEGRAY } def
+	/BEGINBITMAPTRUECOLORc { 
+		BITMAPTRUEGRAYc } def
+	}
+ifelse
+/K { 
+	FMPrintAllColorsAsBlack {
+		dup 1 eq 2 index 1 eq and 3 index 1 eq and not
+			{7 {pop} repeat 0 0 0 1 0 0 0} if
+	} if 
+	FrameCurColors astore 
+	pop combineColor
+} bind def
+/graymode true def
+	/bwidth FMLOCAL
+	/bpside FMLOCAL
+	/bstring FMLOCAL
+	/onbits FMLOCAL
+	/offbits FMLOCAL
+	/xindex FMLOCAL
+	/yindex FMLOCAL
+	/x FMLOCAL
+	/y FMLOCAL
+/setPatternMode {
+	FMLevel1 {
+		/bwidth  exch def
+		/bpside  exch def
+		/bstring exch def
+		/onbits 0 def  /offbits 0 def
+		freq sangle landscape {90 add} if 
+			{/y exch def
+			 /x exch def
+			 /xindex x 1 add 2 div bpside mul cvi def
+			 /yindex y 1 add 2 div bpside mul cvi def
+			 bstring yindex bwidth mul xindex 8 idiv add get
+			 1 7 xindex 8 mod sub bitshift and 0 ne FrameNegative {not} if
+			 {/onbits  onbits  1 add def 1}
+			 {/offbits offbits 1 add def 0}
+			 ifelse
+			}
+			setscreen
+		offbits offbits onbits add div FrameNegative {1.0 exch sub} if
+		/FrameCurGray exch def
+	} { 
+		pop pop
+		dup patCache exch known {
+			patCache exch get
+		} { 
+			dup
+			patDict /bstring 3 -1 roll put
+			patDict 
+			9 PatFreq screenIndex get div dup matrix scale
+			makepattern
+			dup 
+			patCache 4 -1 roll 3 -1 roll put
+		} ifelse
+		/FrameCurGray 0 def
+		/FrameCurPat exch def
+	} ifelse
+	/graymode false def
+	combineColor
+} bind def
+/setGrayScaleMode {
+	graymode not {
+		/graymode true def
+		FMLevel1 {
+			setCurrentScreen
+		} if
+	} if
+	/FrameCurGray exch def
+	combineColor
+} bind def
+/normalize {
+	transform round exch round exch itransform
+	} bind def
+/dnormalize {
+	dtransform round exch round exch idtransform
+	} bind def
+/lnormalize { 
+	0 dtransform exch cvi 2 idiv 2 mul 1 add exch idtransform pop
+	} bind def
+/H { 
+	lnormalize setlinewidth
+	} bind def
+/Z {
+	setlinecap
+	} bind def
+	
+/PFill {
+	graymode FMLevel1 or not {
+		gsave 1 setgray eofill grestore
+	} if
+} bind def
+/PStroke {
+	graymode FMLevel1 or not {
+		gsave 1 setgray stroke grestore
+	} if
+	stroke
+} bind def
+	/fillvals FMLOCAL
+/X { 
+	fillvals exch get
+	dup type /stringtype eq
+	{8 1 setPatternMode} 
+	{setGrayScaleMode}
+	ifelse
+	} bind def
+/V { 
+	PFill gsave eofill grestore
+	} bind def
+/Vclip {
+	clip
+	} bind def
+/Vstrk {
+	currentlinewidth exch setlinewidth PStroke setlinewidth
+	} bind def
+/N { 
+	PStroke
+	} bind def
+/Nclip {
+	strokepath clip newpath
+	} bind def
+/Nstrk {
+	currentlinewidth exch setlinewidth PStroke setlinewidth
+	} bind def
+/M {newpath moveto} bind def
+/E {lineto} bind def
+/D {curveto} bind def
+/O {closepath} bind def
+	/n FMLOCAL
+/L { 
+ 	/n exch def
+	newpath
+	normalize
+	moveto 
+	2 1 n {pop normalize lineto} for
+	} bind def
+/Y { 
+	L 
+	closepath
+	} bind def
+	/x1 FMLOCAL
+	/x2 FMLOCAL
+	/y1 FMLOCAL
+	/y2 FMLOCAL
+/R { 
+	/y2 exch def
+	/x2 exch def
+	/y1 exch def
+	/x1 exch def
+	x1 y1
+	x2 y1
+	x2 y2
+	x1 y2
+	4 Y 
+	} bind def
+	/rad FMLOCAL
+/rarc 
+	{rad 
+	 arcto
+	} bind def
+/RR { 
+	/rad exch def
+	normalize
+	/y2 exch def
+	/x2 exch def
+	normalize
+	/y1 exch def
+	/x1 exch def
+	mark
+	newpath
+	{
+	x1 y1 rad add moveto
+	x1 y2 x2 y2 rarc
+	x2 y2 x2 y1 rarc
+	x2 y1 x1 y1 rarc
+	x1 y1 x1 y2 rarc
+	closepath
+	} stopped {x1 y1 x2 y2 R} if 
+	cleartomark
+	} bind def
+/RRR { 
+	/rad exch def
+	normalize /y4 exch def /x4 exch def
+	normalize /y3 exch def /x3 exch def
+	normalize /y2 exch def /x2 exch def
+	normalize /y1 exch def /x1 exch def
+	newpath
+	normalize moveto 
+	mark
+	{
+	x2 y2 x3 y3 rarc
+	x3 y3 x4 y4 rarc
+	x4 y4 x1 y1 rarc
+	x1 y1 x2 y2 rarc
+	closepath
+	} stopped
+	 {x1 y1 x2 y2 x3 y3 x4 y4 newpath moveto lineto lineto lineto closepath} if
+	cleartomark
+	} bind def
+/C { 
+	grestore
+	gsave
+	R 
+	clip
+	setCurrentScreen
+} bind def
+/CP { 
+	grestore
+	gsave
+	Y 
+	clip
+	setCurrentScreen
+} bind def
+	/FMpointsize FMLOCAL
+/F { 
+	FMfonts exch get
+	FMpointsize scalefont
+	setfont
+	} bind def
+/Q { 
+	/FMpointsize exch def
+	F 
+	} bind def
+/T { 
+	moveto show
+	} bind def
+/RF { 
+	rotate
+	0 ne {-1 1 scale} if
+	} bind def
+/TF { 
+	gsave
+	moveto 
+	RF
+	show
+	grestore
+	} bind def
+/P { 
+	moveto
+	0 32 3 2 roll widthshow
+	} bind def
+/PF { 
+	gsave
+	moveto 
+	RF
+	0 32 3 2 roll widthshow
+	grestore
+	} bind def
+/S { 
+	moveto
+	0 exch ashow
+	} bind def
+/SF { 
+	gsave
+	moveto
+	RF
+	0 exch ashow
+	grestore
+	} bind def
+/B { 
+	moveto
+	0 32 4 2 roll 0 exch awidthshow
+	} bind def
+/BF { 
+	gsave
+	moveto
+	RF
+	0 32 4 2 roll 0 exch awidthshow
+	grestore
+	} bind def
+/G { 
+	gsave
+	newpath
+	normalize translate 0.0 0.0 moveto 
+	dnormalize scale 
+	0.0 0.0 1.0 5 3 roll arc 
+	closepath 
+	PFill fill
+	grestore
+	} bind def
+/Gstrk {
+	savematrix
+    newpath
+    2 index 2 div add exch 3 index 2 div sub exch 
+    normalize 2 index 2 div sub exch 3 index 2 div add exch 
+    translate
+    scale 
+    0.0 0.0 1.0 5 3 roll arc 
+    restorematrix
+    currentlinewidth exch setlinewidth PStroke setlinewidth
+    } bind def
+/Gclip { 
+	newpath
+	savematrix
+	normalize translate 0.0 0.0 moveto 
+	dnormalize scale 
+	0.0 0.0 1.0 5 3 roll arc 
+	closepath 
+	clip newpath
+	restorematrix
+	} bind def
+/GG { 
+	gsave
+	newpath
+	normalize translate 0.0 0.0 moveto 
+	rotate 
+	dnormalize scale 
+	0.0 0.0 1.0 5 3 roll arc 
+	closepath
+	PFill
+	fill
+	grestore
+	} bind def
+/GGclip { 
+	savematrix
+	newpath
+    normalize translate 0.0 0.0 moveto 
+    rotate 
+    dnormalize scale 
+    0.0 0.0 1.0 5 3 roll arc 
+    closepath
+	clip newpath
+	restorematrix
+	} bind def
+/GGstrk { 
+	savematrix
+    newpath
+    normalize translate 0.0 0.0 moveto 
+    rotate 
+    dnormalize scale 
+    0.0 0.0 1.0 5 3 roll arc 
+    closepath 
+	restorematrix
+    currentlinewidth exch setlinewidth PStroke setlinewidth
+	} bind def
+/A { 
+	gsave
+	savematrix
+	newpath
+	2 index 2 div add exch 3 index 2 div sub exch 
+	normalize 2 index 2 div sub exch 3 index 2 div add exch 
+	translate 
+	scale 
+	0.0 0.0 1.0 5 3 roll arc 
+	restorematrix
+	PStroke
+	grestore
+	} bind def
+/Aclip {
+	newpath
+	savematrix
+	normalize translate 0.0 0.0 moveto 
+	dnormalize scale 
+	0.0 0.0 1.0 5 3 roll arc 
+	closepath 
+	strokepath clip newpath
+	restorematrix
+} bind def
+/Astrk {
+	Gstrk
+} bind def
+/AA { 
+	gsave
+	savematrix
+	newpath
+	
+	3 index 2 div add exch 4 index 2 div sub exch 
+	
+	normalize 3 index 2 div sub exch 4 index 2 div add exch
+	translate 
+	rotate 
+	scale 
+	0.0 0.0 1.0 5 3 roll arc 
+	restorematrix
+	PStroke
+	grestore
+	} bind def
+/AAclip {
+	savematrix
+	newpath
+    normalize translate 0.0 0.0 moveto 
+    rotate 
+    dnormalize scale 
+    0.0 0.0 1.0 5 3 roll arc 
+    closepath
+	strokepath clip newpath
+	restorematrix
+} bind def
+/AAstrk {
+	GGstrk
+} bind def
+	/x FMLOCAL
+	/y FMLOCAL
+	/w FMLOCAL
+	/h FMLOCAL
+	/xx FMLOCAL
+	/yy FMLOCAL
+	/ww FMLOCAL
+	/hh FMLOCAL
+	/FMsaveobject FMLOCAL
+	/FMoptop FMLOCAL
+	/FMdicttop FMLOCAL
+/BEGINPRINTCODE { 
+	/FMdicttop countdictstack 1 add def 
+	/FMoptop count 7 sub def 
+	/FMsaveobject save def
+	userdict begin 
+	/showpage {} def 
+	FMNORMALIZEGRAPHICS 
+	3 index neg 3 index neg translate
+	} bind def
+/ENDPRINTCODE {
+	count -1 FMoptop {pop pop} for 
+	countdictstack -1 FMdicttop {pop end} for 
+	FMsaveobject restore 
+	} bind def
+/gn { 
+	0 
+	{	46 mul 
+		cf read pop 
+		32 sub 
+		dup 46 lt {exit} if 
+		46 sub add 
+		} loop
+	add 
+	} bind def
+	/str FMLOCAL
+/cfs { 
+	/str sl string def 
+	0 1 sl 1 sub {str exch val put} for 
+	str def 
+	} bind def
+/ic [ 
+	0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0223
+	0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0223
+	0
+	{0 hx} {1 hx} {2 hx} {3 hx} {4 hx} {5 hx} {6 hx} {7 hx} {8 hx} {9 hx}
+	{10 hx} {11 hx} {12 hx} {13 hx} {14 hx} {15 hx} {16 hx} {17 hx} {18 hx}
+	{19 hx} {gn hx} {0} {1} {2} {3} {4} {5} {6} {7} {8} {9} {10} {11} {12}
+	{13} {14} {15} {16} {17} {18} {19} {gn} {0 wh} {1 wh} {2 wh} {3 wh}
+	{4 wh} {5 wh} {6 wh} {7 wh} {8 wh} {9 wh} {10 wh} {11 wh} {12 wh}
+	{13 wh} {14 wh} {gn wh} {0 bl} {1 bl} {2 bl} {3 bl} {4 bl} {5 bl} {6 bl}
+	{7 bl} {8 bl} {9 bl} {10 bl} {11 bl} {12 bl} {13 bl} {14 bl} {gn bl}
+	{0 fl} {1 fl} {2 fl} {3 fl} {4 fl} {5 fl} {6 fl} {7 fl} {8 fl} {9 fl}
+	{10 fl} {11 fl} {12 fl} {13 fl} {14 fl} {gn fl}
+	] def
+	/sl FMLOCAL
+	/val FMLOCAL
+	/ws FMLOCAL
+	/im FMLOCAL
+	/bs FMLOCAL
+	/cs FMLOCAL
+	/len FMLOCAL
+	/pos FMLOCAL
+/ms { 
+	/sl exch def 
+	/val 255 def 
+	/ws cfs 
+	/im cfs 
+	/val 0 def 
+	/bs cfs 
+	/cs cfs 
+	} bind def
+400 ms 
+/ip { 
+	is 
+	0 
+	cf cs readline pop 
+	{	ic exch get exec 
+		add 
+		} forall 
+	pop 
+	
+	} bind def
+/rip { 
+	   
+	  
+	  bis ris copy pop 
+      is
+      0
+      cf cs readline pop 
+      {       ic exch get exec 
+              add 
+              } forall 
+	  pop pop 
+	  ris gis copy pop 
+	  dup is exch 
+	  
+      cf cs readline pop 
+      {       ic exch get exec 
+              add 
+              } forall 
+	  pop pop
+	  gis bis copy pop 
+	  dup add is exch 
+	  
+      cf cs readline pop 
+      {       ic exch get exec 
+              add 
+              } forall 
+      pop 
+      
+      } bind def
+/wh { 
+	/len exch def 
+	/pos exch def 
+	ws 0 len getinterval im pos len getinterval copy pop
+	pos len 
+	} bind def
+/bl { 
+	/len exch def 
+	/pos exch def 
+	bs 0 len getinterval im pos len getinterval copy pop
+	pos len 
+	} bind def
+/s1 1 string def
+/fl { 
+	/len exch def 
+	/pos exch def 
+	/val cf s1 readhexstring pop 0 get def
+	pos 1 pos len add 1 sub {im exch val put} for
+	pos len 
+	} bind def
+/hx { 
+	3 copy getinterval 
+	cf exch readhexstring pop pop 
+	} bind def
+	/h FMLOCAL
+	/w FMLOCAL
+	/d FMLOCAL
+	/lb FMLOCAL
+	/bitmapsave FMLOCAL
+	/is FMLOCAL
+	/cf FMLOCAL
+/wbytes { 
+      dup dup
+      24 eq { pop pop 3 mul }
+      { 8 eq {pop} {1 eq {7 add 8 idiv} {3 add 4 idiv} ifelse} ifelse } ifelse
+	} bind def
+/BEGINBITMAPBWc { 
+	1 {} COMMONBITMAPc
+	} bind def
+/BEGINBITMAPGRAYc { 
+	8 {} COMMONBITMAPc
+	} bind def
+/BEGINBITMAP2BITc { 
+	2 {} COMMONBITMAPc
+	} bind def
+/COMMONBITMAPc { 
+		 
+	/r exch def
+	/d exch def
+	gsave
+	
+	3 index 2 div add exch	
+	4 index 2 div add exch	
+	translate		
+	rotate			
+	1 index 2 div neg	
+	1 index 2 div neg	
+	translate		
+	scale			
+	/h exch def /w exch def
+	/lb w d wbytes def 
+	sl lb lt {lb ms} if 
+	/bitmapsave save def 
+	r                    
+	/is im 0 lb getinterval def 
+	ws 0 lb getinterval is copy pop 
+	/cf currentfile def 
+	w h d [w 0 0 h neg 0 h] 
+	{ip} image 
+	bitmapsave restore 
+	grestore
+	} bind def
+/BEGINBITMAPBW { 
+	1 {} COMMONBITMAP
+	} bind def
+/BEGINBITMAPGRAY { 
+	8 {} COMMONBITMAP
+	} bind def
+/BEGINBITMAP2BIT { 
+	2 {} COMMONBITMAP
+	} bind def
+/COMMONBITMAP { 
+	/r exch def
+	/d exch def
+	gsave
+	
+	3 index 2 div add exch	
+	4 index 2 div add exch	
+	translate		
+	rotate			
+	1 index 2 div neg	
+	1 index 2 div neg	
+	translate		
+	scale			
+	/h exch def /w exch def
+	/bitmapsave save def 
+	r                    
+	/is w d wbytes string def
+	/cf currentfile def 
+	w h d [w 0 0 h neg 0 h] 
+	{cf is readhexstring pop} image
+	bitmapsave restore 
+	grestore
+	} bind def
+/ngrayt 256 array def
+/nredt 256 array def
+/nbluet 256 array def
+/ngreent 256 array def
+	/gryt FMLOCAL
+	/blut FMLOCAL
+	/grnt FMLOCAL
+	/redt FMLOCAL
+	/indx FMLOCAL
+	/cynu FMLOCAL
+	/magu FMLOCAL
+	/yelu FMLOCAL
+	/k FMLOCAL
+	/u FMLOCAL
+FMLevel1 {
+/colorsetup {
+	currentcolortransfer
+	/gryt exch def
+	/blut exch def
+	/grnt exch def
+	/redt exch def
+	0 1 255 {
+		/indx exch def
+		/cynu 1 red indx get 255 div sub def
+		/magu 1 green indx get 255 div sub def
+		/yelu 1 blue indx get 255 div sub def
+		/k cynu magu min yelu min def
+		/u k currentundercolorremoval exec def
+%		/u 0 def
+		nredt indx 1 0 cynu u sub max sub redt exec put
+		ngreent indx 1 0 magu u sub max sub grnt exec put
+		nbluet indx 1 0 yelu u sub max sub blut exec put
+		ngrayt indx 1 k currentblackgeneration exec sub gryt exec put
+	} for
+	{255 mul cvi nredt exch get}
+	{255 mul cvi ngreent exch get}
+	{255 mul cvi nbluet exch get}
+	{255 mul cvi ngrayt exch get}
+	setcolortransfer
+	{pop 0} setundercolorremoval
+	{} setblackgeneration
+	} bind def
+}
+{
+/colorSetup2 {
+	[ /Indexed /DeviceRGB 255 
+		{dup red exch get 255 div 
+		 exch dup green exch get 255 div 
+		 exch blue exch get 255 div}
+	] setcolorspace
+} bind def
+} ifelse
+	/tran FMLOCAL
+/fakecolorsetup {
+	/tran 256 string def
+	0 1 255 {/indx exch def 
+		tran indx
+		red indx get 77 mul
+		green indx get 151 mul
+		blue indx get 28 mul
+		add add 256 idiv put} for
+	currenttransfer
+	{255 mul cvi tran exch get 255.0 div}
+	exch concatprocs settransfer
+} bind def
+/BITMAPCOLOR { 
+	/d 8 def
+	gsave
+	
+	3 index 2 div add exch	
+	4 index 2 div add exch	
+	translate		
+	rotate			
+	1 index 2 div neg	
+	1 index 2 div neg	
+	translate		
+	scale			
+	/h exch def /w exch def
+	/bitmapsave save def
+	FMLevel1 {	
+		colorsetup
+		/is w d wbytes string def
+		/cf currentfile def 
+		w h d [w 0 0 h neg 0 h] 
+		{cf is readhexstring pop} {is} {is} true 3 colorimage 
+	} {
+		colorSetup2
+		/is w d wbytes string def
+		/cf currentfile def 
+		7 dict dup begin
+			/ImageType 1 def
+			/Width w def
+			/Height h def
+			/ImageMatrix [w 0 0 h neg 0 h] def
+			/DataSource {cf is readhexstring pop} bind def
+			/BitsPerComponent d def
+			/Decode [0 255] def
+		end image	
+	} ifelse
+	bitmapsave restore 
+	grestore
+	} bind def
+/BITMAPCOLORc { 
+	/d 8 def
+	gsave
+	
+	3 index 2 div add exch	
+	4 index 2 div add exch	
+	translate		
+	rotate			
+	1 index 2 div neg	
+	1 index 2 div neg	
+	translate		
+	scale			
+	/h exch def /w exch def
+	/lb w d wbytes def 
+	sl lb lt {lb ms} if 
+	/bitmapsave save def 
+	FMLevel1 {	
+		colorsetup
+		/is im 0 lb getinterval def 
+		ws 0 lb getinterval is copy pop 
+		/cf currentfile def 
+		w h d [w 0 0 h neg 0 h] 
+		{ip} {is} {is} true 3 colorimage
+	} {
+		colorSetup2
+		/is im 0 lb getinterval def 
+		ws 0 lb getinterval is copy pop 
+		/cf currentfile def 
+		7 dict dup begin
+			/ImageType 1 def
+			/Width w def
+			/Height h def
+			/ImageMatrix [w 0 0 h neg 0 h] def
+			/DataSource {ip} bind def
+			/BitsPerComponent d def
+			/Decode [0 255] def
+		end image	
+	} ifelse
+	bitmapsave restore 
+	grestore
+	} bind def
+/BITMAPTRUECOLORc { 
+	/d 24 def
+        gsave
+ 	
+	3 index 2 div add exch	
+	4 index 2 div add exch	
+	translate		
+	rotate			
+	1 index 2 div neg	
+	1 index 2 div neg	
+	translate		
+	scale			
+	/h exch def /w exch def
+	/lb w d wbytes def 
+	sl lb lt {lb ms} if 
+        /bitmapsave save def 
+        
+	/is im 0 lb getinterval def	
+	/ris im 0 w getinterval def	
+	/gis im w w getinterval def	
+	/bis im w 2 mul w getinterval def 
+        
+        ws 0 lb getinterval is copy pop 
+        /cf currentfile def 
+        w h 8 [w 0 0 h neg 0 h] 
+        {w rip pop ris} {gis} {bis} true 3 colorimage
+        bitmapsave restore 
+        grestore
+        } bind def
+/BITMAPTRUECOLOR { 
+        gsave
+		
+		3 index 2 div add exch	
+		4 index 2 div add exch	
+		translate		
+		rotate			
+		1 index 2 div neg	
+		1 index 2 div neg	
+		translate		
+		scale			
+		/h exch def /w exch def
+        /bitmapsave save def 
+        /is w string def
+        /gis w string def
+        /bis w string def
+        /cf currentfile def 
+        w h 8 [w 0 0 h neg 0 h] 
+        { cf is readhexstring pop } 
+        { cf gis readhexstring pop } 
+        { cf bis readhexstring pop } 
+        true 3 colorimage 
+        bitmapsave restore 
+        grestore
+        } bind def
+/BITMAPTRUEGRAYc { 
+	/d 24 def
+        gsave
+	
+	3 index 2 div add exch	
+	4 index 2 div add exch	
+	translate		
+	rotate			
+	1 index 2 div neg	
+	1 index 2 div neg	
+	translate		
+	scale			
+	/h exch def /w exch def
+	/lb w d wbytes def 
+	sl lb lt {lb ms} if 
+        /bitmapsave save def 
+        
+	/is im 0 lb getinterval def	
+	/ris im 0 w getinterval def	
+	/gis im w w getinterval def	
+	/bis im w 2 mul w getinterval def 
+        ws 0 lb getinterval is copy pop 
+        /cf currentfile def 
+        w h 8 [w 0 0 h neg 0 h] 
+        {w rip pop ris gis bis w gray} image
+        bitmapsave restore 
+        grestore
+        } bind def
+/ww FMLOCAL
+/r FMLOCAL
+/g FMLOCAL
+/b FMLOCAL
+/i FMLOCAL
+/gray { 
+        /ww exch def
+        /b exch def
+        /g exch def
+        /r exch def
+        0 1 ww 1 sub { /i exch def r i get .299 mul g i get .587 mul
+			b i get .114 mul add add r i 3 -1 roll floor cvi put } for
+        r
+        } bind def
+/BITMAPTRUEGRAY { 
+        gsave
+		
+		3 index 2 div add exch	
+		4 index 2 div add exch	
+		translate		
+		rotate			
+		1 index 2 div neg	
+		1 index 2 div neg	
+		translate		
+		scale			
+		/h exch def /w exch def
+        /bitmapsave save def 
+        /is w string def
+        /gis w string def
+        /bis w string def
+        /cf currentfile def 
+        w h 8 [w 0 0 h neg 0 h] 
+        { cf is readhexstring pop 
+          cf gis readhexstring pop 
+          cf bis readhexstring pop w gray}  image
+        bitmapsave restore 
+        grestore
+        } bind def
+/BITMAPGRAY { 
+	8 {fakecolorsetup} COMMONBITMAP
+	} bind def
+/BITMAPGRAYc { 
+	8 {fakecolorsetup} COMMONBITMAPc
+	} bind def
+/ENDBITMAP {
+	} bind def
+end 
+	/ALDsave FMLOCAL
+	/ALDmatrix matrix def ALDmatrix currentmatrix pop
+/StartALD {
+	/ALDsave save def
+	 savematrix
+	 ALDmatrix setmatrix
+	} bind def
+/InALD {
+	 restorematrix
+	} bind def
+/DoneALD {
+	 ALDsave restore
+	} bind def
+/I { setdash } bind def
+/J { [] 0 setdash } bind def
+%%EndProlog
+%%BeginSetup
+(4.0) FMVERSION
+1 1 0 0 612 792 0 1 20 FMDOCUMENT
+0 0 /Times-Bold FMFONTDEFINE
+1 0 /Times-Roman FMFONTDEFINE
+2 0 /Times-Italic FMFONTDEFINE
+3 0 /Courier FMFONTDEFINE
+4 0 /Helvetica FMFONTDEFINE
+5 0 /Helvetica-Oblique FMFONTDEFINE
+6 0 /Courier-Bold FMFONTDEFINE
+7 0 /Courier-Oblique FMFONTDEFINE
+32 FMFILLS
+0 0 FMFILL
+1 0.1 FMFILL
+2 0.3 FMFILL
+3 0.5 FMFILL
+4 0.7 FMFILL
+5 0.9 FMFILL
+6 0.97 FMFILL
+7 1 FMFILL
+8 <0f1e3c78f0e1c387> FMFILL
+9 <0f87c3e1f0783c1e> FMFILL
+10 <cccccccccccccccc> FMFILL
+11 <ffff0000ffff0000> FMFILL
+12 <8142241818244281> FMFILL
+13 <03060c183060c081> FMFILL
+14 <8040201008040201> FMFILL
+16 1 FMFILL
+17 0.9 FMFILL
+18 0.7 FMFILL
+19 0.5 FMFILL
+20 0.3 FMFILL
+21 0.1 FMFILL
+22 0.03 FMFILL
+23 0 FMFILL
+24 <f0e1c3870f1e3c78> FMFILL
+25 <f0783c1e0f87c3e1> FMFILL
+26 <3333333333333333> FMFILL
+27 <0000ffff0000ffff> FMFILL
+28 <7ebddbe7e7dbbd7e> FMFILL
+29 <fcf9f3e7cf9f3f7e> FMFILL
+30 <7fbfdfeff7fbfdfe> FMFILL
+%%EndSetup
+%%Page: "1" 1
+%%BeginPaperSize: Letter
+%%EndPaperSize
+612 792 0 FMBEGINPAGE
+[0 0 0 1 0 0 0]
+[ 0 1 1 0 1 0 0]
+[ 1 0 1 0 0 1 0]
+[ 1 1 0 0 0 0 1]
+[ 1 0 0 0 0 1 1]
+[ 0 1 0 0 1 0 1]
+[ 0 0 1 0 1 1 0]
+ 7 FrameSetSepColors
+FrameNoSep
+0 0 0 1 0 0 0 K
+J
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 36 Q
+0 X
+0 0 0 1 0 0 0 K
+(Open Firmware) 182.52 644 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 24 Q
+(Recommended Practice) 182.04 615 T
+0 18 Q
+(:) 423.96 615 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1 24 Q
+(Device Support Extensions) 175.34 563.63 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1 12 Q
+(Version 0.7) 278 521.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+2 16 Q
+(Unapproved Draft) 246.67 466.5 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1 12 Q
+(Published by the Open Firmware Working Group) 187.01 107.17 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+52 461.17 54 668 R
+V
+0 0 0 1 0 0 0 K
+FMENDPAGE
+%%EndPage: "1" 1
+%%Page: "2" 2
+612 792 0 FMBEGINPAGE
+[0 0 0 1 0 0 0]
+[ 0 1 1 0 1 0 0]
+[ 1 0 1 0 0 1 0]
+[ 1 1 0 0 0 0 1]
+[ 1 0 0 0 0 1 1]
+[ 0 1 0 0 1 0 1]
+[ 0 0 1 0 1 1 0]
+ 7 FrameSetSepColors
+FrameNoSep
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1 12 Q
+0 X
+0 0 0 1 0 0 0 K
+(This document is a voluntary-use recommended practice of the Open Firmware Working Group.) 72 658 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+-0.55 (The Open Firmware Working Group is an ad hoc committee composed of individuals interested in) 72 645 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+-0.28 (Open Firmware as defined by IEEE 1275-1994, related standards, and their application to various) 72 632 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(computer systems.) 72 619 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(The Open Firmware Working Group is involved both in IEEE sanctioned standards activities,) 72 593 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(whose final results are published by IEEE, and in informal recommendations such as this, which) 72 580 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(are published on the Internet at:) 72 567 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+3 F
+(http://playground.sun.com/1275) 108 541 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1 F
+-0.04 (Membership in the Open Firmware Working Group is open to all interested parties. The working) 72 515 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(group meets at regular intervals at various locations. For more information send email to:) 72 502 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+3 F
+(p1275-wg@risc.sps.mot.com) 108 476 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 F
+(Revision History) 72 379 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+4 10 Q
+(Revision 0.1) 72 354.33 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(04-05-95) 144 354.33 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(Initial draft, split from the original PReP binding.) 198 354.33 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(Revision 0.2) 72 342.33 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(07-05-95) 144 342.33 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(Made some editorial changes.  Added aliases node properties.) 198 342.33 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(Revision 0.3) 72 330.33 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(08/17/95) 144 330.33 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(Added Sections \324Control Sequences for Common Special Keys\325, \324Additional) 198 330.33 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(Requirements for SCSI Devices\325, and \324Additional Requirements for Block and) 198 318.33 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(Byte Devices.) 198 306.33 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(Revision 0.4) 72 294.33 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(11/09/95) 144 294.33 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(Changed NVRAM \324open\325 and \324close\325 methods verbiage. Added requirements) 198 294.33 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(for SCSI Devices; properties and methods.) 198 282.33 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(Revision 0.5) 72 270.33 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(02/26/96) 144 270.33 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(Changed format for) 198 270.33 T
+5 F
+(Device Support Extension binding) 286.93 270.33 T
+4 F
+(; added \324Trademarks\325,) 437 270.33 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(\324Revision History\325 Sections plus \324Table-of-Contents\325. Modified Sound Device) 198 258.33 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(for common data format support. Added NVRAM \324size\325 property and method.) 198 246.33 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(Revision 0.6) 72 234.33 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(03/11/96) 144 234.33 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+-0.24 (Changed NVRAM Note in Section 7.2 and the differential property definition in) 198 234.33 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(Section 9.1. Made several editorial changes.) 198 222.33 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(Revision 0.7) 72 210.33 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(08/06/96) 144 210.33 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+-0.37 (Changed document format from binding to recommended practice.  Removed) 198 210.33 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(keyboard language-specific layout section and device methods scan-codes.) 198 198.33 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(Added Serial Device Section 8.0.  Changed SCSI to SCSI-2, Section 10.0.) 198 186.33 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+52 183 54 217 R
+V
+0 0 0 1 0 0 0 K
+FMENDPAGE
+%%EndPage: "2" 2
+%%Page: "3" 3
+612 792 0 FMBEGINPAGE
+[0 0 0 1 0 0 0]
+[ 0 1 1 0 1 0 0]
+[ 1 0 1 0 0 1 0]
+[ 1 1 0 0 0 0 1]
+[ 1 0 0 0 0 1 1]
+[ 0 1 0 0 1 0 1]
+[ 0 0 1 0 1 1 0]
+ 7 FrameSetSepColors
+FrameNoSep
+0 0 0 1 0 0 0 K
+1 12 Q
+0 X
+0 0 0 1 0 0 0 K
+(Open Firmware Recommended Practice) 72 748 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(Device Support Extensions 0.7) 324 748 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(8/6/96) 72 28 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+2 F
+(Unapproved Draft) 270 28 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1 F
+(3) 534 28 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+3 F
+( 1) 31 721.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+( 2) 31 709.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+( 3) 31 697.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+( 4) 31 685.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+( 5) 31 673.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+( 6) 31 661.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+( 7) 31 649.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+( 8) 31 637.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+( 9) 31 625.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(10) 31 613.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(11) 31 601.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(12) 31 589.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(13) 31 577.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(14) 31 565.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(15) 31 553.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(16) 31 541.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(17) 31 529.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(18) 31 517.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(19) 31 505.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(20) 31 493.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(21) 31 481.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(22) 31 469.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(23) 31 457.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(24) 31 445.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(25) 31 433.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(26) 31 421.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(27) 31 409.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(28) 31 397.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(29) 31 385.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(30) 31 373.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(31) 31 361.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(32) 31 349.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(33) 31 337.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(34) 31 325.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(35) 31 313.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(36) 31 301.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(37) 31 289.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(38) 31 277.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(39) 31 265.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(40) 31 253.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(41) 31 241.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(42) 31 229.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(43) 31 217.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(44) 31 205.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(45) 31 193.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(46) 31 181.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(47) 31 169.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(48) 31 157.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(49) 31 145.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(50) 31 133.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(51) 31 121.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(52) 31 109.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(53) 31 97.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(54) 31 85.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(55) 31 73.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(56) 31 61.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(57) 31 49.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 14 Q
+(1.  Intr) 72 719.67 T
+(oduction) 113.36 719.67 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1 12 Q
+(This recommended practice specifies the application of) 72 701 T
+2 F
+(IEEE Std 1275-1994 Standard for Boot) 340.27 701 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+-0.63 (\050Initialization, Configuration\051 Firmware, Core Practices and Requirements) 72 687.82 P
+1 F
+-0.63 ([1] to a variety of com-) 431.53 687.82 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+-0.5 (mon peripheral types.  It is intended that Open Firmware implementations supporting these device) 72 674.82 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(types will supply the methods and properties described herein.) 72 661.82 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 14 Q
+(1.1.  Purpose) 72 619.48 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1 12 Q
+-0.1 (This recommended practice specifies the application of Open Firmware to Device Support Exten-) 72 600.82 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+-0.13 (sions,  including requirements and practices to support unique firmware specific to the support of) 72 587.82 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(device extensions.  The core requirements and practices specified by Open Firmware should be) 72 574.82 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+-0.05 (augmented by device-specific requirements to form a complete specification for the firmware im-) 72 561.82 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(plementation for Device Support Extensions.  This document establishes such additional require-) 72 548.82 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(ments pertaining to the device extensions and the support required by Open Firmware.) 72 535.82 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 14 Q
+(1.2.  Scope) 72 493.48 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1 12 Q
+(New platform bindings are encouraged to require compliance with this recommended practice.) 72 474.82 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+-0.69 (New implementations, based upon existing requirements and/or an architecture, may choose not to) 72 461.82 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(comply with this document to prevent compatibility problems for the devices described herein.) 72 448.82 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 14 Q
+(2.  Refer) 72 405.48 T
+(ences and De\336nitions) 122.67 405.48 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(2.1.  Refer) 72 373.48 T
+(ences) 133.17 373.48 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1 12 Q
+([1]) 72 354.82 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+2 F
+1.2 (IEEE Std. 1275-1994 Standar) 90 354.82 P
+1.2 (d for Boot \050Initialization, Con\336guration\051 Firmwar) 236.48 354.82 P
+1.2 (e, Cor) 482.74 354.82 P
+1.2 (e) 513.49 354.82 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1.2 (Practices and Requir) 72 340.82 P
+1.2 (ements) 175.94 340.82 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1 F
+([2]) 72 318.82 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+2 F
+1.2 (ISO-639) 90 318.82 P
+1 F
+1.2 (,) 130.66 318.82 P
+2 F
+1.2 (Code for the r) 137.86 318.82 P
+1.2 (epr) 208.68 318.82 P
+1.2 (esentation of names of languages) 224.23 318.82 P
+1 F
+1.2 (, published by International) 389.03 318.82 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1.2 (Or) 72 304.82 P
+1.2 (ganization for Standardization.) 84.44 304.82 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+([3]) 72 282.82 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+2 F
+1.2 (ANSI/IEEE X3.215-1994, Pr) 90 282.82 P
+1.2 (ogramming Languages -- Forth) 229.94 282.82 P
+1 F
+1.2 (.) 385.87 282.82 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+([4]) 72 260.82 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+2 F
+1.2 (Open Firmwar) 90 260.82 P
+1.2 (e: Recommended Practice - Generic Names.) 162.42 260.82 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1 F
+([5]) 72 238.82 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+2 F
+1.2 (Open Firmwar) 90 238.82 P
+1.2 (e: Recommended Practice - Interrupt Mapping.) 162.42 238.82 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1 F
+([6]) 72 216.82 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+2 F
+1.2 (ISA/EISA/ISA-PnP binding to:) 90 216.82 P
+1.2 (IEEE Std. 1275-1994 Standar) 243.25 216.82 P
+1.2 (d for Boot \050Initialization,) 389.74 216.82 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1.2 (Con\336guration\051 Firmwar) 72 202.82 P
+1 F
+1.2 (e.) 190.21 202.82 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 14 Q
+(2.2.  De\336nitions) 72 171.48 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(3.  Keyboard devices) 72 139.48 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1 12 Q
+-0.68 (Open Firmware does not have a specific device class for keyboards; instead, keyboards are instanc-) 72 120.82 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(es of the) 72 107.82 T
+3 F
+("serial") 115.66 107.82 T
+1 F
+( device class. However, certain features of keyboards \050i.e., the ability to re-) 173.26 107.82 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(map keys, etc.\051 make it desirable to implement them as a separate device class.) 72 94.82 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+-0.74 (In general, keyboard devices produce a hardware) 72 68.82 P
+2 F
+-0.74 (scan-code) 305.39 68.82 P
+1 F
+-0.74 ( that is specific to the type of keyboard.) 354.03 68.82 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+52 657.82 54 709 R
+V
+52 531.82 54 608.82 R
+V
+52 444.82 54 482.82 R
+V
+52 198.82 54 268.82 R
+V
+0 0 0 1 0 0 0 K
+FMENDPAGE
+%%EndPage: "3" 3
+%%Page: "4" 4
+612 792 0 FMBEGINPAGE
+[0 0 0 1 0 0 0]
+[ 0 1 1 0 1 0 0]
+[ 1 0 1 0 0 1 0]
+[ 1 1 0 0 0 0 1]
+[ 1 0 0 0 0 1 1]
+[ 0 1 0 0 1 0 1]
+[ 0 0 1 0 1 1 0]
+ 7 FrameSetSepColors
+FrameNoSep
+0 0 0 1 0 0 0 K
+1 12 Q
+0 X
+0 0 0 1 0 0 0 K
+(Device Support Extensions 0.7) 72 748 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(Open Firmware Recommended Practice) 324 748 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(4) 72 28 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+2 F
+(Unapproved Draft) 252 28 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1 F
+(8/6/96) 509.33 28 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+3 F
+( 1) 31 721.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+( 2) 31 709.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+( 3) 31 697.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+( 4) 31 685.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+( 5) 31 673.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+( 6) 31 661.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+( 7) 31 649.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+( 8) 31 637.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+( 9) 31 625.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(10) 31 613.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(11) 31 601.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(12) 31 589.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(13) 31 577.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(14) 31 565.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(15) 31 553.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(16) 31 541.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(17) 31 529.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(18) 31 517.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(19) 31 505.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(20) 31 493.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(21) 31 481.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(22) 31 469.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(23) 31 457.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(24) 31 445.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(25) 31 433.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(26) 31 421.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(27) 31 409.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(28) 31 397.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(29) 31 385.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(30) 31 373.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(31) 31 361.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(32) 31 349.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(33) 31 337.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(34) 31 325.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(35) 31 313.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(36) 31 301.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(37) 31 289.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(38) 31 277.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(39) 31 265.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(40) 31 253.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(41) 31 241.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(42) 31 229.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(43) 31 217.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(44) 31 205.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(45) 31 193.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(46) 31 181.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(47) 31 169.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(48) 31 157.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(49) 31 145.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(50) 31 133.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(51) 31 121.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(52) 31 109.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(53) 31 97.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(54) 31 85.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(55) 31 73.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(56) 31 61.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(57) 31 49.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1 F
+(These scan-codes are then mapped via software to produce the character code for the key, taking) 72 721 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(into account the state of "modifier" keys \050e.g., Shift, Control\051 and the keyboard layout. The map-) 72 708 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(ping of scan-codes to character value depends upon the keyboard layout; this is dependent upon) 72 695 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+-0.81 (the language that is being supported by the keyboard. E.g., the layout of keys for a French keyboard) 72 682 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(is different than that for an English keyboard.) 72 669 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 14 Q
+(3.1.  "keyboard" device standard pr) 72 638.67 T
+(operties) 287.57 638.67 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+6 12 Q
+("device_type") 72 620 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(S) 475.2 620 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1 F
+1.2 (Standard) 90 602 P
+2 F
+1.2 (pr) 136.86 602 P
+1.2 (operty) 147.08 602 P
+1 F
+1.2 (; the value of this property for keyboard devices) 177.74 602 P
+2 F
+1.2 (shall) 422.16 602 P
+1 F
+1.2 ( be) 445.5 602 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+3 F
+("keyboard") 90 590 T
+1 F
+(.) 162 590 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+6 F
+("language") 72 568 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(S) 475.2 568 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1 F
+1.2 (Standard) 90 550 P
+2 F
+1.2 (pr) 136.86 550 P
+1.2 (operty) 147.08 550 P
+1 F
+1.2 (, encoded as with) 176.96 550 P
+6 F
+2.88 (encode-string) 268.08 550 P
+1 F
+1.2 (, that indicates the current scan-) 361.68 550 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1.2 (code to character conversion, based upon the language\325) 90 538 P
+1.2 (s keyboard layout.  This value) 363.66 538 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1.2 (indicates the language \050i.e., keyboard layout scan-code conversion\051 to which the keyboard) 90 526 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1.2 (driver is currently set.) 90 514 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 14 Q
+(3.2.  "keyboard" device methods) 72 484.67 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1 12 Q
+(Keyboard devices) 72 466 T
+2 F
+(shall) 161.3 466 T
+1 F
+( implement) 184.64 466 T
+6 10 Q
+(open) 241.98 466 T
+1 12 Q
+(,) 265.98 466 T
+6 10 Q
+(close) 271.98 466 T
+1 12 Q
+( and) 301.98 466 T
+6 10 Q
+(read) 325.31 466 T
+1 12 Q
+( methods as defined by  the Open Firm-) 349.31 466 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(ware standard[1].  Note that the) 72 452.82 T
+0 F
+(open) 226.96 452.82 T
+1 F
+( routine can take an optional argument which specifies the) 251.63 452.82 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(language \050i.e.,) 72 439.82 T
+0 F
+(scancode->char) 142.98 439.82 T
+1 F
+( mapping\051 to be used.) 223.14 439.82 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 14 Q
+(3.3.  Abort key  sequence for keyboard devices) 72 409.48 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1 12 Q
+(For PC-101 keyboards, the abort sequence \050see) 72 390.82 T
+2 F
+(install-abort) 301.28 390.82 T
+1 F
+( in the IEEE 1275 glossary\051) 361.3 390.82 T
+2 F
+(shall) 497.28 390.82 T
+1 F
+( be) 520.62 390.82 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(Ctrl-Brk.) 72 377.82 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 14 Q
+(3.4.  Contr) 72 347.48 T
+(ol Sequences for Common Special Keys) 135.52 347.48 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1 12 Q
+-0.87 (The following table specifies the values that should be returned in the keyboard buffer when certain) 72 328.82 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(keys are pressed.) 72 315.82 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+73 259.32 141.72 294.82 R
+6 X
+V
+0 14 Q
+0 X
+(Sequence) 78 264.48 T
+142.47 259.32 210.44 294.82 R
+6 X
+V
+0 X
+(Key) 147.97 279.48 T
+(legend) 147.97 264.48 T
+212.44 257.82 229.43 295.82 R
+7 X
+V
+230.93 259.32 298.9 294.82 R
+6 X
+V
+0 X
+(Sequence) 235.43 264.48 T
+299.9 259.32 368.37 294.82 R
+6 X
+V
+0 X
+(Key) 305.4 279.48 T
+(legend) 305.4 264.48 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1 12 Q
+(CSI) 78 245.82 T
+1 9.6 Q
+(a) 96.67 250.62 T
+1 12 Q
+( A) 100.93 245.82 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(up arrow) 147.97 245.82 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+213.44 239.82 227.93 257.82 R
+7 X
+V
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 X
+(CSI @) 235.43 245.82 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(insert) 305.4 245.82 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(CSI B) 78 227.82 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(down arrow) 147.97 227.82 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+213.44 221.82 227.93 239.82 R
+7 X
+V
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 X
+(CSI P) 235.43 227.82 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(delete) 305.4 227.82 T
+1 9.6 Q
+(b) 334.06 232.62 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1 12 Q
+(CSI C) 78 209.82 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(right arrow) 147.97 209.82 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+213.44 203.82 227.93 221.82 R
+7 X
+V
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 X
+(CSI K) 235.43 209.82 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(end) 305.4 209.82 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(CSI D) 78 191.82 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(left arrow) 147.97 191.82 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+213.44 185.82 227.93 203.82 R
+7 X
+V
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 X
+(CSI ?) 235.43 191.82 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(page-up) 305.4 191.82 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(CSI H) 78 173.82 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(home) 147.97 173.82 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+213.44 167.82 227.93 185.82 R
+7 X
+V
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 X
+(CSI /) 235.43 173.82 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(page-down) 305.4 173.82 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(CSI O) 78 155.82 T
+1 9.6 Q
+(c) 108.34 160.62 T
+1 12 Q
+( P) 112.6 155.82 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(function 1) 147.97 155.82 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+213.44 149.82 227.93 167.82 R
+7 X
+V
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 X
+(CSI O q) 235.43 155.82 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(function 7) 305.4 155.82 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(CSI O Q) 78 137.82 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(function 2) 147.97 137.82 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+213.44 131.82 227.93 149.82 R
+7 X
+V
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 X
+(CSI O r) 235.43 137.82 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(function 8) 305.4 137.82 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(CSI O w) 78 119.82 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(function 3) 147.97 119.82 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+213.44 113.82 227.93 131.82 R
+7 X
+V
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 X
+(CSI O p) 235.43 119.82 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(function 9) 305.4 119.82 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(CSI O x) 78 101.82 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(function 4) 147.97 101.82 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+213.44 95.82 227.93 113.82 R
+7 X
+V
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 X
+(CSI O M) 235.43 101.82 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(function 10) 305.4 101.82 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(CSI O t) 78 83.82 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(function 5) 147.97 83.82 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+213.44 77.82 227.93 95.82 R
+7 X
+V
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 X
+(CSI O A) 235.43 83.82 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(function 1) 305.4 83.82 T
+(1) 353.95 83.82 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(CSI O u) 78 65.82 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(function 6) 147.97 65.82 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+213.44 59.82 227.93 77.82 R
+7 X
+V
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 X
+(CSI O B) 235.43 65.82 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(function 12) 305.4 65.82 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+72 294.82 72 60.82 2 L
+V
+2 H
+0 Z
+N
+141.97 296.82 141.97 58.82 2 L
+V
+0.5 H
+N
+211.94 294.82 211.94 60.82 2 L
+V
+3 H
+N
+229.43 294.82 229.43 60.82 2 L
+V
+N
+299.4 296.82 299.4 58.82 2 L
+V
+1 H
+N
+369.37 294.82 369.37 60.82 2 L
+V
+2 H
+N
+71 295.82 213.44 295.82 2 L
+V
+N
+227.93 295.82 370.37 295.82 2 L
+V
+N
+73 259.07 210.44 259.07 2 L
+V
+0.5 H
+N
+73 256.57 210.44 256.57 2 L
+V
+N
+230.93 259.07 368.37 259.07 2 L
+V
+N
+230.93 256.57 368.37 256.57 2 L
+V
+N
+71 239.82 213.44 239.82 2 L
+V
+1 H
+N
+227.93 239.82 370.37 239.82 2 L
+V
+N
+71 221.82 213.44 221.82 2 L
+V
+N
+227.93 221.82 370.37 221.82 2 L
+V
+N
+71 203.82 213.44 203.82 2 L
+V
+N
+227.93 203.82 370.37 203.82 2 L
+V
+N
+71 185.82 213.44 185.82 2 L
+V
+N
+227.93 185.82 370.37 185.82 2 L
+V
+N
+71 167.82 213.44 167.82 2 L
+V
+N
+227.93 167.82 370.37 167.82 2 L
+V
+N
+71 149.82 213.44 149.82 2 L
+V
+N
+227.93 149.82 370.37 149.82 2 L
+V
+N
+71 131.82 213.44 131.82 2 L
+V
+N
+227.93 131.82 370.37 131.82 2 L
+V
+N
+71 113.82 213.44 113.82 2 L
+V
+N
+227.93 113.82 370.37 113.82 2 L
+V
+N
+71 95.82 213.44 95.82 2 L
+V
+N
+227.93 95.82 370.37 95.82 2 L
+V
+N
+71 77.82 213.44 77.82 2 L
+V
+N
+227.93 77.82 370.37 77.82 2 L
+V
+N
+71 59.82 213.44 59.82 2 L
+V
+2 H
+N
+227.93 59.82 370.37 59.82 2 L
+V
+N
+52 448.82 54 474 R
+V
+0 0 0 1 0 0 0 K
+FMENDPAGE
+%%EndPage: "4" 4
+%%Page: "5" 5
+612 792 0 FMBEGINPAGE
+[0 0 0 1 0 0 0]
+[ 0 1 1 0 1 0 0]
+[ 1 0 1 0 0 1 0]
+[ 1 1 0 0 0 0 1]
+[ 1 0 0 0 0 1 1]
+[ 0 1 0 0 1 0 1]
+[ 0 0 1 0 1 1 0]
+ 7 FrameSetSepColors
+FrameNoSep
+0 0 0 1 0 0 0 K
+1 12 Q
+0 X
+0 0 0 1 0 0 0 K
+(Open Firmware Recommended Practice) 72 748 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(Device Support Extensions 0.7) 324 748 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(8/6/96) 72 28 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+2 F
+(Unapproved Draft) 270 28 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1 F
+(5) 534 28 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+3 F
+( 1) 31 721.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+( 2) 31 709.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+( 3) 31 697.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+( 4) 31 685.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+( 5) 31 673.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+( 6) 31 661.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+( 7) 31 649.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+( 8) 31 637.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+( 9) 31 625.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(10) 31 613.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(11) 31 601.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(12) 31 589.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(13) 31 577.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(14) 31 565.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(15) 31 553.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(16) 31 541.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(17) 31 529.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(18) 31 517.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(19) 31 505.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(20) 31 493.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(21) 31 481.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(22) 31 469.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(23) 31 457.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(24) 31 445.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(25) 31 433.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(26) 31 421.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(27) 31 409.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(28) 31 397.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(29) 31 385.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(30) 31 373.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(31) 31 361.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(32) 31 349.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(33) 31 337.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(34) 31 325.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(35) 31 313.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(36) 31 301.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(37) 31 289.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(38) 31 277.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(39) 31 265.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(40) 31 253.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(41) 31 241.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(42) 31 229.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(43) 31 217.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(44) 31 205.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(45) 31 193.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(46) 31 181.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(47) 31 169.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(48) 31 157.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(49) 31 145.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(50) 31 133.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(51) 31 121.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(52) 31 109.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(53) 31 97.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(54) 31 85.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(55) 31 73.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(56) 31 61.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(57) 31 49.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 14 Q
+(4.  Pointing devices) 72 640.67 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1 12 Q
+-0.47 (This class of device covers a broad category of "pointing" devices, the most common embodiment) 72 622 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(of which is the mouse. These devices typically can generate X,Y coordinates and button-press in-) 72 609 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(formation on some periodic basis. The following properties and methods are defined for such de-) 72 596 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(vices.) 72 583 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 14 Q
+(4.1.  "mouse" device standard pr) 72 552.67 T
+(operties) 268.9 552.67 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+6 12 Q
+("device_type") 72 534 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(S) 475.2 534 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1 F
+1.2 (Standard) 90 516 P
+2 F
+1.2 (pr) 136.86 516 P
+1.2 (operty) 147.08 516 P
+1 F
+1.2 (; the value of this property for pointing devices) 177.74 516 P
+2 F
+1.2 (shall) 417.52 516 P
+1 F
+1.2 ( be) 440.86 516 P
+3 F
+2.88 ("mouse") 460.58 516 P
+1 F
+1.2 (.) 510.98 516 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+6 F
+("#buttons") 72 494 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(S) 475.2 494 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1 F
+1.2 (Standard) 90 476 P
+2 F
+1.2 (pr) 136.86 476 P
+1.2 (operty) 147.08 476 P
+1 F
+1.2 (, encoded as with) 176.96 476 P
+6 F
+2.88 (encode-int) 268.08 476 P
+1 F
+1.2 (, that indicates the number of physical) 340.08 476 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1.2 (buttons supported by the device. This property can be used to interpret the) 90 464 P
+7 F
+2.88 (buttons) 464.88 464 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1 F
+1.2 (value returned by the) 90 452 P
+6 F
+2.88 (get-event) 199.44 452 P
+1 F
+1.2 ( method.) 264.24 452 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+6 F
+("absolute-position") 72 430 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(S) 475.2 430 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1 F
+1.2 (Standard) 90 412 P
+2 F
+1.2 (pr) 136.86 412 P
+1.2 (operty) 147.08 412 P
+1 F
+1.2 (, whose presence indicates that this device supplies absolute X,Y) 176.96 412 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1.2 (coordinates \050e.g., a graphics tablet\051. Absence of this property indicates that the device) 90 400 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1.2 (supplies relative X,Y position \050e.g., a mouse\051.) 90 388 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 14 Q
+(4.2.  "mouse" device methods) 72 358.67 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1 12 Q
+-0.26 (In addition to the Open Firmware standard) 72 340 P
+6 10 Q
+-0.53 (open) 277.78 340 P
+1 12 Q
+-0.26 ( and) 301.78 340 P
+6 10 Q
+-0.53 (close) 324.58 340 P
+1 12 Q
+-0.26 ( methods, the following methods) 354.58 340 P
+2 F
+-0.26 (shall) 513.92 340 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1 F
+(be supported by an Open Firmware implementation of a) 72 327 T
+3 10 Q
+("mouse") 344.29 327 T
+1 12 Q
+( device.) 386.29 327 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(Pointing devices typically supply data only when an "event" occurs \050e.g., the mouse moves or a) 72 314 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(button is pressed\051. The following method attempts to obtain an event from the device, reporting) 72 301 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(whether an event occurred.) 72 288 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+6 F
+(get-event) 72 262 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+2.88 (\050 msecs -- pos.x pos.y buttons true | false \051) 180 262 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(M) 529.92 262 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1 F
+1.04 (Standard method for obtaining the next "event" of pointing devices.) 90 244 P
+3 F
+2.5 (msecs) 428.51 244 P
+1 F
+1.04 ( is the number) 464.51 244 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1.2 (of milliseconds to wait for an event before reporting failure; a value of 0 implies wait) 90 232 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1.2 (until event.) 90 220 P
+3 F
+2.88 (pos.x) 149.4 220 P
+1 F
+1.2 (,) 185.4 220 P
+3 F
+2.88 (pos.y) 192.6 220 P
+1 F
+1.2 ( return the positioning information; they are interpreted as) 228.6 220 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1.2 (unsigned or signed, depending upon the presence or absence of the) 90 208 P
+3 F
+2.88 ("absolute-) 427.13 208 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+2.88 (position") 90 196 P
+1 F
+1.2 ( property) 154.8 196 P
+1.2 (.) 198.88 196 P
+3 F
+2.88 (buttons) 206.08 196 P
+1 F
+1.2 ( returns a bit-mask \050in the low-order bits\051 representing) 256.48 196 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1.2 (any buttons that are pressed; the number of signi\336cant bits to examine is de\336ned by the) 90 184 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+3 F
+2.88 ("#buttons") 90 172 P
+1 F
+1.2 ( property) 162 172 P
+1.2 (. The least signi\336cant bit corresponds to the primary \050usually the) 206.08 172 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1.2 (left-most\051 button of the device. The top stack result indicates whether an event was) 90 160 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1.2 (detected within the time-out period.) 90 148 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 14 Q
+(5.  Real T) 72 118.67 T
+(ime Clock \050R) 129.3 118.67 T
+(TC\051 Device) 207.35 118.67 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1 12 Q
+-0.51 (Open Firmware for Real Time Clocks defines the following properties and methods. The represen-) 72 100 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(tation of time is defined by the TIME&DATE method of the ANS Forth standard [3].) 72 86.82 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1 9 Q
+-0.37 (a. Note: The CSI \050Control  Sequence) 219 723 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+-0.51 (Introducer\051 is equal to the value 09B) 219 713 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(hex.) 219 703 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(b. Note: Certain external devices) 219 690 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(often return 07F hex when the) 219 680 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+("delete" key is pressed.) 219 670 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(c. Note: The letter \325O\325.) 219 657 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+FMENDPAGE
+%%EndPage: "5" 5
+%%Page: "6" 6
+612 792 0 FMBEGINPAGE
+[0 0 0 1 0 0 0]
+[ 0 1 1 0 1 0 0]
+[ 1 0 1 0 0 1 0]
+[ 1 1 0 0 0 0 1]
+[ 1 0 0 0 0 1 1]
+[ 0 1 0 0 1 0 1]
+[ 0 0 1 0 1 1 0]
+ 7 FrameSetSepColors
+FrameNoSep
+0 0 0 1 0 0 0 K
+1 12 Q
+0 X
+0 0 0 1 0 0 0 K
+(Device Support Extensions 0.7) 72 748 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(Open Firmware Recommended Practice) 324 748 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(6) 72 28 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+2 F
+(Unapproved Draft) 252 28 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1 F
+(8/6/96) 509.33 28 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+3 F
+( 1) 31 721.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+( 2) 31 709.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+( 3) 31 697.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+( 4) 31 685.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+( 5) 31 673.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+( 6) 31 661.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+( 7) 31 649.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+( 8) 31 637.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+( 9) 31 625.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(10) 31 613.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(11) 31 601.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(12) 31 589.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(13) 31 577.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(14) 31 565.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(15) 31 553.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(16) 31 541.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(17) 31 529.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(18) 31 517.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(19) 31 505.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(20) 31 493.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(21) 31 481.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(22) 31 469.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(23) 31 457.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(24) 31 445.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(25) 31 433.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(26) 31 421.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(27) 31 409.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(28) 31 397.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(29) 31 385.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(30) 31 373.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(31) 31 361.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(32) 31 349.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(33) 31 337.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(34) 31 325.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(35) 31 313.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(36) 31 301.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(37) 31 289.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(38) 31 277.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(39) 31 265.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(40) 31 253.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(41) 31 241.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(42) 31 229.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(43) 31 217.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(44) 31 205.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(45) 31 193.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(46) 31 181.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(47) 31 169.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(48) 31 157.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(49) 31 145.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(50) 31 133.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(51) 31 121.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(52) 31 109.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(53) 31 97.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(54) 31 85.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(55) 31 73.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(56) 31 61.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(57) 31 49.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 14 Q
+(5.1.  "rtc" device standard pr) 72 719.67 T
+(operties) 247.88 719.67 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+6 12 Q
+("device_type") 72 701 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(S) 475.2 701 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1 F
+1.2 (Standard) 90 683 P
+2 F
+1.2 (pr) 136.86 683 P
+1.2 (operty) 147.08 683 P
+1 F
+1.2 (; the value of this property) 177.74 683 P
+2 F
+1.2 (shall) 314.93 683 P
+1 F
+1.2 ( be) 338.27 683 P
+3 F
+2.88 ("rtc") 358 683 P
+1 F
+1.2 (.) 394 683 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 14 Q
+(5.2.  "rtc" device methods) 72 653.67 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1 12 Q
+-0.26 (In addition to the Open Firmware standard) 72 635 P
+6 10 Q
+-0.53 (open) 277.78 635 P
+1 12 Q
+-0.26 ( and) 301.78 635 P
+6 10 Q
+-0.53 (close) 324.58 635 P
+1 12 Q
+-0.26 ( methods, the following methods) 354.58 635 P
+2 F
+-0.26 (shall) 513.92 635 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1 F
+(be supported by an Open Firmware implementation of a) 72 622 T
+3 10 Q
+("rtc") 344.29 622 T
+1 12 Q
+( device.) 374.29 622 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+6 F
+(get-time) 72 596 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+2.88 (\050 -- n1 n2 n3 n4 n5 n6 \051) 180 596 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(M) 475.2 596 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1 F
+1.2 (Return the current time as the integers) 90 578 P
+3 F
+2.88 (n1\311n6) 284.7 578 P
+1 F
+1.2 (, where) 320.7 578 P
+3 F
+2.88 (n1) 361.42 578 P
+1 F
+1.2 ( is the second {0\31159},) 375.82 578 P
+3 F
+2.88 (n2) 497.33 578 P
+1 F
+1.2 ( is) 511.73 578 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1.2 (the minute {0\31159},) 90 566 P
+3 F
+2.88 (n3) 195.12 566 P
+1 F
+1.2 ( is the hour {0\31123},) 209.52 566 P
+3 F
+2.88 (n4) 319.7 566 P
+1 F
+1.2 ( is the day {1\31131},) 334.1 566 P
+3 F
+2.88 (n5) 439.62 566 P
+1 F
+1.2 ( is the month) 454.02 566 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1.2 ({1\31112}, and) 90 554 P
+3 F
+2.88 (n6) 160.25 554 P
+1 F
+1.2 ( is the year \050e.g., 1994\051.) 174.65 554 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+6 F
+(set-time) 72 532 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+2.88 (\050 n1 n2 n3 n4 n5 n6 -- \051) 180 532 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(M) 475.2 532 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1 F
+1.02 (Set the current time from the integers) 90 514 P
+3 F
+2.46 (n1\311n6) 279.47 514 P
+1 F
+1.02 (, where) 315.47 514 P
+3 F
+2.46 (n1) 355.83 514 P
+1 F
+1.02 ( is the second {0\31159},) 370.23 514 P
+3 F
+2.46 (n2) 490.86 514 P
+1 F
+1.02 ( is the) 505.26 514 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1.2 (minute {0\31159},) 90 502 P
+3 F
+2.88 (n3) 176.26 502 P
+1 F
+1.2 ( is the hour {0\31123},) 190.66 502 P
+3 F
+2.88 (n4) 300.84 502 P
+1 F
+1.2 ( is the day {1\31131},) 315.24 502 P
+3 F
+2.88 (n5) 420.76 502 P
+1 F
+1.2 ( is the month) 435.16 502 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1.2 ({1\31112}, and) 90 490 P
+3 F
+2.88 (n6) 160.25 490 P
+1 F
+1.2 ( is the year \050e.g., 1994\051.) 174.65 490 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 14 Q
+(6.  Sound Device) 72 460.67 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1 12 Q
+(In order to use a sound device within the context of Open Firmware \050e.g., "boot beeps"\051, the fol-) 72 442 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(lowing properties and methods) 72 429 T
+2 F
+(shall) 223.32 429 T
+1 F
+( be implemented. To provide a common data format for uni-) 246.66 429 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+-0.66 (versal support, Open Firmware) 72 416 P
+2 F
+-0.66 (shall) 221.65 416 P
+1 F
+-0.66 ( ,by default, pass audio to) 244.99 416 P
+0 F
+-0.66 (write) 367.01 416 P
+1 F
+-0.66 ( or return audio from) 393.66 416 P
+0 F
+-0.66 (read) 494 416 P
+1 F
+-0.66 ( that) 517.32 416 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(consists of 8-bit monophonic samples encoded as unsigned linear values, centered at 128.) 72 403 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 9 Q
+0.88 (Note 1: Some implementation of "sound" nodes may need to convert this data into a form) 108 385 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0.9 (acceptable to the audio hardwar) 108 375 P
+0.9 (e being supported.  It is not anticipated that this is an) 235.43 375 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0.9 (unr) 108 365 P
+0.9 (easonable r) 121.84 365 P
+0.9 (equir) 166.33 365 P
+0.9 (ement.) 186.67 365 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0.9 (Note 2: An implementation may choose to supply additional pr) 108 348 P
+0.9 (operties, methods and) 356.7 348 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0.9 ("open" arguments so as to support mor) 108 338 P
+0.9 (e advanced audio capabilities, so long as a default) 265.73 338 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0.9 ("open" r) 108 328 P
+0.9 (esults in _write_ interpr) 143.48 328 P
+0.9 (eting the standard format.) 238.26 328 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 14 Q
+(6.1.  "sound" device standard pr) 72 298.67 T
+(operties) 266.59 298.67 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+6 12 Q
+("device_type") 72 280 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(S) 475.2 280 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1 F
+1.2 (Standard) 90 262 P
+2 F
+1.2 (pr) 136.86 262 P
+1.2 (operty) 147.08 262 P
+1 F
+1.2 (; the value of this property) 177.74 262 P
+2 F
+1.2 (shall) 314.93 262 P
+1 F
+1.2 ( be) 338.27 262 P
+3 F
+2.88 ("sound") 358 262 P
+1 F
+1.2 (.) 408.4 262 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+6 F
+("#channels") 72 240 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1 F
+1 (Standard) 90 222 P
+2 F
+1 (pr) 136.66 222 P
+1 (operty) 146.88 222 P
+1 F
+1 (, encoded as with) 176.76 222 P
+6 F
+2.39 (encode-int) 267.07 222 P
+1 F
+1 (, that represents the number of channels) 339.07 222 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1.2 (supported by the device.) 90 210 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+6 F
+("sample-resolution") 72 188 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(S) 475.2 188 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1 F
+1.2 (Standard) 90 170 P
+2 F
+1.2 (pr) 136.86 170 P
+1.2 (operty) 147.08 170 P
+1 F
+1.2 (, encoded as with) 176.96 170 P
+6 F
+2.88 (encode-int) 268.08 170 P
+1 F
+1.2 (, that represents the number of bits of) 340.08 170 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1.2 (resolution for each sound sample.) 90 158 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+6 F
+("sample-width") 72 136 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(S) 475.2 136 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1 F
+1.2 (Standard) 90 118 P
+2 F
+1.2 (pr) 136.86 118 P
+1.2 (operty) 147.08 118 P
+1 F
+1.2 (, encoded as with) 176.96 118 P
+6 F
+2.88 (encode-int) 268.08 118 P
+1 F
+1.2 (, that represents the number of bytes) 340.08 118 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1.2 (required for storing a sample.) 90 106 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+6 F
+("sample-rates") 72 84 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(S) 475.2 84 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+FMENDPAGE
+%%EndPage: "6" 6
+%%Page: "7" 7
+612 792 0 FMBEGINPAGE
+[0 0 0 1 0 0 0]
+[ 0 1 1 0 1 0 0]
+[ 1 0 1 0 0 1 0]
+[ 1 1 0 0 0 0 1]
+[ 1 0 0 0 0 1 1]
+[ 0 1 0 0 1 0 1]
+[ 0 0 1 0 1 1 0]
+ 7 FrameSetSepColors
+FrameNoSep
+0 0 0 1 0 0 0 K
+1 12 Q
+0 X
+0 0 0 1 0 0 0 K
+(Open Firmware Recommended Practice) 72 748 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(Device Support Extensions 0.7) 324 748 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(8/6/96) 72 28 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+2 F
+(Unapproved Draft) 270 28 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1 F
+(7) 534 28 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+3 F
+( 1) 31 721.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+( 2) 31 709.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+( 3) 31 697.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+( 4) 31 685.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+( 5) 31 673.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+( 6) 31 661.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+( 7) 31 649.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+( 8) 31 637.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+( 9) 31 625.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(10) 31 613.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(11) 31 601.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(12) 31 589.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(13) 31 577.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(14) 31 565.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(15) 31 553.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(16) 31 541.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(17) 31 529.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(18) 31 517.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(19) 31 505.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(20) 31 493.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(21) 31 481.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(22) 31 469.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(23) 31 457.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(24) 31 445.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(25) 31 433.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(26) 31 421.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(27) 31 409.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(28) 31 397.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(29) 31 385.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(30) 31 373.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(31) 31 361.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(32) 31 349.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(33) 31 337.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(34) 31 325.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(35) 31 313.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(36) 31 301.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(37) 31 289.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(38) 31 277.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(39) 31 265.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(40) 31 253.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(41) 31 241.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(42) 31 229.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(43) 31 217.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(44) 31 205.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(45) 31 193.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(46) 31 181.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(47) 31 169.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(48) 31 157.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(49) 31 145.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(50) 31 133.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(51) 31 121.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(52) 31 109.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(53) 31 97.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(54) 31 85.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(55) 31 73.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(56) 31 61.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(57) 31 49.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1 F
+1.2 (Standard) 90 721 P
+2 F
+1.2 (pr) 136.86 721 P
+1.2 (operty) 147.08 721 P
+1 F
+1.2 (, consisting of an array of integers, each encoded as with) 176.96 721 P
+6 F
+2.88 (encode-) 465.1 721 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+2.88 (int) 90 709 P
+1 F
+1.2 (, that represents the rates \050in hertz\051 at which this device can be sampled.) 111.6 709 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 14 Q
+(6.2.  "sound" device standard methods) 72 679.67 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1 12 Q
+(The following methods) 72 661 T
+2 F
+(shall) 187 661 T
+1 F
+( be implemented by a) 210.34 661 T
+3 10 Q
+("sound") 316.66 661 T
+1 12 Q
+( device.) 358.66 661 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+6 F
+(open) 72 635 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+2.88 (\050 -- true | false \051) 180 635 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(M) 475.2 635 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1 F
+1.2 (This Standard method prepares the) 90 617 P
+3 F
+2.88 ("sound") 266.3 617 P
+1 F
+1.2 ( device for subsequent) 316.7 617 P
+6 F
+2.88 (read) 432.14 617 P
+1 F
+1.2 (s and/or) 460.94 617 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+6 F
+2.76 (write) 90 605 P
+1 F
+1.15 (s. An ar) 126 605 P
+1.15 (gument can be supplied \050i.e., following a \325) 165.74 605 P
+6 F
+2.76 (:) 377.08 605 P
+1 F
+1.15 (\325 in the path-name component,) 384.28 605 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1.2 (available via) 90 593 P
+6 F
+2.88 (my-args) 156.38 593 P
+1 F
+1.2 (\051 to specify sampling parameters. The ar) 206.78 593 P
+1.2 (gument is a string) 407.39 593 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1.2 (consisting of the external representation of the sample-rate to be used; if absent, an) 90 581 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1.2 (implementation-de\336ned sample rate is used. An error is signalled by) 90 569 P
+6 F
+2.88 (open) 432.96 569 P
+1 F
+1.2 ( \050i.e., it) 461.76 569 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1.2 (returns) 90 557 P
+6 F
+2.88 (false) 127.52 557 P
+1 F
+1.2 (\051 if the requested sample rate can not be supported by the device.) 163.52 557 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+6 F
+(close) 72 535 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+2.88 (\050 -- \051) 180 535 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(M) 475.2 535 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1 F
+1.2 (Standard Open Firmware behavior) 90 517 P
+1.2 (.) 259.24 517 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+6 F
+(read) 72 495 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+2.88 (\050 addr size -- actual \051) 180 495 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(M) 475.2 495 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1 F
+1.2 (Acquire sound data, storing the samples at) 90 477 P
+3 F
+2.88 (addr) 305.04 477 P
+1 F
+1.2 (.) 333.18 477 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+6 F
+(write) 72 455 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+2.88 (\050 addr size -- actual \051) 180 455 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(M) 475.2 455 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1 F
+1.2 (Output sound samples, stored at) 90 437 P
+3 F
+2.88 (addr) 252.66 437 P
+1 F
+1.2 (.) 280.8 437 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 14 Q
+(7.  NVRAM Device) 72 407.67 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1 12 Q
+(Access to NVRAM is supported by this device-type. The NVRAM is treated as a device that can) 72 389 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+-0.47 (be read and written using the standard Open Firmware) 72 376 P
+6 F
+-1.13 (read) 332.04 376 P
+1 F
+-0.47 ( and) 360.83 376 P
+6 F
+-1.13 (write) 383.22 376 P
+1 F
+-0.47 ( methods; the starting po-) 419.22 376 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(sition within the NVRAM can be specified by the) 72 363 T
+6 F
+(seek) 313.64 363 T
+1 F
+( method.) 342.44 363 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 14 Q
+(7.1.  NVRAM pr) 72 332.67 T
+(operties) 170.9 332.67 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+6 12 Q
+("device_type") 72 314 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(S) 475.2 314 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1 F
+1.2 (Standard) 90 296 P
+2 F
+1.2 (pr) 136.86 296 P
+1.2 (operty) 147.08 296 P
+1 F
+1.2 (: the value of this property) 177.74 296 P
+2 F
+1.2 (shall) 314.93 296 P
+1 F
+1.2 ( be) 338.27 296 P
+3 F
+2.88 ("nvram") 358 296 P
+1 F
+1.2 (.) 408.4 296 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+6 F
+("#bytes") 72 274 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(S) 475.2 274 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+2 F
+1.2 (pr) 90 256 P
+1.2 (op-name) 100.22 256 P
+1 F
+1.2 (, describes the number of bytes the device is capable of storing.) 142.21 256 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+2 F
+1.2 (pr) 90 234 P
+1.2 (op-encoded array:) 100.22 234 P
+1 F
+1.2 ( An integer) 191.06 234 P
+1.2 (, encoded as with) 246.97 234 P
+6 F
+2.88 (encode-int.) 338.09 234 P
+1 F
+1.2 ( The value is the) 417.29 234 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1.2 (number of bytes the device can store.  T) 90 222 P
+1.2 (ypical values could be 4K, 8K, 16K or 32K) 291.05 222 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(bytes.) 90 210 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 14 Q
+(7.2.  NVRAM methods) 72 180.67 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1 12 Q
+(The following methods have the semantics of the Open Firmware methods:) 72 162 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+6 F
+(read) 72 136 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+2.88 (\050 addr len -- actual \051) 180 136 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(M) 475.2 136 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(write) 72 118 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+2.88 (\050 addr len -- actual \051) 180 118 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(M) 475.2 118 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(seek) 72 100 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+2.88 (\050 pos.lo pos.hi -- status \051) 180 100 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(M) 475.2 100 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(size) 72 82 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+2.88 (\050 -- size \051) 180 82 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(M) 475.2 82 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1 F
+1.2 (The returned value,) 90 64 P
+0 F
+1.2 (size) 190.24 64 P
+1 F
+1.2 (,  is the NVRAM size in bytes.) 208.9 64 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+FMENDPAGE
+%%EndPage: "7" 7
+%%Page: "8" 8
+612 792 0 FMBEGINPAGE
+[0 0 0 1 0 0 0]
+[ 0 1 1 0 1 0 0]
+[ 1 0 1 0 0 1 0]
+[ 1 1 0 0 0 0 1]
+[ 1 0 0 0 0 1 1]
+[ 0 1 0 0 1 0 1]
+[ 0 0 1 0 1 1 0]
+ 7 FrameSetSepColors
+FrameNoSep
+0 0 0 1 0 0 0 K
+1 12 Q
+0 X
+0 0 0 1 0 0 0 K
+(Device Support Extensions 0.7) 72 748 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(Open Firmware Recommended Practice) 324 748 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(8) 72 28 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+2 F
+(Unapproved Draft) 252 28 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1 F
+(8/6/96) 509.33 28 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+3 F
+( 1) 31 721.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+( 2) 31 709.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+( 3) 31 697.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+( 4) 31 685.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+( 5) 31 673.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+( 6) 31 661.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+( 7) 31 649.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+( 8) 31 637.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+( 9) 31 625.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(10) 31 613.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(11) 31 601.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(12) 31 589.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(13) 31 577.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(14) 31 565.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(15) 31 553.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(16) 31 541.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(17) 31 529.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(18) 31 517.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(19) 31 505.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(20) 31 493.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(21) 31 481.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(22) 31 469.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(23) 31 457.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(24) 31 445.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(25) 31 433.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(26) 31 421.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(27) 31 409.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(28) 31 397.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(29) 31 385.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(30) 31 373.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(31) 31 361.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(32) 31 349.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(33) 31 337.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(34) 31 325.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(35) 31 313.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(36) 31 301.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(37) 31 289.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(38) 31 277.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(39) 31 265.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(40) 31 253.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(41) 31 241.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(42) 31 229.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(43) 31 217.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(44) 31 205.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(45) 31 193.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(46) 31 181.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(47) 31 169.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(48) 31 157.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(49) 31 145.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(50) 31 133.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(51) 31 121.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(52) 31 109.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(53) 31 97.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(54) 31 85.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(55) 31 73.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(56) 31 61.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(57) 31 49.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 9 Q
+0.9 (Note: Size should not include any ar) 108 723 P
+0.9 (ea that is pr) 251.75 723 P
+0.9 (e-allocated manufacturing speci\336c imple-) 300.03 723 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0.9 (mentation outside ar) 108 713 P
+0.9 (eas de\336ned by system ar) 189.13 713 P
+0.9 (chitectur) 285.57 713 P
+0.9 (e speci\336cation.) 319.9 713 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1 12 Q
+2.04 (The following methods have additional behavior depending upon the) 72 697 P
+2 F
+2.04 (ar) 424.67 697 P
+2.04 (gument) 434.89 697 P
+1 F
+2.04 ( used to open) 470.22 697 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1.2 (the device.) 72 683 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+6 F
+(open) 72 663 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+2.88 (\050 -- true | false \051) 180 663 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(M) 475.2 663 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1 F
+1.2 (Standard method used to initiate access to the device) 90 645 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+6 F
+(close) 72 601 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+2.88 (\050 -- \051) 180 601 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(M) 475.2 601 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1 F
+1.2 (Standard Open Firmware behavior) 90 583 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 14 Q
+(8.  Serial port device) 72 553.67 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1 12 Q
+-0.66 (Access to the serial port is supported by this device-type.  The serial port is treated as a byte-stream) 72 535 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(device.) 72 522 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 14 Q
+(8.1.  Serial port pr) 72 491.67 T
+(operties) 181.41 491.67 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1 12 Q
+(As specified in [1] and [6] , with the following additions or modifications.) 72 472.82 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 F
+(8.1.1.  Open Firmwar) 72 447.82 T
+(e-de\336ned Pr) 181.78 447.82 T
+(operties for Device Nodes) 243.89 447.82 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+6 F
+(\322name\323) 90 429.82 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(S) 475.2 429.82 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1 F
+1.2 (Standard) 90 411.82 P
+2 F
+1.2 (pr) 136.86 411.82 P
+1.2 (operty name) 147.08 411.82 P
+1 F
+1.2 (, speci\336es the generic name of the device.) 207.94 411.82 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1.2 (The meaning of this property is as de\336ned in Open Firmware core document [1], as) 90 389.82 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1.2 (modi\336ed by the) 90 377.82 P
+2 F
+1.2 (Generic Names Recommended Practice) 171.94 377.82 P
+1 F
+1.2 ( [4]. The value for nodes) 366.48 377.82 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1.2 (described by this speci\336cation) 90 365.82 P
+2 F
+1.2 (shall) 242.78 365.82 P
+1 F
+1.2 ( be) 266.12 365.82 P
+3 F
+2.88 (\322serial\323) 285.85 365.82 P
+1 F
+1.2 (.) 343.45 365.82 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+6 F
+(\322device_type\323) 90 343.82 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(S) 475.2 343.82 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1 F
+1.2 (Standard) 90 325.82 P
+2 F
+1.2 (pr) 136.86 325.82 P
+1.2 (operty name) 147.08 325.82 P
+1 F
+1.2 ( to de\336ne the device\325) 207.94 325.82 P
+1.2 (s implemented interface.) 312.72 325.82 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1.2 (The meaning of this property is as de\336ned in the Open Firmware core document [1]. The) 90 303.82 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1.2 (value for nodes described by this speci\336cation) 90 291.82 P
+2 F
+1.2 (shall) 323.36 291.82 P
+1 F
+1.2 ( be \322) 346.7 291.82 P
+3 F
+2.88 (serial) 371.76 291.82 P
+1 F
+1.2 (\323.) 414.96 291.82 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+6 F
+(\322compatible\323) 90 269.82 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(S) 475.2 269.82 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1 F
+1.2 (Standard) 90 251.82 P
+2 F
+1.2 (pr) 136.86 251.82 P
+1.2 (operty name) 147.08 251.82 P
+1 F
+1.2 (, speci\336es device names with which this device is compatible.) 207.94 251.82 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1.11 (The meaning of this property is as de\336ned in Open Firmware, as modi\336ed by the) 90 229.82 P
+2 F
+1.11 (Generic) 497.24 229.82 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1.2 (Names Recommended Practice) 90 217.82 P
+1 F
+1.2 ( [4]. As described in those documents, the entries are a list) 241.69 217.82 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1.2 (of device names with which this device is compatible, starting with the name of the) 90 205.82 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1 (device itself and progressing through successively less precise and possibly less functional) 90 193.82 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1.2 (compatible devices.) 90 181.82 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1.2 (For this device, the compatible property) 90 159.82 P
+2 F
+1.2 (shall) 292.18 159.82 P
+1 F
+1.2 ( include \322) 315.52 159.82 P
+3 F
+2.88 (pnpPNP,501.) 364.57 159.82 P
+1 F
+1.2 (\323) 443.77 159.82 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1.2 (Additional entries may be supplied, at their appropriate position in the list, to describe) 90 137.82 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1.2 (devices with which this device is compatible.) 90 125.82 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+6 F
+(\322reg\323) 90 103.82 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(S) 475.2 103.82 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1 F
+1.2 (Standard) 90 85.82 P
+2 F
+1.2 (pr) 136.86 85.82 P
+1.2 (operty name) 147.08 85.82 P
+1 F
+1.2 ( to de\336ne the package\325) 207.94 85.82 P
+1.2 (s registers.) 320.71 85.82 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+52 81.82 54 563 R
+V
+0 0 0 1 0 0 0 K
+FMENDPAGE
+%%EndPage: "8" 8
+%%Page: "9" 9
+612 792 0 FMBEGINPAGE
+[0 0 0 1 0 0 0]
+[ 0 1 1 0 1 0 0]
+[ 1 0 1 0 0 1 0]
+[ 1 1 0 0 0 0 1]
+[ 1 0 0 0 0 1 1]
+[ 0 1 0 0 1 0 1]
+[ 0 0 1 0 1 1 0]
+ 7 FrameSetSepColors
+FrameNoSep
+0 0 0 1 0 0 0 K
+1 12 Q
+0 X
+0 0 0 1 0 0 0 K
+(Open Firmware Recommended Practice) 72 748 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(Device Support Extensions 0.7) 324 748 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(8/6/96) 72 28 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+2 F
+(Unapproved Draft) 270 28 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1 F
+(9) 534 28 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+3 F
+( 1) 31 721.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+( 2) 31 709.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+( 3) 31 697.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+( 4) 31 685.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+( 5) 31 673.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+( 6) 31 661.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+( 7) 31 649.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+( 8) 31 637.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+( 9) 31 625.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(10) 31 613.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(11) 31 601.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(12) 31 589.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(13) 31 577.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(14) 31 565.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(15) 31 553.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(16) 31 541.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(17) 31 529.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(18) 31 517.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(19) 31 505.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(20) 31 493.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(21) 31 481.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(22) 31 469.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(23) 31 457.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(24) 31 445.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(25) 31 433.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(26) 31 421.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(27) 31 409.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(28) 31 397.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(29) 31 385.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(30) 31 373.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(31) 31 361.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(32) 31 349.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(33) 31 337.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(34) 31 325.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(35) 31 313.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(36) 31 301.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(37) 31 289.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(38) 31 277.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(39) 31 265.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(40) 31 253.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(41) 31 241.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(42) 31 229.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(43) 31 217.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(44) 31 205.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(45) 31 193.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(46) 31 181.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(47) 31 169.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(48) 31 157.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(49) 31 145.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(50) 31 133.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(51) 31 121.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(52) 31 109.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(53) 31 97.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(54) 31 85.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(55) 31 73.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(56) 31 61.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(57) 31 49.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1 F
+1.2 (The meaning of this property is as de\336ned in the Open Firmware core document [1]. It) 90 721 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1.2 (describes the device's register set. The values which) 90 709 P
+2 F
+1.2 (shall) 352.03 709 P
+1 F
+1.2 ( be assigned to this property are) 375.37 709 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1.2 (explained in the) 90 697 P
+2 F
+1.2 (ISA/EISA/ISA-PnP binding) 173.26 697 P
+1 F
+1.2 ([6].) 304.78 697 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+6 F
+(\322interrupts\323) 90 675 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(S) 475.2 675 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1 F
+1.2 (Standard) 90 657 P
+2 F
+1.2 (pr) 136.86 657 P
+1.2 (operty name) 147.08 657 P
+1 F
+1.2 ( to de\336ne the package\325) 207.94 657 P
+1.2 (s interrupts.) 320.71 657 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1.2 (The meaning of this property is as de\336ned in the) 90 635 P
+2 F
+1.2 (Interrupt Mapping Recommended) 337.31 635 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1.2 (Practice) 90 623 P
+1 F
+1.2 ( [5]. The values assigned to this property are explained in the) 130.66 623 P
+2 F
+1.2 (ISA/EISA/ISA-PnP) 441.33 623 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(binding) 90 611 T
+1 F
+([6].) 126.67 611 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 F
+(8.1.2.  Device-speci\336c Pr) 72 587 T
+(operties for Device Nodes) 195.76 587 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1 F
+(As specified in [6], with the following addition.) 72 568.82 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+6 F
+(\322clock-frequency\323) 90 542.82 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(S) 475.2 542.82 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1 F
+1.2 (Standard property) 90 524.82 P
+1.2 (, encoded as with) 176.74 524.82 P
+3 F
+2.88 (encode-int) 267.85 524.82 P
+1 F
+1.2 (, that) 339.85 524.82 P
+2 F
+1.2 (shall) 369.25 524.82 P
+1 F
+1.2 ( be the baud-rate generator) 392.59 524.82 P
+1.2 (\325) 526.45 524.82 P
+1.2 (s) 529.79 524.82 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1.2 (clock input frequency \050in hertz\051.) 90 512.82 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1.2 (T) 90 490.82 P
+1.2 (ypically) 96.49 490.82 P
+1.2 (, the clock frequency is nominally 1,843,200 Hz. Some devices generate the) 134.38 490.82 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1.2 (baud rate input clock by dividing a higher) 90 478.82 P
+1.2 (-frequency clock source that is not an exact) 299.14 478.82 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1.2 (multiple of 1,843,200 Hz, resulting in a small but acceptable error in the nominal clock) 90 466.82 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1.2 (frequency) 90 454.82 P
+1.2 (. In such cases, the) 137.2 454.82 P
+3 F
+2.88 (\322) 236.17 454.82 P
+6 F
+2.88 (clock-frequency\323) 243.37 454.82 P
+2 F
+1.2 (shall) 362.77 454.82 P
+1 F
+1.2 ( report the actual nominal) 386.11 454.82 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1.2 (frequency) 90 442.82 P
+1.2 (. For example, if the baud rate input clock is generated by dividing a 24 MHz) 137.2 442.82 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1.2 (clock by 13, the value of the) 90 430.82 P
+6 F
+2.88 (\322clock-frequency\323) 237.71 430.82 P
+1 F
+1.2 ( property) 360.11 430.82 P
+2 F
+1.2 (shall) 409.16 430.82 P
+1 F
+1.2 ( be 1846153.) 432.5 430.82 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 14 Q
+(8.2.  Serial port methods) 72 401.48 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 12 Q
+(8.2.1.  Open Firmwar) 72 374.82 T
+(e-de\336ned Methods for Device Nodes) 181.78 374.82 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1 F
+(As specified in [1] and [6], with the following additions or modifications.) 72 356.63 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 F
+(8.2.1.1.  Device Arguments for \322Open\323 Method) 72 331.63 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1 F
+(As specified in [1] and [6], with the following addition or modification.) 72 313.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 F
+-0.74 (open) 72 300.45 P
+1 F
+-0.74 (is a Standard) 98.93 300.45 P
+-0.74 (Method for the Serial Device. When the Serial Device is opened, several device-) 161.69 300.45 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(arguments can be passed as defined below:) 72 287.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(driver-name@unit-address:) 72 261.45 T
+0 F
+(device-arguments) 203.69 261.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(device-arguments) 72 235.45 T
+1 F
+( are defined to be of the form, e.g. 9600,8,n,1, and sets the UART parameters) 162.65 235.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(\050baudrate,  #data bits, parity, #stop bits, and handshake\051 accordingly.) 72 222.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(The fields are \050in order, left to right\051:) 72 196.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(<baud rate>, <data bits>, <parity>, <stop bits>, <handshake>) 108 170.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+-0.75 (Fields with empty values are not changed. Values for fields are whatever the hardware will support:) 72 144.45 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(baud rates: various, including 110, 300, 1200, 2400, 4800, 9600, 19200, 38400) 108 118.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(character bits: 5,6,7,8) 108 92.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+52 75.45 54 729 R
+V
+0 0 0 1 0 0 0 K
+FMENDPAGE
+%%EndPage: "9" 9
+%%Page: "10" 10
+612 792 0 FMBEGINPAGE
+[0 0 0 1 0 0 0]
+[ 0 1 1 0 1 0 0]
+[ 1 0 1 0 0 1 0]
+[ 1 1 0 0 0 0 1]
+[ 1 0 0 0 0 1 1]
+[ 0 1 0 0 1 0 1]
+[ 0 0 1 0 1 1 0]
+ 7 FrameSetSepColors
+FrameNoSep
+0 0 0 1 0 0 0 K
+1 12 Q
+0 X
+0 0 0 1 0 0 0 K
+(Device Support Extensions 0.7) 72 748 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(Open Firmware Recommended Practice) 324 748 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(10) 72 28 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+2 F
+(Unapproved Draft) 252 28 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1 F
+(8/6/96) 509.33 28 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+3 F
+( 1) 31 721.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+( 2) 31 709.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+( 3) 31 697.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+( 4) 31 685.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+( 5) 31 673.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+( 6) 31 661.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+( 7) 31 649.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+( 8) 31 637.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+( 9) 31 625.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(10) 31 613.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(11) 31 601.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(12) 31 589.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(13) 31 577.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(14) 31 565.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(15) 31 553.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(16) 31 541.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(17) 31 529.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(18) 31 517.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(19) 31 505.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(20) 31 493.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(21) 31 481.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(22) 31 469.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(23) 31 457.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(24) 31 445.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(25) 31 433.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(26) 31 421.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(27) 31 409.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(28) 31 397.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(29) 31 385.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(30) 31 373.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(31) 31 361.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(32) 31 349.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(33) 31 337.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(34) 31 325.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(35) 31 313.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(36) 31 301.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(37) 31 289.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(38) 31 277.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(39) 31 265.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(40) 31 253.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(41) 31 241.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(42) 31 229.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(43) 31 217.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(44) 31 205.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(45) 31 193.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(46) 31 181.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(47) 31 169.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(48) 31 157.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(49) 31 145.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(50) 31 133.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(51) 31 121.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(52) 31 109.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(53) 31 97.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(54) 31 85.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(55) 31 73.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(56) 31 61.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(57) 31 49.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1 F
+(parity:) 108 721 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1.2 (stop bits:) 90 567.33 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(handshake:) 90 451.33 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1.2 (The default mode is 9600,8,n,1,-) 72 334 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 F
+(8.2.2.   Device-speci\336c Methods for Device Nodes) 72 308 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1 F
+(As specified in [1] and [6], with the following additions.) 72 289.82 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+6 F
+(set-mode) 90 263.82 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+2.88 ( \050) 180 263.82 P
+3 F
+2.88 (adr len) 207.36 263.82 P
+6 F
+2.88 (-- \051) 270.72 263.82 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(M) 475.2 263.82 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1 F
+1.07 (Sets the device mode according to the string at) 90 245.82 P
+2 F
+1.07 (adr) 326.61 245.82 P
+1 F
+1.07 (, of length) 342.79 245.82 P
+2 F
+1.07 (len) 398 245.82 P
+1 F
+1.07 (, which is interpreted the) 412.67 245.82 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1.2 (same as the ar) 90 233.82 P
+1.2 (guments to the) 161.03 233.82 P
+6 F
+2.88 ("open") 238.3 233.82 P
+1 F
+1.2 ( method \050see section 8.2.1.1. on page 9\051.) 281.5 233.82 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+6 F
+(set-modem-control) 90 211.82 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+2.88 ( \050) 212.4 211.82 P
+3 F
+2.88 (bitmask) 239.76 211.82 P
+6 F
+2.88 (-- \051) 300.24 211.82 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(M) 475.2 211.82 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1 F
+1.2 (Sets the device's modem control lines according to the following table:) 90 195.15 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+145 679.5 186.7 700 R
+6 X
+V
+0 14 Q
+0 X
+(char) 150 684.67 T
+187.7 679.5 236.6 700 R
+6 X
+V
+0 X
+(means) 193.2 684.67 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1 12 Q
+(n) 150 666 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(none) 193.2 666 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(e) 150 648 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(even) 193.2 648 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(o) 150 630 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(odd) 193.2 630 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(m) 150 612 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(mark) 193.2 612 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(s) 150 594 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(space) 193.2 594 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+145 526.5 186.7 547 R
+6 X
+V
+0 14 Q
+0 X
+(char) 150 531.67 T
+187.7 526.5 257.2 547 R
+6 X
+V
+0 X
+(means) 193.2 531.67 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1 12 Q
+(1) 150 513 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(1 stop bit) 193.2 513 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(.) 150 495 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(1.5 stop bits) 193.2 495 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(2) 150 477 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(2 stop bits) 193.2 477 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+145 410.5 186.7 431 R
+6 X
+V
+0 14 Q
+0 X
+(char) 150 415.67 T
+187.7 410.5 370.2 431 R
+6 X
+V
+0 X
+(means) 193.2 415.67 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1 12 Q
+(-) 150 397 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(none) 193.2 397 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(h) 150 379 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(hardware \050rts/cts\051 \134 Not supported) 193.2 379 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(s) 150 361 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(software \050xon/xof) 193.2 361 T
+(f\051 \134 Not supported) 278.63 361 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+145 139.32 208.3 174.82 R
+6 X
+V
+0 14 Q
+0 X
+(bitmask) 150 144.48 T
+209.3 139.32 325.8 174.82 R
+6 X
+V
+0 X
+(Modem contr) 214.8 159.48 T
+(ol) 295.8 159.48 T
+(state) 214.8 144.48 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1 12 Q
+(0) 150 125.82 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(R) 214.8 125.82 T
+(TS of) 222.08 125.82 T
+(f, DTR of) 248.87 125.82 T
+(f) 295.64 125.82 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(1) 150 107.82 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(R) 214.8 107.82 T
+(TS of) 222.08 107.82 T
+(f, DTR on) 248.87 107.82 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(2) 150 89.82 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(R) 214.8 89.82 T
+(TS on, DTR of) 222.08 89.82 T
+(f) 293.87 89.82 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(3) 150 71.82 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(R) 214.8 71.82 T
+(TS on, DTR on) 222.08 71.82 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+144 700 144 589 2 L
+V
+2 H
+0 Z
+N
+187.2 702 187.2 587 2 L
+V
+1 H
+N
+237.6 700 237.6 589 2 L
+V
+2 H
+N
+143 701 238.6 701 2 L
+V
+N
+145 679.25 236.6 679.25 2 L
+V
+0.5 H
+N
+145 676.75 236.6 676.75 2 L
+V
+N
+143 660 238.6 660 2 L
+V
+1 H
+N
+143 642 238.6 642 2 L
+V
+N
+143 624 238.6 624 2 L
+V
+N
+143 606 238.6 606 2 L
+V
+N
+143 588 238.6 588 2 L
+V
+2 H
+N
+144 547 144 472 2 L
+V
+N
+187.2 549 187.2 470 2 L
+V
+1 H
+N
+258.2 547 258.2 472 2 L
+V
+2 H
+N
+143 548 259.2 548 2 L
+V
+N
+145 526.25 257.2 526.25 2 L
+V
+0.5 H
+N
+145 523.75 257.2 523.75 2 L
+V
+N
+143 507 259.2 507 2 L
+V
+1 H
+N
+143 489 259.2 489 2 L
+V
+N
+143 471 259.2 471 2 L
+V
+2 H
+N
+144 431 144 356 2 L
+V
+N
+187.2 433 187.2 354 2 L
+V
+1 H
+N
+371.2 431 371.2 356 2 L
+V
+2 H
+N
+143 432 372.2 432 2 L
+V
+N
+145 410.25 370.2 410.25 2 L
+V
+0.5 H
+N
+145 407.75 370.2 407.75 2 L
+V
+N
+143 391 372.2 391 2 L
+V
+1 H
+N
+143 373 372.2 373 2 L
+V
+N
+143 355 372.2 355 2 L
+V
+2 H
+N
+144 174.82 144 66.82 2 L
+V
+N
+208.8 176.82 208.8 64.82 2 L
+V
+1 H
+N
+326.8 174.82 326.8 66.82 2 L
+V
+2 H
+N
+143 175.82 327.8 175.82 2 L
+V
+N
+145 139.07 325.8 139.07 2 L
+V
+0.5 H
+N
+145 136.57 325.8 136.57 2 L
+V
+N
+143 119.82 327.8 119.82 2 L
+V
+1 H
+N
+143 101.82 327.8 101.82 2 L
+V
+N
+143 83.82 327.8 83.82 2 L
+V
+N
+143 65.82 327.8 65.82 2 L
+V
+2 H
+N
+52 191.82 54 729 R
+V
+0 0 0 1 0 0 0 K
+FMENDPAGE
+%%EndPage: "10" 10
+%%Page: "11" 11
+612 792 0 FMBEGINPAGE
+[0 0 0 1 0 0 0]
+[ 0 1 1 0 1 0 0]
+[ 1 0 1 0 0 1 0]
+[ 1 1 0 0 0 0 1]
+[ 1 0 0 0 0 1 1]
+[ 0 1 0 0 1 0 1]
+[ 0 0 1 0 1 1 0]
+ 7 FrameSetSepColors
+FrameNoSep
+0 0 0 1 0 0 0 K
+1 12 Q
+0 X
+0 0 0 1 0 0 0 K
+(Open Firmware Recommended Practice) 72 748 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(Device Support Extensions 0.7) 324 748 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(8/6/96) 72 28 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+2 F
+(Unapproved Draft) 270 28 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1 F
+(11) 528 28 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+3 F
+( 1) 31 721.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+( 2) 31 709.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+( 3) 31 697.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+( 4) 31 685.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+( 5) 31 673.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+( 6) 31 661.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+( 7) 31 649.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+( 8) 31 637.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+( 9) 31 625.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(10) 31 613.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(11) 31 601.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(12) 31 589.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(13) 31 577.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(14) 31 565.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(15) 31 553.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(16) 31 541.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(17) 31 529.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(18) 31 517.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(19) 31 505.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(20) 31 493.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(21) 31 481.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(22) 31 469.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(23) 31 457.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(24) 31 445.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(25) 31 433.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(26) 31 421.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(27) 31 409.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(28) 31 397.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(29) 31 385.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(30) 31 373.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(31) 31 361.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(32) 31 349.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(33) 31 337.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(34) 31 325.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(35) 31 313.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(36) 31 301.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(37) 31 289.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(38) 31 277.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(39) 31 265.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(40) 31 253.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(41) 31 241.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(42) 31 229.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(43) 31 217.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(44) 31 205.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(45) 31 193.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(46) 31 181.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(47) 31 169.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(48) 31 157.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(49) 31 145.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(50) 31 133.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(51) 31 121.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(52) 31 109.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(53) 31 97.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(54) 31 85.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(55) 31 73.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(56) 31 61.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(57) 31 49.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1 F
+1.2 (The response for other values of) 90 721 P
+2 F
+1.2 (bitmask) 255.16 721 P
+1 F
+1.2 ( are implementation dependent.) 292.49 721 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1.2 (Changing the bits associated with these lines) 90 699 P
+2 F
+1.2 (shall) 316.06 699 P
+1 F
+1.2 ( have no ef) 339.4 699 P
+1.2 (fect on other bits not) 395.76 699 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1.2 (associated with this function.) 90 687 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 14 Q
+(9.  Parallel port device) 72 635.67 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1 12 Q
+(Access to the parallel port is supported by this device-type. The parallel port is treated as a byte-) 72 617 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(stream device.) 72 604 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 14 Q
+(9.1.  Parallel port pr) 72 573.67 T
+(operties) 193.07 573.67 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+6 12 Q
+("device_type") 72 555 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(S) 475.2 555 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1 F
+1.2 (Standard) 90 537 P
+2 F
+1.2 (pr) 136.86 537 P
+1.2 (operty) 147.08 537 P
+1 F
+1.2 (; the value of this property) 177.74 537 P
+2 F
+1.2 (shall) 314.93 537 P
+1 F
+1.2 ( be) 338.27 537 P
+3 F
+2.88 ("parallel") 358 537 P
+1 F
+1.2 (.) 430 537 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 14 Q
+(9.2.  Parallel port methods) 72 507.67 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1 12 Q
+(The following methods have the semantics of the corresponding Open Firmware standard meth-) 72 489 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(ods:) 72 476 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+6 F
+(open) 72 450 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+2.88 (\050 -- true | false \051) 180 450 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(M) 475.2 450 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(close) 72 432 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+2.88 (\050 -- \051) 180 432 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(M) 475.2 432 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(write) 72 414 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+2.88 (\050 addr len -- actual \051) 180 414 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(M) 475.2 414 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 14 Q
+(10.  Additional Requir) 72 382.67 T
+(ements for SCSI-2 Devices) 205.55 382.67 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1 12 Q
+-0.02 (A node representing a SCSI-2 device) 72 364 P
+2 F
+-0.02 (shall) 253.18 364 P
+1 F
+-0.02 ( implement all the methods and properties specified in) 276.52 364 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(Annex E, sections E.1 through E.5 of [1].) 72 350.82 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 14 Q
+(10.1.  Pr) 72 320.48 T
+(operties for SCSI-2 Bus Nodes) 121.52 320.48 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+6 12 Q
+("wide") 72 301.82 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(S) 475.2 301.82 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+2 F
+1.2 (pr) 90 283.82 P
+1.2 (op-name) 100.22 283.82 P
+1 F
+1.2 (, indicates that the SCSI-2 Node is wide.) 142.21 283.82 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+2 F
+1.2 (pr) 90 261.82 P
+1.2 (op-encode-array) 100.22 261.82 P
+1 F
+1.2 (: <none>) 180.86 261.82 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1.2 (This property) 90 239.82 P
+2 F
+1.2 (shall) 160.39 239.82 P
+1 F
+1.2 ( be present if the SCSI-2 controller represented by this node is wide,) 183.73 239.82 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1.2 (with SCSI-2 ID ranges 0 through 15, and) 90 227.82 P
+2 F
+1.2 (shall) 299.92 227.82 P
+1 F
+1.2 ( be absent otherwise.) 323.26 227.82 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1.2 (In order to support the wide SCSI-2, the example in Appendix E.6.3 of [1] would be) 90 205.82 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1.2 (amended as follows:) 90 193.82 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+3 F
+(E.6.3) 90 171.82 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(hacom.fth) 126 171.82 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(...) 90 158.82 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(: show-children  \050 -- \051) 90 145.82 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+-1 (  open  0=  if  ." Can't open SCSI-2 host adapter" cr  exit  then) 90 132.82 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(" wide"  get-my-property  if  8  else  2drop d# 16  then) 90 119.82 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(  0 do) 90 106.82 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(     i probe-target  if) 90 93.82 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(        ." Target " i . cr) 90 80.82 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(        8 0  do  i j show-lun  loop) 90 67.82 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+52 663 54 729 R
+V
+52 315.82 54 329.82 R
+V
+52 279.82 54 291.82 R
+V
+52 201.82 54 247.82 R
+V
+52 128.82 54 140.82 R
+V
+0 0 0 1 0 0 0 K
+FMENDPAGE
+%%EndPage: "11" 11
+%%Page: "12" 12
+612 792 0 FMBEGINPAGE
+[0 0 0 1 0 0 0]
+[ 0 1 1 0 1 0 0]
+[ 1 0 1 0 0 1 0]
+[ 1 1 0 0 0 0 1]
+[ 1 0 0 0 0 1 1]
+[ 0 1 0 0 1 0 1]
+[ 0 0 1 0 1 1 0]
+ 7 FrameSetSepColors
+FrameNoSep
+0 0 0 1 0 0 0 K
+1 12 Q
+0 X
+0 0 0 1 0 0 0 K
+(Device Support Extensions 0.7) 72 748 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(Open Firmware Recommended Practice) 324 748 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(12) 72 28 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+2 F
+(Unapproved Draft) 252 28 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1 F
+(8/6/96) 509.33 28 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+3 F
+( 1) 31 721.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+( 2) 31 709.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+( 3) 31 697.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+( 4) 31 685.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+( 5) 31 673.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+( 6) 31 661.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+( 7) 31 649.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+( 8) 31 637.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+( 9) 31 625.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(10) 31 613.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(11) 31 601.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(12) 31 589.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(13) 31 577.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(14) 31 565.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(15) 31 553.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(16) 31 541.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(17) 31 529.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(18) 31 517.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(19) 31 505.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(20) 31 493.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(21) 31 481.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(22) 31 469.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(23) 31 457.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(24) 31 445.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(25) 31 433.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(26) 31 421.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(27) 31 409.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(28) 31 397.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(29) 31 385.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(30) 31 373.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(31) 31 361.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(32) 31 349.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(33) 31 337.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(34) 31 325.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(35) 31 313.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(36) 31 301.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(37) 31 289.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(38) 31 277.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(39) 31 265.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(40) 31 253.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(41) 31 241.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(42) 31 229.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(43) 31 217.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(44) 31 205.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(45) 31 193.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(46) 31 181.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(47) 31 169.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(48) 31 157.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(49) 31 145.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(50) 31 133.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(51) 31 121.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(52) 31 109.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(53) 31 97.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(54) 31 85.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(55) 31 73.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(56) 31 61.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(57) 31 49.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(     then) 90 721 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(  loop) 90 708 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(;) 90 695 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+6 F
+("differential") 72 669 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+2 F
+1.2 (pr) 90 651 P
+1.2 (op-name) 100.22 651 P
+1 F
+1.2 (, indicates that the SCSI-2 Node supports dif) 142.21 651 P
+1.2 (ferential signaling.) 365.05 651 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+2 F
+1.2 (pr) 90 629 P
+1.2 (op-encode-array) 100.22 629 P
+1 F
+1.2 (: <none>) 180.86 629 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1.2 (This property may be present if the SCSI-2 controller represented by this node supports) 90 607 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1.2 (dif) 90 595 P
+1.2 (ferential signaling.) 103.12 595 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+6 F
+("scsi-initiator-id") 72 573 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+2 F
+1.2 (pr) 90 555 P
+1.2 (op-name) 100.22 555 P
+1 F
+1.2 (, indicating the initiator) 142.21 555 P
+1.2 (-id to be used for SCSI-2 transfers by this controller) 258.24 555 P
+1.2 (.) 518.02 555 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+2 F
+1.2 (pr) 90 533 P
+1.2 (op-encode-array) 100.22 533 P
+1 F
+1.2 (: An integer) 180.86 533 P
+1.2 (, encode as with) 240.11 533 P
+0 F
+1.2 (encode-int,) 325.22 533 P
+1 F
+1.2 (that speci\336es the value of the) 385.75 533 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1.2 (initiator) 90 521 P
+1.2 (-id for subsequent transfers by this controller) 127.76 521 P
+1.2 (.  If the "wide" property is not) 350.27 521 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1.2 (present the value is in the range of 0..7.  If the) 90 509 P
+6 F
+2.88 ("wide") 328.02 509 P
+1 F
+1.2 ( property is present the value is) 371.22 509 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1.2 (in the range of 0..15.  The initial value of the property is implementation dependent.) 90 497 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 14 Q
+(10.2.  Methods for SCSI-2 Bus Nodes) 72 467.67 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+6 12 Q
+2.88 (open) 72 449 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+2.88 (\050 -- true \051) 180 449 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(M) 475.2 449 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1 F
+1.2 (In addition to the standard Open Firmware behavior) 90 431 P
+1.2 (, the) 347.54 431 P
+6 F
+2.88 ("open") 373.61 431 P
+1 F
+1.2 ( method) 416.81 431 P
+2 F
+1.2 (shall) 461.21 431 P
+1 F
+1.2 ( set the) 484.55 431 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1.2 (host adapter's own selection ID as follows:) 90 419 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1.2 (Attempt to locate a) 90 397 P
+6 F
+2.88 ("scsi-initiator-id") 189.46 397 P
+1 F
+1.2 ( property by executing) 326.26 397 P
+6 F
+2.88 ("get-) 442.37 397 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+2.88 (inherited-property") 90 385 P
+1 F
+1.2 ( with the string) 226.8 385 P
+3 F
+2.88 ("scsi-initiator-id") 306.94 385 P
+1 F
+1.2 ( as its ar) 443.74 385 P
+1.2 (gument.) 486.78 385 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1.2 (If such a property is found, decode its value as with) 90 373 P
+3 F
+2.88 ("decode-int") 353.82 373 P
+1 F
+1.2 (, and use the) 440.22 373 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1.2 (decoded value as the host adapter's own selection ID.  Otherwise, use the value 7.) 90 361 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 9 Q
+0.9 (Note: The use of) 108 341 P
+6 F
+2.16 ("get-inherited-property") 176.59 341 P
+0 F
+0.9 ( to get the) 306.19 341 P
+6 F
+2.16 ("scsi-initiator-id") 349.78 341 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 F
+0.83 (pr) 108 331 P
+0.83 (operty makes it possible to choose the set of SCSI-2 host adapters to which the pr) 116.84 331 P
+0.83 (operty) 439.92 331 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0.9 (applies.  If the pr) 108 321 P
+0.9 (operty is in the r) 177.19 321 P
+0.9 (oot node, for example, it applies to all the SCSI host) 244.12 321 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0.9 (adapters in the system.  If the pr) 108 311 P
+0.9 (operty is elsewher) 238.63 311 P
+0.9 (e in the device tr) 309.25 311 P
+0.9 (ee, it applies only to) 376.17 311 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0.9 (host adapters in the subtr) 108 301 P
+0.9 (ee below and including the location of the pr) 209.94 301 P
+0.9 (operty) 386.99 301 P
+0.9 (.) 411.49 301 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 14 Q
+(1) 72 271.67 T
+(1.  Additional Requir) 78.23 271.67 T
+(ements for Block and Byte devices) 204.78 271.67 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1 12 Q
+(The "disk-label\325 standard support package and packages of device type "block" and "byte") 72 253 T
+2 F
+(shall) 509.38 253 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1 F
+(implement the following method:) 72 240 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+6 F
+2.88 (size) 72 214 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+2.88 (\050 -- d \051) 180 214 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(M) 475.2 214 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1 F
+1.2 (Return the size of the device in bytes.) 90 196 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1.2 (Return, as a double number "d", the number of bytes of storage associated with the) 90 174 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1.2 (device or instance.  If the size cannot be determined, return the double number -1.) 90 162 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1.2 (Packages of device type "block" and "byte") 72 140 P
+2 F
+1.2 (shall) 292.27 140 P
+1 F
+1.2 ( implement the following method:) 315.61 140 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+6 F
+(#blocks) 72 120 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+2.88 (\050 -- u \051) 180 120 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(M) 475.2 120 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1 F
+1.2 (Return the size of the device in blocks.) 90 102 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1.2 (Return, as an unsigned number "u", the number of blocks of storage associated with the) 90 80 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1.2 (device or instance, where a "block" is a unit of storage consisting of the number of bytes) 90 68 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+52 647 54 659 R
+V
+52 603 54 615 R
+V
+52 551 54 563 R
+V
+52 463 54 477 R
+V
+52 328 54 337 R
+V
+0 0 0 1 0 0 0 K
+FMENDPAGE
+%%EndPage: "12" 12
+%%Page: "13" 13
+612 792 0 FMBEGINPAGE
+[0 0 0 1 0 0 0]
+[ 0 1 1 0 1 0 0]
+[ 1 0 1 0 0 1 0]
+[ 1 1 0 0 0 0 1]
+[ 1 0 0 0 0 1 1]
+[ 0 1 0 0 1 0 1]
+[ 0 0 1 0 1 1 0]
+ 7 FrameSetSepColors
+FrameNoSep
+0 0 0 1 0 0 0 K
+1 12 Q
+0 X
+0 0 0 1 0 0 0 K
+(Open Firmware Recommended Practice) 72 748 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(Device Support Extensions 0.7) 324 748 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(8/6/96) 72 28 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+2 F
+(Unapproved Draft) 270 28 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1 F
+(13) 528 28 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+3 F
+( 1) 31 721.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+( 2) 31 709.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+( 3) 31 697.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+( 4) 31 685.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+( 5) 31 673.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+( 6) 31 661.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+( 7) 31 649.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+( 8) 31 637.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+( 9) 31 625.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(10) 31 613.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(11) 31 601.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(12) 31 589.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(13) 31 577.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(14) 31 565.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(15) 31 553.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(16) 31 541.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(17) 31 529.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(18) 31 517.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(19) 31 505.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(20) 31 493.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(21) 31 481.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(22) 31 469.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(23) 31 457.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(24) 31 445.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(25) 31 433.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(26) 31 421.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(27) 31 409.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(28) 31 397.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(29) 31 385.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(30) 31 373.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(31) 31 361.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(32) 31 349.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(33) 31 337.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(34) 31 325.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(35) 31 313.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(36) 31 301.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(37) 31 289.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(38) 31 277.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(39) 31 265.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(40) 31 253.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(41) 31 241.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(42) 31 229.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(43) 31 217.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(44) 31 205.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(45) 31 193.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(46) 31 181.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(47) 31 169.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(48) 31 157.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(49) 31 145.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(50) 31 133.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(51) 31 121.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(52) 31 109.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(53) 31 97.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(54) 31 85.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(55) 31 73.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(56) 31 61.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(57) 31 49.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1 F
+1.02 (returned by the package\325) 90 721 P
+1.02 (s "block-size" method.  If the size cannot be determined, or if the) 211.35 721 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1.2 (number of blocks exceeds the range of an unsigned number) 90 709 P
+1.2 (, return the maximum) 385.92 709 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1.2 (unsigned integer \050which, because of Open Firmware\325) 90 697 P
+1.2 (s assumption of two\325) 352.14 697 P
+1.2 (s complement) 455.41 697 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1.2 (arithmetic is equivalent to the signed number -1\051.) 90 685 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 14 Q
+(12.  Additional Requir) 72 655.67 T
+(ements for Block Devices) 205.55 655.67 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1 12 Q
+(The "disk-label" standard support package and packages of device type "block") 72 637 T
+2 F
+(shall) 456.49 637 T
+1 F
+( implement) 479.83 637 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(the following methods:) 72 624 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+6 F
+2.88 (offset-low) 72 598 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+2.88 (\050 -- u \051) 180 598 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(M) 475.2 598 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1 F
+1.2 (Returns the least signi\336cant cell of the double number denoting the beginning of) 90 580 P
+1.2 (fset of) 490.15 580 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1.2 (the disk partition that was speci\336ed when the) 90 568 P
+3 F
+2.88 ("disk-label") 318.91 568 P
+1 F
+1.2 ( support package was) 405.31 568 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1.2 (opened.  In general that of) 90 556 P
+1.2 (fset is obtained by executing the) 221.75 556 P
+0 F
+1.2 (offset) 386.93 556 P
+1 F
+1.2 ( method of the "disk-) 414.91 556 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1.2 (label" support package with an ar) 90 544 P
+1.2 (gument of zero.  It is permissible for the disk package) 256.31 544 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1.2 (to execute the) 90 532 P
+3 F
+2.88 ("disk-label") 163.25 532 P
+1 F
+1.2 ( support package\325) 249.65 532 P
+1.2 (s) 336.7 532 P
+0 F
+1.2 (offset) 345.56 532 P
+1 F
+1.2 ( method once after opening that) 373.55 532 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1.2 (support package, storing the result for later use.) 90 520 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+6 F
+2.88 (offset-high) 72 498 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+2.88 (\050 -- u \051) 180 498 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(M) 475.2 498 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1 F
+1.2 (Returns the most signi\336cant cell of the double number denoting the beginning of) 90 480 P
+1.2 (fset of) 491.5 480 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1.2 (the disk partition that was speci\336ed when the) 90 468 P
+3 F
+2.88 ("disk-label") 318.91 468 P
+1 F
+1.2 ( support package was) 405.31 468 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1.2 (opened.  In general that of) 90 456 P
+1.2 (fset is obtained by executing the) 221.75 456 P
+0 F
+1.2 (offset) 386.93 456 P
+1 F
+1.2 ( method of the "disk-) 414.91 456 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1.2 (label" support package with an ar) 90 444 P
+1.2 (gument of zero.  It is permissible for the disk package) 256.31 444 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1.2 (to execute the) 90 432 P
+3 F
+2.88 ("disk-label") 163.25 432 P
+1 F
+1.2 ( support package\325) 249.65 432 P
+1.2 (s) 336.7 432 P
+0 F
+1.2 (offset) 345.56 432 P
+1 F
+1.2 ( method once after opening that) 373.55 432 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1.2 (support package, storing the result for later use.) 90 420 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 14 Q
+(13.  /aliases Node Pr) 72 390.67 T
+(operties) 191.91 390.67 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1 12 Q
+-0 (The following aliases) 72 372 P
+2 F
+-0 (shall) 178.31 372 P
+1 F
+-0 ( be provided under the "/aliases" node if an applicable device node ex-) 201.65 372 P
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(ists:) 72 359 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(keyboard) 108 333 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(mouse) 108 307 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(rtc) 108 281 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(sound) 108 255 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(nvram) 108 229 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(parallel) 108 203 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(serial) 108 177 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+52 173 54 185 R
+V
+0 0 0 1 0 0 0 K
+FMENDPAGE
+%%EndPage: "13" 13
+%%Page: "14" 14
+612 792 0 FMBEGINPAGE
+[0 0 0 1 0 0 0]
+[ 0 1 1 0 1 0 0]
+[ 1 0 1 0 0 1 0]
+[ 1 1 0 0 0 0 1]
+[ 1 0 0 0 0 1 1]
+[ 0 1 0 0 1 0 1]
+[ 0 0 1 0 1 1 0]
+ 7 FrameSetSepColors
+FrameNoSep
+0 0 0 1 0 0 0 K
+1 12 Q
+0 X
+0 0 0 1 0 0 0 K
+(Device Support Extensions 0.7) 72 748 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(Open Firmware Recommended Practice) 324 748 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(14) 72 28 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+2 F
+(Unapproved Draft) 252 28 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1 F
+(8/6/96) 509.33 28 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+3 F
+( 1) 31 721.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+( 2) 31 709.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+( 3) 31 697.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+( 4) 31 685.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+( 5) 31 673.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+( 6) 31 661.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+( 7) 31 649.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+( 8) 31 637.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+( 9) 31 625.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(10) 31 613.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(11) 31 601.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(12) 31 589.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(13) 31 577.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(14) 31 565.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(15) 31 553.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(16) 31 541.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(17) 31 529.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(18) 31 517.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(19) 31 505.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(20) 31 493.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(21) 31 481.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(22) 31 469.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(23) 31 457.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(24) 31 445.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(25) 31 433.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(26) 31 421.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(27) 31 409.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(28) 31 397.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(29) 31 385.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(30) 31 373.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(31) 31 361.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(32) 31 349.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(33) 31 337.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(34) 31 325.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(35) 31 313.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(36) 31 301.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(37) 31 289.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(38) 31 277.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(39) 31 265.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(40) 31 253.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(41) 31 241.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(42) 31 229.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(43) 31 217.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(44) 31 205.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(45) 31 193.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(46) 31 181.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(47) 31 169.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(48) 31 157.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(49) 31 145.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(50) 31 133.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(51) 31 121.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(52) 31 109.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(53) 31 97.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(54) 31 85.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(55) 31 73.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(56) 31 61.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(57) 31 49.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+FMENDPAGE
+%%EndPage: "14" 14
+%%Page: "15" 15
+612 792 0 FMBEGINPAGE
+[0 0 0 1 0 0 0]
+[ 0 1 1 0 1 0 0]
+[ 1 0 1 0 0 1 0]
+[ 1 1 0 0 0 0 1]
+[ 1 0 0 0 0 1 1]
+[ 0 1 0 0 1 0 1]
+[ 0 0 1 0 1 1 0]
+ 7 FrameSetSepColors
+FrameNoSep
+0 0 0 1 0 0 0 K
+1 12 Q
+0 X
+0 0 0 1 0 0 0 K
+(Open Firmware Recommended Practice) 72 748 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(Device Support Extensions 0.7) 324 748 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(8/6/96) 72 28 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+2 F
+(Unapproved Draft) 270 28 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+1 F
+(15) 528 28 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+3 F
+( 1) 31 721.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+( 2) 31 709.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+( 3) 31 697.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+( 4) 31 685.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+( 5) 31 673.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+( 6) 31 661.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+( 7) 31 649.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+( 8) 31 637.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+( 9) 31 625.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(10) 31 613.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(11) 31 601.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(12) 31 589.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(13) 31 577.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(14) 31 565.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(15) 31 553.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(16) 31 541.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(17) 31 529.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(18) 31 517.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(19) 31 505.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(20) 31 493.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(21) 31 481.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(22) 31 469.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(23) 31 457.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(24) 31 445.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(25) 31 433.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(26) 31 421.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(27) 31 409.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(28) 31 397.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(29) 31 385.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(30) 31 373.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(31) 31 361.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(32) 31 349.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(33) 31 337.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(34) 31 325.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(35) 31 313.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(36) 31 301.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(37) 31 289.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(38) 31 277.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(39) 31 265.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(40) 31 253.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(41) 31 241.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(42) 31 229.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(43) 31 217.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(44) 31 205.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(45) 31 193.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(46) 31 181.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(47) 31 169.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(48) 31 157.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(49) 31 145.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(50) 31 133.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(51) 31 121.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(52) 31 109.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(53) 31 97.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(54) 31 85.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(55) 31 73.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(56) 31 61.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+(57) 31 49.45 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 F
+(--  END OF DOCUMENT  --) 233.84 253 T
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+FMENDPAGE
+%%EndPage: "15" 15
+%%Trailer
+%%BoundingBox: 0 0 612 792
+%%PageOrder: Ascend
+%%Pages: 15
+%%DocumentFonts: Times-Bold
+%%+ Times-Roman
+%%+ Times-Italic
+%%+ Courier
+%%+ Helvetica
+%%+ Helvetica-Oblique
+%%+ Courier-Bold
+%%+ Courier-Oblique
+%%EOF

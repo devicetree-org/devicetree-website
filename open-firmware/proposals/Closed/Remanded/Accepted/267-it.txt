@@ -1,0 +1,56 @@
+Date: Fri, 5 May 1995 13:31:28 -0700
+From: stevez@bigboy74.West.Sun.COM (Steve Zucker)
+Subject: Item #267: PowerPC binding: "hostid" property
+
+P1275 Open Firmware Working Group Proposal -- Proposal #267 Ver 1.0
+
+Title:		"hostid" property for PowerPC
+
+Author:		Steve Zucker
+
+Date:		5/5/95
+
+Ed/Tech:	Technical
+
+Synopsis:	Require "hostid" property to return unique machine id
+
+Doc & Version:	PowerPC Processor Binding
+
+Problem:	The current draft PowerPC binding does not provide
+		a means for an OS to determine a unique "host"
+		identification for the machine.  This is needed for
+		most software licensing schemes.  It is allowed for by
+		the "residual data structure", but is not explicitly
+		available in an Open Firmware property.
+
+Proposal:	Add a "hostid" property to the root node of the
+		device tree, analogous to the "idprom" property
+		specified in Annex D, section D.3.1.2 (page 202)
+		of IEEE Std 1275-1994, but (1) containing only the
+		host identification, leaving out the Ethernet address
+		and "other information" that are in a Sun-specified
+		structure, and (2) being a NUL-terminated string
+		rather than a (known, fixed length) structure.
+
+		In particular, add the following text to the "Root node
+		properties" section of the PowerPC processor binding:
+
+		-------------------------------------------------------
+		"hostid"
+			Standard property, encoded as with encode-string,
+			that contains the unique identification (vendor
+			ID and serial number) of the computer system.
+		-------------------------------------------------------
+
+		Notes:
+
+		The residual data structure defined in version 1.1 of
+		the PReP spec has a 64-byte "Serial" field in its
+		"vital product data" that contains the required
+		information.  An Open Firmware implementation could
+		remove trailing padding (e.g., NULs or spaces), replace
+		any internal NULs with another character (e.g., underscore
+		or space), and encode-string the result.
+
+[ P1275 Item #267 -- Received: Fri May  5 13:36:57 PDT 1995 ]
+

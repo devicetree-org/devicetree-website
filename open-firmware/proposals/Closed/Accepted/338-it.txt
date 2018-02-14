@@ -1,0 +1,59 @@
+Date: Mon, 22 Apr 1996 12:21:36 -0700
+From: ron@apple.com (Ron Hochsprung)
+Subject: Item #338: Dev Sup Ext: scancode methods
+
+
+P1275 Openboot Working Group Proposal -- Proposal #:338 Ver <Author-Version#>
+
+Title:          clarification of scancodes and their use
+
+Author:         Ron Hochsprung
+
+Date:           4/22/96
+
+Ed/Tech:        Technical
+
+Synopsis:       make scancode methods usable
+
+Doc & Version:  Device Support Extensions 0.6
+
+Problem:
+
+The definition and use of "scancode" in the keyboard device assume that
+a single cell is sufficient to represent a "scancode".  While this may
+be true in some systems (i.e., ADB), it is not true in general.
+
+If the scancode is supposed to be the low-level codes that the keyboard
+sends, then a single cell is not sufficient.
+
+This "proposal" is primarily put forth to create a discussion item. I'm not
+sure what the "correct" answer is.
+
+Proposal:
+
+Define the scancode to be a multi-byte string that represents all of the
+low-level codes (dependent upon the keyboard implementation) that represent
+one keyboadr "event".  I.e., all of the codes that represent a key-press
+or key-release.
+
+If this is the interpretation of scancodes, then change the call to get-scancode
+as follows:
+
+    get-scancode     ( adr len msecs -- actual true | false )
+
+where adr,len are a buffer large enough to hold the worst case scancode
+sequence.  actual is the length of the scancode sequence returned.
+
+Change the definition of scancode->char to:
+
+    scancode->char  ( adr len -- char true | false )
+
+where adr,len are as above.
+
+As I said, I am primarily introducing the proposal to stimulate dialog, but
+I don't think that the current definition "works".
+
+Ron
+
+[ P1275 Item #338 -- Received: Mon Apr 22 12:20:02 PDT 1996 ]
+
