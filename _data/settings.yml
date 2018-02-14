@@ -15,7 +15,12 @@ slogan: The DeviceTree Specification
 # Breadcrumb Settings
 breadcrumb:
     image: breadcrumb-image.jpg
-    
+
+
+#Content Repo for static site.
+# Used for the edit on github include
+content-repo: https://github.com/devicetree-org/devicetree-website
+
 # Mailchimp settings
 mailchimp:
     enabled: true
