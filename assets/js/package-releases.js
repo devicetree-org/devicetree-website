@@ -6,7 +6,6 @@
 //= require vendor/ls.unveilhooks
 //= require vendor/lightbox
 //= require app/sticky-tab-bar
-//= require app/releases
 
 //= require app/main
 //= require app/releases
