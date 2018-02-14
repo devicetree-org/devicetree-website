@@ -4,10 +4,6 @@ title:  "Devicetree Specification v0.2 Released"
 date:   2017-12-20 12:00:00
 categories: Blog
 author: Grant Likely
-image:
-    featured: true
-    path: /assets/images/devicetree-logo-dark.png
-    name: devicetree-logo-dark.png
 ---
 
 Today, version 0.2 of the Devicetree Specification was released.
