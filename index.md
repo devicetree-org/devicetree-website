@@ -1,7 +1,5 @@
 ---
-layout: home-shape
-js-vendor: home
-css-pack: home
+layout: home
 keywords: OpenFirmware, OpenPOWER Abstraction Layer (OPAL), Power Architecture Platform Requirements (PAPR), Flattened Device Tree (FDT), Devicetree, Specification, data, structure
 ---
 <div class="text-center" markdown="1">

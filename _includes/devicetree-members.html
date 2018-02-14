@@ -1,13 +1,11 @@
----
-layout: container-breadcrumb
-title: Members
-permalink: /members/
-js-package: extended
----
-{% include sticky-tab-bar.html %}
-
+{% unless page.url == "/members/" %}
 <div class="row members members-container">
     <div class="container">
+        {% unless page.url == "/" %}
+            <hr />
+        {% endunless %}
+        <h4 class="text-center">Members</h4>
+        <br/>
           <div class="col-xs-6 col-sm-3">
               <img class="lazyload img-responsive member-image center-block" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
               data-src="{% asset_path 'arm.jpg' %}"  alt="Arm Logo - Device Tree Member">
@@ -45,4 +43,4 @@ js-package: extended
       </div>
     </div>
 </div>
-
+{% endunless %}

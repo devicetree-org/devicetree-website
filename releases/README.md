@@ -1,11 +1,11 @@
 ---
-layout: default
+layout: container-breadcrumb
 title: Releases
 permalink: /releases/
-js-vendor: extended
-css-pack: lightbox
+js-package: releases
 keywords: Releases, Device Tree, RoadMap
 ---
+{% include sticky-tab-bar.html %}
 
 ## Releases
 
