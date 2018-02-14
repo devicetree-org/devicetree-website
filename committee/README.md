@@ -1,12 +1,15 @@
 ---
-layout: default
+layout: container-breadcrumb
 title: Committee
 permalink: /committee/
 committee_images:
   - member1.jpg
   - member2.jpg
   - member3.jpg
+js-package: extended
 ---
+{% include sticky-tab-bar.html %}
+
 ## Technical Steering Committee Charter
 
 ### Guiding Principle

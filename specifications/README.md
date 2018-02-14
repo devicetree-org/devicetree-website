@@ -1,10 +1,12 @@
 ---
-layout: default
+layout: container-breadcrumb
 title: Specifications
 permalink: /specifications/
-js-vendor: extended
+js-package: releases
 keywords: Devicetree, Specification, release, v1.0
 ---
+{% include sticky-tab-bar.html %}
+
 ## **The Devicetree Specification**
  
 ### Current Release
