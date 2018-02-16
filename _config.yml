@@ -10,6 +10,9 @@ url: "https://www.devicetree.org"
 #Github Username
 github_username:  devicetree
 
+# Blog Structure
+permalink: /blog/:title/ 
+
 # Use the Jumbo Jekyll Theme
 theme: jumbo-jekyll-theme
 
