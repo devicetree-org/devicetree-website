@@ -19,7 +19,7 @@ This [repository](https://github.com/devicetree-org/devicetree-specification) ho
 
 Requirements:
 
-*   Sphinx: [http://sphinx-doc.org/contents.html](http://sphinx-doc.org/contents.html)
+*   Sphinx: [http://www.sphinx-doc.org/en/master/](http://www.sphinx-doc.org/en/master/)
     *   version 1.2.3 or later
 *   LaTeX (and pdflatex, and various LaTeX packages)
 *   Graphviz (in particular, "dot"): [http://www.graphviz.org/](http://www.graphviz.org/)
