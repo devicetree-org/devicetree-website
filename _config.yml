@@ -21,3 +21,7 @@ exclude:
     - .asset-cache
     - .sass-cache
     - _site
+
+plugins:
+    - jekyll-minimagick
+    - mini_magick
