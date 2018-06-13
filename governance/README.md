@@ -1,12 +1,10 @@
 ---
-layout: container-breadcrumb
+layout: container-breadcrumb-tabs
 title: Governance
 permalink: /governance/
 js-package: extended
 keywords: Mission, Device tree, Devicetree, Governance, Contribution, Membership
 ---
-{% include sticky-tab-bar.html %}
-
 ## Mission of devicetree.org
 
 To reduce fragmentation, improve maintainability and increase multi-platform support in hardware description, by building on the existing standard for device tree which reflects the current best practices and technology. This standard will be supported by an open process that encourages wide community participation and industry support.

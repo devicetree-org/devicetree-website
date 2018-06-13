@@ -1,12 +1,10 @@
 ---
-layout: container-breadcrumb
+layout: container-breadcrumb-tabs
 title: Releases
 permalink: /releases/
 js-package: releases
 keywords: Releases, Device Tree, RoadMap
 ---
-{% include sticky-tab-bar.html %}
-
 ## Releases
 
 <div id="devicetree_releases"></div>

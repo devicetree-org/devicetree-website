@@ -1,11 +1,9 @@
 ---
-layout: container-breadcrumb
+layout: container-breadcrumb-tabs
 title: Members
 permalink: /members/
 js-package: extended
 ---
-{% include sticky-tab-bar.html %}
-
 <div class="row members members-container">
     <div class="container">
           <div class="col-xs-6 col-sm-3">
