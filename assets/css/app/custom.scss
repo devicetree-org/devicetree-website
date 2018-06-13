@@ -123,3 +123,8 @@ iframe#contact-form{
 div#contact-thanks {
     margin-top: -20px;
 }
+// Overide the margin-bottom on the featured-jumbotron so the shaped divider is positoned correctly.
+#wrapper div#featured-jumbotron {
+    margin-bottom: 0px;
+}   
+
