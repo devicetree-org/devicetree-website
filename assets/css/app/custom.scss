@@ -123,3 +123,27 @@ iframe#contact-form{
 div#contact-thanks {
     margin-top: -20px;
 }
+// Overide the margin-bottom on the featured-jumbotron so the shaped divider is positoned correctly.
+#wrapper div#featured-jumbotron {
+    margin-bottom: 0px;
+}   
+
+// CSS for the email button.
+#wrapper .email {
+    height: 50px;
+    background-color: $brand-primary;
+    width: 200px;
+    line-height: 30px;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    border: 1px solid #9e9e9e;
+    margin-left: auto;
+    margin-right: auto;
+    transition: all 200ms ease;
+}
+#wrapper .email:hover {
+    background-color: #3a3a3a;
+    border: 1px solid #000000;
+    color:white;
+}

@@ -6,7 +6,7 @@
 search:
     enabled: true
     label: DeviceTree
-
+universal-nav: true
 brand:
     text: DeviceTree
     image: 
