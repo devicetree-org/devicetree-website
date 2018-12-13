@@ -10,7 +10,7 @@ jumbotron:
         A devicetree is a data structure for describing hardware
     buttons:
         - title: Specification
-          url: /specification/
+          url: /specifications/
           class: btn btn-primary btn-lg fade-in-three bottom-border-five
 ---
 <div class="text-center" markdown="1">
