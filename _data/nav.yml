@@ -8,10 +8,10 @@ search:
     label: DeviceTree
 universal-nav: true
 brand:
-    text: DeviceTree
+    text: OP-TEE
     image: 
         enabled: true
-        name: device-tree-logo.png
+        path: /assets/images/device-tree-logo.png
     url: /
 pages:
     - title: Home
