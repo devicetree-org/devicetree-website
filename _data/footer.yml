@@ -1,14 +1,9 @@
-# Footer Configuration
-# - Add your footer structure to the columns key
-# - Add company links to be displayed in the footer.
-
-# Image to be used in the footer. 
-# Default is the Linaro Sprinkle
 image: device-tree-vertical-logo.png
-
+footer-image: /assets/images/Linaro-Sprinkle.png
+footer-image-url: /
+company-copyright-text: Linaro Limited
 # Footer Include
 include: devicetree-members.html
-
 # Columns to be added to the fospec-button center-block fade-in-twooter
 columns:
     - title: Device Tree Speciciation

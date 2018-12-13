@@ -1,5 +1,5 @@
 ---
-layout: container-breadcrumb
+layout: container-breadcrumb-tabs
 title: Committee
 permalink: /committee/
 committee_images:
@@ -8,8 +8,6 @@ committee_images:
   - member3.jpg
 js-package: extended
 ---
-{% include sticky-tab-bar.html %}
-
 ## Technical Steering Committee Charter
 
 ### Guiding Principle
