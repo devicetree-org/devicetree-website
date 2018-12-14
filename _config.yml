@@ -9,7 +9,7 @@ url: "https://www.devicetree.org"
 
 #Github Username
 github_username:  devicetree
-
+blog_images_dir: assets/images/
 # Blog Structure
 permalink: /blog/:title/ 
 

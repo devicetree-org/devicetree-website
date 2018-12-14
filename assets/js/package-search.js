@@ -4,6 +4,7 @@
 //= require vendor/lazysizes
 
 //= require app/main
+//= require app/search
 //= require vendor/fess-ss-11.4.min
 //= require app/tables
 //= require app/custom

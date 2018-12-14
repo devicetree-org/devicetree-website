@@ -1,6 +1,17 @@
 ---
-layout: home
 keywords: OpenFirmware, OpenPOWER Abstraction Layer (OPAL), Power Architecture Platform Requirements (PAPR), Flattened Device Tree (FDT), Devicetree, Specification, data, structure
+layout: jumbotron-container
+jumbotron:
+    animation: fade
+    image: /assets/images/devicetree-icon-white.png
+    title: The DeviceTree Specification
+    background-image: /assets/images/background-image.jpg
+    description: >-
+        A devicetree is a data structure for describing hardware
+    buttons:
+        - title: Specification
+          url: /specifications/
+          class: btn btn-primary btn-lg fade-in-three bottom-border-five
 ---
 <div class="text-center" markdown="1">
 
