@@ -15,7 +15,7 @@ permalink: /legal/
 <div class="tab-pane tab-pane-legal active" id="1a" markdown="1">
 ## Information about the Linaro devicetree.org Website
 
-Please refer to: [https://www.devicetree.org/about/](https://www.devicetree.org/about/)
+Please refer to: [https://www.devicetree.org/](https://www.devicetree.org/)
 
 ## Information about Linaro™
 
