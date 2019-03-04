@@ -13,13 +13,13 @@ permalink: /legal/
 
 <div class="tab-content clearfix" id="tabbed_nav_content">
 <div class="tab-pane tab-pane-legal active" id="1a" markdown="1">
-## Information about the Linaro op-tee.org Website
+## Information about the Linaro devicetree.org Website
 
-Please refer to: [https://www.op-tee.org/about/](https://www.op-tee.org/about/)
+Please refer to: [https://www.devicetree.org/about/](https://www.devicetree.org/about/)
 
 ## Information about Linaro™
 
-The “Linaro op-tee.org Website” (the “Website”) shall mean the web site operated by or on behalf of Linaro Limited (hereinafter “We/Us/Our”) for your use, whether as a guest or a registered user. Linaro Limited is a private limited company registered in England and Wales with company number 07180318\. VAT No: 990 0273 24\. Registered Office Address:
+The “Linaro devicetree.org Website” (the “Website”) shall mean the web site operated by or on behalf of Linaro Limited (hereinafter “We/Us/Our”) for your use, whether as a guest or a registered user. Linaro Limited is a private limited company registered in England and Wales with company number 07180318\. VAT No: 990 0273 24\. Registered Office Address:
 Harston Mill
 Harston
 Cambridge
