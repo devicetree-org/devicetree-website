@@ -14,8 +14,6 @@ brand:
         path: /assets/images/device-tree-logo.png
     url: /
 pages:
-    - title: Home
-      url: /
     - title: Specifications
       url: /specifications/
     - title: Governance
@@ -26,3 +24,5 @@ pages:
       url: /faq/
     - title: Blog
       url: /blog/
+    - title: Contact
+      url: /contact/
