@@ -4,7 +4,7 @@
 # - Toggle Search Bar.
 # Search Config
 search:
-    enabled: true
+    enabled: false
     label: DeviceTree
 universal-nav: true
 brand:
