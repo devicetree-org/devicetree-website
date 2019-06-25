@@ -6,7 +6,7 @@ company-copyright-text: Linaro Limited
 include: devicetree-members.html
 # Columns to be added to the fospec-button center-block fade-in-twooter
 columns:
-    - title: Device Tree Speciciation
+    - title: Device Tree Specification
       url: /specifications/
       items:
         - text: Specifications
