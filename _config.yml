@@ -17,6 +17,12 @@ exclude:
     - .asset-cache
     - .sass-cache
     - _site
+    - build-site.sh
+    - CODEOWNERS
+    - Gemfile
+    - Gemfile.lock
+    - help.md
+
 plugins:
     - jekyll-minimagick
     - mini_magick
