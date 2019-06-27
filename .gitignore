@@ -1,4 +1,6 @@
 .asset-cache
 .sass-cache
-Gemfile.lock
+.gems
 _site
+production.devicetree.org
+staging.devicetree.org
