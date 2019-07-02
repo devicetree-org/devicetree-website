@@ -8,7 +8,7 @@ search:
     label: DeviceTree
 universal-nav: true
 brand:
-    text: OP-TEE
+    text: DeviceTree
     image: 
         enabled: true
         path: /assets/images/device-tree-logo.png
@@ -18,6 +18,8 @@ pages:
       url: /specifications/
     - title: Governance
       url: /governance/
+    - title: Members
+      url: /members/
     - title: Collaborate
       url: /collaborate/
     - title: FAQ
