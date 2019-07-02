@@ -1,7 +1,7 @@
 ---
 title: Search
 permalink: "/search/"
-layout: container
+layout: jumbotron-container
 js-package: search
 ---
 <script>
