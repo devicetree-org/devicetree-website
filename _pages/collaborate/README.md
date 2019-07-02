@@ -1,7 +1,7 @@
 ---
 title: Collaborate
 permalink: /collaborate/
-layout: container-breadcrumb
+layout: flow
 sub-nav: false
 ---
 # Document master project for the Devicetree Specification
