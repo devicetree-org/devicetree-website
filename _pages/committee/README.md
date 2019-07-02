@@ -1,5 +1,5 @@
 ---
-layout: container-breadcrumb-tabs
+layout: flow
 title: Committee
 permalink: /committee/
 committee_images:

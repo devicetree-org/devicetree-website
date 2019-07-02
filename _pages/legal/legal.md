@@ -1,5 +1,5 @@
 ---
-layout: container-breadcrumb
+layout: flow
 title: Legal
 permalink: /legal/
 ---

@@ -1,5 +1,5 @@
 ---
-layout: container-breadcrumb-tabs
+layout: flow
 title: Governance
 permalink: /governance/
 js-package: extended

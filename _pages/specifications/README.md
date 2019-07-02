@@ -1,9 +1,13 @@
 ---
-layout: container-breadcrumb-tabs
+layout: flow
 title: Specifications
 permalink: /specifications/
 js-package: releases
 keywords: Devicetree, Specification, release, v1.0
+flow:
+    - row: custom_include_row
+      source: sticky-tab-bar.html
+    - row: main_content_row
 ---
 ## **The Devicetree Specification**
  

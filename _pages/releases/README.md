@@ -1,5 +1,5 @@
 ---
-layout: container-breadcrumb-tabs
+layout: flow
 title: Releases
 permalink: /releases/
 js-package: releases
