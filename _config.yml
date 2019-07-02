@@ -26,3 +26,5 @@ exclude:
 plugins:
     - jekyll-minimagick
     - mini_magick
+  
+include: ['_pages']
