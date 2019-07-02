@@ -54,6 +54,9 @@ GEM
       jekyll (>= 3.7, < 5.0)
     jekyll-include-cache (0.2.0)
       jekyll (>= 3.7, < 5.0)
+    jekyll-last-modified-at (1.1.0)
+      jekyll (>= 3.7, < 5.0)
+      posix-spawn (~> 0.3.9)
     jekyll-minimagick (0.0.4)
       jekyll (>= 0.10.0)
       mini_magick (>= 3.3)
@@ -63,7 +66,7 @@ GEM
       jekyll (~> 3.0)
     jekyll-redirect-from (0.15.0)
       jekyll (>= 3.3, < 5.0)
-    jekyll-responsive-image (1.5.2)
+    jekyll-responsive-image (1.0.2)
       jekyll (>= 2.0, < 4.0)
       rmagick (>= 2.0, < 3.0)
     jekyll-sass-converter (1.5.2)
@@ -81,26 +84,27 @@ GEM
       jekyll
     jekyll-watch (2.1.2)
       listen (~> 3.0)
-    jumbo-jekyll-theme (3.9.4)
+    jumbo-jekyll-theme (5.5.1)
       autoprefixer-rails (~> 9.0, >= 9.0.0)
       bootstrap-sass (~> 3.4.1)
-      ffi (~> 1.9.24)
+      ffi (~> 1.9.6)
       hash-joiner (~> 0)
-      jekyll (~> 3.7.4)
+      jekyll (~> 3.7.3)
       jekyll-assets (= 2.4.0)
       jekyll-data (> 0)
       jekyll-feed (> 0)
       jekyll-include-cache
+      jekyll-last-modified-at
       jekyll-paginate-v2 (> 0)
       jekyll-readme-index (= 0.2)
       jekyll-redirect-from (~> 0.12)
-      jekyll-responsive-image
+      jekyll-responsive-image (~> 1.0.1)
       jekyll-seo-tag (~> 2.2)
       jekyll-sitemap (~> 1.1)
       jekyll-theme-assets-updated (~> 1.1)
       jekyll-tidy (~> 0.2.2)
       jekyll-watch (~> 2.1.1)
-      rack (>= 1.6.11)
+      rack (> 0)
       sprockets (~> 3.7.2)
       uglifier (> 0)
     kramdown (1.17.0)
@@ -113,6 +117,7 @@ GEM
     mini_magick (4.9.3)
     pathutil (0.16.2)
       forwardable-extended (~> 2.6)
+    posix-spawn (0.3.13)
     public_suffix (3.1.0)
     rack (1.6.11)
     rake (12.3.2)
@@ -143,8 +148,8 @@ PLATFORMS
 DEPENDENCIES
   jekyll-data
   jekyll-minimagick
-  jumbo-jekyll-theme (= 3.9.4)
+  jumbo-jekyll-theme (= 5.5.1)
   mini_magick
 
 BUNDLED WITH
-   1.17.2
+   1.17.3
