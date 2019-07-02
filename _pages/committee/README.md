@@ -7,6 +7,10 @@ committee_images:
   - member2.jpg
   - member3.jpg
 js-package: extended
+flow:
+    - row: custom_include_row
+      source: sticky-tab-bar.html
+    - row: main_content_row
 ---
 ## Technical Steering Committee Charter
 

@@ -4,6 +4,10 @@ title: Governance
 permalink: /governance/
 js-package: extended
 keywords: Mission, Device tree, Devicetree, Governance, Contribution, Membership
+flow:
+    - row: custom_include_row
+      source: sticky-tab-bar.html
+    - row: main_content_row
 ---
 ## Mission of devicetree.org
 
@@ -25,10 +29,10 @@ devicetree.org gives everyone the opportunity to contribute to the evolution of 
 
 Membership in devicetree.org is open to any interested company or individual and provides you the opportunity to:
 
-*   Participate in the Technical Steering Committee
-*   Preview draft revisions of the device tree specification releases
+* Participate in the Technical Steering Committee
+* Preview draft revisions of the device tree specification releases
 
-#### Joining Fees
+### Joining Fees
 
 Corporate membership: $2500 annual membership  
 Individuals by invitation only

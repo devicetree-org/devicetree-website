@@ -10,7 +10,7 @@ flow:
     - row: main_content_row
 ---
 ## **The Devicetree Specification**
- 
+
 ### Current Release
 
 <div id="current_release"></div>
