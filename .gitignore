@@ -5,3 +5,4 @@ _site
 production.devicetree.org
 staging.devicetree.org
 Gemfile.lock
+assets/resized
