@@ -1,6 +1,6 @@
 // Theses are the Overrides of Bootstrap Sass Variables locatted in boostrap/_variables
 $brand-primary: #00b1df;
-//Home 
+//Home
 $home-page-title-text: #fff;
 $home-page-main-title-color: #fff;
 // Footer
@@ -29,7 +29,7 @@ $newsletter-background: #def7ff;
        url('/assets/fonts/lato-regular/Lato-regular.ttf')  format('truetype'), /* Safari, Android, iOS */
        url('/assets/fonts/lato-regular/Lato-regular.svg') format('svg'); /* Legacy iOS */
 }
-// Fonts 
+// Fonts
 $font-family-sans-serif:  'Lato', Arial, sans-serif !default;
 // Breadcrumb Default background colour.
 $breadcrumb-background-color: $navbar-inverse-bg !default;
@@ -53,4 +53,6 @@ $post-tag-border: #8b8b8b !default;
 $post-tag-hover-bg: #1f1f1f !default;
 $post-tag-hover-color: #fff !default;
 // Triangle Divider
-$triangle-divider-bg-color: #fff !default;  
+$triangle-divider-bg-color: #fff !default;
+// Flow sections
+$flow_row_padding: 40px !default;
