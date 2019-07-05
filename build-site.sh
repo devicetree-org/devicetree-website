@@ -11,7 +11,7 @@ fi
 docker run \
   --cap-drop ALL \
   --rm \
-  -it \
+  -t \
   -p 4000:4000 \
   -e JEKYLL_ACTION \
   -e JEKYLL_ENV \
