@@ -1,18 +1,35 @@
 #!/bin/bash
 
 if [ -z "$JEKYLLSITEBUILD" ]; then
-        export JEKYLLSITEBUILD=latest
+  export JEKYLLSITEBUILD=latest
 fi
-
 if [ -z "$JEKYLL_ENV" ]; then
-	export JEKYLL_ENV=staging
+  export JEKYLL_ENV=staging
 fi
-export JEKYLL_CONFIG="_config.yml,_config-$JEKYLL_ENV.yml"
-
-if [ ! -d "$(pwd)/.gems" ]; then
-        mkdir "$(pwd)/.gems"
+if [ "$JEKYLL_ACTION" = "serve" ]; then
+  PORTS="-p 4000:4000"
+else
+  PORTS=""
 fi
 
-docker run --rm -it -p 4000:4000 -e JEKYLL_ACTION -e JEKYLL_CONFIG -e JEKYLL_ENV \
-        -v /etc/passwd:/etc/passwd:ro -v /etc/group:/etc/group:ro -u "$(id -u)":"$(id -g)" -v "$HOME":/srv/home \
-        -v "$(pwd)/.gems:/gems" -v "$(pwd)":/srv/source linaroits/jekyllsitebuild:"$JEKYLLSITEBUILD" build-site.sh
+# Are we running interactively or via Bamboo?
+if [ -t 1 ]; then
+  INTER="-i"
+else
+  INTER=""
+fi
+
+docker run \
+  --cap-drop ALL \
+  --rm \
+  -t \
+  $INTER \
+  $PORTS \
+  -e JEKYLL_ACTION \
+  -e JEKYLL_ENV \
+  -v /etc/passwd:/etc/passwd:ro \
+  -v /etc/group:/etc/group:ro \
+  -u "$(id -u)":"$(id -g)" \
+  -v "$(pwd)":/srv/source \
+  linaroits/jekyllsitebuild:"$JEKYLLSITEBUILD" \
+  build-site.sh "$@"
