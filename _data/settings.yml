@@ -126,6 +126,8 @@ blog:
 #Google analytics
 google:
     tag_manager: GTM-P8JRM63
+    analytics: UA-16756069-21
+
 # Shema.org settings used in the schema.html include.
 schema:
     organisation:
