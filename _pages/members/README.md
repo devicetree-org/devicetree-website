@@ -9,12 +9,14 @@ flow:
     - row: container_row
       sections:
         - format: title
-          size: h2
-          content: Our Members
+          title_content:
+            size: h2
+            text: Our Members
         - format: members
           style: zoom
-          item_width: 3 #bootstrap col-sm- value e.g 3, 4, 5ths etc
-          content: 
+          members_content:
+            item_width: 3 #bootstrap col-sm- value e.g 3, 4, 5ths etc
+            items:
               - name: Arm
                 image:
                     path: /assets/images/arm.jpg
@@ -38,12 +40,14 @@ flow:
     - row: container_row
       sections:
         - format: title
-          size: h2
-          content: Thanks to the following companies for their help in establishing devicetree.org
+          title_content:
+            size: h2
+            text: Thanks to the following companies for their help in establishing devicetree.org
         - format: members
           style: zoom
-          item_width: 4 #bootstrap col-sm- value e.g 3, 4, 5ths etc
-          content: 
+          members_content:
+            item_width: 4 #bootstrap col-sm- value e.g 3, 4, 5ths etc
+            items:
               - name: IBM
                 image:
                     path: /assets/images/ibm.jpg
