@@ -18,6 +18,7 @@ exclude:
     - .sass-cache
     - _site
     - build-site.sh
+    - check-links.sh
     - CODEOWNERS
     - Gemfile
     - Gemfile.lock
