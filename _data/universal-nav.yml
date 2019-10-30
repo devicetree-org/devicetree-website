@@ -15,3 +15,6 @@
     - title: DeviceTree.org
       url: https://www.devicetree.org
       active: true
+    - title: OpenAMP
+      url: https://www.openampproject.org
+
