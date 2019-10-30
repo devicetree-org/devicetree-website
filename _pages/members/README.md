@@ -52,7 +52,7 @@ flow:
                 image:
                     path: /assets/images/ibm.jpg
                     alt: IBM Logo
-                url: https://www.linaro.org/membership/ibm/
+                url: https://www.ibm.com
               - name: Arm
                 image:
                     path: /assets/images/arm.jpg
