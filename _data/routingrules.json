@@ -1,4 +1,0 @@
-[
-    "^/blog(/?|/index.html)$ /news/ [R,L,NC]",
-    "^/blog/(.*)(/?|/index.html)$ /news/ [R,L,NC]"
-]
