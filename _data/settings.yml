@@ -1,4 +1,4 @@
-favicon: favicon.png
+favicon: /assets/images/favicon.png
 search-label: DeviceTree
 name: DeviceTree
 slogan: The DeviceTree Specification
@@ -11,7 +11,7 @@ slogan: The DeviceTree Specification
 #         - text: Specification
 #           url : /specifications/
 #           class: spec-button center-block
-          
+
 # Breadcrumb Settings
 breadcrumb:
     image: breadcrumb-image.jpg
@@ -27,7 +27,7 @@ edit-on-github:
 mailchimp:
     enabled: true
     id: 32ad12454e
-    
+
 # Footer Newsletter toggle.
 newsletter:
     enabled: true
@@ -39,10 +39,10 @@ tags_enabled: true
 members:
     key: devicetree_members
     excludes: [/contact/]
-    
+
 # Footer Image default is linaro sprinkle
 linaro-footer-image: Linaro-Sprinkle.png
-    
+
 # Settings for the home page
 home:
     #Content Background Image E.g. DeviceTree.org
@@ -57,11 +57,11 @@ home:
         enabled: true
         # Title for the home page jumbotron
         title:
-            first-line: 
+            first-line:
                 text: The DeviceTree Specification
                 display: true
                 bold: false
-            second-line: 
+            second-line:
                 display: false
         # Text to be displayed in the home page jumbotron
         sub-title:
@@ -69,7 +69,7 @@ home:
                 text: A devicetree is a data structure for describing hardware
                 display: true
                 bold: true
-            second-line: 
+            second-line:
                 display: false
         # Buttons to be displayed in the Jumbotron
         buttons:
@@ -78,11 +78,11 @@ home:
               url: /specifications/
         # Background image for the home page located in assets/images
         background-image:
-            darken: true    
+            darken: true
             name: background-image.jpg
         # Jumbotron Image
         image: devicetree-icon-white.png
-        
+
 
 # # Jekyll social media site settings. Github, LinkedIn, Google+, Facebook and Youtube
 github_username: devicetree-org
@@ -122,19 +122,19 @@ blog:
         #       display_fields:
         #           title: title
         #           url: url
-                  
+
 #Google analytics
-google:
-    tag_manager: GTM-P8JRM63
+google_analytics:
+  production: UA-16756069-21
 # Shema.org settings used in the schema.html include.
 schema:
     organisation:
         name: DeviceTree
         url: https://www.devicetree.org
         address:
-            street: Harston Mill, Royston Rd 
-            town: Harston 
-            county: Cambridge 
+            street: Harston Mill, Royston Rd
+            town: Harston
+            county: Cambridge
             post_code: CB22 7GG
             country_code: UK
 
@@ -145,4 +145,3 @@ disqus:
 
 # Placeholder for Missing Images
 placeholder: device-tree-logo-dark.svg
-
