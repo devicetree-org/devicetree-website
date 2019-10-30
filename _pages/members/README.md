@@ -14,7 +14,7 @@ flow:
         - format: members
           style: zoom
           item_width: 3 #bootstrap col-sm- value e.g 3, 4, 5ths etc
-          content: 
+          content:
               - name: Arm
                 image:
                     path: /assets/images/arm.jpg
@@ -43,12 +43,12 @@ flow:
         - format: members
           style: zoom
           item_width: 4 #bootstrap col-sm- value e.g 3, 4, 5ths etc
-          content: 
+          content:
               - name: IBM
                 image:
                     path: /assets/images/ibm.jpg
                     alt: IBM Logo
-                url: https://www.linaro.org/membership/ibm/
+                url: https://www.ibm.com/
               - name: Arm
                 image:
                     path: /assets/images/arm.jpg
