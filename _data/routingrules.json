@@ -1,4 +1,5 @@
 [
     "^/blog(/?|/index.html)$ /latest/ [R,L,NC]",
-    "^/blog/(.*)(/?|/index.html)$ /latest/ [R,L,NC]"
+    "^/blog/(.*)(/?|/index.html)$ /latest/ [R,L,NC]",
+    "^/press(/?|/index.html)$ /contact/ [R,L,NC]"
 ]
