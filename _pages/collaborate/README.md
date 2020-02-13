@@ -76,7 +76,7 @@ This project is licensed under the Apache V2 license. More information can be fo
 
 ## Contributions
 
-Please submit all patches to the mailing list devicetree-spec@vger.kernel.org. Contributions to the Devicetree Specification are managed by the gatekeepers, Grant Likely [grant.likely@secretlab.ca](mailto:grant.likely@secretlab.ca) and Rob Herring [rob.herring@linaro.org](mailto:rob.herring@linaro.org)
+Please submit all patches to the mailing list devicetree-spec@vger.kernel.org. Contributions to the Devicetree Specification are managed by the gatekeepers, Grant Likely [grant.likely@secretlab.ca](mailto:grant.likely@secretlab.ca) and Rob Herring [robh@kernel.org](mailto:robh@kernel.org)
 
 Anyone can contribute to the Devicetree Specification. Contributions to this project should conform to the `Developer Certificate of Origin` as defined at [http://elinux.org/Developer_Certificate_Of_Origin](http://elinux.org/Developer_Certificate_Of_Origin). Commits to this project need to contain the following line to indicate the submitter accepts the DCO:
 
