@@ -28,7 +28,7 @@ The devicetree is a data structure for describing hardware. Rather than hard cod
 
 The devicetree specification provides a full technical description of the devicetree data format and best practices.
 
-The devicetree.org technical steering commitee is the group responsible for developing, managing and promoting the devicetree specification. However, everyone is encouraged to get involved and yes there is a [GitHub project too](https://github.com/devicetree-org/devicetree-specification)! Further information about the devicetree standard and membership opportunities can be found throughout this website.
+Everyone is encouraged to get involved and yes there is a [GitHub project too](https://github.com/devicetree-org/devicetree-specification)! Further information about the devicetree standard can be found throughout this website.
 
 Please visit the following links at the top right to learn more and the links below to participate.
 
