@@ -25,14 +25,3 @@ devicetree.org uses an open governance model that is led by a community of devel
 
 devicetree.org gives everyone the opportunity to contribute to the evolution of the specification. To do this head off to [collaborate](http://www.devicetree.org/collaborate/).
 
-## Membership
-
-Membership in devicetree.org is open to any interested company or individual and provides you the opportunity to:
-
-* Participate in the Technical Steering Committee
-* Preview draft revisions of the device tree specification releases
-
-### Joining Fees
-
-Corporate membership: $2500 annual membership  
-Individuals by invitation only
