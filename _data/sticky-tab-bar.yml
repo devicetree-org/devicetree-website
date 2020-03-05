@@ -2,14 +2,10 @@ pages:
   - list:
       - title: Specifications
         url: /specifications/
-      - title: Members
-        url: /members/
-    urls: [/specifications/,/members/]
+    urls: [/specifications/]
   - list:
       - title: Overview
         url: /governance/
       - title: Releases
         url: /releases/
-      - title: Committee
-        url: /committee/
-    urls: [/governance/,/releases/,/committee/]
+    urls: [/governance/,/releases/]
