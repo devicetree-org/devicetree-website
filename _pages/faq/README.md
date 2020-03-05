@@ -17,7 +17,7 @@ We’re planning to make a v1.0 release once we have enough contributions to mak
 
 [](https://github.com/devicetree-org/devicetree-specification/blob/master/FAQ.md#how-do-I-comment-and-send-patches-for-the-spec)**How do I comment and send patches for the Spec?**
 
-No. Changes to the spec are proposed and discussed on a [public mailing list](http://vger.kernel.org/vger-lists.html#devicetree-spec) and the source document is hosted in the [Devicetree Specification](https://github.com/devicetree-org/devicetree-specification) project on GitHub.
+Changes to the spec are proposed and discussed on a [public mailing list](http://vger.kernel.org/vger-lists.html#devicetree-spec) and the source document is hosted in the [Devicetree Specification](https://github.com/devicetree-org/devicetree-specification) project on GitHub.
 
 You can find details about the mailing list and submission process in the [Readme](https://github.com/devicetree-org/devicetree-specification/blob/master/README.md) file.
 
