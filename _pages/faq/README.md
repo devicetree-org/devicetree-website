@@ -7,7 +7,7 @@ permalink: /faq/
 
 You can always find the latest released, as well as all older releases, in our GitHub repository:
 
-[Devicetree Specification release repository](https://github.com/devicetree-org/devicetree-specification-released)
+[Devicetree Specification releases](https://github.com/devicetree-org/devicetree-specification/releases)
 
 [](https://github.com/devicetree-org/devicetree-specification/blob/master/FAQ.md#how-often-is-a-new-specification-released)**How often is a new specification released?**
 
