@@ -44,7 +44,7 @@ jobs:
         run: cat ".github-env-$GITHUB_BASE_REF" >> $GITHUB_ENV
 
       - name: Check links
-        run: /srv/github-action-scripts/check-links.sh
+        run: /srv/github-action-scripts/check-links.sh -s ./open-firmware
 
   test-routing-rules:
     needs: check-links
