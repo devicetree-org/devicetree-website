@@ -4,7 +4,11 @@ if [ -z "$JEKYLLSITEBUILD" ]; then
   export JEKYLLSITEBUILD=latest
 fi
 if [ -z "$JEKYLL_ENV" ]; then
-  export JEKYLL_ENV=staging
+  if [ -f "_config-staging.yml" ]; then
+    export JEKYLL_ENV=staging
+  else
+    export JEKYLL_ENV=production
+  fi
 fi
 if [ "$JEKYLL_ACTION" = "serve" ]; then
   PORTS="-p 4000:4000"
