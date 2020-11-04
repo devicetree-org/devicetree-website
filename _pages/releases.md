@@ -4,13 +4,13 @@ title: Releases
 permalink: /releases/
 js-package: releases
 keywords: Releases, Device Tree, RoadMap
+jumbotron:
+  title: Releases
+  image: /assets/images/background-image.jpg
 flow:
-    - row: custom_include_row
-      source: sticky-tab-bar.html
-    - row: main_content_row
+  - row: main_content_row
 ---
+
 ## Releases
 
 <div id="devicetree_releases"></div>
-
-

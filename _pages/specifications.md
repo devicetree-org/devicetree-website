@@ -4,11 +4,13 @@ title: Specifications
 permalink: /specifications/
 js-package: releases
 keywords: Devicetree, Specification, release, v1.0
+jumbotron:
+  title: Specifications
+  image: /assets/images/background-image.jpg
 flow:
-    - row: custom_include_row
-      source: sticky-tab-bar.html
-    - row: main_content_row
+  - row: main_content_row
 ---
+
 ## **The Devicetree Specification**
 
 ### Current Release
@@ -19,7 +21,7 @@ flow:
 
 <div id="previous_releases"></div>
 
-* * *
+---
 
 #### Get Involved
 
