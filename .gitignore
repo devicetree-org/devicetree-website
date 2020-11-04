@@ -1,5 +1,6 @@
 .asset-cache
 .sass-cache
+.jekyll-cache
 .gems
 _site
 production.devicetree.org
