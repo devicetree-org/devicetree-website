@@ -1,10 +1,11 @@
 source "https://rubygems.org"
-
-gem "jumbo-jekyll-theme", "5.6.9.2"
-
+gem "linaro-jekyll-theme", "4.1.2"
+# Jekyll Plugins
 group :jekyll_plugins do
-  gem "jekyll-data"
-  gem "mini_magick"
-  gem "jekyll-minimagick"
-  gem "kramdown-parser-gfm"
+  gem "closure-compiler"
+  gem "nokogiri"
 end
+# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
+#gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+# Performance-booster for watching directories on Windows
+#gem "wdm", "~> 0.1.0" if Gem.win_platform?
