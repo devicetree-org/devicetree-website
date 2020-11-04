@@ -10,12 +10,14 @@ if [ -z "$JEKYLL_ENV" ]; then
     export JEKYLL_ENV=production
   fi
 fi
+if [ -z "$JEKYLL_PORT" ]; then
+  JEKYLL_PORT=4000
+fi
 if [ "$JEKYLL_ACTION" = "serve" ]; then
-  PORTS="-p 4000:4000"
+  PORTS="-p $JEKYLL_PORT:4000"
 else
   PORTS=""
 fi
-
 # Are we running interactively or via Bamboo?
 if [ -t 1 ]; then
   INTER="-i"
