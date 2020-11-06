@@ -1,7 +1,15 @@
-p {
-    font-weight: normal;
-   }
-span.latest-release {
+#wrapper {
+  #universal_nav .nav-item.dropdown.active {
+    .dropdown-menu {
+      a {
+        color: #000 !important;
+      }
+    }
+    a {
+      color: white !important;
+    }
+  }
+  span.latest-release {
     width: 100px;
     height: 19px;
     border: 1px solid #2cbe4e;
@@ -12,9 +20,8 @@ span.latest-release {
     text-align: center;
     top: -4px;
     position: relative;
-}
-
-span.pre-release {
+  }
+  span.pre-release {
     width: 100px;
     height: 19px;
     border: 1px solid #f66a0a;
@@ -25,134 +32,5 @@ span.pre-release {
     text-align: center;
     top: -4px;
     position: relative;
-}
-.homepage-shape {
-    top: 6px;
-    position: relative;
-}
-
-/* Projects Icons */
-
-.project-icon {
-    color: #0084ab;
-}
-.project-title {
-    color: #0084ab;
-}
-.project-more-info {
-    color: #0084ab;
-    font-size: 12px;
-}
-
-/* ------------ Projects Icons -------------- */
-.project-icon{
-  display: inline-block;
-  width: 100%;
-  text-align: center;
-}
-#projects a:hover{
-    text-decoration: none !important;
-}
-
-#banner-area-homepage{
-    padding-top:60px;
-}
-
-/* ------------- Supporting Members Section --------------- */
-.member-image{
-  width: 50%;
-  text-align: center;
-}
-.members {
-  padding:40px;
-  background-color: #fff;
-}
-
-.collaborate-button {
-    padding: 7px;
-    color: #131313;
-    width: 160px;
-    height: auto;
-    letter-spacing: 2px;
-    background-color: transparent;
-    border-radius:2px;
-    border: 1px solid #131313;
-    transition: all 500ms ease;
-    margin-bottom: 100px;
-    font-weight: bold;
-    font-size: 16px;
-}
-.collaborate-button:hover{
-    background-color: #131313;
-    color: #fff;
-    text-decoration: none;
-    transition: all 500ms ease;
-}
-.spec-button {
-    padding: 10px;
-    color: #fff;
-    width: 200px;
-    font-size: 15px;    
-    height: auto;
-    letter-spacing: 2px;
-    background-color: transparent;
-    border-radius:2px;
-    text-align: center;
-    border: 1px solid #fff;
-    transition: all 200ms ease;
-}
-.spec-button:hover{
-    background-color: #fff;
-    color: #131313;
-    text-decoration: none;
-    transition: all 500ms ease;
-}
-
-
-
-iframe#contact-form{
-    top: 30px;
-    margin-bottom: 50px;
-}
-
-.home-content-container{
-    text-align: center;
-}
-
-/* Contact thanks banner on /contact/ page*/
-div#contact-thanks {
-    margin-top: -20px;
-}
-// Overide the margin-bottom on the featured-jumbotron so the shaped divider is positoned correctly.
-#wrapper div#featured-jumbotron {
-    margin-bottom: 0px;
-}   
-
-// CSS for the email button.
-#wrapper .email {
-    height: 50px;
-    background-color: $brand-primary;
-    width: 200px;
-    line-height: 30px;
-    text-align: center;
-    color: white;
-    font-weight: bold;
-    border: 1px solid #9e9e9e;
-    margin-left: auto;
-    margin-right: auto;
-    transition: all 200ms ease;
-}
-#wrapper .email:hover {
-    background-color: #3a3a3a;
-    border: 1px solid #000000;
-    color:white;
-}
-#jumbotron-content img {
-    height: 200px;
-}
-div#flow_wrapper #content-container {
-    padding-bottom: 0px;
-}
-#flow_wrapper div#main_content {
-    padding-top: 0px;
+  }
 }
