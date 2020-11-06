@@ -4,7 +4,7 @@ copyright_text: Linaro Limited
 footer_brand:
   path: /assets/images/Linaro-logo-white.png
   alt: Linaro Logo
-  url: https://www.linaro.org/
+  url: https://www.linaro.org
 # Social Media Icons Row
 social_media_icons: true
 # Display the contact details section
