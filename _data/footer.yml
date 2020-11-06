@@ -1,7 +1,10 @@
 # Copyright text to be displayed at the very bottom of the footer
 copyright_text: Linaro Limited
 # Set this to false if you do not want the Linaro logo in the footer.
-linaro_branding: true
+footer_brand:
+  path: /assets/images/Linaro-logo-white.png
+  alt: Linaro Logo
+  url: https://www.linaro.org/
 # Social Media Icons Row
 social_media_icons: true
 # Display the contact details section
