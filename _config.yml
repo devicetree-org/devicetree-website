@@ -144,7 +144,7 @@ breadcrumb_schema: true
 # Shema.org settings used in the schema.html include.
 schema:
   "@context": "https://schema.org"
-  "@type": "Organisation"
+  "@type": "Organization"
   "name": "Device Tree"
   "email": "contact@linaro.org"
   "url": "https://www.devicetree.org"
