@@ -143,8 +143,10 @@ edit-on-github:
 breadcrumb_schema: true
 # Shema.org settings used in the schema.html include.
 schema:
+  "@context": "https://schema.org"
   "@type": "Organisation"
   "name": "Device Tree"
+  "email": "contact@linaro.org"
   "url": "https://www.devicetree.org"
   "logo": "https://www.devicetree.org/assets/images/devicetree-logo-dark.png"
   "contactPoint":
