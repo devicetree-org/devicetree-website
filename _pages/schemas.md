@@ -1,7 +1,7 @@
 ---
 layout: flow
 title: Schemas
-permalink: /schemas/
+permalink: /schema/
 jumbotron:
   title: Schemas
   image: /assets/images/background-image.jpg
