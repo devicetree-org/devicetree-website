@@ -1,8 +1,8 @@
 [
   "^/blog(/?|/index.html)$ /latest/ [R,L,NC]",
   "^/blog/(.*)(/?|/index.html)$ /latest/ [R,L,NC]",
-  "^/schemas/(.*)(/?|/index.html)$ /schemas/ [R,L,NC]",
-  "^/meta-schemas/(.*)(/?|/index.html)$ /schemas/ [R,L,NC]",
+  "^/schemas/(.*)(/?|/index.html)$ /schema/ [R,L,NC]",
+  "^/meta-schemas/(.*)(/?|/index.html)$ /schema/ [R,L,NC]",
   "^/press(/?|/index.html)$ /contact/ [R,L,NC]",
   "^/software(/?|/index.html)$ https://www.devicetree.org/ [R,L,NC]",
   "^/Device_Tree_Usage(/?|/index.html)$ https://elinux.org/Device_Tree_Usage [R,L,NC]",
