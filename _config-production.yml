@@ -11,7 +11,7 @@ production: true
 # Google Analytics
 google_analytics:
   enabled: true
-  code: UA-16756069-21
+  code: GTM-P8JRM63
   cookies:
     necessary:
       - name: cookieControl
