@@ -11,8 +11,7 @@ flow:
   - row: main_content_row
   - row: container_row
     sections:
-      - format: custom_include
-        source: components/cookie_manager.html
+      - component: cookie_manager
 ---
 
 ## What does this policy cover?

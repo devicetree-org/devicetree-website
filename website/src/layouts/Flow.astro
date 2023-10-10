@@ -1,0 +1,60 @@
+---
+import { getCollection } from "astro:content";
+import Footer from "../components/Footer.astro";
+import Nav from "../components/Nav/Nav.astro";
+import "../styles/global.scss";
+import type { AstroComponentFactory } from "astro/runtime/server/index.js";
+import MainHero from '../../src/components/Hero/MainHero.astro';
+
+const rowComponents = {} as Record<string, {default: AstroComponentFactory}>
+
+for  (const rowData of  await getCollection("rows")) {
+    rowComponents[rowData.slug] = await import(rowData.data.path.replace("@components", "../components"))
+}
+
+const sectionComponents = {} as Record<string, {default: AstroComponentFactory}>
+
+for  (const sectionData of  await getCollection("sections")) {
+    sectionComponents[sectionData.slug] = await import(sectionData.data.path.replace("@components", "../components"))
+}
+
+
+const {
+  content: { title, flow, jumbotron },
+} = Astro.props;
+---
+
+<body>
+  <div class="relative">
+    <Nav />
+  </div>
+  <main>
+   
+     {jumbotron ? <MainHero {...jumbotron} /> : <></>}
+
+{
+        flow.map((row: any) => {
+          const { row: component, sections, ...rowProps } = row
+          const RowComp = rowComponents[component].default;
+          return RowComp ? (
+            <RowComp {...rowProps}>
+              
+              {sections ? sections.map((section: any) => {
+                console.log('sections',sections);
+                const {component, ...sectionProps} = section
+                const SectionComp = sectionComponents[component].default
+                console.log(SectionComp)
+                return SectionComp ? <SectionComp {...sectionProps} ><slot /></SectionComp> : <div>Not implemented</div>
+              }) : <></>}
+              
+            </RowComp>
+
+          ) : <div>Not implemented</div>;
+        })
+      }
+  </main>
+  <Footer />
+  <script
+    type="text/javascript"
+    src="../node_modules/tw-elements/dist/js/tw-elements.umd.min.js"></script>
+</body>

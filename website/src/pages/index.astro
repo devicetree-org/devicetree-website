@@ -1,0 +1,10 @@
+---
+import { getEntryBySlug } from "astro:content";
+
+const page = await getEntryBySlug("pages", "/");
+const { Content } = await page!.render();
+---
+
+<div class="prose-xl p-4">
+  <Content />
+</div>

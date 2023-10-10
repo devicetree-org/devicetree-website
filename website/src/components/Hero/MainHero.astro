@@ -1,0 +1,58 @@
+---
+import { Image, getImage } from "astro:assets";
+import { getCollection } from "astro:content";
+
+const { title, buttons, image, description } = Astro.props;
+console.log(image);
+const BackgroundImage = image
+  ? await import(image.replace("/assets", "../../assets"))
+  : undefined;
+
+const optimizedBackgroundImage = await getImage({
+  src: BackgroundImage.default,
+});
+
+const backgroundUrl = optimizedBackgroundImage.src;
+console.log(buttons);
+---
+
+<div class="h-full">
+  <div class:list={[`  opacity-90 h-full`, "jumbotron-background"]}>
+    <div
+      class="grid flex-col mx-auto p-[15px] max-w-4xl text-left text-[#fff] justify-center align-middle"
+    >
+      <h1 class="mt-20">{title}</h1>
+      <p class="text-base">{description}</p>
+      {
+        buttons &&
+          buttons.map((btn) => (
+            <button class:list={[btn.class, " w-40 rounded mb-20"]}>
+              {btn.title}
+            </button>
+          ))
+      }
+    </div>
+  </div>
+</div>
+
+<style define:vars={{ backgroundUrl: `url(${backgroundUrl})` }}>
+  .jumbotron-background {
+    background-image: var(--backgroundUrl);
+    background-position: center;
+    object-fit: cover;
+    position: relative;
+    z-index: 1;
+  }
+
+  .jumbotron-background::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgb(0 0 0 / 98%);
+    color: #fff;
+    z-index: -1;
+  }
+</style>
