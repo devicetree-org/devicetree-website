@@ -1,27 +1,39 @@
 import { z, defineCollection, reference } from "astro:content";
 const pages = defineCollection({
   type: "content",
-  schema: z
-    .object({
-      flow: z
-        .array(
-          z.object({
-            row: reference("rows"),
-            sections: z
-              .array(
-                z
-                  .object({
-                    component: reference("sections"),
-                  })
-                  .catchall(z.any())
-              )
-              .optional(),
+  schema: ({ image }) =>
+    z
+      .object({
+        title: z.string().optional(),
+        descripton: z.string().optional(),
+        hero: z
+          .object({
+            title: z.string(),
+            description: z.string().optional(),
+            background_image: image().optional(),
+            style: z.string().optional(),
+            inner_image: z.string().optional(),
           })
-        )
-        .optional(),
-    })
-    .catchall(z.any())
-    .optional(),
+          .optional(),
+        flow: z
+          .array(
+            z.object({
+              row: reference("rows"),
+              sections: z
+                .array(
+                  z
+                    .object({
+                      component: reference("sections"),
+                    })
+                    .catchall(z.any())
+                )
+                .optional(),
+            })
+          )
+          .optional(),
+      })
+      .catchall(z.any())
+      .optional(),
 });
 
 const rows = defineCollection({

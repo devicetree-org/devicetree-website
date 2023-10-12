@@ -1,0 +1,52 @@
+---
+import dayjs from "dayjs";
+
+function dateConvertor(text: string) {
+  const dateObj = dayjs(text);
+  const dateString = dateObj.format("dddd, MMMM D, YYYY");
+  return dateString;
+}
+
+const api =
+  "https://api.github.com/repos/devicetree-org/devicetree-specification/releases";
+
+async function fetchData() {
+  const response = await fetch(api);
+  console.log(response);
+  const data = await response.json();
+  console.log(data);
+  return data;
+}
+
+const data_releases = await fetchData();
+console.log(data_releases);
+---
+
+<div>
+  <h2 class="font-bold">The Devicetree Specification</h2>
+  <h2>Current Release</h2>
+  <a class="text-xl py-3" href={data_releases[0].html_url}>
+    <span class="text-primary">
+      DeviceTree Specification Release
+      {data_releases[0].tag_name}
+    </span>
+    <span class="text-black"> - Released {data_releases[0].created_at}</span>
+  </a>
+  <h2>Past Releases</h2>
+  {
+    data_releases.slice(1, 5).map((item: any) => (
+      <div id={item.id}>
+        <a class="text-xl" href={data_releases.html_url}>
+          <span class="text-primary">
+            DeviceTree Specification Release
+            {item.tag_name}
+          </span>
+          <span class="text-black">
+            {" "}
+            - Released {dateConvertor(item.created_at)}
+          </span>
+        </a>
+      </div>
+    ))
+  }
+</div>

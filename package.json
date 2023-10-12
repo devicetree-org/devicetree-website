@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "astro-seo": "^0.8.0"
+  }
+}

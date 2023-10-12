@@ -1,29 +1,20 @@
 ---
-layout: ../../layouts/Flow.astro
+layout: "../../layouts/Flow.astro"
 title: Specifications
 slug: /specifications/
-js-package: releases
+
 keywords: Devicetree, Specification, release, v1.0
-jumbotron:
+hero:
   title: Specifications
-  image: /assets/images/background-image.jpg
+  background_image: ../../assets/images/background-image.jpg
 flow:
-  - row: main_content_row
+  - row: container_row
+    sections:
+      - component: updates
+      - component: md_content
 ---
 
-## **The Devicetree Specification**
-
-### Current Release
-
-<div id="current_release"></div>
-
-### Past Releases
-
-<div id="previous_releases"></div>
-
----
-
-#### Get Involved
+## Get Involved
 
 If you would like to get involved please fetch the document source from
 [GitHub](https://github.com/devicetree-org/devicetree-specification)

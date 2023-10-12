@@ -1,125 +1,53 @@
 ---
+import Dropdown from "./Dropdown.astro";
+import { Astronav, MenuItems, MenuIcon } from "astro-navbar";
+import LinaroLogo from "../../assets/images/device-tree-logo.png";
 import { Image } from "astro:assets";
-import logo from "../../assets/images/device-tree-logo.png";
+import { getEntry } from "astro:content";
+
+const navData = await getEntry("data", "nav");
 ---
 
-<!-- Main navigation container -->
-<nav
-  class="relative flex w-full flex-nowrap items-center justify-between bg-black py-2 text-neutral-500 shadow-lg hover:text-neutral-700 focus:text-neutral-700 dark:bg-neutral-600 lg:flex-wrap lg:justify-start lg:py-4"
-  data-te-navbar-ref
+<header
+  class="flex flex-col lg:flex-row justify-around items-center bg-[#131313]"
 >
-  <div class="flex w-full flex-wrap items-center justify-between px-3">
-    <!-- Hamburger button for mobile view -->
-    <a
-      class="block border-0 bg-transparent px-2 text-neutral-500 hover:no-underline hover:shadow-none focus:no-underline focus:shadow-none focus:outline-none focus:ring-0"
-      href="/"
-    >
-      <Image class="h-[60px] w-auto" src={logo} alt="logo" />
-    </a>
-
-    <!-- Collapsible navbar container -->
-    <div
-      class="!visible mt-2 hidden flex-grow basis-[100%] items-center lg:mt-0 lg:!flex lg:basis-auto"
-      id="navbarSupportedContent7"
-      data-te-collapse-item
-    >
-      <!-- Left links -->
-      <ul
-        class="list-style-none ml-auto mr-12 flex flex-col pl-0 lg:mt-1 lg:flex-row"
-        data-te-navbar-nav-ref
+  <Astronav>
+    <div class="flex w-full lg:w-auto items-center justify-between px-8">
+      <a href="/" class="text-lg"
+        ><Image src={LinaroLogo} alt="Linaro Logo" width={170} height={60} /></a
       >
-        <!-- Home link -->
-        <li class="my-4 pl-2 lg:my-0 lg:pl-2 lg:pr-1" data-te-nav-item-ref>
-          <a
-            class="active lg:px-2 text-white"
-            aria-current="page"
-            href="#"
-            data-te-nav-link-ref>Specifications</a
-          >
-        </li>
-        <!-- Link -->
-
-        <!-- Dropdown link -->
-        <li
-          class="mb-4 pl-2 lg:mb-0 lg:pl-0 lg:pr-1"
-          data-te-nav-item-ref
-          data-te-dropdown-ref
-        >
-          <!-- Dropdown -->
-          <a
-            class="flex items-center text-white transition duration-200 hover:text-neutral-700 hover:ease-in-out focus:text-neutral-700 disabled:text-black/30 motion-reduce:transition-none dark:text-neutral-200 dark:hover:text-neutral-400 dark:focus:text-neutral-400 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
-            href="#"
-            type="button"
-            id="dropdownMenuButton2"
-            data-te-dropdown-toggle-ref
-            aria-expanded="false"
-          >
-            Governance
-            <span class="ml-1 w-2">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-                class="h-5 w-5"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
-                  clip-rule="evenodd"></path>
-              </svg>
-            </span>
-          </a>
-          <ul
-            class="absolute z-[1000] float-left m-0 hidden min-w-max list-none overflow-hidden rounded-lg border-none bg-white bg-clip-padding text-left text-base shadow-lg dark:bg-neutral-700 [&[data-te-dropdown-show]]:block"
-            aria-labelledby="dropdownMenuButton2"
-            data-te-dropdown-menu-ref
-          >
-            <li>
-              <a
-                class="block w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400 dark:text-neutral-200 dark:hover:bg-neutral-600"
-                href="#"
-                data-te-dropdown-item-ref>Overview</a
-              >
-            </li>
-            <li>
-              <a
-                class="block w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400 dark:text-neutral-200 dark:hover:bg-neutral-600"
-                href="#"
-                data-te-dropdown-item-ref>Releases</a
-              >
-            </li>
-          </ul>
-        </li>
-
-        <li class="mb-4 pl-2 lg:mb-0 lg:pl-0 lg:pr-1" data-te-nav-item-ref>
-          <a
-            class="p-0 text-white transition duration-200 hover:text-neutral-700 hover:ease-in-out focus:text-neutral-700 disabled:text-black/30 motion-reduce:transition-none dark:text-neutral-200 dark:hover:text-neutral-400 dark:focus:text-neutral-400 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
-            href="#"
-            data-te-nav-link-ref>Collaborate</a
-          >
-        </li>
-        <li class="mb-4 pl-2 lg:mb-0 lg:pl-0 lg:pr-1" data-te-nav-item-ref>
-          <a
-            class="p-0 text-white transition duration-200 hover:text-neutral-700 hover:ease-in-out focus:text-neutral-700 disabled:text-black/30 motion-reduce:transition-none dark:text-neutral-200 dark:hover:text-neutral-400 dark:focus:text-neutral-400 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
-            href="#"
-            data-te-nav-link-ref>FAQ</a
-          >
-        </li>
-        <li class="mb-4 pl-2 lg:mb-0 lg:pl-0 lg:pr-1" data-te-nav-item-ref>
-          <a
-            class="p-0 text-white transition duration-200 hover:text-neutral-700 hover:ease-in-out focus:text-neutral-700 disabled:text-black/30 motion-reduce:transition-none dark:text-neutral-200 dark:hover:text-neutral-400 dark:focus:text-neutral-400 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
-            href="#"
-            data-te-nav-link-ref>News & Blogs</a
-          >
-        </li>
-        <li class="mb-4 pl-2 lg:mb-0 lg:pl-0 lg:pr-1" data-te-nav-item-ref>
-          <a
-            class="p-0 text-white transition duration-200 hover:text-neutral-700 hover:ease-in-out focus:text-neutral-700 disabled:text-black/30 motion-reduce:transition-none dark:text-neutral-200 dark:hover:text-neutral-400 dark:focus:text-neutral-400 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
-            href="#"
-            data-te-nav-link-ref>Contact</a
-          >
-        </li>
-      </ul>
+      <div class="block lg:hidden">
+        <MenuIcon class="w-4 h-4 text-white" />
+      </div>
     </div>
-  </div>
-</nav>
+    <MenuItems
+      class="hidden w-full lg:w-auto mt-2 lg:flex lg:mt-0 font-medium text-white"
+    >
+      <ul class="flex flex-col lg:flex-row lg:gap-3 items-center">
+        {
+          navData.data.map((item: any, index: number) => (
+            <>
+              {item.children && (
+                <Dropdown
+                  title={item.label}
+                  children={item.children}
+                  lastItem={index === item.children.length - 1}
+                />
+              )}
+
+              {!item.children && (
+                <div class="my-5 relative">
+                  <div class="nav-hover transition">
+                    <a href={item.url} class="flex lg:px-3 py-2 text-inherit ">
+                      {item.label}
+                    </a>
+                  </div>
+                </div>
+              )}
+            </>
+          ))
+        }
+      </ul>
+    </MenuItems>
+  </Astronav>
+</header>

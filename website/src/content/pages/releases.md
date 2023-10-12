@@ -4,11 +4,13 @@ title: Releases
 slug: /releases/
 js-package: releases
 keywords: Releases, Device Tree, RoadMap
-jumbotron:
+hero:
   title: Releases
-  image: /assets/images/background-image.jpg
+  background_image: ../../assets/images/background-image.jpg
 flow:
-  - row: main_content_row
+  - row: container_row
+    sections:
+      - component: md_content
 ---
 
 ## Releases

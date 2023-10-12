@@ -1,49 +1,60 @@
 ---
-import { getCollection } from "astro:content";
-import Footer from "../components/Footer.astro";
-import Nav from "../components/Nav/Nav.astro";
+import { getCollection, getEntryBySlug } from "astro:content";
+
 import "../styles/global.scss";
 import type { AstroComponentFactory } from "astro/runtime/server/index.js";
-import MainHero from '../../src/components/Hero/MainHero.astro';
 
-const rowComponents = {} as Record<string, {default: AstroComponentFactory}>
+import type { CollectionEntry } from "astro:content";
+import BaseLayout from "./BaseLayout.astro";
+import MainHero from "@components/Hero/MainHero.astro";
 
-for  (const rowData of  await getCollection("rows")) {
-    rowComponents[rowData.slug] = await import(rowData.data.path.replace("@components", "../components"))
+
+
+const allComponents = await import.meta.glob("../components/**/*.astro")
+const rowComponents = {} as Record<string, { default: AstroComponentFactory }>;
+
+for (const rowData of await getCollection("rows")) {
+
+  rowComponents[rowData.slug] = await allComponents[`${rowData.data.path.replace("@/components", "../components")}`]()
 }
 
-const sectionComponents = {} as Record<string, {default: AstroComponentFactory}>
+const sectionComponents = {} as Record<
+  string,
+  { default: AstroComponentFactory }
+>;
 
-for  (const sectionData of  await getCollection("sections")) {
-    sectionComponents[sectionData.slug] = await import(sectionData.data.path.replace("@components", "../components"))
+for (const sectionData of await getCollection("sections")) {
+  sectionComponents[sectionData.slug] = await allComponents[sectionData.data.path.replace("@/components", "../components")]()
 }
+
+type Props = { frontmatter: CollectionEntry<"pages"> };
+
 
 
 const {
-  content: { title, flow, jumbotron },
-} = Astro.props;
+  frontmatter: {slug}
+  // data: { flow, jumbotron },
+} = Astro.props!;
+
+const page = await getEntryBySlug("pages", slug)
+const { flow, hero, title, description } = page.data
 ---
 
-<body>
-  <div class="relative">
-    <Nav />
-  </div>
-  <main>
-   
-     {jumbotron ? <MainHero {...jumbotron} /> : <></>}
-
+<BaseLayout title={title} description={description}>
+   <main class="prose prose-xl w-full max-w-full md-content ">
+    <MainHero {...hero} />
 {
-        flow.map((row: any) => {
+        flow?.map((row: any) => {
           const { row: component, sections, ...rowProps } = row
-          const RowComp = rowComponents[component].default;
+          const RowComp = rowComponents[component.slug].default;
           return RowComp ? (
             <RowComp {...rowProps}>
               
               {sections ? sections.map((section: any) => {
-                console.log('sections',sections);
+              
                 const {component, ...sectionProps} = section
-                const SectionComp = sectionComponents[component].default
-                console.log(SectionComp)
+                const SectionComp = sectionComponents[component.slug].default
+                
                 return SectionComp ? <SectionComp {...sectionProps} ><slot /></SectionComp> : <div>Not implemented</div>
               }) : <></>}
               
@@ -53,8 +64,52 @@ const {
         })
       }
   </main>
-  <Footer />
+  <!-- <Footer /> -->
   <script
     type="text/javascript"
     src="../node_modules/tw-elements/dist/js/tw-elements.umd.min.js"></script>
-</body>
+</BaseLayout>
+ <style is:global lang="scss">
+    .md-content {
+      p{
+        font-size: 20px;
+      }
+      ul {
+        list-style-type: disc;
+        margin-bottom: 20px;
+        li {
+          margin-left: 40px;
+          
+        }
+      }
+
+      blockquote {
+        background-color: #0d0909;
+        border-left: 8px solid #00b1df;
+        color: white;
+        margin-top: 10px;
+        margin-bottom: 10px;
+
+        display: flex;
+         flex-direction: column;
+        align-items: left;
+        padding: 15px;
+
+        // color: #555555;
+        margin-left: 20px !important;
+        font-style: italic !important;
+        font-size: 20px;
+      }
+
+      blockquote:before {
+          display: flex;
+         flex-direction: row;
+        content: "\201C";
+        font-family: Serif;
+        color: #00b1df;
+        font-size: 5em;
+        left: 10px;
+        margin-right: 25px;
+      }
+    }
+  </style>

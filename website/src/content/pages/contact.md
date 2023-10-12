@@ -4,10 +4,10 @@ description: >-
   Please get in touch with us to talk more about DeviceTree and how you can get involved.
 slug: "/contact/"
 layout: "../../layouts/Flow.astro"
-jumbotron:
+hero:
   title: Contact
   description: ""
-  image: /assets/images/background-image.jpg
+  background_image: ../../assets/images/background-image.jpg
 flow:
   - row: container_row
     sections:

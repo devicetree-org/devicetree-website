@@ -2,11 +2,10 @@
 title: Collaborate
 slug: /collaborate/
 layout: "../../layouts/Flow.astro"
-sub-nav: false
-jumbotron:
+hero:
   title: Collaborate
   description: ""
-  image: /assets/images/background-image.jpg
+  background_image: ../../assets/images/background-image.jpg
 flow:
   - row: container_row
     sections:

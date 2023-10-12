@@ -1,0 +1,16 @@
+- label: Specifications
+  url: /specifications
+- label: Governance
+  children:
+    - label: Overview
+      url: /governance
+    - label: Releases
+      url: /releases
+- label: Collaborate
+  url: /collaborate
+- label: FAQ
+  url: /faq
+- label: News & Blogs
+  url: /latest
+- label: Contact
+  url: /contact

@@ -1,13 +1,15 @@
 ---
-layout: ../../layouts/Flow.astro
+layout: "../../layouts/Flow.astro"
 title: Governance
 slug: /governance/
 keywords: Mission, Device tree, Devicetree, Governance, Contribution
-jumbotron:
+hero:
   title: Governance
-  image: /assets/images/background-image.jpg
+  background_image: ../../assets/images/background-image.jpg
 flow:
-  - row: main_content_row
+  - row: container_row
+    sections:
+      - component: md_content
 ---
 
 ## Mission of devicetree.org

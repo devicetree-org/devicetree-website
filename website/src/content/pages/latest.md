@@ -4,9 +4,9 @@ slug: /latest/
 description: >
   Find all DeviceTree related news and blogs here.
 layout: "../../layouts/Flow.astro"
-jumbotron:
+hero:
   title: News & Blogs
-  image: /assets/images/background-image.jpg
+  background_image: ../../assets/images/background-image.jpg
 flow:
   - row: container_row
     sections:

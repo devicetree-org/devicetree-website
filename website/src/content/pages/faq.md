@@ -1,10 +1,10 @@
 ---
 layout: "../../layouts/Flow.astro"
 title: FAQ
-slug: /faq/
-jumbotron:
+slug: "/faq/"
+hero:
   title: Frequently Asked Questions
-  image: /assets/images/background-image.jpg
+  image: ../../assets/images/background-image.jpg
 flow:
   - row: container_row
     sections:

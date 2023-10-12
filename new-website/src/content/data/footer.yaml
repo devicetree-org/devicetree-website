@@ -1,0 +1,9 @@
+- - label: Report an issue
+    url: https://github.com/Linaro/linaro-astro-template
+  - label: Edit on Github
+    url: https://github.com/Linaro/linaro-astro-template
+- - label: Copyright @ 2023
+  - label: Legal
+    url: https://www.linaro.org/legal/
+  - label: Contact
+    url: https://www.linaro.org/contact

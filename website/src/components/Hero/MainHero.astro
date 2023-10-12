@@ -2,18 +2,9 @@
 import { Image, getImage } from "astro:assets";
 import { getCollection } from "astro:content";
 
-const { title, buttons, image, description } = Astro.props;
-console.log(image);
-const BackgroundImage = image
-  ? await import(image.replace("/assets", "../../assets"))
-  : undefined;
+const { title, buttons, background_image, description } = Astro.props;
 
-const optimizedBackgroundImage = await getImage({
-  src: BackgroundImage.default,
-});
-
-const backgroundUrl = optimizedBackgroundImage.src;
-console.log(buttons);
+console.log(background_image);
 ---
 
 <div class="h-full">
@@ -35,7 +26,7 @@ console.log(buttons);
   </div>
 </div>
 
-<style define:vars={{ backgroundUrl: `url(${backgroundUrl})` }}>
+<style define:vars={{ backgroundUrl: `url(${background_image.src})` }}>
   .jumbotron-background {
     background-image: var(--backgroundUrl);
     background-position: center;
