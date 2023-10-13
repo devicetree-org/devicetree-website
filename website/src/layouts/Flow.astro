@@ -191,28 +191,41 @@ let copyButtonLabel = "Copy Code";
 let copyButtonImageSrc = "../../src/assets/images/clipboard-copy.svg";
   let codeBlocks = Array.from(document.querySelectorAll("pre"));
 
-  for (let codeBlock of codeBlocks) {
+ for (let codeBlock of codeBlocks) {
     let wrapper = document.createElement("div");
     wrapper.style.position = "relative";
 
     let copyButton = document.createElement("button");
-    copyButton.className = "copy-code";
-   let copyButtonImage = document.createElement("img");
-  copyButtonImage.src = copyButtonImageSrc;
-  copyButtonImage.alt = copyButtonLabel;
-  copyButton.appendChild(copyButtonImage);
+    copyButton.className = "copy-code "; 
+     copyButton.setAttribute("type", "button");
+    copyButton.setAttribute("data-te-toggle", "tooltip");
+    copyButton.setAttribute("data-te-placement", "bottom");
+    copyButton.setAttribute("data-te-ripple-init", "");
+    copyButton.setAttribute("data-te-ripple-color", "light");
+     copyButton.setAttribute("title", "Copy Code");
     
+
+    let copyButtonImage = document.createElement("img");
+    copyButtonImage.src = copyButtonImageSrc;
+    copyButtonImage.alt = copyButtonLabel;
+    copyButtonImage.className = "w-5 h-5"; 
+    copyButton.appendChild(copyButtonImage);
+
+    let tooltip = document.createElement("span");
+    tooltip.className = "hidden bg-black text-white text-sm py-1 px-2 rounded absolute bottom-full left-full transform translate-x-0 translate-y-20 group-hover:block"; 
+    tooltip.innerText = copyButtonLabel;
+    copyButton.appendChild(tooltip);
 
     codeBlock.setAttribute("tabindex", "0");
     codeBlock.appendChild(copyButton);
-    // wrap codebock with relative parent element
+    // wrap code block with relative parent element
     codeBlock.parentNode.insertBefore(wrapper, codeBlock);
     wrapper.appendChild(codeBlock);
 
     copyButton.addEventListener("click", async () => {
-      await copyCode(codeBlock, copyButton);
+        await copyCode(codeBlock, copyButton);
     });
-  }
+}
 
   async function copyCode(block, button) {
     let code = block.querySelector("code");
