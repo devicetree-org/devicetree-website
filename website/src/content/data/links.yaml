@@ -1,0 +1,16 @@
+- label: Linaro
+  url: https://www.linaro.org/
+- label: Connect
+  url: https://www.linaro.org/connect/
+- label: 96Boards
+  url: https://www.96boards.org/
+- label: Projects
+  children:
+    - label: 96boards.ai
+      url: https://www.96boards.ai/
+    - label: OP-TEE
+      url: https://www.trustedfirmware.org/projects/op-tee/
+    - label: DeviceTree.org
+      url: https://www.devicetree.org/
+    - label: OpenAMP
+      url: https://www.openampproject.org/
