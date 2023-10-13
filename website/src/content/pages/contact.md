@@ -16,7 +16,7 @@ flow:
         buttons_content:
           - title: contact@linaro.org
             url: mailto:contact@linaro.org?subject=DeviceTree.org - /contact/
-            style: bg-primary px-3 py-2 rounded text-white
+            style: bg-primary px-2 py-3 border border-b-primary rounded-md text-white mt-8 text-sm font-normal transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 hover:bg-[#1a85a1] duration-300
       - component: text
         style: text-center
         text_content:

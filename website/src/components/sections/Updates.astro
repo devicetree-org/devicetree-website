@@ -25,27 +25,30 @@ console.log(data_releases);
 <div>
   <h2 class="font-bold">The Devicetree Specification</h2>
   <h2>Current Release</h2>
-  <a class="text-xl py-3" href={data_releases[0].html_url}>
-    <span class="text-primary">
+  <div class="text-xl mb-4">
+    <a href={data_releases[0].html_url} class="text-primary">
       DeviceTree Specification Release
       {data_releases[0].tag_name}
-    </span>
+    </a>
     <span class="text-black"> - Released {data_releases[0].created_at}</span>
-  </a>
+    <span
+      class="text-[#2cbe4e] p-[5px] border border-[#2cbe4e] text-xs align-middle relative ml-2"
+      >Latest Release</span
+    >
+  </div>
   <h2>Past Releases</h2>
   {
     data_releases.slice(1, 5).map((item: any) => (
       <div id={item.id}>
-        <a class="text-xl" href={data_releases.html_url}>
-          <span class="text-primary">
+        <div class="text-xl mb-4  ">
+          <a href={item.html_url} class="text-primary">
             DeviceTree Specification Release
             {item.tag_name}
-          </span>
+          </a>
           <span class="text-black">
-            {" "}
             - Released {dateConvertor(item.created_at)}
           </span>
-        </a>
+        </div>
       </div>
     ))
   }

@@ -23,7 +23,7 @@ flow:
             - Use this mailing list for submitting patches, questions and general discussion
             - Sign up to the mailing list at [http://vger.kernel.org/vger-lists.html#devicetree-spec](http://vger.kernel.org/vger-lists.html#devicetree-spec)
 
-            ## Build Instructions [![Build Status](https://travis-ci.org/devicetree-org/devicetree-specification.svg)](https://travis-ci.org/devicetree-org/devicetree-specification)
+            ## Build Instructions [Build Status](https://travis-ci.org/devicetree-org/devicetree-specification)
 
             Requirements:
 
@@ -38,13 +38,13 @@ flow:
             >                      texlive-humanities texlive-generic-recommended graphviz \
             >                      texlive-generic-extra
             >
-            > If the version of python-sphinx installed is too old, then an additional new version can be installed with the Python package installer:
+            > <p style="color:#555555; margin-top:15px;font-style:italic; ">If the version of python-sphinx installed is too old, then an additional new version can be installed with the Python package installer:<p>
             >
             >     $ apt-get install python-pip
             >     $ pip install --user --upgrade Sphinx
             >     $ export SPHINXBUILD=~/.local/bin/sphinx-build
             >
-            > Export SPHINXBUILD (see above) if Sphinx was installed with pip --user, then follow Make commands below
+            > <p style="color:#555555; margin-top:15px;font-style:italic; ">Export SPHINXBUILD (see above) if Sphinx was installed with pip --user, then follow Make commands below</p>
 
             On Mac OS X:
 
@@ -88,11 +88,11 @@ flow:
 
             Anyone can contribute to the Devicetree Specification. Contributions to this project should conform to the `Developer Certificate of Origin` as defined at [http://elinux.org/Developer_Certificate_Of_Origin](http://elinux.org/Developer_Certificate_Of_Origin). Commits to this project need to contain the following line to indicate the submitter accepts the DCO:
 
-                Signed-off-by: Your Name <your_email@domain.com>
+            <div style='background-color:black;color:white;padding:14px'>Signed-off-by: Your Name :your_email@domain.com  </div>
 
             By contributing in this way, you agree to the terms as follows:
 
-                Developer Certificate of Origin
+            <div  style='background-color:black;color:white;padding:14px' class='developer'>Developer Certificate of Origin
                 Version 1.1
 
                 Copyright (C) 2004, 2006 The Linux Foundation and its contributors.
@@ -127,4 +127,6 @@ flow:
                     personal information I submit with it, including my sign-off) is
                     maintained indefinitely and may be redistributed consistent with
                     this project or the open source license(s) involved.
+                  
+            </div>
 ---

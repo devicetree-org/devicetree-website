@@ -10,6 +10,8 @@ import MainHero from "@components/Hero/MainHero.astro";
 
 
 
+
+
 const allComponents = await import.meta.glob("../components/**/*.astro")
 const rowComponents = {} as Record<string, { default: AstroComponentFactory }>;
 
@@ -37,7 +39,9 @@ const {
 } = Astro.props!;
 
 const page = await getEntryBySlug("pages", slug)
-const { flow, hero, title, description } = page.data
+const { flow, hero, title, description } = page.data;
+
+
 ---
 
 <BaseLayout title={title} description={description}>
@@ -79,19 +83,40 @@ const { flow, hero, title, description } = page.data
         margin-bottom: 20px;
         li {
           margin-left: 40px;
+          font-size: x-large;
+          color:black;
           
         }
       }
 
+ .copy-code   {
+            padding:0 !important;
+            width:100%;
+            display: flex;
+            justify-content: right; 
+            align-items: right;
+            
+       
+     
+            img{
+            width: 20px;
+             color:white;
+            background-color: #EDEDED;
+            transition: background-color 0.3s ease;
+            }
+            img:hover {
+            background-color: #00b1df;
+            }
+          }
+
       blockquote {
-        background-color: #0d0909;
+        background-color: #EDEDED;
         border-left: 8px solid #00b1df;
-        color: white;
+        color: #555555;
         margin-top: 10px;
         margin-bottom: 10px;
-
         display: flex;
-         flex-direction: column;
+        flex-direction: column;
         align-items: left;
         padding: 15px;
 
@@ -99,17 +124,107 @@ const { flow, hero, title, description } = page.data
         margin-left: 20px !important;
         font-style: italic !important;
         font-size: 20px;
-      }
+        width:100%;
 
-      blockquote:before {
+ 
+        
+        // display: block;
+        .signed-off{
+          background-color: black;
+          color: white;
+        }
+
+         div.content-wrapper {
           display: flex;
-         flex-direction: row;
-        content: "\201C";
-        font-family: Serif;
-        color: #00b1df;
-        font-size: 5em;
-        left: 10px;
-        margin-right: 25px;
-      }
+          flex: 1;
+          align-items: flex-start;
+        }
+
+        pre{
+          flex:1;
+          background-color: black;
+           padding: 20px;
+          margin-left: 10px;
+          width: 98%;
+          position: relative;
+           align-items: center; 
+
+          .copy-code   {
+            padding:0 !important;
+            width:100%;
+            display: flex;
+            justify-content: right; 
+            align-items: right;
+            
+       
+     
+            img{
+            width: 20px;
+             color:white;
+            background-color: #EDEDED;
+            transition: background-color 0.3s ease;
+            }
+            img:hover {
+            background-color: #00b1df;
+            }
+          }
+ 
+        }
+        
+        code {
+          background-color: black;
+          color: white;
+          padding: 10px;
+          white-space: pre-wrap;
+          width: 100% !important;
+          margin-left: 5px;
+              
+        }
+      
+
+    
+    }
     }
   </style>
+<script>
+let copyButtonLabel = "Copy Code";
+let copyButtonImageSrc = "../../src/assets/images/clipboard-copy.svg";
+  let codeBlocks = Array.from(document.querySelectorAll("pre"));
+
+  for (let codeBlock of codeBlocks) {
+    let wrapper = document.createElement("div");
+    wrapper.style.position = "relative";
+
+    let copyButton = document.createElement("button");
+    copyButton.className = "copy-code";
+   let copyButtonImage = document.createElement("img");
+  copyButtonImage.src = copyButtonImageSrc;
+  copyButtonImage.alt = copyButtonLabel;
+  copyButton.appendChild(copyButtonImage);
+    
+
+    codeBlock.setAttribute("tabindex", "0");
+    codeBlock.appendChild(copyButton);
+    // wrap codebock with relative parent element
+    codeBlock.parentNode.insertBefore(wrapper, codeBlock);
+    wrapper.appendChild(codeBlock);
+
+    copyButton.addEventListener("click", async () => {
+      await copyCode(codeBlock, copyButton);
+    });
+  }
+
+  async function copyCode(block, button) {
+    let code = block.querySelector("code");
+    let text = code.innerText;
+
+    await navigator.clipboard.writeText(text);
+
+    // visual feedback that task is completed
+    button.innerText = "Code Copied";
+
+    setTimeout(() => {
+      button.innerHTML  = `<img src="${copyButtonImageSrc}">`;
+    }, 700);
+  }
+</script>

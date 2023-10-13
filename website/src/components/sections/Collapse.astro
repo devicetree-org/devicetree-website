@@ -3,17 +3,17 @@ import { marked } from "marked";
 const { style, panels } = Astro.props;
 ---
 
-<ul class:list={[style]} id="accordionExample">
+<div class:list={[style]} id="accordionFlush">
   {
     panels.map((panel: any, index: number) => (
-      <li class="my-4">
+      <div class="my-4">
         <div class="rounded-t-lg ">
           <h2 class="mb-0" id={`heading-${index}`}>
             <button
               class="
               w-full  text-left py-5 px-10 bg-neutral-100 text-xl border border-neutral-300 text-neutral-700
               group relative flex x items-center rounded-t-[15px]text-neutral-800 transition [overflow-anchor:none] hover:z-[2] focus:z-[3] focus:outline-none hover:underline [&:not([data-te-collapse-collapsed])]:bg-white [&:not([data-te-collapse-collapsed])]:underline [&:not([data-te-collapse-collapsed])]:[box-shadow:inset_0_-1px_0_rgba(229,231,235)]"
-              type="button"
+              role="button"
               data-te-collapse-init
               data-te-target={`#collapse-${index}`}
               aria-expanded="false"
@@ -45,6 +45,7 @@ const { style, panels } = Astro.props;
             data-te-collapse-item
             data-te-collapse-show={false}
             aria-labelledby={`heading-${index}`}
+            data-te-parent="#accordionFlush"
           >
             <div
               set:html={marked.parse(panel.content)}
@@ -52,10 +53,10 @@ const { style, panels } = Astro.props;
             />
           </div>
         </div>
-      </li>
+      </div>
     ))
   }
-</ul>
+</div>
 <script>
   import { Collapse, initTE } from "tw-elements";
 

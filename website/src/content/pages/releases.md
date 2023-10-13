@@ -11,8 +11,7 @@ flow:
   - row: container_row
     sections:
       - component: md_content
+      - component: devicetree_releases
 ---
 
 ## Releases
-
-<div id="devicetree_releases"></div>

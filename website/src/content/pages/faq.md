@@ -4,7 +4,7 @@ title: FAQ
 slug: "/faq/"
 hero:
   title: Frequently Asked Questions
-  image: ../../assets/images/background-image.jpg
+  background_image: ../../assets/images/background-image.jpg
 flow:
   - row: container_row
     sections:
