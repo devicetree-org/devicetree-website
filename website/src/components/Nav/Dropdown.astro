@@ -35,13 +35,13 @@ const { title, lastItem, children } = Astro.props;
         ]}
       >
         <div
-          class="lg:py-2 lg:bg-white lg:rounded-md lg:shadow lg:border flex flex-col"
+          class="lg:py-2 lg:bg-white text-black lg:rounded-md lg:shadow lg:border flex flex-col"
         >
           {
             children.map((item: any) => (
               <a
                 href={item.url}
-                class=" px-3 py-1  lg:hover:text-white hover:bg-accent"
+                class=" px-3 py-1 text-black  lg:hover:text-white hover:bg-primary"
               >
                 {item.label}
               </a>

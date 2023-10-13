@@ -12,7 +12,7 @@ flow:
   - row: container_row
     sections:
       - component: buttons
-        style: text-center
+        style: text-center px-4 py-5 text-xl
         buttons_content:
           - title: contact@linaro.org
             url: mailto:contact@linaro.org?subject=DeviceTree.org - /contact/

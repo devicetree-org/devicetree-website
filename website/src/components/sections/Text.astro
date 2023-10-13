@@ -4,9 +4,6 @@ import marked from "marked";
 const markdown = marked.parse(text_content.text);
 ---
 
-<div class:list={[style, "prose-lg md:prose-xl px-4"]}>
-  <p
-    class="prose-lg md:prose-xl text-red-600 text-[5rem]"
-    set:html={markdown}
-  />
+<div class:list={[style, "prose-lg md:prose-xl px-4 lg:px-[190px]"]}>
+  <p class="prose-lg md:prose-xl text-[5rem]" set:html={markdown} />
 </div>

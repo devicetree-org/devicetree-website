@@ -6,7 +6,7 @@ const { style, panels } = Astro.props;
 <div class:list={[style]} id="accordionFlush">
   {
     panels.map((panel: any, index: number) => (
-      <div class="my-4">
+      <div class="my-4 lg:px-[190px]">
         <div class="rounded-t-lg ">
           <h2 class="mb-0" id={`heading-${index}`}>
             <button

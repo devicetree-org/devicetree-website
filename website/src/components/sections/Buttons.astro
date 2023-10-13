@@ -2,14 +2,22 @@
 const { style, buttons_content } = Astro.props;
 ---
 
-<div class:list={[style]}>
-  {
-    buttons_content.map(({ title, url, style: buttonStyle }) => {
-      return (
-        <a class:list={[buttonStyle, "uppercase rounded-md mt-8"]} href={url}>
-          {title}
-        </a>
-      );
-    })
-  }
+<div class="flex justify-center my-10">
+  <div class:list={[style]}>
+    {
+      buttons_content.map(({ title, url, style: buttonStyle }) => {
+        return (
+          <a
+            class:list={[
+              buttonStyle,
+              " rounded-md   mx-auto text-center text-xl ",
+            ]}
+            href={url}
+          >
+            {title}
+          </a>
+        );
+      })
+    }
+  </div>
 </div>

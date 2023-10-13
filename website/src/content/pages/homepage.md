@@ -11,12 +11,13 @@ hero:
   buttons:
     - title: Specification
       url: /specifications/
-      class: btn bg-primary py-2 px-4 fade-in-three border-b-5
+      class: btn bg-primary py-2 px-4 fade-in-three border-b-5 text-xl
 flow:
   - row: container_row
     style: text-center prose
     sections:
       - component: text
+        style: text-center
         text_content:
           text: |-
             # Welcome to devicetree.org

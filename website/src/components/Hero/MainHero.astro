@@ -4,24 +4,35 @@ import { getCollection } from "astro:content";
 
 const { title, buttons, background_image, description } = Astro.props;
 
-console.log(background_image);
+console.log("buttons", buttons);
 ---
 
 <div class="h-full mb-4">
-  <div class:list={[`  opacity-90 h-full`, "jumbotron-background"]}>
+  <div class:list={[`  opacity-90 h-[350px] `, "jumbotron-background "]}>
     <div
-      class="grid flex-col mx-auto p-[15px] max-w-4xl text-left text-[#fff] justify-center align-middle"
+      class="lg:px-[190px] grid grid-cols-1 md:grid-cols-[1fr,auto] mx-auto text-left text-[#fff] justify-start container p-4"
     >
-      <h1 class="mt-20">{title}</h1>
-      <p class="text-base">{description}</p>
-      {
-        buttons &&
-          buttons.map((btn) => (
-            <button class:list={[btn.class, " w-40 rounded mb-20"]}>
-              {btn.title}
-            </button>
-          ))
-      }
+      <div class="mb-2 ali">
+        <h1 class="md:mt-20 text-xl md:text-5xl">{title}</h1>
+        <p>{description}</p>
+        <!-- Buttons placed under the description -->
+        <div class="mt-4">
+          {
+            buttons &&
+              buttons.map((btn) => (
+                <a
+                  href="/specifications"
+                  class:list={[
+                    btn.class,
+                    " md:w-40 rounded bg-primary text-white",
+                  ]}
+                >
+                  {btn.title}
+                </a>
+              ))
+          }
+        </div>
+      </div>
     </div>
   </div>
 </div>

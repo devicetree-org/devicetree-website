@@ -13,8 +13,20 @@ const pages = defineCollection({
             background_image: image().optional(),
             style: z.string().optional(),
             inner_image: z.string().optional(),
+            buttons: z
+              .array(
+                z
+                  .object({
+                    title: z.string().optional(),
+                    url: z.string().optional(),
+                    class: z.string().optional(),
+                  })
+                  .optional()
+              )
+              .optional(),
           })
           .optional(),
+
         flow: z
           .array(
             z.object({
