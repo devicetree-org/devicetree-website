@@ -4,7 +4,7 @@ import { marked } from "marked";
 ---
 
 <!--Tabs navigation-->
-<div>
+<div class="prose-lg md:prose-xl px-4 lg:px-[190px]">
   <div
     class="mb-4 flex list-none flex-row flex-wrap border-b-0 pl-0"
     id="tabs-tab3"
@@ -20,6 +20,7 @@ import { marked } from "marked";
             id={`tabs-tab-${index + 1}`}
             data-te-toggle="pill"
             data-te-target={`#tabs-${index + 1}`}
+            data-te-nav-active={index === 0}
             role="tab"
             aria-controls={`tabs-${index + 1}`}
             aria-selected="false"
@@ -42,6 +43,7 @@ import { marked } from "marked";
           id={`tabs-${index + 1}`}
           role="tabpanel"
           aria-labelledby={`tabs-tab-${index + 1}`}
+          data-te-tab-active={index === 0}
           set:html={marked.parse(tab.content)}
         />
       ))
