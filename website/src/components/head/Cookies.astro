@@ -11,18 +11,17 @@ import "../../styles/cookies.scss";
       gui_options: {
         consent_modal: {
           layout: "cloud", // box/cloud/bar
-          position: "bottom center", // bottom/middle/top + left/right/center
+          position: "bottom right", // bottom/middle/top + left/right/center
           transition: "slide", // zoom/slide
           swap_buttons: false, // enable to invert buttons
         },
         settings_modal: {
           layout: "box", // box/bar
-          // position: 'left',           // left/right
           transition: "slide", // zoom/slide
         },
       },
 
-      onAccept: function () {
+      onAccept: function (cookie) {
         if (cc.allowedCategory("analytics_cookies")) {
           cc.loadScript(
             "https://www.google-analytics.com/analytics.js",
@@ -36,7 +35,7 @@ import "../../styles/cookies.scss";
         }
       },
 
-      onChange: function () {
+      onChange: function (cookie) {
         //console.log("onChange fired ...");
         // do something ...
       },
@@ -45,7 +44,7 @@ import "../../styles/cookies.scss";
         en: {
           consent_modal: {
             title: "Cookies & Privacy Policy",
-            description: `Enabling cookies allows you to use our website to its full extent and to personalize your experience on our sites. They tell us which parts of our websites people have visited, help us measure the effectiveness of ads and web searches and give us insights into user behavior so we can improve our communications with you. <a aria-label="Cookies Policy-Privacy Policy"  href="/cookies/">Cookies Policy-Privacy Policy</a>`,
+            description: `Enabling cookies allows you to use our website to its full extent and to personalize your experience on our sites. They tell us which parts of our websites people have visited, help us measure the effectiveness of ads and web searches and give us insights into user behavior so we can improve our communications with you. <a class="cc-link" aria-label="Cookies Policy-Privacy Policy"  href="/cookies/">Cookies Policy-Privacy Policy</a>`,
             primary_btn: {
               text: "Accept all Cookies",
               role: "accept_all", //'accept_selected' or 'accept_all'
@@ -70,7 +69,7 @@ import "../../styles/cookies.scss";
               {
                 title: "Cookie usage",
                 description:
-                  'We use cookies to ensure the basic functionalities of the website and to enhance your online experience. You can choose for each category to opt-in/out whenever you want. For more details about cookies and how we use them, read the full <a href="../privacy-policy.html" class="cc-link">cookie policy</a>.',
+                  'We use cookies to ensure the basic functionalities of the website and to enhance your online experience. You can choose for each category to opt-in/out whenever you want. For more details about cookies and how we use them, read the full <a href="/cookies" class="cc-link">cookie policy</a>.',
               },
               {
                 title: "Analytics cookies",
@@ -104,11 +103,6 @@ import "../../styles/cookies.scss";
                     col5: '<a href="https://policies.google.com/privacy?hl=en-US" style="word-break: break-all;">Privacy Policy</a>',
                   },
                 ],
-              },
-              {
-                title: "More information",
-                description:
-                  'For any queries in relation to our policy on cookies and your choices, please <a class="cc-link" href="mailto:privacy@skylands.io">contact me</a>.',
               },
             ],
           },
