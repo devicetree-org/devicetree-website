@@ -237,7 +237,7 @@ let copyButtonImageSrc = "../../src/assets/images/clipboard-copy.svg";
     });
 }
 
-  async function copyCode(block, button) {
+  async function copyCode(block:any, button:any) {
     let code = block.querySelector("code");
     let text = code.innerText;
 

@@ -1,8 +1,6 @@
 ---
 import Dropdown from "./Dropdown.astro";
-import { Astronav, MenuItems, MenuIcon } from "astro-navbar";
-import LinaroLogo from "../../assets/images/device-tree-logo.png";
-import { Image } from "astro:assets";
+import { Astronav, MenuItems } from "astro-navbar";
 import { getEntry } from "astro:content";
 
 const navData = await getEntry("data", "links");

@@ -22,7 +22,7 @@ import "../../styles/cookies.scss";
         },
       },
 
-      onAccept: function (cookie) {
+      onAccept: function () {
         if (cc.allowedCategory("analytics_cookies")) {
           cc.loadScript(
             "https://www.google-analytics.com/analytics.js",
@@ -36,7 +36,7 @@ import "../../styles/cookies.scss";
         }
       },
 
-      onChange: function (cookie) {
+      onChange: function () {
         //console.log("onChange fired ...");
         // do something ...
       },

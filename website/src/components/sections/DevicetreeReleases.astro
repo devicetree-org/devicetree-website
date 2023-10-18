@@ -12,14 +12,13 @@ const api =
 
 async function fetchData() {
   const response = await fetch(api);
-  console.log(response);
+
   const data = await response.json();
-  console.log(data);
+
   return data;
 }
 
 const data_releases = await fetchData();
-console.log(data_releases);
 ---
 
 <div class="lg:px-[190px] p-[10px] flex flex-col">

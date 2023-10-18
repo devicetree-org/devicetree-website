@@ -1,7 +1,4 @@
 ---
-import { Image, getImage } from "astro:assets";
-import { getCollection } from "astro:content";
-
 const { title, buttons, background_image, description } = Astro.props;
 ---
 
@@ -17,7 +14,7 @@ const { title, buttons, background_image, description } = Astro.props;
         <div class="mt-4">
           {
             buttons &&
-              buttons.map((btn) => (
+              buttons.map((btn: any) => (
                 <a
                   href="/specifications"
                   class:list={[
