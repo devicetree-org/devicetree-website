@@ -10,8 +10,10 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/check": "^0.2.1",
     "@astrojs/solid-js": "^3.0.2",
     "@astrojs/tailwind": "^5.0.1",
+    "@astrolib/analytics": "^0.4.2",
     "@fontsource/lato": "^5.0.15",
     "@tailwindcss/typography": "^0.5.10",
     "@types/marked": "^6.0.0",
@@ -28,6 +30,7 @@
     "vanilla-cookieconsent": "^2.9.2"
   },
   "devDependencies": {
+    "postcss": "^8.4.31",
     "sass": "^1.68.0"
   }
 }

@@ -1,5 +1,5 @@
 ---
-import '@fontsource/lato';
+
 import { getCollection, getEntryBySlug } from "astro:content";
 
 
@@ -77,34 +77,42 @@ const { flow, hero, title, description } = page.data;
 </BaseLayout>
  <style is:global lang="scss">
     .md-content {
-      p{
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      .developer{
+        @media screen and (max-width: 788px){
+          overflow-x: auto;
+          white-space: nowrap;
+        }
+      }
+    
+      p
+      {
         font-size: 20px;
       }
       ul {
         list-style-type: disc;
         margin-bottom: 20px;
-        li {
-          margin-left: 40px;
+          li {
           font-size: x-large;
-          color:black;
-          
-        }
+          color:black; 
+          }
       }
 
- .copy-code   {
+      .copy-code   {
             padding:0 !important;
             width:100%;
             display: flex;
             justify-content: right; 
             align-items: right;
             
-       
-     
             img{
             width: 20px;
-             color:white;
+            color:white;
             background-color: #EDEDED;
             transition: background-color 0.3s ease;
+            // position: relative;
+            // z-index: 9999;
             }
             img:hover {
             background-color: #00b1df;
@@ -121,16 +129,16 @@ const { flow, hero, title, description } = page.data;
         flex-direction: column;
         align-items: left;
         padding: 15px;
-
-        // color: #555555;
-        margin-left: 20px !important;
+        margin-left: 20px;
         font-style: italic !important;
         font-size: 20px;
         width:100%;
+          @media screen and (max-width: 788px) {
+          margin-left: auto;
+          margin-right: auto;
+          padding: 3px;
+          }
 
- 
-        
-        // display: block;
         .signed-off{
           background-color: black;
           color: white;
@@ -147,9 +155,16 @@ const { flow, hero, title, description } = page.data;
           background-color: black;
            padding: 20px;
           margin-left: 10px;
-          width: 98%;
           position: relative;
            align-items: center; 
+           white-space: pre-wrap; 
+           word-wrap: break-word; 
+        
+          @media screen and (max-width: 788px){
+              overflow-x: auto;
+              white-space: nowrap;
+            }
+      
 
           .copy-code   {
             padding:0 !important;
@@ -157,9 +172,7 @@ const { flow, hero, title, description } = page.data;
             display: flex;
             justify-content: right; 
             align-items: right;
-            
-       
-     
+   
             img{
             width: 20px;
              color:white;
@@ -172,19 +185,14 @@ const { flow, hero, title, description } = page.data;
           }
  
         }
-        
         code {
           background-color: black;
           color: white;
           padding: 10px;
-          white-space: pre-wrap;
           width: 100% !important;
           margin-left: 5px;
               
         }
-      
-
-    
     }
     }
   </style>

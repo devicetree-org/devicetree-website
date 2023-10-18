@@ -22,14 +22,22 @@ const data_releases = await fetchData();
 console.log(data_releases);
 ---
 
-<div class="lg:px-[190px]">
+<div class="lg:px-[190px] p-[10px] flex flex-col">
   <h2 class="font-bold">The Devicetree Specification</h2>
   <h2>Current Release</h2>
-  <div class="text-xl mb-4">
-    <a href={data_releases[0].html_url} class="text-primary">
-      DeviceTree Specification Release
-      {data_releases[0].tag_name}
-    </a>
+  <div class="text-xl mb-4 w-full flex md:flex-row flex-col items-center">
+    {
+      data_releases ? (
+        <a href={data_releases[0].html_url} class="text-primary">
+          <div class="flex flex-row">
+            <span>DeviceTree Specification Release</span>
+            <span>{data_releases[0].tag_name}</span>
+          </div>
+        </a>
+      ) : (
+        <div>No data available</div>
+      )
+    }
     <span class="text-black"> - Released {data_releases[0].created_at}</span>
     <span
       class="text-[#2cbe4e] p-[5px] border border-[#2cbe4e] text-xs align-middle relative ml-2"
@@ -38,18 +46,25 @@ console.log(data_releases);
   </div>
   <h2>Past Releases</h2>
   {
-    data_releases.slice(1, 5).map((item: any) => (
-      <div id={item.id}>
-        <div class="text-xl mb-4  ">
+    data_releases ? (
+      data_releases?.slice(1, 5).map((item: any) => (
+        <div
+          id={item.id}
+          class="text-xl mb-4 w-full  flex md:flex-row flex-col items-center"
+        >
           <a href={item.html_url} class="text-primary">
-            DeviceTree Specification Release
-            {item.tag_name}
+            <div>
+              <span>DeviceTree Specification Release</span>
+              <span>{item.tag_name}</span>
+            </div>
           </a>
-          <span class="text-black">
+          <span class="text-black mb-6">
             - Released {dateConvertor(item.created_at)}
           </span>
         </div>
-      </div>
-    ))
+      ))
+    ) : (
+      <div>No data available</div>
+    )
   }
 </div>

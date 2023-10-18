@@ -4,6 +4,7 @@
 
 html {
   color: black;
+  font-family: "Lato", sans-serif;
 }
 
 @layer base {
@@ -30,5 +31,16 @@ html {
   }
   section {
     @apply p-4 max-w-4xl mx-auto;
+  }
+}
+
+@layer utilities {
+  .nav-hover {
+    :before {
+      @apply w-0 lg:bg-primary content-[""] bottom-0 h-1 block absolute left-[50%] duration-150;
+    }
+    :before:hover {
+      @apply w-full left-0;
+    }
   }
 }

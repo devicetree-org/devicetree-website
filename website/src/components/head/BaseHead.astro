@@ -2,12 +2,11 @@
 import Cookies from "./Cookies.astro";
 import GoogleAnalytics from "./GoogleAnalytics.astro";
 import { SEO } from "astro-seo";
-import "@fontsource/lato";
 import "../../styles/global.scss";
 
 const {
-  title = "The OpenAMP Project",
-  description = "OpenAMP (Open Asymmetric Multi-Processing) seeks to standardize the interactions between operating environments in a heterogeneous embedded system through open source solutions for Asymmetric MultiProcessing (AMP).",
+  title = "The DeviceTree Project",
+  description = "A devicetree is a data structure for describing hardware.",
   type = "website",
 } = Astro.props;
 ---
@@ -26,7 +25,7 @@ const {
       basic: {
         title: title,
         type: type,
-        image: "https://www.openampproject.org/images/social-media-image.png",
+        image: "https://www.devicetree.org/images/devicetree_home.png",
       },
     }}
     twitter={{
@@ -44,7 +43,7 @@ const {
         {
           name: "twitter:image",
           content:
-            "https://www.openampproject.org/images/openAMP_share_image.png",
+            "https://www.devicetree.org/images/devicetree_share_image.png",
         },
         { name: "twitter:title", content: title },
         { name: "twitter:description", content: description },

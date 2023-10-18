@@ -10,13 +10,13 @@ const navData = await getEntry("data", "links");
 
 <header class="flex w-full bg-[#00b1df]">
   <div
-    class="container flex flex-col lg:flex-row justify-end items-center mx-auto pr-[171px]"
+    class="container flex flex-col lg:flex-row justify-end items-center mx-auto lg:pr-[144px] md:pr-[90px]"
   >
     <Astronav>
       <MenuItems
         class="hidden w-full lg:w-auto mt-2 lg:flex lg:mt-0 font-medium text-black"
       >
-        <ul class="flex flex-col lg:flex-row lg:gap-3 items-right">
+        <ul class="flex flex-col lg:flex-row lg:gap-4 items-right">
           {
             navData.data.map((item: any, index: number) => (
               <>

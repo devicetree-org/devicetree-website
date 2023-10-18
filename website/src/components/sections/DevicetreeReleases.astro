@@ -22,27 +22,39 @@ const data_releases = await fetchData();
 console.log(data_releases);
 ---
 
-{
-  data_releases.map((item: any, index: number) => (
-    <div class="lg:px-[190px]" id={item.id}>
-      <div class="text-xl mb-4  ">
-        <a href={item.html_url} class="text-primary">
-          {item.tag_name}
-        </a>
-        <span class="text-black">
-          - Released {dateConvertor(item.created_at)}
-        </span>
-        {index == 0 && (
-          <span class="text-[#2cbe4e] p-[5px] border border-[#2cbe4e] text-xs align-middle relative ml-2">
-            Latest Release
+<div class="lg:px-[190px] p-[10px] flex flex-col">
+  {
+    data_releases ? (
+      data_releases.map((item: any, index: number) => (
+        <div
+          id={item.id}
+          class="text-xl  w-full flex flex-col md:flex-row items-center"
+        >
+          <a href={item.html_url} class="text-primary">
+            {item.tag_name}
+          </a>
+
+          <span class="text-black mb-8">
+            - Released {dateConvertor(item.created_at)}
           </span>
-        )}
-        {item.tag_name.includes("pre") && (
-          <span class="text-[#f66a0a] p-[5px] border border-[#f66a0a] text-xs align-middle relative ml-2">
-            Pre-Release
-          </span>
-        )}
-      </div>
-    </div>
-  ))
-}
+          {index == 0 && (
+            <div class="flex items-center ">
+              <span class=" pb-[11px] px-2 text-[#2cbe4e]  border border-[#2cbe4e] text-xs ml-2">
+                Latest Release
+              </span>
+            </div>
+          )}
+          {item.tag_name.includes("pre") && (
+            <div class="flex items-center ">
+              <span class="pb-[11px] px-2 text-[#f66a0a]  border border-[#f66a0a] text-xs ml-2">
+                Pre-Release
+              </span>
+            </div>
+          )}
+        </div>
+      ))
+    ) : (
+      <div>No data available</div>
+    )
+  }
+</div>

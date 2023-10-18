@@ -1,0 +1,56 @@
+---
+const { style, tabs } = Astro.props;
+import { marked } from "marked";
+---
+
+<!--Tabs navigation-->
+<div>
+  <div
+    class="mb-4 flex list-none flex-row flex-wrap border-b-0 pl-0"
+    id="tabs-tab3"
+    role="tablist"
+    data-te-nav-ref
+  >
+    {
+      tabs.map((tab: any, index: number) => (
+        <div role="presentation">
+          <a
+            href={`#tabs-${index + 1}`}
+            class="my-2 block border-x-0 border-b-2 border-t-0 border-transparent px-7 pb-3.5 pt-4 text-xs font-medium uppercase leading-tight text-neutral-500 hover:isolate hover:border-transparent hover:bg-neutral-100 focus:isolate focus:border-transparent data-[te-nav-active]:border-primary data-[te-nav-active]:text-primary dark:text-neutral-400 dark:hover:bg-transparent dark:data-[te-nav-active]:border-primary-400 dark:data-[te-nav-active]:text-primary-400"
+            id={`tabs-tab-${index + 1}`}
+            data-te-toggle="pill"
+            data-te-target={`#tabs-${index + 1}`}
+            role="tab"
+            aria-controls={`tabs-${index + 1}`}
+            aria-selected="false"
+          >
+            {tab.title}
+          </a>
+        </div>
+      ))
+    }
+  </div>
+
+  {/* Tabs content */}
+  <div>
+    {
+      tabs.map((tab: any, index: number) => (
+        <div
+          class={`hidden opacity-${
+            index === 0 ? "100" : "0"
+          } transition-opacity duration-150 ease-linear data-[te-tab-active]:block`}
+          id={`tabs-${index + 1}`}
+          role="tabpanel"
+          aria-labelledby={`tabs-tab-${index + 1}`}
+          set:html={marked.parse(tab.content)}
+        />
+      ))
+    }
+  </div>
+</div>
+
+<script>
+  import { Tab, initTE } from "tw-elements";
+
+  initTE({ Tab });
+</script>
