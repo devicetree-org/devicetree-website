@@ -24,7 +24,7 @@ flow:
 
             If you are looking for the devicetree specification you’ve come to the right place!
 
-            ## Current release is [v0.3](https://github.com/devicetree-org/devicetree-specification/releases/tag/v0.3)
+            ## Current release is [v0.4](https://github.com/devicetree-org/devicetree-specification/releases/tag/v0.4)
 
             Devicetree.org is a community effort by many companies and individuals to facilitate the future evolution of the Devicetree Standard.
 
