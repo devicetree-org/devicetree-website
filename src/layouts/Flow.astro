@@ -9,6 +9,7 @@ import type { AstroComponentFactory } from "astro/runtime/server/index.js";
 import type { CollectionEntry } from "astro:content";
 import BaseLayout from "./BaseLayout.astro";
 import MainHero from "@components/Hero/MainHero.astro";
+import { getDataEntryById } from "astro:content";
 
 
 
@@ -39,7 +40,7 @@ const {
   frontmatter: {slug}
   // data: { flow, jumbotron },
 } = Astro.props!;
-
+console.log(slug)
 const page = await getEntryBySlug("pages", slug)
 const { flow, hero, title, description } = page.data;
 
@@ -48,7 +49,7 @@ const { flow, hero, title, description } = page.data;
 
 <BaseLayout title={title} description={description}>
    <main class="prose prose-xl w-full max-w-full md-content ">
-    <MainHero {...hero} />
+    {hero && <MainHero {...hero} />}
 {
         flow?.map((row: any) => {
           const { row: component, sections, ...rowProps } = row
