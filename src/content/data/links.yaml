@@ -6,8 +6,6 @@
   url: https://www.96boards.org/
 - label: Projects
   children:
-    - label: 96boards.ai
-      url: https://www.96boards.ai/
     - label: OP-TEE
       url: https://www.trustedfirmware.org/projects/op-tee/
     - label: DeviceTree.org
