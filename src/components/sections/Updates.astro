@@ -30,14 +30,14 @@ const data_releases = await fetchData();
         <a href={data_releases[0].html_url} class="text-primary">
           <div class="flex flex-row">
             <span>Devicetree Specification Release</span>
-            <span>{data_releases[0].tag_name}</span>
+            <span> {data_releases[0].tag_name}</span>
           </div>
         </a>
       ) : (
         <div>No data available</div>
       )
     }
-    <span class="text-black"> - Released {data_releases[0].created_at}</span>
+    <span class="text-black"> - Released {dateConvertor(data_releases[0].created_at)}</span>
     <span
       class="text-[#2cbe4e] p-[5px] border border-[#2cbe4e] text-xs align-middle relative ml-2"
       >Latest Release</span
@@ -54,7 +54,7 @@ const data_releases = await fetchData();
           <a href={item.html_url} class="text-primary">
             <div>
               <span>Devicetree Specification Release</span>
-              <span>{item.tag_name}</span>
+              <span> {item.tag_name}</span>
             </div>
           </a>
           <span class="text-black mb-6">
