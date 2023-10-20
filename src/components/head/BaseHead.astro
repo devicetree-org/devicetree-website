@@ -3,7 +3,7 @@ import Cookies from "./Cookies.astro";
 import GoogleAnalytics from "./GoogleAnalytics.astro";
 import { SEO } from "astro-seo";
 import "../../styles/global.scss";
-const { GA_ID } = import.meta.env;
+const GA_ID = import.meta.env.GA_ID;
 
 const {
   title = "The DeviceTree Project",
