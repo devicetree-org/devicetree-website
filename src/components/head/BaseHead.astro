@@ -3,6 +3,7 @@ import Cookies from "./Cookies.astro";
 import GoogleAnalytics from "./GoogleAnalytics.astro";
 import { SEO } from "astro-seo";
 import "../../styles/global.scss";
+const { GA_ID } = import.meta.env;
 
 const {
   title = "The DeviceTree Project",
@@ -18,7 +19,7 @@ const {
   <meta charset="utf-8" />
   <link rel="sitemap" href="/sitemap-index.xml" />
   <Cookies />
-  <GoogleAnalytics id="G-PT82VBC5KD" />
+  <GoogleAnalytics id={GA_ID} />
   <SEO
     title={title}
     description={description}
