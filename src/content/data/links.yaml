@@ -2,8 +2,6 @@
   url: https://www.linaro.org/
 - label: Connect
   url: https://www.linaro.org/connect/
-- label: 96Boards
-  url: https://www.96boards.org/
 - label: Projects
   children:
     - label: OP-TEE
