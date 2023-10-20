@@ -3,7 +3,7 @@ layout: ../../layouts/Flow.astro
 title: Releases
 slug: /releases/
 js-package: releases
-keywords: Releases, Device Tree, RoadMap
+keywords: Releases, Devicetree, RoadMap
 hero:
   title: Releases
   background_image: ../../assets/images/background-image.jpg

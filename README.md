@@ -1,6 +1,6 @@
-# DeviceTree Project Website
+# Devicetree Project Website
 
-This is the git repository for the DeviceTree project website.
+This is the git repository for the Devicetree project website.
 
 ## 🚀 Project Structure
 

@@ -8,7 +8,7 @@
   children:
     - label: OP-TEE
       url: https://www.trustedfirmware.org/projects/op-tee/
-    - label: DeviceTree.org
+    - label: Devicetree.org
       url: https://www.devicetree.org/
     - label: OpenAMP
       url: https://www.openampproject.org/

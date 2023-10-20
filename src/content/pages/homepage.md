@@ -4,7 +4,7 @@ layout: "../../layouts/Flow.astro"
 slug: ""
 hero:
   inner_image: ../../assets/images/devicetree-icon-white.png
-  title: The DeviceTree Specification
+  title: The Devicetree Specification
   background_image: ../../assets/images/background-image.jpg
   description: >-
     A devicetree is a data structure for describing hardware
