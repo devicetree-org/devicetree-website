@@ -2,7 +2,7 @@
 title: News & Blogs
 slug: /latest/
 description: >
-  Find all DeviceTree related news and blogs here.
+  Find all Devicetree related news and blogs here.
 layout: "../../layouts/Flow.astro"
 hero:
   title: News & Blogs
