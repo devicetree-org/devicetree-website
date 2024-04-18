@@ -26,7 +26,7 @@ jobs:
         run: cd ${{ github.workspace }}/website && /srv/github-action-scripts/build-astro-site.sh
 
       - name: Check links
-        run: /srv/github-action-scripts/check-links.sh ${{ github.workspace }}/website/dist
+        run: /srv/github-action-scripts/check-links.sh ${{ github.workspace }}/website/dist -s ./public/open-firmware
 
       - name: Make staging directory
         run: mkdir -p /srv/s3-staging/${{ env.SITE_URL }}
