@@ -1,0 +1,31 @@
+From: jordan@pongo.West.Sun.COM (Jordan Brown)
+To: p1275-wg@prombo.eng.sun.com
+Reply-To: p1275-wg@prombo.eng.sun.com
+Subject: Item #221: Eliminate "cpu-version" from PPC binding
+
+P1275 Openboot Working Group Proposal -- Proposal #:221 Ver 1.0
+
+Title:          Eliminate "cpu-version" from PPC binding
+
+Author:         Jordan Brown
+
+Date:           26 January 1995
+
+Ed/Tech:        Technical
+
+Synopsis:       Eliminate "cpu-version" because "name" contains the info
+
+Doc & Version:  PowerPC binding dated 10/06/94
+
+Problem:
+
+As the "name" property is now defined to include the CPU model number
+(eg 601, 603, 617), the "cpu_version" property is now superfluous.
+
+Proposal:       
+
+Therefore, proposed that in section 5.2 at 21, the "cpu-version"
+property description be deleted.
+
+[ P1275 Item #221 -- Received: Thu Jan 26 20:59:00 PST 1995 ]
+

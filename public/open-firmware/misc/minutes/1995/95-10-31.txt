@@ -1,0 +1,152 @@
+Subject: Minutes of IEEE 1275 committee meeting on 10/31/95
+Date: Thu, 11 Jan 96 17:03:47 -0600
+From: "Dr. Luan D. Nguyen" <duyluan@austin.ibm.com>
+
+Dear IEEE 1275-1994 Committee members,
+
+Attached please find the minutes of our last meeting on 10/31/95 at
+FirmWorks, Mountain View, CA.
+Also please remind that: (1) our next meeting will be on January 16th at
+Motorola, Austin, TX , and (2) check the "Action Item Summary" at the
+end of this note for your action items.
+Thank you and have a nice day.
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+1- Attendees
+
+Mitch Bradley  FirmWorks/President (415)961-1302  wmb@firmworks.com
+               Chairman IEEE 1275-1994 Committee
+David M. Kahn  Sun Microsystems/   (415)336-2784  dmk@Eng.Sun.Com
+               Vice Chair IEEE 1275-1994 Committee/
+               Firmware/OS Architecture
+Luan Nguyen    IBM/Sys. Arch./     (512)838-1292  duyluan@austin.ibm.com
+               Secretary IEEE 1275-1994 Committee
+Ron Hochsprung Apple/Sys. Arch.    (408)974-2661  ron@apple.com
+Greg Hill       Firmworks            [415]917-6985  gregh@firmworks.com
+Mike Segapeli  IBM pPS Firmware    (512)838-8428  mikes@austin.ibm.com
+Jordan Brown  Sunsoft  (310)348-6039 jordan.brown@west.sun.com
+John Kingman IBM RSD  (512)838-1546  kingman@austin.ibm.com
+Chris M Bellman  Adaptec, Inc.  cbellman@corp.adpatec.com
+Rob Baxter     Motorola Computer G.(512)891-2137  robb@phx.mcd.mot.com
+Kip McClanahan Motorola MMTG     (512)891-6525  kip-mcclanahan@risc.sps.mot.com
+Bob Coffin     IBM pPS Arch.       (512)838-8240  coffin@vnet.ibm.com
+David Paktor   HAL                                    paktor@HAL.com
+Alfredo Cotroneo  Bull HN, Italy 1+39-2-67798496  aec@nexus.org
+John Rible     Quicksand           (408)458-0399  jrible@cruzio.com
+Lilian Walter  FirePower Systems   (415)462-6217  lwalter@Firepower.com
+
+2- Review Agenda
+
+Proposed agenda was reviewed and approved 10-0-0 witht he following changes: (1) Add "discussion on procedural for reviewing bindings" after "10:15AM
+Future meetings", (2) Move "Errata document" to after lunch so John Rible 
+can participate, and (3) Move "Any other proposals on the table" from 2:45PM
+ to the end of the day.
+
+
+3- Last meeting minutes review
+
+Vote passed to approve the last meeting minutes (10-0-0).
+
+4- Standard Progress Report
+
+1275.3: The ballot package including the standard and cover letter was 
+shipped to IEEE Monday. It is still in ballot process.
+
+1275.4: Mitch and Martin were unable to sway the lone dissenting voter. We
+decided to do the recirculation.  Martin sent the recirc package to IEEE on
+Monday June 05,1995. This package included the comments from the dissenting
+vote and the committee responses along with a cover letter. Recirculation period is over and we are waiting to hear from IEEE
+
+
+5- Action Items Review
+
+The following AIs are still opened:
+* Mitch: to follow up TI patent issue with Harrison Beasley. Open, pending on
+  Ron's effort to check on TI licensing/royalty on NuBus that may provide a
+  path to solve this patent issue.  
+* All authors/editors of each "recommended practice" documents have action 
+  item to update the document template and its contents per discussion.
+* Mitch: encapsulate #251 to recommended practice document.
+* David Kahn: Standard properties document.
+* David Kahn/Mitch: report on 64-bit experimental work.
+
+
+6- Future Meetings
+
+Jan. 16 & 17, 1996: Motorola Austin, TX, to be hosted by Kip McClanahan.
+April 30 & June 01, 1996: IBM Austin, TX, to be hosted by John Kingman and/or
+Bob Coffin.
+
+
+7- Procedural issues:
+
+    * CHRP binding and other documents will be reviewed in open public after Fall Comdex 95.
+    * Thanks to Motorola for hosting the alias. We request that large
+document/note to be sent to David Kahn for posting.
+
+
+8- Open Firmware Recommended Practice: 16-color Text Extension
+
+    Approval vote 11-0-0 to become the recommended practice version 1.3 with amendments:
+(1) deleting the time next to the date in the front page, and (2) directing Ron to update this document accordingly.
+
+
+9- Open Firmware Recommended Practice: 8-bit Graphics Extension
+
+    Approval vote 11-0-0 to become the recommended practice version 1.3 with amendments:
+(1) deleting the time next to the date in the front page, (2) Change line 17 page 5 to "The returned values are the dimensions of the viewable area of the
+screen in the current mode", and (3) directing Ron to update this document
+accordingly.
+
+
+10- Errata document (1275.7):
+
+     Reviewed changes and voted 13-0-0 to approve changes and to forward the draft 1275.7 for IEEE sponsored balloting.
+
+
+11- PC Card binding supplement:
+
+     Bob Coffin reported to the current status of the PC Card Committee.
+
+
+12- PCI binding:
+
+     Reviewed changes page by page. AI: Ron to update.
+     Tabled discussion on "reg"/"assigned-addresses"/base address registers in the PCI binding.
+
+
+13- 1275.3 VME
+     Reviewed the replies to the p1275.3 ballot.
+
+
+14- Open Firmware Recommended Practice: Interposer
+
+    Approval vote 10-0-1 (Jordan against) to become the recommended practice version 1.0 with amendments: (1) deleting the time next to the date in the
+front page, (2) fix e-mail address, (3) typo on page 4 last line
+"%package_name", and (4) directing Mitch to update thisdocument accordingly.
+
+ 
+15- Proposals review:
+
+292: Subject: Item #292: PCI bus master capable property
+292: Closed: Withdrawn by author- Superceded by #293.
+293: Subject: Item #292: PCI bus master capable property
+293: Closed: passed 11-0-0
+
+
+16- PowerPC Processor binding:
+
+291: Subject: Item #291: PPC Default mode for map
+291: Table.
+
+
+17- Action Items Summary
+
+Old AIs left:
+ See section 5 on Action Items Review in this note
+
+New AIs:
+  * Ron/David Kahn/Greg/Jordan: work on "reg"/"assigned-addresses"/base address registers in the PCI binding.
+  * Jordan/Lilian to work on names, unit-address... in ISA binding
+

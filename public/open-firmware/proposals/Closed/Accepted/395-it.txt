@@ -1,0 +1,68 @@
+Date: Mon, 28 Oct 96 09:19:34 PST
+From: wmb@FirmWorks.COM (Mitch Bradley)
+Subject: Item #395: PCI bus: Typo in binding - ss coding for 64-bit ...
+
+P1275 Open Firmware Working Group Proposal -- Proposal #395 Ver <Auth-Vers#>
+
+Title:		Typo in PCI Binding - ss for 64-bit space
+
+Author:		Mitch Bradley
+
+Date:		October 28, 1996
+
+Ed/Tech:	Editorial
+
+Synopsis:	Typo in 64-bit 'ss' coding in 2.2.1.2
+
+Doc & Version:	PCI Bus Binding, rev. 2.0
+
+Problem:	Page 7 line 16 says 'ss is 10', should be 'ss is 11'
+
+Proposal:	
+
+In section 2.2.2.2 Text Representation, Page 7 line 16, change
+	ss is 10
+to
+	ss is 11
+to agree with section 2.2.1.1 Numerical Representation, page 5 line 23.
+
+>From: 	Andrew Cagney[SMTP:cagney@tpgi.com.au]
+>Sent: 	Monday, October 28, 1996 7:08 AM
+>To: 	port-powerpc@NetBSD.ORG
+>Subject: 	Error in OF 64bit PCI bus bindings?
+>
+>...
+>
+>    Value of the ``ss'' bits in 64bit PCI memory addresses?
+>
+>ref: http://playground.sun.com/1275/home.html#OFDbusPCI
+>
+>In my opinion, revisions 2.0 (and 1.6) of the document ``PCI Bus
+>Bindings to: IEEE Std 1275-1994 .....'' has an inconsistency between the
+>textual and binary representations of 64bit PCI memory addresses.  In
+>particular, there would appear to be a discrepency the specification of
+>the ``ss''.
+>
+>Section  2.2.1.1 - Numerical Representation page 5 (10), lines 1 and 35:
+>
+>	Encoding of type code ``ss'':
+>	...
+>	11 denotes 64-bit-address Memory Space, ...
+>
+>would indicate that 64bit addresses are identified by the ``ss'' bits in
+>the unit_address having the binary value 0b11.  I believe that this is
+>in conflict with the information that is later provided in section
+>2.2.1.2. Text Representation, page 7, lines 14-16 which which indicate:
+>
+>	... 64-bit
+>	Memory Space address with the numerical value:
+>
+>	ss is 10
+>
+>Am I correct in believing that 64bit memory addresses should have the
+>bits ``ss'' set to 0b10?
+>
+>		Andrew
+
+[ P1275 Item #395 -- Received: Mon Oct 28 09:18:32 PST 1996 ]
+

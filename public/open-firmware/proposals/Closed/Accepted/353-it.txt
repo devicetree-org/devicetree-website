@@ -1,0 +1,42 @@
+Date: Fri, 26 Apr 96 18:34:57 PDT
+From: wmb@FirmWorks.COM (Mitch Bradley)
+Subject: Item #353: PCI Binding ROM Image format
+
+P1275 Open Firmware Working Group Proposal -- Proposal #353 Ver 0
+
+Title:		Misleading description of PCI ROM Image format
+
+Author:		Mitch Bradley
+
+Date:		April 26, 1996
+
+Ed/Tech:	Editorial
+
+Synopsis:	Bogus wording in PCI rom header description
+
+Doc & Version:	PCI Bus Binding 1.65  (the problem exists in many versions)
+
+Problem:	See below
+
+Proposal:	
+
+Section 9. ROM Image Format for FCode   says:
+
+	38h - FFFFh  The PCI Data Structure (PCI spec 6.3.1.2), Vital Product
+		     Data, and FCode program can each begin anywhere within
+		     this range, in any order. ...
+
+It should say:
+
+	38h - FFFFh  The Vital Product Data and FCode program can each begin
+		     anywhere within this range, in any order. ...
+
+The PCI Data Structure starts at offset 1Ah, so it cannot also appear in the
+range 38h - FFFFh.
+
+I suspect that this problem arose when we decided to pin down the location
+of the PCI Data Structure rather than letting it be anywhere, and then forgot
+to delete the reference to it in the floating area.
+
+[ P1275 Item #353 -- Received: Fri Apr 26 18:32:43 PDT 1996 ]
+

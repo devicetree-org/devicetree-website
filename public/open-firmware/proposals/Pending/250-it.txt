@@ -1,0 +1,94 @@
+Date: Mon, 13 Mar 1995 18:40:59 -0800
+From: dmk@hsmpk14a-91 (David Kahn)
+Subject: Item #250: Procedural: rules for email ballot
+
+P1275 Open Firmware Working Group Proposal -- Proposal #250 Ver 1
+
+Title:		Email balloting procedure
+
+Author:		David Kahn
+
+Date:		March 13, 1995
+
+Ed/Tech:	Procedural
+
+Synopsis:	Open Firmware Working Group Email Ballot Procedure
+
+Doc & Version:	n/a
+
+Problem:	Fulfill action item to define email ballot procedure.
+
+Proposal:	
+
+
+I was tasked with coming up with the process, and here's the process
+proposal.  Please comment within 5 days on this email process and we
+can try the process with this item first, and as a matter of course,
+reaffirm the items and this process at the next meeting:
+
+Create an email ballot administrator, assign the role to the vice chair
+initially.
+
+Somebody sends a proposal in and requests email balloting.  Any eligible
+member can request email balloting of a properly submitted proposal.
+
+If there are no objections by eligible voters within 5 full business
+days, starting the business day after the proposal is posted by the
+proposal number generator, the ballot item is eligible for email
+ballot.  The administrator declares an item eligible for email
+balloting.  The discussion period on an email ballot runs
+simultaneously with this 5 day period.
+
+The admin sets up an alias for email balloting. (Publicized by the admin
+at the time the voting is opened on a proposal). The alias may be
+different for each ballot, to make it easier for the admin to track the
+ballot items.
+
+Votes are sent in to this alias and tabulated by the admin who produces
+a summary report at the end of the ballot period showing each person's
+vote. If you vote more than once, only the last vote you sent in,
+determined by the time you sent in the vote, counts. Previous votes are
+discarded.  The email headers are used to determine the correct vote.
+In the event the admin is notified of header forgery, or header forgery
+becomes apparent within one week following a vote, the vote is declared
+void.
+
+Eligible voters that "know" they will be on vacation can send in their
+vote early to the admin, with specific instructions on their vote.  The
+administrator should try to do his/her best to include the vote in the
+official tally, but is not required to do so.  If for some reason the
+vote cannot be included, the admin will post a message to the email
+alias indicating why the vote cannot be included.
+
+One business week minimum from time of ballot start to ballot end.
+Ballot end date declared at ballot start time by the admin.
+
+Minimum of 9 "eligible" voters for a ballot to be declared valid, same
+rules for passage of an email ballot as a regular ballot. (Attend 2
+working group meetings, or sufficent email participation to be
+knowledgeable about the proposal makes you eligible to vote.)
+
+All email votes to be affirmed at the next official working group
+meeting which has a quorom in attendence, so they make it into the
+official working group minutes.  The admin presents a list of
+email items and there votes and status at each working group
+meeting.  (Note: the intention here is a vote to affirm the
+email ballots and results and not to generate technical discussion
+of email approved/rejected items at the working group meeting.)
+
+The admin posts the results of email ballots in the proposals area
+on playground.sun.com.
+
+The admin can declare certain periods of the year (holiday periods
+and periods surrounding official working group meetings as ineligible
+for email balloting. Initially, Dec 15 - Jan 7 are declared as
+ineligible and the week before and the week of a working group
+meeting are declared as ineligible. The admin can appoint a temporary
+administrator to handle email balloting for periods the admin will
+be on vacation, or declare those periods as ineligible for email
+balloting as well. 
+
+-David
+
+[ P1275 Item #250 -- Received: Mon Mar 13 18:41:41 PST 1995 ]
+

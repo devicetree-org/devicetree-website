@@ -1,0 +1,138 @@
+From: coffin@VNET.IBM.COM
+Date: Thu, 29 Feb 96 11:23:56 CST
+Subject: Item #320: ISA Binding: Define new physical address format ...
+
+P1275 Openboot Working Group Proposal -- Proposal #:320 Ver 1.0
+
+Title:          ISA binding changes:
+                  1) Definition for "phys.hi" cell
+                  2) Definition for first "reg" property component
+                  3) Definition of a different "Data Resource" Structure
+
+Author:         R. T. Coffin
+
+Date:           02/29/96
+
+Ed/Tech:        Technical
+
+Synopsis:       Define a new "phys.hi" cell format to facilitate a
+                more consistent ISA 'unit address' and naming convention.
+
+Doc & Version:  ISA/EISA/ISA-PnP binding; Version 0.1 DRAFT
+
+Problem:        Facilitate keeping an ISA Device pathname consistent across
+                configuration changes and/or boots, provide 'geographical'
+                slot/bus address information and to be more consistent with a
+                PCI Bus binding approach.
+
+Proposal:
+
+1) 'phys.hi' cell definition:
+
+Redefine the 'phys.hi' cell for the ISA binding Physcial Address Format(Section
+2.2.1):
+
+      Bit#:  3       2 2      1 1      0 0      0
+             1       4 3      6 5      8 7      0
+
+'phys.hi'    vt00000ss cccccccc nnnnnfff rrrrrrrr  where:
+
+             v         -  1 indicates 11-bit aliased I/O address
+             t         -  1 indicates 10-bit aliased I/O address
+             ss        -  2-bit field denoting memory or I/O Space
+                           00 - Config space
+                           01 - I/O space
+                           10 - Memory space
+                           11 - reserved
+             cccccccc  -  CSN Number
+             nnnnn     -  Bus Slot Number
+             fff       -  Function number
+             rrrrrrrr  -  Register address (or reserved)
+
+Field 'cccccccc':
+
+The ISA config utility would assign this number for each PnP Adapter
+after the 'Isolation Protocol' phase.  This would be a variable assigned to
+the card resource data in the platform's NVRAM.
+
+For an ISA/EISA Adapter, the ISA config utility would generate this number
+from an algorithm such that each bus resource (adapter and/or 'built-in'
+device) would have a unique CSN Number.
+
+Field 'nnnnn':
+
+The ISA configuration utility would put this information in the platform NVRAM
+area associated with this adapter's resource data.  This would be user supplied
+information, through the ISA config utility, that would be platform
+dependent identifying the 'plug-in' adapter's ISA/EISA bus slot.  For the
+platform 'built-in' ISA devices, the number would be assigned by the ISA
+config utility.  The 'nnnnn' would be the integer portion of the "slot-names"
+property, section 3.1.2.
+
+Field 'fff':
+
+The ISA configuration utility would provide this number for a
+multi-function adapter.  For a PnP Adapter, this number would be derived from
+the 'Logical Device ID' Record.  For ISA or EISA, this numbr would be generated
+by the ISA config utility and user interaction.
+
+Field 'rrrrrrrr':
+
+Could use for register addressing for a configuration cycle ('ss' = 00).
+Is a 8-bit field useful? If not, just reserve for future defintion or usage.
+
+
+2) "Reg" property: first component
+
+First component of the "reg" property is defined by the new 'phys.hi' cell
+format, 'ss'='00'(config cycle). A suggested unit address format would be
+'cccccccc,fff', where the CSN number would be unique for each adapter and
+resolve any ambiguity addressing multiple identical vendor adapters; i.g., like
+two identical eithernet adapters on the ISA bus.
+
+The CSN number could provide a cross-reference to a bus slot number so that
+there would be a geographical relationship for all platform ISA 'built-in' and
+'plug-in' Adapters(with respect to relating information to a user).
+
+3) Data Resource Definition (General):
+
+General suggestion for the data resource structure: put in the form of
+'allocated' resources(what an adapter/logical function is actually using)
+and 'possible allocated' resources(what an adapter/logical function could
+possibly use).  The 'possible allocated' section would be useful for the ISA
+config utility when resources had to be moved around for a reconfiguration
+(could also assist the user, possibly preventing re-entering of all the config
+data again).
+
+Example: General Structure
+
+
+PnP Header Structure
+
+(begin allocated tag)
+Specify resources; interrupts, dma channel, I/O space, system memory space,
+etc.
+(end allocated tag)
+
+(begin possible allocated tag)
+Specify resources, indicate dependencies with a PnP like data structure (See
+'Start Dependent Function Record', Section 6.3.13).
+(end possible allocated tag)
+
+Don't do the new properties "interrupt-choices" and "dma-choices", but just
+leave this tag structure in the appropriate platform NVRAM area.  Let the ISA
+config utiltiy use this area for reconfig information.
+
+
+
+
+
+
+
+
+
+
+
+
+[ P1275 Item #320 -- Received: Thu Feb 29 09:31:08 PST 1996 ]
+

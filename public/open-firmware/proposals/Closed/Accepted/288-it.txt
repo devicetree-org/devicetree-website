@@ -1,0 +1,61 @@
+From: Lilian Walter <lwalter@FirePower.COM>
+Date: Fri, 15 Sep 95 11:29:54 -0700
+Subject: Item #288: Device Supplement: new property for wide SCSI
+
+
+P1275 Open Firmware Working Group Proposal -- Proposal #288 Ver 1
+
+Title:		New property for wide SCSI
+
+Author:		Lilian Walter
+
+Date:		Sept 15, 1995
+
+Ed/Tech:	Technical.
+
+Synopsis:	Add new property for wide SCSI
+
+Doc & Version:	Device Support Extensions to Open Firmware,
+		Core Errata
+
+Problem:
+
+Currently, software (such as client programs and show-children)  
+cannot easily determine from the device tree whether the SCSI  
+controller is wide or narrow.  Software needs to know this piece of  
+information because it should not try to probe SCSI id beyond 7 with  
+a narrow SCSI controller.  Doing so will probe SCSI devices twice.
+
+Proposal:	
+
+Add to Device Support Extensions to Open Firmware:
+
+Section 9.1	Properties for Bus Nodes
+
+"wide"
+	The presence of this property denotes that the SCSI  
+controller represented by this node is wide, with SCSI id ranges 0  
+through 15.
+
+Add to Core Errata:
+
+E.6.3	hacom.fth
+
+....
+
+: show-children  ( -- )
+  open  0=  if  ." Can't open SCSI host adapter" cr  exit  then
+
+  " wide"  get-my-property  if  8  else  2drop d# 16  then
+  0 do
+     i probe-target  if
+        ." Target " i . cr
+        8 0  do  i j show-lun  loop
+     then
+  loop
+;
+
+...
+
+[ P1275 Item #288 -- Received: Fri Sep 15 11:33:35 PDT 1995 ]
+

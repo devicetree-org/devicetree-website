@@ -1,0 +1,85 @@
+Date: Wed, 15 Jan 97 10:33:31 PST
+From: wmb@FirmWorks.COM (Mitch Bradley)
+Subject: Item #404: SCSI Annex retry improvements
+
+P1275 Open Firmware Working Group Proposal -- Proposal #404 Ver 0
+
+Title:		SCSI Retry Improvements
+
+Author:		Mitch Bradley
+
+Date:		1/15/97
+
+Ed/Tech:	Technical
+
+Synopsis:	"medium not present" shouldn't be retryable
+
+Doc & Version:	1275-1996 and SPI binding
+
+Problem:
+
+Refer to 1275-1994, Annex E (SCSI Host Adapter Package Class), Sections
+E3.2.2, definition of "retry-command", and the sample implementation of
+"classify-sense" in E6.3 "hacom.fth".
+
+The classification of the "not ready" sense key (sense key value 2) as
+"retryable" is too general.  One of the subcases of "not ready" is
+"medium not present", as indicated by an Additional Sense Code (the byte
+at sense data offset decimal 12) value of hex 3A and an Additional Sense
+Code Qualifier (the byte at sense data offset decimal 13) value of 0.
+
+In order for a sense condition to be properly classified as "retryable",
+it should be self-correcting, so that the overall operation is likely to
+eventually succeed if it is retried enough times.  "Medium not present"
+is not a self-correcting condition, so it should not be retried.
+
+One specific situation in which this problem shows up is when the list
+of boot devices (i.e. the value of the "boot-file" configuration variable)
+contains a tape drive at some position other than the end of the list.
+Typically, the desired behavior in such a situation is for the system to
+boot from the tape drive if a tape is present, otherwise to proceed to the
+next device in the list.  If "medium not present" is retryable, the system
+will instead wait indefinitely for a tape to be inserted.
+
+In addition to this problem, the example code for "classify-sense" in E6.3
+also fails to handle the "9) Transaction aborted ..." case listed on P223
+L33.
+
+Proposal:	
+
+In 1275-1994 P223 L31, and the identical line in the SPI binding:
+
+Replace:
+
+	7) sense key = Not Ready is retryable
+
+With:
+
+	7) sense key = Not Ready is:
+	    - not retryable if Additional Sense Code = 0x3A and Additional
+              Sense Code Qualifier = 0 (thus indicating "medium not present")
+	    - retryable otherwise
+
+In 1275-1994 P229 L54-55:
+
+Replace:
+
+	\ not-ready(2) and attention(6) are retryable
+	dup 2 =  swap 6 =  or  if 1  else  -1  then
+
+With:
+
+	\ not-ready(2) may be retryable
+	dup 2 =  if
+	   \ check (tapes, especially) for MEDIUM NOT PRESENT: if the
+	   \ medium's not there the command is not retryable
+	   drop sense-buf h# c + c@  h# 3a =  sense-buf h# d + c@ 0=  and
+	   if  -1  else  1  then
+	   exit
+	then
+
+	\ attention(6), and target aborted (b) are retryable.
+	dup 6 =  swap 0b =  or if  1  else  -1  then
+
+[ P1275 Item #404 -- Received: Wed Jan 15 10:31:56 PST 1997 ]
+

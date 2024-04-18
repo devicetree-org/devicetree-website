@@ -1,0 +1,733 @@
+<HTML>
+<HR><!-- This file was created with the fm2html filter.The filter is copyright
+Norwegian Telecom Research and was programmed by Jon Stephenson von Tetzchner. -->
+<HEAD>
+<H1><B>Open Firmware - Recommended Practice: Device Support Extensions</B></H1>
+<P>
+<H2><B><I>Version 1.0, Approved Version</I></B></H2>
+<P>
+<H2>January 5, 1997</H2>
+</HEAD>
+<bgproperties=fixed
+text=#000000
+link=#0000ff
+vlink=#ff0000
+bgcolor=#ffffff>
+
+<P>
+<H3>
+Published by the Open Firmware Working Group.</H3>
+<P>
+This document is a voluntary-use recommended practice of the Open Firmware
+Working Group.  The Open Firmware Working Group is an ad hoc committee
+composed of individuals interested in Open Firmware as defined by
+IEEE 1275-1994, related standards, and their application to various computer
+systems.
+
+<P>
+The Open Firmware Working Group is involved both in IEEE sanctioned standards activities, whose final results are published by IEEE, and in informal recommendations such as this, which are published on the Internet at:<BR>
+<A HREF= "http://playground.sun.com/1275/">
+<B><I>http://playground.sun.com/1275/</I>
+</B></A><BR>
+<P>
+Membership in the Open Firmware Working Group is open to all interested parties.  The working group meets at regular intervals at various locations. For more information send email to:
+<I>p1275-wg@risc.sps.mot.com</I><BR>
+
+<ADDRESS>
+<H4>
+<p>
+Last Changed: 01/05/97 by R. T. Coffin, Technical Editor
+</H4>
+</ADDRESS>
+
+<HR><H2>Table of Contents</H2>
+
+<UL>
+<A HREF="dse1_0a.html#HDR0"><B>1.   Introduction</B></A>
+
+<UL>
+<A HREF="dse1_0a.html#HDR1">1.1.   Purpose</A>
+<BR>
+
+<A HREF="dse1_0a.html#HDR2">1.2.   Scope</A>
+</UL>
+
+<A HREF="dse1_0a.html#HDR3"><B>2.   References and Definitions</B></A>
+
+<UL>
+<A HREF="dse1_0a.html#HDR4">2.1.   References</A>
+<BR>
+
+<A HREF="dse1_0a.html#HDR5">2.2.   Definitions</A>
+</UL>
+
+<A HREF="dse1_0a.html#HDR6"><B>3.   Keyboard devices</B></A>
+
+<UL>
+<A HREF="dse1_0a.html#HDR7">3.1.   "keyboard" device standard properties</A>
+<BR>
+
+<A HREF="dse1_0a.html#HDR8">3.2.   "keyboard" device methods</A>
+<BR>
+
+<A HREF="dse1_0a.html#HDR9">3.3.   Control Sequences for Common Special Keys</A>
+</UL>
+
+<A HREF="dse1_0a.html#HDR10"><B>4.   Pointing devices</B></A>
+
+<UL>
+<A HREF="dse1_0a.html#HDR11">4.1.   "mouse" device standard properties</A>
+<BR>
+
+<A HREF="dse1_0a.html#HDR12">4.2.   "mouse" device methods</A>
+</UL>
+
+<A HREF="dse1_0a.html#HDR13"><B>5.   Real Time Clock (RTC) Device</B></A>
+
+<UL>
+<A HREF="dse1_0a.html#HDR14">5.1.   "rtc" device standard properties</A>
+<BR>
+
+<A HREF="dse1_0a.html#HDR15">5.2.   "rtc" device methods</A>
+</UL>
+
+<A HREF="dse1_0a.html#HDR16"><B>6.   Sound Device</B></A>
+
+<UL>
+<A HREF="dse1_0a.html#HDR17">6.1.    Definition of Terms </A>
+
+<UL>
+<A HREF="dse1_0a.html#HDR18">6.1.1.   Example of sound terms (Standard Audio-CD)</A>
+</UL>
+
+<A HREF="dse1_0a.html#HDR37">6.2.    "sound" Device Standard Properties </A>
+<BR>
+
+<A HREF="dse1_0a.html#HDR38">6.3.    "sound" Device Standard Methods </A>
+<BR>
+</UL>
+
+<A HREF="dse1_0a.html#HDR19"><B>7.   NVRAM Device</B></A>
+
+<UL>
+<A HREF="dse1_0a.html#HDR20">7.1.   NVRAM properties</A>
+<BR>
+
+<A HREF="dse1_0a.html#HDR21">7.2.   NVRAM methods</A>
+</UL>
+
+<A HREF="dse1_0a.html#HDR22"><B>8.   Serial port device</B></A>
+
+<UL>
+<A HREF="dse1_0a.html#HDR23">8.1.   Serial port properties</A>
+<BR>
+
+<A HREF="dse1_0a.html#HDR24">8.2.   Serial port methods</A>
+
+<UL>
+<A HREF="dse1_0a.html#REF77511">8.2.1.   Device Arguments for Open Method</A>
+</UL>
+
+<A HREF="dse1_0a.html#HDR25">8.3.   Device-specific Methods for Device Nodes</A>
+</UL>
+
+<A HREF="dse1_0a.html#HDR26"><B>9.   "network" device</B></A>
+
+<UL>
+<A HREF="dse1_0a.html#HDR27">9.1.   "network" device properties</A>
+<BR>
+
+<A HREF="dse1_0a.html#HDR28">9.2.   "network" device  methods</A>
+</UL>
+
+<A HREF="dse1_0a.html#HDR29"><B>10.    Parallel port device</B></A>
+
+<UL>
+<A HREF="dse1_0a.html#HDR30">10.1.   Parallel port properties</A>
+<BR>
+
+<A HREF="dse1_0a.html#HDR31">10.2.   Parallel port methods</A>
+</UL>
+
+<A HREF="dse1_0a.html#HDR32"><B>11.   Additional Requirements for SCSI-2 Devices</B></A>
+
+<UL>
+<A HREF="dse1_0a.html#HDR33">11.1.   Properties for SCSI-2 Bus Nodes</A>
+<BR>
+
+<A HREF="dse1_0a.html#HDR34">11.2.   Methods for SCSI-2 Bus Nodes</A>
+</UL>
+
+<A HREF="dse1_0a.html#HDR35"><B>12.   Additional Requirements for Block and Byte devices</B></A>
+<BR>
+
+<A HREF="dse1_0a.html#HDR36"><B>13.   Additional Requirements for Block Devices</B></A>
+</UL>
+
+
+<pre>
+<B>Table 1. Revision History</B>
+---------------------------------------------------------------------------------------------------
+<B>Version</B>       <B>Date</B>      <B>History</B>
+---------------------------------------------------------------------------------------------------
+Revision 0.1  04-05-95  Initial draft, split from the original PReP binding<B>.</B>
+
+Revision 0.2  07-05-95  Made some editorial changes. Added aliases node properties.
+
+Revision 0.3  08/17/95  Added Sections `Control Sequences for Common Special Keys', `Additional
+                        Requirements for SCSI Devices', and `Additional Requirements for Block
+                        and Byte Devices.
+
+Revision 0.4  11/09/95  Changed NVRAM `open' and `close' methods verbiage. Added require
+                        ments for SCSI Devices; properties and methods.
+
+Revision 0.5  02/26/96  Changed format for <I>Device Support Extension binding</I>; added `Trademarks',
+                        `Revision History' Sections plus `Table-of-Contents'. Modified Sound Device
+                        for common data format support. Added NVRAM `size' property and meth
+                        od.
+
+Revision 0.6  03/11/96  Changed NVRAM Note in Section 7.2 and the differential property definition
+                        in Section 9.1.  Made several editorial changes.
+
+Revision 0.7  08/06/96  Changed document format from binding to recommended practice.
+                        Removed keyboard language-specific layout section and device methods
+                        scan-codes.  Added Serial Device Section 8.0.  Changed SCSI to SCSI-2,
+                        Section 10.0.
+
+Revision 0.8  09/23/96  Moved Section 3.3, keyboard 'abort key sequence', to keyboard/mouse
+                        binding.  Included proposal #350 to rewrite the "sound" Section, Section
+                        6.0.   Removed all properties except the <B>"device_type"</B> for the
+                        "serial" device section 8.0.   Added new Section 9.0, "network" device.
+
+Revision 1.0  01/03/97  Made Version 1.0 an Approved Version.  Changed Section 9.2, <I>network
+                        device</I> methods, to define optional parameters
+---------------------------------------------------------------------------------------------------
+</pre>
+
+<H2><A NAME="HDR0">1.   Introduction</A></H2>
+This recommended practice specifies the application of <I>IEEE Std 1275-1994 Standard for Boot (Initialization, Configuration) Firmware, Core Practices and Requirements</I><A HREF="dse1_0a.html#REF37838">[1]</A> to a variety of common peripheral
+types.  It is intended that Open Firmware implementations supporting these device types will supply the methods and properties described herein.<BR>
+<H3><A NAME="HDR1">1.1.   Purpose</A></H3>
+This recommended practice specifies the application of Open Firmware to Device Support Extensions,  including requirements and practices to support unique firmware specific to the support of device extensions.  The core requirements and practices
+specified by Open Firmware should be augmented by device-specific requirements to form a complete specification for the firmware implementation for Device Support Extensions.  This document establishes such additional requirements pertaining to the device
+extensions and the support required by Open Firmware.<BR>
+<H3><A NAME="HDR2">1.2.   Scope</A></H3>
+New platform bindings are encouraged to require compliance with this recommended practice.  New implementations, based upon existing requirements and/or an architecture, may choose not to comply with this document to prevent compatibility problem
+ for the devices described herein.<BR>
+<H2><A NAME="HDR3">2.   References and Definitions</A></H2>
+<H3><A NAME="HDR4">2.1.   References</A></H3>
+<A NAME="REF37838">[1]  <I>IEEE Std. 1275-1994 Standard for Boot (Initialization, Configuration) Firmware, Core Practices and Requirements</I></A><BR>
+<A NAME="REF24630">[2]  <I>ISO-639</I>, <I>Code for the representation of names of languages</I>, published by International Organization for Standardization.</A><BR>
+<A NAME="REF26244">[3]  <I>ANSI/IEEE X3.215-1994, Programming Languages -- Forth</I>.</A><BR>
+<A NAME="REF77131">[4]  <I>Open Firmware: Recommended Practice - Generic Names.</I></A><BR>
+<A NAME="REF70291">[5]  <I>Open Firmware: Recommended Practice - Interrupt Mapping.</I></A><BR>
+<A NAME="REF33177">[6]  <I>Open Firmware: Recommended Practice - TFTP Booting Extensions.  </I>This document describes network extensions to the <B>"obp-tftp"</B> Support Package.</A><BR>
+<A NAME="REF75480">[7]  <I>ISA/EISA/ISA-PnP binding to:</I> <I>IEEE Std. 1275-1994 Standard for Boot (Initialization, Configuration) Firmwar</I>e.</A><BR>
+<H3><A NAME="HDR5">2.2.   Definitions</A></H3>
+<H2><A NAME="HDR6">3.   Keyboard devices</A></H2>
+Open Firmware does not have a specific device class for keyboards; instead, keyboards are instances of the "serial" device class. However, certain features of keyboards (i.e., the ability to re-map keys, etc.) make it desirable to implement them
+as a separate device class.<BR>
+In general, keyboard devices produce a hardware <I>scan-code</I> that is specific to the type of keyboard. These scan-codes are then mapped via software to produce the character code for the key, taking into account the state of "modifier" keys (
+e.g., Shift, Control) and the keyboard layout. The mapping of scan-codes to character value depends upon the keyboard layout; this is dependent upon the language that is being supported by the keyboard. E.g., the layout of keys for a French keyboard is
+different than that for an English keyboard.<BR>
+<H3><A NAME="HDR7">3.1.   "keyboard" device standard properties</A></H3>
+<p>
+"device_type"      S<BR>
+<p>
+Standard <I>property name</I> to define the device's implemented interface. <BR>
+The meaning of this property is as defined in the Open Firmware core document <A HREF="dse1_0a.html#REF37838">[1]</A>.  The value for nodes described by this specification <I>shall</I> be "keyboard".<BR>
+<p>
+"language"      S<BR>
+<p>
+property name, that indicates the current scan-code to character conversion. <BR>
+<I>prop-encoded-string: </I>a string, as encoded with <B>encode-string</B>.<BR>
+The string indicates the current scan-code to character conversion, based upon the language's keyboard layout.  This value indicates the language (i.e., keyboard layout scan-code conversion) to which the keyboard driver is currently set.</UNKNOWN
+<BR>
+<H3><A NAME="HDR8">3.2.   "keyboard" device methods</A></H3>
+Keyboard devices <I>shall</I> implement open, close and read methods as defined by the Open Firmware standard<A HREF="dse1_0a.html#REF37838">[1]</A>.  Note that the open routine can take an optional argument which specifies the language (i.e.,
+scancode to character mapping) to be used.<BR>
+<H3><A NAME="HDR9">3.3.   Control Sequences for Common Special Keys</A></H3>
+The following table specifies the values that should be returned in the keyboard buffer when certain keys are pressed.<BR>
+<pre>
+----------------------------------------------
+<B>Sequence</B>    <B>Key </B>          <B>Sequence</B>  <B>Key </B>
+            <B>legend</B>                  <B>legend</B>
+----------------------------------------------
+CSI<A HREF="dse1_0a.html#FN4a">(a)</A> A    up arrow      CSI @     insert
+CSI B       down arrow    CSI P     delete<A HREF="dse1_0a.html#FN4b">(b)</A>
+CSI C       right arrow   CSI K     end
+CSI D       left arrow    CSI ?     page-up
+CSI H       home          CSI /     page-down
+CSI O<A HREF="dse1_0a.html#FN4c">(c)</A> P  function 1    CSI O q   function 7
+CSI O Q     function 2    CSI O r   function 8
+CSI O w     function 3    CSI O p   function 9
+CSI O x     function 4    CSI O M   function 10
+CSI O t     function 5    CSI O A   function 11
+CSI O u     function 6    CSI O B   function 12
+----------------------------------------------
+</pre>
+<DL COMPACT>
+<DT><A NAME=FN4a>(a)</A><DD>Note: The CSI (Control  Sequence Introducer) is equal to the value 09B  hex.
+<DT><A NAME=FN4b>(b)</A><DD>Note: Certain external devices often return 07F hex when the "delete" key is pressed.
+<DT><A NAME=FN4c>(c)</A><DD>Note: The letter 'O'.
+</DL>
+<H2><A NAME="HDR10">4.   Pointing devices</A></H2>
+This class of device covers a broad category of "pointing" devices, the most common embodiment of which is the mouse. These devices typically can generate X,Y coordinates and button-press information on some periodic basis. The following
+properties and methods are defined for such devices.<BR>
+<H3><A NAME="HDR11">4.1.   "mouse" device standard properties</A></H3>
+<p>
+"device_type"      S<BR>
+<p>
+Standard <I>property name</I> to define the device's implemented interface. <BR>
+The meaning of this property is as defined in the Open Firmware core document. The value for nodes described by this specification <I>shall</I> be "mouse".<BR>
+<p>
+"#buttons"      S<BR>
+<p>
+property name, that indicates the number of physical buttons supported by the device. <BR>
+<I>prop-encoded-int: </I>an integer, as encoded with <B>encode-int</B>.<BR>
+The property value is an integer that indicates the number of buttons for the pointing device.  This property can be used to interpret the <I>buttons</I> value returned by the <B>get-event</B> method.<BR>
+<p>
+"absolute-position"      S<BR>
+<p>
+property name, that indicates the device supplies absolute<B> X</B>,<B>Y</B> coordinates. <BR>
+<I>prop-encoded-array: </I>&lt;none&gt;<BR>
+The presence of this property indicates that the device supplies absolute <B>X</B>,<B>Y</B> coordinates (e.g., a graphics tablet).  Absence of this property indicates that the device supplies relative <B>X</B>,<B>Y</B> position (e.g., a mouse).</
+NKNOWN><BR>
+<H3><A NAME="HDR12">4.2.   "mouse" device methods</A></H3>
+In addition to the Open Firmware standard <B>open</B> and <B>close</B> methods, the following method <I>shall </I>be supported by an Open Firmware implementation of a "mouse" device.<BR>
+Pointing devices typically supply data only when an <I>event</I> occurs (e.g., the mouse moves or a button is pressed).  The following method attempts to obtain an event from the device, reporting whether an event occurred.<BR>
+<p>
+get-event    ( msec -- pos.x pos.y buttons true|false )  M<BR>
+<p>
+This method is used to obtain the next <I>event </I>of the pointing device.  msecs is the number of milliseconds to wait for an event before reporting failure; a value of zero (0) implies wait until event pos.x, pos.y return the positioning
+information.  The pos.x and pos.y values can be interpreted as unsigned or signed
+depending upon the presence or absence of the <B>"absolute-position" </B>property.  The value for  pos.x increases moving to the right direction and the value for pos.y increases
+moving in a downward direction.  buttons returns a bit-mask (in the low-order bits) representing any buttons that are pressed; the number of significant bits to examine is defined by the <B>"#buttons" </B>property. The top stack result indicates whether
+an event was detected within the timeout period.   <BR>
+<H2><A NAME="HDR13">5.   Real Time Clock (RTC) Device</A></H2>
+Open Firmware for Real Time Clocks defines the following properties and methods. The representation of time is defined by the TIME&amp;DATE method of the ANS Forth standard <A HREF="dse1_0a.html#REF26244">[3]</A>.<BR>
+<H3><A NAME="HDR14">5.1.   "rtc" device standard properties</A></H3>
+<p>
+"device_type"      S<BR>
+<p>
+Standard <I>property name</I> to define the device's implemented interface. <BR>
+The meaning of this property is as defined in the Open Firmware core document. The value for nodes described by this specification <I>shall</I> be "rtc".<BR>
+<H3><A NAME="HDR15">5.2.   "rtc" device methods</A></H3>
+In addition to the Open Firmware standard open and close methods, the following methods <I>shall</I> be supported by an Open Firmware implementation of a "rtc" device.<BR>
+<p>
+get-time    ( -- n1 n2 n3 n4 n5 n6 )  M<BR>
+<p>
+Return the current time as the integers n1 - n6, where n1 is the second {0 - 59}, n2 is the minute {0 - 59}, n3 is the hour {0 - 23}, n4 is the day {1 - 31}, n5 is the month {1 - 12}, and n6 is the year (e.g., 1994).<BR>
+<p>
+set-time    ( n1 n2 n3 n4 n5 n6 -- )  M<BR>
+<p>
+Set the current time from the integers n1 - n6, where n1 is the second {0 - 59}, n2 is the minute {0 - 59}, n3 is the hour {0 - 23}, n4 is the day {1 - 31}, n5 is the month {1 - 12}, and n6 is the year (e.g., 1994).<BR>
+
+<H2><A NAME="HDR16">6.   Sound Device</A></H2>
+In order to use a sound device within the context of Open Firmware (e.g., "boot beeps"), the following properties and methods <I>shall</I> be implemented.  To provide a common data format for universal support,  Open Firmware <I>shall</I>, by
+default, accept audio to write or return audio from read that consists of a sample rate of 8KHz of 8-bit monophonic samples encoded as unsigned  linear values, centered at 128.   <BR>
+<p>
+<B>Note 1:  Some implementation of "sound" nodes may need to convert this data into a form acceptable to the audio hardware being supported.  It is not anticipated that this is an unreasonable requirement.</B><BR>
+<p>
+<B>Note 2:  An implementation may choose to supply additional properties, methods and open arguments so as to support more advanced audio capabilities, so long as a default open results in read and write using the standard format.
+</B><BR>
+<H3><A NAME="HDR17">6.1.    Definition of Terms </A></H3>
+channel: One "track" of audio  data.  In stereophonic data, there are two channels - left and right.            <BR>
+<B>sample:</B> The atomic unit of audio data.  A single digital sample from one channel. <BR>
+<B>sample frame:</B> A set of samples, one per channel.  (In the trivial case of a single channel, synonymous with <I>sample</I>.)<BR>
+<B>precision:</B> The size (in bits) of a sample.                                                                                                                              <BR>
+<B>signed linear:</B> An audio encoding where the sample is represented by a signed  number, with 0 as the centerpoint.    <BR>
+<B>unsigned linear:</B> An audio encoding where the sample is represented by an unsigned  number with 1/2 range, e.g. 128 or 32768, as the centerpoint.<BR>
+<H4><A NAME="HDR18">6.1.1.   Example of sound terms (Standard Audio-CD)</A></H4>
+A standard audio-CD player has a digital output sound channel that uses unsigned linear unencoded (PCM) 16 bit sample precision per channel (2 channels for stereo) at a frame rate of 44.1KHz.  The sound information would be defined in the above
+terms by:<BR>
+<A HREF="fig1-1_0a.gif"><img src="fig1-1_0a.gif"></A><p>
+<H3><A NAME="HDR37">6.2.   "sound" device standard properties</A></H3>
+The following properties document the <I>possible</I> values to which the device can be set.<BR>
+ <BR>
+<p>
+"device_type"              S                                                                                              <BR>
+<p>
+Standard <I>property name</I> to define the device's implemented interface. <BR>
+The meaning of this property is as defined in the Open Firmware core document.  The value for nodes described by this specification <I>shall</I> be "sound". <BR>
+<p>
+"#input-channels"      S                                                                                              <BR>
+<p>
+<I>property name,</I> defines the possible numbers of input channels supported.     <BR>
+<I>prop-encoded-array: </I>Arbitrary number of integers, each encoded with <B>encode-int</B>.  <BR>
+<p>
+"#output-channels"      S                                                                                              <BR>
+<p>
+<I>property name,</I> defines the possible numbers of output channels supported.<BR>
+<I>prop-encoded-array</I>: Arbitrary number of integers, each encoded with <B>encode-int</B>.  <BR>
+<p>
+"sample-precisions"      S                                                                                              <BR>
+<p>
+<I>property name</I>, defines the possible sample precisions.                                                                                                         <BR>
+<I>prop-encoded-array</I>:  Arbitrary number of integers, each encoded with <B>encode-int</B>.              <BR>
+Specifies the possible numbers of bits required to store one audio sample from one channel. <BR>
+<p>
+"sample-frame-size"      S                                                                                              <BR>
+<p>
+<I>property name</I> defines the possible sample frame sizes.                                                                                                        <BR>
+<I>prop-encoded-array:</I> Arbitrary number of integers, each encoded with <B>encode-int</B>.  <BR>
+Specifies the possible numbers of bits required to store one sample frame - one sample from each channel.          <BR>
+<p>
+"input-frame-rates"      S                                                                                               <BR>
+<p>
+<I>property name</I>, defines the possible sample frame rates for audio input.   <BR>
+<I>prop-encoded-array:</I> Arbitrary number of integers, each encoded with <B>encode-int</B>. <BR>
+Specifies the possible input sampling rates, in sample frames per second.     <BR>
+<p>
+"output-frame-rates"      S                                                                                              <BR>
+<p>
+<I>property name</I>, defines the possible sample frame rates for audio output.             <BR>
+<I>prop-encoded-array:</I>  Arbitrary number of integers, each encoded with <B>encode-int</B>.  <BR>
+Specifies the possible output sampling rates, in sample frames per second.   <BR>
+<p>
+"input-encoding-types"      S                                                                                                                                       <BR>
+<p>
+<I>property name,</I> defines the possible input encoding types.                                                                                                      <BR>
+<I>prop-encoded-array:</I> The concatenation, with <B>encode+</B>, of an arbitrary number of text strings, each encoded with <B>encode-string</B>.   <BR>
+Specifies possible input encodings.  Valid values include:  <BR>
+  "8bit-u-law"<BR>
+  "8bit-A-law" <BR>
+  "8bit-unsigned-linear" <BR>
+  "8bit-signed-linear" <BR>
+  "16bit-LE-unsigned-linear" <BR>
+  "16bit-BE-unsigned-linear" <BR>
+  "16bit-LE-signed-linear" <BR>
+  "16bit-BE-signed-linear" <BR>
+  "4bit-ADPCM"<BR>
+                                                                                                                                                  <BR>
+<p>
+"output-encoding-types"      S                                                                                              <BR>
+<p>
+<I>property name,</I> defines the possible output encoding types.                                                                                                     <BR>
+<I>prop-encoded-array:</I> The concatenation, with <B>encode+</B>, of an arbitrary number of text strings, each encoded with <B>encode-string</B>.   <BR>
+Specifies possible output encodings.  Valid values are as for <B>"input-encoding-types"</B>.       <BR>
+<H3><A NAME="HDR38">6.3.   "sound" device standard methods</A></H3>
+The following methods  <I>shall</I>  be implemented by a "sound" device.                                                                                                <BR>
+<p>
+open    ( -- true | false )  M                                                                                              <BR>
+<p>
+This standard method prepares the "sound" device for subsequent reads and/or writes. <BR>
+<p>
+close    ( -- )  M                                                                                              <BR>
+<p>
+Standard Open Firmware behavior.                                                                                                                            <BR>
+<p>
+read    ( addr size -- actual )  M                                                                                              <BR>
+<p>
+Acquire sound data, storing the samples at addr.                                                                                                            <BR>
+<p>
+write    ( addr size -- actual )  M                                                                                            <BR>
+<p>
+Output sound samples stored at addr.<BR>
+
+<H2><A NAME="HDR19">7.   NVRAM Device</A></H2>
+Access to NVRAM is supported by this device-type. The NVRAM is treated as a device that can be read and written using the standard Open Firmware <B>read</B> and <B>write</B> methods; the starting position within the NVRAM can be specified by the
+<B>seek</B> method.<BR>
+<H3><A NAME="HDR20">7.1.   NVRAM properties</A></H3>
+<p>
+"device_type"      S<BR>
+<p>
+Standard <I>property name</I> to define the device's implemented interface. <BR>
+The meaning of this property is as defined in the Open Firmware core document. The value for nodes described by this specification <I>shall</I> be "nvram".<BR>
+<p>
+"#bytes"      S<BR>
+<p>
+<I>property name</I>, describes the number of bytes the device is capable of storing.<BR>
+<I>prop-encoded array:</I> An integer, encoded as with encode-int. <BR>
+The value is the number of bytes for the physical device.  Typical values could be 4K, 8K, 16K or 32K bytes.<BR>
+<H3><A NAME="HDR21">7.2.   NVRAM methods</A></H3>
+The following methods have the semantics of the Open Firmware methods:<BR>
+<p>
+read    ( addr len -- actual )  M<BR>
+<p>
+write    ( addr len -- actual )  M<BR>
+<p>
+seek    ( pos.lo pos.hi -- status )  M<BR>
+<p>
+size    ( -- size )  M<BR>
+<p>
+The returned value, <B>size</B>, is the number of NVRAM bytes available to the client interface.  <p>
+The following methods have additional behavior depending upon the <I>argument</I> used to open the device.<p>
+<p>
+open    ( -- true | false )  M<BR>
+<p>
+Standard method used to initiate access to the device <BR>
+<p>
+close    ( -- )  M<BR>
+<p>
+Standard Open Firmware behavior<BR>
+<H2><A NAME="HDR22">8.   Serial port device</A></H2>
+Access to the serial port is supported by this device type.  The serial port is treated as a byte-stream device.<BR>
+<H3><A NAME="HDR23">8.1.   Serial port properties</A></H3>
+<!-- As specified in <A HREF="dse1_0a.html#REF37838">[1]</A> and <A HREF="dsev10a.html#REF33177">[6]</A> , with the following additions or modifications.<BR> -->
+As specified in <A HREF="dse1_0a.html#REF37838">[1]</A> and <A HREF="#">[6]</A> , with the following additions or modifications.<BR>
+<p>
+  "device_type"    S<BR>
+<p>
+Standard <I>property name</I> to define the device's implemented interface. <BR>
+The meaning of this property is as defined in the Open Firmware core document <A HREF="dse1_0a.html#REF37838">[1]</A>. The value for nodes described by this specification <I>shall</I> be "serial".<BR>
+<H3><A NAME="HDR24">8.2.   Serial port methods</A></H3>
+<!-- As specified in <A HREF="dse1_0a.html#REF37838">[1]</A> and <A HREF="dsev10a.html#REF33177">[6]</A>, with the following additions or modifications. <BR> -->
+As specified in <A HREF="dse1_0a.html#REF37838">[1]</A> and <A HREF="#">[6]</A>, with the following additions or modifications. <BR>
+<H4><A NAME="REF77511">8.2.1.   Device Arguments for Open Method</A></H4>
+<B>open</B><B> </B>is a standard<B> </B>method for the serial device. When the serial device is opened, several device-arguments can be passed as defined below:<BR>
+ <BR>
+driver-name@<I>unit-address</I>:<B><I>device-arguments</B></I><BR>
+<B><I>device-arguments</B></I> are defined to be of the form, e.g. 9600,8,n,1,- and sets the UART parameters (baud rate,  data bits, parity, stop bits, and handshake) accordingly.  The serial device default mode is 9600,8,n,1,- if the <B>open</B>
+arguments are not specified.<BR>
+The fields are (in order, left to right):<BR>
+  &lt;baud rate&gt;, &lt;data bits&gt;, &lt;parity&gt;, &lt;stop bits&gt;, &lt;handshake&gt;<BR>
+Fields with empty values are not changed.  Values for fields are whatever the hardware will support:<BR>
+  baud rate: various, including 110, 300, 1200, 2400, 4800, 9600, 19200, 38400<BR>
+  data bits: 5,6,7,8<BR>
+  parity:<BR>
+<pre>
+-------------
+<B>char</B>  <B>meaning</B>
+-------------
+n     none
+e     even
+o     odd
+m     mark
+s     space
+-------------
+</pre>
+stop bits:<BR>
+<pre>
+----------------
+<B>char</B>  <B>meaning</B>
+----------------
+1     1 stop bit
+.     1.5 stop
+      bits
+2     2 stop
+      bits
+----------------
+</pre>
+handshake:<BR>
+<pre>
+--------------------------
+<B>char</B>  <B>meaning</B>
+--------------------------
+-     none
+h     hardware (RTS/CTS)
+s     software (XON/XOFF)
+--------------------------
+</pre>
+<H3><A NAME="HDR25">8.3.   Device-specific Methods for Device Nodes</A></H3>
+<!-- As specified in <A HREF="dse1_0a.html#REF37838">[1]</A> and <A HREF="dsev10a.html#REF33177">[6]</A>, with the following additions.<BR> -->
+As specified in <A HREF="dse1_0a.html#REF37838">[1]</A> and <A HREF="#">[6]</A>, with the following additions.<BR>
+<p>
+  set-mode   ( adr len -- )  M<BR>
+<p>
+Sets the device mode according to the string at <I>adr</I>, of length <I>len</I>, which is interpreted the same as the arguments to the <B>open</B> method (see <A HREF="dse1_0a.html#REF77511">section 8.2.1.1. on page 9</A>).<BR>
+<p>
+  set-modem-control   ( bitmask -- )  M<BR>
+<p>
+Sets the device's modem control lines according to the following table:<BR>
+<pre>
+----------------------------
+<B>bitmask</B>  <B>Modem control state</B>
+----------------------------
+0        RTS off, DTR off
+1        RTS off, DTR on
+2        RTS on, DTR off
+3        RTS on, DTR on
+
+----------------------------
+</pre>
+The response for other values of <I>bitmask</I> are implementation dependent. <BR>
+Changing the bits associated with these lines <I>shall</I> have no effect on other bits not associated with this function.<BR>
+<H2><A NAME="HDR26">9.   "network" device</A></H2>
+Access to the network is supported by this device type.  The network device is treated as a byte-stream device.   <BR>
+<H3><A NAME="HDR27">9.1.   "network" device properties</A></H3>
+These properties <I>shall</I> be reported by packages representing "network" devices. <BR>
+<p>
+"device_type"      S<BR>
+<p>
+Standard <I>property name</I> to define the device's implemented interface. <BR>
+The meaning of this property is as defined in the Open Firmware core document. The value for nodes described by this specification <I>shall</I> be "network".<BR>
+<p>
+"supported-network-types"      S<BR>
+<p>
+property name, reports possible types of "network" the device can support. <BR>
+<I>prop-encoded-array: </I>a string, as encoded with <B>encode-sting</B>.<BR>
+The string is chosen from the following set representing &lt;network type&gt;, &lt;speed (Mbps)&gt;, &lt;connector type&gt; and &lt;duplex mode&gt;:<BR>
+    "ethernet,10,rj45,half"<BR>
+    "ethernet,10,rj45,full"<BR>
+    "ethernet,100,rj45,half"<BR>
+    "ethernet,100,rj45,full"<BR>
+    "ethernet,10,aui,half"<BR>
+    "ethernet,10,aui,full"<BR>
+    "ethernet,100,aui,half"<BR>
+    "ethernet,100,aui,full"<BR>
+    "ethernet,10,bnc,half"<BR>
+    "ethernet,10,bnc,full"<BR>
+    "ethernet,100,bnc,half"<BR>
+    "ethernet,100,bnc,full"<BR>
+    "token-ring,4,rj45,half"<BR>
+    "token-ring,4,rj45,full"<BR>
+    "token-ring,16,rj45,half"<BR>
+    "token-ring,16,rj45,full"<BR>
+    "token-ring,4,9pin,half"<BR>
+    "token-ring,4,9pin,full"<BR>
+    "token-ring,16,9pin,half"<BR>
+    "token-ring,16,9pin,full"<BR>
+    "fddi,100,rj45,half"<BR>
+    "fddi,100,sc,half"<BR>
+    "fddi,100,mic,half"<BR>
+    "atm,100,sc,full"<BR>
+    "atm,155,sc,full"<BR>
+    "atm,622,sc,full"<BR>
+    "fcs,1000,sc,full"<BR>
+<p>
+"chosen-network-type"      S<BR>
+<p>
+property name, reports type of "network" this device is supporting. <BR>
+<I>prop-encoded-array: </I>a string, as encoded with <B>encode-string</B><B>, </B>that is chosen from one of the values in <B>"supported-network-types"</B> property.  <BR>
+If present, indicates that the firmware or the user has selected one of the <B>"supported-network-types"</B> and the value indicates which one was chosen.  The <B>"chosen-network-type" </B>property need not exist if the firmware cannot determine
+the "network" type or there is only a single "network" type choice.   <BR>
+<H3><A NAME="HDR28">9.2.   "network" device methods</A></H3>
+As specified in <A HREF="dse1_0a.html#REF37838">[1]</A>,  Section 3.7.4, the standard methods are supported with the addition of new arguments  passed through the <B>open</B> method.   The <B>open</B> method of the device <I>shall</I> parse the
+<B>obp-tftp</B> package's <B>open</B> method.  The device arguments shown below for the device <B>open</B> method must come first and the comma's  in the arguments are required if another parameter follows.  Values for device arguments are defined
+below:</UNKNOWN BR>
+<B>open</B> <I>network-device</I>:[promiscuous,][speed=<I>n</I>,][duplex=<I>mode</I>,][<B>obp-tftp</B> parameters]<BR>
+  where:<BR>
+<p>
+  promiscuous      puts network device in a mode where all addresses are <BR>
+        recognized; e.g., a communication device that <I>snoops</I> the LAN.<BR>
+<p>
+  speed=<I>n</I>       where <I>n </I>indicates the<I> </I>"network" speed in Mbps.  Typical <BR>
+        values can be 4, 10, 16, 100, 155, 622 &amp; 1000 Mbps. <BR>
+<p>
+  duplex=<I>mode</I>      where <I>mode</I> values are "half" or "full". <BR>
+  <B>obp-tftp</B> parameters - Reference <A HREF="dse1_0a.html#REF33177">[6]</A> for additional information.<BR>
+<p>
+The device arguments, promiscuous, speed and duplex are optional and may be in any order, but a recommended order is as shown.  These three parameters must be the first parameters.<BR>
+The obp-tftp parameters siaddr, filename, ciaddr, giaddr, bootp-retries, tftp-retries are optional.  If any of these parameters are present, then the bootp parameter <I>shall</I> be present and precede the other parameters.<BR>
+The <B>open</B> method for the <I>network devic</I>e could have the following parameters, including passing through ones for the <B>obp-tftp</B> package <B>open</B> method:<BR>
+<p>
+<B>open</B> <I>network-device</I>:[promiscuous,][speed=<I>n</I>,]<BR>
+[duplex=<I>mode</I>,][bootp],[siaddr],[filename],[ciaddr],<BR>
+[giaddr],[bootp-retries],[tftp-retries]<BR>
+<p>
+<I>Network device</I> open method parameter examples: <BR>
+<p>
+<B>open</B> <I>network-device</I>: promiscuous,speed=<I>100</I>,duplex=<I>full,</I>bootp,<BR>
+siaddr,filename<I>,</I>ciaddr,giaddr,bootp-retries,tftp-retries<BR>
+<p>
+<B>open</B> <I>network-device</I>: duplex=<I>half,,,,,</I>bootp-retries<BR>
+<p>
+<B>open</B> <I>network-device</I>: promiscuous,bootp,siaddr,,,,,tftp-retries<BR>
+<p>
+<B>Note:  Comma's are required for missing open method's positional parameters unless they are at the end of a list.</B><BR>
+<p>
+The following is a defined order of operations for the <I>network device</I> FCode.  The <I>network device</I> FCode will look at the following items to determine precedence of operations for initialization/configuration:<BR>
+1) The <I>network device</I> <B>open</B> method parameters; if none present, then,<BR>
+2) The value of <B>"chosen-network-type"</B> property; if not present, then,<BR>
+3) The <I>network device</I> will be implementation specific, depending on the<BR>
+    devices capability.<BR>
+If the <B>open</B> method does not recognize a value for <I>n</I> or <I>mode</I> (speed or duplex mode) parameters or the <I>network device</I> cannot execute the specified value for <I>n</I> or <I>mode</I>, a failure should result (device should
+not open) with a warning message to the user.<BR>
+<H2><A NAME="HDR29">10.    Parallel port device</A></H2>
+Access to the parallel port is supported by this device-type. The parallel port is treated as a byte-stream device.<BR>
+<H3><A NAME="HDR30">10.1.   Parallel port properties</A></H3>
+<p>
+"device_type"      S<BR>
+<p>
+Standard <I>property name</I> to define the device's implemented interface. <BR>
+The meaning of this property is as defined in the Open Firmware core document. The value for nodes described by this specification <I>shall</I> be "parallel".<BR>
+<H3><A NAME="HDR31">10.2.   Parallel port methods</A></H3>
+The following methods have the semantics of the corresponding Open Firmware standard methods:<BR>
+<p>
+open    ( -- true | false )  M<BR>
+<p>
+close    ( -- )  M<BR>
+<p>
+write    ( addr len -- actual )  M<BR>
+<p>
+<H2><A NAME="HDR32">11.   Additional Requirements for SCSI-2 Devices</A></H2>
+A node representing a SCSI-2 device <I>shall</I> implement all the methods and properties specified in Annex E, sections E.1 through E.5 of <A HREF="dse1_0a.html#REF37838">[1]</A>.<BR>
+<H3><A NAME="HDR33">11.1.   Properties for SCSI-2 Bus Nodes</A></H3>
+<p>
+"wide"      S<BR>
+<p>
+<I>property name</I>, indicates that the SCSI-2 Node is wide.<BR>
+<I>prop-encode-array</I>: &lt;none&gt;<BR>
+This property <I>shall</I> be present if the SCSI-2 controller represented by this node is wide, with SCSI-2 ID ranges 0 through 15, and <I>shall</I> be absent otherwise.<BR>
+In order to support the wide SCSI-2, the example in Appendix E.6.3 of <A HREF="dse1_0a.html#REF37838">[1]</A> would be amended as follows:<BR>
+<PRE>
+E.6.3   hacom.fth
+...
+: show-children  ( -- )
+  open  0=  if  ." Can't open SCSI-2 host adapter" cr  exit  then
+" wide"  get-my-property  if  8  else  2drop d# 16  then
+  0 do
+     i probe-target  if
+        ." Target " i . cr
+        8 0  do  i j show-lun  loop
+     then
+  loop
+;
+</PRE>
+<p>
+"differential"<BR>
+<p>
+<I>property name</I>, indicates that the SCSI-2 Node supports differential signaling.<BR>
+<I>prop-encode-array</I>: &lt;none&gt;<BR>
+This property may be present if the SCSI-2 controller represented by this node supports differential signaling.<BR>
+<p>
+"scsi-initiator-id"<BR>
+<p>
+<I>property name</I>, indicating the initiator-id to be used for SCSI-2 transfers by this controller.<BR>
+<I>prop-encode-array</I>: An integer, encoded as with <B>encode-int</B>.<B> </B><BR>
+The integer specifies the value of the initiator-id for subsequent transfers by this controller.  If the <B>"wide"</B> property is not present the value is in the range of 0..7.  If the <B>"wide"</B> property is present the value is in the range
+f 0..15.  The initial value of the property is implementation dependent.<BR>
+<H3><A NAME="HDR34">11.2.   Methods for SCSI-2 Bus Nodes</A></H3>
+<p>
+open     ( -- true )  M<BR>
+<p>
+In addition to the standard Open Firmware behavior, the <B>open</B> method <I>shall</I> set the host adapter's own selection ID as follows:<BR>
+Attempt to locate a <B>"scsi-initiator-id"</B> property by executing <B>"get-inherited-property"</B> with the string "<I>scsi-initiator-id</I>" as its argument.  If such a property is found, decode its value as with "decode-int", and use the
+decoded value as the host adapter's own selection ID.  Otherwise, use the value 7.<BR>
+Note:  The use of "get-inherited-property" to get the "scsi-initiator-id" property makes it possible to choose the set of SCSI-2 host adapters to which the property applies.  If the property is in the root node, for example, it applies to all the
+SCSI host adapters in the system.  If the property is elsewhere in the device tree, it applies only to host adapters in the subtree below and including the location of the property.<BR>
+<H2><A NAME="HDR35">12.   Additional Requirements for Block and Byte devices</A></H2>
+The <B>disk-label</B> standard support package and packages of device type <B>block</B> and <B>byte</B> <I>shall</I> implement the following method:<BR>
+<p>
+size     ( -- d )  M<BR>
+<p>
+Return the size of the device in bytes.<BR>
+Return, as a double number "d", the number of bytes of storage associated with the device or instance.  If the size cannot be determined, return the double number -1.<BR>
+Packages of device type <B>block</B> and <B>byte</B> <I>shall</I> implement the following method:<p>
+<p>
+#blocks    ( -- u )  M<BR>
+<p>
+Return the size of the device in blocks.<BR>
+Return, as an unsigned number "u", the number of blocks of storage associated with the device or instance, where a <I>block</I> is a unit of storage consisting of the number of bytes returned by the package's <B>block-size</B> method.  If the siz
+ cannot be determined, or if the number of blocks exceeds the range of an unsigned number, return the maximum unsigned integer (which, because of Open Firmware's assumption of two's complement arithmetic is equivalent to the signed number -1).
+</B>
+<H2><A NAME="HDR36">13.   Additional Requirements for Block Devices</A></H2>
+The <B>disk-label</B> standard support package and packages of device type "block" <I>shall</I> implement the following methods:<BR>
+<p>
+offset-low     ( -- u )  M<BR>
+<p>
+Returns the least significant cell of the double number denoting the beginning offset of the disk partition that was specified when the <B>disk-label</B> support package was opened.  In general that offset is obtained by executing the
+<B>offset</B> method of the "disk-label" support package with an argument of zero.  It is permissible for the disk package to execute the <B>disk-label</B>
+support package's <B>offset</B> method once after opening that support package, storing the result for later us.<BR>
+<p>
+offset-high     ( -- u )  M<BR>
+<p>
+Returns the most significant cell of the double number denoting the beginning offset of the disk partition that was specified when the <B>disk-label</B> support package was opened.  In general that offset is obtained by executing the <B>offset</B
+ method of the <B>disk-label</B> support package with an argument of zero.  It is permissible for the disk package to execute the <B>disk-label</B> support package's <B>offset</B> method once after opening that support package, storing the result for late
+ use.<BR>
+<p>
+ <B>-- END OF DOCUMENT --</B><BR>
+<A NAME="ENDFILE"><PRE> </PRE></A>
+
+</HTML>

@@ -1,0 +1,79 @@
+Subject: Agenda for Open Firmware meeting on 06/06/95
+Date: Fri, 02 Jun 95 10:36:47 -0600
+From: "Dr. Luan D. Nguyen" <duyluan@austin.ibm.com>
+
+Dear IEEE 1275-1994 Committee Members,
+
+ATTACHED IS THE AGENDA FOR OPEN FIRMWARE WORKGROUP MEETING AT MOTOROLA AUSTIN,
+TX ON TUESDAY 06/06/1995.
+For those of us who plan to come but haven't RSVP, please send to Kip
+McClanahan at kip@ntgate.sps.mot.com (512-891-6525) a confirmation note for
+badge and food/lunch ordering.
+
+--------
+Time is Central (Austin) time:
+8:30AM            Get to the Motorola building entrance which is on the 2nd
+                  floor and the guard at the front desk will be able to issue
+                  your visitor badge and direct you to the meeting room.
+                  See note below for direction. Also note that the PowerPC
+                  binding meeting tomorrow (06/06/1995) will be also at the
+                  same place. 
+                  Light breakfast to be provided by Motorola.
+9:00AM            Introduction
+                  Review Agenda
+9:15AM            Review and approve the minutes from our last meeting
+                  on 04/25/1995
+9:30AM            Standard Progress Report
+                  Action Items Review
+10:00AM           Future Meetings
+10:15AM           Errata document
+11:35AM           Recommended Practice documents
+
+12:00PM           Break for LUNCH also provided by HAL.
+
+1:00PM            Review logged proposals
+1:30PM            Any other news proposals on the table
+2:00PM            P1275.3 (VME - IEEE 1014 bus)
+                     1- Any new status from Martin Walsh and David Paktor
+2:15PM            P1275.4 (Future Bus +)
+                     1- Any new status from Martin Walsh 
+2:30PM            P1275.6: 64-bit Extension Supplement for Open 
+                     1- Status from subcommittee working on this PAR  
+2:45PM            ISA/EISA/ISA PNP binding document:
+                     1- Review draft from Lilian Leung - FirePower Systems
+3:15PM            X86 binding
+3:45PM            PCMCIA and cardbus binding supplement
+                     1- Status from subcommittee working on 
+                        this PAR
+                     2- Review latest update
+4:00PM            PCI Binding for Open Firmware
+                     1- Any new status and ONLY items/issues need to be
+                        addressed by the 1275 committee body
+4:15PM            Supplement for PowerPC
+                     1- Status and items/issues need to be addressed by
+                        this 1275 committee body
+                     2- Splitting to PowerPC processor binding and PreP/HRP
+                        bindings
+                  (Note: we have half-day tomorrow to work with PReP
+                  group on this PowerPC supplement, location: also Motorola
+                  Austin) 
+4:30PM - 5:00PM   Summarize/ Assign action items and Wrap up
+
+
+NOTE: DIRECTION FROM THE AIRPORT TO MEETING PLACE
+
+From the airport, get on I-35 South. There should be plenty of signs 
+indicating how to do so.  
+
+Take I-35 South to the William Cannon exit (commonly abbreviated Wm. Cannon).
+Take a right on Wm. Cannon (west) and follow it for 5-7 miles through a
+winding neighborhood.  Motorola is located on William Cannon; the building
+will be on your left -- it's difficult to miss.
+
+When turning into the main entrance, you'll take a right towards the parking 
+garage and the EAST (H-Building) entrance. 
+
+Visitor space is on the 2nd floor or any unassigned space. 
+The entrance is on the 2nd floor and the guard at the front dest will be
+able to issue your visitor badge and direct you to the meeting room.
+

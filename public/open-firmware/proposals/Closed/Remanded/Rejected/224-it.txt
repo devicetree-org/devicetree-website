@@ -1,0 +1,41 @@
+Date: Thu, 26 Jan 1995 21:10:34 -0800
+From: jordan@pongo.West.Sun.COM (Jordan Brown)
+To: p1275-wg@prombo.eng.sun.com
+Reply-To: p1275-wg@prombo.eng.sun.com
+Subject: Item #224: PowerPC - multiple instances of identical devices
+
+(I don't remember whether we voted to do this.  Lest it get lost,
+here it is again.)
+
+P1275 Openboot Working Group Proposal -- Proposal #:224 Ver 1.0
+
+Title:          Correct text regarding multiple instances of identical devs
+
+Author:         Jordan Brown
+
+Date:           26 January 1995
+
+Ed/Tech:        Technical
+
+Synopsis:       "foo1" and "foo2" is wrong.  "foo@1" and "foo@2" is right.
+
+Doc & Version:  PowerPC processor binding 10/06/94
+
+Problem:
+
+Open Firmware philosophy says that the name of a device is the same
+for all instances of identical devices; identical devices are
+distinguished by differing unit numbers.  (That is, two identical
+devices "foo" might be "foo@1" and "foo@2", not "foo1" and "foo2".)
+
+PowerPC binding section 12.8, page 27 at 52, violates this,
+requiring (eg) the second SCSI disk to be named "disk2".
+
+Proposal:       
+
+Therefore, proposed that in section 12.8, page 27 at 52, the paragraph
+starting "If there are multiple instances of the same device type..."
+be deleted.
+
+[ P1275 Item #224 -- Received: Thu Jan 26 21:16:16 PST 1995 ]
+

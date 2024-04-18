@@ -1,0 +1,402 @@
+Date: Mon, 30 Oct 1995 16:54:02 -0800
+From: jordan@pongo74.West.Sun.COM (Jordan Brown)
+Subject: Item #299: PC keyboard device binding
+
+[ Procedural notes:  (a) No, I don't expect this to be handled this week.
+It'd be nice, but seems unlikely.  (b) Is this the right way to propose
+something like this?  Would it be better to submit the text to David for
+posting and a proposal that simply refers to the text? ]
+
+P1275 Openboot Working Group Proposal -- Proposal #:299 Ver 0.1
+
+Title:          PC Keyboard Device Binding
+
+Author:         Jordan Brown, SunSoft
+
+Date:           30 October 1995
+
+Ed/Tech:        Technical
+
+Synopsis:       Device binding for PC keyboards
+
+Doc & Version:  New document (or perhaps we should start a document
+		that accumulates device implementation bindings)
+
+Problem:        As with all devices, we need a binding describing the
+		details of the implementation for the particular device.
+
+Proposal:       
+
+PC Keyboard
+Device Binding to
+
+IEEE 1275-1994
+Standard for Boot (Initialization,
+Configuration) Firmware
+
+Revision 0.1
+DRAFT
+
+30 October 1995
+Jordan Brown
+SunSoft
+
+1.	Purpose of this Device Binding
+
+This document specifies the application of Open Firmware to the industry
+standard PC keyboard, including device-specific requirements and practices
+for initialization, properties, and methods.
+
+2.	Revision History
+
+	Revision 0.0, 05 October 1995
+		Initial revision.
+
+	Revision 0.1, 30 October 1995
+		First version visible outside Sun.
+		Minor editorial changes.
+
+3.	References
+
+[1]	Core 1275
+[2]	Device Extensions
+[3]	Technical Reference, IBM Personal Computer
+[4]	Technical Reference, Personal Computer AT
+	IBM
+[5]	Personal System/2 Model 80 Technical Reference
+	IBM
+
+4.	Definition of Terms
+
+AT keyboard	A keyboard presenting the interface defined in section 4 of
+		[4], excluding the electrical specifications therein.
+
+engravings	The glyphs marked on the keys.  What the user thinks the
+		keys mean.
+
+PS/2 keyboard	A keyboard presenting the interface defined in section 6 of
+		[5], excluding the electrical and BIOS specifications therein.
+
+scan code	A positional code for a particular key, not necessarily
+		related to the engraving on that key.  In other words,
+		the leftmost key on the top row of the main alphabetic
+		pad is represented by the same scan code regardless of
+		whether it has a Q printed on it, as on a US keyboard,
+		or an A printed on it, as on a French keyboard.
+
+XT keyboard	A keyboard presenting the interface defined in section ?? of
+		[3], excluding the electrical specifications therein.
+
+5.	Device Characteristics (Informative)
+
+5.1.	General Characteristics
+
+These devices report scan codes for key presses, separately reporting the
+press and release of the key.  They do not offer any mechanism for
+programmatically determining the engravings on the keyboard.  In other
+words, there is no programmatic way to determine whether the keyboard
+has the US layout, with QWERTY on the top row, or the French layout,
+with AZERTY on the top row.
+
+5.2.	XT Keyboard
+
+The original, or "XT", keyboard uses a single byte to report a key press
+and the same byte, but with the high bit set, to report a key release.
+It has no "output" capability - no indicator LEDs.
+
+5.3.	AT Keyboard
+
+The AT keyboard uses a single byte to report a key press and two bytes,
+an F0 followed by the original byte, to report a key release.  It adds
+three indicator lights (Num Lock, Caps Lock, and Scroll Lock) which can
+be turned on and off under software control.  The scan code set used is
+different from that used by the XT keyboard.
+
+5.4.	PS/2 Keyboard
+
+The PS/2 keyboard is programmably selectable to emulate an XT keyboard,
+an AT keyboard, or still another set of scan codes that tries to simplify
+the confusion caused by efforts to extend the keyboard with additional
+keys and still maintain backwards compatibility.  In all but this latter
+mode, many keys generate streams of "virtual" key presses to simulate
+appropriate keystrokes on the older keyboards.  On power-on, the
+keyboard defaults to emulating the AT keyboard.
+
+5.5.	Microsoft "Natural" Keyboard
+
+The "Natural" keyboard adds three additional keys, but is otherwise
+compatible with the PS/2 keyboard.  [True?]
+
+6.	Device-specific Configuration Variables
+
+[[ Keyboard layout.  But what about systems with multiple keyboards? ]]
+
+7.	Device Nodes
+
+7.1.	Properties
+
+7.1.1.	Open Firmware-defined Properties for Device Nodes
+
+name
+	prop-name, specifies the vendor and model of the device.
+	prop-encoded array:  a string encoded with encode-string.
+
+	If the Generic Names Recommended Practice is implemented by
+	this package, this property shall have the value "keyboard".
+
+	If the Generic Names Recommended Practice is not implemented
+	by this package, this property shall contain vendor
+	and device identification as described in [1].  The device
+	identification shall be sufficient to identify the physical
+	layout of the keyboard, including the locations and shapes
+	of all of the keys and indicators, and the engravings thereon.
+
+device_type
+	prop-name, specifies the implemented interface.
+	prop-encoded array:  a string encoded with encode-string.
+
+	The meaning of this property is as defined in Open Firmware.
+	The value for nodes described by this specification shall
+	be "keyboard".
+	
+compatible						S
+	prop-name, specifies other hardware compatible with this
+	device.
+	prop-encoded-array:  [whatever it says in 1275]
+
+	If the Generic Names Recommended Practice is implemented
+	by this package, the first entry in this property shall
+	contain vendor and device identification as described in [1].
+	The device identification shall be sufficient to identify the
+	physical layout of the keyboard, including the locations and
+	shapes of all of the keys and indicators, the engravings
+	thereon, the scan codes generated by those keys, and the
+	commands required to control those indicators.
+
+	Later entries may describe other keyboards with similar
+	layouts.
+
+	The final entry shall be one of:
+		"IBM,ps2-keyboard"
+		"IBM,at-keyboard"
+		"IBM,xt-keyboard"
+	indicating the basic command set to which the keyboard
+	will respond.
+
+	Note:  This property is intended primarily to specify the
+	programmatic interface to the keyboard and secondarily to
+	specify the physical appearance of the keyboard.  While it
+	can be used to determine the mapping between scan codes and
+	engravings, the device-specific "layout" property provides
+	that information in a more convenient and generic fashion.
+
+7.1.2.	Device-specific Properties for Device Nodes
+
+"caps-lock"
+"num-lock"
+"scroll-lock"
+	prop-names, specify the current state of the indicated
+	features.
+
+	<encoding whatever is appropriate for a bool>
+
+	This property can be used to set the client's initial
+	keyboard state and to communicate further changes to
+	the keyboard state, allowing the client and Open Firmware
+	to maintain consistent state.
+
+	[ Perhaps this should be a method rather than properties ]
+
+"layout"
+	prop-name, denotes the relationship between the engravings
+	on the keyboard and the scan codes generated.
+	
+	prop-encoded array:  a list of strings encoded with
+	encode-string.
+
+	This property contains an ordered list of layout
+	specifications.  It specifies the relationship between the
+	engravings on the keyboard - the meaning the user intended -
+	and the scan code(s) returned by the keyboard.  It does not
+	attempt to encode the physical appearance of the keyboard.
+	
+	Each specification is of the form:
+		<vendor>,<country>-<language>
+	or, optionally,
+		<vendor>,<country>-<language>-<variant>
+	where
+		<vendor>   is vendor identification as defined
+			   for "name" in [1].
+		<country>  is the ISO 3166 code for the country
+			   the keyboard is primarily intended for,
+			   in upper case.  If the keyboard is
+			   not intended for a specific country
+			   the definition is vendor-specific.
+		<language> is the ISO 639 code for the language
+			   the keyboard is primarily intended for,
+			   in lower case.  If a keyboard is not
+			   intended for a specific language
+			   the definition is vendor-specific.
+		<variant>  is, if there is more than one layout
+			   defined by that vendor for that country
+			   and language, a vendor-defined identifier
+			   for that particular variant.
+
+	The entries in the list progress from most specific to
+	least specific.  Since the vast majority of keyboards
+	use common engraving-to-scan code mappings, it should
+	generally be possible to specify the IBM keyboard that
+	this keyboard emulates:
+
+	IBM,FR-fr-84
+		IBM French AT keyboard, per [4].
+	IBM,DE-de-84
+		IBM German AT keyboard, per [4].
+	IBM,IT-it-84
+		IBM Italian AT keyboard, per [4].
+	IBM,ES-es-84
+		IBM Spanish AT keyboard, per [4].
+	IBM,GB-en-84
+		IBM UK English AT keyboard, per [4].
+	IBM,US-en-84
+		IBM US English AT keyboard, per [4].
+	IBM,BE-fr-102
+		IBM Belgian PS/2 keyboard, per [5].
+	IBM,CA-fr-102
+		IBM Canadian French PS/2 keyboard, per [5].
+	IBM,DK-da-102
+		IBM Danish PS/2 keyboard, per [5].
+	IBM,NL-nl-102
+		IBM Dutch PS/2 keyboard, per [5].
+	IBM,FR-fr-102
+		IBM French PS/2 keyboard, per [5].
+	IBM,DE-de-102
+		IBM German PS/2 keyboard, per [5].
+	IBM,IT-it-102
+		IBM Italian PS/2 keyboard, per [5].
+	IBM,latinamerican-es-102
+		IBM Latin American PS/2 keyboard, per [5].
+	IBM,NO-no-102
+		IBM Norwegian PS/2 keyboard, per [5].
+	IBM,PT-pt-102
+		IBM Portugese PS/2 keyboard, per [5].
+	IBM,ES-es-102
+		IBM Spanish PS/2 keyboard, per [5].
+	IBM,SE-sv-102
+		IBM Swedish PS/2 keyboard, per [5].
+	IBM,CH-swiss-102
+		IBM Swiss PS/2 keyboard, per [5].
+	IBM,GB-en-102
+		IBM UK English PS/2 keyboard, per [5].
+	IBM,US-en-101
+		IBM US English PS/2 keyboard, per [5].
+	MSFT,US-en-104
+		Microsoft US English Natural keyboard
+	[[ need to add Asian, MS keyboards ]]
+
+	If the keyboard encoding is unknown, this property shall be
+	omitted or empty.
+
+	Note:  Unfortunately, the hardware does not provide any way of
+	automatically detecting the keyboard layout.  Still, on some
+	platforms it is possible that the keyboard layout can be set in
+	NVRAM at manufacturing time.  Regardless, Open Firmware itself
+	and most if not all clients will need this information, so the
+	Open Firmware implementation should provide a mechanism for the
+	user to supply it.
+
+7.2.	Methods
+
+7.2.1.	Open Firmware-defined Methods for Device Nodes
+
+"get-scancode"
+"translate-scancode"
+
+7.2.2.	Device-specific Methods for Device Nodes
+
+	None.
+
+8.	User Interface Commands
+
+8.1.	Open Firmware-defined User Interface Commands
+
+	None.
+
+8.2.	Device-specific User Interface Commands
+
+	None.
+
+9.	Device State
+
+9.1.	Device State When Client is Started
+
+The caps-lock, num-lock, and scroll-lock properties, and their
+associated indicators if any, will all represent Open Firmware's
+current state.
+
+9.1.1.	PS/2 Keyboard
+
+The keyboard will be set to scan code set 2, compatible with an AT
+keyboard.
+
+Note:  This mode is chosen because it is the power-on default mode
+for these keyboards and because it is compatible with AT keyboards,
+which are the other major grouping in current use.
+
+9.2.	Device State When Client Calls Open Firmware
+
+The caps-lock, num-lock, and scroll-lock properties, and their
+associated indicators if any, should all represent the client's current
+state.
+
+Open Firmware should, if it accepts keyboard input, set the indicators
+to match the state reflected in the properties.
+
+Note:  Should the client fail to maintain these properties, the only
+harm that will occur is that on return to Open Firmware the keyboard
+state may abruptly change, perhaps confusing the user.  If Open
+Firmware resets the indicators to reflect the keyboard behavior it will
+implement, user confusion should be minimal.
+
+9.2.1.  PS/2 Keyboard
+
+The keyboard must be set to scan code set 2, compatible with an AT
+keyboard.
+
+Note:  If the keyboard is in a different mode when the client calls
+Open Firmware, unpredictable behavior may result if Open Firmware
+accepts keyboard input.  Clients changing the keyboard mode should
+either restore AT compatible mode before calling Open Firmware or
+should avoid using Open Firmware features requiring user interaction.
+Changing the keyboard mode is likely to render Open Firmware unusable
+for debugging purposes.
+
+9.3.    Device State When Open Firmware Returns Control to Client
+
+The caps-lock, num-lock, and scroll-lock properties, and their
+associated indicators if any, shall all represent Open Firmware's
+current state.
+
+Note:  Should the client fail to inspect these properties, the only
+harm that will occur is that on return to the client the behavior of
+the keyboard may change, and may not match the indicators.  As soon as
+the user presses any of the relevant "lock" keys, the client will
+presumably refresh the indicators and they should then match the
+keyboard's behavior.
+
+9.3.1   PS/2 Keyboard
+
+The keyboard scan code selection will be unchanged.
+
+10.     Other Commentary
+
+On all keyboards with separate numeric and arrow pads, it is
+recommended that the Num Lock indicator default to On, with associated
+appropriate scan code decoding.  This is the default mode set by most
+PC BIOS implementations, and so will match the expectations of the
+majority of users.  It is completely acceptable for an Open Firmware
+implementation to offer an implementation-specific way of controlling
+this default.
+
+[ P1275 Item #299 -- Received: Mon Oct 30 16:51:20 PST 1995 ]
+

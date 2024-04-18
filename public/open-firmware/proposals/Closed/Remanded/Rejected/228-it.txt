@@ -1,0 +1,63 @@
+Date: Thu, 2 Feb 1995 18:35:35 -0800
+From: stevez@bigboy74.West.Sun.COM (Steve Zucker)
+Subject: Item #228: Proposal for change to PowerPC binding
+
+P1275 Openboot Working Group Proposal -- Proposal #:228 Ver 1
+
+
+Title:          Boot order change for PowerPC
+
+Author:         Steve Zucker
+
+Date:           2 Feb 1995
+
+Ed/Tech:        Technical
+
+Synopsis:       Boot from ISO-9660 directory before checking for partitions
+
+Doc & Version:  All to date
+
+Problem:
+
+	OS vendors (at least SunSoft) will want to provide one CD-ROM
+	for both "legacy" firmware and Open Firmware on PowerPC.  One
+	nice way to do this is to boot a software implementation of
+	Open Firmware on legacy systems.  If the "search order" is the
+	same on legacy and Open Firmware implementations, Open Firmware
+	would perforce boot the software implementation, which would
+	then reboot itself ad infinitum.
+
+	As presently written, the PowerPC supplement to 1275
+	("Partition formats" section) specifies that the presence of a
+	partition table on the boot medium causes Open Firmware to boot
+	from the active or selected partition, even if there is a valid
+	ISO-9660 directory on the medium.  This is exactly what the
+	legacy firmware does, leading to the inability to simply boot
+	a software implementation of Open Firmware.
+
+Proposal:       
+
+	In the "Algorithm locating boot file", move the test for ISO-9660
+	to be first, so that with real Open Firmware, the file will be
+	located in the ISO-9660 directory, while with legacy code, an Open
+	Firmware software implementation can be booted from a bootable
+	partition specified in a partition table.
+
+	After the change, the algorithm will read:
+
+
+	read sector 16.
+	if a valid ISO-9660 directory is found
+		locate the file, using the ISO-9660 directory
+	else
+		read sector 0 (bootsector).
+		if last 2 bytes of sector are 0AA55h (little-endian)
+			if bsMedia == 0F8h ...
+			...
+			use directory of the selected partition to locate file
+		else (non-partitioned)
+			use FAT-12/FAT-16 directory to locate file
+			
+
+[ P1275 Item #228 -- Received: Thu Feb  2 18:38:59 PST 1995 ]
+

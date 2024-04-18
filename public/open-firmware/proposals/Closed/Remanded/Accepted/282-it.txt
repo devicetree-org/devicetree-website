@@ -1,0 +1,33 @@
+Date: Mon, 14 Aug 95 13:46:57 PDT
+From: wmb@FirmWorks.COM (Mitch Bradley)
+Subject: Item #282: PowerPC default mapping mode
+
+P1275 Open Firmware Working Group Proposal -- Proposal #282 Ver <Auth-Vers#>
+
+Title:		Default mapping mode
+
+Author:		Mitch Bradley
+
+Date:		8/14/95
+
+Ed/Tech:	Technical
+
+Synopsis:	Establish address-dependent default value for "mode" argument
+
+Doc & Version:	PowerPC Binding, Rev. 1.03
+
+Problem:	I think that the PowerPC binding should say more about the
+default value of the "mode" argument to MMU "map" and "modify" methods.
+
+Proposal:	
+
+Add the following sentence to the end of clause 5.1:
+
+The default mode (i.e. the mode specified by the value "-1" for the "mode"
+argument is -1) for the MMU package's "map-in" and "modify" methods shall
+be appropriate for memory if the beginning of the physical address range
+affected by the operation refers to system memory, and appropriate for I/O
+devices otherwise.
+
+[ P1275 Item #282 -- Received: Mon Aug 14 13:53:58 PDT 1995 ]
+

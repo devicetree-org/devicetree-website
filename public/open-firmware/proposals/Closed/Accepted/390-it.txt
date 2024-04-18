@@ -1,0 +1,33 @@
+From: kingman@austin.ibm.com (Kingman)
+Subject: Item #390: PPC: reserved area size increase
+Date: Tue, 24 Sep 1996 10:16:16 -0500 (CDT)
+
+P1275 Open Firmware Working Group Proposal -- Proposal #390 Ver <Auth-Vers#>
+
+Title:          Increase the memory reserved for OF on 64-bit systems.
+
+Author:         John Kingman 
+
+Date:           September 24, 1996
+
+Ed/Tech:        Technical
+
+Synopsis:       Increase the memory reserved for OF on 64-bit systems.
+
+Doc & Version:  PowerPC Processor Binding, Revision 2.0
+
+Problem:        The current 32-byte area is insufficient on 64-bit
+                systems, since the size of the registers have doubled.
+                This area may be used for saving registers and executing
+                a portion of the interrupt routine.   Since the registers
+                are 8-bytes instead of 4-bytes in size, additional space
+                is needed.  An extra 16-bytes is propsed for 64-bit 
+                system implementations.
+
+Proposal:       
+
+Section 8.4 on page 22, line 19, add the following to the end of the
+sentence: "or 0x1d0 to 0x1ff on 64-bit implementations."
+
+[ P1275 Item #390 -- Received: Tue Sep 24 08:18:47 PDT 1996 ]
+

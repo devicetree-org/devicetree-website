@@ -1,0 +1,47 @@
+Date: Tue, 29 Nov 94 14:04:49 PST
+From: paktor@hal.com (David Paktor)
+Subject: Item #214: P 214 V 1 - Clarify substitution of FCode tokens for  rl@  and  rl! 
+
+
+		P1275 Openboot Proposal			Proposal #: 214 Ver 1
+
+		1275.0 Errata Proposal
+
+Title:		Clarify substitution of FCode tokens for  rl@  and  rl! 
+
+Author:		David L. Paktor
+
+Date:		Tue 29 Nov 94
+
+Ed/Tech:	Editorial
+
+Synopsis:       The notes for RL@ and RL! in the glossary are not entirely
+		    clear as to when the substitution of the FCode token
+		    should occur.
+
+Doc Version:	P1275.0 D12
+
+Problem:        The notes for RL@ and RL! in the glossary do not quite make
+		    clear when the substitution of the FCode token should
+		    occur.  An experienced Open Firmware implementer might
+		    be able to infer the correct answer, but, I believe, a
+		    newcomer would be left quite baffled.  A sentence or two
+		    of clarifying text would be helpful to both.
+
+
+Proposal:	Add the following sentences after Page 191 line 44 and after
+		    Page 192 line 15:
+
+		"The substitution of the FCode tokens for  rl@  and  rl!
+		    shall take place immediately before the interpretation
+		    of the FCode of a child-device, as by  probe-self .
+		    Upon completion of interpretation of the child-device's
+		    FCode, the FCode tokens for  rl@  and rl!  shall be
+		    restored to their previous values."
+
+
+
+David
+
+[ P1275 Item #214 -- Received: Tue Nov 29 14:06:25 PST 1994 ]
+

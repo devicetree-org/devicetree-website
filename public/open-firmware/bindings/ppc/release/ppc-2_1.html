@@ -1,0 +1,834 @@
+<HTML>
+<body bgcolor="#ffffff" text="#000000"
+link="#0000ff" vlink="#ff0000" alink="ff0000">
+
+<TITLE>
+PowerPC Processor Binding
+</TITLE>
+
+<center>
+<H1>
+PowerPC Processor Binding to
+<br>
+<br>
+IEEE 1275-1994<br>
+Standard for Boot (Initialization,<br>
+Configuration) Firmware<br>
+</H1>
+<br>
+
+Revision: 2.1 (Approved Version)
+<br>
+<br>
+
+November 6,1996
+<br>
+</center>
+<HR>
+This document specifies the application of Open Firmware to a PowerPC Processor, including requirements and practices to support unique firmware specific to a PowerPC Processor. The core requirements and practices specified by Open Firmware must be augmented by processor-specific requirements to form a complete specification for the firmware implementation for a PowerPC Processor. This document establishes such additional requirements pertaining to the processor and the support required by Open Firmware.<p>
+<UNKNOWN>Task Group Members</UNKNOWN><BR>
+The PowerPC Processor binding team members were the following:<p>
+Mitch Bradley, FirmWorks<p>
+Jordan Brown, SunSoft<p>
+Bob Coffin, IBM<p>
+David Kahn, Sun Microsystems, Inc.<p>
+John Kingman (editor), IBM<p>
+Luan Nguyen, Dr., IBM<p>
+Mike Segapeli, IBM<p>
+Lilian Walter, FirePower<p>
+<B>Trademarks</B><BR>
+The following terms, denoted by a registration symbol (\xa8 ) or trademark symbol(\xaa ) on the first occurrence in this publication, are registered trademarks or trademarks of the companies as shown in the list below:<p>
+<pre>
+------------------------------------------------------
+<B>Trademark</B>   Company                                      
+------------------------------------------------------
+PowerPC     International Business Machines Corporation  
+------------------------------------------------------
+</pre>
+<B>Revision History</B><BR>
+<pre>
+------------------------------------------------------------------------------------------
+Revision  Date           Changes                                                            
+------------------------------------------------------------------------------------------
+1.01      April 18,1995  Included changes from Open Firmware Working Group Meeting          
+                         of 01/25/9                                                         
+1.02      May 5,1995     Applied proposals 222, 223, 252, 253, 254, 258, 260, 261 and       
+                         263.                                                               
+1.03      July 3,1995    Edited IP description in Initial Program State Section.            
+                         Applied proposals 255 and 267.                                     
+                                                                                            
+1.4       Aug. 11,1995   Include changes from Open Firmware Working Group Meeting           
+                         of 07/19/95.                                                       
+                         Add SMP Binding to document. Rearrange Section 1.                  
+                         Applied Proposals 276, 277, 278.                                   
+                         Removed &quot;Openprom&quot; Section (Moved to Platform Bindings).           
+                         Changed name of &quot;64-bit-addressing&quot; property to &quot;64-bit&quot;.          
+                                                                                            
+                                                                                            
+                                                                                            
+                                                                                            
+1.5       Sept. 14,1995  Fixed bad cross-references. Minor editorial changes.               
+1.6       Oct. 27,1995   Included changes from Open Firmware Working Group Meeting          
+                         of 09/20/95. Fixed errata. Added new ELF Section. Corrected        
+                         format of MP Section (CIS Calls).                                  
+1.7<B> </B>      Jan. 12,1996   Review Draft. Not formally released.                               
+1.8       Feb. 8,1996    Included changes from Open Firmware Working Group Meeting          
+                         of 01/16/96.                                                       
+                         Added new section (6.2.2) describing physical address formats      
+                         and representations for CPU nodes.                                 
+                         Applied proposal 291.                                              
+                         Changed the two notes in Section 12.2 to regular text since they   
+                         both contained requirements.                                       
+                                                                                            
+                                                                                            
+                                                                                            
+1.9       Feb. 9,1996    Included changes from Open Firmware Working Group Binding          
+                         Committee Meeting review of Revision 1.7 on 01/17/96 and Pro       
+                         posal #306.  Editor is now John Kingman.                           
+1.10      Mar. 12,1996   Included changes from Open Firmware Working Group Binding          
+                         Committee Meeting review of Revision 1.9 DRAFT on 03/05/96         
+                         and Proposal #317.                                                 
+2.0       July 29, 1996  (Approved Version) Included changes from the Open Firmware         
+                         Working Group Subcommittee  review of Revision 1.10 DRAFT          
+                         on 06/25/96 and Proposal #363.                                     
+2.1                       , (Approved Version) Included changes from the Open Firmware      
+                         Working Group Subcommittee  review of  Proposal #390.              
+------------------------------------------------------------------------------------------
+</pre>
+<HR><H2>Table of Contents</H2>
+
+<UL>
+<A HREF="ppc-2_1.html#HDR0"><B>1.   Overview</B></A>
+<BR>
+
+<A HREF="ppc-2_1.html#REF29452"><B>2.   References and Terms</B></A>
+
+<UL>
+<A HREF="ppc-2_1.html#REF26829">2.1.   References</A>
+<BR>
+
+<A HREF="ppc-2_1.html#HDR1">2.2.   Terms</A>
+</UL>
+
+<A HREF="ppc-2_1.html#HDR2"><B>3.   Data Formats and Representations</B></A>
+<BR>
+
+<A HREF="ppc-2_1.html#HDR3"><B>4.   Memory Management</B></A>
+
+<UL>
+<A HREF="ppc-2_1.html#HDR4">4.1.   PowerPC address translation model</A>
+
+<UL>
+<A HREF="ppc-2_1.html#HDR5">4.1.1.   Translation requirements</A>
+<BR>
+
+<A HREF="ppc-2_1.html#REF41703">4.1.2.   Segmented Address Translation</A>
+<BR>
+
+<A HREF="ppc-2_1.html#HDR6">4.1.3.   Block Address Translation</A>
+</UL>
+
+<A HREF="ppc-2_1.html#HDR7">4.2.   Open Firmware's use of memory</A>
+
+<UL>
+<A HREF="ppc-2_1.html#REF25139">4.2.1.   Real-Mode</A>
+<BR>
+
+<A HREF="ppc-2_1.html#HDR8">4.2.2.   Virtual-Mode</A>
+<BR>
+
+<A HREF="ppc-2_1.html#HDR9">4.2.3.    Device Interface (Real-Mode)</A>
+<BR>
+
+<A HREF="ppc-2_1.html#HDR10">4.2.4.   Device Interface (Virtual-Mode)</A>
+<BR>
+
+<A HREF="ppc-2_1.html#HDR11">4.2.5.   Client Interface (Real-Mode)</A>
+<BR>
+
+<A HREF="ppc-2_1.html#REF96317">4.2.6.   Client Interface (Virtual-Mode)</A>
+<BR>
+
+<A HREF="ppc-2_1.html#HDR12">4.2.7.   User Interface (Real-Mode)</A>
+<BR>
+
+<A HREF="ppc-2_1.html#HDR13">4.2.8.   User Interface (Virtual-Mode)</A>
+</UL>
+</UL>
+
+<A HREF="ppc-2_1.html#HDR14"><B>5.   Properties</B></A>
+
+<UL>
+<A HREF="ppc-2_1.html#HDR15">5.1.   CPU properties</A>
+
+<UL>
+<A HREF="ppc-2_1.html#REF37877">5.1.1.   The Device Tree</A>
+<BR>
+
+<A HREF="ppc-2_1.html#REF18332">5.1.2.    Physical Address Formats and Representations for CPU Nodes</A>
+
+<UL>
+<A HREF="ppc-2_1.html#HDR16">5.1.2.1.   Numerical Representation</A>
+<BR>
+
+<A HREF="ppc-2_1.html#HDR17">5.1.2.2.   Text Representation</A>
+<BR>
+
+<A HREF="ppc-2_1.html#HDR18">5.1.2.3.   Unit Address Representation</A>
+</UL>
+
+<A HREF="ppc-2_1.html#REF25612">5.1.3.   CPUS Node Properties</A>
+<BR>
+
+<A HREF="ppc-2_1.html#REF89868">5.1.4.    CPU Node Properties</A>
+<BR>
+
+<A HREF="ppc-2_1.html#HDR19">5.1.5.   TLB properties</A>
+<BR>
+
+<A HREF="ppc-2_1.html#HDR20">5.1.6.   Internal (L1) cache properties</A>
+<BR>
+
+<A HREF="ppc-2_1.html#REF34579">5.1.7.   Memory Management Unit properties</A>
+</UL>
+
+<A HREF="ppc-2_1.html#HDR21">5.2.   Ancillary (L2,L3...) cache node properties</A>
+</UL>
+
+<A HREF="ppc-2_1.html#REF77797"><B>6.   Methods</B></A>
+
+<UL>
+<A HREF="ppc-2_1.html#REF77797">6.1.   MMU related methods   </A>
+</UL>
+
+<A HREF="ppc-2_1.html#HDR22"><B>7.   Client Interface Requirements</B></A>
+
+<UL>
+<A HREF="ppc-2_1.html#HDR23">7.1.   Calling Conventions</A>
+</UL>
+
+<A HREF="ppc-2_1.html#HDR24"><B>8.   Client Program Requirements</B></A>
+
+<UL>
+<A HREF="ppc-2_1.html#HDR25">8.1.   Load Address</A>
+<BR>
+
+<A HREF="ppc-2_1.html#HDR26">8.2.   Initial Program State</A>
+
+<UL>
+<A HREF="ppc-2_1.html#HDR27">8.2.1.   Initial Register Values</A>
+<BR>
+
+<A HREF="ppc-2_1.html#REF27292">8.2.2.   Initial Stack</A>
+<BR>
+
+<A HREF="ppc-2_1.html#REF31886">8.2.3.   Client Interface Handler Address</A>
+<BR>
+
+<A HREF="ppc-2_1.html#REF13831">8.2.4.   Client Program Arguments</A>
+</UL>
+
+<A HREF="ppc-2_1.html#HDR28">8.3.   Caching</A>
+<BR>
+
+<A HREF="ppc-2_1.html#REF27751">8.4.   Interrupts</A>
+<BR>
+
+<A HREF="ppc-2_1.html#HDR29">8.5.   Client callbacks</A>
+
+<UL>
+<A HREF="ppc-2_1.html#REF11616">8.5.1.   Real-Mode physical memory management assist callback</A>
+<BR>
+
+<A HREF="ppc-2_1.html#REF11616">8.5.2.   Virtual address translation assist callbacks</A>
+</UL>
+</UL>
+
+<A HREF="ppc-2_1.html#HDR30"><B>9.   User Interface Requirements</B></A>
+
+<UL>
+<A HREF="ppc-2_1.html#HDR31">9.1.   Machine Register Access</A>
+
+<UL>
+<A HREF="ppc-2_1.html#HDR32">9.1.1.   Branch Unit Registers</A>
+<BR>
+
+<A HREF="ppc-2_1.html#HDR33">9.1.2.   Fixed-Point Registers</A>
+<BR>
+
+<A HREF="ppc-2_1.html#HDR34">9.1.3.   Floating-Point Registers</A>
+</UL>
+</UL>
+
+<A HREF="ppc-2_1.html#HDR35"><B>10.   Configuration Variables</B></A>
+<BR>
+
+<A HREF="ppc-2_1.html#HDR36"><B>11.   MP Extensions</B></A>
+
+<UL>
+<A HREF="ppc-2_1.html#HDR37">11.1.   The Device Tree</A>
+
+<UL>
+<A HREF="ppc-2_1.html#HDR38">11.1.1.   Additional Properties</A>
+</UL>
+
+<A HREF="ppc-2_1.html#HDR39">11.2.   Initialization</A>
+<BR>
+
+<A HREF="ppc-2_1.html#HDR40">11.3.   Client Interface Services</A>
+<BR>
+
+<A HREF="ppc-2_1.html#HDR41">11.4.   Breakpoints</A>
+<BR>
+
+<A HREF="ppc-2_1.html#HDR42">11.5.   Serialization</A>
+</UL>
+</UL>
+
+
+<HR><!-- This file was created with the fm2html filter.The filter is copyright Norwegian Telecom Research and was programmed by Jon Stephenson von Tetzchner.  --><H2><A NAME="HDR0">1.   Overview</A></H2>
+This document specifies the application of <I>IEEE Std 1275-1994 Standard for Boot (Initialization, Configuration) Firmware, Core Practices and Requirements</I> to computer systems that use the PowerPC Instruction Set Architecture, including instruction-set-specific requirements and practices for debugging, client program interface and data formats. An implementation of Open Firmware for PowerPC <I>shall</I> implement the core requirements as defined in <A HREF="ppc-2_1.html#REF69242">[1]</A> and the PowerPC-specific extensions described in this binding.<p>
+While this document addresses the official PowerPC architecture <A HREF="ppc-2_1.html#REF44419">[2]</A>, the name &quot;PowerPC&quot; only requires compliance to Book I. The descriptions that follow, and the relevant sections describing translation features for this binding, assume that the system's PowerPC processor(s) implement the entire set of Books I-III. Some &quot;PowerPC&quot; processors may implement different Book II-III features; such processors may need a variant of this binding describing the differences to the mapping functions, etc.<p>
+<H2><A NAME="REF29452">2.   References and Terms</A></H2>
+<H3><A NAME="REF26829">2.1.   References</A></H3>
+This standard shall be used in conjunction with the following publications. When the following standards are superseded by an approved revision, the revision <I>shall</I> apply.<p>
+<DL COMPACT>
+<DT><A NAME="REF69242">[1]  </A><DD><I>IEEE Std 1275-1994 Standard for Boot (Initialization, Configuration) Firmware, Core Practices and Requirements</I>.
+<DT><A NAME="REF44419">[2]  </A><DD>  <I>PowerPC Architecture</I>, published by Morgan Kaufmann Publishers, Inc. (ISBN 1-55960-316-6).  Also available from IBM (Customer Reorder Number 52G7487).  Updates to this document are available at <A HREF="http://www.austin.ibm.com/tech/ppc-chg.html">http://www.austin.ibm.com/tech/ppc-chg.html</A>
+</DL>
+<H3><A NAME="HDR1">2.2.   Terms</A></H3>
+This standard uses technical terms as they are defined in the documents cited in <A HREF="ppc-2_1.html#REF26829">&quot;References&quot; on page 7</A>, plus the following terms:<p>
+<B>core, core specification</B>: refers to <I>IEEE Std 1275-1994 Standard for Boot (Initialization, Configuration) Firmware, Core Practices and Requirements</I><p>
+<B>effective address</B>: The 64- or 32-bit address computed by the processor when executing a Storage Access or Branch instruction, or when fetching the next sequential instruction.  If address translation is disabled, the real address is the same as the effective address.  If address translation is enabled, the real address is determined by, but not necessarily identical to, the effective address.<p>
+<B>linkage area</B>: An area within the stack that is reserved for saving certain registers across procedure calls in PowerPC run-time models. This area is reserved by the caller and is allocated above the current stack pointer (<B>%r1</B>).<p>
+<B>Open Firmware</B>: The firmware architecture defined by the core specification or, when used as an adjective, a software component compliant with the core specification.<p>
+<B>procedure descriptor</B>: a data structure used by some PowerPC run-time models to represent a C "pointer to procedure". The first word of this structure contains the actual address of the procedure.<p>
+<B>real address</B>: An address that the processor presents on the processor bus.<p>
+<B>Real-Mode</B>: The mode in which all addresses passed between the client and Open Firmware are real addresses.<p>
+<B>processor bus</B>: The bus that connects the CPU chip to the system.<p>
+<B>segmented address translation</B>:  The process whereby an Effective Address (EA) is translated into a Virtual Address (VA<U>)</U> and the virtual address is translated into a Real Address (RA).  (<A HREF="ppc-2_1.html#REF41703">See &quot;Segmented Address Translation&quot; on page 9.</A> and Section 4.3 of Book III of [2] for more detail.)<p>
+<B>Table of Contents (TOC)</B>: A data structure used by some PowerPC run-time models that is used for access to global variables and for inter-module linkage. When a TOC is used, <B>%r2</B> contains its base address.<p>
+<B>virtual address</B> (in IEEE 1275 parlance): the address that a program uses to access a memory location or memory-mapped device register.  Depending on the presence or absence of memory mapping hardware in the system, and whether or not that mapping hardware is enabled, a virtual address may or may not be the same as the physical (real) address that appears on an external bus.  The IEEE 1275 definition of &quot;virtual address&quot; corresponds to The PowerPC Architecture's definition of &quot;effective addres.&quot;  Except as noted, this document uses the IEEE 1275 definition of virtual address.<p>
+<B>Virtual Address </B>(in PowerPC parlance): An internal address within the PowerPC address translation mechanism, used as in intermediate term in the translation of an effective address to the corresponding real address.<p>
+<B>Virtual-Mode</B>: The mode in which Open Firmware and its client share a single virtual address space, and address translation is enabled; all addresses passed between the client and Open Firmware are virtual (translated) addresses.<p>
+<H2><A NAME="HDR2">3.   Data Formats and Representations</A></H2>
+The cell size <I>shall</I> be 32 bits. Number ranges for <I>n</I>, <I>u</I>, and other cell-sized items are consistent with 32-bit, two's-complement number representation.<p>
+The required alignment for items accessed with <I>a-addr</I> addresses <I>shall</I> be four-byte aligned (i.e., a multiple of 4).<p>
+Each operation involving a <I>qaddr</I> address <I>shall</I> be performed with a single 32-bit access to the addressed location; similarly, each <I>waddr</I> access <I>shall</I> be performed with a single 16-bit access. This implies four-byte alignment for <I>qaddrs</I> and two-byte alignment for <I>waddrs</I>.<p>
+<H2><A NAME="HDR3">4.   Memory Management</A></H2>
+<H3><A NAME="HDR4">4.1.   PowerPC address translation model</A></H3>
+This section describes the model that is used for co-existence of Open Firmware and client programs (i.e., operating systems) with respect to address translation.<p>
+The following overview of translation is provided so that the issues relevant to Open Firmware for PowerPC can be discussed. Details that are not relevant to Open Firmware issues (e.g., protection) are not described in detail; the PowerPC architecture <A HREF="ppc-2_1.html#REF44419">[2]</A>, particularly Book III, should be consulted for the details. For the scope of this section, terms will be used as defined in <A HREF="ppc-2_1.html#REF44419">[2]</A>.<p>
+<H4><A NAME="HDR5">4.1.1.   Translation requirements</A></H4>
+The default access mode of storage for load and stores (i.e., with translation disabled -- referred to as <I>Real-Mode</I>) within PowerPC assumes that caches are enabled (in copy-back mode). In order to perform access to I/O device registers, the access mode must be set to Cache-Inhibited, Guarded by establishing a translation with this mode and enabling translation. Thus, even though most of a client program and/or Open Firmware can run with translation disabled, it <U>must</U> be enabled when performing I/O.<p>
+<H4><A NAME="REF41703">4.1.2.   Segmented Address Translation</A></H4>
+Note:  the use of the term Virtual Address in this section refers to the PowerPC definition, while the rest of the document uses the IEEE 1275 definition of virtual address. (<A HREF="ppc-2_1.html#REF29452">See &quot;References and Terms&quot; on page 7.</A>)<p>
+An Effective Address (EA) of a PowerPC processor is 64{32} bits wide. Each EA is translated into an 80{52}-bit Virtual Address (VA<U>)</U> by prepending a 52{24}-bit Virtual Segment Id (VSID) to the 28 LSbs of the effective address.  On 32-bit implementations, the VSID is obtained by indexing into a set of 16 Segment Registers (SRs) using the 4 MSbs of the EA. On 64-bit implementations, the VSID is looked up in a Segment Table using the 36 MSbs of the EA. Finally, the virtual address is translated into a Real Address (RA).   This is done by mapping the Virtual Page-Number (VPN) (bits 0-67{39} of the VA) into a Real Page Number (RPN) and concatenating this RPN with the byte offset (12 LSbs of the VA). The mapping of VPN to RPN involves a hashing algorithm within a Hashed Page Table (HTAB) to locate a Page Table Entry (PTE) that matches the VPN and using that entry's RPN component. If a valid entry is not found, a Data Storage Interrupt (DSI) or Instruction Storage Interrupt (ISI) is signalled, depending upon the source of the access.<p>
+This process is not performed for every translation! Processors will typically have a Translation Look-aside Buffer (TLB) that caches the most recent translations, thus exploiting the natural spatial locality of programs to reduce the overhead of address translation. 64-bit implementations may also implement a Segment Lookaside Buffer (SLB) for the same reasons. On most PowerPC processors, the TLB updates are performed in hardware. However, the architecture allows an implementation to use a software-assisted mechanism to perform the TLB updates. Such schemes must not affect the architected state of the processor unless the translation fails; i.e., the HTAB does not contain a valid PTE for the VA and a DSI/ISI is signalled.<p>
+Note:  one unusual feature of this translation mechanism is that valid translations might not be found in the HTAB; the HTAB might be too small to contain all of the currently valid translations. This introduces a level of complexity in the use of address translation by Open Firmware, as discussed below.<p>
+<H4><A NAME="HDR6">4.1.3.   Block Address Translation</A></H4>
+To further reduce the translation overhead for contiguous regions of virtual and real address spaces (e.g., a frame buffer, or all of real memory), the Block Address Translation (BAT) mechanism is also supported by PowerPC. The Block Address Translation involves the use of BAT entries that contain a Block Effective Page Index (BEPI), a Block Length (BL) specifier and a Block Real Page Number (BRPN); the architecture defines 4 BAT entries for data (DBAT entries) and 4 BAT entries for instruction (IBAT entries)<A HREF="ppc-2_1.html#FN1">(1)</A>. BAT areas are restricted to a finite set of allowable lengths, all of which are powers of 2.  The smallest BAT area defined is 128 KB (2<em sup>17</em> bytes).  The largest BAT area defined is 256 MB (2<em sup>28</em> bytes).  The starting address of a BAT area in both EA space and RA space must be a multiple of the area's length.<p>
+Block Address Translation is done my matching a number of upper bits of the EA (specified by the BL value) against each of the BAT entries. If a match is found, the corresponding BRPN bits replace the matched bits in the EA to produce the RA.<p>
+Block Address Translation takes precedence over Segmented Address Translation; i.e., if a mapping for a storage location is present in both a BAT entry and a Page Table Entry or HTAB, the Block Address Translation will be used.<p>
+<H3><A NAME="HDR7">4.2.   Open Firmware's use of memory</A></H3>
+Open Firmware shall use the memory resources within the space indicated by the real-base, real-size, virt-base and virt-size Configuration Variables defined for PowerPC. As described in the applicable platform binding, a mechanism is defined to enable Open Firmware to determine if its current configuration is consistent with the requirements of the client. <p>
+If the client program has specific requirements for physical memory or address space usage, it may establish requirements for Open Firmware's physical and/or virtual address space usage by means of its program header.  When Open Firmware loads the client program, it inspects the program header, and if its current usage of physical memory or virtual address space conflicts with that specified in the program header, Open Firmware shall set the real-base, <B>real-size</B>, virt-base, and <B>virt-size</B> to the configuration variables as specified in the header and restart itself.  Real-base, <B>real-size</B>, virt-base, and <B>virt-size</B> may be specified as -1, in which case the firmware is permitted to choose appropriate values for the variables specified as -1.<p>
+If the values of the <B>real-size</B> and/or <B>virt-size</B> configuration variables do not provide sufficient memory and/or virtual address space for the firmware's own use, then the firmware shall not attempt to load a client program and the condition should be reported to the user.  The possibility of not being able to comply with limitations on firmware's size should be tested as the firmware is coming up in order to handle the possibility that a user established an unworkable limitation on the size. Clients can minimize this exposure by setting size to -1 and allowing Open Firmware to choose the size.<p>
+A PowerPC Open Firmware binding <I>shall</I> support two different addressing models, depending upon the setting of the <B>real-mode?</B> Configuration Variable. This variable indicates the Open Firmware addressing mode that a client program expects; <B>false</B> (0) indicates Virtual-Mode, <B>true</B> (-1) indicates Real-Mode; the default value of <B>real-mode?</B> is implementation dependent.<p>
+The management of <B>real-mode?</B> is analogous to <B>little-endian?</B>. Open Firmware determines its addressing mode using the value of <B>real-mode?</B>. If the current state of <B>real-mode?</B> (and hence, the current state of Open Firmware) is incorrect, it <I>shall</I> set <B>real-mode?</B> appropriately and reset itself, possibly by executing <B>reset-all</B>.<p>
+Memory that cannot be allocated for general purpose use, for example physical memory on PowerPC systems used for interrupt vectors and implementation specific areas, shall not appear in the &quot;available&quot; property of the memory node. A Client Program that needs to use such memory for its architected purpose must not claim that area prior to use.<p>
+In the following two sections, some of conventions in Real-Mode and Virtual-Mode address translations are described. Remaining sections describe the assumptions that Open Firmware makes about the state and control of the system in regard to Open Firmware's use of system resources for three Open Firmware interfaces (e.g. Device, User and Client interfaces).<p>
+<H4><A NAME="REF25139">4.2.1.   Real-Mode</A></H4>
+In Real-Mode (when <B>real-mode?</B> is <B>true</B>), the use of address translations by Open Firmware and its client are independent. Either they do not use translation, or their translations are private; they do not share any translations. All interfaces between the two must pass the real address of the data. Any data structure shared by Open Firmware and its client that refers to <I>virt</I> addresses in <A HREF="ppc-2_1.html#REF69242">[1]</A>, or this binding, must be real addresses.<p>
+Note:  in particular, that the address of the Client interface handler, that is passed to the client, has to be a real address.<p>
+The Configuration Variables real-base and real-size should indicate the physical memory base and size in which Open Firmware must locate itself.   In Real-Mode, the Configuration Variables virt-base and virt-size do not have meaning and should be set to -1.<p>
+<H4><A NAME="HDR8">4.2.2.   Virtual-Mode</A></H4>
+When <B>real-mode?</B> is <B>false</B>, Open Firmware <I>shall</I> configure itself to run in <I>Virtual-Mode</I>. In Virtual-Mode, Open Firmware and its client will share a single virtual address space. This binding provides interfaces to allow Open Firmware and its client to ensure that this single virtual address model can be maintained.<p>
+The Configuration Variables virt-base and virt-size should indicate the virtual address space base address and size that Open Firmware should use. The Configuration Variables real-base and real-size should indicate the physical memory base and size in which Open Firmware must locate itself. <p>
+<H4><A NAME="HDR9">4.2.3.    Device Interface (Real-Mode)</A></H4>
+While Open Firmware is performing system initialization and probing functions, it establishes and maintains its own translations. In particular, it maintains its own Page Tables (and/or BAT entries) and handles any DSI/ISI interrupts itself.<p>
+Note:  in Real-Mode, all translations will be <I>virt=real</I>; the primary reason for translation is to allow appropriate I/O accesses.<p>
+<H4><A NAME="HDR10">4.2.4.   Device Interface (Virtual-Mode)</A></H4>
+Open Firmware will establish its own translation environment, handling DSI/ISI interrupts as in the Real-Mode case. However, this environment will, in general, contain translations in which virtual addresses do not equal real addresses. The virtual address space used by Open Firmware must be compatible with its client.<p>
+Note:  Since these virtual addresses will be used by the Client and/or User Interfaces (e.g., for pointers to its code, device-tree, etc.), their translations must be preserved until the client OS decides that it no longer requires the services of Open Firmware.<p>
+<H4><A NAME="HDR11">4.2.5.   Client Interface (Real-Mode)</A></H4>
+In Real-Mode, addresses of client data are real.; the client must ensure that all data areas referred to across the Client Interface are valid real addresses. This may require moving data to meet any requirements for contiguous storage areas (e.g., for <B>read/write</B> calls). Translation <I>shall</I> be disabled before the client interface call is made.<p>
+Open Firmware will typically have to maintain its translations in order to perform I/O. Since the client may be running with translation enabled (except for the Client interface call), Open Firmware <I>shall</I> save the state of all relevant translation resources (e.g., SDR1, BATs) and restore them before returning to the client. Likewise, it <I>may</I> take over interrupts for its own use (e.g., for doing &quot;lazy&quot; allocation of BATs); it <I>shall</I> preserve the state of any interrupt vectors for its client.<p>
+Since the state of the address translation system is not predictable to any interrupts, the client <I>shall</I> ensure that interrupts are disabled before calling the Client Interface handler and call the handler from only one CPU at a time. The client <I>shall</I> also ensure that other processors do not generate translation exceptions for the duration of the call.<p>
+Client programs are not required to assume responsibility for physical memory management. The client program must use the Open Firmware claim client interface service to allocate physical memory while physical memory is managed by Open Firmware.  Physical memory shall remain managed by Open Firmware until the client program defines the real-mode physical memory management assist callbacks.  Physical memory must be managed by the client program once the client program defines the real-mode physical memory management assist callbacks.  Open Firmware shall use the client program's real-mode physical memory management assist callbacks to allocate physical memory after the client program has assumed physical memory management.<p>
+In Real-Mode, <B>claim</B> methods <I>shall</I> not allocate more pages than are necessary to satisfy the request.<p>
+<H4><A NAME="REF96317">4.2.6.   Client Interface (Virtual-Mode)</A></H4>
+Client interface calls are essentially &quot;subroutine&quot; calls to Open Firmware. Hence, the client interface executes in the environment of its client, including any translations that the OS has established. E.g., addresses passed in to the client interface are assumed to be valid virtual addresses within the scope of the OS. Any DSI/ISI interrupts are either invalid addresses or caused by HTAB &quot;spills&quot;. In either case, the OS has the responsibility for the handling of such exceptions.<p>
+Note:  addresses that the Open Firmware internal use will be those that were established by the Device interface (or, by subsequent actions of the Client or User interface). Thus, the client must preserve these Open Firmware translations if it takes over the virtual memory management function.<p>
+In addition to using existing translations, the Client Interface might require the establishment of new translations (e.g., due to <B>map-in</B> calls during <B>open</B> time), or the removal of old translations (e.g., during <B>map-out</B> calls during <B>close</B> time). Since this requires altering the Client's translation resources (e.g., Page Tables), possibly handling spill conditions, Open Firmware can not know how to perform these updates.<p>
+Hence, there <I>shall</I> be callback services provided by the client for use by Open Firmware for such actions; see <A HREF="ppc-2_1.html#REF11616">section 8.5.2.</A><p>
+In order to let clients (i.e., target operating systems) know where Open Firmware lives in the address space, the following rules <I>shall</I> be followed by an Open Firmware implementation for PowerPC and by client programs.<p>
+Open Firmware:<p>
+
+<UL>
+<LI>Open Firmware <I>shall</I> maintain its &quot;translations&quot; &quot;mmu&quot;-node property (see <A HREF="ppc-2_1.html#REF34579">section 5.1.7.</A>)<BR>
+
+<LI>Open Firmware's <B>claim</B> methods <I>shall </I>not allocate more pages than are necessary to satisfy the request.<BR>
+
+<LI>When a client executes <B>set-callback</B>, Open Firmware <I>shall</I> attempt to invoke the &quot;translate&quot; callback. If the translate callback is implemented, Open Firmware <I>shall</I> cease use of address translation hardware, instead using the client callbacks for changes to address translation. <BR>
+</UL>
+
+
+The <B>exit</B> service must continue to work after a <B>set-callback</B> that takes over address translation. This implies that Open Firmware takes responsibility for address translation hardware upon <B>exit</B> and must maintain internal information about translations that it requests of the client.<p>
+Client Programs:<p>
+
+<UL>
+<LI>Client programs that take control of the management of address translation hardware and expect to be able to subsequently invoke Open Firmware client services must provide callbacks to assist Open Firmware in address translation (see <A HREF="ppc-2_1.html#REF11616">section 8.5.2.</A>).<BR>
+
+<LI>A client program shall not directly manipulate any address translation hardware before it either a) ceases to invoke OF client services or b) issues a <B>set-callback </B>to install the &quot;translate&quot; callback.<BR>
+</UL>
+
+
+Note:  The intended sequence is that a client program will first issue a set-callback and then take control of address translation hardware. Address translation hardware includes BAT entries, page table, segment registers, Machine State Register and the interrupt vectors relating to translation faults.<p>
+<H4><A NAME="HDR12">4.2.7.   User Interface (Real-Mode)</A></H4>
+In Real-Mode, Open Firmware regains total control of the system. As with the Client interface in Real-Mode, it should save the state of the translation resources (including interrupt vectors) upon entry and should restore them upon exit.<p>
+<H4><A NAME="HDR13">4.2.8.   User Interface (Virtual-Mode)</A></H4>
+When the User interface is invoked, Open Firmware is responsible for managing the machine. Therefore, it will take over control of any relevant interrupt vectors for its own handling. In particular, it will take over DSI/ISI handling in order to report errors to the user for bad addresses, protection violations, etc. However, as described above, one source of DSI/ISI may simply be HTAB spills. As with the case of map-in and map-out calls, the User interface can not know how to handle such spill conditions, itself, or even if this is, in fact, a spill versus a bad address.<p>
+Hence, this binding defines callback services that the client provides for use by Open Firmware; see <A HREF="ppc-2_1.html#REF11616">section 8.5.2.</A>.<p>
+<H2><A NAME="HDR14">5.   Properties</A></H2>
+This section describes the standard properties of a PowerPC Open Firmware implementation.<p>
+<H3><A NAME="HDR15">5.1.   CPU properties</A></H3>
+<H4><A NAME="REF37877">5.1.1.   The Device Tree</A></H4>
+Open Firmware requires that the multiple instances of any device that appears more than once in the device tree must be distinguishable by means of their &quot;reg&quot; properties. The &quot;reg&quot; property must express the &quot;address&quot; of each node relative to its parent &quot;bus&quot;. Furthermore, the core specification says that the root node of the device tree usually represents the &quot;main physical bus&quot; of the system. Thus, if processors are not directly addressable on the main physical bus, as is expected to be the case on many/most PowerPC-based systems, the CPU nodes on such systems may not be children of the root node but must instead be children of a pseudo-device node. In this case, the name of the pseudo-device node, which will usually be a child of the root node, shall be &quot;cpus&quot;.<p>
+The &quot;cpus&quot; node shall have one child node of device_type &quot;cpu&quot; for each processor.<p>
+<H4><A NAME="REF18332">5.1.2.    Physical Address Formats and Representations for CPU Nodes</A></H4>
+<H5><A NAME="HDR16">5.1.2.1.   Numerical Representation</A></H5>
+The numerical representation of a processor's &quot;address&quot; in a PowerPC system shall consist of one cell, encoded as follows (Bit# 0 refers to the least significant bit):<p>
+<pre>
+-----------------------------------------------------
+Bit#           33222222  22221111  11111100  00000000  
+               10987654  32109876  54321098  76543210  
+-----------------------------------------------------
+                                                       
+phys.lo cell:  00000000  00000000  00000000  pppppppp  
+-----------------------------------------------------
+</pre>
+  where: <I>pppppppp</I> is an 8-bit integer representing the interprocessor interrupt identifier used by the platform.<p>
+<H5><A NAME="HDR17">5.1.2.2.   Text Representation</A></H5>
+The text representation of a processor's &quot;address&quot; shall be an ASCII hexadecimal number in the range 0...FF. <p>
+Conversion of the hexadecimal number from text representation to numeric representation shall be case insensitive, and leading zeros shall be permitted but not required.<p>
+Conversion from numeric representation to text representation shall use the lower case forms of the hexadecimal digits in the range a..f, suppressing leading zeros.<p>
+<H5><A NAME="HDR18">5.1.2.3.   Unit Address Representation</A></H5>
+A processor's &quot;unit-number&quot; (i.e. the first component of its &quot;reg&quot; value) is the interprocessor interrupt destination identifier used by the platform. For a uni-processor platform, the &quot;unit-number&quot; shall be zero. <p>
+<H4><A NAME="REF25612">5.1.3.   CPUS Node Properties</A></H4>
+The following properties shall be created within the &quot;cpus&quot; node.<p>
+<H4>&quot;#address-cells&quot;</H4>
+Standard <I>prop-name</I> to define the number of cells required to represent the physical addresses for the &quot;cpu&quot; nodes (i.e., the children of the &quot;cpus&quot; node).<p>
+<I>prop-encoded-array</I>: Integer constant 1, encoded as with encode-int.<p>
+The value of &quot;#address-cells&quot; for the &quot;cpus&quot; node <I>shall</I> be 1.<p>
+<H4>&quot;#size-cells&quot;</H4>
+Standard <I>prop-name </I>to define the number of cells necessary to represent the length of a physical address range.<p>
+<I>prop-encoded-array</I>: Integer constant 0, encoded as with <B>encode-int.</B><p>
+The value of &quot;#size-cells&quot; for the &quot;cpus&quot; pseudo-device node is 0 because the processors that are represented by the cpu nodes do not consume any physical address space.<p>
+<H4><A NAME="REF89868">5.1.4.    CPU Node Properties</A></H4>
+For each CPU in the system, a cpu-node <I>shall</I> be defined as a child of &quot;cpus.&quot; The following properties apply to each of these nodes. The &quot;cpus&quot; node shall not have &quot;reg&quot; or &quot;ranges&quot; properties. <p>
+<H4>&quot;name&quot;</H4>
+Open Firmware standard property. The value of the is property shall be of the form: &quot;PowerPC,&lt;name&gt;&quot;, where &lt;name&gt; is the name of the processor chip which may be displayed to the user.  <p>
+<H4>&quot;device_type&quot; </H4>
+Open Firmware standard property. The value of this property for CPU nodes <I>shall</I> be &quot;cpu&quot;.<p>
+<H4>&quot;reg&quot;</H4>
+Standard <I>prop-name </I>to define a cpu node's unit-address. <p>
+<I>prop-encoded-array</I>: an integer encoded as with <B>encode-int</B>. <p>
+For a cpu node, the first and only value of the &quot;reg&quot; property shall be the number of the per-processor interrupt line assigned to the processor represented by the node. For a uni-processor platform, the value of the &quot;reg&quot; property shall be zero.<p>
+<H4>&quot;cpu-version&quot;</H4>
+Standard property, encoded as with <B>encode-int</B>, that represents the processor type. This shall be the value obtained by reading the Processor Version Register of the CPU.<p>
+<H4>&quot;clock-frequency&quot;</H4>
+Standard property, encoded as with <B>encode-int</B>, that represents the internal processor speed (in hertz) of this node.<p>
+<H4>&quot;timebase-frequency&quot;</H4>
+Standard property, encoded as with <B>encode-int</B>, that represents the rate (in hertz) at which the PowerPC TimeBase and Decrementer registers are updated.<p>
+Note: The 601 PowerPC does not have a timebase frequency, therefore on a 601 PowerPC the value reported in this property shall be 1 billion (1 x 10<em sup>9</em>) which represents the logical rate of the real time clock.<p>
+<H4>&quot;64-bit&quot;</H4>
+prop-encoded-array: &lt;none&gt;<p>
+This property, if present, indicates that the PowerPC microprocessor defined by this CPU node is a 64-bit implementation of the PowerPC architecture. The absence of this property indicates that the microprocessor defined by this CPU node is a 32 bit implementation of the PowerPC architecture<p>
+<H4>&quot;64-bit-virtual-address&quot;</H4>
+prop-encoded-array: &lt;none&gt;<p>
+This property, if present, indicates that the PowerPC microprocessor defined by this CPU node supports the 64-bit virtual address subset of the 80-bit virtual address as defined by the PowerPC architecture.  The absence of this property indicates that the PowerPC microprocessor defined by this CPU node supports the full 80-bit virtual address defined by the PowerPC architecture.  This property is only valid for 64-bit implementations.<p>
+<H4>&quot;603-translation&quot;</H4>
+<I>prop-encoded-array</I>: &lt;none&gt;<p>
+This property, if present, indicates that the PowerPC microprocessor defined by this CPU node uses the PowerPC 603 defined mechanism to update its Translation Lookaside Buffers (TLBs). The absence of this property indicates that the PowerPC microprocessor defined by this CPU node does not use the PowerPC 603 defined mechanism to update its TLBs.<p>
+<H4>&quot;603-power-management&quot;</H4>
+<I>prop-encoded-array</I>: &lt;none&gt; <p>
+This property, if present, indicates that the PowerPC microprocessor defined by this CPU node implements the PowerPC 603 defined power management states. The absence of this property indicates that the PowerPC microprocessor defined by this CPU node does not support the PowerPC 603 defined power management states.<p>
+<H4>&quot;bus-frequency&quot;</H4>
+Standard property, encoded as with <B>encode-int</B>, that represents the speed (in hertz) of this processor's bus.<p>
+<H4>&quot;32-64-bridge&quot;</H4>
+<I>prop-encoded-array</I>: &lt;none&gt; <p>
+This property, if present, indicates that the PowerPC microprocessor defined by this CPU node implements the &quot;Bridge Facilities and Instructions for 64-bit Implementations&quot; as described in an appendix of Book III of [2]. The absence of this property indicates that the PowerPC microprocessor defined by this CPU node does not support these facilities and instructions.<p>
+<H4>&quot;emulation-assist-unit&quot;</H4>
+<I>prop-encoded-array</I>: &lt;none&gt; <p>
+This property, if present, indicates that the PowerPC microprocessor defined by this CPU node implements the emulation assist unit (EAU). The absence of this property indicates that the PowerPC microprocessor defined by this CPU node does not implement the EAU.<p>
+<H4>&quot;external-control&quot;</H4>
+<I>prop-encoded-array</I>: &lt;none&gt; <p>
+This property, if present, indicates that the PowerPC microprocessor defined by this CPU node implements the External Control Facility as described in the &quot;Optional Facilities and Instructions&quot; appendix of Book II of [2].  The absence of his property indicates that the PowerPC microprocessor defined by this CPU node does not support the External Control Facility.<p>
+<H4>&quot;general-purpose&quot;</H4>
+<I>prop-encoded-array</I>: &lt;none&gt; <p>
+This property, if present, indicates that the PowerPC microprocessor defined by this CPU node implements the floating point instructions <B>fsqrt</B>, <B>fsqrts</B> and <B>stfiwx</B>.  The absence of this property indicates that the PowerPC microprocessor defined by this CPU node does not support the floating point instructions <B>fsqrt</B>, <B>fsqrts</B> and <B>stfiwx</B>.<p>
+<H4>&quot;reservation-granule-size&quot;</H4>
+Standard property, encoded as with <B>encode-int</B>, that represents the reservation granule size (i.e., the minimum size of lock variables) supported by this processor, in bytes.<p>
+<H4>&quot;graphics&quot;</H4>
+<I>prop-encoded-array</I>: &lt;none&gt; <p>
+This property, if present, indicates that the PowerPC microprocessor defined by this CPU node implements the floating point instructions <B>fres, frsqrte, </B>and<B> fsel</B>. The absence of this property indicates that the PowerPC microprocessor defined by this CPU node does not support the floating point instructions <B>fres, frsqrte, </B>and<B> fsel.</B><p>
+<H4>&quot;performance-monitor&quot;</H4>
+<I>prop-encoded-array</I>: &lt;none&gt; <p>
+This property, if present, indicates that the PowerPC microprocessor defined by this CPU node implements the performance monitor functionality.  The absence of this property indicates that the PowerPC microprocessor defined by this CPU node does not support this performance monitor functionality.<p>
+<H4>&quot;tlbia&quot;</H4>
+<I>prop-encoded-array</I>: &lt;none&gt; <p>
+This property, if present, indicates that the PowerPC microprocessor defined by this CPU node implements the <B>tlbia</B> instruction.  The absence of this property indicates that the PowerPC microprocessor defined by this CPU node does not support the <B>tlbia</B> instruction.<p>
+<H4><A NAME="HDR19">5.1.5.   TLB properties</A></H4>
+Since the PowerPC architecture defines the MMU as being part of the processor, the properties defined by Section 3.6.5 of <A HREF="ppc-2_1.html#REF69242">[1]</A> and the following MMU-related properties shall be presented under &quot;cpu&quot; nodes.<p>
+<H4>&quot;tlb-size&quot;</H4>
+Standard property, encoded as with <B>encode-int</B>, that represents the total number of TLB entries.<p>
+<H4>&quot;tlb-sets&quot;</H4>
+Standard property, encoded as with encode-int, that represents the number of associativity sets of the TLB. A value of 1 indicates that the TLB is fully-associative.<p>
+<H4>&quot;tlb-split&quot;</H4>
+This property, if present, shall indicate that the TLB has a split organization. The absence of this property shall indicate that the TLB has a unified organization.<p>
+<H4>&quot;d-tlb-size&quot;</H4>
+Standard property, encoded as with encode-int, that represents the total number of d-TLB entries.<p>
+<H4>&quot;d-tlb-sets&quot;</H4>
+Standard property, encoded as with encode-int, that represents the number of associativity sets of the d-TLB. A value of 1 indicates that the d-TLB is fully-associative.<p>
+<H4>&quot;i-tlb-size&quot;</H4>
+Standard property, encoded as with encode-int, that represents the total number of i-TLB entries.<p>
+<H4>&quot;i-tlb-sets&quot;</H4>
+Standard property, encoded as with encode-int, that represents the number of associativity sets of the i-TLB. A value of 1 indicates that the i-TLB is fully-associative.<p>
+<H4><A NAME="HDR20">5.1.6.   Internal (L1) cache properties</A></H4>
+The PowerPC architecture defines a Harvard-style cache architecture; however, unified caches are an implementation option. All of the PowerPC cache instructions act upon a cache &quot;block&quot; (also referred to as a cache &quot;line&quot;). The internal (also referred to as &quot;L1&quot;) caches of PowerPC processors are represented in the Open Firmware device tree by the following properties contained under &quot;cpu&quot; nodes.<p>
+<H4>&quot;cache-unified&quot;</H4>
+This property, if present, indicates that the internal cache has a unified organization. Absence of this property indicates that the internal caches are implemented as separate instruction and data caches.<p>
+<H4>&quot;i-cache-size&quot;</H4>
+Standard property, encoded as with <B>encode-int</B>, that represents the total size (in bytes) of the internal instruction cache.<p>
+<H4>&quot;i-cache-sets&quot;</H4>
+Standard property, encoded as with <B>encode-int</B>, that represents number of associativity sets of the internal instruction cache. A value of 1 signifies that the instruction cache is fully associative.<p>
+<H4>&quot;i-cache-block-size&quot;</H4>
+Standard property, encoded as with <B>encode-int</B>, that represents the internal instruction cache's block size, in bytes.<p>
+<H4>&quot;d-cache-size&quot;</H4>
+Standard property, encoded as with <B>encode-int</B>, that represents the total size (in bytes) of the internal data cache.<p>
+<H4>&quot;d-cache-sets&quot;</H4>
+Standard property, encoded as with <B>encode-int</B>, that represents number of associativity sets of the internal data cache. A value of 1 signifies that the data cache is fully associative.<p>
+<H4>&quot;d-cache-block-size&quot;</H4>
+Standard property, encoded as with <B>encode-int</B>, that represents the internal (L1) data cache's block size, in bytes.<p>
+<H4>&quot;l2-cache&quot;</H4>
+Standard property, encoded as with <B>encode-int</B>, that represents the next level of cache in the memory hierarchy.<p>
+Absence of this property indicates that no further levels of cache are present. If present, its value is the <I>phandle</I> of the device node that represents the next level of cache.<p>
+<H4>&quot;i-cache-line-size&quot;</H4>
+Standard property, encoded as with encode-int, that represents the internal instruction cache's line size, in bytes, if different than its block size.<p>
+<H4>&quot;d-cache-line-size&quot;</H4>
+Standard property, encoded as with encode-int, that represents the internal data cache's line size, in bytes, if different than its block size.<p>
+Note:  If this is a unified cache, the corresponding i- and d- sizes must be equal.<p>
+<H4><A NAME="REF34579">5.1.7.   Memory Management Unit properties</A></H4>
+To aid a client in &quot;taking over&quot; the translation mechanism and still interact with Open Firmware (via the clie<I>nt interface</I>), the client needs to know what translations have been established by Open Firmware. The following standard property shall exist within the package to which the &quot;mmu&quot; property of the /chosen package refers.<p>
+<H4>&quot;translations&quot;</H4>
+This property, consisting of sets of translations, defines the currently active translations that have been established by Open Firmware (e.g., using map). Each set has the following format:<p>
+    (virt size phys mode )<p>
+Each value is encoded as with <B>encode-int</B>.<p>
+<H3><A NAME="HDR21">5.2.   Ancillary (L2,L3...) cache node properties</A></H3>
+Some systems might include secondary (L2) or tertiary (L3), etc. cache(s). As with the L1 caches, they can be implemented as either Harvard-style or unified. Unlike the L1 properties, that are contained within the &quot;cpu&quot; nodes, the properties of ancillary caches are contained within other device tree nodes.<p>
+The following properties define the characteristics of such ancillary caches. These properties <I>shall</I> be contained as a child node of one of the CPU nodes; this is to allow path-name access to the node. All &quot;cpu&quot; nodes that share the same ancillary cache (including the cpu node under which the ancillary cache node is contained) <I>shall</I> contain an &quot;l2-cache&quot; property whose value is the <I>phandle</I> of that ancillary cache node.<p>
+Note:  The &quot;l2-cache&quot; property shall be used in one level of the cache hierarchy to represent the next level. The device node for a subsequent level shall appear as a child of one of the caches in the hierarchy to allow path-name traversal.<p>
+<H4>&quot;device_type&quot;</H4>
+Open Firmware Standard property; the device_type of ancillary cache nodes <I>shall</I> be &quot;cache&quot;.<p>
+<H4>&quot;cache-unified&quot;</H4>
+This property, if present, indicates that the cache at this node has a unified organization. Absence of this property indicates that the caches at this node are implemented as separate instruction and data caches.<p>
+<H4>&quot;i-cache-size&quot;</H4>
+Standard property, encoded as with <B>encode-int</B>, that represents the total size (in bytes) of the instruction cache at this node.<p>
+<H4>&quot;i-cache-sets&quot;</H4>
+Standard property, encoded as with <B>encode-int</B>, that represents number of associativity sets of the instruction cache at this node. A value of 1 signifies that the instruction cache is fully associative.<p>
+<H4>&quot;d-cache-size&quot;</H4>
+Standard property, encoded as with <B>encode-int</B>, that represents the total size (in bytes) of the data cache at this node.<p>
+<H4>&quot;d-cache-sets&quot;</H4>
+Standard property, encoded as with <B>encode-int</B>, that represents number of associativity sets of the instruction cache at this node. A value of 1 signifies that the instruction cache is fully associative.<p>
+<H4>&quot;l2-cache&quot;</H4>
+Standard property, encoded as with <B>encode-int</B>, that represents the next level of cache in the memory hierarchy.<p>
+Absence of this property indicates that no further levels of cache are present. If present, its value is the <I>phandle</I> of the device node that represents the cache at the next level.<p>
+<H4>&quot;i-cache-line-size&quot;</H4>
+Standard property, encoded as with encode-int, that represents the internal instruction cache's line size, in bytes, if different than its block size.<p>
+<H4>&quot;d-cache-line-size&quot;</H4>
+Standard property, encoded as with encode-int, that represents the internal data cache's line size, in bytes, if different than its block size.<p>
+Note:  If this is a unified cache, the corresponding i- and d- sizes must be equal.<p>
+<H2><A NAME="REF77797">6.   Methods</A></H2>
+This section describes the additional standard methods required of a PowerPC Open Firmware implementation.<p>
+<H3><A NAME="REF77797">6.1.   MMU related methods   </A></H3>
+The MMU methods defined by section 3.6.5. of <A HREF="ppc-2_1.html#REF69242">[1]</A> <I>shall</I> be implemented by CPU nodes. The value of the <I>mode</I> parameter for the relevant methods (e.g., <B>map</B>) <I>shall</I> be the value that is contained within PTEs that control Write-through, Cache-Inhibit, Memory-coherent, Guarded and the 2 protection bits; thus, its format is: <B>WIMGxPP</B>, where x is a reserved bit that <I>shall</I> be 0. In order for I/O accesses to be properly performed in a PowerPC system, address ranges that are mapped by map-in <I>shall</I> be marked as Cache-Inhibited, Guarded.<p>
+The default mode (i.e., the mode specified when the value of the <I>mode</I> argument is -1) for the map-in and modify MMU methods of CPU nodes is defined as follows:<p>
+If the beginning of the physical address range affected by the operation refers to system memory, the values for <B>WIMGxPP</B> <I>shall</I> be  W=0, I=0, M=0, G=1, PP=10.<p>
+If the beginning of the physical address range affected by the operation refers to an I/O address, the values for WIMGxPP <I>shal</I>l be W=1, I=1, M=0, G=1, PP=10.<p>
+<H2><A NAME="HDR22">7.   Client Interface Requirements</A></H2>
+A PowerPC Open Firmware implementation <I>shall</I> implement a client interface (as defined in chapter 6 of <A HREF="ppc-2_1.html#REF69242">[1]</A>) according to the specifications contained within this section.<p>
+<H3><A NAME="HDR23">7.1.   Calling Conventions</A></H3>
+To invoke a client interface service, a <I>client program </I>constructs a client interface <I>argument array</I> as specified in the core Open Firmware document, places its address in <B>r3</B> and transfers to the <I>client interface handler</I>, with the return address in <B>lr</B>. (A typical way of accomplishing this is to copy the <I>client interface handler</I>'s address into <B>ctr</B> and executing a <B>bctrl</B>.)<p>
+The term &quot;preserved&quot; below shall mean that the register has the same value when returning as it did when the call was made.<p>
+<pre>
+<B>Table 1. Register usage conventions</B> 
+--------------------------------------------------------------------------------------
+Register(s)        Value -- real-mode         Value -- virt-mode                 Notes  
+--------------------------------------------------------------------------------------
+msr          client interface shall preserve  client interface shall not modify         
+cr           client interface shall preserve  same as real-mode                     1   
+r1-r2        client interface shall preserve  same as real-mode                         
+r3           argument array address on cli    same as real-mode                     2   
+             ent interface entry                                                        
+             result value (true or false)     same as real-mode                     2   
+             on client interface return                                                 
+r13-r31      client interface shall preserve  same as real-mode                         
+sprg0-       client interface shall preserve  client interface shall not modify         
+sprg3                                                                                   
+fpscr        client interface shall preserve  same as real-mode                         
+f0-f31       client interface shall preserve  same as real-mode                         
+lr,          undefined                        same as real-mode                     <B></B>    
+ctr,                                                                                    
+xer                                                                                     
+sr0-sr15     client interface shall preserve  client interface shall not modify         
+Other SPRs   client interface shall preserve  same as real-mode                     3   
+                                                                                        
+--------------------------------------------------------------------------------------
+</pre>
+Notes<p>
+<B>1. </B>Only the non-volatile fields (cr2-cr4) need to be preserved.<p>
+<B>2. </B>As defined by section 6.3.1. of <A HREF="ppc-2_1.html#REF69242">[1]</A>.<p>
+<B>3.</B> Other special purpose registers<p>
+The <I>client interface handler</I> <I>shall</I> perform the service specified by the contents of the argument array that begins at the address in <B>r3</B>, place the return value (indicating success or failure of the attempt to invoke the client interface service) back into <B>r3</B>, and return to the <I>client program</I>. This is typically done by a Branch to Link Register (<B>blr</B>).<p>
+The <I>client interface handler</I> <I>shall</I> preserve the contents of the Stack Pointer (<B>r</B><B>1</B>), TOC Pointer (<B>r2</B>), Condition Register (<B>cr</B>) all non-volatile registers (<B>r13</B>-<B>r31</B>) and all special purpose registers except <B>lr</B>, <B>ctr</B><B> </B>and <B>xer</B>.<p>
+The preservation of r2 allows TOC-based client programs to function correctly. Open Firmware <I>shall not</I> depend upon whether its client is TOC-based or not. If the client interface handler, itself, is TOC-based, it must provide for the appropriate initialization of its r2.<p>
+<H2><A NAME="HDR24">8.   Client Program Requirements</A></H2>
+<H3><A NAME="HDR25">8.1.   Load Address</A></H3>
+The client's load address is specified by the value of the <B>load-base</B> Configuration Variable. The value of <B>load-base</B> defines the default load address for <I>client program</I>s when using the <B>load</B> method.  <B>Load-base </B>shall be a real address in real mode or a virtual address in virtual mode. Note that this address represents the area into which the client program file will be read by <B>load</B>; it does not correspond to the addresses at which the program will be executed. All of physical memory from <B>load-base</B> to either the start of Open Firmware physical memory or the end of physical memory, whichever comes first, shall be available for loading the client program.<p>
+<H3><A NAME="HDR26">8.2.   Initial Program State</A></H3>
+This section defines the "initial program state", the execution environment that exists when the first machine instruction of a <I>client program</I> of the format specified above begins execution. Many aspects of the "initial program state" are established by <B>init-program</B>, which sets the <I>saved program state</I> so that subsequent execution of <B>go</B> will begin execution of the <I>client program</I> with the specified environment.<p>
+<H4><A NAME="HDR27">8.2.1.   Initial Register Values</A></H4>
+Upon entry to the client program, the following registers shall contain the following values:<p>
+<pre>
+<B>Table 2. Initial Register Values</B> 
+-----------------------------------------------------------------
+Register(s)           Value                                 Notes  
+-----------------------------------------------------------------
+msr          EE=0, interrupts disabled                       1     
+             PR=0, supervisor state                                
+             FP=1, floating point enabled                          
+             ME=1, machine checks enabled                          
+             FE0,FE1=0, floating point exceptions disabled         
+             IP, see <A HREF="ppc-2_1.html#REF27751">section 8.4.</A>                                  
+             IR,DR, see <A HREF="ppc-2_1.html#REF25139">section 4.2.1.</A>                             
+             SF=0, 32-bit mode                                     
+             ILE,LE, little endian support                   2     
+r1           see <A HREF="ppc-2_1.html#REF27292">section 8.2.2.</A>                                    
+r2           0                                               3     
+r3           reserved for platform binding                   4     
+r4           reserved for platform binding                   4     
+r5           see <A HREF="ppc-2_1.html#REF31886">section 8.2.3.</A>                                    
+r6,r7        see <A HREF="ppc-2_1.html#REF13831">section 8.2.4.</A>                                    
+Other        0                                                     
+user mode                                                          
+registers                                                          
+-----------------------------------------------------------------
+</pre>
+Notes:<p>
+<B>1</B>. Open Firmware will typically require the use of external interrupts for its <I>user interface</I>. However, when a <I>client program</I> is invoked, external interrupts <I>shall</I> be disabled. If a <I>client program</I> causes the invocation of the user interface, external interrupts <I>may</I> be re-enabled.<p>
+<B>2</B>. The 601 processor uses a different mechanism for controlling the endian-mode of the processor. On the 601, the LE bit is contained in the HID0 register; this bit controls the endian-mode of both program and privileged states.<p>
+<B>3</B>. Open Firmware does not make any assumptions about whether a client program is TOC-based or not. It is the responsibility of the client program to set <B>r2</B> to its TOC, if necessary.<p>
+<B>4</B>. As defined in the relevant section of the platform binding.<p>
+<H4><A NAME="REF27292">8.2.2.   Initial Stack</A></H4>
+Client programs <I>shall</I> be invoked with a valid stack pointer (<B>r1</B>) with at least 32K bytes of memory available for stack growth. The stack pointer <I>shall</I> be 16-byte aligned, reserving sufficient room for a linkage area (32 bytes above the address in r1). If the system is executing in Real-Mode, the value in r1 is a real address; if in Virtual-Mode, the address in r1 is a mapped virtual address.<p>
+<H4><A NAME="REF31886">8.2.3.   Client Interface Handler Address</A></H4>
+When client programs are invoked, <B>r5</B> <I>shall</I> contain the address of the entry point of the <I>client interface handler</I>. If the system is executing in Real-Mode, the value in r5 is a real address; if in Virtual-Mode, the address in r5 is a mapped virtual address.<p>
+Note:  this address points to the first instruction of the <I>client interface handler</I>, not to a procedure descriptor.<p>
+<H4><A NAME="REF13831">8.2.4.   Client Program Arguments</A></H4>
+The calling program <I>may </I>pass to the client an array of bytes of arbitrary content; if this array is present, its address and length <I>shall</I> be passed in registers <B>r6</B> and <B>r7</B>, respectively. For programs booted directly by Open Firmware, the length of this array is zero. Secondary boot programs may use this argument array to pass information to the programs that they boot.<p>
+Note:  The Open Firmware standard makes no provision for specifying such an array or its contents. Therefore, in the absence of implementation-dependent extensions, a client program executed directly from an Open Firmware implementation will not be passed such an array. However, intermediate boot programs that simulate or propagate the Open Firmware client interface to the programs that they load can provide such an array for their clients.<p>
+Note:  boot command line arguments, typically consisting of the name of a file to be loaded by a secondary boot program followed by flags selecting various secondary boot and operating system options, are provided to client programs via the &quot;bootargs&quot; and &quot;bootpath&quot; properties of the &quot;/chosen&quot; node.<p>
+<H3><A NAME="HDR28">8.3.   Caching</A></H3>
+The caches of the processor <I>shall</I> be enabled when the client program is called. The I-cache shall be consistent with the D-cache for all memory areas occupied by the client program. Memory areas allocated on behalf of the client program <I>shall</I> be marked as cacheable. Accesses to &quot;I/O&quot; devices (especially, to devices across &quot;bridges&quot;) <I>shall</I> be made with the register access words (e.g., <B>%rl@</B>).  All processors in a SMP system shall have the same consistent view of all memory areas (for data references).  No more than one processor shall have a modified copy of the same data area in its cache when the client program is called.<p>
+Note:  If firmware makes cachable M=0 data references from different processors on a SMP system, it may have to perform additional cache management to meet this requirement.<p>
+<H3><A NAME="REF27751">8.4.   Interrupts</A></H3>
+Open Firmware requires that interrupts be &quot;vectored&quot; to its handlers when it is in control of the processor; this will occur when the User Interface is running. Client Interface calls are considered to execute in the environment of the client, and hence, Open Firmware does not assume ownership of interrupts.<p>
+Note:  There used to be a paragraph here that said an area of memory was to be reserved by the client program for the exclusive use of Open Firmware.  This requirement has been removed, since the sharing of interrupt vectors on these platforms has not been found to be practical.<p>
+Open Firmware <I>shall</I> save and restore the first location of each interrupt that it wants to "take over". I.e., whenever Open Firmware needs the use of an interrupt, it <I>shall</I> save the current contents of the corresponding entry point and replace that location with a branch to its entry point. When Open Firmware returns control, it <I>shall</I> restore the RAM location to its original contents.<p>
+<H3><A NAME="HDR29">8.5.   Client callbacks</A></H3>
+This section defines the callback mechanism that allows Open Firmware to access services exported to it by the client program. As described in section 6.3.2 and the glossary entries for callback and $callback in <A HREF="ppc-2_1.html#REF69242">[1]</A>, the callback mechanism follows the same rules as those of Client interface calls. I.e., an <I>argument array</I> is constructed by Open Firmware and the address of that array is passed (via <B>r3</B>) to the client's callback routine; the address of the callback routine is supplied to Open Firmware by means of the set-callback client call.<p>
+If the system is running in Real-Mode, the address of the client callback routine <I>shall</I> be a real address; if it is running in Virtual-Mode, the client callback routine address <I>shall</I> be a mapped virtual address.<p>
+<H4><A NAME="REF11616">8.5.1.   Real-Mode physical memory management assist callback</A></H4>
+Once the control of physical memory is transferred to the client program, Open Firmware which is running in real-mode <I>shall</I> use the callback service provided by the client program to allocate physical memory. Client programs which expect Open Firmware to operate in read-mode must implement the following physical memory management client callback routines for Open Firmware:<p>
+alloc-real-mem<p>
+
+<DL>
+<DD>IN:  [address] min_addr, [address] max_addr, size, mode<BR>
+
+<DD>OUT:    error,  [address] real_addr<BR>
+
+<DD>This routine allocates a contiguous physical memory of <I>size</I> bytes within the address range between <I>min_addr </I>and<I> max_addr</I>. The <I>mode</I> parameter contains the WIMGxPP bits as defined in <A HREF="ppc-2_1.html#REF77797">section 6.</A> A non-zero error code <I>shall</I> be returned if the mapping can not be performed. If error code is zero (i.e. allocation is succeeded) the routine returns the base address of the physical memory allocated for Open Firmware.<BR>
+</DL>
+
+
+<H4><A NAME="REF11616">8.5.2.   Virtual address translation assist callbacks</A></H4>
+As mentioned in <A HREF="ppc-2_1.html#REF96317">section 4.2.6.</A>, when Open Firmware is in Virtual-Mode, client programs that take over control of the system's memory management must provide a set of callbacks that implement MMU functions. This section defines the input arguments and return values for these callbacks. The notation follows the style used in chapter 6 of the Open Firmware specification <A HREF="ppc-2_1.html#REF69242">[1]</A>.<p>
+map<p>
+
+<DL>
+<DD>IN:  [address] phys, [address] virt, size, mode<BR>
+
+<DD>OUT:  throw-code,   error<BR>
+
+<DD>This routine creates system-specific translation information; this will typically include the addition of PTEs to the HTAB. If the mapping is successfully performed, a value of zero <I>shall</I> be placed in the <I>error</I> cell of the argument array; a non-zero error code <I>shall</I> be returned in <I>error</I> if the mapping can not be performed.<BR>
+</DL>
+
+
+unmap<p>
+
+<DL>
+<DD>IN:  [address] virt, size<BR>
+
+<DD>OUT:  throw-code<BR>
+
+<DD>The system removes any data structures (e.g., PTEs) for the virtual address range.<BR>
+</DL>
+
+
+translate<p>
+
+<DL>
+<DD>IN: [address] virt<BR>
+
+<DD>OUT: throw-code, error, [address] real, mode<BR>
+
+<DD>The system attempts to compute the real address (<I>real</I>) to which the virtual address (<I>virt</I>) is mapped. If the translation is successful, a PTE <I>shall</I> be placed into the HTAB for this translation, the number of return cells shall be four with the resulting real address returned in <I>real</I> and <I>error</I> shall be set to <B>false</B> (0). If the translation is not successful, the number of return cells <I>shall </I>be two and <I>error shall</I> be set to a non-zero error code.<BR>
+
+<DD>This call <I>shall</I> be made when Open Firmware handles a DSI/ISI within the User interface. A successful result of the translate call indicates that Open Firmware can complete the interrupted access; a failure indicates that an access was made to an invalid address.<BR>
+</DL>
+
+
+<H2><A NAME="HDR30">9.   User Interface Requirements</A></H2>
+An implementation of Open Firmware for PowerPC <I>shall</I> conform to the core requirements as specified in <A HREF="ppc-2_1.html#REF69242">[1]</A> and the following PowerPC-specific extensions.<p>
+<H3><A NAME="HDR31">9.1.   Machine Register Access</A></H3>
+The following <I>user interface</I> commands represent PowerPC registers within the <I>saved program state</I>. Executing the command returns the saved value of the corresponding register. The saved value may be set by preceding the command with <B>to</B>; the actual registers are restored to the saved values when <B>go</B> is executed.<p>
+The following command displays the PowerPC CPU's <I>saved program state</I>.<p>
+.registers<p>
+<H4><A NAME="HDR32">9.1.1.   Branch Unit Registers</A></H4>
+<H4>%cr</H4>
+  Access saved copy of Condition Register.<p>
+<H4>%ctr</H4>
+  Access saved copy of Count Register.<p>
+<H4>%lr</H4>
+  Access saved copy of Link Register.<p>
+<H4>%msr</H4>
+  Access saved copy of the low order 16 bits of SRR1 register.<p>
+<H4>%srr0 and %srr1</H4>
+  Access saved copy of Save/Restore Registers.<p>
+<H4>%pc</H4>
+An alias of "<B>%srr0</B>"<p>
+<H4><A NAME="HDR33">9.1.2.   Fixed-Point Registers</A></H4>
+<H4>%r0 through %r31</H4>
+  Access saved copies of fixed-point registers.<p>
+<H4>%xer</H4>
+  Access saved copy of XER register.<p>
+<H4>%sprg0 through %sprg3</H4>
+Access saved copies of SPRG registers.<p>
+<H4><A NAME="HDR34">9.1.3.   Floating-Point Registers</A></H4>
+Unlike the other registers, the floating point unit registers are not normally saved, since they are not used by Open Firmware. The following access words, therefore, access the registers directly.<p>
+<H4>%f0 through %f31</H4>
+  Access floating point registers.<p>
+<H4>%fpscr</H4>
+  Access Floating Point Status and Control Register.<p>
+<H2><A NAME="HDR35">10.   Configuration Variables</A></H2>
+In addition to the standard Configuration Variables defined by the core Open Firmware document <A HREF="ppc-2_1.html#REF69242">[1]</A>, the following Configuration Variables <I>shall</I> be implemented for PowerPC:<p>
+<H4>"little-endian?"</H4>
+This boolean variable controls the endian-mode of Open Firmware. If <B>true</B> (-1), the endian-mode is Little-Endian; if <B>false</B> (0), the endian-mode is Big-Endian. The default value is implementation dependent.<p>
+<H4>"real-mode?"</H4>
+This boolean variable controls the address translation mode of Open Firmware. If true (-1), the addressing mode is Real-Mode; if false (0), the addressing mode is Virtual-Mode. The default value is implementation dependent.<p>
+<H4>"real-base"</H4>
+This integer variable defines the starting physical address to be used by Open Firmware. <p>
+<H4>"real-size"</H4>
+  This integer variable defines the size of the physical address space which can be used by Open Firmware. <p>
+<H4>"virt-base"</H4>
+This integer variable defines the starting virtual memory address which can be used by Open Firmware. <p>
+<H4>"virt-size"</H4>
+<H4>  This integer variable defines the size of the virtual address space which can be used by Open Firmware.</H4>
+<H4> "load-base"</H4>
+This integer variable defines the default load address for <I>client program</I>s when using the <B>load</B> method. The default value is implementation dependent.<p>
+<H2><A NAME="HDR36">11.   MP Extensions</A></H2>
+This section specifies the application of Open Firmware to PowerPC multiprocessor (MP) systems. An Open Firmware implementation for an MP PowerPC system shall implement the extensions described in this section as well as the requirements described in previous sections of this binding.<p>
+<H3><A NAME="HDR37">11.1.   The Device Tree</A></H3>
+This section defines an additional property under the &quot;/chosen&quot; Node for a MP extension. Refer to Section <A HREF="ppc-2_1.html#REF37877">5.1.1.</A> for more details about the device tree structure for a MP Configuration.<p>
+<H4><A NAME="HDR38">11.1.1.   Additional Properties</A></H4>
+"/chosen" Node Properties<p>
+<H4>"cpu"</H4>
+prop-name, identifies the running CPU.<p>
+prop-encode-array: An integer, encoded as with <B>encode-int, </B>which contains the i-handle of the CPU node that is associated with the "running" CPU.<p>
+<H3><A NAME="HDR39">11.2.   Initialization</A></H3>
+Open Firmware shall select one processor, using an algorithm of its choice, to be the &quot;master&quot; processor, which performs the role of the single processor on a uniprocessor system, either booting the client or providing the user interface. Open Firmware shall place all the remaining processors into stopped state, a state in which the processor does not perform Open Firmware or client functions and does not interfere with the operation of the master processor. A processor in stopped state remains in that state unless and until an executing client starts it using the start-cpu client service defined below.<p>
+Client programs shall use the Open firmware start-cpu client interface service to start all processors before it reclaims the Open Firmware memory<p>
+On machines in which a machine check on one processor is broadcast to all processors, the processors which are either in the idle or stopped state shall not change their states due to a machine check on another processor: Open Firmware shall not depend on the contents of the low vector (IP=0) in the event of a machine check.<p>
+The following State Diagram depicts the relationship of the <B>Running</B>, <B>Stopped</B> and <B>Idle States</B> to each other. The <I>Client Interface Service</I> Calls are shown as how to move between the states. <p>
+<B>FIGURE  1  State Diagram</B><p>
+<A HREF="ppc-2_1-f1.gif"><img src="ppc-2_1-f1.gif"></A><p>
+Note:  Open Firmware's memory cannot be reclaimed by a client if a CPU is in the &quot;stopped&quot; or &quot;idle&quot; state. <p>
+<H3><A NAME="HDR40">11.3.   Client Interface Services</A></H3>
+The following client interface services are added for MP support on PowerPC systems. These interfaces make the client program responsible for any Inter-CPU communication needed for these interfaces. The rationale for this is to architecturally separate the Inter-CPU communication mechanism of the firmware from the client program and vice versa.<p>
+start-cpu<p>
+
+<DL>
+<DD>IN:  nodeid, pc, arg<BR>
+
+<DD>OUT:    none<BR>
+
+<DD>This client interface service starts the CPU.  The <I>nodeid</I> is the phandle of a node whose device_type is &quot;cpu&quot;. <BR>
+
+<DD>Start-cpu arranges for the CPU identified by phandle in <I>nodeid</I> to begin executing client code at the real address given by the <I>pc </I>input with an argument, <I>arg,</I> passed in register r3. When it begins execution, the started processor shall be in the endian mode of the client program, and in real (not translated) addressing mode. The contents of registers other than r3 are indeterminate. <BR>
+
+<DD> A client should not call start-cpu for the processor on which it is running, effectively restarting with a new pc and abandoning the only client thread. A jump or branch instruction shall be used instead to achieve the objective.<BR>
+
+<DD>start-cpu permits more than one processor to run at the same time, enabling multi-threaded client execution. In general, an Open Firmware client shall avoid multi-threaded operation within Open Firmware. Usually, this means that client threads running on different CPUs must use mutual exclusion to prevent more than one processor from making client service requests at any one time. The exceptions are that a client thread may invoke either the STOP-SELF or IDLE-SELF client services defined below at any time.<BR>
+</DL>
+
+
+Note:  The results are undefined if the CPU identified by *phandle* has already been started (e.g it is already running and has not exited) or *phandle* is not a valid package handle of a CPU device node.<p>
+stop-self<p>
+
+<DL>
+<DD>IN:  none<BR>
+
+<DD>OUT:    none<BR>
+
+<DD>Open Firmware places the processor on which the caller was running into the &quot;stopped&quot; state. The client program is not-resumable.<BR>
+</DL>
+
+
+Note:  When an MP client program exits, one CPU invokes the EXIT client interface service, the others invoke the STOP-SELF service.<p>
+idle-self<p>
+
+<DL>
+<DD>IN:  none<BR>
+
+<DD>OUT:    none<BR>
+
+<DD>Open Firmware places the CPU on which this service was invoked into an 'idle' state, saving the *current state* of the client program, so that the client program may be resumed.<BR>
+
+<DD>A processor in idle state can be resumed using RESUME-CPU service defined below or restarted using START-CPU. If the processor is resumed, it executes a normal return to the client, as if its call to IDLE-SELF had just completed.<BR>
+</DL>
+
+
+Note:  When a client program wants to enter the firmware user interface, one CPU invokes the ENTER client interface service, the others invoke the IDLE-SELF service. The rational is that the user interface may affect the machine state in any way that it desires, therefore the client shall not depend on it.<p>
+resume-cpu<p>
+
+<DL>
+<DD>IN:  nodeid<BR>
+
+<DD>OUT:    none<BR>
+
+<DD>This client interface service is used to resume an *idled* CPU. The <I>nodeid</I> is the phandle of a CPU node in idle state.<BR>
+
+<DD>RESUME-CPU arranges for that CPU to restore the CPU's state as saved by IDLE-SELF and begin return to the client, completing the idle-self client service call that placed the CPU into idle state. The results are undefined if the CPU identified by *phandle* is not in an *idle* state by a previous call to the IDLE-SELF client interface service.<BR>
+</DL>
+
+
+Note:  When the client program is resumed via the GO (or similar) user interface command, the client program is resumed on the CPU which called the ENTER service; the client program is responsible for calling the RESUME-CPU service to resume other idled CPU's, if that is the desired client program behavior.<p>
+<H3><A NAME="HDR41">11.4.   Breakpoints</A></H3>
+If the breakpoint is taken by the firmware, without the client program's assistance, the other CPUs will continue to run in the client program. The client program may field the breakpoint 'trap' or 'vector' and idle the other CPUs before entering the PROM. The platform binding document has to specify how this is done to avoid loss of state at breakpoint time.<p>
+<H3><A NAME="HDR42">11.5.   Serialization</A></H3>
+The firmware is a single threaded program, from the client program's point of view. Only the idle-self, stop-self, enter and exit client interfaces may be invoked simultaneously on different CPUs. Furthermore, only a single CPU may invoke the enter or exit client interface at any one time. The other CPUs must use the idle-self or stop-self client interface service.<p>
+Note:   The results are undefined if the client program invokes client interface services including breakpoint traps (other than the enter/exit stop-self/idle-self case listed above) simultaneously on more than a single CPU.<p>
+Note:  Since locking mechanisms are subject to client program policy, the client program is responsible for implementing any necessary mechanism to insure that it adheres to this policy. Further, the client program should disable any pre-emption mechanism before calling a client interface service to avoid rescheduling a thread of execution in the firmware on a different CPU if such a mechanism exists in the client program.<p>
+<HR><h3>Footnotes</h3><DL COMPACT><DT><A NAME=FN1>(1)</A><DD>The 601 has a single set of BAT entries that are shared by both instruction and data accesses.</DL><A NAME="ENDFILE"><PRE> </PRE></A>
+</HTML>

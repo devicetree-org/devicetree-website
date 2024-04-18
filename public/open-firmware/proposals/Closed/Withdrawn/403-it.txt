@@ -1,0 +1,141 @@
+From: "John O'Quin" <oquin@austin.ibm.com>
+Subject: Item #403: Re: Item #402: Interrupt Mapping 0.9
+Date: Wed, 8 Jan 1997 14:40:05 -0600 (CST)
+
+
+Ron,
+
+You need to initialize the unit-interrupt-specifier before the begin
+for the case where there is no interrupt-parent. The proposal below
+does not seem to support the CHRP platform example where the PCI device
+nodes do not have interrupt-parent properties and the bridge has the
+interrupt-map.
+
+Should the test be to see if the interrupt-map property is present
+instead of the #address-cells property? Open Firmware allows for
+bridges to not include #address-cells if the value is 2. So you could
+have a device node without an interrupt-parent that has a parant that
+has an interrupt-map, no #address-cells, and is not an
+interrupt-controller.  This applies to all three test of
+#address-cells.
+
+Both the present psuedo-code and proposed pseudo-code disallow an
+interrupt-map property in an interrupt-controller node. Was this
+intentional? Section 3.3 does not read that this is not allowed.
+
+In general, should this not allow skipping nodes that have neither
+interrupt-map or interrupt-controller properties?
+
+
+>	To: Mail list p1275-wg
+>	From: <ron@apple.com>
+>
+>P1275 Open Firmware Working Group Proposal -- Proposal #402 Ver 1
+>
+>Title:          map-interrupt procedure change
+>
+>Author:         Ron Hochsprung
+>
+>Date:           1/7/97
+>
+>Ed/Tech:        Technical
+>
+>Synopsis:
+>	Updates the map-interrupt procedure to handle common special case
+>	of direct interrupt-parent.
+>
+>Doc & Version:  Interrupt Mapping recommended practice 0.9
+>
+>Problem:
+>
+>	We have run in to a common case where a device can directly point to
+>	an interrupt controller (via the "interrupt-parent" property), where
+>	the interpretation of its "interrupts" property should be the resulting
+>	unit-interrupt-specifier, without having its unit-address used.
+>
+>Proposal:
+>
+>	Change the map-interrupt procedure to include code at the front that
+>	checks if the device-node contains an "interrupt-parent" property.  If 
+>so,
+>	use the parent's node to determine if the unit-address of the device-node
+>	should be considered part of the unit-interrupt-specifier.
+>
+>The following code shows the updated procedure:
+>
+>***** BEGIN CODE *****
+>procedure map-interrupt( device-node, interrupt-specifier )
+>
+>	this-node = device-node
+>	unit-address = valueof( "reg"[0], this-node )
+>	if present( "interrupt-parent", this-node )
+>		parent-node = valueof( "interrupt-parent", this-node )
+>		if present( "#address-cells", parent-node )
+>			unit-interrupt-specifier = cat( unit-address, interrupt-specifier )
+>		  else
+>			unit-interrupt-specifier = interrupt-specifier
+>		this-node = parent-node
+>
+>	begin				\ loop up tree until we reach the root
+>
+>		if present( "interrupt-controller", this-node )
+>			if present( "interrupt-parent", this-node )
+>				parent-node = valueof( "interrupt-parent", this-node )
+>				if present( "#address-cells", parent-node )
+>					unit-address = valueof( "reg"[0], this-node )
+>				  else
+>					unit-address = NULL
+>				  then
+>				interrupt-specifier = valueof( "interrupts", this-node )
+>				unit-interrupt-specifier = cat( unit-address, interrupt-specifier )
+>				this-node = parent-node
+>			  else		\ this is the root node, we're done
+>				return( unit-interrupt-specifier )
+>			  then
+>
+>		else			\ not "interrupt-controller"
+>		if present( "interrupt-map", this-node )	\ we have a mapping to perform
+>			if present( "interrupt-map-mask", this-node )
+>				mask = valueof( "interrupt-map-mask" )
+>				unit-interrupt-specifier = unit-interrupt-specifier & mask
+>			  then
+>			init-decode-cells( "interrupt-map", this-node )
+>			found? = false
+>			begin
+>				child-specifier = decode-cells( sizeof( unit-interrupt-specifier ) )
+>				parent-node = decode-cells( 1 )
+>				if present( "#address-cells", parent-node )
+>					#cells = valueof( "#address-cells", parent-node )
+>				  else
+>					#cells = 0
+>				  then
+>				#cells = #cells + valueof( "#interrupt-cells", parent-node )
+>				if child-specifier == unit-interrupt-specifier
+>					found? = true
+>				  else
+>					dummy = decode-cells( #cells )
+>				  then
+>				until found?
+>			interrupt-specifier = decode-cells( #cells )
+>			if present( "#address-cells", parent-node)
+>				unit-address = valueof( "reg"[0], this-node )
+>			  else
+>				unit-address = NULL
+>			  then
+>			unit-interrupt-specifier = cat( unit-address, interrupt-specifier )
+>			this-node = parent-node
+>
+>        else            \ no "interrupt-map" table
+>        if present( "interrupt-parent", this-node )
+>            this-node = valueof( "interrupt-parent", this-node )
+>
+>        else            \ by default, use our device-tree parent
+>            this-node = device-tree-parent( this-node )
+>        then
+>        again
+>***** END CODE *****
+>
+>[ P1275 Item #402 -- Received: Tue Jan  7 11:10:51 PST 1997 ]
+
+[ P1275 Item #403 -- Received: Wed Jan  8 12:39:59 PST 1997 ]
+

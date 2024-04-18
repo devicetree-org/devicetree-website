@@ -1,0 +1,1248 @@
+<html>
+<head>
+<title>IEEE 1275 Open Firmware Home Page</title>
+</head>
+<body bgcolor="#ffffff" text="#000000"
+link="#0000ff" vlink="#ff0000" alink="ff0000">
+
+<center>
+<h1><a name = "Welcome">WELCOME TO THE OPEN FIRMWARE HOME PAGE.</a></h1>
+</center>
+
+<center>
+<h2><a href = "whatsnew.html">May 10, 2005</a></h2>
+</center>
+
+<hr>
+<p>
+Open Firmware is processor and system independent boot firmware.
+This is the home page for the Open Firmware Working Group. You can
+read more about Open Firmware, the working group, and several documents
+related to Open Firmware.
+
+<p>
+The information provided here is published by the Open Firmware
+Working Group, and is provided as a free service. The Working Group,
+any individual member, and/or any company sponsoring the membership
+of any individual member are not responsible for any inaccurate or
+incorrect information provided in these documents.
+
+<p>
+The Open Firmware Working Group acknowledges SunSoft's
+Internet Engineering Group for hosting our home page.
+<p>
+The Open Firmware Working Group acknowledges
+Apple Computer Inc and Paul M. Resch for hosting
+our mirror site.
+
+<p>
+The <a href = "http://www.digits.com/">web counter</a>
+for this page says you are visitor number
+<IMG src="http://counter.digits.com/wc/-d/5/-z/ofwg-home"
+ALIGN=middle WIDTH=75 HEIGHT=20 BORDER=0 HSPACE=4 ALT="????">
+since March 15, 1996.
+
+<hr>
+<p>
+<p>
+<center>
+<h2><a name = "Qindex">QUICK SITE INDEX</a></h2>
+</center>
+<p>
+<ul>
+<li><a href = "#Contents">Detailed Table of Contents.</a></li>
+<li><a href = "whatsnew.html">What's New?</a></li>
+<li><a href = "misc/">Working Group Meeting Information</a></li>
+<li><a href = "practice/">Recommended Practices</a></li>
+<li><a href = "proposals/">Working Group Proposals</a></li>
+<li><a href = "#OFDCoreDoc">Core Document and Core Errata</a></li>
+<li><a href = "#OFDisasupps">Instruction Set Architecture Supplements</a></li>
+<li><a href = "#OFDbussupps">Bus Supplements</a></li>
+<li><a href = "#OFDplatform">Platform Bindings</a></li>
+<li><a href = "#OFdevice">Device Bindings</a></li>
+<li><a href = "#OFDother">Other Supplements</a></li>
+</ul>
+
+<hr>
+<hr>
+
+<center>
+<h1><a name = "Contents">TABLE OF CONTENTS.</a></h1>
+</center>
+
+<ul>
+<li><a href = "#Welcome">Welcome.</a></li>
+<li><a href = "#Qindex">Quick Site Index.</a></li>
+<li><a href = "#Contents">Table of Contents.</a></li>
+<li><a href = "#About">About This Page.</a></li>
+<li><a href = "#FileFormats">File Formats and Tools.</a></li>
+<li><a href = "#OpenFirmware">IEEE 1275 Open Firmware.</a></li>
+
+  <ul>
+  <li><a href = "#OFDescription">Open Firmware Description.</a></li>
+  <li><a href = "#OFVendors">Open Firmware Vendors.</a></li>
+  <li><a href = "#OFOtherI">Forth and Open Firmware Info on the Web.</a></li>
+  <li><a href = "#OFWorkingGroup">Open Firmware Working Group.</a></li>
+    <ul>
+    <li><a href = "#OFWGOrganization">Working Group Organization.</a></li>
+    <li><a href = "#OFWGMembership">Membership and Voting Privileges.</a></li>
+    <li><a href = "#OFWGemail">Working Group Email Aliases.</a></li>
+    <li><a href = "#OFWGproposals">Proposals and Clarifications.</a></li>
+    <li><a href = "#OFWGmeetings">Working Group Meetings and Info.</a></li>
+    <li><a href = "#OFWGarchives">Working Group Archives.</a></li>
+    </ul>
+  <li><a href = "#OFdocumentation">Open Firmware Documentation.</a></li>
+    <ul>
+    <li><a href = "#CADocs">Commercially Available Documentation.</a></li>
+    <li><a href = "#OFDieee1275">IEEE Std 1275-1994.</a></li>
+      <ul>
+      <li><a href = "#OFDCoreDoc">Open Firmware Core Specification.</a></li>
+      <li><a href = "#OFDOerrata">Core Errata to IEEE 1275-1994.</a></li>
+      <li><a href = "#OFDOxerrata">Additional Errata to IEEE 1275-1994.</a></li>
+      </ul>
+    <li><a href = "#OFDisasupps">Instruction Set Architecture Supplements to
+         IEEE Std 1275-1994.</a></li>
+      <ul>
+      <li><a href = "#OFDisaSPARC">SPARC.</a></li>
+      <li><a href = "#OFDisaPPC">Power PC.</a></li>
+      <li><a href = "#OFDisaARM">ARM.</a></li>
+      </ul>
+    <li><a href = "#OFDbussupps">Bus Supplements to IEEE Std 1275-1994.</a></li>
+      <ul>
+      <li><a href = "#OFDbusSBus">SBus.</a></li>
+      <li><a href = "#OFDbusPCI">PCI.</a></li>
+      <li><a href = "#OFDbusPCCard">PC Card.</a></li>
+      <li><a href = "#OFDbusVME">VME.</a></li>
+      <li><a href = "#OFDbusFBplus">Futurebus+.</a></li>
+      <li><a href = "#OFDbusISA">ISA/EISA/ISA-PnP.</a></li>
+      <li><a href = "#OFDbusSPI">SCSI-3 Parallel Interface.</a></li>
+      <li><a href = "#OFDbusUSB">Universal Serial Bus.</a></li>
+      </ul>
+    <li><a href = "#OFDplatform">Platform Bindings.</a></li>
+      <ul>
+      <li><a href = "#OFDplatPReP">PReP.</a></li>
+      <li><a href = "#OFDplatCHRP">CHRP.</a></li>
+      <li><a href = "#OFDplatDNA">Digital Network Appliance.</a></li>
+      </ul>
+    <li><a href = "#OFdevice">Device Bindings.</a></li>
+      <ul>
+      <li><a href = "#OFdevAUDIO">ISA Audio.</a></li>
+      <li><a href = "#OFdevFDC">ISA Floppy Controller.</a></li>
+      <li><a href = "#OFdevI8042">ISA Keyboard/Mouse Controller.</a></li>
+      <li><a href = "#OFdevDMA">ISA DMA Controller.</a></li>
+      <li><a href = "#OFdevPIC">ISA Interrupt Controller.</a></li>
+      <li><a href = "#OFdevFB">Linear Frame Buffer Device.</a></li>
+      <li><a href = "#OFdevPAR">ISA Parallel Port Device.</a></li>
+      <li><a href = "#OFdevSER">ISA Serial Port Device.</a></li>
+      <li><a href = "#OFdevVGA">VGA Display Device.</a></li>
+      </ul>
+    <li><a href = "#OFDother">Other Supplements and Documents.</a></li>
+      <ul>
+      <li><a href = "#OFDO64bit">64 Bit Extensions.</a></li>
+      </ul>
+    <li><a href = "#OFDpractice">Recommended Practice Documents.</a></li>
+    </ul>
+  </ul>
+</ul>
+
+<p>
+<a href = "misc/">Open Firmware Working Group Meeting Information</a><br>
+<a href = "practice/">Open Firmware Working Group Recommended Practices</a><br>
+<a href = "proposals/">Open Firmware Working Group Proposals</a><br>
+<a href = "whatsnew.html">What's New?</a>
+<hr>
+
+<center>
+<h1><a name = "About">ABOUT THIS PAGE.</a></h1>
+</center>
+
+This is the Open Firmware Working Group's home page.
+This page describes who we are, and what the working group does,
+and provides a convenient way to examine documents, proposals and
+other information the working group maintains at the group's FTP site.
+
+<p>
+This page,
+<em>The Open Firmware Working Group home page</em>,
+is maintained by
+<a href = "people/dmk.html">David Kahn</a>
+<a href = "mailto:David.Kahn-xxx@Sun.Com"><i>David.Kahn-xxx@Sun.Com</i></a>.
+(Remove '-xxx' to use email address.)
+
+<p>
+This page is not an all-encompassing description of Open Firmware,
+for that, you'll need to read some of the documents that you can
+find out about from this page.
+
+<p>
+<a href = "#Contents">Table of Contents.</a>
+<hr>
+
+<center>
+<h1><a name = "FileFormats">FILE FORMATS AND TOOLS.</a></h1>
+</center>
+
+<p>
+We use several file formats for posting documents here.
+
+<p>
+Plain text files (.txt) are posted using the 'unix' convention
+which contains no carriage return at the end of each line.
+
+<p>
+Some documents are posted in Adobe's Portable Document Format (.pdf).
+PDF readers are available free, for several operating systems
+and platforms from <a href = "http://www.adobe.com">Adobe.</a>
+
+<p>
+Some documents are posted in postscript (.ps).
+Postscript viewers are widely available on the internet
+for several operating systems, and several platforms.  
+<a href = "http://www.cs.wisc.edu/~ghost/">Ghostscript</a>
+is one of the many popular postscript interpreters.
+
+<p>
+<a href = "#Contents">Table of Contents.</a>
+<hr>
+
+<center>
+<h1><a name = "OpenFirmware">IEEE 1275 OPEN FIRMWARE.</a></h1>
+</center>
+
+<hr>
+
+<center>
+<h2><a name = "OFDescription">OPEN FIRMWARE DESCRIPTION.</a></h2>
+</center>
+
+Open Firmware is the only firmware standard in existence to
+have its own song. Download or listen to Mitch Bradley
+singing the <a href = "misc/ofwsong.au">Open Firmware Song (278k)</a>.
+
+<p>
+Open Firmware is the non-proprietary name of firmware complying with
+IEEE Std 1275-1994.
+<cite>OpenBoot</cite> (tm) is
+<a href = "http://www.sun.com">Sun Microsystems</a>
+trademark for the firmware product shipping on over one million
+SparcStations(tm) and SPARCServers(tm) since 1989.
+<a href = "http://www.apple.com">Apple Computer's</a>
+newest line of PCI bus-based Power Macintosh(tm) desktop systems
+are shipping with Open Firmware.
+
+<p>
+Among Open Firmware's many features,
+it provides a machine independent device interface,
+which can be used to boot plug-in cards without providing
+OS-specific and/or machine dependent binary programs on the plug-in
+card. This feature enables plug-in card manufacturers to easily
+support several independent computer architectures without needing
+to supply different firmware for each one.
+
+<p>
+Open Firmware is based on Sun Microsystem's OpenBoot 2.x implementations and
+complies with
+<a href = "ftp://ftp.uu.net/vendor/minerva/uathena.htm"> ANS (ANSI) Forth</a>. 
+(Information on ANS Forth is provided courtesy of Athena Programming, Inc.)
+You can also get additional information about Forth and the Forth Interest
+Group on the World Wide Web at
+<a href = "http://forth.org/fig.html">
+Forth Interest Group Home Page</a>.
+
+<p>
+OpenBoot 3.x, currently shipping on Sun's 64-bit UltraSparc based systems,
+complies with the Open Firmware standard.
+
+<p>
+Open Firmware is now shipping on Apple Computer's 604-based, PCI bus,
+PowerMac systems. Read how Apple Computer describes 
+<a href = "http://www.info.apple.com/productinfo/factsheets/pci.html">
+PCI bus and Open Firmware</a>.
+
+<p>
+<a href = "#Contents">Table of Contents.</a>
+<hr>
+
+<center>
+<h2><a name = "OFVendors">OPEN FIRMWARE VENDORS.</a></h2>
+</center>
+
+<p>
+Please note that the working group does not endorse any particular vendor
+or implementation of Open Firmware.
+Contact <a href = "mailto:David.Kahn-xxx@Sun.Com">
+<i>David.Kahn-xxx@Sun.Com</i></a>
+to be included in this vendor list. (Remove '-xxx' to use email address.)
+
+<ul>
+<li><a href = "http://www.firmworks.com">Firmworks</a>, Mountain View, CA.</li>
+<li><a href = "http://www.cgt.com/SmartFirmware/">CodeGen, Inc.</a>,
+San Francisco, CA</li>
+<li><a href = "http://www.forth.com/Content/Products/Courses.htm">
+Forth, Inc.</a>Los Angeles, CA</li>
+</ul>
+
+<p>
+For support of specific vendors systems,
+(i.e. Sun Microsystems, Apple Computers),
+please contact those vendors through their usual support channels.
+
+<p>
+<a href = "#Contents">Table of Contents.</a>
+<hr>
+
+<center>
+<h2><a name = "OFOtherI">FORTH AND OPEN FIRMWARE INFO ON THE WEB.</a></h2>
+</center>
+
+<p>
+Here's a list of some other information on the web related to
+Open Firmware.  This information is not provided by the Open Firmware
+Working Group.
+Contact <a href = "mailto:owner-p1275-wg-xxx@Sun.Com">
+<i>owner-p1275-wg-xxx@Sun.Com</i></a>
+to be included in this list. (Remove '-xxx' to use email address.)
+
+<ul>
+
+<li>
+<a href = "ftp://ftp.uu.net/vendor/minerva/uathena.htm"> ANS (ANSI) Forth</a>. 
+(Information on ANS Forth is provided courtesy of Athena Programming, Inc.)
+</li>
+
+<li>
+
+<a href = "http://forth.org/fig.html">
+Forth Interest Group Home Page</a>.
+</li>
+
+<li>
+<a href = "/open-firmware/mejohnson/">
+Matthew Johnson's introduction to Open Firmware.</a>
+</li>
+
+<li>
+<a href = "http://www.firmworks.com">
+Firmworks</a> has white papers describing Open Firmware
+and other information including an
+<a href = "http://www.firmworks.com/www/ofw.htm">
+Open Firmware Description.</a>
+</li>
+
+</ul>
+
+<p>
+<a href = "#Contents">Table of Contents.</a>
+<hr>
+
+<center>
+<h2><a name = "OFWorkingGroup">OPEN FIRMWARE WORKING GROUP.</a></h2>
+</center>
+
+The Open Firmware working group has published several documents through the
+<a href="http://www.computer.org"> IEEE Computer Society</A>
+Bus Architecture Standards Committee.
+
+<p>
+The Open Firmware working group publishes bindings,
+clarifications, extensions and recommended practices
+to IEEE Std. 1275-1994. Some of these
+items are published under the authority of the IEEE, and some published
+under authority of the working group.
+Some bindings are published under authority of other industry
+associations.
+
+<p>
+Each recommended practice has a scope and a specification.
+If you are an Open Firmware developer or FCode device driver developer,
+you should periodically check here to review new recommended practices
+and other interesting documents.
+
+<p>
+<a href = "#Contents">Table of Contents.</a>
+<hr>
+
+<h3><a name = "OFWGOrganization">Working Group Organization.</a></h3>
+
+The working group has three officers, and a general membership.
+There are no membership fees, membership is open to all interested
+parties.
+
+<ul>
+
+<li>
+Chair, Mitch Bradley, 
+<a href = "http://www.firmworks.com">Firmworks</a>.
+</li>
+
+<li>
+Vice Chair, David Kahn, 
+<a href = "http://www.sun.com">Sun Microsystems</a>.
+</li>
+
+<li>
+Secretary, John Kingman,
+<a href = "http://www.ibm.com">IBM</a>.
+</li>
+
+</ul>
+
+<p>
+<a href = "#Contents">Table of Contents.</a>
+<hr>
+
+<h3><a name = "OFWGMembership">Membership and Voting Privileges.</a></h3>
+
+Open Firmware Working Group membership is open to all interested parties.
+Voting privileges are extended to those members that attend two meetings,
+or participate, in kind, via email. The working group generally meets
+every 6 weeks or so, alternating meetings between Silicon Valley, California
+and Austin, Texas.
+
+<p>
+The working group maintains a
+<a href = "misc/schedule.txt">list of upcoming meetings</a>
+at our FTP site.
+
+<p>
+<a href = "#Contents">Table of Contents.</a>
+<hr>
+
+<h3><a name = "OFWGemail">Working Group Email Aliases.</a></h3>
+
+The working group maintains an email alias
+<a href = "mailto:p1275-wg-xxx@sun.com">
+<i>p1275-wg-xxx@sun.com</i></a>.
+(Remove '-xxx' to use email address.)
+
+<p>
+To join the mailing list, send email to
+<a href = "mailto:p1275-wg-request-xxx@sun.com">
+<i>p1275-wg-xxx@sun.com</i></a>, 
+with the text "subscribe p1275-wg" in the body of the mail
+message. To unsubscribe, send the text "unsubscribe p1275-wg"
+in the body of the mail message.
+(Remove '-xxx' to use email address.)
+
+<p>
+If all else fails using the previous methods, you can send
+an email message to <i>owner-p1275-wg-xxx@sun.com</i>
+for manual assistance with the mailing list.
+(Remove '-xxx' to use email address.)
+
+<p>
+<a href = "#Contents">Table of Contents.</a>
+<hr>
+
+<h3><a name = "OFWGproposals">Proposals and Clarifications.</a></h3>
+
+Proposals and requests for clarifications should be sent to the
+working group proposal agent (<I>p1275-proposal-xxx@sun.com</I>)
+using the information in the
+<A href = "proposals/template.txt">
+proposal template</A>.
+(Remove '-xxx' to use email address.)
+
+<p>
+<em>Please note that there are special instructions if the proposal
+contains attachments ... please follow the instructions in the
+proposal template.</em>
+
+<p>
+Using the agent is the only way to guarantee the proposal is assigned
+an official entry in the working group agenda.
+
+<p>
+The agent assigns a work item number to each proposal, and automatically
+logs each proposal. Currently, the externally available proposals data base
+at the working group's FTP site is updated on an occasional, as needed basis.
+
+<p>
+To guarantee review of an item sent to the agent, items <i>should</i> be
+sent to the agent at least a week prior to a working group meeting.
+
+<p>
+Clarifications will be sent to the initiator and published at the
+working group's FTP site.
+
+<p>
+You can view the current subject, status and text of each proposal at the
+<a href = "./proposals/">
+Open Firmware Working Group Proposals page</a>.
+
+<p>
+<a href = "#Contents">Table of Contents.</a>
+<hr>
+
+<h3><a name = "OFWGmeetings">Working Group Meetings and Info.</a></h3>
+
+The working group meets every 6 weeks or so, alternating meetings between
+the San Francisco Bay Area and Austin, Texas.
+
+<a href = "./misc/">
+Additional working group information</a>
+includes meeting information, schedule information, hotel information,
+directions to meetings, meeting agendas and meeting minutes.
+
+<p>
+<a href = "#Contents">Table of Contents.</a>
+<hr>
+
+<h3><a name = "OFWGarchives">Working Group Archives.</a></h3>
+
+The Open Firmware Working Group FTP site, is
+<em>playground.sun.com:/pub/1275</em>. This machine is outside
+the Sun firewall, accessible via the internet.
+For information not covered by these pages, you may
+<a href = "ftp://playground.sun.com/pub/1275">
+access the FTP site via anonymous FTP</a>.
+
+<p>
+<a href = "#Contents">Table of Contents.</a>
+<hr>
+
+<center>
+<h2><a name = "OFdocumentation">OPEN FIRMWARE DOCUMENTATION.</a></h2>
+</center>
+
+There's several documents available defining and related to
+Open Firmware. Some of the documents are published by the
+IEEE, some by other industry organizations, and some are
+published here, by the working group. There's also a list of
+<a href = "#CADocs">commercially available documentation</a>
+related to Open Firmware.
+
+<p>
+We'll try to provide a list of documents related to Open Firmware
+in this page.  Additions, corrections and comments about this
+list should be sent to
+<a href = "mailto:owner-p1275-wg-xxx@Sun.Com">
+<i>owner-p1275-wg-xxx@Sun.Com</i></a>.
+(Remove '-xxx' to use email address.)
+Be sure to include the title and section of the page
+you are referring to in your email message.
+
+<p>
+<a href = "#Contents">Table of Contents.</a>
+<hr>
+
+<h3><a name = "CADocs">Commercially Available Documentation.</a></h3>
+<p>
+To have your commercial documentation included in this list,
+contact <a href = "mailto:owner-p1275-wg-xxx@Sun.Com">
+<i>owner-p1275-wg-xxx@Sun.Com</i></a>.
+(Remove '-xxx' to use email address.)
+
+<ul>
+
+<li>Sun Microsystems, Inc.</li>
+<p>
+Sun Microsystems documentation is now available online at
+<a href = "http://docs.sun.com/">docs.sun.com</a>.
+Both OpenBoot 2.x and 3.x documentation is available.
+OpenBoot 3.x is OpenFirmware compliant. The OpenBoot Command
+Reference manuals and reference cards
+are available in the <i>System Administration
+Answerbook, Vol 2</i>.  The Guide to Writing FCode Programs is
+available under <i>drivers</i> in the <i>Driver Developer Site
+Answerbook</i>
+
+<p>
+Some documents may also be available in print form from
+<a href = "http://sunexpress.usec.sun.com/">SunExpress</a>.
+
+<p>
+
+<li><a href = "http://www.firmworks.com">Firmworks</a></li>
+<br>
+<a href = "http://www.firmworks.com">Firmworks</a>,
+Mountain View, CA,
+publishes the following documents:
+  <ul>
+  <li><cite>Writing FCode Programs For PCI</cite>.</li>
+  <li><cite>Open Firmware Command Reference</cite>.</li>
+  <li><cite>Open Firmware Client Interface Developer's Guide</cite>.</li>
+  </ul>
+</ul>
+
+<p>
+<a href = "#Contents">Table of Contents.</a>
+<hr>
+
+<h3><a name = "OFDieee1275">IEEE Std 1275-1994.</a></h3>
+
+<h4><a name = "OFDCoreDoc">Open Firmware Core Specification.</a></h4>
+
+The Core Specification for Open Firmware is the generic (bus
+and instruction set architecture independent) specification for
+Open Firmware. Typically, an implementation complies with the
+core standard, an instruction set architecture binding, at least
+one bus binding, and possibly, a platform binding.
+
+<p>
+The core specification,
+<cite>
+IEEE Std 1275-1994: IEEE Standard for Boot Firmware (Initialization 
+Configuration) Firmware: Core Requirements and Practices
+</cite>
+(ISBN Number: 1-55937-426-8)
+is only available from the
+<a href = "http://stdsbbs.ieee.org">IEEE Standards Organization</a>. 
+For ordering and pricing information, use the searchable
+index at the <a href = "http://stdsbbs.ieee.org/products/">
+IEEE Standards Products Page</a>.
+
+<h4><a name = "OFDOerrata">Core Errata to IEEE 1275-1994.</a></h4>
+
+<p>
+This is the IEEE draft of the errata document to IEEE 1275-1994.
+
+<ul>
+<li>
+<a href = "bindings/errata/12757d4.ps">
+Core Errata, <i>Draft 4</i>, Oct 31, 1995</a>,
+Postscript. (550k)
+</li>
+</ul>
+
+<h4><a name = "OFDOxerrata">Additional Errata to IEEE 1275-1994.</a></h4>
+
+<p>
+This is additional errata not included in IEEE errata document.
+
+<ul>
+<li>
+<a href = "core-errata.html">Additional Errata</a>, an HTML document.
+</li>
+</ul>
+
+<p>
+<a href = "#Contents">Table of Contents.</a>
+<hr>
+
+<h3><a name = "OFDisasupps">
+Instruction Set Architecture Supplements to IEEE Std 1275-1994.</a></h3>
+
+These Instruction Set Architecture (ISA) supplements are available publicly.
+Each ISA supplement, creates additional requirements on all compliant
+Open Firmware implementations on that instruction set architecture.
+An implementation may also comply with or provide a platform binding
+to define specific implementations of the firmware on that platform
+or platform family.
+
+<h4>
+<a name = "OFDisaSPARC">
+SPARC (32-bit) Instruction Set Architecture Supplement:
+<cite>IEEE 1275.1-1994</cite>.</a>
+</h4>
+
+<ul>
+
+<li>
+<a href = "bindings/sparc/d14a/12751d1a.ps">
+<cite>IEEE P1275.1/d14a</cite></a>,
+<i>Draft recirculation ballot version</i>, Postscript. (183k)
+</li>
+
+<li>
+Order the official 10 page document,
+<cite>IEEE Std 1275.1-1994</cite> ($45 US) from the
+<a href = "http://stdsbbs.ieee.org/products/">
+IEEE Standards Catalog</a>.
+</li>
+
+</ul>
+
+<h4>
+<a name = "OFDisaPPC">
+PowerPC Instruction Set Architecture Supplements.</a>
+</h4>
+
+<ul>
+
+<li>
+<a href = "bindings/ppc/drafts/">
+Browse the directory of <i>draft</i> Power PC processor bindings.</a>
+</li>
+
+<li>
+<a href = "bindings/ppc/release/">
+Browse the directory of <i>accepted</i> Power PC processor bindings.</a>
+</li>
+
+<p>
+<li>
+Power PC Processor Binding, Draft Revision 1.10, Mar 12, 1996.
+<br>
+This is the latest <i>draft</i> version.
+
+  <ul>
+  <li><a href = "bindings/ppc/drafts/ppc_v110d.ps">Postscript (214k).</a></li>
+  <li><a href = "bindings/ppc/drafts/ppc-1_10d.html">HTML.</a></li>
+  </ul>
+
+<p>
+<a href = "bindings/ppc/drafts/ppc_v110dx.html">
+Editor's notes</a>
+describing the changes in <i>draft 1.10</i> are available.
+</li>
+
+<p>
+<li>
+Power PC Processor Binding, Revision 2.1, Nov 6, 1996</a>,
+<br>
+This is the latest <i>accepted</i> version.
+
+  <ul>
+  <li><a href = "bindings/ppc/release/ppc-2_1.ps">Postscript (210k).</li>
+  <li><a href = "bindings/ppc/release/ppc-2_1.html">HTML.</li>
+  </ul>
+
+<p>
+<a href = "bindings/ppc/release/ppc-2_1x.html">
+Editor's notes</a>
+describing the changes in <i>revision 2.1</i> are available.
+</li>
+
+</ul>
+
+<h4>
+<a name = "OFDisaARM">
+ARM Processor Instruction Set Architecture Supplements.</a>
+</h4>
+
+<ul>
+
+<li>
+ARM Processor Binding, Draft Revision 0.3, Nov 5, 1997.
+<br>
+This is the latest <i>unapproved draft</i> version.
+
+  <ul>
+  <li><a href = "bindings/arm/arm0_3d.pdf">PDF.</a></li>
+  <li><a href = "bindings/arm/arm0_3d.html">HTML.</a></li>
+  </ul>
+
+</ul>
+
+<p>
+<a href = "#Contents">Table of Contents.</a>
+<hr>
+
+<h3><a name = "OFDbussupps">Bus Supplements to IEEE Std 1275-1994.</a></h3>
+
+These bus supplements are available publicly.
+Each bus supplement creates additional requirements on both host adaptors
+implementing the bus, and devices which plug into the bus.
+
+<h4><a name = "OFDbusSBus">IEEE 1496 (Sbus).</a></h4>
+
+<p>
+IEEE 1496 (SBus) Bus Supplement:
+<cite>IEEE 1275.2-1994</cite>.
+
+	<ul>
+
+	<li>
+	<a href = "bindings/sbus/d14a/12752d1a.ps">
+	<cite>IEEE P1275.2/D14a,</cite></a>,
+	<i>Draft</i>, Postscript. (112k)
+	</li>
+
+	<li>
+	Order the official 10 page document,
+	<cite>IEEE Std 1275.2-1994</cite> ($45 US) from the
+	<a href = "http://stdsbbs.ieee.org/products/">
+	IEEE Standards Catalog</a>.
+	</li>
+
+	</ul>
+
+<h4><a name = "OFDbusPCI">PCI Bus Supplement.</a></h4>
+
+	<ul>
+	<li>
+	<a href = "bindings/pci/pci2_1.pdf">
+	PCI Bus Supplement: 2.1, Aug 29, 1998</a>, Adobe PDF. (100k)
+	</li>
+	<li>
+	<a href = "bindings/pci/pci-express.txt">
+	<i>Draft</i> PCI Express Bus Supplement (Proposal #516)</a>
+	</li>
+	</ul>
+
+<h4><a name = "OFDbusPCCard">PCCard Bus Supplement.</a></h4>
+
+	<ul>
+	<li>
+	<a href = "bindings/pccard/pccd1_2.ps">
+	PCCard Bus Supplement: Draft 1.2, March 8, 1995</a> Postscript. (530k)
+	</li>
+	</ul>
+
+<h4><a name = "OFDbusVME">VME Bus Supplement.</a></h4>
+
+	<ul>
+	<li>
+	<a href = "bindings/vme/d9/12753d9.ps">
+	VME Bus, IEEE P1275.3/D9 <i>Draft 9</i>,
+	November 3, 1995</a>, Postscript. (177k)
+
+	<p>
+	This is the final draft from the editor on this supplement.
+	<a href = "bindings/vme/d9/replies.txt">Ballot comments</a>
+	and proposed responses are available.
+
+	<p>
+	p1275.3 has been withdrawn as an IEEE proposal.
+	This document is under consideration as a working group
+	recommended practice.
+	</li>
+	</ul>
+
+<h4><a name = "OFDbusFBplus">IEEE 896 (FutureBus+) Bus Supplement.</a></h4>
+
+	<ul>
+	<li>
+	<a href = "bindings/fbplus/12754d14.ps">
+	IEEE 896 (Futurebus+),
+	<cite>IEEE P1275.4/D14, draft 14</cite>, 
+	August 18, 1994</a>, Postscript. (192k)
+	</li>
+	</ul>
+
+<h4><a name = "OFDbusISA">ISA/EISA/ISA-PnP Bus Supplement.</a></h4>
+
+	<ul>
+	<li>
+	<a href = "bindings/isa/isa0_4d.ps">
+	ISA/EISA/ISA-PnP binding <i>Draft 0.4</i>, Sep 23, 1996</a>,
+	<a name = "OFDBisa">Postscript. (190k)</a>
+	<br>
+	This is the latest draft document.
+	<br>
+	Editor's notes describing the changes in <i>draft 0.4</i>
+	are available in
+	<a href = "bindings/isa/isa0_4x.txt">text</a> and
+	<a href = "bindings/isa/isa0_4x.html">html</a>.
+	<p>
+	</li>
+
+	<li>
+	<a href = "bindings/isa/">
+	Browse the directory of <i>draft</i> ISA/EISA/ISA-PnP bus bindings.</a>
+	</li>
+	
+	</ul>
+
+<p>
+<h4><a name = "OFDbusSPI">SCSI-3 Parallel Bus<a></h4>
+
+	<ul>
+	<li>
+	<a href = "practice/#spi">
+	Open Firmware Recommended Practice:
+	SCSI-3 Parallel Interface
+	</a>
+	<p>
+	This recommended practice document
+	describes the application of Open Firmware to
+	the SCSI-3 Parallel Bus.
+	<p>
+	</li>
+	</ul>
+
+<p>
+<h4><a name = "OFDbusUSB">Universal Serial Bus<a></h4>
+
+	<ul>
+	<li>
+	<a href = "bindings/usb/usb-1_0.ps">
+	Open Firmware Recommended Practice:
+	Universal Serial Bus Binding to IEEE 1275-1994,
+	Version 1, June 1, 1998
+	</a>
+	<p>
+	This recommended practice
+	describes the application of Open Firmware to Universal Serial Bus.
+	<p>
+	</li>
+	</ul>
+
+<p>
+<a href = "#Contents">Table of Contents.</a>
+<hr>
+
+<h3><a name = "OFDplatform">Platform Bindings.</a></h3>
+
+These platform bindings are available publicly.
+Platform bindings specify the application of Open Firmware on
+a particular platform or group of platforms.
+
+<h4><a name = "OFDplatPReP">Power PC Reference Platform (PReP).</a></h4>
+
+<ul>
+
+<li>
+<a href = "bindings/prep/prepd0_3.ps">
+PowerPC Reference Platform (PReP) Binding
+(Draft version 0.03, Aug 5, 1996)</a>,
+Postscript. (90k)
+</li>
+
+</ul>
+
+<h4><a name = "OFDplatCHRP">PowerPC Microprocessor 
+Common Hardware Reference Platform (CHRP).</a></h4>
+
+<h5>Current <i>Accepted</i> Version</h5>
+
+<ul>
+
+<li>
+<a href = "bindings/chrp/chrp1_8a.ps">
+PowerPC Microprocessor Common Hardware Reference Platform (CHRP) Binding
+(Accepted version 1.8, Feb. 2, 1998)</a>,
+Postscript. (540k)
+<br>
+<p>
+Editor's notes describing the changes in <i>version 1.8</i> are available in
+<a href = "bindings/chrp/chrp1_8x.ps">postscript.</a>
+</li>
+
+</ul>
+
+<h5>Previously <i>Accepted</i> Version</h5>
+
+<ul>
+
+<li>
+<a href = "bindings/chrp/chrp1_7a.ps">
+PowerPC Microprocessor Common Hardware Reference Platform (CHRP) Binding
+(Accepted version 1.7, Sep. 23, 1996)</a>,
+Postscript. (440k)
+<br>
+<p>
+Editor's notes describing the changes in <i>version 1.7</i> are available in
+<a href = "bindings/chrp/chrp1_7x.txt">text</a> and
+<a href = "bindings/chrp/chrp1_7x.html">html</a>.
+</li>
+
+</ul>
+
+<h5>Latest <i>Draft</i> Version</h5>
+
+<ul>
+
+<li>
+<a href = "bindings/chrp/chrp1_6d.ps">
+PowerPC Microprocessor Common Hardware Reference Platform (CHRP) Binding
+(Draft version 1.6, Aug 7, 1996)</a>,
+Postscript. (440k)
+<br>
+<p>
+Editor's notes describing the changes in <i>draft 1.6</i> are available in
+<a href = "bindings/chrp/chrp1_6x.txt">text</a> and
+<a href = "bindings/chrp/chrp1_6x.html">html</a>.
+</li>
+
+</ul>
+
+<h4><a name = "OFDplatDNA">Digital Network Appliance
+</a></h4>
+
+<h5>Latest <i>Draft</i> Version</h5>
+
+<ul>
+
+<li>
+Digital Network Appliance Binding to IEEE 1275-1994
+(Draft version 0.2, Jan 26, 1997)
+
+  <ul>
+  <li><a href = "bindings/dna/dna0_2d.pdf">PDF</a></li>
+  <li><a href = "bindings/dna/dna0_2d.html">HTML</a></li>
+  </ul>
+
+</li>
+
+</ul>
+
+<p>
+<a href = "#Contents">Table of Contents.</a>
+<hr>
+
+<h3><a name = "OFdevice">Device Bindings.</a></h3>
+
+These supplements specify the application of Open Firmware
+to certain common devices.
+
+<h4><a name = "OFdevAUDIO">ISA Audio Device Binding.</a></h4>
+
+<p>
+This document describes the application of Open Firmware to the
+PowerPC Common Hardware Reference Platform (CHRP)
+ISA base audio controllers.
+This document is an unapproved draft document.
+
+<ul>
+<li>
+
+CHRP ISA Audio Device Binding,
+<i>Unapproved Draft version 1.0,</i>
+May 6, 1996.
+
+  <ul>
+  <li><a href = "bindings/devices/postscript/audio.ps">Postscript (70k)</a></li>
+  <li><a href = "bindings/devices/html/audio.html">HTML (9k)</a></li>
+  </ul>
+
+</li>
+</ul>
+
+<h4><a name = "OFdevFDC">ISA Floppy Controller Device Binding.</a></h4>
+
+<p>
+This document describes the application of Open Firmware to the
+PowerPC Common Hardware Reference Platform (CHRP)
+ISA floppy disk controllers.
+This document is an unapproved draft document.
+
+<ul>
+<li>
+
+CHRP ISA Floppy Controller Device Binding,
+<i>Unapproved Draft version 1.0,</i>
+May 6, 1996.
+
+  <ul>
+  <li><a href = "bindings/devices/postscript/fdc.ps">Postscript (80k)</a></li>
+  <li><a href = "bindings/devices/html/fdc.html">HTML (12k)</a></li>
+  </ul>
+
+</li>
+</ul>
+
+<h4><a name = "OFdevI8042">
+ISA Keyboard/Mouse Controller Device Binding.</a></h4>
+
+<p>
+This document describes the application of Open Firmware to the
+PowerPC Common Hardware Reference Platform (CHRP)
+ISA keyboard/mouse controllers.
+This document is an unapproved draft document.
+
+<ul>
+<li>
+
+CHRP ISA Keyboard/Mouse Controller Device Binding,
+<i>Unapproved Draft version 1.0,</i>
+May 6, 1996.
+
+  <ul>
+  <li><a href = "bindings/devices/postscript/8042.ps">Postscript (85k)</a></li>
+  <li><a href = "bindings/devices/html/8042.html">HTML (15k)</a></li>
+  </ul>
+
+</li>
+</ul>
+
+<h4><a name = "OFdevDMA">ISA DMA Controller Device Binding.</a></h4>
+
+<p>
+This document describes the application of Open Firmware to the
+PowerPC Common Hardware Reference Platform (CHRP)
+ISA DMA controllers.
+This document is an unapproved draft document.
+
+<ul>
+<li>
+
+CHRP ISA DMA Controller Device Binding,
+<i>Unapproved Draft version 1.0,</i>
+May 21, 1996.
+
+  <ul>
+  <li>
+  <a href = "bindings/devices/postscript/isa-dma.ps">Postscript (70k)</a>
+  </li>
+  <li>
+  <a href = "bindings/devices/html/isa-dma.html">HTML (10k)</a>
+  </li>
+  </ul>
+
+</li>
+</ul>
+
+<h4><a name = "OFdevPIC">ISA Interrupt Controller Device Binding.</a></h4>
+
+<p>
+This document describes the application of Open Firmware to the
+PowerPC Common Hardware Reference Platform (CHRP)
+ISA interrupt controllers.
+This document is an unapproved draft document.
+
+<ul>
+<li>
+
+CHRP ISA Interrupt Controller Device Binding,
+<i>Unapproved Draft version 1.1,</i>
+Aug 19, 1996.
+
+  <ul>
+  <li>
+  <a href = "bindings/devices/postscript/isa-pic-1_1d.ps">Postscript (70k)</a>
+  </li>
+  <li>
+  <a href = "bindings/devices/html/isa-pic-1_1d.html">HTML (9k)</a>
+  </li>
+  </ul>
+
+</li>
+</ul>
+
+<h4><a name = "OFdevFB">Linear Frame Buffer Device Binding.</a></h4>
+
+<p>
+This document describes the application of Open Firmware to the
+PowerPC Common Hardware Reference Platform (CHRP)
+Linear 8-bit Frame Buffer Devices.
+This document is an unapproved draft document.
+
+<ul>
+<li>
+
+CHRP Linear 8-bit Frame Buffer Device Binding,
+<i>Unapproved Draft version 1.0,</i>
+May 6, 1996.
+
+  <ul>
+  <li><a href = "bindings/devices/postscript/lfb.ps">Postscript (70k)</a></li>
+  <li><a href = "bindings/devices/html/lfb.html">HTML (10k)</a></li>
+  </ul>
+
+</li>
+</ul>
+
+<h4><a name = "OFdevPAR">ISA Parallel Port Device Binding.</a></h4>
+
+<p>
+This document describes the application of Open Firmware to the
+PowerPC Common Hardware Reference Platform (CHRP)
+ISA Parallel Port Devices.
+This document is an unapproved draft document.
+
+<ul>
+<li>
+
+CHRP ISA Parallel Port Device Binding,
+<i>Unapproved Draft version 1.0,</i>
+May 21, 1996.
+
+  <ul>
+  <li>
+  <a href = "bindings/devices/postscript/parallel.ps">Postscript (70k)</a>
+  </li>
+  <li>
+  <a href = "bindings/devices/html/parallel.html">HTML (10k)</a>
+  </li>
+  </ul>
+
+</li>
+</ul>
+
+<h4><a name = "OFdevSER">ISA Serial Port Device Binding.</a></h4>
+
+<p>
+This document describes the application of Open Firmware to the
+PowerPC Common Hardware Reference Platform (CHRP)
+ISA Serial Port Devices.
+This document is an unapproved draft document.
+
+<ul>
+<li>
+
+CHRP ISA Serial Port Device Binding,
+<i>Unapproved Draft version 1.0,</i>
+May 6, 1996.
+
+  <ul>
+  <li>
+  <a href = "bindings/devices/postscript/serial.ps">Postscript (80k)</a>
+  </li>
+  <li>
+  <a href = "bindings/devices/html/serial.html">HTML (9k)</a>
+  </li>
+  </ul>
+
+</li>
+</ul>
+
+<h4><a name = "OFdevVGA">VGA Device Binding.</a></h4>
+
+<p>
+This document describes the application of Open Firmware to the
+PowerPC Common Hardware Reference Platform (CHRP)
+VGA Devices.
+This document is an unapproved draft document.
+
+<ul>
+<li>
+
+CHRP VGA Device Binding,
+<i>Unapproved Draft version 1.0,</i>
+May 6, 1996.
+
+  <ul>
+  <li><a href = "bindings/devices/postscript/vga.ps">Postscript (75k)</a></li>
+  <li><a href = "bindings/devices/html/vga.html">HTML (12k)</a></li>
+  </ul>
+
+</li>
+</ul>
+
+<p>
+<a href = "#Contents">Table of Contents.</a>
+<hr>
+
+<h3><a name = "OFDother">Other Supplements and Documents.</a></h3>
+
+These supplements are available publicly.
+
+<h4><a name = "OFDO64bit">64 Bit Extensions Supplement.</a></h4>
+
+<p>
+This IEEE draft of a proposed standard describes 64 bit
+extensions to the core standard.
+
+<ul>
+<li>
+<a href = "bindings/64bitx/12756d5.ps">
+64 bit extensions, IEEE P1275.6/D5, <i>Draft 5</i>, Mar 20, 1995</a>,
+Postscript. (100k)
+<br>
+</li>
+</ul>
+
+<p>
+<a href = "#Contents">Table of Contents.</a>
+<hr>
+
+<h3><a name = "OFDpractice">Recommended Practice Documents.</a></h3>
+
+The Open Firmware Working Group authorizes the publication of
+recommended practices which may extend and modify previously published
+documents.
+
+<p>
+There's a list of current practices and a template for creating
+recomended practice documents in the
+<a href = "practice/">
+Open Firmware Working Group Recommended Practice page</a>.
+
+<p>
+<a href = "#Contents">Table of Contents.</a>
+<hr>
+
+</body>
+</html>

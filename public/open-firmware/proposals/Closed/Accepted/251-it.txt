@@ -1,0 +1,212 @@
+Date: Mon, 13 Mar 95 21:39:01 PST
+From: dmk (David Kahn)
+Subject: Item #251: Generic names (PCI bindings; Recomended Practice)
+
+P1275 Open Firmware Working Group Proposal -- Proposal #251 Ver 1
+
+Title:		Generic names
+
+Author:		Mitch Bradley
+
+Date:		March 7, 1995
+
+Ed/Tech:	Technical
+
+Synopsis:	Make the "name" property values more generic.
+
+Doc & Version:	PCI bindings, and, create a recomended practice
+
+Problem:	PCI and other bus device pathnames are cryptic and
+		difficult to use.
+
+NOTE: Submitted by David Kahn for Mitch Bradley.  This is the text of
+the proposal number "Mitch-A" which was approved at the last working
+group meeting. This submission is to run the text and proposal through
+the proposal system to give the proposal an official number and an entry
+in the official logs and archives. (not to mention letting those that
+didn't attend the meeting view the text of the proposal.)
+
+Proposal:	
+
+  Generic Names
+
+  Motivation:
+
+  The rules for device naming described in IEEE 1275-1994 attempt to
+  simultaneously accomplish two objectives:
+  a) To provide a human-readable identifier for use in device paths.
+  b) To provide a unique identification of the device's detailed programming
+  model to allow operating systems to determine which driver to use.
+
+  These objectives conflict with one another.  For human use within a device
+  path, a brief name that suggests the device's function is preferable.  For
+  use in determining an appropriate operating system device driver, an
+  explicit, unique name that includes the manufacturer name and the detailed
+  programming model information is preferable.  Attempting to accomplish both
+  objectives with a single name often results in a name that is unsatisfactory
+  for either purpose.
+  
+  Historically, implementations have often adopted a mixed approach, using
+  brief names for built-in devices and verbose names for plug-in devices.
+  This approach has the problem that the name of a particular device may be
+  different depending on whether the device is built-in or plug-in.  Also,
+  because of the tension between the conflicting objectives, different
+  manufacturers chose different tradeoffs, some sacrificing uniqueness in favor
+  of human readability and others making the opposite choice.
+  
+  There is no inherent reason why a single property ("name") must be used for
+  both purposes.  The "compatible" property already participates in the OS
+  driver selection process, and if the first component of that property's value
+  is an explicit, unique name, precise driver matching will result, even if
+  the "name" property's value is a brief "generic" name (e.g. "disk").
+  
+  Furthermore, the use of "generic" names does not defeat the purpose of
+  unambiguously choosing a a particular device within the device tree through
+  the use of a device path.  The fundamental means for ensuring unambiguous
+  node names is the unit-address component (the portion after the "@"
+  character, which matches the first entry of the "reg" property's value).
+  The driver-name component (which matches the "name" property's value) is
+  inherently unreliable for the purpose of precisely choosing a particular
+  device, due to the possibility of multiple identical devices at a given
+  level of the device tree.  Since, in the most general case, the unit-address
+  component must be used to distinguish two devices of the same type, the
+  increased probability of "name space collisions" that would result from
+  the use of "generic" names does not cause loss of functionality.  Indeed,
+  it is not unreasonable to think that some users might prefer to distinguish
+  two display devices by the device paths:
+      /pci/display@2   and   /pci/display@4
+  as compared to:
+      /pci/IBM,v915    and   /pci/number9-723
+  
+  As already noted, OS driver selection software almost certainly prefers to
+  have the explicit information contained in, for example, "IBM,v915", but
+  the software can get that information from the "compatible" property as
+  easily as from the "name" property.
+  
+  Because of the difficulties that result from using "name" for two conflicting
+  purposes, and since that dual use is unnecessary, the working group
+  recommends the following guidelines for future devices:
+  (1) "name" property values should be "generic", reflecting the device's
+  function, but not necessarily its precise programming model. If appropriate,
+  the value should be one of the following:
+     disk tape pci vme sbus scsi token-ring isa keyboard display mouse
+     audio ethernet timer memory parallel serial rtc nvram scanner 
+     floppy(controller) fddi isdn atm ide pccard video-in video-out
+  The working group may define additional "generic" names in future
+  recommended practice documents or binding documents.  For devices that do
+  not fit in any existing generic category, the developer may request that
+  the working group establish a new generic name, or may use an explicit name
+  prefaced with a manufacturer name.
+  
+  This recommendation supersedes the stipulation in IEEE 1275-1994 that
+  "name" property values for plug-in devices must be prefaced with a
+  manufacturer name.  The intended purpose of that requirement (which is to
+  allowing precise OS driver selection) is fulfilled by guideline (2), below.
+  
+  (2) If the device uses the "generic" form of the name property,
+  the "compatible" property shall exist.  Its first component shall
+  be an explicit, unique name that identifies the device precisely enough
+  to be able to infer the detailed programming model from that name.  The
+  format of that explicit name is "manufacturer,model", as specified by
+  IEEE 1275-1994 for the "name" properties of plug-in devices (see P1275/D12
+  page 176 lines 16-27).  Additional properties may be present; if so,
+  they the order should place more-specific names before least-specific
+  names.
+  
+  Affect on OS Driver Selection Code:
+  
+  An operating system that implements the driver searching technique that
+  IEEE 1275-1994 recommends for the "compatible" property (see P1275/D12
+  page 141 lines 10-14) is likely to require no changes as a result of this
+  recommended practice.  If a "name" property has a generic value, the
+  search for a driver matching that generic name is likely to fail, but the
+  next step of the search (using the "compatible" property) will succeed,
+  finding the same driver that would have been found had the explicit name
+  been in the "name" property.
+  
+  It is possible that the operating system wll find a driver matching
+  the generic name, and that said driver will not be the correct one.
+  However, this is not a new problem, because generic names have already
+  been used in the past for built-in devices.  Consequently, an
+  operating system that does not already have a mechanism for resolving
+  or avoiding have a mechanism for resolving or avoiding such
+  "false matches" is likely  to have problems eventually, with or
+  without the proliferation of generic names.
+  
+  The following suggests some possible techniques for dealing with such
+  "false generic matches".
+  
+  a) In collections of OS drivers, avoid the use of generic names for the
+     drivers themselves.  For example, it is generally unwise to name a
+     driver "ethernet", since there are many different ethernet adapters
+     with different programming models.  Using the generic name "ethernet"
+     to identify only one such driver is presumptious.
+  
+  b) Separate the OS's name spaces for drivers for "real" hardware devices
+     and "pseudo-drivers" (collections of support routines that are used by 
+     "real" drivers). Some operating systems load such pseudo-drivers using
+     a mechanism similar to the mechanism used for "real" drivers. Pseudo-
+     drivers often perform "generic" functions that apply equally well to,
+     for example, all ethernet adapters, independent of their low-level
+     programming models.  Consequently, it is reasonable to use generic
+     names (e.g. "ethernet") for such pseudo-drivers.  Separating the name
+     spaces of "real" drivers and pseudo-drivers avoids false matches from
+     generic device names to generic psuedo-driver names.
+  
+  c) Make the OS' driver search mechanism depend upon the device's
+     parent.  In other words, separate the OS's driver name spaces
+     so that drivers for devices that attach to, for example, PCI
+     bus can be distinguished from those that attach to, for example,
+     ISA bus.  This reduces the range over which "false attaches"
+     can occur.
+  
+  d) For cases where false matches are unavoidable (for example, if
+     there is an existing driver with a generic name that must be
+     retained for backwards compatability) allow the drivers that
+     can be incorrectly matched the possibilty of rejecting the
+     match.  One technique for doing so is to for the driver
+     to inspect the compatible property to ensure that it is
+     appropriate.  Another common technique is to have the generic
+     driver "probe" the hardware to see if it behaves as expected
+     (although this technique can cause problems).
+  
+  Existing Devices
+  
+          Existing devices with explicit names need not change.  The
+          recommended search techniques continue to work correctly with
+          such devices.
+  
+  PCI Name Properties:
+  
+          Instead of creating their childrens devices name properties
+          from the vendor and device IDs, PCI bus device nodes should
+          create them from the class code, according to the following
+          table:
+  
+                  <TBS>
+  
+          The "vendor-id" and "device-id" properties should continue to
+          reflect the same explicit information as before.
+  
+          For PCI devices without FCode drviers, the PCI bus node should
+          automatically create a "compatible" property with a single entry
+          whose value reflects the vendor and device IDs, as previously
+          specified for the name property.
+  
+          For devices with FCode drivers, that FCode device driver shall
+          create a "compatible" property whose first entry uniquely
+          identifies the function's programming model, as previously
+          defined for FCode-generated "name" properties.  That "compatible"
+          property may have additional entries as appropriate.
+  
+                  Note: It is better to identify the function as a whole,
+                  instead of identifying only the "chip" that is directly
+                  connected to the PCI bus (e.g.: use "IBM,v915" instead
+                  of "S3,928", because there may be numerous other display
+                  adapters that use the same graphics chip, but which are
+                  not entirely compatible due to the presence of different
+                  support chips like DACs and programmable clock generators.
+
+
+[ P1275 Item #251 -- Received: Mon Mar 13 21:39:03 PST 1995 ]
+

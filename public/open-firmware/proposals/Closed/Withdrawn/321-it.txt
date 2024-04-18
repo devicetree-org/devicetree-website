@@ -1,0 +1,41 @@
+Date: Thu, 29 Feb 1996 12:04:02 +0000
+From: Ron Hochsprung <ron@apple.com>
+Subject: Item #321: new recommended practice:  Interrupt Mapping
+
+[ ADMINISTRATIVE NOTE: Binary attachment has been deleted. ]
+
+P1275 Openboot Working Group Proposal -- Proposal #:321 Ver 1
+
+Title:          Interrupt Mapping Recommended Practice
+
+Author:         Ron Hochsprung
+
+Date:           2/29/96
+
+Ed/Tech:        Technical
+
+Synopsis:       new Recommended Practice for Interrupt Mapping
+
+Doc & Version:  Interrupt Mapping 0.5
+
+Problem:        The bus bindings all have their own definition of the 
+"interrupts" property and platforms can implement aribitrary routing of
+interupt lines such that client programs can not determine where an
+interrupt is actually presented.
+
+Proposal:       
+
+This proposal was discussed at previous meetings.  This is the actual
+proposal to back up those discussions.  Since I already have the proposal
+formatted in Frame, I am attaching a uuencoded version of the Acrobat(tm)
+PDF file.  I will have hard copies available at the meeting.
+
+
+Ron
+
+
+[ Binary attachment (improperly encoded) has been deleted from this file ]
+
+
+[ P1275 Item #321 -- Received: Thu Feb 29 12:02:03 PST 1996 ]
+

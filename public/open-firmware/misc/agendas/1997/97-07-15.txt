@@ -1,0 +1,87 @@
+Subject: Item #413: Agenda: July 15/16, 1997 Meeting @ Firmworks
+Date: Tue, 08 Jul 97 15:42:40 -0500
+From: "Richard L. Arndt" <rlarndt@austin.ibm.com>
+
+
+P1275 Openboot Working Group Proposal -- Proposal #:413 Ver <1>
+
+Title:          <Agenda>
+
+Author:         <Richard L. Arndt>
+
+Date:           <8 July 97>
+
+Ed/Tech:        <Administrative>
+
+Synopsis:       <Agenda for July 15/16, 1997 OFWG meeting>
+
+
+Agenda for July 15, 1997 Meeting at Firmworks Mountain View, Ca.  
+
+1. Appoint New Secretary to replace Bob Coffin.
+
+2. Review Agenda (Item #413)
+
+3. Approve Minutes of Salt Lake City Meeting (Item # 406)
+
+4. Future Meetings:
+
+5. Status of Action Items:
+
+   |----|------------|------------------------------------------------------|
+   | No.|Who         |Description                                           |
+   |----|------------|------------------------------------------------------|
+   |  2 |Editors of  |Update document template and contents per discussion. |
+   |    |Recommended |                                                      |
+   |    |Practice    |                                                      |
+   |    |documents   |                                                      |
+   |----|------------|------------------------------------------------------|
+   |  4 |Greg H.     |Standard properties document.                         |
+   |    |John H.     |                                                      |
+   |----|------------|------------------------------------------------------|
+   | 11 |Jordan B.   |Reorganize discussion of probing in ISA binding       |
+   |----|------------|------------------------------------------------------|
+   | 12 |Jordan B.   |Suggest wording for IRQ 2 vs 9 ISA binding            |
+   |----|------------|------------------------------------------------------|
+   | 27 |Jordan B.   |Propose replacement for #323b (withdrawn)             |
+   |--- |------------|------------------------------------------------------|
+   | 28 |Ron H.      |Make a proposal for PCI 'hot plug'.                   |
+   |----|------------|------------------------------------------------------|
+   | 30 |Jordan B.   |Make a proposal for a registry for lists of supported |
+   |    |            |things (e.g.. kybds, network types, etc.)             |
+   |----|------------|------------------------------------------------------|
+   | 31 |Mitch B.    |Make a proposal to correct SPI binding sense key      |
+   |    |            |(media not being present)                             |
+   |----|------------|------------------------------------------------------|
+
+ Subcommittee Action Items:
+   |----|------------|------------------------------------------------------|
+   | S2 |Ron H.      | Update and create v1.1 Forth and FCode Rec Practice  |
+   |----|------------|------------------------------------------------------|
+   | S4 |Bob C.      | Make "shared-bus-master" proposal                    |
+   |----|------------|------------------------------------------------------|
+   | S5 |Ron H.      | Make "chording" proposal                             |
+   |----|------------|------------------------------------------------------|
+   | S8 |Mitch B.    | Propose that debug facilities not be supported       |
+   |    |            | in real-mode.                                        |
+   |----|------------|------------------------------------------------------|
+   | S14|Jordan B.   | Create a picture to explain sound device terminology.|
+   |----|------------|------------------------------------------------------|
+   | S16|Bob C.      | Migrate PReP source to playground                    |
+   |    |Jordan B.   |                                                      |
+   |-----------------|------------------------------------------------------|
+
+
+6. New Proposals:
+      Item #404: SCSI Annex retry improvements
+      Item #407: VME Bus: VME Bus binding d9 
+      VME Bus Binding version d9 and annotated ballot comments. 
+      Item #408: Proposed Bus Binding for IEEE 1394/firewire 
+      Item #409: Set-Resolution method for graphics drivers        
+      Item #410: Proposal for "dma-ranges" Standard Property
+
+
+
+
+[ P1275 Item #413 -- Received: Tue Jul  8 13:44:46 PDT 1997 ]
+

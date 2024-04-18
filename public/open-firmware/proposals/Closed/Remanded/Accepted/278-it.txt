@@ -1,0 +1,57 @@
+Subject: Item #278: PowerPC processor binding, 603 style properties
+Date: Wed, 12 Jul 95 14:33:01 -0600
+From: "John A. Kingman" <kingman@tardis.austin.ibm.com>
+
+P1275 Open Firmware Working Group Proposal -- Proposal #278 Ver <Auth-Vers#>
+
+Title:          new PowerPC processor binding properties -- 
+                "603-translation", and "603-power-management"
+
+Author:         John A. Kingman
+
+Date:           July 12, 1995
+
+Ed/Tech:        Technical
+
+Synopsis:       add new properties ("603-translation", and 
+                "603-power-management") to CPU nodes
+
+Doc & Version:  PowerPC processor Binding 1.02 
+
+Problem:        Current binding does not identify processors with 603 style 
+                capabilities and operating systems should not have to rely
+                on specific model numbers to determine this.
+
+Proposal:       
+
+Add the following words to the section: "CPU node properties"
+
+"603-translation"
+    This property, if present, indicates that the PowerPC microprocessor 
+    (defined by this CPU node) uses the PowerPC 603 defined mechanism 
+    to update its Translation Lookaside Buffers (TLBs).  The absence of this 
+    property indicates that the PowerPC microprocessor (defined by this CPU 
+    node) does not use the PowerPC 603 defined mechanism to update its TLBs.
+
+"603-power-management"
+    This property, if present, indicates that the PowerPC microprocessor 
+    (defined by this CPU node) implements the PowerPC 603 defined power 
+    management states.  The absence of this property indicates that the 
+    PowerPC microprocessor (defined by this CPU node) does not support the 
+    PowerPC 603 defined power management states.
+
+Rationale:
+
+The 603 family uses a software translation mechanism to update its TLBs, 
+whereas the other members of the PowerPC family implement this function in 
+hardware.  The 603 family also implements a set of power management states 
+which are not described in the PowerPC Architecture, and which are different
+than the support provided by the other members of the PowerPC family.
+These properties will allow an operating system to support future PowerPC 603 
+family microprocessors without having to know the microprocessor's specific 
+model number in advance.
+
+John Kingman (kingman@austin.ibm.com)
+
+[ P1275 Item #278 -- Received: Wed Jul 12 12:36:05 PDT 1995 ]
+

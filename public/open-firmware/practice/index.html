@@ -1,0 +1,470 @@
+<html>
+<head>
+<title>Open Firmware Working Group Recommended Practices</title>
+</head>
+<body bgcolor="#ffffff" text="#000000"
+link="#0000ff" vlink="#ff0000" alink="ff0000">
+
+<center>
+<h1><a name = "Contents">CONTENTS.</a></h1>
+</center>
+
+<ul>
+
+<li>
+<a href = "#About">About This Page.</a>
+</li>
+
+<li>
+<a href = "#Documents">Recommended Practice Documents.</a>
+  <ul>
+  <li><a href = "#16color">16 Color Text Extension</a></li>
+  <li><a href = "#graphics">8 Bit Graphics Extension</a></li>
+  <li><a href = "#interpos">Interposition</a></li>
+  <li><a href = "#gnames">Generic Names</a></li>
+  <li><a href = "#devicex">Device Support Extensions</a></li>
+  <li><a href = "#obp-tftp">OBP-TFTP and Network Package Extensions</a></li>
+  <li><a href = "#imap">Interrupt Mapping</a></li>
+  <li><a href = "#spi">SCSI-3 Parallel Bus</a></li>
+  </ul>
+</li>
+
+<li>
+<a href = "#Proposals">Proposals Creating Recommended Practices.</a>
+  <ul>
+  <li><a href = "#client-services">Extensible Client Services</a></li>
+  <li><a href = "#standard-font">Extended Standard Font Definition</a></li>
+  <li><a href = "#size-blocks">Standard Methods: size and #blocks</a></li>
+  <li><a href = "#version">Standard Property: version</a></li>
+  <li><a href = "#test-method">Client Interface: test-method</a></li>
+  <li><a href = "#differential">SCSI Pkg Properties:
+		wide and differential</a></li>
+  <li><a href = "#dma-ranges">Standard Property: dma-ranges</a></li>
+  </ul>
+</li>
+
+<li>
+<a href = "#Template">Recommended Practice Template Document.</a>
+</li>
+
+</ul>
+
+<p>
+<a href = "../home.html">Open Firmware Working Group Home Page.</a>
+
+<p>
+<hr>
+<hr>
+
+<center>
+<h1><a name = "About">ABOUT THIS PAGE.</a></h1>
+</center>
+
+The
+<a href = "http://www.digits.com">web counter</a>
+for this page says you are visitor number
+<IMG SRC="http://counter.digits.com/wc/-d/5/-z/ofwg-practice"
+ALIGN=middle WIDTH=75 HEIGHT=20 BORDER=0 HSPACE=4 ALT="????">
+since March 15, 1996.
+
+<p>
+Open Firmware developers should periodically check here for recommended
+practice documents. These documents are authorized by the
+Open Firmware Working Group and extend, clarify and/or modify
+previously published specifications.
+
+<P>
+Some accepted proposals may have been accepted as recommended practice,
+but have not yet been written as a recommended practice document.
+You may want to check for <em>accepted proposals</em> in the
+<a href = "../proposals/index.html#ClosedAccepted">proposal index</a>
+or in the <a href = "#Proposals">proposals</a> section of this document.
+
+<p>
+For recommended practice developers, there's also a template
+available for writing your recomended practice document.
+
+<p>
+This page,
+<i>playground:/pub/1275/practice/index.html</i>,
+was last updated on
+Mon Jan  6 17:15:40 PST 1997
+and is maintained by
+<a href = "../people/dmk.html">David Kahn</a>,
+<a href = "mailto:dmk-xxx@Eng.Sun.Com"><i>dmk-xxx@Eng.Sun.Com</i></a>.
+(Remove '-xxx' to use email address.)
+
+<p>
+<a href = "#Contents">Table of Contents.</a><br>
+<a href = "#Template">Recommended Practice Template Document.</a><br>
+
+<hr>
+<hr>
+
+<center>
+<h1><a name = "Documents">RECOMMENDED PRACTICE DOCUMENTS.</a></h1>
+</center>
+
+<center>
+<h2><a name = "16color">16 Color Text Extension</a></h2>
+</center>
+
+<p>
+This recommended practice extends the terminal emulator package and
+adds new optional features to <i>display</i> device drivers to provide
+16 color text extensions to client programs. This document creates
+new FCodes, which must be supported in firmware implementations
+which comply with this recommended practice.
+
+<p>
+<ul>
+<li><cite>16 Color Text Extension, Draft Version 1.2, Oct. 26, 1995</cite></li>
+  <ul>
+  <li><a href = "16color/16colord1_2.ps">Postscript (87k).</a></li>
+  <li><a href = "16color/16colord1_2.pdf">PDF (21k).</a></li>
+  </ul>
+</ul>
+
+<p>
+<a href = "#Contents">Table of Contents.</a><br>
+<hr>
+
+<center>
+<h2><a name = "graphics">8 Bit Graphics Extension</a></h2>
+</center>
+
+<p>
+This recommended practice creates new methods for supporting simple
+graphics in <i>display</i> device drivers, (i.e. draw-rectangle).
+These extensions are typically used by ease-of-use installation and
+booting software, but may also be used by the CPU firmware to present
+an easy-to-use interface for the selection and display of devices.
+
+<p>
+<ul>
+<li><cite>8 Bit Graphics Extension, Draft Version 1.2, Oct. 24, 1995</cite></li>
+  <ul>
+  <li><a href = "graphics/graphicsd1_2.ps">Postscript (67k).</a></li>
+  <li><a href = "graphics/graphicsd1_2.pdf">PDF (33k).</a></li>
+  </ul>
+</ul>
+
+<p>
+<a href = "#Contents">Table of Contents.</a><br>
+<hr>
+
+<center>
+<h2><a name = "interpos">Interposition</a></h2>
+</center>
+
+<p>
+This recommended practice,
+authorized by
+<a href = "../proposals/index.html#272">
+working group proposal #272</a>,
+creates a standard technique which allows file system services to
+be layered (<i>interposed</i>) on top of unmodified FCode device drivers.
+The recomended practice creates a new FCode and a new client interface
+service.
+
+<p>
+<ul>
+<li><a href = "interpos/interpos.ps">Interposition, Version 0.2,
+July 31, 1996</a>, Postscript (56k)</li>
+</ul>
+
+<p>
+<a href = "#Contents">Table of Contents.</a><br>
+<hr>
+
+<center>
+<h2><a name = "gnames">Generic Names.</a></h2>
+</center>
+
+<p>
+Generic Names,
+authorized by
+<a href = "../proposals/index.html#251">
+working group proposal #251</a>,
+allows device nodes to contain human readable, generic names.
+
+<p>
+  <ul>
+
+  <li>
+  <cite>Generic Names, Version 1.4, Dec 30, 1996.</cite>
+  <br>
+  This is the approved version of this document.
+    <ul>
+    <li><a href = "gnames/gnamv14a.ps">Postscript (120k)</a></li>
+    <li><a href = "gnames/gnamv14a.html">HTML</a></li>
+    </ul>
+  </li>
+
+  <p>
+  <li>
+  <a href = "gnames/gnamv13d.ps">Generic Names</a>,
+  <i>Unapproved Draft Version 1.3</i>, Sep 23, 1996,
+  a postscript document. (117k)
+  <br>This is the latest draft version of this document.
+  <br>
+  Editor's notes describing the changes in this draft version are
+  available in both
+  <a href = "gnames/gnamv13x.txt">text</a> and
+  <a href = "gnames/gnamv13x.html">html</a>.
+  </li>
+
+  <p>
+  <li>
+  <a href = "gnames/">
+  Browse the directory of <i>draft</i> Generic Name documents.</a>
+  </li>
+
+  </ul>
+
+<p>
+<a href = "#Contents">Table of Contents.</a><br>
+<hr>
+
+<center>
+<h2><a name = "devicex">Device Support Extensions.</a></h2>
+</center>
+
+<p>
+Device Support Extensions
+describes the application of Open Firmware to various common
+devices, such as keyboard, pointing devices, real time clocks,
+etc.
+<p>
+
+  <ul>
+
+  <li>
+  <cite>Device Support Extensions, Version 1.0, Jan 5, 1997.</cite>
+  <br>This is the approved version of this document.
+    <ul>
+    <li><a href = "devicex/dse1_0a.ps">Postscript (200k)</a></li>
+    <li><a href = "devicex/dse1_0a.html">HTML</a></li>
+    </ul>
+  </li>
+
+  <p>
+  <li>
+  <a href = "devicex/dse0_8d.ps">
+  Device Support Extensions, <i>Draft 0.8</i>, Sep 23, 1996</a>,
+  Postscript. (180k)
+
+  <br>
+  This is the latest draft document.
+
+  <br>
+  Editor's notes describing the changes in this version are
+  available in <a href = "devicex/dse0_8x.txt"> text</a> and
+  <a href = "devicex/dse0_8x.html">html</a>.
+ 
+  </li>
+ 
+  <p>
+  <li>
+  <a href = "devicex/">
+  Browse the directory of <i>draft</i> device support extensions.</a>
+  </li>
+  </ul>
+
+<p>
+<a href = "#Contents">Table of Contents.</a><br>
+<hr>
+
+<center>
+<h2><a name = "obp-tftp">OBP-TFTP and Network Package Extensions.</a></h2>
+</center>
+
+<p>
+<cite>TFTP Booting Extensions, Version
+1.0, August 29, 1998</cite>,
+is an approved, recomended practice document, describing
+extensions to the core defined obp-tftp package
+and "network" device types to add additional capabilities to network
+device booting, including the <em>bootp</em> protocol.
+  <ul>
+  <li><a href = "obp-tftp/tftp1_0.pdf">Adobe PDF (25k)</a></li>
+  </ul>
+
+<p>
+<a href = "#Contents">Table of Contents.</a><br>
+<hr>
+
+<center>
+<h2><a name = "imap">Interrupt Mapping.</a></h2>
+</center>
+
+<p>
+<cite>Interrupt Mapping, Draft Version 0.9, July 12, 1996</cite>
+is a draft, unapproved, recomended practice document, describing
+methods to define the interrupt topology of a system within the
+Open Firmware Device Tree.
+  <ul>
+  <li><a href = "imap/imap0_9d.ps">Postscript (151k)</a></li>
+  <li><a href = "imap/imap0_9d.pdf">Adobe PDF (33k)</a></li>
+  <li><a href = "imap/imap0_9d.html">HTML</a></li>
+  </ul>
+
+<p>
+<a href = "#Contents">Table of Contents.</a><br>
+<hr>
+
+<center>
+<h2><a name = "spi">SCSI-3 Parallel Bus.</a></h2>
+</center>
+
+<p>
+Open Firmware Recommended Practice: SCSI-3 Parallel Bus,
+<i>Version 1.0</i>, December 23, 1996,
+authorized by
+<a href = "../proposals/index.html#375">
+working group proposal #375</a>,
+defines the application of Open Firmware to the SCSI-3 Parallel Bus.
+  <ul>
+  <li><a href = "spi/spi1_0.ps">Postscript (95k)</a></li>
+  </ul>
+
+<p>
+<a href = "#Contents">Table of Contents.</a><br>
+<hr>
+<hr>
+
+<center>
+<h1><a name = "Proposals">PROPOSALS CREATING RECOMMENDED PRACTICES.</a></h1>
+</center>
+
+You may want to check the following proposals, which have created
+recomended practices, but are not yet written up as recomended practices.
+
+<center>
+<h2><a name = "client-services">Extensible Client Services Package.</a></h2>
+</center>
+
+<p>
+<a href = "../proposals/index.html#215">
+Working group proposal 215</a>,
+formalizes the client interface as a vocabulary
+and allows the client interface to be arbitrariliy extended.
+<p>
+<a href = "#Contents">Table of Contents.</a><br>
+<hr>
+
+<center>
+<h2><a name = "standard-font">Extended Standard Font Definition.</a></h2>
+</center>
+
+<p>
+<a href = "../proposals/index.html#245">
+Working group proposal 245</a>,
+is a specific extension that deals with some assumptions NT
+makes about fonts and char heights.
+<p>
+<a href = "#Contents">Table of Contents.</a><br>
+<hr>
+
+<center>
+<h2><a name = "size-blocks">Standard Methods: size and #blocks.</a></h2>
+</center>
+
+<p>
+<a href = "../proposals/index.html#248">
+Working group proposal 248</a>,
+creates a standard method, <em>size</em>, that returns the
+size of the device. It applies to all packages for which
+size information is relevant. The proposal also creates
+the <em>#blocks</em> standard method, which applies to
+all devices of type <em>byte</em> and <em>block</em>.
+<p>
+<a href = "#Contents">Table of Contents.</a><br>
+<hr>
+
+<center>
+<h2><a name = "version">Standard Property: version.</a></h2>
+</center>
+
+<p>
+<a href = "../proposals/index.html#268">
+Working group proposal 268</a>,
+creates a standard property, <em>version</em>, that defines the
+contents of a device, versus the device itself. For example, it
+might describe the current version of the contents of a flash prom device.
+<p>
+<a href = "#Contents">Table of Contents.</a><br>
+<hr>
+
+<center>
+<h2><a name = "test-method">Client Interface: test-method.</a></h2>
+</center>
+
+<p>
+<a href = "../proposals/index.html#270">
+Working group proposal 270</a>,
+adds <em>test-method</em> to the generic client interface package.
+This client interface allows a client program to determine if an
+arbitrary method exists in a package.
+<p>
+<a href = "#Contents">Table of Contents.</a><br>
+<hr>
+
+<center>
+<h2><a name = "differential">SCSI Package Properties:
+wide and differential.</a></h2>
+</center>
+
+<p>
+<a href = "../proposals/index.html#288">
+Working group proposal 288</a>
+creates the <em>wide</em> and <em>differential</em> properties for
+scsi host adaptors.
+<p>
+<a href = "#Contents">Table of Contents.</a><br>
+<hr>
+
+<center>
+<h2><a name = "dma-ranges">Standard Property: dma-ranges</a></h2>
+</center>
+
+<p>
+<a href = "../proposals/index.html#410">
+Working group proposal 410</a>
+creates the <em>dma-ranges</em> standard property
+which describes the DMA structure of a device.
+<p>
+<a href = "#Contents">Table of Contents.</a><br>
+
+<hr>
+<hr>
+
+<center>
+<h1><a name = "Template">RECOMMENDED PRACTICE TEMPLATE DOCUMENT.</a></h1>
+</center>
+
+Please use the following template for writing recomended practice
+documents.
+
+<ul>
+
+<li>
+<a href = "template/template.ps">Recomended Practice Template</a>, postscript
+(57k)
+</li>
+
+<li>
+<a href = "template/template.mif">Recomended Practice Template</a>,
+Frame Maker 4, Maker Interchange Format (85k)
+</li>
+
+</ul>
+
+<p>
+<a href = "#Contents">Table of Contents.</a><br>
+<a href = "../home.html">Open Firmware Working Group Home Page.</a>
+
+<hr>
+
+</body>
+</html>

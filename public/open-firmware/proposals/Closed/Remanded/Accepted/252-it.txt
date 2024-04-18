@@ -1,0 +1,30 @@
+Date: Tue, 21 Mar 1995 12:51:48 -0800
+From: brianh@pongo.West.Sun.COM (Brian Horn)
+Subject: Item #252: PPC editorial correction w.r.t. name of "root" node
+
+P1275 Open Firmware Working Group Proposal -- Proposal #252 Ver 1.0
+
+Title:		Correct name of root node
+
+Author:		Brian.Horn@west.sun.com
+
+Date:		March 21, 1995
+
+Ed/Tech:	Editorial
+
+Synopsis:	Change "/root" to simply "/"
+
+Doc & Version:	PowerPC processor binding to IEEE1275-1994 Draft 1.0 02/16/95
+
+Problem:	Text is confusing and erroneous
+
+Proposal:	change the text on page 2 line 16 from:
+
+hence, the value of "#address-cells" for /root shall be 1.
+
+to
+
+hence, the value of "#address-cells" for / shall be 1.
+
+[ P1275 Item #252 -- Received: Tue Mar 21 12:53:59 PST 1995 ]
+

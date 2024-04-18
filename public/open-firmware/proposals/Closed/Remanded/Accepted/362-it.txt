@@ -1,0 +1,80 @@
+From: coffin@VNET.IBM.COM
+Date: Tue, 11 Jun 96 14:12:30 CDT
+Subject: Item #362: ISA: ISA-PnP Unit Address Format
+
+P1275 Openboot Working Group Proposal -- Proposal #:362 Ver 1.0
+
+Title:          ISA-PnP Unit Address Format
+
+Author:         R. T. Coffin
+
+Date:           June 11, 1996
+
+Ed/Tech:        Technical
+
+Synopsis:       Need to have a unique unit address for ISA-PnP
+                Multifunction Cards specified.
+
+Doc & Version:  ISA/EISA/ISA-PnP binding, Version 0.2.
+
+Problem:        Need to include the PnP Card Function Code in the unit
+                address to address a multifunction adapter logical
+                functions.
+
+Proposal:
+
+Need to modify the present definition of the Unit Address for PnP
+Adapters defined in the ISA binding, Version 0.2.  For PnP Multifunction
+Adapters, the Function Code should be included along with the other
+information defined in the present PnP Unit Address.  A suggested format
+for the new unit address follows:
+
+I) Unit Address for ISA-PnP Adapter
+
+bits (msb) 3322 2222 2222 1111 1111 1100 0000 0000
+           1098 7654 3210 9876 5432 1098 7654 3210
+
+phys.hi    1vvv vvvv vvvv vvvv pppp pppp pppp pppp
+phys.mid   1000 0000 0000 0000 ffff ffff ffff ffff
+phys.lo    ssss ssss ssss ssss ssss ssss ssss ssss
+
+  where:
+
+phys.hi;   v=vendor number, p=product ID and the msb bit = 1 for a PnP
+           Unit Address
+
+phys.mid   f=function code and msb bit = 1 for a multifunction PnP card
+
+phys.lo    s=serial number
+
+For an ISA-PnP Adapter, "#address-cells" would be 3, as defined by the
+parent node.  For this case, change bus name to PnP Bus (Help
+distinguish difference between 'legacy' ISA Cards and 'PnP Cards).
+
+For 'legacy' ISA cards, the "#address-cells" would remain at 2.  For
+this case, leave bus name as 'ISA' Bus.  Therefore, a system could
+support just 'legacy' ISA Cards with a "#address-cells" equal to 2, or
+indicate ISA-PnP Cards with a "#address-cells" equal to 3.
+
+II)  Unit Address Text Representation
+
+ISA 'legacy' Cards would remain as defined in the ISA binding.
+
+ISA-PnP Cards Unit Address Text Representation would be:
+
+ @VVV, pppp, ssssssss, fff
+
+  where:
+
+   'VVV' ASCII Vendor ID, upper case hexadecimal characters
+   'pppp' Product ID, lower case hexadecimal characters with leading
+          zeroes suppressed
+   'ssssssss', Serial Number, lower case hexadecimal characters with
+               leading zeroes suppressed
+   'fff', Function Number(Logical Device Number), 0 ... (n-1), lower
+          case hexadecimal characters with leading zeroes suppressed
+
+Byte order to be maintained as specified in 'plug-n-play' specification.
+
+[ P1275 Item #362 -- Received: Tue Jun 11 12:22:16 PDT 1996 ]
+
