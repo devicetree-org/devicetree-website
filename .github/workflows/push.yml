@@ -37,6 +37,9 @@ jobs:
       - name: Upload to S3
         run: /srv/github-action-scripts/upload-to-s3-root.sh
 
+      - name: Set up Lambda redirect
+        run: /srv/github-action-scripts/set-up-lambda-redirect.sh ${{ github.workspace }}/website/
+        
       - name: Set up security headers
         run: cd /srv/github-action-scripts && pipenv run python lambda-security-headers.py
 
