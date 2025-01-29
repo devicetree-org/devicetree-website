@@ -1,0 +1,4173 @@
+%!PS-Adobe-3.0
+%%BoundingBox: (atend)
+%%Pages: (atend)
+%%PageOrder: (atend)
+%%DocumentFonts: (atend)
+%%Creator: Frame 4.0
+%%DocumentData: Clean7Bit
+%%EndComments
+%%BeginProlog
+%
+% Frame ps_prolog 4.0, for use with Frame 4.0 products
+% This ps_prolog file is Copyright (c) 1986-1993 Frame Technology
+% Corporation.  All rights reserved.  This ps_prolog file may be
+% freely copied and distributed in conjunction with documents created
+% using FrameMaker, FrameBuilder and FrameViewer as long as this 
+% copyright notice is preserved.
+%
+% Frame products normally print colors as their true color on a color printer
+% or as shades of gray, based on luminance, on a black-and white printer. The
+% following flag, if set to True, forces all non-white colors to print as pure
+% black. This has no effect on bitmap images.
+/FMPrintAllColorsAsBlack             false def
+%
+% Frame products can either set their own line screens or use a printer's 
+% default settings. Three flags below control this separately for no 
+% separations, spot separations and process separations. If a flag
+% is true, then the default printer settings will not be changed. If it is
+% false, Frame products will use their own settings from a table based on
+% the printer's resolution.
+/FMUseDefaultNoSeparationScreen      true  def
+/FMUseDefaultSpotSeparationScreen    true  def
+/FMUseDefaultProcessSeparationScreen false def
+%
+% For any given PostScript printer resolution, Frame products have two sets of 
+% screen angles and frequencies for printing process separations, which are 
+% recomended by Adobe. The following variable chooses the higher frequencies
+% when set to true or the lower frequencies when set to false. This is only
+% effective if the appropriate FMUseDefault...SeparationScreen flag is false.
+/FMUseHighFrequencyScreens true def
+%
+% PostScript Level 2 printers contain an "Accurate Screens" feature which can
+% improve process separation rendering at the expense of compute time. This 
+% flag is ignored by PostScript Level 1 printers.
+/FMUseAcccurateScreens true def
+%
+% The following PostScript procedure defines the spot function that Frame
+% products will use for process separations. You may un-comment-out one of
+% the alternative functions below, or use your own.
+%
+% Dot function
+/FMSpotFunction {abs exch abs 2 copy add 1 gt 
+		{1 sub dup mul exch 1 sub dup mul add 1 sub }
+		{dup mul exch dup mul add 1 exch sub }ifelse } def
+%
+% Line function
+% /FMSpotFunction { pop } def
+%
+% Elipse function
+% /FMSpotFunction { dup 5 mul 8 div mul exch dup mul exch add 
+%		sqrt 1 exch sub } def
+%
+%
+/FMversion (4.0) def 
+/FMLevel1 /languagelevel where {pop languagelevel} {1} ifelse 2 lt def
+/FMPColor
+	FMLevel1 {
+		false
+		/colorimage where {pop pop true} if
+	} {
+		true
+	} ifelse
+def
+/FrameDict 400 dict def 
+systemdict /errordict known not {/errordict 10 dict def
+		errordict /rangecheck {stop} put} if
+% The readline in PS 23.0 doesn't recognize cr's as nl's on AppleTalk
+FrameDict /tmprangecheck errordict /rangecheck get put 
+errordict /rangecheck {FrameDict /bug true put} put 
+FrameDict /bug false put 
+mark 
+% Some PS machines read past the CR, so keep the following 3 lines together!
+currentfile 5 string readline
+00
+0000000000
+cleartomark 
+errordict /rangecheck FrameDict /tmprangecheck get put 
+FrameDict /bug get { 
+	/readline {
+		/gstring exch def
+		/gfile exch def
+		/gindex 0 def
+		{
+			gfile read pop 
+			dup 10 eq {exit} if 
+			dup 13 eq {exit} if 
+			gstring exch gindex exch put 
+			/gindex gindex 1 add def 
+		} loop
+		pop 
+		gstring 0 gindex getinterval true 
+		} bind def
+	} if
+/FMshowpage /showpage load def
+/FMquit /quit load def
+/FMFAILURE { 
+	dup = flush 
+	FMshowpage 
+	/Helvetica findfont 12 scalefont setfont
+	72 200 moveto
+	show FMshowpage 
+	FMquit 
+	} def 
+/FMVERSION {
+	FMversion ne {
+		(Frame product version does not match ps_prolog!) FMFAILURE
+		} if
+	} def 
+/FMBADEPSF { 
+	(PostScript Lang. Ref. Man., 2nd Ed., H.2.4 says EPS must not call X              )
+	dup dup (X) search pop exch pop exch pop length 
+	4 -1 roll 
+	putinterval 
+	FMFAILURE
+	} def
+/FMLOCAL {
+	FrameDict begin
+	0 def 
+	end 
+	} def 
+/concatprocs
+	{
+	/proc2 exch cvlit def/proc1 exch cvlit def/newproc proc1 length proc2 length add array def
+	newproc 0 proc1 putinterval newproc proc1 length proc2 putinterval newproc cvx
+}def
+FrameDict begin 
+/FMnone 0 def
+/FMcyan 1 def
+/FMmagenta 2 def
+/FMyellow 3 def
+/FMblack 4 def
+/FMcustom 5 def
+/FrameNegative false def 
+/FrameSepIs FMnone def 
+/FrameSepBlack 0 def
+/FrameSepYellow 0 def
+/FrameSepMagenta 0 def
+/FrameSepCyan 0 def
+/FrameSepRed 1 def
+/FrameSepGreen 1 def
+/FrameSepBlue 1 def
+/FrameCurGray 1 def
+/FrameCurPat null def
+/FrameCurColors [ 0 0 0 1 0 0 0 ] def 
+/FrameColorEpsilon .001 def	
+/eqepsilon {		
+	sub dup 0 lt {neg} if
+	FrameColorEpsilon le
+} bind def
+/FrameCmpColorsCMYK { 
+	2 copy 0 get exch 0 get eqepsilon {
+		2 copy 1 get exch 1 get eqepsilon {
+			2 copy 2 get exch 2 get eqepsilon {
+				3 get exch 3 get eqepsilon
+			} {pop pop false} ifelse
+		}{pop pop false} ifelse
+	} {pop pop false} ifelse
+} bind def
+/FrameCmpColorsRGB { 
+	2 copy 4 get exch 0 get eqepsilon {
+		2 copy 5 get exch 1 get eqepsilon {
+			6 get exch 2 get eqepsilon
+		}{pop pop false} ifelse
+	} {pop pop false} ifelse
+} bind def
+/RGBtoCMYK { 
+	1 exch sub 
+	3 1 roll 
+	1 exch sub 
+	3 1 roll 
+	1 exch sub 
+	3 1 roll 
+	3 copy 
+	2 copy 
+	le { pop } { exch pop } ifelse 
+	2 copy 
+	le { pop } { exch pop } ifelse 
+	dup dup dup 
+	6 1 roll 
+	4 1 roll 
+	7 1 roll 
+	sub 
+	6 1 roll 
+	sub 
+	5 1 roll 
+	sub 
+	4 1 roll 
+} bind def
+/CMYKtoRGB { 
+	dup dup 4 -1 roll add 						  
+	5 1 roll 3 -1 roll add 						  
+	4 1 roll add 								  
+	1 exch sub dup 0 lt {pop 0} if 3 1 roll 	  
+	1 exch sub dup 0 lt {pop 0} if exch 	      
+	1 exch sub dup 0 lt {pop 0} if exch	  		  
+} bind def
+/FrameSepInit {
+	1.0 RealSetgray
+} bind def
+/FrameSetSepColor { 
+	/FrameSepBlue exch def
+	/FrameSepGreen exch def
+	/FrameSepRed exch def
+	/FrameSepBlack exch def
+	/FrameSepYellow exch def
+	/FrameSepMagenta exch def
+	/FrameSepCyan exch def
+	/FrameSepIs FMcustom def
+	setCurrentScreen	
+} bind def
+/FrameSetCyan {
+	/FrameSepBlue 1.0 def
+	/FrameSepGreen 1.0 def
+	/FrameSepRed 0.0 def
+	/FrameSepBlack 0.0 def
+	/FrameSepYellow 0.0 def
+	/FrameSepMagenta 0.0 def
+	/FrameSepCyan 1.0 def
+	/FrameSepIs FMcyan def
+	setCurrentScreen	
+} bind def
+ 
+/FrameSetMagenta {
+	/FrameSepBlue 1.0 def
+	/FrameSepGreen 0.0 def
+	/FrameSepRed 1.0 def
+	/FrameSepBlack 0.0 def
+	/FrameSepYellow 0.0 def
+	/FrameSepMagenta 1.0 def
+	/FrameSepCyan 0.0 def
+	/FrameSepIs FMmagenta def
+	setCurrentScreen
+} bind def
+ 
+/FrameSetYellow {
+	/FrameSepBlue 0.0 def
+	/FrameSepGreen 1.0 def
+	/FrameSepRed 1.0 def
+	/FrameSepBlack 0.0 def
+	/FrameSepYellow 1.0 def
+	/FrameSepMagenta 0.0 def
+	/FrameSepCyan 0.0 def
+	/FrameSepIs FMyellow def
+	setCurrentScreen
+} bind def
+ 
+/FrameSetBlack {
+	/FrameSepBlue 0.0 def
+	/FrameSepGreen 0.0 def
+	/FrameSepRed 0.0 def
+	/FrameSepBlack 1.0 def
+	/FrameSepYellow 0.0 def
+	/FrameSepMagenta 0.0 def
+	/FrameSepCyan 0.0 def
+	/FrameSepIs FMblack def
+	setCurrentScreen
+} bind def
+ 
+/FrameNoSep { 
+	/FrameSepIs FMnone def
+	setCurrentScreen
+} bind def
+/FrameSetSepColors { 
+	FrameDict begin
+	[ exch 1 add 1 roll ]
+	/FrameSepColors  
+	exch def end
+	} bind def
+/FrameColorInSepListCMYK { 
+	FrameSepColors {  
+       		exch dup 3 -1 roll 
+       		FrameCmpColorsCMYK 
+       		{ pop true exit } if
+    	} forall 
+	dup true ne {pop false} if
+	} bind def
+/FrameColorInSepListRGB { 
+	FrameSepColors {  
+       		exch dup 3 -1 roll 
+       		FrameCmpColorsRGB 
+       		{ pop true exit } if
+    	} forall 
+	dup true ne {pop false} if
+	} bind def
+/RealSetgray /setgray load def
+/RealSetrgbcolor /setrgbcolor load def
+/RealSethsbcolor /sethsbcolor load def
+end 
+/setgray { 
+	FrameDict begin
+	FrameSepIs FMnone eq
+		{ RealSetgray } 
+		{ 
+		FrameSepIs FMblack eq 
+			{ RealSetgray } 
+			{ FrameSepIs FMcustom eq 
+			  FrameSepRed 0 eq and
+			  FrameSepGreen 0 eq and
+			  FrameSepBlue 0 eq and {
+			  	RealSetgray
+			  } {
+				1 RealSetgray pop 
+			  } ifelse
+			} ifelse
+		} ifelse
+	end
+} bind def
+/setrgbcolor { 
+	FrameDict begin
+	FrameSepIs FMnone eq
+	{  RealSetrgbcolor }
+	{
+		3 copy [ 4 1 roll ] 
+		FrameColorInSepListRGB
+		{
+				FrameSepBlue eq exch 
+			 	FrameSepGreen eq and exch 
+			 	FrameSepRed eq and
+			 	{ 0 } { 1 } ifelse
+		}
+		{
+			FMPColor {
+				RealSetrgbcolor
+				currentcmykcolor
+			} {
+				RGBtoCMYK
+			} ifelse
+			FrameSepIs FMblack eq
+			{1.0 exch sub 4 1 roll pop pop pop} {
+			FrameSepIs FMyellow eq
+			{pop 1.0 exch sub 3 1 roll pop pop} {
+			FrameSepIs FMmagenta eq
+			{pop pop 1.0 exch sub exch pop } {
+			FrameSepIs FMcyan eq
+			{pop pop pop 1.0 exch sub } 
+			{pop pop pop pop 1} ifelse } ifelse } ifelse } ifelse 
+		} ifelse
+		RealSetgray
+	} 
+	ifelse
+	end
+} bind def
+/sethsbcolor {
+	FrameDict begin
+	FrameSepIs FMnone eq 
+	{ RealSethsbcolor } 
+	{
+		RealSethsbcolor 
+		currentrgbcolor  
+		setrgbcolor 
+	} 
+	ifelse
+	end
+} bind def
+FrameDict begin
+/setcmykcolor where {
+	pop /RealSetcmykcolor /setcmykcolor load def
+} {
+	/RealSetcmykcolor {
+		4 1 roll
+		3 { 3 index add 0 max 1 min 1 exch sub 3 1 roll} repeat 
+		setrgbcolor pop
+	} bind def
+} ifelse
+userdict /setcmykcolor { 
+		FrameDict begin
+		FrameSepIs FMnone eq
+		{ RealSetcmykcolor } 
+		{
+			4 copy [ 5 1 roll ]
+			FrameColorInSepListCMYK
+			{
+				FrameSepBlack eq exch 
+				FrameSepYellow eq and exch 
+				FrameSepMagenta eq and exch 
+				FrameSepCyan eq and 
+				{ 0 } { 1 } ifelse
+			}
+			{
+				FrameSepIs FMblack eq
+				{1.0 exch sub 4 1 roll pop pop pop} {
+				FrameSepIs FMyellow eq
+				{pop 1.0 exch sub 3 1 roll pop pop} {
+				FrameSepIs FMmagenta eq
+				{pop pop 1.0 exch sub exch pop } {
+				FrameSepIs FMcyan eq
+				{pop pop pop 1.0 exch sub } 
+				{pop pop pop pop 1} ifelse } ifelse } ifelse } ifelse 
+			} ifelse
+			RealSetgray
+		}
+		ifelse
+		end
+	} bind put
+FMLevel1 not { 
+	
+	/patProcDict 5 dict dup begin
+		<0f1e3c78f0e1c387> { 3 setlinewidth -1 -1 moveto 9 9 lineto stroke 
+											4 -4 moveto 12 4 lineto stroke
+											-4 4 moveto 4 12 lineto stroke} bind def
+		<0f87c3e1f0783c1e> { 3 setlinewidth -1 9 moveto 9 -1 lineto stroke 
+											-4 4 moveto 4 -4 lineto stroke
+											4 12 moveto 12 4 lineto stroke} bind def
+		<8142241818244281> { 1 setlinewidth -1 9 moveto 9 -1 lineto stroke
+											-1 -1 moveto 9 9 lineto stroke } bind def
+		<03060c183060c081> { 1 setlinewidth -1 -1 moveto 9 9 lineto stroke 
+											4 -4 moveto 12 4 lineto stroke
+											-4 4 moveto 4 12 lineto stroke} bind def
+		<8040201008040201> { 1 setlinewidth -1 9 moveto 9 -1 lineto stroke 
+											-4 4 moveto 4 -4 lineto stroke
+											4 12 moveto 12 4 lineto stroke} bind def
+	end def
+	/patDict 15 dict dup begin
+		/PatternType 1 def		
+		/PaintType 2 def		
+		/TilingType 3 def		
+		/BBox [ 0 0 8 8 ] def 	
+		/XStep 8 def			
+		/YStep 8 def			
+		/PaintProc {
+			begin
+			patProcDict bstring known {
+				patProcDict bstring get exec
+			} {
+				8 8 true [1 0 0 -1 0 8] bstring imagemask
+			} ifelse
+			end
+		} bind def
+	end def
+} if
+/combineColor {
+    FrameSepIs FMnone eq
+	{
+		graymode FMLevel1 or not {
+			
+			[/Pattern [/DeviceCMYK]] setcolorspace
+			FrameCurColors 0 4 getinterval aload pop FrameCurPat setcolor
+		} {
+			FrameCurColors 3 get 1.0 ge {
+				FrameCurGray RealSetgray
+			} {
+				FMPColor graymode and {
+					0 1 3 { 
+						FrameCurColors exch get
+						1 FrameCurGray sub mul
+					} for
+					RealSetcmykcolor
+				} {
+					4 1 6 {
+						FrameCurColors exch get
+						graymode {
+							1 exch sub 1 FrameCurGray sub mul 1 exch sub
+						} {
+							1.0 lt {FrameCurGray} {1} ifelse
+						} ifelse
+					} for
+					RealSetrgbcolor
+				} ifelse
+			} ifelse
+		} ifelse
+	} { 
+		FrameCurColors 0 4 getinterval aload
+		FrameColorInSepListCMYK {
+			FrameSepBlack eq exch 
+			FrameSepYellow eq and exch 
+			FrameSepMagenta eq and exch 
+			FrameSepCyan eq and
+			FrameSepIs FMcustom eq and
+			{ FrameCurGray } { 1 } ifelse
+		} {
+			FrameSepIs FMblack eq
+			{FrameCurGray 1.0 exch sub mul 1.0 exch sub 4 1 roll pop pop pop} {
+			FrameSepIs FMyellow eq
+			{pop FrameCurGray 1.0 exch sub mul 1.0 exch sub 3 1 roll pop pop} {
+			FrameSepIs FMmagenta eq
+			{pop pop FrameCurGray 1.0 exch sub mul 1.0 exch sub exch pop } {
+			FrameSepIs FMcyan eq
+			{pop pop pop FrameCurGray 1.0 exch sub mul 1.0 exch sub } 
+			{pop pop pop pop 1} ifelse } ifelse } ifelse } ifelse 
+		} ifelse
+		graymode FMLevel1 or not {
+			
+			[/Pattern [/DeviceGray]] setcolorspace
+			FrameCurPat setcolor
+		} { 
+			graymode not FMLevel1 and {
+				
+				dup 1 lt {pop FrameCurGray} if
+			} if
+			RealSetgray
+		} ifelse
+	} ifelse
+} bind def
+/savematrix {
+	orgmatrix currentmatrix pop
+	} bind def
+/restorematrix {
+	orgmatrix setmatrix
+	} bind def
+/dmatrix matrix def
+/dpi    72 0 dmatrix defaultmatrix dtransform
+    dup mul exch   dup mul add   sqrt def
+	
+/freq dpi dup 72 div round dup 0 eq {pop 1} if 8 mul div def
+/sangle 1 0 dmatrix defaultmatrix dtransform exch atan def
+/dpiranges   [  2540    2400    1693     1270    1200     635      600      0      ] def
+/CMLowFreqs  [ 100.402  94.8683 89.2289 100.402  94.8683  66.9349  63.2456 47.4342 ] def
+/YLowFreqs   [  95.25   90.0    84.65    95.25   90.0     70.5556  66.6667 50.0    ] def
+/KLowFreqs   [  89.8026 84.8528 79.8088  89.8026 84.8528  74.8355  70.7107 53.033  ] def
+/CLowAngles  [  71.5651 71.5651 71.5651 71.5651  71.5651  71.5651  71.5651 71.5651 ] def
+/MLowAngles  [  18.4349 18.4349 18.4349 18.4349  18.4349  18.4349  18.4349 18.4349 ] def
+/YLowTDot    [  true    true    false    true    true     false    false   false   ] def
+/CMHighFreqs [ 133.87  126.491 133.843  108.503 102.523  100.402   94.8683 63.2456 ] def
+/YHighFreqs  [ 127.0   120.0   126.975  115.455 109.091   95.25    90.0    60.0    ] def
+/KHighFreqs  [ 119.737 113.137 119.713  128.289 121.218   89.8026  84.8528 63.6395 ] def
+/CHighAngles [  71.5651 71.5651 71.5651  70.0169 70.0169  71.5651  71.5651 71.5651 ] def
+/MHighAngles [  18.4349 18.4349 18.4349  19.9831 19.9831  18.4349  18.4349 18.4349 ] def
+/YHighTDot   [  false   false   true     false   false    true     true    false   ] def
+/PatFreq     [	10.5833 10.0     9.4055  10.5833 10.0	  10.5833  10.0	   9.375   ] def
+/screenIndex {
+	0 1 dpiranges length 1 sub { dup dpiranges exch get 1 sub dpi le {exit} {pop} ifelse } for
+} bind def
+/getCyanScreen {
+	FMUseHighFrequencyScreens { CHighAngles CMHighFreqs} {CLowAngles CMLowFreqs} ifelse
+		screenIndex dup 3 1 roll get 3 1 roll get /FMSpotFunction load
+} bind def
+/getMagentaScreen {
+	FMUseHighFrequencyScreens { MHighAngles CMHighFreqs } {MLowAngles CMLowFreqs} ifelse
+		screenIndex dup 3 1 roll get 3 1 roll get /FMSpotFunction load
+} bind def
+/getYellowScreen {
+	FMUseHighFrequencyScreens { YHighTDot YHighFreqs} { YLowTDot YLowFreqs } ifelse
+		screenIndex dup 3 1 roll get 3 1 roll get { 3 div
+			{2 { 1 add 2 div 3 mul dup floor sub 2 mul 1 sub exch} repeat
+			FMSpotFunction } } {/FMSpotFunction load } ifelse
+			0.0 exch
+} bind def
+/getBlackScreen  {
+	FMUseHighFrequencyScreens { KHighFreqs } { KLowFreqs } ifelse
+		screenIndex get 45.0 /FMSpotFunction load 
+} bind def
+/getSpotScreen {
+	getBlackScreen
+} bind def
+/getCompositeScreen {
+	getBlackScreen
+} bind def
+/FMSetScreen 
+	FMLevel1 { /setscreen load 
+	}{ {
+		8 dict begin
+		/HalftoneType 1 def
+		/SpotFunction exch def
+		/Angle exch def
+		/Frequency exch def
+		/AccurateScreens FMUseAcccurateScreens def
+		currentdict end sethalftone
+	} bind } ifelse
+def
+/setDefaultScreen {
+	FMPColor {
+		orgrxfer cvx orggxfer cvx orgbxfer cvx orgxfer cvx setcolortransfer
+	}
+	{
+		orgxfer cvx settransfer
+	} ifelse
+	orgfreq organgle orgproc cvx setscreen
+} bind def
+/setCurrentScreen {
+	FrameSepIs FMnone eq {
+		FMUseDefaultNoSeparationScreen {
+			setDefaultScreen
+		} {
+			getCompositeScreen FMSetScreen
+		} ifelse
+	} {
+		FrameSepIs FMcustom eq {
+			FMUseDefaultSpotSeparationScreen {
+				setDefaultScreen
+			} {
+				getSpotScreen FMSetScreen
+			} ifelse
+		} {
+			FMUseDefaultProcessSeparationScreen {
+				setDefaultScreen
+			} {
+				FrameSepIs FMcyan eq {
+					getCyanScreen FMSetScreen
+				} {
+					FrameSepIs FMmagenta eq {
+						getMagentaScreen FMSetScreen
+					} {
+						FrameSepIs FMyellow eq {
+							getYellowScreen FMSetScreen
+						} {
+							getBlackScreen FMSetScreen
+						} ifelse
+					} ifelse
+				} ifelse
+			} ifelse
+		} ifelse
+	} ifelse 
+} bind def
+end
+	/gstring FMLOCAL
+	/gfile FMLOCAL
+	/gindex FMLOCAL
+	/orgrxfer FMLOCAL
+	/orggxfer FMLOCAL
+	/orgbxfer FMLOCAL
+	/orgxfer FMLOCAL
+	/orgproc FMLOCAL
+	/orgrproc FMLOCAL
+	/orggproc FMLOCAL
+	/orgbproc FMLOCAL
+	/organgle FMLOCAL
+	/orgrangle FMLOCAL
+	/orggangle FMLOCAL
+	/orgbangle FMLOCAL
+	/orgfreq FMLOCAL
+	/orgrfreq FMLOCAL
+	/orggfreq FMLOCAL
+	/orgbfreq FMLOCAL
+	/yscale FMLOCAL
+	/xscale FMLOCAL
+	/edown FMLOCAL
+	/manualfeed FMLOCAL
+	/paperheight FMLOCAL
+	/paperwidth FMLOCAL
+/FMDOCUMENT { 
+	array /FMfonts exch def 
+	/#copies exch def
+	FrameDict begin
+	0 ne /manualfeed exch def
+	/paperheight exch def
+	/paperwidth exch def
+	0 ne /FrameNegative exch def 
+	0 ne /edown exch def 
+	/yscale exch def
+	/xscale exch def
+	FMLevel1 {
+		manualfeed {setmanualfeed} if
+		/FMdicttop countdictstack 1 add def 
+		/FMoptop count def 
+		setpapername 
+		manualfeed {true} {papersize} ifelse 
+		{manualpapersize} {false} ifelse 
+		{desperatepapersize} {false} ifelse 
+		{ (Can't select requested paper size for Frame print job!) FMFAILURE } if
+		count -1 FMoptop {pop pop} for
+		countdictstack -1 FMdicttop {pop end} for 
+		}
+		{{1 dict dup /PageSize [paperwidth paperheight]put setpagedevice}stopped
+		{ (Can't select requested paper size for Frame print job!) FMFAILURE } if
+		 {1 dict dup /ManualFeed manualfeed put setpagedevice } stopped pop }
+	ifelse 
+	
+	FMPColor {
+		currentcolorscreen
+			cvlit /orgproc exch def
+				  /organgle exch def 
+				  /orgfreq exch def
+			cvlit /orgbproc exch def
+				  /orgbangle exch def 
+				  /orgbfreq exch def
+			cvlit /orggproc exch def
+				  /orggangle exch def 
+				  /orggfreq exch def
+			cvlit /orgrproc exch def
+				  /orgrangle exch def 
+				  /orgrfreq exch def
+			currentcolortransfer 
+			FrameNegative {
+				1 1 4 { 
+					pop { 1 exch sub } concatprocs 4 1 roll
+				} for
+				4 copy
+				setcolortransfer
+			} if
+			cvlit /orgxfer exch def
+			cvlit /orgbxfer exch def
+			cvlit /orggxfer exch def
+			cvlit /orgrxfer exch def
+	} {
+		currentscreen 
+			cvlit /orgproc exch def
+				  /organgle exch def 
+				  /orgfreq exch def
+				  
+		currenttransfer 
+		FrameNegative {
+			{ 1 exch sub } concatprocs
+			dup settransfer
+		} if 
+		cvlit /orgxfer exch def
+	} ifelse
+	end 
+} def 
+/pagesave FMLOCAL
+/orgmatrix FMLOCAL
+/landscape FMLOCAL
+/pwid FMLOCAL
+/FMBEGINPAGE { 
+	FrameDict begin 
+	/pagesave save def
+	3.86 setmiterlimit
+	/landscape exch 0 ne def
+	landscape { 
+		90 rotate 0 exch dup /pwid exch def neg translate pop 
+	}{
+		pop /pwid exch def
+	} ifelse
+	edown { [-1 0 0 1 pwid 0] concat } if
+	0 0 moveto paperwidth 0 lineto paperwidth paperheight lineto 
+	0 paperheight lineto 0 0 lineto 1 setgray fill
+	xscale yscale scale
+	/orgmatrix matrix def
+	gsave 
+} def 
+/FMENDPAGE {
+	grestore 
+	pagesave restore
+	end 
+	showpage
+	} def 
+/FMFONTDEFINE { 
+	FrameDict begin
+	findfont 
+	ReEncode 
+	1 index exch 
+	definefont 
+	FMfonts 3 1 roll 
+	put
+	end 
+	} def 
+/FMFILLS {
+	FrameDict begin dup
+	array /fillvals exch def
+	dict /patCache exch def
+	end 
+	} def 
+/FMFILL {
+	FrameDict begin
+	 fillvals 3 1 roll put
+	end 
+	} def 
+/FMNORMALIZEGRAPHICS { 
+	newpath
+	0.0 0.0 moveto
+	1 setlinewidth
+	0 setlinecap
+	0 0 0 sethsbcolor
+	0 setgray 
+	} bind def
+	/fx FMLOCAL
+	/fy FMLOCAL
+	/fh FMLOCAL
+	/fw FMLOCAL
+	/llx FMLOCAL
+	/lly FMLOCAL
+	/urx FMLOCAL
+	/ury FMLOCAL
+/FMBEGINEPSF { 
+	end 
+	/FMEPSF save def 
+	/showpage {} def 
+% See Adobe's "PostScript Language Reference Manual, 2nd Edition", page 714.
+% "...the following operators MUST NOT be used in an EPS file:" (emphasis ours)
+	/banddevice {(banddevice) FMBADEPSF} def
+	/clear {(clear) FMBADEPSF} def
+	/cleardictstack {(cleardictstack) FMBADEPSF} def 
+	/copypage {(copypage) FMBADEPSF} def
+	/erasepage {(erasepage) FMBADEPSF} def
+	/exitserver {(exitserver) FMBADEPSF} def
+	/framedevice {(framedevice) FMBADEPSF} def
+	/grestoreall {(grestoreall) FMBADEPSF} def
+	/initclip {(initclip) FMBADEPSF} def
+	/initgraphics {(initgraphics) FMBADEPSF} def
+	/initmatrix {(initmatrix) FMBADEPSF} def
+	/quit {(quit) FMBADEPSF} def
+	/renderbands {(renderbands) FMBADEPSF} def
+	/setglobal {(setglobal) FMBADEPSF} def
+	/setpagedevice {(setpagedevice) FMBADEPSF} def
+	/setshared {(setshared) FMBADEPSF} def
+	/startjob {(startjob) FMBADEPSF} def
+	/lettertray {(lettertray) FMBADEPSF} def
+	/letter {(letter) FMBADEPSF} def
+	/lettersmall {(lettersmall) FMBADEPSF} def
+	/11x17tray {(11x17tray) FMBADEPSF} def
+	/11x17 {(11x17) FMBADEPSF} def
+	/ledgertray {(ledgertray) FMBADEPSF} def
+	/ledger {(ledger) FMBADEPSF} def
+	/legaltray {(legaltray) FMBADEPSF} def
+	/legal {(legal) FMBADEPSF} def
+	/statementtray {(statementtray) FMBADEPSF} def
+	/statement {(statement) FMBADEPSF} def
+	/executivetray {(executivetray) FMBADEPSF} def
+	/executive {(executive) FMBADEPSF} def
+	/a3tray {(a3tray) FMBADEPSF} def
+	/a3 {(a3) FMBADEPSF} def
+	/a4tray {(a4tray) FMBADEPSF} def
+	/a4 {(a4) FMBADEPSF} def
+	/a4small {(a4small) FMBADEPSF} def
+	/b4tray {(b4tray) FMBADEPSF} def
+	/b4 {(b4) FMBADEPSF} def
+	/b5tray {(b5tray) FMBADEPSF} def
+	/b5 {(b5) FMBADEPSF} def
+	FMNORMALIZEGRAPHICS 
+	[/fy /fx /fh /fw /ury /urx /lly /llx] {exch def} forall 
+	fx fw 2 div add fy fh 2 div add  translate
+	rotate
+	fw 2 div neg fh 2 div neg translate
+	fw urx llx sub div fh ury lly sub div scale 
+	llx neg lly neg translate 
+	/FMdicttop countdictstack 1 add def 
+	/FMoptop count def 
+	} bind def
+/FMENDEPSF {
+	count -1 FMoptop {pop pop} for 
+	countdictstack -1 FMdicttop {pop end} for 
+	FMEPSF restore
+	FrameDict begin 
+	} bind def
+FrameDict begin 
+/setmanualfeed {
+%%BeginFeature *ManualFeed True
+	 statusdict /manualfeed true put
+%%EndFeature
+	} bind def
+/max {2 copy lt {exch} if pop} bind def
+/min {2 copy gt {exch} if pop} bind def
+/inch {72 mul} def
+/pagedimen { 
+	paperheight sub abs 16 lt exch 
+	paperwidth sub abs 16 lt and
+	{/papername exch def} {pop} ifelse
+	} bind def
+	/papersizedict FMLOCAL
+/setpapername { 
+	/papersizedict 14 dict def 
+	papersizedict begin
+	/papername /unknown def 
+		/Letter 8.5 inch 11.0 inch pagedimen
+		/LetterSmall 7.68 inch 10.16 inch pagedimen
+		/Tabloid 11.0 inch 17.0 inch pagedimen
+		/Ledger 17.0 inch 11.0 inch pagedimen
+		/Legal 8.5 inch 14.0 inch pagedimen
+		/Statement 5.5 inch 8.5 inch pagedimen
+		/Executive 7.5 inch 10.0 inch pagedimen
+		/A3 11.69 inch 16.5 inch pagedimen
+		/A4 8.26 inch 11.69 inch pagedimen
+		/A4Small 7.47 inch 10.85 inch pagedimen
+		/B4 10.125 inch 14.33 inch pagedimen
+		/B5 7.16 inch 10.125 inch pagedimen
+	end
+	} bind def
+/papersize {
+	papersizedict begin
+		/Letter {lettertray letter} def
+		/LetterSmall {lettertray lettersmall} def
+		/Tabloid {11x17tray 11x17} def
+		/Ledger {ledgertray ledger} def
+		/Legal {legaltray legal} def
+		/Statement {statementtray statement} def
+		/Executive {executivetray executive} def
+		/A3 {a3tray a3} def
+		/A4 {a4tray a4} def
+		/A4Small {a4tray a4small} def
+		/B4 {b4tray b4} def
+		/B5 {b5tray b5} def
+		/unknown {unknown} def
+	papersizedict dup papername known {papername} {/unknown} ifelse get
+	end
+	statusdict begin stopped end 
+	} bind def
+/manualpapersize {
+	papersizedict begin
+		/Letter {letter} def
+		/LetterSmall {lettersmall} def
+		/Tabloid {11x17} def
+		/Ledger {ledger} def
+		/Legal {legal} def
+		/Statement {statement} def
+		/Executive {executive} def
+		/A3 {a3} def
+		/A4 {a4} def
+		/A4Small {a4small} def
+		/B4 {b4} def
+		/B5 {b5} def
+		/unknown {unknown} def
+	papersizedict dup papername known {papername} {/unknown} ifelse get
+	end
+	stopped 
+	} bind def
+/desperatepapersize {
+	statusdict /setpageparams known
+		{
+		paperwidth paperheight 0 1 
+		statusdict begin
+		{setpageparams} stopped 
+		end
+		} {true} ifelse 
+	} bind def
+/DiacriticEncoding [
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+/.notdef /.notdef /.notdef /.notdef /space /exclam /quotedbl
+/numbersign /dollar /percent /ampersand /quotesingle /parenleft
+/parenright /asterisk /plus /comma /hyphen /period /slash /zero /one
+/two /three /four /five /six /seven /eight /nine /colon /semicolon
+/less /equal /greater /question /at /A /B /C /D /E /F /G /H /I /J /K
+/L /M /N /O /P /Q /R /S /T /U /V /W /X /Y /Z /bracketleft /backslash
+/bracketright /asciicircum /underscore /grave /a /b /c /d /e /f /g /h
+/i /j /k /l /m /n /o /p /q /r /s /t /u /v /w /x /y /z /braceleft /bar
+/braceright /asciitilde /.notdef /Adieresis /Aring /Ccedilla /Eacute
+/Ntilde /Odieresis /Udieresis /aacute /agrave /acircumflex /adieresis
+/atilde /aring /ccedilla /eacute /egrave /ecircumflex /edieresis
+/iacute /igrave /icircumflex /idieresis /ntilde /oacute /ograve
+/ocircumflex /odieresis /otilde /uacute /ugrave /ucircumflex
+/udieresis /dagger /.notdef /cent /sterling /section /bullet
+/paragraph /germandbls /registered /copyright /trademark /acute
+/dieresis /.notdef /AE /Oslash /.notdef /.notdef /.notdef /.notdef
+/yen /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+/ordfeminine /ordmasculine /.notdef /ae /oslash /questiondown
+/exclamdown /logicalnot /.notdef /florin /.notdef /.notdef
+/guillemotleft /guillemotright /ellipsis /.notdef /Agrave /Atilde
+/Otilde /OE /oe /endash /emdash /quotedblleft /quotedblright
+/quoteleft /quoteright /.notdef /.notdef /ydieresis /Ydieresis
+/fraction /currency /guilsinglleft /guilsinglright /fi /fl /daggerdbl
+/periodcentered /quotesinglbase /quotedblbase /perthousand
+/Acircumflex /Ecircumflex /Aacute /Edieresis /Egrave /Iacute
+/Icircumflex /Idieresis /Igrave /Oacute /Ocircumflex /.notdef /Ograve
+/Uacute /Ucircumflex /Ugrave /dotlessi /circumflex /tilde /macron
+/breve /dotaccent /ring /cedilla /hungarumlaut /ogonek /caron
+] def
+/ReEncode { 
+	dup 
+	length 
+	dict begin 
+	{
+	1 index /FID ne 
+		{def} 
+		{pop pop} ifelse 
+	} forall 
+	0 eq {/Encoding DiacriticEncoding def} if 
+	currentdict 
+	end 
+	} bind def
+FMPColor 
+	
+	{
+	/BEGINBITMAPCOLOR { 
+		BITMAPCOLOR} def
+	/BEGINBITMAPCOLORc { 
+		BITMAPCOLORc} def
+	/BEGINBITMAPTRUECOLOR { 
+		BITMAPTRUECOLOR } def
+	/BEGINBITMAPTRUECOLORc { 
+		BITMAPTRUECOLORc } def
+	}
+	
+	{
+	/BEGINBITMAPCOLOR { 
+		BITMAPGRAY} def
+	/BEGINBITMAPCOLORc { 
+		BITMAPGRAYc} def
+	/BEGINBITMAPTRUECOLOR { 
+		BITMAPTRUEGRAY } def
+	/BEGINBITMAPTRUECOLORc { 
+		BITMAPTRUEGRAYc } def
+	}
+ifelse
+/K { 
+	FMPrintAllColorsAsBlack {
+		dup 1 eq 2 index 1 eq and 3 index 1 eq and not
+			{7 {pop} repeat 0 0 0 1 0 0 0} if
+	} if 
+	FrameCurColors astore 
+	pop combineColor
+} bind def
+/graymode true def
+	/bwidth FMLOCAL
+	/bpside FMLOCAL
+	/bstring FMLOCAL
+	/onbits FMLOCAL
+	/offbits FMLOCAL
+	/xindex FMLOCAL
+	/yindex FMLOCAL
+	/x FMLOCAL
+	/y FMLOCAL
+/setPatternMode {
+	FMLevel1 {
+		/bwidth  exch def
+		/bpside  exch def
+		/bstring exch def
+		/onbits 0 def  /offbits 0 def
+		freq sangle landscape {90 add} if 
+			{/y exch def
+			 /x exch def
+			 /xindex x 1 add 2 div bpside mul cvi def
+			 /yindex y 1 add 2 div bpside mul cvi def
+			 bstring yindex bwidth mul xindex 8 idiv add get
+			 1 7 xindex 8 mod sub bitshift and 0 ne FrameNegative {not} if
+			 {/onbits  onbits  1 add def 1}
+			 {/offbits offbits 1 add def 0}
+			 ifelse
+			}
+			setscreen
+		offbits offbits onbits add div FrameNegative {1.0 exch sub} if
+		/FrameCurGray exch def
+	} { 
+		pop pop
+		dup patCache exch known {
+			patCache exch get
+		} { 
+			dup
+			patDict /bstring 3 -1 roll put
+			patDict 
+			9 PatFreq screenIndex get div dup matrix scale
+			makepattern
+			dup 
+			patCache 4 -1 roll 3 -1 roll put
+		} ifelse
+		/FrameCurGray 0 def
+		/FrameCurPat exch def
+	} ifelse
+	/graymode false def
+	combineColor
+} bind def
+/setGrayScaleMode {
+	graymode not {
+		/graymode true def
+		FMLevel1 {
+			setCurrentScreen
+		} if
+	} if
+	/FrameCurGray exch def
+	combineColor
+} bind def
+/normalize {
+	transform round exch round exch itransform
+	} bind def
+/dnormalize {
+	dtransform round exch round exch idtransform
+	} bind def
+/lnormalize { 
+	0 dtransform exch cvi 2 idiv 2 mul 1 add exch idtransform pop
+	} bind def
+/H { 
+	lnormalize setlinewidth
+	} bind def
+/Z {
+	setlinecap
+	} bind def
+	
+/PFill {
+	graymode FMLevel1 or not {
+		gsave 1 setgray eofill grestore
+	} if
+} bind def
+/PStroke {
+	graymode FMLevel1 or not {
+		gsave 1 setgray stroke grestore
+	} if
+	stroke
+} bind def
+	/fillvals FMLOCAL
+/X { 
+	fillvals exch get
+	dup type /stringtype eq
+	{8 1 setPatternMode} 
+	{setGrayScaleMode}
+	ifelse
+	} bind def
+/V { 
+	PFill gsave eofill grestore
+	} bind def
+/Vclip {
+	clip
+	} bind def
+/Vstrk {
+	currentlinewidth exch setlinewidth PStroke setlinewidth
+	} bind def
+/N { 
+	PStroke
+	} bind def
+/Nclip {
+	strokepath clip newpath
+	} bind def
+/Nstrk {
+	currentlinewidth exch setlinewidth PStroke setlinewidth
+	} bind def
+/M {newpath moveto} bind def
+/E {lineto} bind def
+/D {curveto} bind def
+/O {closepath} bind def
+	/n FMLOCAL
+/L { 
+ 	/n exch def
+	newpath
+	normalize
+	moveto 
+	2 1 n {pop normalize lineto} for
+	} bind def
+/Y { 
+	L 
+	closepath
+	} bind def
+	/x1 FMLOCAL
+	/x2 FMLOCAL
+	/y1 FMLOCAL
+	/y2 FMLOCAL
+/R { 
+	/y2 exch def
+	/x2 exch def
+	/y1 exch def
+	/x1 exch def
+	x1 y1
+	x2 y1
+	x2 y2
+	x1 y2
+	4 Y 
+	} bind def
+	/rad FMLOCAL
+/rarc 
+	{rad 
+	 arcto
+	} bind def
+/RR { 
+	/rad exch def
+	normalize
+	/y2 exch def
+	/x2 exch def
+	normalize
+	/y1 exch def
+	/x1 exch def
+	mark
+	newpath
+	{
+	x1 y1 rad add moveto
+	x1 y2 x2 y2 rarc
+	x2 y2 x2 y1 rarc
+	x2 y1 x1 y1 rarc
+	x1 y1 x1 y2 rarc
+	closepath
+	} stopped {x1 y1 x2 y2 R} if 
+	cleartomark
+	} bind def
+/RRR { 
+	/rad exch def
+	normalize /y4 exch def /x4 exch def
+	normalize /y3 exch def /x3 exch def
+	normalize /y2 exch def /x2 exch def
+	normalize /y1 exch def /x1 exch def
+	newpath
+	normalize moveto 
+	mark
+	{
+	x2 y2 x3 y3 rarc
+	x3 y3 x4 y4 rarc
+	x4 y4 x1 y1 rarc
+	x1 y1 x2 y2 rarc
+	closepath
+	} stopped
+	 {x1 y1 x2 y2 x3 y3 x4 y4 newpath moveto lineto lineto lineto closepath} if
+	cleartomark
+	} bind def
+/C { 
+	grestore
+	gsave
+	R 
+	clip
+	setCurrentScreen
+} bind def
+/CP { 
+	grestore
+	gsave
+	Y 
+	clip
+	setCurrentScreen
+} bind def
+	/FMpointsize FMLOCAL
+/F { 
+	FMfonts exch get
+	FMpointsize scalefont
+	setfont
+	} bind def
+/Q { 
+	/FMpointsize exch def
+	F 
+	} bind def
+/T { 
+	moveto show
+	} bind def
+/RF { 
+	rotate
+	0 ne {-1 1 scale} if
+	} bind def
+/TF { 
+	gsave
+	moveto 
+	RF
+	show
+	grestore
+	} bind def
+/P { 
+	moveto
+	0 32 3 2 roll widthshow
+	} bind def
+/PF { 
+	gsave
+	moveto 
+	RF
+	0 32 3 2 roll widthshow
+	grestore
+	} bind def
+/S { 
+	moveto
+	0 exch ashow
+	} bind def
+/SF { 
+	gsave
+	moveto
+	RF
+	0 exch ashow
+	grestore
+	} bind def
+/B { 
+	moveto
+	0 32 4 2 roll 0 exch awidthshow
+	} bind def
+/BF { 
+	gsave
+	moveto
+	RF
+	0 32 4 2 roll 0 exch awidthshow
+	grestore
+	} bind def
+/G { 
+	gsave
+	newpath
+	normalize translate 0.0 0.0 moveto 
+	dnormalize scale 
+	0.0 0.0 1.0 5 3 roll arc 
+	closepath 
+	PFill fill
+	grestore
+	} bind def
+/Gstrk {
+	savematrix
+    newpath
+    2 index 2 div add exch 3 index 2 div sub exch 
+    normalize 2 index 2 div sub exch 3 index 2 div add exch 
+    translate
+    scale 
+    0.0 0.0 1.0 5 3 roll arc 
+    restorematrix
+    currentlinewidth exch setlinewidth PStroke setlinewidth
+    } bind def
+/Gclip { 
+	newpath
+	savematrix
+	normalize translate 0.0 0.0 moveto 
+	dnormalize scale 
+	0.0 0.0 1.0 5 3 roll arc 
+	closepath 
+	clip newpath
+	restorematrix
+	} bind def
+/GG { 
+	gsave
+	newpath
+	normalize translate 0.0 0.0 moveto 
+	rotate 
+	dnormalize scale 
+	0.0 0.0 1.0 5 3 roll arc 
+	closepath
+	PFill
+	fill
+	grestore
+	} bind def
+/GGclip { 
+	savematrix
+	newpath
+    normalize translate 0.0 0.0 moveto 
+    rotate 
+    dnormalize scale 
+    0.0 0.0 1.0 5 3 roll arc 
+    closepath
+	clip newpath
+	restorematrix
+	} bind def
+/GGstrk { 
+	savematrix
+    newpath
+    normalize translate 0.0 0.0 moveto 
+    rotate 
+    dnormalize scale 
+    0.0 0.0 1.0 5 3 roll arc 
+    closepath 
+	restorematrix
+    currentlinewidth exch setlinewidth PStroke setlinewidth
+	} bind def
+/A { 
+	gsave
+	savematrix
+	newpath
+	2 index 2 div add exch 3 index 2 div sub exch 
+	normalize 2 index 2 div sub exch 3 index 2 div add exch 
+	translate 
+	scale 
+	0.0 0.0 1.0 5 3 roll arc 
+	restorematrix
+	PStroke
+	grestore
+	} bind def
+/Aclip {
+	newpath
+	savematrix
+	normalize translate 0.0 0.0 moveto 
+	dnormalize scale 
+	0.0 0.0 1.0 5 3 roll arc 
+	closepath 
+	strokepath clip newpath
+	restorematrix
+} bind def
+/Astrk {
+	Gstrk
+} bind def
+/AA { 
+	gsave
+	savematrix
+	newpath
+	
+	3 index 2 div add exch 4 index 2 div sub exch 
+	
+	normalize 3 index 2 div sub exch 4 index 2 div add exch
+	translate 
+	rotate 
+	scale 
+	0.0 0.0 1.0 5 3 roll arc 
+	restorematrix
+	PStroke
+	grestore
+	} bind def
+/AAclip {
+	savematrix
+	newpath
+    normalize translate 0.0 0.0 moveto 
+    rotate 
+    dnormalize scale 
+    0.0 0.0 1.0 5 3 roll arc 
+    closepath
+	strokepath clip newpath
+	restorematrix
+} bind def
+/AAstrk {
+	GGstrk
+} bind def
+	/x FMLOCAL
+	/y FMLOCAL
+	/w FMLOCAL
+	/h FMLOCAL
+	/xx FMLOCAL
+	/yy FMLOCAL
+	/ww FMLOCAL
+	/hh FMLOCAL
+	/FMsaveobject FMLOCAL
+	/FMoptop FMLOCAL
+	/FMdicttop FMLOCAL
+/BEGINPRINTCODE { 
+	/FMdicttop countdictstack 1 add def 
+	/FMoptop count 7 sub def 
+	/FMsaveobject save def
+	userdict begin 
+	/showpage {} def 
+	FMNORMALIZEGRAPHICS 
+	3 index neg 3 index neg translate
+	} bind def
+/ENDPRINTCODE {
+	count -1 FMoptop {pop pop} for 
+	countdictstack -1 FMdicttop {pop end} for 
+	FMsaveobject restore 
+	} bind def
+/gn { 
+	0 
+	{	46 mul 
+		cf read pop 
+		32 sub 
+		dup 46 lt {exit} if 
+		46 sub add 
+		} loop
+	add 
+	} bind def
+	/str FMLOCAL
+/cfs { 
+	/str sl string def 
+	0 1 sl 1 sub {str exch val put} for 
+	str def 
+	} bind def
+/ic [ 
+	0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0223
+	0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0223
+	0
+	{0 hx} {1 hx} {2 hx} {3 hx} {4 hx} {5 hx} {6 hx} {7 hx} {8 hx} {9 hx}
+	{10 hx} {11 hx} {12 hx} {13 hx} {14 hx} {15 hx} {16 hx} {17 hx} {18 hx}
+	{19 hx} {gn hx} {0} {1} {2} {3} {4} {5} {6} {7} {8} {9} {10} {11} {12}
+	{13} {14} {15} {16} {17} {18} {19} {gn} {0 wh} {1 wh} {2 wh} {3 wh}
+	{4 wh} {5 wh} {6 wh} {7 wh} {8 wh} {9 wh} {10 wh} {11 wh} {12 wh}
+	{13 wh} {14 wh} {gn wh} {0 bl} {1 bl} {2 bl} {3 bl} {4 bl} {5 bl} {6 bl}
+	{7 bl} {8 bl} {9 bl} {10 bl} {11 bl} {12 bl} {13 bl} {14 bl} {gn bl}
+	{0 fl} {1 fl} {2 fl} {3 fl} {4 fl} {5 fl} {6 fl} {7 fl} {8 fl} {9 fl}
+	{10 fl} {11 fl} {12 fl} {13 fl} {14 fl} {gn fl}
+	] def
+	/sl FMLOCAL
+	/val FMLOCAL
+	/ws FMLOCAL
+	/im FMLOCAL
+	/bs FMLOCAL
+	/cs FMLOCAL
+	/len FMLOCAL
+	/pos FMLOCAL
+/ms { 
+	/sl exch def 
+	/val 255 def 
+	/ws cfs 
+	/im cfs 
+	/val 0 def 
+	/bs cfs 
+	/cs cfs 
+	} bind def
+400 ms 
+/ip { 
+	is 
+	0 
+	cf cs readline pop 
+	{	ic exch get exec 
+		add 
+		} forall 
+	pop 
+	
+	} bind def
+/rip { 
+	   
+	  
+	  bis ris copy pop 
+      is
+      0
+      cf cs readline pop 
+      {       ic exch get exec 
+              add 
+              } forall 
+	  pop pop 
+	  ris gis copy pop 
+	  dup is exch 
+	  
+      cf cs readline pop 
+      {       ic exch get exec 
+              add 
+              } forall 
+	  pop pop
+	  gis bis copy pop 
+	  dup add is exch 
+	  
+      cf cs readline pop 
+      {       ic exch get exec 
+              add 
+              } forall 
+      pop 
+      
+      } bind def
+/wh { 
+	/len exch def 
+	/pos exch def 
+	ws 0 len getinterval im pos len getinterval copy pop
+	pos len 
+	} bind def
+/bl { 
+	/len exch def 
+	/pos exch def 
+	bs 0 len getinterval im pos len getinterval copy pop
+	pos len 
+	} bind def
+/s1 1 string def
+/fl { 
+	/len exch def 
+	/pos exch def 
+	/val cf s1 readhexstring pop 0 get def
+	pos 1 pos len add 1 sub {im exch val put} for
+	pos len 
+	} bind def
+/hx { 
+	3 copy getinterval 
+	cf exch readhexstring pop pop 
+	} bind def
+	/h FMLOCAL
+	/w FMLOCAL
+	/d FMLOCAL
+	/lb FMLOCAL
+	/bitmapsave FMLOCAL
+	/is FMLOCAL
+	/cf FMLOCAL
+/wbytes { 
+      dup dup
+      24 eq { pop pop 3 mul }
+      { 8 eq {pop} {1 eq {7 add 8 idiv} {3 add 4 idiv} ifelse} ifelse } ifelse
+	} bind def
+/BEGINBITMAPBWc { 
+	1 {} COMMONBITMAPc
+	} bind def
+/BEGINBITMAPGRAYc { 
+	8 {} COMMONBITMAPc
+	} bind def
+/BEGINBITMAP2BITc { 
+	2 {} COMMONBITMAPc
+	} bind def
+/COMMONBITMAPc { 
+		 
+	/r exch def
+	/d exch def
+	gsave
+	
+	3 index 2 div add exch	
+	4 index 2 div add exch	
+	translate		
+	rotate			
+	1 index 2 div neg	
+	1 index 2 div neg	
+	translate		
+	scale			
+	/h exch def /w exch def
+	/lb w d wbytes def 
+	sl lb lt {lb ms} if 
+	/bitmapsave save def 
+	r                    
+	/is im 0 lb getinterval def 
+	ws 0 lb getinterval is copy pop 
+	/cf currentfile def 
+	w h d [w 0 0 h neg 0 h] 
+	{ip} image 
+	bitmapsave restore 
+	grestore
+	} bind def
+/BEGINBITMAPBW { 
+	1 {} COMMONBITMAP
+	} bind def
+/BEGINBITMAPGRAY { 
+	8 {} COMMONBITMAP
+	} bind def
+/BEGINBITMAP2BIT { 
+	2 {} COMMONBITMAP
+	} bind def
+/COMMONBITMAP { 
+	/r exch def
+	/d exch def
+	gsave
+	
+	3 index 2 div add exch	
+	4 index 2 div add exch	
+	translate		
+	rotate			
+	1 index 2 div neg	
+	1 index 2 div neg	
+	translate		
+	scale			
+	/h exch def /w exch def
+	/bitmapsave save def 
+	r                    
+	/is w d wbytes string def
+	/cf currentfile def 
+	w h d [w 0 0 h neg 0 h] 
+	{cf is readhexstring pop} image
+	bitmapsave restore 
+	grestore
+	} bind def
+/ngrayt 256 array def
+/nredt 256 array def
+/nbluet 256 array def
+/ngreent 256 array def
+	/gryt FMLOCAL
+	/blut FMLOCAL
+	/grnt FMLOCAL
+	/redt FMLOCAL
+	/indx FMLOCAL
+	/cynu FMLOCAL
+	/magu FMLOCAL
+	/yelu FMLOCAL
+	/k FMLOCAL
+	/u FMLOCAL
+FMLevel1 {
+/colorsetup {
+	currentcolortransfer
+	/gryt exch def
+	/blut exch def
+	/grnt exch def
+	/redt exch def
+	0 1 255 {
+		/indx exch def
+		/cynu 1 red indx get 255 div sub def
+		/magu 1 green indx get 255 div sub def
+		/yelu 1 blue indx get 255 div sub def
+		/k cynu magu min yelu min def
+		/u k currentundercolorremoval exec def
+%		/u 0 def
+		nredt indx 1 0 cynu u sub max sub redt exec put
+		ngreent indx 1 0 magu u sub max sub grnt exec put
+		nbluet indx 1 0 yelu u sub max sub blut exec put
+		ngrayt indx 1 k currentblackgeneration exec sub gryt exec put
+	} for
+	{255 mul cvi nredt exch get}
+	{255 mul cvi ngreent exch get}
+	{255 mul cvi nbluet exch get}
+	{255 mul cvi ngrayt exch get}
+	setcolortransfer
+	{pop 0} setundercolorremoval
+	{} setblackgeneration
+	} bind def
+}
+{
+/colorSetup2 {
+	[ /Indexed /DeviceRGB 255 
+		{dup red exch get 255 div 
+		 exch dup green exch get 255 div 
+		 exch blue exch get 255 div}
+	] setcolorspace
+} bind def
+} ifelse
+	/tran FMLOCAL
+/fakecolorsetup {
+	/tran 256 string def
+	0 1 255 {/indx exch def 
+		tran indx
+		red indx get 77 mul
+		green indx get 151 mul
+		blue indx get 28 mul
+		add add 256 idiv put} for
+	currenttransfer
+	{255 mul cvi tran exch get 255.0 div}
+	exch concatprocs settransfer
+} bind def
+/BITMAPCOLOR { 
+	/d 8 def
+	gsave
+	
+	3 index 2 div add exch	
+	4 index 2 div add exch	
+	translate		
+	rotate			
+	1 index 2 div neg	
+	1 index 2 div neg	
+	translate		
+	scale			
+	/h exch def /w exch def
+	/bitmapsave save def
+	FMLevel1 {	
+		colorsetup
+		/is w d wbytes string def
+		/cf currentfile def 
+		w h d [w 0 0 h neg 0 h] 
+		{cf is readhexstring pop} {is} {is} true 3 colorimage 
+	} {
+		colorSetup2
+		/is w d wbytes string def
+		/cf currentfile def 
+		7 dict dup begin
+			/ImageType 1 def
+			/Width w def
+			/Height h def
+			/ImageMatrix [w 0 0 h neg 0 h] def
+			/DataSource {cf is readhexstring pop} bind def
+			/BitsPerComponent d def
+			/Decode [0 255] def
+		end image	
+	} ifelse
+	bitmapsave restore 
+	grestore
+	} bind def
+/BITMAPCOLORc { 
+	/d 8 def
+	gsave
+	
+	3 index 2 div add exch	
+	4 index 2 div add exch	
+	translate		
+	rotate			
+	1 index 2 div neg	
+	1 index 2 div neg	
+	translate		
+	scale			
+	/h exch def /w exch def
+	/lb w d wbytes def 
+	sl lb lt {lb ms} if 
+	/bitmapsave save def 
+	FMLevel1 {	
+		colorsetup
+		/is im 0 lb getinterval def 
+		ws 0 lb getinterval is copy pop 
+		/cf currentfile def 
+		w h d [w 0 0 h neg 0 h] 
+		{ip} {is} {is} true 3 colorimage
+	} {
+		colorSetup2
+		/is im 0 lb getinterval def 
+		ws 0 lb getinterval is copy pop 
+		/cf currentfile def 
+		7 dict dup begin
+			/ImageType 1 def
+			/Width w def
+			/Height h def
+			/ImageMatrix [w 0 0 h neg 0 h] def
+			/DataSource {ip} bind def
+			/BitsPerComponent d def
+			/Decode [0 255] def
+		end image	
+	} ifelse
+	bitmapsave restore 
+	grestore
+	} bind def
+/BITMAPTRUECOLORc { 
+	/d 24 def
+        gsave
+ 	
+	3 index 2 div add exch	
+	4 index 2 div add exch	
+	translate		
+	rotate			
+	1 index 2 div neg	
+	1 index 2 div neg	
+	translate		
+	scale			
+	/h exch def /w exch def
+	/lb w d wbytes def 
+	sl lb lt {lb ms} if 
+        /bitmapsave save def 
+        
+	/is im 0 lb getinterval def	
+	/ris im 0 w getinterval def	
+	/gis im w w getinterval def	
+	/bis im w 2 mul w getinterval def 
+        
+        ws 0 lb getinterval is copy pop 
+        /cf currentfile def 
+        w h 8 [w 0 0 h neg 0 h] 
+        {w rip pop ris} {gis} {bis} true 3 colorimage
+        bitmapsave restore 
+        grestore
+        } bind def
+/BITMAPTRUECOLOR { 
+        gsave
+		
+		3 index 2 div add exch	
+		4 index 2 div add exch	
+		translate		
+		rotate			
+		1 index 2 div neg	
+		1 index 2 div neg	
+		translate		
+		scale			
+		/h exch def /w exch def
+        /bitmapsave save def 
+        /is w string def
+        /gis w string def
+        /bis w string def
+        /cf currentfile def 
+        w h 8 [w 0 0 h neg 0 h] 
+        { cf is readhexstring pop } 
+        { cf gis readhexstring pop } 
+        { cf bis readhexstring pop } 
+        true 3 colorimage 
+        bitmapsave restore 
+        grestore
+        } bind def
+/BITMAPTRUEGRAYc { 
+	/d 24 def
+        gsave
+	
+	3 index 2 div add exch	
+	4 index 2 div add exch	
+	translate		
+	rotate			
+	1 index 2 div neg	
+	1 index 2 div neg	
+	translate		
+	scale			
+	/h exch def /w exch def
+	/lb w d wbytes def 
+	sl lb lt {lb ms} if 
+        /bitmapsave save def 
+        
+	/is im 0 lb getinterval def	
+	/ris im 0 w getinterval def	
+	/gis im w w getinterval def	
+	/bis im w 2 mul w getinterval def 
+        ws 0 lb getinterval is copy pop 
+        /cf currentfile def 
+        w h 8 [w 0 0 h neg 0 h] 
+        {w rip pop ris gis bis w gray} image
+        bitmapsave restore 
+        grestore
+        } bind def
+/ww FMLOCAL
+/r FMLOCAL
+/g FMLOCAL
+/b FMLOCAL
+/i FMLOCAL
+/gray { 
+        /ww exch def
+        /b exch def
+        /g exch def
+        /r exch def
+        0 1 ww 1 sub { /i exch def r i get .299 mul g i get .587 mul
+			b i get .114 mul add add r i 3 -1 roll floor cvi put } for
+        r
+        } bind def
+/BITMAPTRUEGRAY { 
+        gsave
+		
+		3 index 2 div add exch	
+		4 index 2 div add exch	
+		translate		
+		rotate			
+		1 index 2 div neg	
+		1 index 2 div neg	
+		translate		
+		scale			
+		/h exch def /w exch def
+        /bitmapsave save def 
+        /is w string def
+        /gis w string def
+        /bis w string def
+        /cf currentfile def 
+        w h 8 [w 0 0 h neg 0 h] 
+        { cf is readhexstring pop 
+          cf gis readhexstring pop 
+          cf bis readhexstring pop w gray}  image
+        bitmapsave restore 
+        grestore
+        } bind def
+/BITMAPGRAY { 
+	8 {fakecolorsetup} COMMONBITMAP
+	} bind def
+/BITMAPGRAYc { 
+	8 {fakecolorsetup} COMMONBITMAPc
+	} bind def
+/ENDBITMAP {
+	} bind def
+end 
+	/ALDsave FMLOCAL
+	/ALDmatrix matrix def ALDmatrix currentmatrix pop
+/StartALD {
+	/ALDsave save def
+	 savematrix
+	 ALDmatrix setmatrix
+	} bind def
+/InALD {
+	 restorematrix
+	} bind def
+/DoneALD {
+	 ALDsave restore
+	} bind def
+/I { setdash } bind def
+/J { [] 0 setdash } bind def
+%%EndProlog
+%%BeginSetup
+(4.0) FMVERSION
+1 1 0 0 612 792 0 1 13 FMDOCUMENT
+0 0 /Times-Bold FMFONTDEFINE
+1 0 /Times-Roman FMFONTDEFINE
+2 0 /Times-Italic FMFONTDEFINE
+3 0 /Courier FMFONTDEFINE
+4 0 /Courier-Bold FMFONTDEFINE
+5 0 /Helvetica-Bold FMFONTDEFINE
+6 0 /Courier-Oblique FMFONTDEFINE
+32 FMFILLS
+0 0 FMFILL
+1 0.1 FMFILL
+2 0.3 FMFILL
+3 0.5 FMFILL
+4 0.7 FMFILL
+5 0.9 FMFILL
+6 0.97 FMFILL
+7 1 FMFILL
+8 <0f1e3c78f0e1c387> FMFILL
+9 <0f87c3e1f0783c1e> FMFILL
+10 <cccccccccccccccc> FMFILL
+11 <ffff0000ffff0000> FMFILL
+12 <8142241818244281> FMFILL
+13 <03060c183060c081> FMFILL
+14 <8040201008040201> FMFILL
+16 1 FMFILL
+17 0.9 FMFILL
+18 0.7 FMFILL
+19 0.5 FMFILL
+20 0.3 FMFILL
+21 0.1 FMFILL
+22 0.03 FMFILL
+23 0 FMFILL
+24 <f0e1c3870f1e3c78> FMFILL
+25 <f0783c1e0f87c3e1> FMFILL
+26 <3333333333333333> FMFILL
+27 <0000ffff0000ffff> FMFILL
+28 <7ebddbe7e7dbbd7e> FMFILL
+29 <fcf9f3e7cf9f3f7e> FMFILL
+30 <7fbfdfeff7fbfdfe> FMFILL
+%%EndSetup
+%%Page: "1" 1
+%%BeginPaperSize: Letter
+%%EndPaperSize
+612 792 0 FMBEGINPAGE
+[0 0 0 1 0 0 0]
+[ 0 1 1 0 1 0 0]
+[ 1 0 1 0 0 1 0]
+[ 1 1 0 0 0 0 1]
+[ 1 0 0 0 0 1 1]
+[ 0 1 0 0 1 0 1]
+[ 0 0 1 0 1 1 0]
+ 7 FrameSetSepColors
+FrameNoSep
+0 0 0 1 0 0 0 K
+J
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 12 Q
+0 X
+0 0 0 1 0 0 0 K
+(          Device Support Extensions to Open Firmwar) 173.28 748 T
+(e) 433.39 748 T
+(August 17, 1995 Revision 0.3 DRAFT) 72 36 T
+(1 of 8) 512 36 T
+72 738 540 738 2 L
+1 H
+2 Z
+N
+72 54 540 54 2 L
+N
+27 72 54 720 C
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+27 72 54 720 R
+7 X
+0 0 0 1 0 0 0 K
+V
+27 72 54 720 C
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+27 72 54 720 R
+7 X
+0 0 0 1 0 0 0 K
+V
+1 12 Q
+0 X
+(1) 36 711 T
+(2) 36 699 T
+(3) 36 687 T
+(4) 36 675 T
+(5) 36 663 T
+(6) 36 651 T
+(7) 36 639 T
+(8) 36 627 T
+(9) 36 615 T
+(10) 36 603 T
+(11) 36 591 T
+(12) 36 579 T
+(13) 36 567 T
+(14) 36 555 T
+(15) 36 543 T
+(16) 36 531 T
+(17) 36 519 T
+(18) 36 507 T
+(19) 36 495 T
+(20) 36 483 T
+(21) 36 471 T
+(22) 36 459 T
+(23) 36 447 T
+(24) 36 435 T
+(25) 36 423 T
+(26) 36 411 T
+(27) 36 399 T
+(28) 36 387 T
+(29) 36 375 T
+(30) 36 363 T
+(31) 36 351 T
+(32) 36 339 T
+(33) 36 327 T
+(34) 36 315 T
+(35) 36 303 T
+(36) 36 291 T
+(37) 36 279 T
+(38) 36 267 T
+(39) 36 255 T
+(40) 36 243 T
+(41) 36 231 T
+(42) 36 219 T
+(43) 36 207 T
+(44) 36 195 T
+(45) 36 183 T
+(46) 36 171 T
+(47) 36 159 T
+(48) 36 147 T
+(49) 36 135 T
+(50) 36 123 T
+(51) 36 111 T
+(52) 36 99 T
+(53) 36 87 T
+(54) 36 75 T
+27 72 54 720 C
+0 0 612 792 C
+1 18 Q
+0 X
+0 0 0 1 0 0 0 K
+1.8 (Device Support Extensions to:) 193.55 624 P
+1.8 (IEEE Std 1275-1994) 229.2 550 P
+1.8 (Standard for Boot) 239.71 514 P
+1.8 (\050Initialization, Con\336guration\051) 198.6 478 P
+(Firmware) 271.01 442 T
+1.8 (Revision: 0.3 DRAFT) 224.44 358 P
+1.8 (Date:) 286.51 316 P
+1.8 (August 17, 1995) 244.45 274 P
+52 268 54 370 R
+V
+FMENDPAGE
+%%EndPage: "1" 1
+%%Page: "2" 2
+612 792 0 FMBEGINPAGE
+[0 0 0 1 0 0 0]
+[ 0 1 1 0 1 0 0]
+[ 1 0 1 0 0 1 0]
+[ 1 1 0 0 0 0 1]
+[ 1 0 0 0 0 1 1]
+[ 0 1 0 0 1 0 1]
+[ 0 0 1 0 1 1 0]
+ 7 FrameSetSepColors
+FrameNoSep
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 12 Q
+0 X
+0 0 0 1 0 0 0 K
+(          Device Support Extensions to Open Firmwar) 173.28 748 T
+(e) 433.39 748 T
+(August 17, 1995 Revision 0.3 DRAFT) 72 36 T
+(2 of 8) 512 36 T
+72 738 540 738 2 L
+1 H
+2 Z
+N
+72 54 540 54 2 L
+N
+27 72 54 720 C
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+27 72 54 720 R
+7 X
+0 0 0 1 0 0 0 K
+V
+27 72 54 720 C
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+27 72 54 720 R
+7 X
+0 0 0 1 0 0 0 K
+V
+1 12 Q
+0 X
+(1) 36 711 T
+(2) 36 699 T
+(3) 36 687 T
+(4) 36 675 T
+(5) 36 663 T
+(6) 36 651 T
+(7) 36 639 T
+(8) 36 627 T
+(9) 36 615 T
+(10) 36 603 T
+(11) 36 591 T
+(12) 36 579 T
+(13) 36 567 T
+(14) 36 555 T
+(15) 36 543 T
+(16) 36 531 T
+(17) 36 519 T
+(18) 36 507 T
+(19) 36 495 T
+(20) 36 483 T
+(21) 36 471 T
+(22) 36 459 T
+(23) 36 447 T
+(24) 36 435 T
+(25) 36 423 T
+(26) 36 411 T
+(27) 36 399 T
+(28) 36 387 T
+(29) 36 375 T
+(30) 36 363 T
+(31) 36 351 T
+(32) 36 339 T
+(33) 36 327 T
+(34) 36 315 T
+(35) 36 303 T
+(36) 36 291 T
+(37) 36 279 T
+(38) 36 267 T
+(39) 36 255 T
+(40) 36 243 T
+(41) 36 231 T
+(42) 36 219 T
+(43) 36 207 T
+(44) 36 195 T
+(45) 36 183 T
+(46) 36 171 T
+(47) 36 159 T
+(48) 36 147 T
+(49) 36 135 T
+(50) 36 123 T
+(51) 36 111 T
+(52) 36 99 T
+(53) 36 87 T
+(54) 36 75 T
+27 72 54 720 C
+0 0 612 792 C
+0 14 Q
+0 X
+0 0 0 1 0 0 0 K
+(1.  Overview) 72 710.67 T
+1 10 Q
+1 (This document speci\336es the application of) 72 693.33 P
+2 F
+1 (IEEE Std 1275-1994 Standar) 249.65 693.33 P
+1 (d for Boot \050Initialization, Con\336guration\051) 369.22 693.33 P
+1 (Firmwar) 72 681.33 P
+1 (e, Cor) 107.19 681.33 P
+1 (e Practices and Requir) 132.82 681.33 P
+1 (ements) 227.38 681.33 P
+1 F
+1 ([1] to a variety of common peripheral types.  It is intended that) 255.15 681.33 P
+1 (Open Firmware implementations supporting these device types will supply the methods and properties described) 72 669.33 P
+(herein.) 72 657.33 T
+0 14 Q
+(2.  Refer) 72 626.67 T
+(ences) 122.67 626.67 T
+1 10 Q
+([1]) 72 609.33 T
+2 F
+1 (IEEE Std 1275-1994 Standar) 90 609.33 P
+1 (d for Boot \050Initialization, Con\336guration\051 Firmwar) 209.57 609.33 P
+1 (e, Cor) 414.78 609.33 P
+1 (e Practices and) 440.41 609.33 P
+(Requir) 72 597.33 T
+(ements) 98.85 597.33 T
+1 F
+([2]) 72 578.33 T
+2 F
+1 (ISO-639) 90 578.33 P
+1 F
+1 (,) 123.88 578.33 P
+2 F
+1 (Code for the r) 129.88 578.33 P
+1 (epr) 188.9 578.33 P
+1 (esentation of names of languages) 201.86 578.33 P
+1 F
+1 (, published by International Or) 339.19 578.33 P
+1 (ganization for) 466.05 578.33 P
+(Standardization.) 72 566.33 T
+([3]) 72 547.33 T
+2 F
+1 (ANSI/IEEE X3.215-1994, Pr) 90 547.33 P
+1 (ogramming Languages -- Forth) 206.62 547.33 P
+1 F
+1 (.) 336.56 547.33 P
+0 14 Q
+(3.  Keyboard devices) 72 516.67 T
+1 10 Q
+2.5 (Open Firmware does not have a speci\336c device class for keyboards; instead, keyboards are instances of the) 72 499.33 P
+3 F
+4.12 ("serial") 72 487.33 P
+1 F
+1.72 ( device class. However) 120 487.33 P
+1.72 (, certain features of keyboards \050i.e., the ability to re-map keys, etc.\051 make it) 216.94 487.33 P
+1 (desirable to implement them as a separate device class.) 72 475.33 P
+1 (In general, keyboard devices produce a hardware) 72 458.33 P
+2 F
+1 (scan-code) 277.81 458.33 P
+1 F
+1 ( that is speci\336c to the type of keyboard. These scan-) 318.35 458.33 P
+1 (codes are then mapped via software to produce the character code for the key) 72 446.33 P
+1 (, taking into account the state of) 393.41 446.33 P
+1 ("modi\336er" keys \050e.g., Shift, Control\051 and the keyboard layout. The mapping of scan-codes to character value) 72 434.33 P
+0.96 (depends upon the keyboard layout; this is dependent upon the language that is being supported by the keyboard.) 72 422.33 P
+1 (E.g., the layout of keys for a French keyboard is dif) 72 410.33 P
+1 (ferent than that for an English keyboard.) 288.17 410.33 P
+1 (For purposes of localization, it is necessary for the scan-code conversion to be controlled by the software,) 72 391.33 P
+1 (including Open Firmware \050via the Client Interface\051. This section adds mechanisms to allow client programs to) 72 379.33 P
+1 (alter the scan-code conversion, based upon the keyboard \050language\051 layout.) 72 367.33 P
+1 (The language-speci\336c layout is speci\336ed by means of a 2-character abbreviation, as described by [2]. The) 72 348.33 P
+1 (following languages may be supported:) 72 336.33 P
+(CS) 90 317.33 T
+(Czech) 126 317.33 T
+(DA) 90 305.33 T
+(Danish) 126 305.33 T
+(NL) 90 293.33 T
+(Dutch) 126 293.33 T
+(EN) 90 281.33 T
+1 (English \050default\051) 126 281.33 P
+(FI) 90 269.33 T
+(Finnish) 126 269.33 T
+(FR) 90 257.33 T
+(French) 126 257.33 T
+(DE) 90 245.33 T
+(German) 126 245.33 T
+(HU) 90 233.33 T
+(Hungarian) 126 233.33 T
+(IT) 90 221.33 T
+(Italian) 126 221.33 T
+(NO) 90 209.33 T
+(Norwegian) 126 209.33 T
+(PL) 90 197.33 T
+(Polish) 126 197.33 T
+(PT) 90 185.33 T
+(Portuguese) 126 185.33 T
+(SK) 90 173.33 T
+(Slovak) 126 173.33 T
+(ES) 90 161.33 T
+(Spanish) 126 161.33 T
+(SV) 90 149.33 T
+(Swedish) 126 149.33 T
+1 (For testing of keyboard devices, additional low-level methods are de\336ned for) 72 134.33 P
+3 F
+2.4 ("keyboard") 394.06 134.33 P
+1 F
+1 ( devices.) 454.06 134.33 P
+4 F
+2.4 (get-) 493.55 134.33 P
+2.4 (scancode) 72 122.33 P
+1 F
+1 ( will read the next available scan-code from the keyboard;) 120 122.33 P
+4 F
+2.4 (scancode->char) 364.94 122.33 P
+1 F
+1 ( will perform) 448.94 122.33 P
+1 (character mapping, using the same conversion as would normal) 72 110.33 P
+4 F
+2.4 (read) 337.62 110.33 P
+1 F
+1 (s. This enables test software to test for a) 361.62 110.33 P
+1 (speci\336c character to terminate the test without having to know the scan-code to character translations.) 72 98.33 P
+FMENDPAGE
+%%EndPage: "2" 2
+%%Page: "3" 3
+612 792 0 FMBEGINPAGE
+[0 0 0 1 0 0 0]
+[ 0 1 1 0 1 0 0]
+[ 1 0 1 0 0 1 0]
+[ 1 1 0 0 0 0 1]
+[ 1 0 0 0 0 1 1]
+[ 0 1 0 0 1 0 1]
+[ 0 0 1 0 1 1 0]
+ 7 FrameSetSepColors
+FrameNoSep
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 12 Q
+0 X
+0 0 0 1 0 0 0 K
+(          Device Support Extensions to Open Firmwar) 173.28 748 T
+(e) 433.39 748 T
+(August 17, 1995 Revision 0.3 DRAFT) 72 36 T
+(3 of 8) 512 36 T
+72 738 540 738 2 L
+1 H
+2 Z
+N
+72 54 540 54 2 L
+N
+27 72 54 720 C
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+27 72 54 720 R
+7 X
+0 0 0 1 0 0 0 K
+V
+27 72 54 720 C
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+27 72 54 720 R
+7 X
+0 0 0 1 0 0 0 K
+V
+1 12 Q
+0 X
+(1) 36 711 T
+(2) 36 699 T
+(3) 36 687 T
+(4) 36 675 T
+(5) 36 663 T
+(6) 36 651 T
+(7) 36 639 T
+(8) 36 627 T
+(9) 36 615 T
+(10) 36 603 T
+(11) 36 591 T
+(12) 36 579 T
+(13) 36 567 T
+(14) 36 555 T
+(15) 36 543 T
+(16) 36 531 T
+(17) 36 519 T
+(18) 36 507 T
+(19) 36 495 T
+(20) 36 483 T
+(21) 36 471 T
+(22) 36 459 T
+(23) 36 447 T
+(24) 36 435 T
+(25) 36 423 T
+(26) 36 411 T
+(27) 36 399 T
+(28) 36 387 T
+(29) 36 375 T
+(30) 36 363 T
+(31) 36 351 T
+(32) 36 339 T
+(33) 36 327 T
+(34) 36 315 T
+(35) 36 303 T
+(36) 36 291 T
+(37) 36 279 T
+(38) 36 267 T
+(39) 36 255 T
+(40) 36 243 T
+(41) 36 231 T
+(42) 36 219 T
+(43) 36 207 T
+(44) 36 195 T
+(45) 36 183 T
+(46) 36 171 T
+(47) 36 159 T
+(48) 36 147 T
+(49) 36 135 T
+(50) 36 123 T
+(51) 36 111 T
+(52) 36 99 T
+(53) 36 87 T
+(54) 36 75 T
+27 72 54 720 C
+0 0 612 792 C
+0 14 Q
+0 X
+0 0 0 1 0 0 0 K
+(3.1.  "keyboard" device standard pr) 72 710.67 T
+(operties) 287.57 710.67 T
+4 10 Q
+("device_type") 72 693.33 T
+1 F
+1 (Standard Open Firmware property; the value of this property for keyboard devices) 90 678.33 P
+2 F
+1 (shall) 434.15 678.33 P
+1 F
+1 ( be) 453.6 678.33 P
+3 F
+2.4 ("keyboard") 470.04 678.33 P
+1 F
+1 (.) 530.04 678.33 P
+4 F
+("language") 72 660.33 T
+1 F
+1 (Standard property) 90 645.33 P
+1 (, encoded as with) 162.28 645.33 P
+4 F
+2.4 (encode-string) 238.21 645.33 P
+1 F
+1 (, that indicates the current scan-code to character) 316.21 645.33 P
+1 (conversion, based upon the language\325) 90 635.33 P
+1 (s keyboard layout.  This value indicates the language \050i.e., keyboard) 244.25 635.33 P
+1 (layout scan-code conversion\051 to which the keyboard driver is currently set.) 90 625.33 P
+0 14 Q
+(3.2.  "keyboard" device methods) 72 596.67 T
+1 10 Q
+1.74 (In addition to the Open Firmware standard) 72 579.33 P
+4 F
+4.17 (open) 257.2 579.33 P
+1 F
+1.74 (,) 281.2 579.33 P
+4 F
+4.17 (close) 287.93 579.33 P
+1 F
+1.74 ( and) 317.93 579.33 P
+4 F
+4.17 (read) 340.85 579.33 P
+1 F
+1.74 ( methods, the following methods shall be) 364.85 579.33 P
+1.15 (supported by an Open Firmware implementation of a) 72 567.33 P
+3 F
+2.75 ("keyboard") 296.14 567.33 P
+1 F
+1.15 ( device. Note that the) 356.14 567.33 P
+0 F
+1.15 (open) 449.63 567.33 P
+1 F
+1.15 ( routine can take) 470.19 567.33 P
+1 (an optional ar) 72 555.33 P
+1 (gument which speci\336es the language \050i.e.,) 128.81 555.33 P
+0 F
+1 (scancode->char) 305.06 555.33 P
+1 F
+1 ( mapping\051 to be used.) 371.86 555.33 P
+4 F
+(get-scancode) 72 538.33 T
+2.4 (\050 msecs -- scancode true | false \051) 180 538.33 P
+1 F
+1 (This method returns the "raw" scan-code value of the next key alteration.) 90 523.33 P
+3 F
+2.4 (msecs) 397.04 523.33 P
+1 F
+1 ( is the number of) 427.04 523.33 P
+1 (milliseconds to wait for a keystroke before reporting failure; a value of 0 implies wait until keystroke. If) 90 513.33 P
+1 (this timeout expires before a keystroke is read,) 90 503.33 P
+4 F
+2.4 (false) 287.13 503.33 P
+1 F
+1 ( is returned. Otherwise, the) 317.13 503.33 P
+3 F
+2.4 (scancode) 432.94 503.33 P
+1 F
+1 ( and) 480.94 503.33 P
+4 F
+2.4 (true) 502.38 503.33 P
+1 F
+1 (are returned.) 90 493.33 P
+4 F
+(scancode->char) 72 475.33 T
+2.4 (\050 scancode -- char true | false \051) 180 475.33 P
+1 F
+1 (Using the) 90 460.33 P
+3 F
+2.4 (scancode) 133.11 460.33 P
+1 F
+1 (, perform translation to a character) 181.11 460.33 P
+1 (. If the) 323.85 460.33 P
+3 F
+2.4 (scancode) 355.73 460.33 P
+1 F
+1 ( represents a modi\336er key \050e.g.,) 403.73 460.33 P
+1 (Shift\051, no translation will be available; in this case,) 90 450.33 P
+4 F
+2.4 (false) 304.82 450.33 P
+1 F
+1 ( is returned. If the) 334.82 450.33 P
+3 F
+2.4 (scancode) 413.69 450.33 P
+1 F
+1 ( represents a) 461.69 450.33 P
+1 (translated character) 90 440.33 P
+1 (,) 168.62 440.33 P
+3 F
+2.4 (char) 174.62 440.33 P
+1 F
+1 ( and) 198.62 440.33 P
+4 F
+2.4 (true) 220.06 440.33 P
+1 F
+1 ( are returned.) 244.06 440.33 P
+4 F
+(set-language) 72 422.33 T
+2.4 (\050 str) 180 422.33 P
+2.4 (len -- true | false \051) 220.8 422.33 P
+1 F
+1 (If the keyboard driver can support the requested character) 90 407.33 P
+1 (-set, it) 328.83 407.33 P
+0 F
+1 (shall) 358.33 407.33 P
+1 F
+1 ( set its) 378.34 407.33 P
+3 F
+2.4 ("language") 409.4 407.33 P
+1 F
+1 ( property to the) 469.4 407.33 P
+1 (value speci\336ed by) 90 397.33 P
+3 F
+2.4 (str,len) 167.71 397.33 P
+1 F
+1 (, and return a value of) 209.71 397.33 P
+4 F
+2.4 (true) 305.96 397.33 P
+1 F
+1 (. If it can not support the requested language, no) 329.96 397.33 P
+1 (change of) 90 387.33 P
+3 F
+2.4 ("language") 137.15 387.33 P
+1 F
+1 ( is made and a value of) 197.15 387.33 P
+4 F
+2.4 (false) 298.85 387.33 P
+1 F
+1 ( is returned.) 328.85 387.33 P
+2.55 (The reason for adding a special call, instead of just using the) 72 369.33 P
+4 F
+6.11 (property) 347.23 369.33 P
+1 F
+2.55 ( \050) 395.23 369.33 P
+3 F
+6.11 (setprop) 403.61 369.33 P
+1 F
+2.55 (\051 call, is to allow the) 445.61 369.33 P
+1.37 (device to "\336lter" the request. I.e., a scan-code conversion may not be available for the requested language. This) 72 357.33 P
+1 (call allows the device driver to change the property only if it can support the requested mapping.) 72 345.33 P
+0 14 Q
+(3.3.  Abort key  sequence for keyboard devices) 72 314.67 T
+1 10 Q
+1 (For PC-101 keyboards, the abort sequence \050see) 72 297.33 P
+2 F
+1 (install-abort) 270.07 297.33 P
+1 F
+1 ( in the IEEE 1275 glossary\051 shall be Ctrl-Brk.) 320.08 297.33 P
+0 14 Q
+(3.4.  Contr) 72 266.67 T
+(ol Sequences for Common Special Keys) 135.52 266.67 T
+1 10 Q
+2.01 (The following table speci\336es the values that should be returned in the keyboard buf) 72 249.33 P
+2.01 (fer when certain keys are) 431.46 249.33 P
+(pressed.) 72 237.33 T
+5 9 Q
+(T) 157.32 211.33 T
+(able  1.) 162.15 211.33 T
+0 10 Q
+(Contr) 197.67 211.33 T
+(ol Sequences for Common Special Keys) 223.04 211.33 T
+158.32 180.5 227.04 199 R
+6 X
+V
+0 12 Q
+0 X
+(Sequence) 163.32 185 T
+227.78 180.5 296.25 199 R
+6 X
+V
+0 X
+(Key legend) 233.28 185 T
+297.75 179 314.75 200 R
+7 X
+V
+315.75 180.5 384.22 199 R
+6 X
+V
+0 X
+(Sequence) 320.75 185 T
+385.22 180.5 453.69 199 R
+6 X
+V
+0 X
+(Key legend) 390.72 185 T
+1 F
+(CSI) 163.32 167 T
+1 9.6 Q
+(a) 181.99 171.8 T
+1 12 Q
+( A) 186.25 167 T
+(up arrow) 233.28 167 T
+298.25 161 313.75 179 R
+7 X
+V
+0 X
+(CSI @) 320.75 167 T
+(insert) 390.72 167 T
+(CSI B) 163.32 149 T
+(down arrow) 233.28 149 T
+298.25 143 313.75 161 R
+7 X
+V
+0 X
+(CSI P) 320.75 149 T
+(delete) 390.72 149 T
+1 9.6 Q
+(b) 419.37 153.8 T
+1 12 Q
+(CSI C) 163.32 131 T
+(right arrow) 233.28 131 T
+298.25 125 313.75 143 R
+7 X
+V
+0 X
+(CSI K) 320.75 131 T
+(end) 390.72 131 T
+(CSI D) 163.32 113 T
+(left arrow) 233.28 113 T
+298.25 107 313.75 125 R
+7 X
+V
+0 X
+(CSI ?) 320.75 113 T
+(page-up) 390.72 113 T
+(CSI H) 163.32 95 T
+(home) 233.28 95 T
+298.25 89 313.75 107 R
+7 X
+V
+0 X
+(CSI /) 320.75 95 T
+(page-down) 390.72 95 T
+157.32 199 157.32 90 2 L
+V
+2 H
+0 Z
+N
+227.28 201 227.28 88 2 L
+V
+0.5 H
+N
+297.25 199 297.25 90 2 L
+V
+2 H
+N
+314.75 199 314.75 90 2 L
+V
+N
+384.72 201 384.72 88 2 L
+V
+1 H
+N
+454.68 199 454.68 90 2 L
+V
+2 H
+N
+156.32 200 298.25 200 2 L
+V
+N
+313.75 200 455.68 200 2 L
+V
+N
+158.32 180 296.25 180 2 L
+V
+1 H
+N
+158.32 178 296.25 178 2 L
+V
+N
+315.75 180 453.68 180 2 L
+V
+N
+315.75 178 453.68 178 2 L
+V
+N
+156.32 161 298.25 161 2 L
+V
+N
+313.75 161 455.68 161 2 L
+V
+N
+156.32 143 298.25 143 2 L
+V
+N
+313.75 143 455.68 143 2 L
+V
+N
+156.32 125 298.25 125 2 L
+V
+N
+313.75 125 455.68 125 2 L
+V
+N
+156.32 107 298.25 107 2 L
+V
+N
+313.75 107 455.68 107 2 L
+V
+N
+156.32 89 298.25 89 2 L
+V
+2 H
+N
+313.75 89 455.68 89 2 L
+V
+N
+52 234 54 276 R
+V
+52 208 54 218 R
+V
+52 181 54 193 R
+V
+52 181 54 193 R
+V
+52 181 54 193 R
+V
+52 181 54 193 R
+V
+52 163 54 175 R
+V
+52 163 54 175 R
+V
+52 163 54 175 R
+V
+52 163 54 175 R
+V
+52 145 54 157 R
+V
+52 145 54 157 R
+V
+52 145 54 157 R
+V
+52 145 54 157 R
+V
+52 127 54 139 R
+V
+52 127 54 139 R
+V
+52 127 54 139 R
+V
+52 127 54 139 R
+V
+52 109 54 121 R
+V
+52 109 54 121 R
+V
+52 109 54 121 R
+V
+52 109 54 121 R
+V
+52 91 54 103 R
+V
+52 91 54 103 R
+V
+52 91 54 103 R
+V
+52 91 54 103 R
+V
+FMENDPAGE
+%%EndPage: "3" 3
+%%Page: "4" 4
+612 792 0 FMBEGINPAGE
+[0 0 0 1 0 0 0]
+[ 0 1 1 0 1 0 0]
+[ 1 0 1 0 0 1 0]
+[ 1 1 0 0 0 0 1]
+[ 1 0 0 0 0 1 1]
+[ 0 1 0 0 1 0 1]
+[ 0 0 1 0 1 1 0]
+ 7 FrameSetSepColors
+FrameNoSep
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 12 Q
+0 X
+0 0 0 1 0 0 0 K
+(          Device Support Extensions to Open Firmwar) 173.28 748 T
+(e) 433.39 748 T
+(August 17, 1995 Revision 0.3 DRAFT) 72 36 T
+(4 of 8) 512 36 T
+72 738 540 738 2 L
+1 H
+2 Z
+N
+72 54 540 54 2 L
+N
+27 72 54 720 C
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+27 72 54 720 R
+7 X
+0 0 0 1 0 0 0 K
+V
+27 72 54 720 C
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+27 72 54 720 R
+7 X
+0 0 0 1 0 0 0 K
+V
+1 12 Q
+0 X
+(1) 36 711 T
+(2) 36 699 T
+(3) 36 687 T
+(4) 36 675 T
+(5) 36 663 T
+(6) 36 651 T
+(7) 36 639 T
+(8) 36 627 T
+(9) 36 615 T
+(10) 36 603 T
+(11) 36 591 T
+(12) 36 579 T
+(13) 36 567 T
+(14) 36 555 T
+(15) 36 543 T
+(16) 36 531 T
+(17) 36 519 T
+(18) 36 507 T
+(19) 36 495 T
+(20) 36 483 T
+(21) 36 471 T
+(22) 36 459 T
+(23) 36 447 T
+(24) 36 435 T
+(25) 36 423 T
+(26) 36 411 T
+(27) 36 399 T
+(28) 36 387 T
+(29) 36 375 T
+(30) 36 363 T
+(31) 36 351 T
+(32) 36 339 T
+(33) 36 327 T
+(34) 36 315 T
+(35) 36 303 T
+(36) 36 291 T
+(37) 36 279 T
+(38) 36 267 T
+(39) 36 255 T
+(40) 36 243 T
+(41) 36 231 T
+(42) 36 219 T
+(43) 36 207 T
+(44) 36 195 T
+(45) 36 183 T
+(46) 36 171 T
+(47) 36 159 T
+(48) 36 147 T
+(49) 36 135 T
+(50) 36 123 T
+(51) 36 111 T
+(52) 36 99 T
+(53) 36 87 T
+(54) 36 75 T
+27 72 54 720 C
+0 0 612 792 C
+0 14 Q
+0 X
+0 0 0 1 0 0 0 K
+(4.  Pointing devices) 72 481.67 T
+1 10 Q
+1.63 (This class of device covers a broad category of "pointing" devices, the most common embodiment of which is) 72 464.33 P
+1.25 (the mouse. These devices typically can generate X,Y coordinates and button-press information on some periodic) 72 452.33 P
+1 (basis. The following properties and methods are de\336ned for such devices.) 72 440.33 P
+0 14 Q
+(4.1.  "mouse" device standard pr) 72 409.67 T
+(operties) 268.9 409.67 T
+4 10 Q
+("device_type") 72 392.33 T
+1 F
+1 (Standard Open Firmware property; the value of this property for pointing devices shall be) 90 377.33 P
+3 F
+2.4 ("mouse") 465.61 377.33 P
+1 F
+1 (.) 507.61 377.33 P
+4 F
+("#buttons") 72 359.33 T
+1 F
+1 (Standard property) 90 344.33 P
+1 (, encoded as with) 162.28 344.33 P
+4 F
+2.4 (encode-int) 238.21 344.33 P
+1 F
+1 (, that indicates the number of physical buttons supported) 298.21 344.33 P
+1 (by the device. This property can be used to interpret the) 90 334.33 P
+6 F
+2.4 (buttons) 326.51 334.33 P
+1 F
+1 ( value returned by the) 368.51 334.33 P
+4 F
+2.4 (get-event) 463.21 334.33 P
+1 F
+(method.) 90 324.33 T
+4 F
+("absolute-position") 72 306.33 T
+1 F
+1 (Standard property) 90 291.33 P
+1 (, whose presence indicates that this device supplies absolute X,Y coordinates \050e.g., a) 162.28 291.33 P
+1 (graphics tablet\051. Absence of this property indicates that the device supplies relative X,Y position \050e.g., a) 90 281.33 P
+(mouse\051.) 90 271.33 T
+0 14 Q
+(4.2.  "mouse" device methods) 72 242.67 T
+1 10 Q
+2.32 (In addition to the Open Firmware standard) 72 225.33 P
+4 F
+5.56 (open) 261.26 225.33 P
+1 F
+2.32 ( and) 285.26 225.33 P
+4 F
+5.56 (close) 309.33 225.33 P
+1 F
+2.32 ( methods, the following methods shall be sup-) 339.33 225.33 P
+1 (ported by an Open Firmware implementation of a) 72 213.33 P
+3 F
+2.4 ("mouse") 281.08 213.33 P
+1 F
+1 ( device.) 323.08 213.33 P
+2.87 (Pointing devices typically supply data only when an "event" occurs \050e.g., the mouse moves or a button is) 72 196.33 P
+3.48 (pressed\051. The following method attempts to obtain an event from the device, reporting whether an event) 72 184.33 P
+(occurred.) 72 172.33 T
+4 F
+(get-event) 72 155.33 T
+2.4 (\050 msecs -- pos.x pos.y buttons true | false \051) 180 155.33 P
+1 F
+1 (Standard method for obtaining the next "event" of pointing devices.) 90 140.33 P
+3 F
+2.4 (msecs) 373.41 140.33 P
+1 F
+1 ( is the number of milliseconds) 403.41 140.33 P
+1 (to wait for an event before reporting failure; a value of 0 implies wait until event.) 90 130.33 P
+3 F
+2.4 (pos.x) 433.44 130.33 P
+1 F
+1 (,) 463.44 130.33 P
+3 F
+2.4 (pos.y) 469.44 130.33 P
+1 F
+1 ( return) 499.44 130.33 P
+1 (the positioning information; they are interpreted as unsigned or signed, depending upon the presence or) 90 120.33 P
+1 (absence of the) 90 110.33 P
+3 F
+2.4 ("absolute-position") 152.7 110.33 P
+1 F
+1 ( property) 266.7 110.33 P
+1 (.) 303.43 110.33 P
+3 F
+2.4 (buttons) 309.43 110.33 P
+1 F
+1 ( returns a bit-mask \050in the low-order bits\051) 351.43 110.33 P
+1 (representing any buttons that are pressed; the number of signi\336cant bits to examine is de\336ned by the) 90 100.33 P
+3 F
+2.07 ("#buttons") 90 90.33 P
+1 F
+0.86 ( property) 150 90.33 P
+0.86 (. The least signi\336cant bit corresponds to the primary \050usually the left-most\051 button of) 186.59 90.33 P
+1 (the device. The top stack result indicates whether an event was detected within the time-out period.) 90 80.33 P
+157.32 566 454.69 573 C
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+298.31 568.5 436.32 568.5 2 L
+0.25 H
+2 Z
+0 X
+0 0 0 1 0 0 0 K
+N
+0 0 612 792 C
+1 9 Q
+0 X
+0 0 0 1 0 0 0 K
+(a. Note: The CSI \050Control  Sequence Introducer\051 is equal to the value) 162 560 T
+(09B.hex.) 162 550 T
+-0.24 (b. Note: Certain external devices often return 07F hex when the "delete" key) 162 537 P
+(is pressed.) 162 527 T
+(c. The letter \325O\325) 162 514 T
+1 12 Q
+(CSI O) 163.32 669 T
+1 9.6 Q
+(c) 193.65 673.8 T
+1 12 Q
+( P) 197.91 669 T
+(function 1) 233.28 669 T
+298.25 663 313.75 681 R
+7 X
+V
+0 X
+(CSI O q) 320.75 669 T
+(function 7) 390.72 669 T
+(CSI O Q) 163.32 651 T
+(function 2) 233.28 651 T
+298.25 645 313.75 663 R
+7 X
+V
+0 X
+(CSI O r) 320.75 651 T
+(function 8) 390.72 651 T
+(CSI O w) 163.32 633 T
+(function 3) 233.28 633 T
+298.25 627 313.75 645 R
+7 X
+V
+0 X
+(CSI O p) 320.75 633 T
+(function 9) 390.72 633 T
+(CSI O x) 163.32 615 T
+(function 4) 233.28 615 T
+298.25 609 313.75 627 R
+7 X
+V
+0 X
+(CSI O M) 320.75 615 T
+(function 10) 390.72 615 T
+(CSI O t) 163.32 597 T
+(function 5) 233.28 597 T
+298.25 591 313.75 609 R
+7 X
+V
+0 X
+(CSI O A) 320.75 597 T
+(function 1) 390.72 597 T
+(1) 439.27 597 T
+(CSI O u) 163.32 579 T
+(function 6) 233.28 579 T
+298.25 573 313.75 591 R
+7 X
+V
+0 X
+(CSI O B) 320.75 579 T
+(function 12) 390.72 579 T
+5 9 Q
+(T) 157.32 713.33 T
+(able  1.) 162.15 713.33 T
+0 10 Q
+(Contr) 197.67 713.33 T
+(ol Sequences for Common Special Keys \050Continued\051) 223.04 713.33 T
+158.32 682.5 227.04 701 R
+6 X
+V
+0 12 Q
+0 X
+(Sequence) 163.32 687 T
+227.78 682.5 296.25 701 R
+6 X
+V
+0 X
+(Key legend) 233.28 687 T
+297.75 681 314.75 702 R
+7 X
+V
+315.75 682.5 384.22 701 R
+6 X
+V
+0 X
+(Sequence) 320.75 687 T
+385.22 682.5 453.69 701 R
+6 X
+V
+0 X
+(Key legend) 390.72 687 T
+157.32 701 157.32 574 2 L
+V
+2 H
+0 Z
+N
+227.28 703 227.28 572 2 L
+V
+0.5 H
+N
+297.25 701 297.25 574 2 L
+V
+2 H
+N
+314.75 701 314.75 574 2 L
+V
+N
+384.72 703 384.72 572 2 L
+V
+1 H
+N
+454.68 701 454.68 574 2 L
+V
+2 H
+N
+156.32 702 298.25 702 2 L
+V
+N
+313.75 702 455.68 702 2 L
+V
+N
+158.32 682 296.25 682 2 L
+V
+1 H
+N
+158.32 680 296.25 680 2 L
+V
+N
+315.75 682 453.68 682 2 L
+V
+N
+315.75 680 453.68 680 2 L
+V
+N
+156.32 663 298.25 663 2 L
+V
+N
+313.75 663 455.68 663 2 L
+V
+N
+156.32 645 298.25 645 2 L
+V
+N
+313.75 645 455.68 645 2 L
+V
+N
+156.32 627 298.25 627 2 L
+V
+N
+313.75 627 455.68 627 2 L
+V
+N
+156.32 609 298.25 609 2 L
+V
+N
+313.75 609 455.68 609 2 L
+V
+N
+156.32 591 298.25 591 2 L
+V
+N
+313.75 591 455.68 591 2 L
+V
+N
+156.32 573 298.25 573 2 L
+V
+2 H
+N
+313.75 573 455.68 573 2 L
+V
+N
+52 665 54 677 R
+V
+52 665 54 677 R
+V
+52 665 54 677 R
+V
+52 665 54 677 R
+V
+52 647 54 659 R
+V
+52 647 54 659 R
+V
+52 647 54 659 R
+V
+52 647 54 659 R
+V
+52 629 54 641 R
+V
+52 629 54 641 R
+V
+52 629 54 641 R
+V
+52 629 54 641 R
+V
+52 611 54 623 R
+V
+52 611 54 623 R
+V
+52 611 54 623 R
+V
+52 611 54 623 R
+V
+52 593 54 605 R
+V
+52 593 54 605 R
+V
+52 593 54 605 R
+V
+52 593 54 605 R
+V
+52 575 54 587 R
+V
+52 575 54 587 R
+V
+52 575 54 587 R
+V
+52 575 54 587 R
+V
+52 547 54 566 R
+V
+52 524 54 543 R
+V
+52 511 54 520 R
+V
+FMENDPAGE
+%%EndPage: "4" 4
+%%Page: "5" 5
+612 792 0 FMBEGINPAGE
+[0 0 0 1 0 0 0]
+[ 0 1 1 0 1 0 0]
+[ 1 0 1 0 0 1 0]
+[ 1 1 0 0 0 0 1]
+[ 1 0 0 0 0 1 1]
+[ 0 1 0 0 1 0 1]
+[ 0 0 1 0 1 1 0]
+ 7 FrameSetSepColors
+FrameNoSep
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 12 Q
+0 X
+0 0 0 1 0 0 0 K
+(          Device Support Extensions to Open Firmwar) 173.28 748 T
+(e) 433.39 748 T
+(August 17, 1995 Revision 0.3 DRAFT) 72 36 T
+(5 of 8) 512 36 T
+72 738 540 738 2 L
+1 H
+2 Z
+N
+72 54 540 54 2 L
+N
+27 72 54 720 C
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+27 72 54 720 R
+7 X
+0 0 0 1 0 0 0 K
+V
+27 72 54 720 C
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+27 72 54 720 R
+7 X
+0 0 0 1 0 0 0 K
+V
+1 12 Q
+0 X
+(1) 36 711 T
+(2) 36 699 T
+(3) 36 687 T
+(4) 36 675 T
+(5) 36 663 T
+(6) 36 651 T
+(7) 36 639 T
+(8) 36 627 T
+(9) 36 615 T
+(10) 36 603 T
+(11) 36 591 T
+(12) 36 579 T
+(13) 36 567 T
+(14) 36 555 T
+(15) 36 543 T
+(16) 36 531 T
+(17) 36 519 T
+(18) 36 507 T
+(19) 36 495 T
+(20) 36 483 T
+(21) 36 471 T
+(22) 36 459 T
+(23) 36 447 T
+(24) 36 435 T
+(25) 36 423 T
+(26) 36 411 T
+(27) 36 399 T
+(28) 36 387 T
+(29) 36 375 T
+(30) 36 363 T
+(31) 36 351 T
+(32) 36 339 T
+(33) 36 327 T
+(34) 36 315 T
+(35) 36 303 T
+(36) 36 291 T
+(37) 36 279 T
+(38) 36 267 T
+(39) 36 255 T
+(40) 36 243 T
+(41) 36 231 T
+(42) 36 219 T
+(43) 36 207 T
+(44) 36 195 T
+(45) 36 183 T
+(46) 36 171 T
+(47) 36 159 T
+(48) 36 147 T
+(49) 36 135 T
+(50) 36 123 T
+(51) 36 111 T
+(52) 36 99 T
+(53) 36 87 T
+(54) 36 75 T
+27 72 54 720 C
+0 0 612 792 C
+0 14 Q
+0 X
+0 0 0 1 0 0 0 K
+(5.  Real T) 72 710.67 T
+(ime Clock \050R) 129.3 710.67 T
+(TC\051 Device) 207.35 710.67 T
+1 10 Q
+1.52 (Open Firmware for Real T) 72 693.33 P
+1.52 (ime Clocks de\336nes the following properties and methods. The representation of time) 184.39 693.33 P
+1 (is de\336ned by the TIME&DA) 72 681.33 P
+1 (TE method of the ANS Forth standard [3].) 189.88 681.33 P
+0 14 Q
+(5.1.  "rtc" device standard pr) 72 650.67 T
+(operties) 247.88 650.67 T
+4 10 Q
+("device_type") 72 633.33 T
+1 F
+1 (Standard Open Firmware property; the value of this property) 90 618.33 P
+2 F
+1 (shall) 344.79 618.33 P
+1 F
+1 ( be) 364.24 618.33 P
+3 F
+2.4 ("rtc") 380.68 618.33 P
+1 F
+1 (.) 410.68 618.33 P
+0 14 Q
+(5.2.  "rtc" device methods) 72 589.67 T
+1 10 Q
+2.32 (In addition to the Open Firmware standard) 72 572.33 P
+4 F
+5.56 (open) 261.26 572.33 P
+1 F
+2.32 ( and) 285.26 572.33 P
+4 F
+5.56 (close) 309.33 572.33 P
+1 F
+2.32 ( methods, the following methods shall be sup-) 339.33 572.33 P
+1 (ported by an Open Firmware implementation of a) 72 560.33 P
+3 F
+2.4 ("rtc") 281.08 560.33 P
+1 F
+1 ( device.) 311.08 560.33 P
+4 F
+(get-time) 72 543.33 T
+2.4 (\050 -- n1 n2 n3 n4 n5 n6 \051) 180 543.33 P
+1 F
+0.86 (Return the current time as the integers) 90 528.33 P
+3 F
+2.06 (n1\311n6) 251.25 528.33 P
+1 F
+0.86 (, where) 281.25 528.33 P
+3 F
+2.06 (n1) 314.9 528.33 P
+1 F
+0.86 ( is the second {0\31159},) 326.9 528.33 P
+3 F
+2.06 (n2) 427.44 528.33 P
+1 F
+0.86 ( is the minute {0\31159},) 439.44 528.33 P
+3 F
+2.4 (n3) 90 518.33 P
+1 F
+1 ( is the hour {0\31123},) 102 518.33 P
+3 F
+2.4 (n4) 193.82 518.33 P
+1 F
+1 ( is the day {1\31131},) 205.82 518.33 P
+3 F
+2.4 (n5) 293.75 518.33 P
+1 F
+1 ( is the month {1\31112}, and) 305.75 518.33 P
+3 F
+2.4 (n6) 422.74 518.33 P
+1 F
+1 ( is the year \050e.g., 1994\051.) 434.74 518.33 P
+4 F
+(set-time) 72 500.33 T
+2.4 (\050 n1 n2 n3 n4 n5 n6 -- \051) 180 500.33 P
+1 F
+1 (Set the current time from the integers) 90 485.33 P
+3 F
+2.4 (n1\311n6) 248.92 485.33 P
+1 F
+1 (, where) 278.92 485.33 P
+3 F
+2.4 (n1) 312.85 485.33 P
+1 F
+1 ( is the second {0\31159},) 324.85 485.33 P
+3 F
+2.4 (n2) 426.11 485.33 P
+1 F
+1 ( is the minute {0\31159},) 438.11 485.33 P
+3 F
+2.4 (n3) 90 475.33 P
+1 F
+1 ( is the hour {0\31123},) 102 475.33 P
+3 F
+2.4 (n4) 193.82 475.33 P
+1 F
+1 ( is the day {1\31131},) 205.82 475.33 P
+3 F
+2.4 (n5) 293.75 475.33 P
+1 F
+1 ( is the month {1\31112}, and) 305.75 475.33 P
+3 F
+2.4 (n6) 422.74 475.33 P
+1 F
+1 ( is the year \050e.g., 1994\051.) 434.74 475.33 P
+0 14 Q
+(6.  Sound Device) 72 446.67 T
+1 10 Q
+1.48 (In order to use a sound device within the context of Open Firmware \050e.g., "boot beeps"\051, the following proper-) 72 429.33 P
+1 (ties and methods) 72 417.33 P
+2 F
+1 (shall) 144.72 417.33 P
+1 F
+1 ( be implemented.) 164.17 417.33 P
+0 14 Q
+(6.1.  "sound" device standard pr) 72 386.67 T
+(operties) 266.59 386.67 T
+4 10 Q
+("device-type") 72 369.33 T
+1 F
+1 (Standard Open Firmware property; the value of this property) 90 354.33 P
+2 F
+1 (shall) 344.79 354.33 P
+1 F
+1 ( be) 364.24 354.33 P
+3 F
+2.4 ("sound") 380.68 354.33 P
+1 F
+1 (.) 422.68 354.33 P
+4 F
+("#channels") 72 336.33 T
+1 F
+1 (Standard property) 90 321.33 P
+1 (, encoded as with) 162.28 321.33 P
+4 F
+2.4 (encode-int) 238.21 321.33 P
+1 F
+1 (, that represents the number of channels supported by the) 298.21 321.33 P
+(device.) 90 311.33 T
+4 F
+("sample-resolution") 72 293.33 T
+1 F
+1 (Standard property) 90 278.33 P
+1 (, encoded as with) 162.28 278.33 P
+4 F
+2.4 (encode-int) 238.21 278.33 P
+1 F
+1 (, that represents the number of bits of resolution for each) 298.21 278.33 P
+1 (sound sample.) 90 268.33 P
+4 F
+("sample-width") 72 250.33 T
+1 F
+1 (Standard property) 90 235.33 P
+1 (, encoded as with) 162.28 235.33 P
+4 F
+2.4 (encode-int) 238.21 235.33 P
+1 F
+1 (, that represents the number of bytes required for storing) 298.21 235.33 P
+1 (a sample.) 90 225.33 P
+4 F
+("sample-rates") 72 207.33 T
+1 F
+1 (Standard property) 90 192.33 P
+1 (, consisting of an array of integers, each encoded as with) 162.28 192.33 P
+4 F
+2.4 (encode-int) 402.39 192.33 P
+1 F
+1 (, that represents) 462.39 192.33 P
+1 (the rates \050in hertz\051 at which this device can be sampled.) 90 182.33 P
+0 14 Q
+(6.2.  "sound" device standard methods) 72 153.67 T
+1 10 Q
+1 (The following methods) 72 136.33 P
+2 F
+1 (shall) 170.83 136.33 P
+1 F
+1 ( be implemented by a) 190.28 136.33 P
+3 F
+2.4 ("sound") 283.88 136.33 P
+1 F
+1 ( device.) 325.88 136.33 P
+4 F
+(open) 72 119.33 T
+2.4 (\050 -- true | false \051) 180 119.33 P
+1 F
+1 (This Standard method prepares the) 90 104.33 P
+3 F
+2.4 ("sound") 236.92 104.33 P
+1 F
+1 ( device for subsequent) 278.92 104.33 P
+4 F
+2.4 (read) 375.12 104.33 P
+1 F
+1 (s or) 399.12 104.33 P
+4 F
+2.4 (write) 418.34 104.33 P
+1 F
+1 (s. An ar) 448.34 104.33 P
+1 (gument can) 481.54 104.33 P
+1 (be supplied \050i.e., following a \325) 90 94.33 P
+4 F
+2.4 (:) 215.54 94.33 P
+1 F
+1 (\325 in the path-name component, available via) 221.54 94.33 P
+4 F
+2.4 (my-args) 406.84 94.33 P
+1 F
+1 (\051 to specify sampling) 448.84 94.33 P
+1 (parameters. The ar) 90 84.33 P
+1 (gument is a string consisting of the external representation of the sample-rate to be used;) 166.51 84.33 P
+FMENDPAGE
+%%EndPage: "5" 5
+%%Page: "6" 6
+612 792 0 FMBEGINPAGE
+[0 0 0 1 0 0 0]
+[ 0 1 1 0 1 0 0]
+[ 1 0 1 0 0 1 0]
+[ 1 1 0 0 0 0 1]
+[ 1 0 0 0 0 1 1]
+[ 0 1 0 0 1 0 1]
+[ 0 0 1 0 1 1 0]
+ 7 FrameSetSepColors
+FrameNoSep
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 12 Q
+0 X
+0 0 0 1 0 0 0 K
+(          Device Support Extensions to Open Firmwar) 173.28 748 T
+(e) 433.39 748 T
+(August 17, 1995 Revision 0.3 DRAFT) 72 36 T
+(6 of 8) 512 36 T
+72 738 540 738 2 L
+1 H
+2 Z
+N
+72 54 540 54 2 L
+N
+27 72 54 720 C
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+27 72 54 720 R
+7 X
+0 0 0 1 0 0 0 K
+V
+27 72 54 720 C
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+27 72 54 720 R
+7 X
+0 0 0 1 0 0 0 K
+V
+1 12 Q
+0 X
+(1) 36 711 T
+(2) 36 699 T
+(3) 36 687 T
+(4) 36 675 T
+(5) 36 663 T
+(6) 36 651 T
+(7) 36 639 T
+(8) 36 627 T
+(9) 36 615 T
+(10) 36 603 T
+(11) 36 591 T
+(12) 36 579 T
+(13) 36 567 T
+(14) 36 555 T
+(15) 36 543 T
+(16) 36 531 T
+(17) 36 519 T
+(18) 36 507 T
+(19) 36 495 T
+(20) 36 483 T
+(21) 36 471 T
+(22) 36 459 T
+(23) 36 447 T
+(24) 36 435 T
+(25) 36 423 T
+(26) 36 411 T
+(27) 36 399 T
+(28) 36 387 T
+(29) 36 375 T
+(30) 36 363 T
+(31) 36 351 T
+(32) 36 339 T
+(33) 36 327 T
+(34) 36 315 T
+(35) 36 303 T
+(36) 36 291 T
+(37) 36 279 T
+(38) 36 267 T
+(39) 36 255 T
+(40) 36 243 T
+(41) 36 231 T
+(42) 36 219 T
+(43) 36 207 T
+(44) 36 195 T
+(45) 36 183 T
+(46) 36 171 T
+(47) 36 159 T
+(48) 36 147 T
+(49) 36 135 T
+(50) 36 123 T
+(51) 36 111 T
+(52) 36 99 T
+(53) 36 87 T
+(54) 36 75 T
+27 72 54 720 C
+0 0 612 792 C
+1 10 Q
+0 X
+0 0 0 1 0 0 0 K
+1 (if absent, an implementation-de\336ned sample rate is used. An error is signalled by) 90 713.33 P
+4 F
+2.4 (open) 429.9 713.33 P
+1 F
+1 ( \050i.e., it returns) 453.9 713.33 P
+4 F
+2.4 (false) 90 703.33 P
+1 F
+1 (\051 if the requested sample rate can not be supported by the device.) 120 703.33 P
+4 F
+(close) 72 685.33 T
+2.4 (\050 -- \051) 180 685.33 P
+1 F
+1 (Standard Open Firmware behavior) 90 670.33 P
+1 (.) 231.03 670.33 P
+4 F
+(read) 72 652.33 T
+2.4 (\050 addr size -- actual \051) 180 652.33 P
+1 F
+1 (Acquire sound data, storing the samples at) 90 637.33 P
+3 F
+2.4 (addr) 269.2 637.33 P
+1 F
+1 (. The sample rate is established by) 292.65 637.33 P
+4 F
+2.4 (open) 439.63 637.33 P
+1 F
+1 (.) 463.63 637.33 P
+4 F
+(write) 72 619.33 T
+2.4 (\050 addr size -- actual \051) 180 619.33 P
+1 F
+1 (Output sound samples, stored at) 90 604.33 P
+3 F
+2.4 (addr) 225.55 604.33 P
+1 F
+1 (. The sample rate is established by) 249 604.33 P
+4 F
+2.4 (open) 395.98 604.33 P
+1 F
+1 (.) 419.98 604.33 P
+0 14 Q
+(7.  NVRAM Device) 72 575.67 T
+1 10 Q
+1.92 (Access toNVRAM is supported by this device-type. The NVRAM is treated as a device that can be read and) 72 558.33 P
+1.29 (written using the standard Open Firmware) 72 546.33 P
+4 F
+3.09 (read) 251.36 546.33 P
+1 F
+1.29 ( and) 275.36 546.33 P
+4 F
+3.09 (write) 297.37 546.33 P
+1 F
+1.29 ( methods; the starting position within the NVRAM) 327.37 546.33 P
+1 (can be speci\336ed by the) 72 534.33 P
+4 F
+2.4 (seek) 170.59 534.33 P
+1 F
+1 ( method.) 194.59 534.33 P
+1 (The platform binding may de\336ne CRCs that are used to validate the integrity of the data within the NVRAM.) 72 517.33 P
+1 (T) 72 505.33 P
+1 (o provide \337exibility in using NVRAM, options are provided on the) 77.41 505.33 P
+4 F
+2.4 (open) 358.96 505.33 P
+1 F
+1 ( method for NVRAM that determine) 382.96 505.33 P
+1 (whether the CRCs have to be valid at) 72 493.33 P
+4 F
+2.4 (open) 231.65 493.33 P
+1 F
+1 ( time, and/or whether they are written at) 255.65 493.33 P
+4 F
+2.4 (close) 426.67 493.33 P
+1 F
+1 ( time. These) 456.67 493.33 P
+1 (options appear as the) 72 481.33 P
+2 F
+1 (ar) 162.65 481.33 P
+1 (gument) 171.17 481.33 P
+1 F
+1 ( component of the device speci\336er used to) 200.61 481.33 P
+4 F
+2.4 (open) 379.69 481.33 P
+1 F
+1 ( the device \050as with) 403.69 481.33 P
+4 F
+2.4 (open-) 488.95 481.33 P
+(dev) 72 469.33 T
+1 F
+(\051.) 90 469.33 T
+0 14 Q
+(7.1.  NVRAM pr) 72 438.67 T
+(operties) 170.9 438.67 T
+4 10 Q
+("device-type") 72 421.33 T
+1 F
+1 (Standard Open Firmware property; the value of this property) 90 406.33 P
+2 F
+1 (shall) 344.79 406.33 P
+1 F
+1 ( be) 364.24 406.33 P
+3 F
+2.4 ("nvram") 380.68 406.33 P
+1 F
+1 (.) 422.68 406.33 P
+0 14 Q
+(7.2.  NVRAM methods) 72 377.67 T
+1 10 Q
+1 (The following methods have the semantics of the Open Firmware methods:) 72 360.33 P
+4 F
+(read) 72 343.33 T
+2.4 (\050 addr len -- actual \051) 180 343.33 P
+(write) 72 328.33 T
+2.4 (\050 addr len -- actual \051) 180 328.33 P
+(seek) 72 313.33 T
+2.4 (\050 pos.lo pos.hi -- status \051) 180 313.33 P
+1 F
+1 (The following methods have additional behavior depending upon the) 72 298.33 P
+2 F
+1 (ar) 359.58 298.33 P
+1 (gument) 368.1 298.33 P
+1 F
+1 ( used to open the device.) 397.54 298.33 P
+4 F
+(open) 72 281.33 T
+2.4 (\050 -- true | false \051) 180 281.33 P
+1 F
+0.95 (Standard method used to initiate access to the device and control how CRCs are used and/or generated. The) 90 266.33 P
+4 F
+2.4 (open) 90 256.33 P
+1 F
+1 ( method) 114 256.33 P
+2 F
+1 (shall) 151 256.33 P
+1 F
+1 ( use) 170.45 256.33 P
+4 F
+2.4 (my-args) 190.78 256.33 P
+1 F
+1 ( to determine special handling, as follows:) 232.78 256.33 P
+1 (Empty) 144 238.33 P
+1 (. The) 170.02 238.33 P
+4 F
+2.4 (open) 195.07 238.33 P
+1 F
+1 ( method will verify the CRCs within the NVRAM area. If correct,) 219.07 238.33 P
+1 (the) 144 228.33 P
+4 F
+2.4 (open) 159.72 228.33 P
+1 F
+1 ( will succeed, returning) 183.72 228.33 P
+4 F
+2.4 (true) 284.09 228.33 P
+1 F
+1 (; subsequent calls to) 308.09 228.33 P
+4 F
+2.4 (write) 395.42 228.33 P
+1 F
+1 ( will cause the) 425.42 228.33 P
+1 (CRCs to be calculated and stored when the device is) 144 218.33 P
+4 F
+2.4 (close) 366.19 218.33 P
+1 F
+1 (\325d. If not correct,) 396.19 218.33 P
+4 F
+2.4 (open) 470.72 218.33 P
+1 F
+1 (will report failure by returning) 144 208.33 P
+4 F
+2.4 (false) 273.7 208.33 P
+1 F
+1 (.) 303.7 208.33 P
+3 F
+(raw) 90 190.33 T
+1 F
+1 (The) 144 190.33 P
+4 F
+2.4 (open) 163.05 190.33 P
+1 F
+1 ( will succeed, without verifying the CRCs. Calls to) 187.05 190.33 P
+4 F
+2.4 (write) 402.44 190.33 P
+1 F
+1 ( will not be) 432.44 190.33 P
+1 (re\337ected in the CRCs at) 144 180.33 P
+4 F
+2.4 (close) 247.05 180.33 P
+1 F
+1 ( time.) 277.05 180.33 P
+3 F
+(repair) 90 162.33 T
+1 F
+1 (The) 144 162.33 P
+4 F
+2.4 (open) 163.05 162.33 P
+1 F
+1 ( will succeed, without verifying the CRCs. However) 187.05 162.33 P
+1 (, the CRCs will be) 403.35 162.33 P
+1 (regenerated at) 144 152.33 P
+4 F
+2.4 (close) 204.86 152.33 P
+1 F
+1 ( time.) 234.86 152.33 P
+4 F
+(close) 72 134.33 T
+2.4 (\050 -- \051) 180 134.33 P
+1 F
+1 (Standard method, whose behavior depends upon what the) 90 119.33 P
+2 F
+1 (ar) 331.02 119.33 P
+1 (gument) 339.54 119.33 P
+1 F
+1 ( value was at the time the device was) 368.98 119.33 P
+4 F
+2.4 (open) 90 109.33 P
+1 F
+1 (\325d. If) 114 109.33 P
+2 F
+1 (ar) 138.49 109.33 P
+1 (gument) 147.01 109.33 P
+1 F
+1 ( was empty) 176.45 109.33 P
+1 (, or) 223.35 109.33 P
+3 F
+2.4 (repair) 241.18 109.33 P
+1 F
+1 (, the CRCs will be computed and stored.) 276.78 109.33 P
+FMENDPAGE
+%%EndPage: "6" 6
+%%Page: "7" 7
+612 792 0 FMBEGINPAGE
+[0 0 0 1 0 0 0]
+[ 0 1 1 0 1 0 0]
+[ 1 0 1 0 0 1 0]
+[ 1 1 0 0 0 0 1]
+[ 1 0 0 0 0 1 1]
+[ 0 1 0 0 1 0 1]
+[ 0 0 1 0 1 1 0]
+ 7 FrameSetSepColors
+FrameNoSep
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 12 Q
+0 X
+0 0 0 1 0 0 0 K
+(          Device Support Extensions to Open Firmwar) 173.28 748 T
+(e) 433.39 748 T
+(August 17, 1995 Revision 0.3 DRAFT) 72 36 T
+(7 of 8) 512 36 T
+72 738 540 738 2 L
+1 H
+2 Z
+N
+72 54 540 54 2 L
+N
+27 72 54 720 C
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+27 72 54 720 R
+7 X
+0 0 0 1 0 0 0 K
+V
+27 72 54 720 C
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+27 72 54 720 R
+7 X
+0 0 0 1 0 0 0 K
+V
+1 12 Q
+0 X
+(1) 36 711 T
+(2) 36 699 T
+(3) 36 687 T
+(4) 36 675 T
+(5) 36 663 T
+(6) 36 651 T
+(7) 36 639 T
+(8) 36 627 T
+(9) 36 615 T
+(10) 36 603 T
+(11) 36 591 T
+(12) 36 579 T
+(13) 36 567 T
+(14) 36 555 T
+(15) 36 543 T
+(16) 36 531 T
+(17) 36 519 T
+(18) 36 507 T
+(19) 36 495 T
+(20) 36 483 T
+(21) 36 471 T
+(22) 36 459 T
+(23) 36 447 T
+(24) 36 435 T
+(25) 36 423 T
+(26) 36 411 T
+(27) 36 399 T
+(28) 36 387 T
+(29) 36 375 T
+(30) 36 363 T
+(31) 36 351 T
+(32) 36 339 T
+(33) 36 327 T
+(34) 36 315 T
+(35) 36 303 T
+(36) 36 291 T
+(37) 36 279 T
+(38) 36 267 T
+(39) 36 255 T
+(40) 36 243 T
+(41) 36 231 T
+(42) 36 219 T
+(43) 36 207 T
+(44) 36 195 T
+(45) 36 183 T
+(46) 36 171 T
+(47) 36 159 T
+(48) 36 147 T
+(49) 36 135 T
+(50) 36 123 T
+(51) 36 111 T
+(52) 36 99 T
+(53) 36 87 T
+(54) 36 75 T
+27 72 54 720 C
+0 0 612 792 C
+0 14 Q
+0 X
+0 0 0 1 0 0 0 K
+(8.  Parallel port device) 72 710.67 T
+1 10 Q
+1 (Access to the parallel port is supported by this device-type. The parallel port is treated as a byte-stream device.) 72 693.33 P
+0 14 Q
+(8.1.  Parallel port pr) 72 662.67 T
+(operties) 193.07 662.67 T
+4 10 Q
+("device-type") 72 645.33 T
+1 F
+1 (Standard Open Firmware property; the value of this property) 90 630.33 P
+2 F
+1 (shall) 344.79 630.33 P
+1 F
+1 ( be) 364.24 630.33 P
+3 F
+2.4 ("parallel") 380.68 630.33 P
+1 F
+1 (.) 440.68 630.33 P
+0 14 Q
+(8.2.  Parallel port methods) 72 601.67 T
+1 10 Q
+1 (The following methods have the semantics of the corresponding Open Firmware standard methods:) 72 584.33 P
+4 F
+(open) 72 567.33 T
+2.4 (\050 -- true | false \051) 180 567.33 P
+(close) 72 552.33 T
+2.4 (\050 -- \051) 180 552.33 P
+(write) 72 537.33 T
+2.4 (\050 addr len -- actual \051) 180 537.33 P
+0 14 Q
+(9.  Additional Requir) 72 506.67 T
+(ements for SCSI Devices) 198.55 506.67 T
+1 10 Q
+1.81 (A node representing a SCSI device shall implement all the methods and properties speci\336ed in Annex E, sec-) 72 489.33 P
+1 (tions E.1  through E.5 of [1].) 72 477.33 P
+0 14 Q
+(10.  Additional Requir) 72 446.67 T
+(ements for Block and Byte devices) 205.55 446.67 T
+1 10 Q
+1.64 (The "disk-label\325 standard support package and packages of device type "block" and "byte" shall implement the) 72 429.33 P
+1 (following method:) 72 417.33 P
+4 F
+2.4 (size \050 -- d \051                                   M) 72 400.33 P
+1 F
+1 (Return the size of the device in bytes.) 90 385.33 P
+1 (Return, as a double number "d", the number of bytes of storage associated with the device or instance.  If) 90 367.33 P
+1 (the size cannot be determined, return the double number -1.) 90 357.33 P
+1 (Packages of device type "block" and "byte" shall implement the following method:) 72 339.33 P
+4 F
+2.4 (#blocks \050 -- u \051                                 M) 72 322.33 P
+1 F
+1 (Return the size of the device in blocks.) 90 307.33 P
+1 (Return, as an unsigned number "u", the number of blocks of storage associated with the device or instance,) 90 289.33 P
+1 (where a "block" is a unit of storage consisting of the number of bytes returned by the package\325) 90 279.33 P
+1 (s "block-) 484.81 279.33 P
+1 (size" method.  If the size cannot be determined, or if the number of blocks exceeds the range of an) 90 269.33 P
+1 (unsigned number) 90 259.33 P
+1 (, return the maximum unsigned integer \050which, because of Open Firmware\325) 159.76 259.33 P
+1 (s assumption of) 471.37 259.33 P
+1 (two\325) 90 249.33 P
+1 (s complement arithmetic is equivalent to the signed number -1\051.) 107.78 249.33 P
+0 14 Q
+(1) 72 220.67 T
+(1.  Additional Requir) 78.23 220.67 T
+(ements for Block Devices) 204.78 220.67 T
+1 10 Q
+1.95 (The "disk-label" standard support package and packages of device type "block" shall implement the following) 72 203.33 P
+(methods:) 72 191.33 T
+4 F
+2.4 (offset-low \050 -- u \051                               M) 72 174.33 P
+1 F
+1 (Returns the least signi\336cant cell of the double number denoting the beginning of) 90 159.33 P
+1 (fset of the disk partition) 423.46 159.33 P
+1 (that was speci\336ed when the "disk-label" support package was opened.  In general that of) 90 149.33 P
+1 (fset is obtained by) 457.18 149.33 P
+0.89 (executing the) 90 139.33 P
+0 F
+0.89 (offset) 147.89 139.33 P
+1 F
+0.89 ( method of the "disk-label" support package with an agrument of zero.  It is permissable) 171.21 139.33 P
+1 (for the disk package to execute the "disk-label" support package\325) 90 129.33 P
+1 (s) 358.49 129.33 P
+0 F
+1 (offset) 365.88 129.33 P
+1 F
+1 ( method once after opening that) 389.2 129.33 P
+1 (support package, storing the result for later use.) 90 119.33 P
+4 F
+2.4 (offset-high \050 -- u \051                              M) 72 101.33 P
+1 F
+1 (Returns the most signi\336cant cell of the double number denoting the beginning of) 90 86.33 P
+1 (fset of the disk partition) 424.58 86.33 P
+1 (that was speci\336ed when the "disk-label" support package was opened.  In general that of) 90 76.33 P
+1 (fset is obtained by) 457.18 76.33 P
+52 73 54 516 R
+V
+FMENDPAGE
+%%EndPage: "7" 7
+%%Page: "8" 8
+612 792 0 FMBEGINPAGE
+[0 0 0 1 0 0 0]
+[ 0 1 1 0 1 0 0]
+[ 1 0 1 0 0 1 0]
+[ 1 1 0 0 0 0 1]
+[ 1 0 0 0 0 1 1]
+[ 0 1 0 0 1 0 1]
+[ 0 0 1 0 1 1 0]
+ 7 FrameSetSepColors
+FrameNoSep
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+0 12 Q
+0 X
+0 0 0 1 0 0 0 K
+(          Device Support Extensions to Open Firmwar) 173.28 748 T
+(e) 433.39 748 T
+(August 17, 1995 Revision 0.3 DRAFT) 72 36 T
+(8 of 8) 512 36 T
+72 738 540 738 2 L
+1 H
+2 Z
+N
+72 54 540 54 2 L
+N
+27 72 54 720 C
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+27 72 54 720 R
+7 X
+0 0 0 1 0 0 0 K
+V
+27 72 54 720 C
+0 0 0 1 0 0 0 K
+0 0 0 1 0 0 0 K
+27 72 54 720 R
+7 X
+0 0 0 1 0 0 0 K
+V
+1 12 Q
+0 X
+(1) 36 711 T
+(2) 36 699 T
+(3) 36 687 T
+(4) 36 675 T
+(5) 36 663 T
+(6) 36 651 T
+(7) 36 639 T
+(8) 36 627 T
+(9) 36 615 T
+(10) 36 603 T
+(11) 36 591 T
+(12) 36 579 T
+(13) 36 567 T
+(14) 36 555 T
+(15) 36 543 T
+(16) 36 531 T
+(17) 36 519 T
+(18) 36 507 T
+(19) 36 495 T
+(20) 36 483 T
+(21) 36 471 T
+(22) 36 459 T
+(23) 36 447 T
+(24) 36 435 T
+(25) 36 423 T
+(26) 36 411 T
+(27) 36 399 T
+(28) 36 387 T
+(29) 36 375 T
+(30) 36 363 T
+(31) 36 351 T
+(32) 36 339 T
+(33) 36 327 T
+(34) 36 315 T
+(35) 36 303 T
+(36) 36 291 T
+(37) 36 279 T
+(38) 36 267 T
+(39) 36 255 T
+(40) 36 243 T
+(41) 36 231 T
+(42) 36 219 T
+(43) 36 207 T
+(44) 36 195 T
+(45) 36 183 T
+(46) 36 171 T
+(47) 36 159 T
+(48) 36 147 T
+(49) 36 135 T
+(50) 36 123 T
+(51) 36 111 T
+(52) 36 99 T
+(53) 36 87 T
+(54) 36 75 T
+27 72 54 720 C
+0 0 612 792 C
+1 10 Q
+0 X
+0 0 0 1 0 0 0 K
+0.89 (executing the) 90 713.33 P
+0 F
+0.89 (offset) 147.89 713.33 P
+1 F
+0.89 ( method of the "disk-label" support package with an agrument of zero.  It is permissable) 171.21 713.33 P
+1 (for the disk package to execute the "disk-label" support package\325) 90 703.33 P
+1 (s) 358.49 703.33 P
+0 F
+1 (offset) 365.88 703.33 P
+1 F
+1 ( method once after opening that) 389.2 703.33 P
+1 (support package, storing the result for later use.) 90 693.33 P
+0 14 Q
+(12.  /aliases Node Pr) 72 664.67 T
+(operties) 191.91 664.67 T
+1 10 Q
+1 (The following aliases shall be provided under the "/aliases" node if an applicable device node exists:) 72 647.33 P
+1 (keyboard) 90 630.33 P
+1 (mouse) 90 611.33 P
+(rtc) 90 592.33 T
+(sound) 90 573.33 T
+(nvram) 90 554.33 T
+(parallel) 90 535.33 T
+52 660 54 720 R
+V
+FMENDPAGE
+%%EndPage: "8" 8
+%%Trailer
+%%BoundingBox: 0 0 612 792
+%%PageOrder: Ascend
+%%Pages: 8
+%%DocumentFonts: Times-Bold
+%%+ Times-Roman
+%%+ Times-Italic
+%%+ Courier
+%%+ Courier-Bold
+%%+ Helvetica-Bold
+%%+ Courier-Oblique
+%%EOF

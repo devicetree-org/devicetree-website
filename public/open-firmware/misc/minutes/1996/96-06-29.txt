@@ -1,0 +1,611 @@
+From: kingman@austin.ibm.com (Kingman)
+Subject: Item #374: Admin: OFWG Minutes for June Meeting (revised)
+Date: Thu, 11 Jul 1996 08:35:44 -0500 (CDT)
+
+P1275 Open Firmware Working Group Proposal -- Proposal #374 Ver <Auth-Vers#>
+
+Title:          Minutes of Open Firmware Working Group meeting on June 25,
+                and  June 26, 1996
+
+Author:         John Kingman
+
+Date:           July 11, 1996
+
+To:             IEEE 1275-1994 Working Group members
+
+(Replacement for #373, changes noted by "}" at left margin)
+
+Attached please find the minutes of our last meeting held June 25, and
+June 26, 1996 at Firmworks, Mountain View, CA.  Thanks to Mitch and
+Greg for making the arrangements.
+
+Also please note that: (1) our next meeting will be at Apple in
+Cupertino, CA, on August 13-14, 1996 and (2) check the "Action
+Item Summary" for your action items.
+
+Regards,
+
+John Kingman, Secretary, Open Firmware Working Group
+kingman@austin.ibm.com
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+1- Attendees
+
+Mitch Bradley  FirmWorks/President (415)961-1302  wmb@firmworks.com
+               Chairman Open Firmware Working Group
+David M. Kahn  Sun Microsystems     415-786-6203 dmk@Eng.Sun.Com
+               Vice Chairman Open Firmware Working Group
+John Kingman   IBM Risc System/6000 512-838-1546 kingman@austin.ibm.com
+               Secretary Open Firmware Working Group
+Ron Hochsprung Apple/Sys. Arch.     408-974-2661 ron@apple.com
+Bob Coffin     IBM                  512-838-8240 coffin@vnet.ibm.com
+John Dickol    IBM                  512-838-6005 dickol@vnet.ibm.com
+Greg Hill      Firmworks            415-917-6985 GREGH@FIRMWORKS.COM
+Jordan Brown   Sunsoft              310-348-6039 jordan.brown@west.sun.com
+Chris M Bellman Adaptec, Inc.       408-945-8600 cbellman@corp.adaptec.com
+Thomas J. Merritt CodeGen, Inc.     415-346-8762 tjm@cgt.com
+John Rible     Quicksand            408-458-0399 jrible@quicksand.com
+Richard Proulx SMI                  508-442-0522 Richard.Proulx@sun.com
+Matt Hill      Sun                  415-786-5321 matthill@eng.sun.com
+Paul Thomas    Sun                  415-786-6388 Paul.Thomas@eng.sun.com
+Ping Lee       Apple                408-974-6956 pingl@apple.com
+
+2- Review Agenda
+
+Proposed agenda (#368) was reviewed and approved unanimously. 11-0-0
+with right of revision to the Vice Chairman.
+
+3- Administrative/Procedural items
+
+- Documents start as "Unapproved Drafts" and once they are approved by
+  the OFWG they become an "Approved Version"
+- Device Support extensions -- doesn't matter whether it is a RP or
+  Binding -- suggest RP
+- Future meetings -- proposal by DK to move to a 3 month cycle for the
+  main group.  Subcommittee(s) can meet more often.
+
+4- Last meeting minutes review
+
+Voted to approve the minutes of the meeting of April 30 & May 1,
+1996 (#356).
+
+5- Future Meetings
+
+August 13 - 14, 1996:   Apple Computer,         Cupertino, CA
+        Host:           Ron Hochsprung          ron@apple.com
+
+October 8 - 9, 1996:    Motorola                Tempe, AZ
+        Host:           Rob Baxter              robb@riscy.phx.mcd.mot.com
+
+January 14 - 15, 1997   TBD                     TBD
+        Host:           David Kahn              dmk@Eng.Sun.COM
+
+6- Standard Progress Report
+
+--- Closed ---
+
+1275-1994:      OF Core (Official IEEE Standard)
+1275.1-1994:    SPARC ISA  (Official IEEE Standard)
+1275.2-1994:    SBus Bus Binding (Official IEEE Standard)
+1275.4-1996:    FutureBus+ (Official IEEE Standard)
+
+p1275.5         68K (PAR Withdrawn by the working group)
+
+--- Open -----
+
+p1275.3:        VME (Sponsor ballot failed due to lack of response)
+                David Paktor is trying to revise the PAR to limit
+                the scope to VME-32, and exclude the VME-64 issues.
+                Current State: NESCOM approved the PAR change.
+                Owner: David Paktor
+
+p1275.6/d5:     64 Bit Extensions (Negative Ballots w.r.t. 32 bit
+                compatibility)
+                Owner: David Kahn
+
+p1275.a         Errata to 1275-1994 (Core Errata), Sponsor Ballot,
+                Balloting now.
+                Owner: David Kahn
+
+7- Action Items Review
+
+  -2- open
+  -4- open
+  -6- open
+  -7- closed
+  -11- open
+  -12- open
+  -17- closed
+  -24- open
+> -25- closed (per Paul Thomas)
+
+8- Other Pending/Tabled items
+
+ 250: No change
+ 356: Closed; Minutes Approved
+ 368: Closed; Agenda Approved
+ 349: Rejected 0-10-1
+ 336: No change
+ 322: No change
+ 352: SCSI-3 Binding: Create initial binding
+     Discussion:
+        1 -- SCSI-3 Parallel interface [ref 4 of propsal]
+                - will have a node for the SCSI 3 bus
+        2 -- USB or 1394 Bus using SCSI-3 s/w conventions:
+                - will have a node for the physical USB or 1394,
+                  the SCSI-3 aspect is hidden
+        - Motion to consider in 2 parts (MB):
+             one for SPI phys bus, the
+             other for the programming model.
+                Details:
+                   handle SPI as a trivial extension to SCSI-2
+                   generic name: scsi
+                   device_type: spi
+                   compatible: whatever
+                   strike wwn & localwwn
+                   strike #address-cells
+                   strike scsi3-id
+                   strike the last 2 para on note p 1
+        - It was proposed that SCSI-2 be extended to handle SPI device_type.
+        - "notes:"
+            - "set-responder" should say what it does (incorporate the note)
+            - "translate-address" should say what it does
+            - "translate-address": change stack diagram to
+                ( ... -- true | unit2-addr,len target2-addr,len false )
+    Withdrawn, by author; await new proposal
+
+ 323b: No change
+ 342: remanded to subcommittee
+
+9- New Proposal Status (details below):
+
+ 334: Remanded to subcommittee
+ 335: Remanded to subcommittee
+ 344: Remanded to subcommittee
+ 345: Remanded to subcommittee
+ 346: Remanded to subcommittee
+ 347: Remanded to subcommittee
+ 348: Remanded to subcommittee
+ 350: Remanded to subcommittee
+}351: Withdrawn
+ 356: Accepted
+ 357: Remanded to subcommittee
+ 358: Accepted
+ 359: Remanded to subcommittee
+ 360: Remanded to subcommittee
+ 361: Remanded to subcommittee
+ 362: Remanded to subcommittee
+ 363: Remanded to subcommittee
+ 364: Withdrawn
+ 365: Withdrawn
+ 366: Accepted with amendments
+ 367: Accepted with amendment
+ 368: Accepted
+
+10- Document Reviews (including associated proposals, if any)
+
+Interrupt Mapping Recommended Practice Version 0.8
+    #365: (posting)
+        - int map/mask assumed compression which is not needed, to be
+          removed
+        - to handle multiple int parents add phandle to int map (child,
+          phandle of intpar, #cells, etc.)
+        - static not dynamic mapping only
+    Withdrawn, by author; to be resubmitted
+
+TFTP Booting Recommended Practice 
+}   #351: OBP-TFTP Recomended Practice Draft 0.5
+}       - suggested changes published in #356 (minutes of Apr 30 - May 1 
+}         meeting
+}   Withdrawn; Closed.
+    #364: (posting) Version 0.6
+        - missed promiscuous
+        - add gateway address to ping?
+        - remove ping -- strike sections 4, 5.3 and 6.2 and last
+                line of section 5 and lines 46 and 52, p6 (5.2)
+        - user interface: ping ip[,[gw-ip][,timeout]] [device]
+            . one ping only
+            . response message:
+                "Timeout" or "Received reply in n (decimal) msec"
+        - network-type (section 6)
+            . is it the possibles or the setting?
+            . prop (DK) strike section 6 -- defeated
+            . prop (MB) list the mode it is in (if known), else
+                list the possible choices for this node
+                - one prop or two?
+                - "supported-network-types" an array of strings
+                  with values chosen from the list in 6.1
+                - "chosen-network-type" if present, indidcates
+                  that the fw or the user has selected one of the
+                  supported types and the value indicates which
+                  type is selected.  This prop need not exist if
+                  there is only one type supported, or if the
+                  firmware doesn't know. passed 10-0-0
+    Withdrawn, by author in favor of a new proposal with the proposed 
+	amendments
+
+Generic Names Recommended Practice
+    #358: Don't reserve names...
+        - The editor is directed and authorized to make the change
+    Accepted unanimously
+
+PCI Binding Review Revision 1.75
+    #366: (posting)
+	Amendments:
+            - p21, l24: replace bullet with
+               "If the device's expansion ROM base address register
+                indicates a non-zero size, an entry describing
+                the expansion ROM constructed as for normal
+                base address registers."
+            - p8, l26-28 replace "Because..." with "Some PCI-PCI
+                bridges restrict I/O address space to 16 bits,
+                and so relocatable io space behind such a
+                bridge shall be of the form
+                0000.0000.0000.0000.aaaa.aa00.aaaa.aaaa"
+            - p21, l39 insert after ")."  "The size of the allocated
+                space for a base register or register pair shall be the
+                maximum of the size indicated by the base address
+                register or register pair and the size reported
+                by the 'reg' property."
+            - p20, l26-p21, l46 ("Enter... ) move to end of
+                section 2.5
+            - p20, l22 replace "with PCI" with "with one or more
+                built-in PCI busses"
+            - p20, l25 replace entire sentence "Interpret ..."
+                with "Interprets FCode for all built in PCI slots.
+                For each of the system's built in PCI domains
+                perform  the pci-probing algorithm as shown
+                in section 2.5."
+            - p14, l28 replace line with "The Open Firmware driver
+                for a PCI domain shall probe its plug-in slots
+                according to the following algortihm."
+            - Add:
+
+                1.2 References
+
+                [1]  IEEE Std 1275-1994 Standard for Boot (Initialization,
+                Configuration) Firmware, Core Practices and Requirements.
+                [2]  PCI Local Bus Specification, Revision 2.1, June 1, 1995.
+                [3]  PCI-to-PCI Bridge Architecture Specification, Revision 
+		     1.0, April 5, 1994.
+                [4]  Open Firmware Recommended Practice:  Generic Names
+
+            - Replace the "name" portion of section 4.1.1 with:
+
+                "name"
+
+                Standard prop-name, defines device's name.
+
+                prop-encoded-array:  device name, encoded as with encode-string.
+
+                For devices with FCode, the name is defined by the FCode
+                program.  In accordance with the Generic Names Recommended
+                Practice [4], it should represent the general nature of the
+                device.
+
+                For devices without FCode, the name is derived from the PCI
+                Class Code, as described in section 2.5.
+
+            - Replace the "compatible" portion of section 4.1.1 with:
+
+                "compatible"
+ 
+                Standard prop-name, defines devices with which this device is
+                compatible.
+
+                prop-encoded-array:  The concatenation, with encode+, of
+                an arbitrary number of text strings, each encoded with
+                encode-string.
+
+                As defined in [1] and [4], this property lists devices with
+                which this device is compatible.
+
+                Note 1:  It is better to identify the function as a whole,
+                instead of identifying only the "chip" that is directly
+                connected to the PCI bus (e.g.:  use "IBM,v915" instead
+                of "S3,928") because there may be numerous other display
+                adapters that use the same graphics chip, but which are
+                not entirely compatible due to the presence of different
+                support chips like DACs and programmable clock generators.
+
+                Note 2:  Devices with FCode may put a name of the form
+                pciVVVV,DDDD) in "compatible" if they present the same 
+                interface that the non-FCode algorithm (section 2.5) does.
+
+            - In section 2.5, under probe-pci, change the "name" paragraph to
+              be "compatible" instead, and add before it a new "name" 
+	      paragraph:
+
+                "name"  Based on the PCI Class Code register, pick a name from
+                the following table.  If none apply, generate a name of the
+                form "pciVVVV,DDDD" as described below under "compatible".
+                [[ Editor:  please try to use multiple columns! ]]
+
+                    Class Code (hex)        Name
+                     000100                  display
+                     0100xx                  scsi
+                     0101xx                  ide
+                     0102xx                  fdc
+                     0103xx                  ipi
+                     0104xx                  raid
+                     0200xx                  ethernet
+                     0201xx                  token-ring
+                     0202xx                  fddi
+                     0203xx                  atm
+                     03xxxx                  display
+                     0400xx                  video
+                     0401xx                  sound
+                     0500xx                  memory
+                     0501xx                  flash
+                     0600xx                  host
+                     0601xx                  isa
+                     0602xx                  eisa
+                     0603xx                  mca
+                     0604xx                  pci
+                     0605xx                  pcmcia
+                     0606xx                  nubus
+                     0607xx                  cardbus
+                     0700xx                  serial
+                     0701xx                  parallel
+                     0800xx                  interrupt-controler
+                     0801xx                  dma-controller
+                     0802xx                  timer
+                     0803xx                  rtc
+                     0900xx                  keyboard
+                     0901xx                  pen
+                     0902xx                  mouse
+                     0Axxxx                  dock
+                     0Bxxxx                  cpu
+                     0C00xx                  firewire
+                     0C01xx                  access-bus
+                     0C02xx                  ssa
+                     0C03xx                  usb
+                     0C04xx                  fibre-channel
+
+            - Editorial:
+                - p8, l12-16 strike paragraph
+                - p11, l17 missing space
+                - p11, l24 extra space
+                - p12, l3 'dd' is in wrong font
+                - p12, 13 numerous spacing errors next to r's and f's
+                - p12, l47 "to for" syntax error
+                - p18, l54 wrong font for "bbb...rrr"
+
+>   #367: ranges property ...
+>        Amendments:
+>           - p15, l10: Add the following sentence:
+>               "If no addresses are mapped through the bridge, the 'ranges'
+>               property shall be absent".
+
+    Accepted unanimously, with amendments
+
+    - The editor is directed to create Approved Version 2.0, incorporating 
+      the above amendments.
+
+11- Action Items Summary
+
+The following AIs are still open:
+
+  --------------------------------------------------------------------------
+  | No.|Who         |Description                                           |
+  |----|------------|------------------------------------------------------|
+  |  2 |Editors of  |Update document template and contents per discussion. |
+  |    |Recommended |                                                      |
+  |    |Practice    |                                                      |
+  |    |documents   |                                                      |
+  |----|------------|------------------------------------------------------|
+> |  4 |Greg H.     |Standard properties document.                         |
+> |    |John H.     |                                                      |
+  |----|------------|------------------------------------------------------|
+  |  6 |Ron H.      |Work on "reg"/"assigned-addresses"/base address       |
+  |    |Jordan B.   |registers in the PCI binding.                         |
+  |----|------------|------------------------------------------------------|
+  | 11 |Jordan B.   |Reorganize discussion of probing in ISA binding       |
+  |----|------------|------------------------------------------------------|
+  | 12 |Jordan B.   |Suggest wording for IRQ 2 vs 9                        |
+  |----|------------|------------------------------------------------------|
+  | 24 |Ron H.      |talk to Mitch Bradley to clarify line-end for #322    |
+  --------------------------------------------------------------------------
+
+New  AIs:
+
+  --------------------------------------------------------------------------
+  | No.|Who         |Description                                           |
+  |----|------------|------------------------------------------------------|
+  | 26 |David K.    |Meeting details for January                           |
+  --------------------------------------------------------------------------
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+SUBCOMMITTEE MINUTES:
+
+Attendees
+---------
+
+Mitch Bradley  FirmWorks           (415)961-1302  wmb@firmworks.com
+David M. Kahn  Sun Microsystems     415-786-6203 dmk@Eng.Sun.Com
+John Kingman   IBM Risc System/6000 512-838-1546 kingman@austin.ibm.com
+Ron Hochsprung Apple/Sys. Arch.     408-974-2661 ron@apple.com
+Bob Coffin     IBM                  512-838-8240 coffin@vnet.ibm.com
+John Dickol    IBM                  512-838-6005 dickol@vnet.ibm.com
+Greg Hill      Firmworks            415-917-6985 GREGH@FIRMWORKS.COM
+Jordan Brown   Sunsoft              310-348-6039 jordan.brown@west.sun.com
+Chris M Bellman Adaptec, Inc.       408-945-8600 cbellman@corp.adaptec.com
+Richard Proulx SMI                  508-442-0522 Richard.Proulx@sun.com
+Matt Hill      Sun                  415-786-5321 matthill@eng.sun.com
+
+Review Agenda
+-------------
+
+Agenda:
+ - Establish quorum
+ - Review minutes
+ - Review proposals
+
+Establish Quorum
+----------------
+
+Quorum established.
+
+Review minutes of last meeting
+------------------------------
+
+Approved the minutes of the subcommittee meeting of May 1, 1996 (#356)
+        unanimously.
+
+Device Bindings
+    #344: PC keyboard/mouse controller binding (8042)
+            Amendments:
+                - Change textual representation (7.2.1) from "main"
+                  to "0" and from "aux" to "1"
+                - Should call out all of the methods and properties
+                  (incl reg)
+                - "slot-names" should be consistent with the PCI
+                  binding (needs bit mask)
+        Withdrawn by author; AI to Converge with CHRP 8042 binding
+            and resubmit.
+
+    #345: CS4231 Device Binding
+            Amendments:
+                - xctl0/1 typos -- control line 0, bit #
+                - Confirm devices that 423x applies to
+        Accepted unanimously; Editor directed to produce Approved
+            Version 1.0 with above amendments
+
+    #346: Dallas Semiconductor 1385 Device Binding
+        Accepted unanimously; Editor directed to produce Approved
+            Version 1.0
+
+    #347: PC Keyboard Device Binding
+            Amendments:
+                - Contents of 7.2.1 go away
+                - Tag the layout as optional (if the firmware knows)
+                - Section 9 use "shall" as appropriate
+                - Section 9.3 -- delete or reword since the
+                  implication is that Open Firmware must figure out
+                  what to do with respect to the indicator state when
+                  enter is pressed.
+        Withdrawn by author; to be resubmitted
+
+    #348: PC Serial Port Device Binding
+            Amendments:
+                - Add reference to pnpPNP,501
+                - Clock frequency should be in hertz
+                - Pick up methods from CHRP serial device binding
+                  (or move to DSE)
+        Accepted unanimously; Editor directed to produce Approved
+            Version 1.0 with above amendments; AI to suggest "name"
+            convention to recognize superio chips
+
+Device Support Extensions version 0.6
+    #334: (posting)
+        Closed administratively
+    #342: Clarify Scope
+        Amendments:
+            - Convert to Recommended Practice and update Scope section
+              with Purpose.
+            - Change SCSI to SCSI-2
+        Accepted as amended unanimously
+    #350: "sound" properties ...
+        Amendments:
+            - Delete sentence in 6.2 starting "The following prop..."
+            - In 6.2 except for device_type, delete "Standard" in front
+              of "property name"
+            - Clarify what the interpertation is for "#x-channels" (each
+              integer specifies the possible number of channels supported
+              in a specific mode of the device. E.g, a 1 indicates
+              monophonic, 2 indicates stereophonic)
+            - "sample-frame-size" needs clarification (bits or bytes)
+        Tabled unanimously; tighten definitions
+
+PowerPC Processor Binding Revision 1.10
+    #363: Update
+        Accepted 9-0-1; Editor directed to produce Approved Version 2.0
+
+ISA/EISA/ISA-PnP Binding Version 0.2
+    #335: (posting)
+        Closed administratively
+    #362: Unit Address Format
+        Amendments:
+            - Reject change of address format, instead delete page 10
+              line 39 through line 14 of p11.  Create a property
+              "pnp-id" its value is 2 encoded as with encode string as
+              shown on page 11, line 27-41 (line 32 should be ascii and
+              the VVV should be "uppercase ascii" instead of 5-bit
+            - Propose lines 25, 28 of p9, lower case m before all "n"s,
+              line 25 "i" in brackets (add text to explain why optional)
+              "i" is assumed if string does not begin with i,t,v or m.
+              Greg work with Bob on wording.
+            - Change "isa" to "pnp" for the "name" property.  Add usual
+              wording for name and compatible properties.  Jordan and
+              Bob to work out wording.  (name to use master pnp)
+            - Change Sun MicroSystems" to "Sun Microsystems Inc." on
+              page 3
+        Accepted as amended 7-0-1
+
+CHRP System Binding Revision 1.5
+    #357: Proposal for CHRP binding Availability
+    #360: Genericize PIC controller name
+
+CHRP Device Bindings Revision 1.0
+    #359: Proposal for CHRP Device Bindings
+        CHRP 8042 Device Binding
+            - List the methods in 7.2 from DSE
+            - "slot-names" should be added
+            - AI to converge CHRP 8042 Device Binding with the CHRP
+              System Binding and and the 8042 binding and refer to the
+              8042 binding as the basis.
+
+        CHRP Serial Device Binding
+            - AI to converge CHRP Serial Device Binding with the CHRP
+              System Binding and the Serial binding and refer to the
+              Serial binding as the basis.
+
+        Open
+
+    #361: CHRP PIC dev: add "reserved-interrupts" property
+
+Action Items Summary:
+---------------------
+
+  Old AIs still open:
+
+  --------------------------------------------------------------------------
+  | No.|Who         |Description                                           |
+  |----|------------|------------------------------------------------------|
+  | S2 |Ron H.      | Update and create v1.1 Forth and FCode Rec Practice  |
+  |----|------------|------------------------------------------------------|
+  | S4 |Bob C.      | Make "shared-bus-master" proposal                    |
+  |----|------------|------------------------------------------------------|
+  | S5 |Ron H.      | Make "chording" (keyboard) proposal                  |
+  |----|------------|------------------------------------------------------|
+  | S8 |Mitch B.    | Propose that debug facilities not be supported       |
+  |    |            | in real-mode.                                        |
+  |----|------------|------------------------------------------------------|
+  | S9 |John K.     |Get with Bill Rees and clarify #330                   |
+  --------------------------------------------------------------------------
+
+  New AIs:
+
+  --------------------------------------------------------------------------
+  | No.|Who         |Description                                           |
+  |----|------------|------------------------------------------------------|
+  | S10|Jordan B.   |Publish PreP binding (Mike Segapeli has current)      |
+  |----|------------|------------------------------------------------------|
+  | S11|Bob C.      |Update Generic Names Recommended Practice             |
+  |----|------------|------------------------------------------------------|
+  | S12|Jordan B.   |Converge 8042 device binding with the CHRP 8042       |
+  |    |John K.     |device binding                                        |
+  |----|------------|------------------------------------------------------|
+  | S13|Jordan B.   |Converge serial device binding with the CHRP serial   |
+  |    |John K.     |device binding                                        |
+  |----|------------|------------------------------------------------------|
+  | S14|Jordan B.   |Suggest "name" convention to recognize superio chips  |
+  --------------------------------------------------------------------------
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+[ P1275 Item #374 -- Received: Thu Jul 11 06:34:16 PDT 1996 ]
+

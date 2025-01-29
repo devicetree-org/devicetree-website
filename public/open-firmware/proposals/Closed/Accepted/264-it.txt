@@ -1,0 +1,40 @@
+Date: Fri, 24 Mar 1995 08:53:10 -0700
+From: ron@apple.com (Ron Hochsprung)
+Subject: Item #264: PCI Binding, relocatable I/O below 64 KB
+
+P1275 Open Firmware Working Group Proposal -- Proposal #264 Ver 1.5
+
+Title:          I/O-space below 64K
+
+Author:         Ron Hochsprung
+
+Date:           March 24, 1995
+
+Ed/Tech:        Technical
+
+Synopsis:       Add interpretation of 't' bit for relocatable I/O
+
+Doc & Version:  PCI Binding 1.4/1.5
+
+Problem:        Devices are allowed (although, not documented!!!) to
+                have I/O base registers that do not implemented their
+                upper 16 bits.  I.e., they require that the upper 16
+                bits are 0 and report their address space requirement
+                by returning only the low-order 16 bits.
+
+Proposal:
+
+I am adding the proposed wording to the 1.5 draft, since I have to re-send
+it anyway.  The wording proposed for this change is indicated by revision bars
+on both the left and right.  It basically uses the 't'-bit to indicate that a
+relocatable I/O Space address has to be allocated within the first 64 KB of
+I/O space.  Note that this use of the 't'-bit is distinguished in the "reg"
+property by being associated with a relocatable ('n'-bit = 0) entry;  the
+corresponding "assigned-addresses" entry has the 't'-bit = 0.
+
+Ron
+
+
+
+[ P1275 Item #264 -- Received: Fri Mar 24 10:21:58 PST 1995 ]
+

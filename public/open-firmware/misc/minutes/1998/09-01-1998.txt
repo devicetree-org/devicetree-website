@@ -1,0 +1,122 @@
+From: Richard Arndt <rlarndt@us.ibm.com>
+Subject: Item #447: Minutes of the 1 September 1998 OF-Working Group Meeting
+Date: Thu, 3 Sep 1998 08:43:23 -0400
+
+P1275 Openboot Working Group Proposal -- Proposal #:447 Ver 1
+
+Title:          Minutes September 1,1998 meeting
+
+Author:         Richard L. Arndt
+
+Date:           August 27,1998
+
+Ed/Tech:        Editorial
+
+Synopsis:       meeting minutes
+
+Doc & Version:  1
+
+Problem:        Minutes
+
+Proposal:
+
+Minutes for September 1, 1998 Meeting at Firmworks Mountain View, Ca.
+Host:  Greg Hill
+Starting Time:  10 AM.
+
+
+
+  1- Establish quorum & Voting rights
+     ================================
+     Quorum Declared by Mitch Bradly the following member being present:
+
+     Name:                  Company:    Phone #:     Email:
+     _____                  ________    ________     ______
+
+     Richard Arndt          IBM         512-838-8502 rlarndt@us.ibm.com
+
+     Mitch Bradley          Firmworks   415-917-6984 wmb@firmworks.com
+
+     Ron Hochsprung         Apple/      408-974-2661 ron@apple.com
+                            System Arch
+
+     David Kahn             Sun         415-786-6203 dmk@eng.sun.com
+
+
+  2- Review Agenda:
+     ==============
+     Approved
+
+  3- Approve Minutes of March 17, 1998 Meeting  (Item #437)
+     ========================================================
+
+     Last line on Item #436 should read "Remand to author to make above
+     changes"
+
+     Approved as amended above
+
+  4- Future Meetings:
+     ================
+
+     The next meeting scheduled:
+
+        Date                    Host Location
+        ----                    -------------
+        March 9,1999            Apple
+        Sept. 14,1999           Apple
+
+
+  5- Status of Action Items:
+     =======================
+
+   |----|------------|------------------------------------------------------|
+   | No.|Who         |Description                                    |Status|
+   |----|------------|-----------------------------------------------|------|
+   |  2 |Editors of  |Update document template and contents per      | Open |
+   |    |Recommended |discussion.                                    |      |
+   |    |Practice    |                                               |      |
+   |    |documents   |                                               |      |
+   |----|------------|-----------------------------------------------|------|
+   | 33 |Mitch B.    |Propose display-modes property along with      | Open |
+   |    |            |set & read display modes methods               |      |
+   |----|------------|-----------------------------------------------|------|
+   | 42 |David K.    |Update core Eratta to reflect item #425        |Closed|
+   |----|------------|------------------------------------------------------|
+   | 43 |Mitch B.    |Look into the reaffermation of IEEE 1275 stand.| Open |
+   |----|------------|------------------------------------------------------|
+   | 44 |Mitch B.    |Ship latest version of ARM binding for posting | Open |
+   |----|------------|------------------------------------------------------|
+   | 45 |David K.    |To post clarification per #440                | Open |
+   |----|------------|------------------------------------------------------|
+   | 46 |Ron H.      |Ship TFTP approved draft to David for posting  | Open |
+   |----|------------|------------------------------------------------------|
+   | 47 |Ron H.      |Ship PCI approved revision to David for posting| Open |
+   |----|------------|------------------------------------------------------|
+
+Mitch reported that ANSI j14 plans to reactivate to reaffirm ANSI forth.
+
+
+  6- New Proposals:
+     ==============
+     Proposal #439  ARM Processor:  Correct Definitions of  ...
+        Proposal Passed
+        Mitch to get latest version to David K. (Item #44)
+
+     Proposal #440  Clarification of set-callback client interface
+        Proposal Passed
+        David to post clarification (Item #45)
+
+     Ron H. presented updated OF Recommended Practice: TFTP Booting Extension
+     per previously approved proposals.
+        Draft Approved
+        Ron to get latest version (1.0) sans change bars to David K. (Item #46)
+
+     Ron H. presented updated PCI Bus Binding to: ... Revision 2.1
+        line 56 of pg 9 should read "entries (1), (2), and (3) shall"
+        Draft Approved as amended above
+        Ron to get latest version without change bars to David K. (Item #47)
+
+Adjourned
+
+[ P1275 Item #447 -- Received: Thu Sep  3 05:47:10 PDT 1998 ]
+

@@ -1,0 +1,143 @@
+    Editor updates to PowerPC Microprocessor CHRP binding,Version 1.6.
+
+    Page 13, line 18: Added alternate server URL; 'chrp.apple.com'.
+
+    Page 13, line 23: Added URL 'http://chrp.apple.com/1275'. 
+   
+    Page 13, lines 27-29: Changed wording for ftp site URL.
+
+    Page 18, Table 1 - Standard Pathnames for 'bootinfo.txt' file: Eliminated
+    OS Execution Media piece of the table and expanded Installation Media 
+    piece of the table.  Added footnote to Tape. Added sections for ROM and
+    Network installation.
+
+    Page 19, lines  5-16: Changed Table 1 (see change on Page 18).
+
+    Page 19, lines 18-19: Added Note 1 for Tape Installation.
+
+    Page 19, line 22: Changed 'install' to 'installed'.
+
+    Page 24, lines 15-17: Changed wording for "address-cells" property.
+    Reformatted and changed wording from 'any area addressable above 4GB's' 
+    to 'any memory addressable at or above 4GB's'.
+
+    Page 24, lines 19-23: Added new property; "#size-cells". 
+
+    Page 26, line 21: Reordered "ranges" property for proper Open Firmware
+    convention. Changed 'size, parent-phys' to 'parent-phys, size'.
+
+    Page 29, lines  7-13: Added new "power-on-max latency" property. 
+
+    Page 29, lines 51-52: Added two RTAS Function properties; "update- 
+    flash-and-reboot" and "update-flash" properties.
+
+    Page 30, lines 34-35: Changed wording from 'If the platform has multiple
+    PCI Host Bridges, then a "reg" property shall be present in each PCI 
+    Node' to 'For each platform PCI Host Bridge, a "reg" property shall be
+    present in the respective PCI Node'.
+
+    Page 30, lines 45-46: Created new sentence and changed wording from
+    'and a "reg" property that is unique and persistent for each boot' to
+    'Each PCI PHB Node shall have a Unit Address defined in the "reg" 
+    property that is unique and persistent from each boot-to-boot'.
+
+    Page 34, lines  8- 9: Added reference [14] to 'Interrupt Mapping'. 
+    
+    Page 34, line 16: Changed 'open-pic' to 'interrupt-controller'.
+    
+    Page 34, line 54 & Page 35, lines  1 - 3: Added "interrupt-controller"
+    property.
+
+    Page 35, lines 25-27: Changed wording from 'and device characteristics'
+    to 'and buses with geographical information'.
+    
+    Page 35, lines 41-42: Changed wording from 'Any supplied device/part
+    by a CHRP platform that plugs into an industry standard I/O expansion
+    bus; i.e., PCI and ISA' to 'Any device that connects to an industry
+    standard I/O expansion bus attached through a non-standard connector'.
+    
+    Page 35, lines 49-50: Changed wording from 'Presence of property 
+    indicates that I/O Device can have the ability to have an I/O or
+    resource conflict with a RTAS Function Call' to 'Presence of property 
+    indicates a device may have an I/O or resource conflict with a RTAS
+    Function Call'. Removed note about OS not loading device driver if 
+    property is present.
+
+    Page 37, line 21: Added 'using an OpenPIC interrupt' to the sentence.
+    
+    Page 37, lines 27-30: Reformatted wording of the "open-pic-interrupt" 
+    property. Changed order of the property value and definition.  Changed  
+    defintion to 'The value indicates one of more Open PIC interrupt source
+    numbers that are used to report the internal-errors class of error 
+    conditions.
+
+    Page 37, lines 39-41: Reformatted wording of the "open-pic-interrupt" 
+    property. Changed order of the property value and definition.  Changed  
+    defintion to 'The value indicates one of more Open PIC interrupt source
+    numbers that are used to report events of the epow-events class.
+    
+    Page 37, lines 50-52: Reformatted wording of the "open-pic-interrupt" 
+    property. Changed order of the property value and definition.  Changed  
+    defintion to 'The value indicates one of more Open PIC interrupt source
+    numbers that are used to report events of the power-management-events
+    class.
+
+    Page 38, lines 36-38: Changed wording from 'The processor's first 
+    component of the "reg" property can be used as an index into the 
+    bitmask integer of this property' to 'The CPU's "slot-names-index"
+    property can be used as an index into the bitmask integer of this 
+    property.  The absence of this property indicates that no slots are 
+    present'.
+    
+    Page 38, lines 44-53 & Page 39, lines  1- 2: Added new Section 6.2.1 that
+    has a new property; "slot-names-index".
+
+    Page 46, line 34: Changed Table 5 wording from '(1 thru m)' to 
+    '(0 thru m-1)'.
+    
+    Page 46, line 35: Changed Table 5 wording from '(m+1 thru m+n)' to 
+    '(0 thru n-1)'.
+
+    Page 52, lines 17-19, 27 - 30 & 32: Change Bars do not reflect any
+    changes from the last version (Format problem with FrameMaker).
+
+    Pages 55-61: Changed Section 11.1, "disk-label" Support Package by
+    numbering all algorithm sections.  Additional editorial changes 
+    were done.
+
+    Pages 62-63: Expanded Section 11.2, "tape-label" Support Package, to
+    define tape media format.
+
+    Page 63, line 10: Updated Reference [15] name.
+
+    Page 64, line 43: Changed Table 12 0x51 wording from 'Reserved' to 
+    'Firmware'.
+
+    Page 64, line 51: Changed Table 12 0x7E wording from 'Reserved' to 
+    'Vendor-defined'.
+
+    Page 65, line  7: Added 'FW - Firmware' words.
+
+    Page 65, lines 12-14: Added 12.1 Section for 'Open Firmware
+    Partition'.
+
+    Page 65, line  18: Changed 'reserved' to 'is for firmware usage'.
+    Deleted 'Multiboot Partition'.
+
+    Page 65, line 26: Added 'with name = 'common'' to sentence.
+
+    Page 67, lines 35-39: Added multi-initiator 'nvramrc script words 
+    about changing the Open Firmware start-up sequence and the need to 
+    execute 'probe-all' before the multi-initiator is assigned.
+    
+    Page 68, lines  9-15: Added 'banner', 'probe-all' and 'install-console'
+    sub-bullets.       
+    
+    Page 68, line 25: Added 'probe-all' to text line.
+
+    Page 68, line 35: Added new line containing 'install-console banner<nl>'.
+
+    Page 69, lines  6- 8: Changed Section 12.6 from 'Global Partition' to
+    'Vendor-Defined Partition'.
+
+

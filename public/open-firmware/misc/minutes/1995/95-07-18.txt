@@ -1,0 +1,216 @@
+Subject: Minutes of IEEE 1275 committee meeting on 07/18/95
+Date: Wed, 26 Jul 95 11:58:37 -0600
+From: "Dr. Luan D. Nguyen" <duyluan@austin.ibm.com>
+
+Dear IEEE 1275-1994 Committee members,
+
+Attached please find the minutes of our last meeting on July 18th, 1995 at
+FirmWorks, Mountain View, CA.
+Also please remind that: (1) our next meeting will be on September 19th at
+IBM, Austin, TX , and (2) please also check the "Action Item Summary" at the
+end of this note for your action items.
+Thank you and have a nice day.
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+1- Attendees
+
+Mitch Bradley  FirmWorks/President (415)961-1302  wmb@firmworks.com
+               Chairman IEEE 1275-1994 Committee
+David M. Kahn  Sun Microsystems/   (415)336-2784  dmk@Eng.Sun.Com
+               Vice Chair IEEE 1275-1994 Committee/
+               Firmware/OS Architecture
+Luan Nguyen    IBM/Sys. Arch./     (512)838-1292  duyluan@austin.ibm.com
+               Secretary IEEE 1275-1994 Committee
+Ron Hochsprung Apple/Sys. Arch.    (408)974-2661  ron@apple.com
+Mike Segapeli  IBM pPS Firmware    (512)838-8428  mikes@austin.ibm.com
+John Dickol    IBM Microelectronics(512)838-6005  dickol@vnet.ibm.com 
+Jordan Brown   Sunsoft             (310)348-6039  jordan.brown@west.sun.com
+David Paktor   HAL Computer        (408)379-7000 x1366 paktor@hal.com
+John Rible     Quicksand           (408)458-0399  jrible@cruzio.com
+John Kingman   IBM RSD             (512)838-1546  kingman@austin.ibm.com
+Abraham Torres IBM RSD             (512)838-7644  abraham@austin.ibm.com
+
+
+2- Review Agenda
+
+Proposed agenda was reviewed and approved 9-0-0.
+
+
+3- Last meeting minutes review
+
+Vote passed to approve the last meeting minutes (9-0-0).
+
+
+4- Standard Progress Report
+
+1275.3 is still in ballot
+
+1275.4: Recirculation period is over and we are waiting to hear from IEEE.
+        AI: Martin to follow up with IEEE and to report back the new status.
+
+
+1275.6: Ballot closed, but seems like we cannot get enough vote and also wait 
+to hear from IEEE. The committee current concensus is that if because of
+any reason 1275.6 do not pass IEEE process, we will publish it as an 
+recommended practice document.
+
+David Kahn reported that our Web page was created with many interesting
+features including but not limited to the Open Firmware song. Now, users
+can get to our Web page to access/download/print many different Open Firmware
+publications/documents, check out the minutes of our meetings, or
+agenda/location of our future meetings.... Committee acknowledged the hardwork
+that David have put in (especially his time to be estimated at 3 weeks) and
+conveyed our appreciation. Future enhancement ideas are provided to David and
+AI to Ron about the link to yahoo. Next time when you surf the net, please
+check out our Web home page  http://playground.sun.com/pub/1275 and tell
+us how you think.
+
+
+
+5- Action Items Review
+
+The following AIs are still opened:
+* Mitch: to follow up TI patent issue with Harrison Beasley. Open, pending on
+  Ron's effort to check on TI licensing/royalty on NuBusthat may provide a
+  path to solve this patent issue. Mitch to also e-mail Ron, Luan and Bob the
+  patent number. 
+* Dave Trissell: COFF and PE writings are still open. Kip to remind and work
+  with Dave.
+* All authors/editors of each "recommended practice" documents have action 
+  item to update the document template and its contents per discussion
+* Mitch: encapsulate #251 to recommended practice document.
+* Mitch: encapsulate "interposer" to recommended practice document.
+* David Kahn: Standard properties document
+
+
+
+6- Future Meetings
+
+Sept. 19, 1995: to be host by IBM Austin, TX. IBM will also host binding
+                meetings on Sept 20, 1995.
+Oct. 31, 1995:  to be hosted by FirmWorks Inc, Mountain View, CA. Mitch will
+                also host November 1st, 1995 binding meetings.
+Jan. 16 & 17, 1996: tentatively Motorola Austin, TX. AI: Luan to contact Kip
+                to confirm.
+
+
+7- Errata document (.7): John Rible will have new draft in the next
+couple weeks.
+
+
+8- Recommended Practice boiler template:
+
+The following is the text for 1.3 boiler template for recommended practice 
+documents that was approved by the committee during this meeting:
+
+* Typo on internet address to change to http://playground.sun.com/pub/1275
+* Boiler plate to relate version number with proposal number.
+* Committee agreed to bump version number every time we change documents from
+draft to approved version.
+AI: David Kahn to send to Ron sections on definitions to be put in the
+template.
+AI: Ron to add line number to the template.
+
+
+9- Open Firmware: Recommended Practice - 16-color Text Extension
+
+Committee agreed to change the word "light" to "bright"  (e.g light blue to 
+bright blue...).
+
+Committee also agreed to try out the following to set the current and future 
+brightness/color:
+
+    * Notation:
+    FG(foreground): brightness, color      EFF FG: brightness, color  
+    BG(background): brightness, color      EFF BG: brightness, color
+    (note EFF which stands for effective is the actual display)
+
+Esc[1m sets FG brightness to 1
+Esc[2m sets FG brightness to 0
+Esc[0m sets FG brightness to 0, EFF FG to FG    EFF BG to BG
+Esc[7m sets                     EFF FG to BG    EFF BG to FG
+Esc[3xm sets FG br to FG br and FG color to x
+Esc[4xm sets BG br to FG br and BG color to x
+
+Note: if you are in inverse mode and you do 3xm, BG is undefined.
+
+
+10- Open Firmware Recommended Practice - 8-bit Graphics Extension
+
+Committee agreed to change the name of the methods "color-!" and "color-@" to 
+"color!" and "color@".
+
+Committee also agreed on the following geometry text:
+
+     dimensions (-- width height )
+
+     Returns visible width and height in pixels.
+     The returned values are the visible dimentsions of the screen in
+     the current mode.
+
+     NOTE: Client programs may test for the existance of this method,
+     and if it does not exist, use the 'width' and 'height' properties.
+     If the method does exist, it's return values may differ from the
+     static property values.
+
+11- Proposals:
+
+#275: Withdrawn by John Kingman
+
+#276 to 278: Remanded to PowerPC Binding Committee
+
+12- New Issues:
+
+     a-Request of two new FCodes from David Paktor: Committee response is 
+       to use tokenizer rather than add new official FCode.
+
+     b-Softex identifies 5 items: 
+       1- size-method: issue solved.
+       2- the use of offset-hi and offset-low: committee agreed to create a
+          binding to recommend it as recommended practice.
+       3- the PReP document should add information on block device class 
+          and state them as recommended practice.
+       4- Add to devices extension document a paragraph to specify an 
+          additional requirement: SCSI devices shall implement properties 
+          and methode defined by section E.1 to section E.5 of the base IEEE
+          1275 document. 
+          Note: this will effectively raise the status of these sections from 
+          informative to normative.
+       5- Add to devices extension document a new section for block and byte
+          devices to specify an additional requirement.
+          Add size-method  and number-block method provided in the proposal
+          #248.
+          Also add: offset-low returns least significant cell of the double
+          number denoting the beginning offset of the partition of the disk
+          device that was specified when the disk-label support package was 
+          opened. In general that offset is obtained by executing the offset
+          method of the disk-label support package with an argument of zero.
+          It is permissible for the disk package to execute the disk-label 
+          support package's offset method was after opening that support 
+          package storing the result for later use. 
+          Offset-high is the most significant cell of the double number...
+          (the rest of the paragraph is similar to offset-low)
+
+     c- ARC Terminal: committee reviewed the document from Kip. AI: Kip to 
+        update as discussed.
+
+
+
+13- Action Items Summary
+
+Old AIs left:
+ See section 5 on Action Items Review in this note.
+
+New AIs:
+ * David Kahn to send to Ron sections on definitions to be put in the
+   recommended practice boiler template.
+ * Ron Hochsprung to add line number to the recommended boiler template.
+ * 16-bit color text extension and 8-bit graphics extension to be updated 
+   as discussed by the editor.
+ * Mike Segapeli to update the devices extensions document as described in 
+   section 12 above.
+ * Kip to update the ARC terminal document and follow up with Dave Trissell
+   on COFF and PE writings.
+
+

@@ -1,0 +1,241 @@
+From: "John A. Kingman" <kingman@austin.ibm.com>
+Date: Wed, 24 Jan 96 15:42:37 -0600
+Subject: Item #309: OFWG Minutes 01/16/95
+
+P1275 Open Firmware Working Group Proposal -- Proposal #309 Ver <Auth-Vers#>
+
+Title:          Minutes of Open Firmware Working Group meeting on 01/16/95
+
+Author:         John Kingman
+
+Date:           January 24, 1996
+
+Dear IEEE 1275-1994 Working Group members,
+
+Attached please find the minutes of our last meeting on 01/16/95 at
+Motorola, Austin, TX.  Thanks to Kip McClanahan for making the 
+arrangements.
+
+Also please note that: (1) our next meeting will be on March 5-6th at
+Apple Cupertino, CA, and (2) check the "Action Item Summary" at the
+end of this note for your action items.
+
+As per Agenda Item #7, the Open Firmware Working Group now has a new 
+secretary, John Kingman.  John is a Senior Software Engineer in the RISC 
+System/6000 Division of IBM in Austin, Texas.  John has been involved 
+with PowerPC based systems and related architectures, including PReP and 
+CHRP from the beginnings of these efforts.
+
+Thanks to Luan Nguyen for preparing the first portion of these minutes.  
+I hope we can make the secretarial transition without any major disruptions.
+
+Regards,
+
+John Kingman, Secretary Open Firmware Working Group
+kingman@austin.ibm.com
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+1- Attendees
+
+Mitch Bradley  FirmWorks/President (415)961-1302  wmb@firmworks.com
+               Chairman Open Firmware Working Group
+David M. Kahn  Sun Microsystems    (415)336-2784  dmk@Eng.Sun.Com
+               Vice Chairman Open Firmware Working Group
+John Kingman   IBM RSD Architecture(512)838-1546  kingman@austin.ibm.com
+               Secretary Open Firmware Working Group
+Luan Nguyen    IBM IMD Arch.       (512)838-1292  duyluan@austin.ibm.com
+Ron Hochsprung Apple/Sys. Arch.    (408)974-2661  ron@apple.com
+Mike Segapeli  IBM RSD Firmware    (512)838-8428  mikes@austin.ibm.com
+Jordan Brown   Sunsoft             (310)348-6039  jordan.brown@west.sun.com
+Chris M Bellman Adaptec, Inc.      (408)945-8600  cbellman@corp.adpatec.com
+Kip McClanahan Motorola MMTG       (512)891-6525  kip-mcclanahan@risc.sps.mot.com
+Satoru Mamiya  FirePower Systems   (415)462-3009  mamiya@Firepower.com
+Matt Hill      Sun                 (415)786-5321  matt.hill@sun.com
+Jim Wooldridge IBM                 (206)803-5804  jwooldridge@austin.ibm.com
+Rick Foos      Motorola            (512)891-3084  rfoos@ntgate.sps.moto.com
+John Southard  Motorola            (512)891-6236  southard@ntgate.sps.mot.com
+Judy Ho        Motorola            (512)891-6325  judyh@ntgate.sps.mot.com
+Bruce Rosenkrantz  Motorola        (602)345-7128  brosen@phx.mcd.mot.com
+Eric Rainbolt  Motorola            (512)891-7210  eric_rainbolt@risc.sps.mot.com               
+
+2- Review Agenda
+
+Proposed agenda was reviewed and approved 9-0-0 with the following changes:
+(1) Add "Administrative Trivia" after "10:15AM Future meetings", and (2) Move
+"ISA/EISA/ISA PNP" document review up to right after lunch.
+
+
+3- Last meeting minutes review
+
+Vote passed to approve the last meeting minutes (9-0-0) with the following
+changes: (1) Add in section #6 "Future Meetings" specifying meetings on March 5
+and March 6, 1996 at Apple Cupertino to be hosted by Ron Hochsprung, and 
+(2) Strike "Jordan against" comment in section #14.
+
+
+4- Standard Progress Report
+
+1275.3: Per Mitch, to be verified with David Paktor, this .3 went thru
+the balloting process but we did not get enough responses. David Paktor
+had tried to address some comments from responses with a new version
+of this document. We are waiting for Tracy Hallock, the new owner of
+this document, from Motorola to step up and move this document forward.
+
+1275.4: Per Mitch, to be verified with Martin, this .4 passed RevCom
+and is now in the IEEE editing phase. The committee agreed that we will
+continue work with the IEEE to review the draft and this .4 will be
+drop from future agenda.
+
+
+
+5- Action Items Review
+
+The following AIs are still opened:
+* Mitch: to follow up TI patent issue with Harrison Beasley. This is CLOSED
+  (no way to resolve with Harrison Beasley).
+* Ron: to check on TI licensing/royalty on NuBus that may provide a path to
+  solve this patent issue.  
+* All authors/editors of each "recommended practice" documents have action 
+  item to update the document template and its contents per discussion.
+* Mitch Bradley: encapsulate #251 to recommended practice document.
+* David Kahn: Standard properties document.
+* David Kahn/Mitch: report on 64-bit experimental work.
+* Ron/David Kahn/Greg/Jordan: work on "reg"/"assigned-addresses"/base address
+  registers in the PCI binding.
+* Jordan/Lilian to work on names, unit-address... in ISA binding
+
+
+6- Future Meetings
+
+Mar 5 - 6, 1996:        Apple Computer,         Cupertino, CA
+        Host:           Ron Hochsprung          <ron@apple.com>
+
+Apr 30 - May 1, 1996:   IBM,                    Austin, TX
+        Host:           John Kingman            <kingman@austin.ibm.com>
+
+June 18 - 19, 1996:     Firmworks,              Mountain View, CA
+        Host:           Mitch Bradley           <wmb@firmworks.com>
+        Directions to Firmworks available on http://www.firmworks.com
+
+        NOTE for June meeting: June 18,19 is a tentative date, Mitch
+        to check availability.  Alternate date is June 24, 25.
+
+
+7- Administrative Trivia
+
+Luan announced that he would like to resign from being the IEEE 1275 
+committee's due to his new IBM assignment. He also nominated John Kingman
+to be the new secretary. The committee votes uninamously to appoint John
+to this position.
+With the request from the chair person, the committee officially recognized Luan's contribution this IEEE standard.
+The committee requested Luan to perform the secretary functions during this 
+meeting until he has to leave and John to take it over when he leaves.
+
+
+8- ISA/EISA/ISA PNP binding
+
+The committee reviewed changes made in the version 0.05 dated October 11, 1995
+and resolved all 27 input from IBM AIX except item #18 which is tabled for the
+next review. Bob Coffin also agreed to take over the responsibility to be the 
+owner/editor of this document from Luan Nguyen. Based on the input of the
+committee, Bob will update this version accordingly and put it on our Web page
+for future review.
+
+
+9- Proposal Status:
+
+291: Accepted as ammended 8-1-1
+
+        If the default mode is -1, a suitable default
+        is chosen:
+
+                if i/o: w=1, i=1, g=1, pp=10
+                if mem: g=1, pp=10
+
+        Strike the second paragraph.
+
+        The third paragraph is noted for a future revision
+        of errata (current errata is closed.)
+
+294:    Passed/Ammended 7-0-2
+
+        XCTL -> xctl
+        DMA -> dma
+        underscores -> spaces
+        Change english text to verb first (i.e. 'enable interrupt')
+
+295:  Tabled:
+
+        The committee decided to document a device's capabilities,
+        and not document the current setting of the device.
+        Since the proposal documents 'current settings' rather
+        than capabilities, this was tabled as we anxiously await
+        a revised proposal from the submitter.
+
+296:  Accepted as ammended 9-0-0
+
+        The editor is directed to use proper normative language.
+
+        ... passed to _write_ or returned from _read_
+
+        Change "signed" to "unsigned".
+
+        Delete the stanza deleting the properties.
+
+        Delete the stanza deleting the 'read' method.
+
+        ... for subsequent reads and/or writes.
+
+        ... in the definition of "read" and "write" ...
+
+
+297: Accepted as ammended:
+
+        Add 'size' method with wording to be specified by the editor.
+        (Some manu. specific areas may be excluded from 'size', the
+        area is not available.)
+
+298: Remand to binding committee
+
+299: Remand to binding committee
+
+300: Closed/Withdrawn by author
+
+301: Remand to binding committee
+
+302: Remand to binding committee
+
+303: Passed/Ammended 9-0-1:
+
+        Add an FCode driver example note to the PCI binding
+        (to be supplied by Mitch).
+
+304: Closed/Withdrawn by author (See #305)
+
+305: Closed/Handled by the binding committee (see binding committee
+     minutes)
+
+
+10- Action Items Summary
+
+Old AIs left:
+ See section 5 on Action Items Review in this note
+
+New AIs:
+  * Mitch Bradley:
+    - Check on June meeting dates
+    - work on tristatable bit
+    - work on map-in
+  * Jordan Brown:
+    - work on PCI "reg" address resolution
+    - reorganize discussion of probing in ISA binding
+    - Suggest wording for IRQ 2 vs 9
+    - Add size method for NVRAM
+    - edit sound stuff
+  * Ron Hochsprung
+    - update ranges properties and usage in PCI binding
+
+
+
+[ P1275 Item #309 -- Received: Wed Jan 24 13:40:25 PST 1996 ]
+

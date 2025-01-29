@@ -1,0 +1,8 @@
+Date: Wed, 9 Jul 1997 13:41:03 -0700
+From: dmk@Eng.Sun.Com (David Kahn)
+Subject: Item #418: sorry, still testing
+
+test
+
+[ P1275 Item #418 -- Received: Wed Jul  9 13:41:56 PDT 1997 ]
+

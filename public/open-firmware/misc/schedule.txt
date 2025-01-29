@@ -1,0 +1,15 @@
+# IEEE 1275 Open Firmware Working Group Future Meeting Schedules
+#
+# We try to schedule the next 3 meetings or so ahead of time
+# to allow people to plan ahead and for other groups to coordinate
+# with our meetings.
+#
+# NB: Delete -xxx to use email addresses.
+#
+
+Mar 09, 1999           Firmworks,	Mountain View, CA
+	Host/contact:	Mitch Bradley	(wmb-xxx@apple.com)
+
+Sep 14, 1999           Apple   Cuppertino, CA
+	Host/contact:	Ron Hochsprung	(ron-xxx@apple.com)
+

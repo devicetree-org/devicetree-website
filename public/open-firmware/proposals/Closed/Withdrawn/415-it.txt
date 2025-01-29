@@ -1,0 +1,46 @@
+Date: Tue, 8 Jul 97 16:50:57 PDT
+From: mwi@FirmWorks.COM (Mark Insley)
+Subject: Item #415: Re: Item #414: PCI-IDE device binding (overview)
+
+
+With respect to item #414: PCI-IDE device binding (overview),
+we would like to suggest two small changes. 
+
+With respect to the reg property, we should not limit the number of
+entries to six.
+
+Some IDE bus controllers (e.g. Winbond) have a sixth base address
+register at offset 0x24 which is used for PIO mode disk drives. This
+register if present, should be in the reg property (last) which would
+make the total number of entries in the reg property seven, not
+six. It has already been shown that systems that use these IDE
+controllers with an appropriate seven entry reg property work well
+with MacOS.
+
+With respect to node properties, we should document all of the
+required properties.
+    
+MacOS requires a "compatible" property with a value of "chrp,ide" to
+be present in the "pci-ide" node as well as in the "ide" nodes (unless
+that has changed recently). These should be documented in this binding
+as well for completeness.
+
+Mark.
+
+-- 
+                                   __
+                                  /..\__
+                                 /    **\
+                             _   \ `____/  _
+____________________________/ \___|__|____/ \_____
+                            \_/           \_/
+Mark Insley			(V) (415) 917-6988
+mwi@firmworks.com		(F) (415) 917-6990
+
+FirmWorks
+480 San Antonio Road, Suite 210
+Mt. View, CA 94040
+__________________________________________________
+
+[ P1275 Item #415 -- Received: Tue Jul  8 16:47:46 PDT 1997 ]
+

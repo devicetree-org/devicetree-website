@@ -1,0 +1,173 @@
+From: kingman@austin.ibm.com (John Kingman)
+Subject: Item #339: Administrivia: OFWG Agenda for April/May Meeting
+Date: Mon, 22 Apr 1996 14:58:03 -0500 (CDT)
+
+P1275 Open Firmware Working Group Proposal -- Proposal #339 Ver <Auth-Vers#>
+
+Title:          OFWG Agenda for April/May Meeting
+
+Author:         John Kingman
+
+Dear Open Firmware Working Group Members,
+
+Attached is the agenda for the Open Firmware Working Group meeting to be
+held at IBM, Austin, TX on Tuesday April 30, 1996 and Wednesday May 1, 1996. 
+See below for directions to the meeting.
+
+Please check below for any Action Items assigned to you. For those with
+Action Items who cannot come to the meeting, please send me the status of
+your item(s) by e-mail by 8:00AM Central Time Monday, April 29, 1996.
+
+Thanks.
+-----------------------------------------------------------------------------
+Times are Central Daylight Savings Time:
+
+Tuesday April 30, 1996
+
+     9:15AM     - Meet at IBM, (see note below for directions)
+                     Light breakfast to be provided by IBM.
+     9:30AM   1 - Introduction
+              2 - Review Agenda
+              3 - Administrative/Procedural Items
+              4 - Review and approve minutes from the last meeting
+              5 - Future Meetings
+              6 - Standard Progress Report
+                     P1275.3 (VME - IEEE 1014 bus)
+                     P1275.6: 64-bit Extension Supplement for Open Firmware
+                        - Status on experimental compatibility work from
+                          David Kahn and/or Mitch Bradley (Action Item #5)
+                     P1275.a Errata to 1275-1994 (Core Errata)
+              7 - Action Items Review (see note below)
+              8 - Other Pending/Tabled items
+    12:00M      - Break for LUNCH
+     1:00PM   9 - Proposal Status Review
+             10 - Document Reviews (including associated proposals, if any)
+                    PCI Bus Binding
+                    Recommended Practices
+                        Generic Names
+			Interrupt Mapping
+                        Network Support
+     5:00PM     - Break for the day
+
+Wednesday May 1, 1996
+
+     9:15AM     - Meet at IBM
+                     Light breakfast to be provided by IBM.
+     9:30AM  10 - Document Reviews (cont'd)
+                    Recommended Practices (cont'd)
+                        Forth and FCode
+                    ISA/EISA/ISA PNP Bus Binding
+                    PowerPC Processor Binding
+                    Device Support Extensions
+    12:00M      - Break for LUNCH
+     1:00PM     - New Proposals
+     2:00PM     - Introduction to CHRP Bindings
+     3:30PM     - Summarize/Assign action items and Wrap up
+     4:00PM     - Adjourn
+
+
+NOTES:
+------
+Action Items:
+
+  --------------------------------------------------------------------------
+  | No.|Who         |Description                                           |
+  |----|------------|------------------------------------------------------|
+  |  1 |Ron H.      |Check on TI licensing/royalty on NuBus that may       |
+  |    |            |provide a path to solve the patent issue.             |
+  |----|------------|------------------------------------------------------|
+  |  2 |Editors of  |Update document template and contents per discussion. |
+  |    |Recommended |                                                      |
+  |    |Practice    |                                                      |
+  |    |documents   |                                                      |
+  |----|------------|------------------------------------------------------|
+  |  4 |David K.    |Standard properties document.                         |
+  |----|------------|------------------------------------------------------|
+  |  5 |David K.    |Report on 64-bit experimental work.                   |
+  |    |Mitch B.    |                                                      |
+  |----|------------|------------------------------------------------------|
+  |  6 |Ron H.      |Work on "reg"/"assigned-addresses"/base address       |
+  |    |David K.    |registers in the PCI binding.                         |
+  |    |Greg        |                                                      |
+  |    |Jordan B.   |                                                      |
+  |----|------------|------------------------------------------------------|
+  |  7 |Jordan B.   |Work on names, unit-address... in ISA binding         |
+  |    |Lilian W.   |                                                      |
+  |----|------------|------------------------------------------------------|
+  |  9 |Mitch B.    |Work on tristatable bit                               |
+  |----|------------|------------------------------------------------------|
+  | 11 |Jordan B.   |Reorganize discussion of probing in ISA binding       |
+  |----|------------|------------------------------------------------------|
+  | 12 |Jordan B.   |Suggest wording for IRQ 2 vs 9                        |
+  |----|------------|------------------------------------------------------|
+  | 14 |Jordan B.   |Edit sound stuff                                      |
+  |----|------------|------------------------------------------------------|
+  | 15 |Ron H.      |Update ranges properties and usage in PCI binding     |
+  |----|------------|------------------------------------------------------|
+  | 17 |Ron H.      |Prepare proposal for Code Page selection.             |
+  |----|------------|------------------------------------------------------|
+  | 18 |David K.    |Clarify subcommittee feedback loop                    |
+  |    |John K.     |                                                      |
+  |    |Bob C.      |                                                      |
+  |----|------------|------------------------------------------------------|
+  | 19 |David K.    |Update status of remanded items & documents           |
+  |    |John K.     |                                                      |
+  |    |Bob C.      |                                                      |
+  |----|------------|------------------------------------------------------|
+  | 20 |Ron H.      |Update Proposal #308 as amended                       |
+  |----|------------|------------------------------------------------------|
+  | 21 |Ron H.      |Update Proposal #310 with new wording (talk to Tom    |
+  |    |            |Caron)                                                |
+  |----|------------|------------------------------------------------------|
+  | 22 |Ron H.      |Update PCI Binding 4.2.1 for non-relocatable PCI      |
+  |    |            |devices (see #323a above)                             |
+  |----|------------|------------------------------------------------------|
+  | 23 |Greg H.     |recommended practice for output devices (e.g. VGA)    |
+  |    |            |talk to Mitch Bradley (see #323b above)               |
+  |----|------------|------------------------------------------------------|
+  | 24 |Ron H.      |talk to Mitch Bradley to clarify line-end for #322    |
+  --------------------------------------------------------------------------
+
+Subcommittee Action Items:
+  --------------------------------------------------------------------------
+  | S1 |Bob C.      | Update Generic Names Recommended Practice            |
+  |----|------------|------------------------------------------------------|
+  | S2 |Ron H.      | Update and create v1.1 Forth and FCode Rec Practice  |
+  |----|------------|------------------------------------------------------|
+  | S3 |John K.     | Produce PPC Processor v1.10 draft                    |
+  |----|------------|------------------------------------------------------|
+  | S4 |Bob C.      | Make "shared-bus-master" proposal                    |
+  |----|------------|------------------------------------------------------|
+  | S5 |Ron H.      | Make "chording" proposal                             |
+  |----|------------|------------------------------------------------------|
+  | S6 |Bob C.      | Produce new Device Support Extensions draft          |
+  |----|------------|------------------------------------------------------|
+  | S7 |Bob C.      | Produce 0.2 Draft of ISA binding                     |
+  |----|------------|------------------------------------------------------|
+  | S8 |Mitch B.    | Propose that debug facilities not be supported       |
+  |    |            | in real-mode.                                        |
+  --------------------------------------------------------------------------
+
+
+Directions and hotel information:
+
+  The meeting will be held in Dining Rooms A/B of Building 045 which is the 
+  rusty looking building on the corner of Burnet Road and Braker Lane.  If 
+  you haven't been to the site before, here are some general directions.  
+  The IBM main site is located in northwest Austin.  The main north/south 
+  arteries are Interstate 35 and Loop 1 (also called MoPac) and each has an 
+  exit for Braker Lane.  From I35, go west to Burnet Road and turn right.  
+  From Loop 1 go east to Burnet Road and turn left.  Take a left into the 
+  entrance at Kramer Lane and then an immediate left again.  You should see 
+  signs directing you to Building 045.
+
+  The entrance to the building is on the north side and there is visitor 
+  parking near the entrance.  
+
+  Nearby hotels include the Stouffer Hotel (800-433-2241) and Holiday Inn 
+  Northwest (800-465-4329).  For more Austin information, check 
+     ftp://ftp.austin.ibm.com/pub/OpenFirmware/misc/austin.html
+
+
+[ P1275 Item #339 -- Received: Mon Apr 22 12:56:43 PDT 1996 ]
+

@@ -1,0 +1,33 @@
+Date: Mon, 30 Oct 1995 15:20:48 -0800
+From: brianh@lexus.West.Sun.COM (Brian Horn)
+Subject: Item #297: Device Support Extensions NVRAM "#bytes" property
+
+P1275 Open Firmware Working Group Proposal -- Proposal #297 Ver 1.0
+
+Title:		Generic NVRAM size property
+
+Author:		Brian.Horn@west.sun.com
+
+Date:		10/30/95
+
+Ed/Tech:	Technical
+
+Synopsis:	NVRAMs require a size property
+
+Doc & Version:	Device Support Extensions to IEEE1275-1994 Rev 0.2 Draft
+
+Problem:	There is currently no way to determine the size of an NVRAM
+
+Proposal:	Add on page 5 in section 7.1 after line 48:
+
+		"#bytes"
+
+		prop-name, describes the number of bytes the device is 
+		capable of storing.
+
+		prop-encoded-array:  An integer, encoded as with encode-int.
+		The value is the number of bytes the device can store.
+		Typical values are 4K (4096) or 8K (8192).
+
+[ P1275 Item #297 -- Received: Mon Oct 30 15:17:35 PST 1995 ]
+

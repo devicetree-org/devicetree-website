@@ -1,0 +1,156 @@
+<html>
+<h2>Updates to PPC Binding in Version 1.10 DRAFT</h2>
+<hr>
+<ul>
+<li>Page 7, line 26: [editorial] fix URL
+<li>Page 7, line 50: [review comment] Strike "Open Firmware and its client 
+are running with translation disabled; "
+<li>Page 10, line 3: [review comment] Replace paragraph with:
+"If the client program has specific requirements for physical memory or 
+address space usage, it may establish requirements for OF's physical and/or 
+virtual address space usage by means of its program header.  When OF loads 
+the client program, it inspects the program header, and if its current usage 
+of physical memory or virtual address space conflicts with that specified in 
+the program header, OF shall set the real-base, real-size, virt-base, and 
+virt-size to the configuration variables as specified in the header and 
+restart itself.  Real-base, real-size, virt-base, and virt-size may be 
+specified as -1, in which case the firmware is permitted to choose 
+appropriate values for the variables specified as -1."
+<li>Page 10, line 7: [review comment] Replace paragraph with:
+"If the values of the real-size and/or virt-size configuration varables do 
+not provide sufficient memory and/or virtual address space for the 
+firmware's own use, then the firmware shall not attempt to load a client 
+program and the condition should be reported to the user.  The possibility 
+of not being able to comply with limitiations on firmware's size should be 
+tested as the firmware is coming up in order to handle the possibility that 
+a user established an unworkable limitation on the size."
+<li>Page 10, line 8: [Proposal 317] Add "Clients can minimize this 
+exposure by setting size to -1 and allowing Open Firmware to choose 
+the size."
+<li>Page 10, line 20: [Proposal 313 discussion] Add "and implementation 
+specific areas" following "used for interrupt vectors."
+<li>Page 11, lines 22-23: [review comment] Add "The client shall also 
+ensure that other processors do not generate translation exceptions for 
+the duration of the call."
+<li>Page 11, line 24: [review comment] Insert: Client programs are not 
+required to assume responsibility for physical memory management. 
+<li>Page 11, lines 24-27: [Proposal 317] Replace paragraph with:
+"The client program must use the Open Firmware claim client interface 
+service to allocate physical memory while physical memory is managed by 
+Open Firmware.  Physical memory shall remain managed by Open Firmware 
+until the client program defines the real-mode physical memory management 
+assist callbacks.  Physical memory must be managed by the client program 
+once the client program defines the real-mode physical memory management
+assist callbacks.  Open Firmware shall use the client program's real-mode 
+physical memory management assist callbacks to allocate physical memory 
+after the client program has assumed physical memory management."
+<li>Page 11, lines 24-27: [review comment] Change sentence prior to ";"
+to read "Hence, this binding defines callback services that the client 
+provides for use by Open Firmware"
+<li>Page 13, lines 27-29: [Proposal 317] Change "unit-number" to 
+"unit-address"
+<li>Page 14, lines 43-47: [review comment] delete "cpu-state" property
+since this information is available in /chosen.  I.e., the chosen cpu
+is running and all others are stopped.
+<li>Page 16, line 2: [Proposal 317] Add the following properties:
+<pre>
+      "tlb-split"
+
+         This property, if present, shall indicate that the TLB has a
+         split organization. The absence of this property shall indicate
+         that the TLB has a unified organization.
+
+      "d-tlb-size"
+
+         Standard property, encoded as with encode-int, that
+         represents the total number of d-TLB entries.
+
+      "d-tlb-sets"
+
+         Standard property, encoded as with encode-int, that
+         represents the number of associativity sets of the d-TLB.
+         A value of 1 indicates that the d-TLB is fully-associative.
+
+      "i-tlb-size"
+
+         Standard property, encoded as with encode-int, that
+         represents the total number of i-TLB entries.
+
+      "i-tlb-sets"
+
+         Standard property, encoded as with encode-int, that
+         represents the number of associativity sets of the i-TLB.
+         A value of 1 indicates that the i-TLB is fully-associative.
+
+</pre>
+<li>Page 16, line 39: [Proposal 317] Add the following properties and note:
+<pre>
+      "i-cache-line-size"
+
+         Standard property, encoded as with encode-int, that
+         represents this instruction cache's line size,
+         in bytes, if different than its block size.
+
+      "d-cache-line-size"
+
+         Standard property, encoded as with encode-int, that
+         represents this data cache's line size, in bytes, if
+         different than its block size.
+
+      Note: If this is a unified cache, the corresponding i- and
+      d- sizes must be equal.
+
+</pre>
+<li>Page 17, line 13: [review comment] change "device-type" to "device_type"; 
+do a global check and fix all.
+<li>Page 17, line 39: [Proposal 317] Add the following properties and note:
+<pre>
+      "i-cache-line-size"
+
+         Standard property, encoded as with encode-int, that
+         represents this instruction cache's line size,
+         in bytes, if different than its block size.
+
+      "d-cache-line-size"
+
+         Standard property, encoded as with encode-int, that
+         represents this data cache's line size, in bytes, if
+         different than its block size.
+
+      Note: If this is a unified cache, the corresponding i- and
+      d- sizes must be equal.
+
+</pre>
+<li>Page 18, line 32: [Proposal 317 with comments] Add the segment 
+registers to Table 1 and split Table 1 into sections: real-mode and 
+virt-mode; change "preserved by client interface" to "client interface 
+shall preserve"; add definition for preserved - same value when 
+returing; indicate that the msr, segment registers & sprg registers 
+shall not be modified by the client interface in virtual mode; indicate 
+that the msr, segment registers & sprg registers shall be preserved 
+by the client interface in real mode; remove '%' signs in this section.
+<li>Page 19, lines 8-15: [Proposal 317 and comments] replace the 3rd and 
+4th sentences with the definition of load-base.  Add the following to the
+end of the paragraph: "All of physical memory from load-base to either the 
+start of Open Firmware physical memory or the end of physical memory,
+whichever comes first, shall be available for loading the client program."
+<li>Page 19, Table 2: [review comment] Change "Others" to "Other user mode 
+registers"; remove '%' signs in this section.
+<li>Page 20, line 40 [Proposal 317, comments and follow-up] After the 
+first sentence add: "The I cache shall be consistent with the D cache for 
+all memory areas occupied by the client program."
+<li>Page 20, line 43 [Proposal 317, comments and follow-up] after line 43 add:
+<pre>
+	"All processors in a SMP system shall have the same consistent view 
+	of all memory areas (for data references).  No more than one 
+	processor shall have a modified copy of the same data area in its 
+	cache when the client program is called.
+
+	Note: If firmware makes cachable M=0 data references from different 
+            processors on a SMP system, it may have to perform additional 
+            cache management to meet this requirement."
+</pre>
+<li>Page 22, lines 52-54: [Proposal 317] Move to follow line 12.
+</ul>
+<hr>
+</html>

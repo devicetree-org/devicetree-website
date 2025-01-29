@@ -1,0 +1,61 @@
+Date: Wed, 09 Jul 1997 14:38:06 -0500
+From: Randy Leberknight <randyl@phx.mcd.mot.com>
+Subject: Item #419: CHRP: Backslash in Bootinfo Entities ...
+
+P1275 Openboot Working Group Proposal -- Proposal #:419 Ver 1
+    
+Title:          Backslash in Bootinfo Entities &directory and &filename
+
+Author:         Randy Leberknight
+
+Date:           07/08/97
+
+Ed/Tech:        Editorial
+
+Synopsis:       Example for full pathname contains unneeded backslashes.
+        
+Doc & Version:  CHRP Binding 1.7
+        
+Problem:        Section 3.1.6.1 specifies Bootinfo Entities &directory;
+                and &filename; which are to be substituted with the directory
+                and filename components of the device specifier. There is an
+                example which says that the fully qualified pathname could
+                be represented by the following text.
+
+                &device;:[&partition;][,]\&directory;\&filename;
+
+                The presence of the "\" preceeding &directory; and &filename;
+                suggests that the "\" character is to be a part of the
+                data within the boot-script element itself, rather than
+                being produced as a result of the substitution. This creates
+                unnecesary compilcations. If the directory component exists
+                it will allready contain a backslash, as will the filename
+                component. If the "\" allready exists in the text of the
+                boot-script then it must be deleted from either the
+                boot-script or the respective component of the device
+                specifier. Also, if the boot-script contains a reference to
+                &directory; or &filename; (with the prepending "\")
+                and the device specifier does not contain this component,
+                the backslash is again a problem. Consider the device specifier
+
+                	a:\bootinfo.txt
+                
+                This is a perfectly valid description of a file.
+
+Proposal:       Remove the backslash characters from the example. The
+                example would then read:
+
+                &device;:[&partition;][,]&directory;&filename;
+
+                The device specifier has all the information needed for
+                directory and filename, including as many "\"s as may be
+                required. Let the data in the device specifier stand for
+                itself. If there is no directory information in the device
+                specifier, then the substitution of a null string would be
+                harmless. (As in the case of a:\bootinfo.txt).
+-- 
+Randy Leberknight
+RandyL@phx.mcg.mot.com
+
+[ P1275 Item #419 -- Received: Wed Jul  9 14:40:47 PDT 1997 ]
+

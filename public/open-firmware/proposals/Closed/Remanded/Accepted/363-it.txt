@@ -1,0 +1,60 @@
+From: kingman@austin.ibm.com (Kingman)
+Subject: Item #363: PPC: Update PowerPC processor binding V 1.10
+Date: Tue, 11 Jun 1996 16:40:44 -0500 (CDT)
+
+P1275 Open Firmware Working Group Proposal -- Proposal #363 Ver <Auth-Vers#>
+
+Title:          PowerPC Processor properties 
+
+Author:         John Kingman
+
+Date:           June 11, 1996
+
+Ed/Tech:        Technical
+
+Synopsis:       Power PC architecture V 1.08 changes reflected in properties
+
+Doc & Version:  PowerPC Processor Binding Revision: 1.10 DRAFT 
+
+Problem:        PowerPC Processor architecture deltas need to be reflected
+
+Proposal:       
+
+I.  Stfiwx
+
+    Revision 1.08 of the PowerPC architecture phases stfiwx into the base
+    architecture.  This instruction had been part of the graphics group of
+    instructions.  The 601 was the only PowerPC processor that did not
+    implement stfiwx.
+
+    Changes:  Page 15, lines 44 and 45, delete "stfiwx" from these lines.
+
+II. 64-bit Virtual Address
+
+    Some 64-bit PowerPC implementations will not support the full 80-bit
+    virtual address defined by the PowerPC architecture, so a 64-bit subset 
+    is being added to the PowerPC architecture.
+
+    Add:  Page 14, following line 47:
+
+      "64-bit-virtual-address"
+
+      prop-encoded-array: <none>
+
+      This property, if present, indicates that the PowerPC microprocessor 
+      defined by this CPU node supports the 64-bit virtual address subset 
+      of the 80-bit virtual address as defined by the PowerPC architecture.  
+      The absence of this property indicates that the PowerPC 
+      microprocessor defined by this CPU node supports the full 80-bit 
+      virtual address defined by the PowerPC architecture.  This property
+      is only valid for 64-bit implementations.
+
+
+-- 
+    John A. Kingman         /~ ~_~ ~ ~ ~_~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+  Kingman@Austin.IBM.com   /   | | ___ | |_ ._ _        
+ IBM RSD, Austin, Texas   /   _| |/ . \| . || ' | 
+ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~    \__/\___/|_|_||_|_|
+
+[ P1275 Item #363 -- Received: Tue Jun 11 14:39:15 PDT 1996 ]
+

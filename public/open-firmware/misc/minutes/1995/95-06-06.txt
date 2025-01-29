@@ -1,0 +1,225 @@
+Subject: Minutes of IEEE 1275 Committee on 06/06/95
+Date: Wed, 12 Jul 95 13:33:13 -0600
+From: "Dr. Luan D. Nguyen" <duyluan@austin.ibm.com>
+
+Dear IEEE 1275-1994 Committee members,
+
+Attached please find the minutes of our last meeting on 06/06/95 at
+Motorola, Austin TX.
+Also please remind that: (1) our next meeting will be on July 18th at
+Firmworks, Mountain View, and (2) check the "Action Item Summary" at the
+end of this note for your action items.
+The agenda will be send out soon. Thank you and have a nice day.
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+1- Attendees
+
+Mitch Bradley  FirmWorks/President (415)961-1302  wmb@firmworks.com
+               Chairman IEEE 1275-1994 Committee
+David M. Kahn  Sun Microsystems/   (415)336-2784  dmk@Eng.Sun.Com
+               Vice Chair IEEE 1275-1994 Committee/
+               Firmware/OS Architecture
+Luan Nguyen    IBM/Sys. Arch./     (512)838-1292  duyluan@austin.ibm.com
+               Secretary IEEE 1275-1994 Committee
+Ron Hochsprung Apple/Sys. Arch.    (408)974-2661  ron@apple.com
+Mike Segapeli  IBM pPS Firmware    (512)838-8428  mikes@austin.ibm.com
+Bob Coffin     IBM pPS Arch.       (512)838-8240  coffin@vnet.ibm.com
+Rob Baxter     Motorola Computer G.(512)891-2137  robb@phx.mcd.mot.com
+Kip McClanahan Motorola MMTG     (512)891-6525  kip-mcclanahan@risc.sps.mot.com
+Tracy Hallock  Motorola RISC Mark.(512)891-6905 tracy-hallock@risc.sps.mot.com
+Rick Foos      Motorola SPS        (512)891-3084  rfoos@ntgate.sps.mot.com 
+Paul Resch     Apple               (408)974-5378  pmr@apple.com 
+Steve Zucker   SunSoft             (310)348-6042  Steve.Zucker@west.sun.com
+John Dickol    IBM Microelectronics(512)838-6005  dickol@vnet.ibm.com
+Martin Walsh   Sun Microsystem     (415)886-2786  martin.walsh@eng.sun.com
+Thomas Mookken Druma Inc.          (512)323-5411  mookken@world.std.com
+Bapi Ahmad     Druma Inc.          (512)323-5411  bm@bga.com
+
+2- Review Agenda
+
+Proposed agenda was reviewed and approved 15-0-0.
+
+
+3- Last meeting minutes review
+
+Vote passed to approve the last meeting minutes with admendment to: (1) change
+status of proposal #252 to #263 and #265 from passed to closed and remanded
+to the PowerPC workgroup, and (2) clarify proposal #TBD1 to relate it to
+"set-font" argument. 
+
+4- Standard Progress Report
+
+1275.3: The ballot package including the standard and cover letter will be
+shipped to IEEE Monday, 5 June.
+
+1275.4: Mitch and Martin were unable to sway the lone dissenting voter. We 
+are not sure to what extent Mitch will able to talk with him further. So we
+decide to do the recirculation.  Martin will send the recirc package to IEEE on Monday June 05,1995.
+The package includes the comments from the dissenting vote and the
+commitee responses along with a cover letter.
+
+
+1275.6: It is still in ballot.  We have not heard anything from IEEE office
+with respect to the preliminary results.  The ballot will close on June 12,
+1995 so Martin should get something soon. Perhaps Martin has not received anything because of his carreer move to different company. But he promises
+that he will call IEEE office on Monday June 05, 1995, and as soon as he gets any preliminary feedback, he will post to 1275-wg.
+
+Bob Coffins also reported his trip to the PCMCIA committee meeting in France.
+ 
+
+5- Action Items Review
+
+The following AIs are still opened:
+* Mitch: to follow up TI patent issue with Harrison Beasley. Open, pending on
+  Ron's effort to check on TI licensing/royalty on NuBusthat may provide a
+  path to solve this patent issue. Mitch to also e-mail Ron, Luan and Bob the
+  patent number. 
+* Kip: to make formal proposal on ARC Terminal. Open, to be done in the next
+  two weeks. 
+* Dave Trissell: COFF and PE writings are still open. Kip to remind and work
+  with Dave.
+
+
+6- Future Meetings
+
+July 18, 1995:  to be hosted by FirmWorks Inc, Mountain View, CA. Mitch will
+                also host July 19, 1995 binding meetings.
+Sept. 19, 1995: to be host by IBM Austin, TX. IBM will also host binding
+                meetings on Sept 20, 1995.
+Oct. 31, 1995:  to be hosted by FirmWorks Inc, Mountain View, CA. Mitch will
+                also host November 1st, 1995 binding meetings.
+
+
+7- Errata document (.7): AI to update this document per discussion
+
+
+8- Recommended Practice boiler template:
+
+The following is the text for 1.3 boiler template for recommended practice 
+documents that was approved by the committee during this meeting:
+
+This document is a voluntary-use recommended practice of the Open
+Firmware Working Group. The Open Firmware Working Group is an ad hoc
+committee composed of individuals interested in Open Firmware as
+defined by IEEE 1275-1994, related standards, and their application to
+various computer systems.
+
+The Open Firmware Working Group is involved both in IEEE sanctioned
+standards activities whose final results are published by IEEE and in
+informal recommendations such as this, which are published on the
+internet at ftp://playground.sun.com/pub/p1275.
+
+Membership in the Open Firmware Working Group is open to all interested
+parties. The working group meets at regular intervals at various
+locations. For more information send email to p1275-wg@prombo.eng.sun.com.
+
+
+9- Open Firmware: Recommended Practice - 16-color Text Extension
+
+For the color table in the 16-color text extension, modify as follows:
+
+Various support packages use numbers from 0 to 15 to represent colors.
+The table below defines the sixteen colors in terms of  the approximate
+intensities of red, green, and blue (0 for no intensity and 1 for
+maximum intensity). The use of these color numbers does not necessarily
+imply that the hardware uses a color lookup table, nor does the
+description of the colors imply that the hardware uses an RGB color
+space.
+
+
+10- Open Firmware: Recommended Practice - Graphics Extension
+
+Change the name to 8-bit graphics extension
+
+Add the following text:
+If a display device driver implements both the 8-bit graphics extension
+and the 16-color text extension, it shall initialize the first 16 color
+numbers to correspond to the colors indicated in Table 1 in the
+16-color text extension. A client program can use those colors without
+explicitly initializing them. If a client program changes the color
+assignment for color indexes 0-15, the behavior of the 16-color text
+extension might be affected.
+
+
+11- Proposal Score Card:
+
+#250: Subject: Item #250: Procedural: rules for email ballot 
+      Pending: Tabled: AI: dmk
+Current status: Still tabled, activate when needed.
+
+
+#267: Subject: Item #267: PowerPC binding: "hostid" property 
+      New: not yet discussed
+Current status: Remand to Binding Subcommittee.
+
+
+268: Subject: Item #268: Core recommended practice: "version" property 
+     New: not yet discussed
+	Create a recomended practice for additional properties;
+	"Additional Propoperties", adding the "version" property,
+	defined here, as the first property included in this RP.
+	SCOPE: All Packages As Needed.
+	Other changes, see text.
+Current Status:	Passed as ammended.
+
+
+269: Subject: Item #269: Core recommended practice: test-method client intfc
+     New: not yet discussed
+Current status:	Withdrawn.
+
+
+270: Subject: Item #270: Recomended Practice (Core) test-method Ver. 2 
+     New: not yet discussed
+Current status: Passed with minor changes.
+
+
+271: Subject: Item #271: Open Firmware binding proposal for SMP
+     New: not yet discussed
+Current status: Remanded to the author (Luan Nguyen) for amendment per
+discussion.
+
+
+272: Subject: Item #272: Interposition (Recommended Practice)
+     New: not yet discussed
+Current status: Passed as ammended, 7-0-1
+	Client interface name changed to instance-to-interposed-path
+
+273: Editorial PCI Binding Change
+Current status: Passed as ammended. Editor's discretion.
+
+274: PCI "reg" property clarification.
+Current status: Passed as ammended:
+		First part withdrawn.
+		Second and third parts changed to "Notes"
+		Second part: "In general" changed to "Typically".
+		Added: Page 16:44-45 Strike 'listed in any child's
+		       "reg" property.'
+ 
+
+11- Action Items Summary
+
+Old AIs left:
+ See section 5 on Action Items Review in this note
+
+New AIs:
+* Ron: to update the boiler template for "recommended practice".
+* All authors/editors of each "recommended practice" documents have action 
+  item to update the document template and its contents per discussion
+* Mitch: encapsulate #251 to recommended practice document.
+* Mitch: encapsulate "interposer" to recommended practice document.
+* David Kahn: errata document to be updated with improve format and annotation
+  per discusiion in the meeting
+* David Kahn: Standard properties document
+* Luan: Update SMP binding draft per discussion for review next time.
+
+ ------------------------------------------------------------------------------ 
+Dr. Luan D. Nguyen                             Phone: 512-838-1292,t/l 678-1292
+System Architect                               Unix:  duyluan@austin.ibm.com
+IBM System Technology and Architecture Div.    Vnet:  duyluan at austin
+11400 Burnet Road IMAD 9450
+Austin, TX 78758
+
+
+
+

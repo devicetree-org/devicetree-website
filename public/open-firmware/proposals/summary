@@ -1,0 +1,307 @@
+210:  Subject: Item #210: Core Errata: better branch descriptions
+211:  Subject: Item #211: Core Errata: Initial errata list
+212:  Subject: Item #212: Core Errata: "xxJoin"
+213:  Subject: Item #213: Core Errata: "xxSplit and xxJoin"
+214:  Subject: Item #214: Core Errata: Clarify token substitution of rl@ & rl!
+215:  Subject: Item #215: Core Errata: Extensible Client Services Package
+216:  Subject: Item #216: Core Errata: Register-Access words, correction ...
+217:  Subject: Item #217: ISA binding: *first draft*
+218:  Subject: Item #218: x86 binding: *first draft*
+219:  Subject: Item #219: [ Not a proposal - administrative use ]
+220:  Subject: Item #220: [ Not a proposal - administrative use ]
+221:  Subject: Item #221: PPC Binding: Eliminate "cpu-version"
+222:  Subject: Item #222: PPC Binding: Split binding into processor and ...
+223:  Subject: Item #223: Create "Device Extensions to IEEE 1275" document 
+224:  Subject: Item #224: PPC Binding: multiple instances of identical devices 
+225:  Subject: Item #225: Core Errata: Alias expansion bug
+226:  Subject: Item #226: P1275.6: "Split" and "Join" words
+227:  Subject: Item #227: Core Errata: "Split" and "Join" words
+228:  Subject: Item #228: PPC Binding: Boot Order Change
+229:  Subject: Item #229: PPC/PReP: Halt-Hibernate 
+230:  Subject: Item #230: PPC/PReP: Halt-Suspend 
+231:  Subject: Item #231: PPC/PReP: Halt-Dump 
+232:  Subject: Item #232: PPC/PReP: Halt-MCLogout 
+233:  Subject: Item #233: Core Errata: PAR (IEEE P1275.7) 
+234:  Subject: Item #234: Core Errata: Clarify set-symbol-lookup client intfc.
+235:  Subject: Item #235: PPC Binding: proposal - SCSI device names
+236:  Subject: Item #236: PCI Binding: Change "reg" prop names
+237:  Subject: Item #237: Open Firmware core - Multi-color text
+238:  Subject: Item #238: Open Firmware - Graphics Extension
+239:  Subject: Item #239: PPC Binding: Locating Standard Devices
+240:  Subject: Item #240: Procedural: Procedure for Binding Meetings
+241:  Subject: Item #241: PCI Binding: Legacy devices
+242:  Subject: Item #242: PCI Binding: assigned-addresses clarification
+243:  Subject: Item #243: PPC binding: reboot command section?
+244:  Subject: Item #244: PPC binding: reboot command section?
+245:  Subject: Item #245: core document - extended std font ...
+246:  Subject: Item #246: PPC Binding: std default font
+247:  Subject: Item #247: 1275 Core Document: "name" props for SCSI devices 
+248:  Subject: Item #248: Extension to Core - size method 
+249:  Subject: Item #249: PCI binding: "clock-frequency" bus node property 
+250:  Subject: Item #250: Procedural: rules for email ballot (Comment NOW!) 
+251:  Subject: Item #251: PCI Binding: Generic names; Recomended Practice) 
+252:  Subject: Item #252: PPC Binding: editorial correction name of "root" node 
+253:  Subject: Item #253: PPC Binding: memory usage clarification... 
+254:  Subject: Item #254: PPC Binding: memory granularity
+255:  Subject: Item #255: PPC Binding: Virtual mode rules should be revised 
+256:  Subject: Item #256: PPC Binding: disk-label package arguments are unclear
+257:  Subject: Item #257: PPC Binding: BOOTP extensions not specified 
+258:  Subject: Item #258: PPC Binding: timebase-frequency on 601 is unclear 
+259:  Subject: Item #259: PPC Binding: client program formats ... too broadly 
+260:  Subject: Item #260: PPC Binding: load address could be clearer 
+261:  Subject: Item #261: PPC Binding: translate client callback return values
+262:  Subject: Item #262: PPC Binding: devices 
+263:  Subject: Item #263: PPC Binding: typo in binding 
+264:  Subject: Item #264: PCI Binding: relocatable I/O below 64 KB 
+265:  Subject: Item #265: PPC Binding: "regs" property for cpu nodes
+266:  Subject: Item #266: RP (Core, PCI): Revisit Generic Names #251 
+267:  Subject: Item #267: PowerPC binding: "hostid" property 
+268:  Subject: Item #268: Core recommended practice: "version" property 
+269:  Subject: Item #269: Core recommended practice: test-method client intfc
+270:  Subject: Item #270: Recomended Practice (Core) test-method Ver. 2 
+271:  Subject: Item #271: Open Firmware binding proposal for SMP
+272:  Subject: Item #272: Interposition (Recommended Practice)
+273:  Subject: Item #273: Editorial changes to PCI binding
+274:  Subject: Item #274: PCI "reg" property clarification
+275:  Subject: Item #275: PowerPC processor binding, 64-bit properties
+276:  Subject: Item #276: PowerPC binding V1.3, Open Firmware's use of BATs 
+277:  Subject: Item #277: PowerPC processor binding, 64-bit properties V2
+278:  Subject: Item #278: PowerPC processor binding, 603 style properties 
+279:  Subject: Item #279: ARC console escape sequences 
+280:  Subject: Item #280: Device Support Extensions V0.2, req. for SCSI Devices
+281:  Subject: Item #281: PReP binding 0.02 halt-address clarification 
+282:  Subject: Item #282: PowerPC default mapping mode 
+283:  Subject: Item #283: Core Errata: Alias expansion buglette 
+284:  Subject: Item #284: PR*P binding: disk label algorithm 
+285:  Subject: Item #285: Core errata: Another minor error in appendix E 
+286:  Subject: Item #286: PCI Supp: Order of reg tuples for non-FCode devices 
+287:  Subject: Item #287: PCI Supp: Supply examples to clarify address handling
+288:  Subject: Item #288: Device Supp: new property for wide SCSI 
+289:  Subject: Item #289: Device Ext: add support for multi-initiator SCSI 
+290:  Subject: Item #290: PCI Binding: requirements for PCI-PCI bridges 
+291:  Subject: Item #291: PPC default mode for map not defined 
+292:  Subject: Item #292: PCI bus-master-capable property 
+293:  Subject: Item #293: PCI bus master capable property (revised) 
+294:  Subject: Item #294: Dev Ext: Create CS423x Device Support Extension 
+295:  Subject: Item #295: Dev Ext: Consistent Properties for Sound Devices 
+296:  Subject: Item #296: Dev Ext: "sound" should specify a single data format 
+297:  Subject: Item #297: Device Support Extensions NVRAM "#bytes" property 
+298:  Subject: Item #298: DS1385 binding 
+299:  Subject: Item #299: PC keyboard device binding 
+300:  Subject: Item #300: Device Ext: max-scsi-targets property
+301:  Subject: Item #301: 8042 device binding 
+302:  Subject: Item #302: PReP floppy and ide device types are inappropriate 
+303:  Subject: Item #303: PCI Bus Binding: Create reserved word in the PCI node
+304:  Subject: Item #304: Device binding drafts for a variety of PC devices 
+305:  Subject: Item #305: Device binding drafts for a variety ... (v1.1) 
+306:  Subject: Item #306: PowerPC processor binding update
+307:  Subject: Item #307: PPC -- Real Base, Load Base comments 
+308:  Subject: Item #308: PCI Binding: firware should set cache line size 
+309:  Subject: Item #309: OFWG Minutes 01/16/95 
+310:  Subject: Item #310: PCI Binding: secondary latency timer 
+311:  Subject: Item #311: PCI: Item#303: Ammendment 
+312:  Subject: Item #312: PPC: Add load-base to .note section 
+313:  Subject: Item #313: PPC: #trap-pages property 
+314:  Subject: Item #314: PCI: get-inherited-property bug in Apple OF
+315:  Subject: Item #315: PPC: binding update from CHRP
+316:  Subject: Item #316: PPC: Binding committee meeting minutes 1/17/96 
+317:  Subject: Item #317: PPC: Processor binding update from CHRP 
+318:  Subject: Item #318: Administrivia: OFWG Agenda for March Meeting 
+319:  Subject: Item #319: Administrivia: New OFWG Agenda for March Meeting 
+320:  Subject: Item #320: ISA Binding: Define new physical address format ...
+321:  Subject: Item #321: new recommended practice:  Interrupt Mapping 
+322:  Subject: Item #322: recommended practice: Forth source & FCode image ...
+323:  Subject: Item #323: change to *output* definition 
+324:  Subject: Item #324: New Draft Recommended Practice: 'Generic Names' 
+325:  Subject: Item #325: Amended PowerPC Committee meeting minutes 1/17/96 
+326:  Subject: Item #326: PCI Binding: Clarify address space allocation ...
+327:  Subject: Item #327: PCI Binding: "latency-timer" property
+328:  Subject: Item #328: SCSI-3 Binding: Create binding document 
+329:  Subject: Item #329: OFWG Minutes 03/06/96 
+330:  Subject: Item #330: PPC: L2 cache property proposal
+331:  Subject: Item #331: Generic name for the keyboard/mouse controller 
+332:  Subject: Item #332: OFWG Minutes 03/06/96 (second day) 
+333:  Subject: Item #333: SCSI-3 Binding: Create binding document 
+334:  Subject: Item #334: Device Support Extensions: Draft Version 0.6 
+335:  Subject: Item #335: ISA/EISA/ISA-PnP Draft version 0.2 
+336:  Subject: Item #336: Generic Names Rec. Practice, Draft 1.1 
+337:  Subject: Item #337: Dev Sup Ext 0.6: "mouse" get-event clarification 
+338:  Subject: Item #338: Dev Sup Ext: scancode methods 
+339:  Subject: Item #339: Administrivia: OFWG Agenda for April/May Meeting 
+340:  Subject: Item #340: PCI Binding: add "latency-timer" property 
+341:  Subject: Item #341: Device Support Extensions: Clarify Scope 
+342:  Subject: Item #342: Device Support Extensions: Clarify Scope 
+343:  Subject: Item #343: What does "compatible" mean? 
+344:  Subject: Item #344: PC keyboard/mouse controller binding 
+345:  Subject: Item #345: CS4231 Device Binding 
+346:  Subject: Item #346: Dallas Semiconductor 1385 Device Binding 
+347:  Subject: Item #347: PC Keyboard Device Binding 
+348:  Subject: Item #348: PC Serial Port Device Binding 
+349:  Subject: Item #349: PCI Bindings: clarify use of probe-pci 
+350:  Subject: Item #350: DSE:  "sound" properties ...
+351:  Subject: Item #351: OBP-TFTP Recomended Practice Draft 0.5 
+352:  Subject: Item #352: SCSI-3 Binding: Create initial binding 
+353:  Subject: Item #353: PCI Binding ROM Image format 
+354:  Subject: Item #354: PPC/PReP: Halt-address is dead; long live RTAS 
+355:  Subject: Item #355: Interrupt Mapping RP, Unapproved Draft 0.6 
+356:  Subject: Item #356: Administrivia: OFWG Minutes for April/May Meeting 
+357:  Subject: Item #357: CHRP: Proposal for CHRP binding Availability 
+358:  Subject: Item #358: Generic Names RP: Don't reserve names 
+359:  Subject: Item #359: Proposal for CHRP Device Bindings  
+360:  Subject: Item #360: CHRP: Genericize PIC controller name
+361:  Subject: Item #361: CHRP PIC dev: add "reserved-interrupts" property 
+362:  Subject: Item #362: ISA: ISA-PnP Unit Address Format 
+363:  Subject: Item #363: PPC: PPC Update PowerPC processor binding V 1.10 
+364:  Subject: Item #364: TFTP Boot Extensions RP: Draft 0.6 posted 
+365:  Subject: Item #365: Intr. Map RP: Draft 0.8 posted 
+366:  Subject: Item #366: PCI: Draft 1.75 posted 
+367:  Subject: Item #367: PCI Binding 1.75 ranges property update 
+368:  Subject: Item #368: Administrivia: OFWG Agenda for June Meeting 
+369:  Subject: Item #369: PCI Binding: available property for bus nodes 
+370:  Subject: Item #370: 64-bit Extensions: FCode32 Compatibility 
+371:  Subject: Item #371: Admin: OFWG Minutes for June Meeting 
+372:  Subject: Item #372: Admin: OFWG Minutes for June Meeting (revised)
+373:  Subject: Item #373: Admin: OFWG Minutes for June Meeting (revised) 
+374:  Subject: Item #374: Admin: OFWG Minutes for June Meeting (revised) 
+375:  Subject: Item #375: SPI Binding: Draft 1 
+376:  Subject: Item #376: CHRP system binding: chosen nvram 
+377:  Subject: Item #377: CHRP system binding: internal (dummy) nodes 
+378:  Subject: Item #378: TFTP Booting Extensions RP Property Values 
+379:  Subject: Item #379: TFTP Booting Extensions RP Open Argument Values 
+380:  Subject: Item #380: PCI: Include pci class code string in 'compatible' 
+381:  Subject: Item #381: PC keyboard/mouse controller binding 
+382:  Subject: Item #382: PC keyboard device binding v0.3 
+383:  Subject: Item #383: clarifications on MEMORY-TEST-SUITE and MASK
+384:  Subject: Item #384: PC Serial Port Device Binding 
+385:  Subject: Item #385: OFWG Meeting (08/13-14/96) Proposed Agenda 
+386:  Subject: Item #386: Administrivia: Agenda for August meeting 
+387:  Subject: Item #387: Administrative: OFWG Minutes for August Meeting 
+388:  Subject: Item #388: Request email balloting of Item #250 
+389:  Subject: Item #389: Core: Stack diagram error in endcase and b(endcase) 
+390:  Subject: Item #390: PPC: reserved area size increase 
+391:  Subject: Item #391: DSE: Clarify Arguments to network Devices 
+392:  Subject: Item #392: Administrative: Agenda for October OFWG Meeting 
+393:  Subject: Item #393: Administrative: OFWG Minutes for October Meeting 
+394:  Subject: Item #394: ISA bus: Typo in binding "interrupts" 
+395:  Subject: Item #395: PCI bus: Typo in binding - ss coding for ...
+396:  Subject: Item #396: Improve max-transfer example. 
+397:  Subject: Item #397: DSE: 'auto' string in network device properties
+398:  Subject: Item #398: OBP-TFTP: additional 'ping' parameters  
+399:  Subject: Item #399: PCI Bus: map-in/out clarification. 
+400:  Subject: Item #400: PCI Bus v2.0: Typo in 4.1.2.1 
+401:  Subject: Item #401: Agenda for OFWG Salt Lake City Meeting - January 
+402:  Subject: Item #402: Interrupt Mapping 0.9 
+403:  Subject: Item #403: Re: Item #402: Interrupt Mapping 0.9 
+404:  Subject: Item #404: SCSI Annex retry improvements 
+405:  Subject: Item #405: pci v2.0: Add 'vendor-id' to 'compatible' 
+406:  Subject: Item #406: Minutes for OFWG January 1997 Meeting 
+407:  Subject: Item #407: VME Bus: VME Bus binding d9 
+408:  Subject: Item #408: Proposed Bus Binding for IEEE 1394/firewire 
+409:  Subject: Item #409: Set-Resolution method for graphics drivers
+410:  Subject: Item #410: Proposal for "dma-ranges" property
+411:  Subject: Item #411: Mac HFS support for CHRP
+412:  Subject: Item #412: RE: Item #411: Mac HFS support for CHRP
+413:  Subject: Item #413: Agenda: July 15/16, 1997 Meeting @ Firmworks
+414:  Subject: Item #414: PCI-IDE device binding (overview)
+415:  Subject: Item #415: Re: Item #414: PCI-IDE device binding (overview)
+416:  Subject: Item #416: administrative test -- ignore
+417:  Subject: Item #417: administrative test
+418:  Subject: Item #418: sorry, still testing 
+419:  Subject: Item #419: CHRP: Backslash in Bootinfo Entities ...
+420:  Subject: Item #420: PCI: Correction to dma-map-in stack diagram 
+421:  Subject: Item #421: Re: Item #411: Mac HFS support for CHRP  
+422:  Subject: Item #422: Minutes 15 Jul 97 OFWG 
+423:  Subject: Item #423: OBP-TFTP RP: /chosen/bootreply-packet ...
+424:  Subject: Item #424: OBP-TFTP RP: /chosen/bootreply-packet ... 
+425:  Subject: Item #425: Core Errata:  fix show-lun method 
+426:  Subject: Item #426: Revised Bus Binding for IEEE 1394/firewire 
+427:  Subject: Item #427: USB Bus Binding, Draft 0.1 
+428:  Subject: Item #428: Revised Bus Binding for IEEE 1394/firewire 
+429:  Subject: Item #429: Minutes 11 Nov 97 OFWG
+430:  Subject: Item #430: PCI Binding: Expand PCI compatible/name ...
+431:  Subject: Item #431: CoderLink web site open ! 
+432:  Subject: Item #432: USB Binding Draft 0.2 
+433:  Subject: Item #433: ARM Processor Binding, draft 0.3 
+434:  Subject: Item #434: Digital Network Appliance Platform Binding 0.2d 
+435:  Subject: Item #435: Revised Bus Binding for IEEE 1394/firewire 
+436:  Subject: Item #436: FC/AL SCSI FCP proposed binding 
+437:  Subject: Item #437: Minutes 17 March 1998 OFWG Meeting
+438:  Subject: Item #438:  Wednesday 
+439:  Subject: Item #439: ARM Processor Binding: Correction to claim-phys ...
+440:  Subject: Item #440: clarify SET-CALLBACK unset value 
+441:  Subject: Item #441:  ++Bull*sEye-*Targeting*Software* 
+442:  Subject: Item #442: testing moved proposal daemon 
+443:  Subject: Item #443: OFWG Agenda 01 Sept 1998
+444:  Subject: Item #444: <spam .. deleted>
+445:  Subject: Item #445: <spam .. deleted>
+446:  Subject: Item #446: <spam .. deleted>
+447:  Subject: Item #447: Minutes -- 1 Sep 1998 OFWG Meeting 
+448:  Subject: Item #448: The definition of ABORT" function is unclear 
+449:  Subject: Item #449: The definition of ABORT function is unclear 
+450:  Subject: Item #450: (Not a proposal .. text and subject deleted)
+451:  Subject: Item #451: (Advertisement .. text and subject deleted)
+452:  Subject: Item #452: (Advertisement .. text and subject deleted)
+453:  Subject: Item #453: (Advertisement .. text and subject deleted)
+454:  Subject: Item #454: (Advertisement .. text and subject deleted)
+455:  Subject: Item #455: (Advertisement .. text and subject deleted)
+456:  Subject: Item #456: (Advertisement .. text and subject deleted)
+457:  Subject: Item #457: USB Binding: support for recursive probing 
+458:  Subject: Item #458: 64-bit Extension Wordset is incomplete 
+459:  Subject: Item #459: PCI Binding:  More that 256 buses 
+460:  Subject: Item #460: Agenda OFWG meeting 9 March 99 
+461:  Subject: Item #461: Minutes OFWG meeting 9 March 99 
+462:  Subject: Item #462: Minutes OFWG meeting 9 March 99
+463:  Subject: Item #463: [ Not a proposal; Subject Deleted ]
+464:  Subject: Item #464: [ Not a proposal; Subject Deleted ]
+465:  Subject: Item #465: [ Not a proposal; Subject Deleted ]
+466:  Subject: Item #466: [ Not a proposal; Subject Deleted ]
+467:  Subject: Item #467: (Not a proposal)
+468:  Subject: Item #468: (Not a proposal)
+469:  Subject: Item #469: (Not a proposal)
+470:  Subject: Item #470: (Not a proposal)
+471:  Subject: Item #471: (Not a proposal)
+472:  Subject: Item #472: (Not a proposal)
+473:  Subject: Item #473: (Not a proposal)
+474:  Subject: Item #474: USB Binding: Revise the Name Tables 
+475:  Subject: Item #475: (Not a proposal)
+476:  Subject: Item #476: (Not a proposal)
+477:  Subject: Item #477: (Not a proposal)
+478:  Subject: Item #478: (Not a proposal)
+479:  Subject: Item #479: (Not a proposal)
+480:  Subject: Item #480: (Not a proposal)
+481:  Subject: Item #481: (Not a proposal)
+482:  Subject: Item #482: (Not a proposal)
+483:  Subject: Item #483: (Not a proposal)
+484:  Subject: Item #484: (Not a proposal)
+485:  Subject: Item #485: (Not a proposal)
+486:  Subject: Item #486: (Not a proposal)
+487:  Subject: Item #487: (Not a proposal)
+488:  Subject: Item #488: (Not a proposal)
+489:  Subject: Item #489: (Not a proposal)
+490:  Subject: Item #490: (Not a proposal)
+491:  Subject: Item #491: (Not a proposal)
+492:  Subject: Item #492: (Not a proposal)
+493:  Subject: Item #493: (Not a proposal)
+494:  Subject: Item #494: (Not a proposal)
+495:  Subject: Item #495: (Not a proposal)
+496:  Subject: Item #496: (Not a proposal)
+497:  Subject: Item #497: (Not a proposal)
+498:  Subject: Item #498: (Not a proposal)
+499:  Subject: Item #499: (Not a proposal)
+500:  Subject: Item #500: (Not a proposal)
+501:  Subject: Item #501: (Not a proposal)
+502:  Subject: Item #502: (Not a proposal)
+503:  Subject: Item #503: (Not a proposal)
+504:  Subject: Item #504: (Not a proposal)
+505:  Subject: Item #505: <Not a Proposal>
+506:  Subject: Item #506: <Not a Proposal>
+507:  Subject: Item #507: <Not a Proposal>
+508:  Subject: Item #508: <Not a Proposal>
+509:  Subject: Item #509: <Not a Proposal>
+510:  Subject: Item #510: <Not a Proposal>
+511:  Subject: Item #511: <Not a Proposal>
+512:  Subject: Item #512: <Not a Proposal>
+513:  Subject: Item #513: <Not a Proposal>
+514:  Subject: Item #514: <Not a Proposal>
+515:  Subject: Item #515: <Not a Proposal>
+516:  Subject: Item #516: PCI-Express Binding to OF 

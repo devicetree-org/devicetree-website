@@ -38,7 +38,7 @@ jobs:
           TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Check links
-        run: /srv/github-action-scripts/check-links.sh
+        run: /srv/github-action-scripts/check-links.sh -s ./open-firmware
 
       - name: Check routing rules
         run: /srv/github-action-scripts/test-routing-rules.sh

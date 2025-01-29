@@ -1,0 +1,185 @@
+Date: Thu, 19 Oct 1995 13:22:00 -0700
+From: vicky@atlas.West.Sun.COM (Vicki Abe)
+Subject: Item #295: Dev Ext: Consistent Properties for Sound Devices
+
+P1275 Open Firmware Working Group Proposal -- Proposal #295
+#pragma ident	"@(#)1275.2	1.4	95/10/19"
+
+Title:		Consistent Properties for Sound Devices
+
+Author:		Vicki.Abe@west.sun.com
+
+Date:		October 13, 1995
+
+Ed/Tech:	Technical
+
+Synopsis:	Make audio properties consistent; they should describe
+		either overall device capabilities -or- current values.
+
+Doc & Version:	Device Support Extensions to IEEE1275-1994 Draft 0.3 08/17/95
+
+Problem:	The interface is inconsistent and incomplete; some properties,
+		such as "sample-rates" are an array of integers that describe
+		all sampling rates supported by the device, while others, such
+		as "sample-resolution", are simply a single integer, even
+		though the chip may be able to operate at different levels of
+		resolution.  It is unclear whether these properties represent
+		the full range of device capabilities or just the current
+		(post-reset) operating mode.
+
+		In the context of the Open Firmware operating environment,
+		it makes more sense to report current device settings,
+		rather than overall device capabilities. 
+		
+		The following changes are recommended to standardize
+		generic audio properties:
+
+Proposal:	(Section 6.1, "sound" device standard properties)
+
+1. replace the text in page 5, lines 32-34, with:
+
+	"#channels"
+
+	Standard property, encoded as with encode-int, that represents the
+	number of channels supported by the device.
+
+		to
+
+	"#input-channels"
+
+	Standard property, encoded as with encode-int, that represents the
+	currently set number of input audio channels.  Valid values will
+	depend on the channel mode(s) supported by the device.
+	(Example: "1" or "2").
+
+	"#output-channels"
+
+	Standard property, encoded as with encode-int, that represents the
+	currently set number of output audio channels.  Valid values will
+	depend on the channel mode(s) supported by the device.
+
+	"#DMA-channels"
+
+	Standard property, encoded as with encode-int, that represents the
+	currently set number of DMA channels.  Valid values will depend on
+	the number of DMA channels supported by the device.
+	(Example: on the CS423x, valid values would be "1" or "2").
+
+2. change the text on page 5, lines 36-38, from:
+
+	"sample-resolution"
+
+	Standard property, encoded as with encode-int, that represents the
+	number of bits of resolution for each sound sample.
+
+		to
+
+	"sample-precision"
+
+	Standard property, encoded as with encode-int, that represents the
+	number of bits used to store an audio sample from one channel.  Valid
+	values will reflect precision(s) supported by the device.
+
+3. change the text on page 5, lines 39-42, from:
+
+	"sample-width"
+
+	Standard property, encoded as with encode-int, that represents the
+	number of bytes required for storing a sample.
+
+		to
+
+	"sample-frame-size"
+
+	Standard property, encoded as with encode-int, that represents the
+	number of bits required to store one sample frame.  Valid values
+	will depend on the modes supported by the device.
+
+
+4. change the text on page 5, lines 43-46, from
+
+	"sample-rates"
+
+	Standard property, consisting of an array of integers, each encoded
+	as with encode-int, that represents the rates (in hertz) at which
+	this device can be sampled.
+
+		to
+
+	"input-sample-rate"
+
+	Standard property, encoded as with encode-int, that represents the
+	currently set input sampling rate of the audio device.  Valid values
+	will depend on the input sampling rates supported by the device.
+
+	"output-sample-rate"
+
+	Standard property, encoded as with encode-int, that represents the
+	currently set output sampling rate of the audio device. Valid values
+	will depend on the output sampling rates supported by the device.
+	(Example: on the CS423x, the list of valid values would include
+	5.5, 6.62, 8.0, 9.6, 11.025, 16.0, 18.9, 27.42, 22.05, 32.0, 33.075,
+	37.8, 44.1, 48.0) (Ksamples/second)
+
+5. insert at line 13 these new properties:
+
+	"input-encoding-type"
+
+	Standard property, encoded as with encode-string, that represents
+	the current set input encoding format of the audio device.  Valid
+	values for this property shall be one of "8bit_ulaw", "8bit_alaw",
+	"8bit_unsigned_linear", "8bit_signed_linear",
+	"16bit_LE_unsigned_linear", "16bit_BE_unsigned_linear",
+	"16bit_LE_signed_linear", "16bit_BE_signed_linear", or "4bit_ADPCM",
+	i.e., some value that is supported by the device.
+
+	"output-encoding-type"
+
+	Standard property, encoded as with encode-string, that represents
+	the current set output encoding format of the audio device.  Valid
+	values for this property shall be one of "8bit_ulaw", "8bit_alaw",
+	"8bit_unsigned_linear", "8bit_signed_linear",
+	"16bit_LE_unsigned_linear", "16bit_BE_unsigned_linear",
+	"16bit_LE_signed_linear", "16bit_BE_signed_linear", or "4bit_ADPCM",
+	i.e., some value that is supported by the device.
+
+
+Glossary
+
+	Precision - the size (in bits) per each sample (per channel).
+
+	Sample Frame - in cases where there are multiple channels of audio
+		data, a sample frame consists of interleaved samples, one
+		from each channel.
+
+	Sampling Rate - the number of sample frames per second.
+
+Rationale
+
+	While the support offered through Open Firmware is not meant to
+	serve as a fully functional driver, there is however a great deal of
+	variation between the "standard audio formats" expected by different
+	operating systems.
+
+	Since Open Firmware is designed to be OS-independent, we should
+	allow each vendor to set default audio properties that make sense
+	for the target platform and operating system.  The default values
+	used on a SPARC for Solaris (8-bit ulaw) would differ from those
+	used for a PowerPC running NT (16-bit little-endian signed linear),
+	or a PowerMac (16-bit big-endian AIFF).
+
+	Specifying these properties in detail now, but providing for
+	some flexibility would allow for future usage across platforms.
+
+References
+
+[1] IEEE Std 1275-1994 Standard for Boot (Initialization, Configuration)
+Firmware, Core Practices and Requirements
+
+[2] Device Support Extensions to: IEEE Std 1275-1994 Standard for Boot
+(Initialization, Configuration) Firmware
+
+[3] audio(7i) man page; Solaris 2.5 online documentation.  SunSoft, Inc., 1995.
+
+[ P1275 Item #295 -- Received: Thu Oct 19 14:00:41 PDT 1995 ]
+

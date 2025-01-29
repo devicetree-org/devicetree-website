@@ -1,0 +1,71 @@
+From: rlarndt@austin.ibm.com (Richard L. Arndt)
+Subject: Item #232: Halt-MCLogout
+Date: Mon, 06 Feb 95 16:32:10 -0600
+
+P1275 Open Firmware Working Group Proposal -- Proposal #232 Ver <Auth-Vers#>
+
+Title:          Halt-MCLogout
+
+Author:         R. L. Arndt rlarndt@austin.ibm.com
+
+Date:           6 Feb 95
+
+Ed/Tech:        Technical
+
+Synopsis:       Add mandatory support of the halt string "machine-check-logout"
+
+Doc & Version:  PowerPC processor binding -- dated: 941006
+
+Problem:        Need mechanisms for the firmware to log out machine dependent
+                hardware error status registers.
+
+Proposal:
+
+The firmware shall support halt string "machine-check-logout" in the
+following manner.
+Function:
+ 1. The firmware shall analyze any information which may exist in platform
+dependent registers to determine the nature of the machine check and
+record its findings in the system dependent error logout area.
+ 2. If the system supports machine check recovery, the firmware returns to
+the caller (see System State at return below).  If the system does not
+support machine check recovery, or can not do so in this case, the
+firmware automatically executes a reboot.
+
+System State at call:
+ Memory:
+        The ram image outside of that reserved for the Halt procedure is
+        reserved for operating system use and shall not be modified by the
+        Halt procedure.
+ Master processor:
+        As specified for other halt call-back functions.
+        |%r3 | -halt argument-> | 1st pointer | --> machine-check-logout[0]
+ Slave Processors:
+        In an SMP system, the state of the other processors is undefined.
+ IO Sub-system:
+        The state of the IO sub-system is undefined.
+ Interrupt Sub-system:
+        The processor's MSR EE=0 prior to calling the Halt procedure.
+
+System State at return:
+ Memory:
+        The state of the memory locations outside of those reserved for
+        the HALT procedure are unmodified by the HALT procedure.
+ Master Processor:
+        The state of the master processor shall be restored to the state
+        it had on entrance to the HALT procedure.  NOTE: a machine check
+        taken during the machine-check-logout HALT procedure will result in
+        a checkstop.
+ Slave Processors:
+        The state of the slave processors shall not be altered by the
+        machine-check-logout HALT procedure.
+ IO Sub-system:
+        The state of the IO sub-system shall not be altered by the
+        machine-check-logout HALT procedure.
+ Interrupt Sub-system:
+        The processor's MSR EE=0.
+
+
+
+[ P1275 Item #232 -- Received: Mon Feb  6 14:34:43 PST 1995 ]
+

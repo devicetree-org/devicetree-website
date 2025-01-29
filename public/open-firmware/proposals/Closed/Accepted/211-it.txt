@@ -1,0 +1,253 @@
+Date: Fri, 21 Oct 1994 10:17:11 +0800
+From: pt@jadeite (Paul Thomas)
+Subject: Item #211: P211 Initial errata list
+
+
+		P1275 Openboot Proposal			Proposal #: 211 Ver 1
+
+This is a resend to try to get a proposal number.  The content below is the
+same as in the previous message.
+
+Title:		Initial errata list
+
+Author:		Paul Thomas
+
+Date:		October 20, 1994
+
+Ed/Tech:	Editorial and Technical
+
+Synopsis:	An initial cut at the errata mostly for .0
+
+Doc Version:	D12 plus the delta to the nominal IEEE final version
+
+Problem:	Some bits and pieces were not correct, complete, etc.  Other
+		bits were misleading, confusing, etc.  This is the current
+		list of changes desired by at least one reviewer.
+
+Proposal:	Use the following as the initial errata list:
+
+31:5 "3.6.5" s/b "3.6.4"
+
+31:26 The MMU package probably needs a "pagesize" method.  This would also go
+into the general glossary.
+
+36:7 after this line add:
+dma-alloc	( ... size -- virt )	Allocate a memory region for later use.
+
+[Technical note: how does deblocker package know the optional parameters?]
+
+51:14 s/b "...NAME does not contain a comma..."
+
+51:18 s/b "...NAME contains a comma..."
+
+57:22 After this line, add of...endof examples.
+
+57:? The illustration for fcode transfer pair is wrong.  This is all I have
+for this item.
+
+79:10 after this line.  From a mail message:
+-------------------------------------------------
+A slight modification to the last "else" clause ...
+
+I think "enter" should return (as if a "go" had been done),
+and "exit" should boot.
+
+The purpose of "enter" is to invoke the user interface, with the
+client program being resumable, presumably for debugging purposes.
+If there is no user interface, the service could simply return.
+"enter" should not be used as a synonym for "exit" as client programs.
+
+-David
+
+
+----- Begin Included Message -----
+
+>From firmworks.com!tooch@firmworks.portal.com  Tue Oct  4 20:45:40 1994
+From: tooch@firmworks.com (Michael J. Tuciarone)
+Subject: Item #211: "enter" client service implies user interface
+To: p1275-wg@prombo.eng.sun.com
+Date: Tue, 4 Oct 1994 13:58:03 -0700 (PDT)
+Mime-Version: 1.0
+Content-Transfer-Encoding: 7bit
+
+Michael Segapeli writes:
+
+> 1. The section of the 1275 spec. defining the Client Interface
+>    lists a set of services which, I believe an Open Firmware 
+>    implementation must provide.  One of those services, "enter"
+>    (on page 79, line 8) implies the existence of the User Interface.
+>    The 1275 spec. says nothing about this service being optional.  
+>    Therefore, is it correct for me to assume that if the Client 
+>    Interface is implemented then the User Interface MUST be 
+>    implemented?
+[...]
+> --------------------------------------------------------------------------
+> Michael Segapeli        Workstation Engineering Software (19yb)
+> INTERNAL ZIP 4444       PHONE:  (512) 838-8428  (T/L 678-8428)
+> IBM Corporation         UNIX E-MAIL: mikes@austin.ibm.com
+> 11400 Burnet Road       VM E-MAIL: MSEG AT AUSVM6
+> Austin, TX  78758-3493
+> --------------------------------------------------------------------------
+
+He's right: both the "enter" and "exit" services are insufficiently
+defined for the case where there is no user interface.
+
+I propose that both these services have the following semantics,
+in addition to their current description:
+
+if a 1275-compliant user interface exists
+	then these services transfer control to that interface
+else if any user interface exists
+	then these services transfer control to that interface
+else these services are synonymous with "boot", passing as
+	the argument the null string
+
+----- End Included Message -----
+---------------------------------------------------------
+
+112:4 s/b "...signed values"		[delete paren]
+
+112:5 s/b "...text (signed value)"
+
+143:29 "3.4.6.3" s/b "3.8.3"
+
+152:1  stack s/b "( l -- prop-addr 4 )"
+
+158:48 "packages" s/b "/packages"
+
+158:49 "packages" s/b "/packages"
+
+159:6 "current instance make its parent" s/b "the current instance, make its
+parent"
+
+166:18 near this line: my-open-routine does not return a flag in is-install.
+Instead my-open-routine should throw an error.  The wrapper routine should
+catch the error.
+
+168:23 lbsplit should have wording like the 64bit words.
+[bljoin and bwjoin could have had similar wording, except that this is a
+technical change because 0 is already required in the upper bits.]
+
+171:29 lwsplit should have wording like the 64bit words.
+[wljoin could have had similar wording, except that this is a technical
+change because 0 is already required in the upper bits.]
+
+177:27  "zero" s/b "-2"
+
+178:16-19 Replace these lines with the following:
+--------------------------------------------------
+Locate, within the property list of the package identified by 'phandle',
+the first property if 'previous-len' is zero, or the property following
+the property named by the text string 'previous-str previous-len' otherwise.
+Return 'name-str name-len' and 'true' if such a property exists, or 'false'
+otherwise (i.e. if there are no more properties, or if there is no property
+in that package with the name given by 'property-str property-len').
+
+A sequence of invocations of next-property with the same 'phandle' value,
+beginning with previous-len equal to zero, and passing the 'name-str name-len'
+result of the previous invocation as the 'previous-str previous-len'
+argument to the next invocation, continuing until 'false' is returned,
+shall enumerate the names of all properties of that package.  The order in
+which those individual properties are returned is undefined (e.g. the "first"
+property returned by next-property is not necessarily the one that was
+created first).  If a new property is created within that package between
+invocations of next-property in such a sequence, the new property name may,
+but need not, be returned as a result of one of the following invocations of
+next-property within that same sequence.
+--------------------------------------------------
+
+187:6 improve this (for IEEE editor)
+
+207:17 wbsplit can have wording like the 64bit words.
+
+225:8 "version1" is misleading.  There is no provision to generate the
+following 7 bytes of fcode header.  One would need a "Fcode-versionX"
+tokenizer macro or some equivalent.
+
+226:43 "bus-reset" is defined here, but is used only once in "retry?".
+It would be better to define it in hacom.fth or to delete it and use its value
+(1) directly where it occurs.
+
+226:56 "my-id" does not get initialized.  Perhaps this should be done in reset.
+
+227:40 after this line. "timed-spin" uses "set-timeout" so there should be
+a definition for it.  Insert the following or some equivalent:
+----------------------------------------------
+external
+: set-timeout ( msecs -- ) to scsi-time ;
+headers
+---------------------------------------------
+
+229:1 better stack is ( -- okay? )
+
+229:9 better stack is ( -- okay? )
+
+230:10 better stack is ( -- okay? )
+
+234:19 "bothe" s/b "both" or "both the"
+
+234:30 better stack is ( -- error? )
+
+236:2 the stack s/b ( -- error? )
+
+236:3 "firmware-version" is incorrect.  Change to "fcode-revision?" and
+change the comparison value from 2.0006 to 2.0003?  Or dump the comparison
+altogether?
+
+255:?  0x121 display-status is obsolete; should have +
+
+261:15 "229" s/b "226"
+
+261:40 close-dev is not new; delete the line
+
+262:1 (patch) is not new; delete the line
+
+262:8-9 status is not new; delete these lines
+
+262:50 after 50, add "b(is)	b(to)"   as a new name pair
+
+263:8-9 delete these two lines
+
+???:?? From a mail message:
+-----------------------------------------------
+> * Are all P1275 implementations guaranteed to have the same exact interface
+>   to determine a system's TOD/Date?  Program the TOD/Date?
+
+This is something that we really should add to the client interface.
+----------------------------------------------
+
+???:?? From a mail message:
+-----------------------------------------------
+Sarito (Terry Whatley) has found a gap in the specification for the client
+interface callback routine.  This is the situation:
+
+A client program (typically the OS) is running.  It registers a callback
+(typically for sync) with the prom.  Later on, a user re-enters the bootprom.
+The user enters the sync command.  The prom calls back into the remains of the
+client program.  At that point, the client program needs to know the state of
+the machine, in order to have its code perform correctly.  But the state of the
+machine for the callback is not specified anywhere.
+
+(In the particular case Sarito ran across, on a Sun machine, the level 14
+timer is running and interrupting, but the OS code does not expect that, so
+the machine wedges.)
+
+The base document does not address issues such as this, since the state of the
+machine is specific to the particular cpu and architecture.  Neither does the
+SPARC supplement.
+
+Two general notions have occurred to us:
+
+1. The machine state is the same as that when the client program is first
+ called.
+2. The machine state is the same as that when the user re-entered the bootprom.
+
+Probably neither of these is quite right.
+
+I don't think it is worth holding up the .1 and .2 supplements for this, since
+they mostly document past history.  But this is a flag waving for future
+1275 bindings, especially for powerPC.
+--------------------------------------------
+
+[ P1275 Item #211 -- Received: Fri Oct 21 10:17:59 PDT 1994 ]
+

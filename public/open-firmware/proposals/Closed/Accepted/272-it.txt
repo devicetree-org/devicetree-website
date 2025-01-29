@@ -1,0 +1,167 @@
+Date: Wed, 31 May 95 00:17:30 PDT
+From: wmb@FirmWorks.COM (Mitch Bradley)
+Subject: Item #272: Interposition
+
+P1275 Open Firmware Working Group Proposal -- Proposal #272 Ver <Auth-Vers#>
+
+Title:		Interposition
+
+Author:		Mitch Bradley
+
+Date:		May 31, 1995
+
+Ed/Tech:	Technical
+
+Synopsis:	Create "interposition" recommended practice
+
+Doc & Version:	New recommended practice document
+
+Problem:	
+
+	Interposition is a system ROM implementation technique that was
+	originally intended to provide a clean way to layer file access
+	capabilities on top of unmodified Open Firmware device drivers.
+	Other uses have been suggested, but whether or not it will prove
+	suitable for those other uses remains to be determined.
+
+Proposal:	
+
+	Create a new recommended practice document containing:
+
+Scope: System firmware implementations.
+
+Purpose:
+
+	Interposition is a system ROM implementation technique that was
+	originally intended to provide a clean way to layer file access
+	capabilities on top of unmodified Open Firmware device drivers.  Other
+	uses have been suggested, but whether or not it will prove suitable
+	for those other uses remains to be determined.
+
+New FCode function and User Interface command (in FCode debugging command
+group):
+
+interpose  ( adr len phandle -- )			FCode#: 0x12b
+
+    Schedule the package identified by 'phandle' for interposition, with
+    the string 'adr len' as its arguments.
+
+    If a package is currently scheduled for interposition when "interpose"
+    is executed, the result is undefined (in other words, a system
+    implementation need not support multiple simultaneous interposition
+    attempts).
+
+    Usage Restriction: This function must be executed only during the
+    creation of an instance chain, i.e. during the execution of a package's
+    "open" method during pathname resolution in "open-dev" context, as
+    in clauses (f2), (k1iii) and (m2) of section 4.3.1 of the core document.
+
+Modification to Pathname Resolution Algorithm (ref: core document 4.3.1):
+(This modification creates the mechanism by which interposition occurs
+as a result of the execution of "interpose".)
+
+    Create the following additional procedure for the pathname resolution 
+    process:
+
+      Handle interposers procedure
+
+	a) If no package is currently scheduled for interposition
+
+	   1) Exit this procedure
+
+	b) Otherwise (i.e. a package is currently scheduled for interposition)
+
+	   1) Unschedule that package, so that it is no longer scheduled
+	      for interposition
+
+	   2) Save the specification of the active package for later
+              restoration
+
+	   3) Set the active package to the package that was scheduled
+	      for interposition.
+
+	   4) Set ARGUMENTS to the string that was scheduled for that
+	      interposition.
+	      
+	   5) Create a new linked instance using the procedure described
+	      in 4.3.2.
+
+	   6) Execute the node's open method
+
+	   7) Restore the active package to the value saved in step 2)
+
+	   8) Go back to step a)
+
+    After 4.3.1 f2), add:
+
+	3) Handle possible interpositions using the "Handle interposers"
+	   procedure.
+
+    After 4.3.1 k1iii), add:
+
+	iv) Handle possible interpositions using the "Handle interposers"
+	   procedure.
+
+    After 4.3.1 m2), add:
+
+	2') Handle possible interpositions using the "Handle interposers"
+	   procedure.
+
+    Modify 4.3.1 m5) to read:
+
+	5) Exit from this procedure, returning either the 'ihandle' of
+	   the instance created in step m1) or, if any interpositions
+	   were handled in step 2'), the 'ihandle' of the instance created
+	   in the last execution of step a5) of the "Handle interposers"
+	   procedure.
+
+Additional Modification to Pathname Resolution Algorithm:
+(This modification creates an additional way of causing "manual"
+interposition by including a "%<package_name" component in a path name.)
+
+    After 4.3.1 i), add:
+
+	i') If NODE_NAME begins with the character '%'
+
+	   1) Remove the leading '%' from NODE_NAME
+
+	   2) Search for a matching package among the direct children
+	      of the "/packages" node, using the "Node Name Match" criteria
+	      described in 4.3.6. If a match is found:
+
+		i) Save the specification of the active package for
+		   later restoration
+
+		ii) Set the active package to the package that was
+		    scheduled for interposition.
+
+		iii) Create a new linked instance using the procedure
+		     described in 4.3.2.
+
+		iv) Execute the node's open method
+
+		v) Restore the active package to the value saved in step a)
+
+		vi) Go back to step g)
+
+
+	    3) Otherwise (i.e. if no match is found), go to step l)
+
+The names of packages interposed either via the use of "interpose" or via
+the "%" pathname syntax shall not appear in the pathname returned by the
+"instance-to-path" client service.
+
+Add a new client service:
+
+   instance-to-packages
+
+	The arguments are identical to "instance-to-path", and the description
+	is similar:
+
+	   This service returns the fully-qualified pathname, including
+	   the names and arguments of interposed packages, corresponding
+	   to the ... (rest of sentence).  The names of interposed packages
+	   shall begin with the character '%'.  (Rest of paragraph)
+
+[ P1275 Item #272 -- Received: Wed May 31 00:21:37 PDT 1995 ]
+
